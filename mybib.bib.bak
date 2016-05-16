@@ -1,0 +1,167 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+
+@Article{Brouwer1937,
+  Title                    = {On the accumulation of errors in numerical integration},
+  Author                   = {Brouwer, Dirk},
+  Journal                  = {The Astronomical Journal},
+  Year                     = {1937},
+  Pages                    = {149--153},
+  Volume                   = {46},
+  Owner                    = {joseba},
+  Timestamp                = {2015.09.21}
+}
+
+@Article{Corless2013,
+  Title                    = {A graduate introduction to numerical methods},
+  Author                   = {Corless, Robert M and Fillion, Nicolas},
+  Journal                  = {AMC},
+  Year                     = {2013},
+  Pages                    = {12},
+  Volume                   = {10},
+
+  __markedentry            = {[joseba:6]},
+  Doi                      = {10.1007/978-1-4614-8453-0},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2016.01.21}
+}
+
+@Article{Dekker1971,
+  Title                    = {A floating-point technique for extending the available precision},
+  Author                   = {Dekker, Theodorus Jozef},
+  Journal                  = {Numerische Mathematik},
+  Year                     = {1971},
+  Number                   = {3},
+  Pages                    = {224--242},
+  Volume                   = {18},
+
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2015.09.09}
+}
+
+@Article{Dumitru,
+  Title                    = {Fast Detection of chaotic or regular behaviour of double pendulum system: application of the fast norm vector indicator method.},
+  Author                   = {Dumitru N. Deleanu},
+  Journal                  = {Conference: SEECCM III 3rd South-East European Conference on Computational Mechanics.},
+  Year                     = {2013},
+
+  Doi                      = {10.13140/2.1.5033.2969},
+  Owner                    = {joseba},
+  Timestamp                = {2015.09.16}
+}
+
+@Book{Hairer2006,
+  Title                    = {Geometric numerical integration: structure-preserving algorithms for ordinary differential equations},
+  Author                   = {Hairer, Ernst and Lubich, Christian and Wanner, Gerhard},
+  Publisher                = {Springer Science \& Business Media},
+  Year                     = {2006},
+  Volume                   = {31},
+
+  Owner                    = {joseba},
+  Timestamp                = {2015.09.09}
+}
+
+@Article{Hairer2008,
+  Title                    = {Achieving Brouwer’s law with implicit Runge–Kutta methods},
+  Author                   = {Hairer, Ernst and McLachlan, Robert I and Razakarivony, Alain},
+  Journal                  = {BIT Numerical Mathematics},
+  Year                     = {2008},
+  Number                   = {2},
+  Pages                    = {231-243},
+  Volume                   = {48},
+
+  Doi                      = {10.1007/s10543-008-0170-3},
+  ISSN                     = {0006-3835},
+  Owner                    = {joseba},
+  Timestamp                = {2015.02.27},
+  Type                     = {Journal Article}
+}
+
+@Book{Higham2002,
+  Title                    = {Accuracy and stability of numerical algorithms},
+  Author                   = {Higham, Nicholas J},
+  Publisher                = {Siam},
+  Year                     = {2002},
+
+  Owner                    = {joseba},
+  Timestamp                = {2015.09.18}
+}
+
+@Article{Laskar2011,
+  Title                    = {La2010: a new orbital solution for the long-term motion of the Earth},
+  Author                   = {Laskar, Jacques and Fienga, Agnes and Gastineau, Mickael and Manche, Herve},
+  Journal                  = {Astronomy \& Astrophysics},
+  Year                     = {2011},
+  Pages                    = {A89},
+  Volume                   = {532},
+
+  Doi                      = {10.1051/0004-6361/201116836},
+  ISSN                     = {0004-6361},
+  Owner                    = {joseba},
+  Timestamp                = {2015.02.27},
+  Type                     = {Journal Article}
+}
+
+@Book{Muller2009,
+  Title                    = {Handbook of floating-point arithmetic},
+  Author                   = {Muller, Jean-Michel and Brisebarre, Nicolas and De Dinechin, Florent and Jeannerod, Claude-Pierre and Lefevre, Vincent and Melquiond, Guillaume and Revol, Nathalie and Stehl{\'e}, Damien and Torres, Serge},
+  Publisher                = {Springer Science \& Business Media},
+  Year                     = {2009},
+
+  Owner                    = {joseba},
+  Timestamp                = {2015.09.16}
+}
+
+@Book{Overton2001,
+  Title                    = {Numerical computing with IEEE floating point arithmetic},
+  Author                   = {Overton, Michael L},
+  Publisher                = {Siam},
+  Year                     = {2001},
+
+  Doi                      = {http://dx.doi.org/10.1137/1.9780898718072},
+  Owner                    = {joseba},
+  Timestamp                = {2015.09.01}
+}
+
+@Article{Sanz-Serna1992,
+  Title                    = {Symplectic integrators for Hamiltonian problems: an overview},
+  Author                   = {Sanz-Serna, Jes{\'u}s Mar{\'\i}a},
+  Journal                  = {Acta numerica},
+  Year                     = {1992},
+  Pages                    = {243--286},
+  Volume                   = {1},
+
+  __markedentry            = {[joseba:]},
+  Owner                    = {joseba},
+  Publisher                = {Cambridge Univ Press},
+  Timestamp                = {2015.10.08}
+}
+
+@Misc{Mathematica,
+  Title                    = {Mathematica (Version 10.2)},
+
+  Author                   = {Wolfram Research, Inc.},
+  HowPublished             = {Wolfram Research, Inc.},
+  Year                     = {2015},
+
+  Owner                    = {joseba},
+  Timestamp                = {2015.09.21}
+}
+
+@Article{2008,
+  Title                    = {IEEE Standard for Floating-Point Arithmetic},
+  Journal                  = {IEEE Std 754-2008},
+  Year                     = {2008},
+
+  Month                    = {Aug},
+  Pages                    = {1-70},
+
+  Doi                      = {10.1109/IEEESTD.2008.4610935},
+  Keywords                 = {IEEE standards;floating point arithmetic;programming;IEEE standard;arithmetic formats;computer programming;decimal floating-point arithmetic;754-2008;NaN;arithmetic;binary;computer;decimal;exponent;floating-point;format;interchange;number;rounding;significand;subnormal},
+  Owner                    = {joseba},
+  Timestamp                = {2015.09.16}
+}
+

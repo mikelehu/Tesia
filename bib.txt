@@ -1,0 +1,9 @@
+@article{corless2013graduate,
+  title={A graduate introduction to numerical methods},
+  author={Corless, Robert M and Fillion, Nicolas},
+  journal={AMC},
+  volume={10},
+  pages={12},
+  year={2013},
+  publisher={Springer}
+}

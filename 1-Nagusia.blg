@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: 1-Nagusia.aux
+A level-1 auxiliary file: 2-Sarrera.aux
+A level-1 auxiliary file: 3-MetodoSinplektikoak.aux
+A level-1 auxiliary file: 4-Problemak.aux
+A level-1 auxiliary file: 5-KomaHigikorra.aux
+A level-1 auxiliary file: 6-ScientificComputing.aux
+A level-1 auxiliary file: 7-IRKPuntuFinkoa.aux
+A level-1 auxiliary file: A-Eranskinak.aux
+The style file: spphys.bst
+Database file #1: ./mybib.bib
+Warning--I didn't find a database entry for "Dumitru"
+You've used 0 entries,
+            2812 wiz_defined-function locations,
+            602 strings with 4478 characters,
+and the built_in function-call counts, 28 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 8
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 7
+(There was 1 warning)

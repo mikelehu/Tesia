@@ -1,0 +1,136 @@
+\section{Eranskinak}.
+
+\subsection{Kepler ekuazioak eta definizioak.}
+
+\paragraph*{\textbf{Kepler ekuazioak (definizioa)}},
+\begin{equation*}
+E_0-e\sin E_0=n (t_0-t_p)
+\end{equation*}
+\begin{equation*}
+E_1-e\sin E_1=n (t_1-t_p)
+\end{equation*}
+non $n=\frac{2\pi}{P}$, $P$ periodoa den.
+
+\paragraph*{} Honako garapen hau egingo dugu,
+\begin{equation*}
+E_1-E_0-e(\sin(E_1)-\sin(E_0))=n \triangle t \ \ \ \longrightarrow \ \triangle E - e(\sin(E_0+\triangle E)-\sin(E_0))=n \triangle t
+\end{equation*}
+\begin{equation*}
+E_1=E_0+\triangle E  
+\end{equation*}
+
+\begin{equation*}
+\triangle E - ce \ \sin(\triangle E- se \ (\cos(\triangle E)-1)=n \triangle t
+\end{equation*}
+non, $ce=e \ \cos(E_0)$ eta $se=e \ \sin(E_0)$
+
+\paragraph*{\textbf{Newton metodoa}},
+\begin{equation*}
+f(\triangle E)=\triangle E - ce \sin(\triangle E)- se (\cos(\triangle E)-1)-n \triangle t=0
+\end{equation*}
+\begin{equation*}
+f'(\triangle E)=1-ce \cos(\triangle E)+ se \sin(\triangle E)
+\end{equation*}
+\begin{equation}
+\triangle E^{[k+1]}=\triangle E^{[k]}- \frac{f(\triangle E^{[k]})}{f'(\triangle E^{[k]})}
+\end{equation}
+
+\paragraph*{\textbf{$\triangle E^{[0]}$ hasierako balioa}}, finkatzea da dugun zailtasun handiena. Horretarako honako garapena egingo dugu,
+\begin{equation*}
+\triangle E - ce \ \sin(\triangle E- se \ (\cos(\triangle E)-1)=n \triangle t
+\end{equation*} 
+\begin{equation*}
+x=\triangle E- n \triangle t
+\end{equation*}
+
+eta beraz,
+\begin{equation*}
+x-ce \sin(n\triangle t+x)-se(cos(n \triangle t+x)-1)=0
+\end{equation*}
+
+Honako baliokidetasun trigonometrikoak aplikatuz,
+\begin{equation*}
+\cos(A+B)=\cos(A)\cos(B)-\sin(A)\cos(B)
+\end{equation*}
+\begin{equation*}
+\sin(A+b)=\cos(A)\sin(B)+\sin(A)\cos(B)
+\end{equation*}
+
+berdintza hau lortzen dugu,
+\begin{equation*}
+x- (se \ \cos(n \triangle t)+ ce \ \sin(n \triangle t)) \cos(x)+ (se \ \sin(n \triangle t)-ce \ \cos(n \triangle t)) \sin(x)+se =0
+\end{equation*}
+
+$x$ txikia denean honako hurbilpenak ordezkatuz,
+\begin{equation*}
+x \approx \sin(x), \ \cos(x) \approx 1- \frac{x^2}{2}
+\end{equation*}
+\begin{equation}
+(se \ \cos(n \triangle t)+ce \ \sin(n \triangle t)) \frac{x^2}{2}+ (1+se \ \sin(n \triangle t)-ce \cos(n \triangle t))x-(se )=0
+\end{equation}
+
+Goiko ekuazio hau askatuz ($Ax^2+Bx+C=0, \ \rightarrow x=\frac{-B\pm \sqrt{B^2-4AC}}{2A}$) lortuko dugu $\triangle E^{[0]}=x+n\triangle t$.
+
+\paragraph*{\textbf{Koordenatu kartesiarren}}, kalkulua modu ekuazio hauen bidez egingo dugu,
+
+\begin{equation*}
+(q_1,v_1)=(q_0,v_0)+ (q_0,v_0) \left(\begin{array}{cc}
+                                       b_{11} & b_{12} \\
+                                       b_{21} & b_{22} \\
+                                \end{array}\right)
+\end{equation*}
+
+\begin{equation*}
+b_{11}=(C-1) \frac{a}{\|q\|}
+\end{equation*}
+
+\begin{equation*}
+b_{21}=\triangle t+(S-\triangle E) \frac{a^{\frac{3}{2}}}{\mu^{\frac{1}{2}}}
+\end{equation*}
+
+\begin{equation*}
+b_{12}=\frac{s}{\|q\| \sqrt{a} (1-ce \ C +se \ S)}
+\end{equation*}
+
+\begin{equation*}
+b_{22}=\frac{C-1}{1-ce \ C+ se \ S}
+\end{equation*}
+
+Eta osagai bakoitzaren definizioa,
+\begin{equation*}
+C=\cos(\triangle E), \ S=\sin(\triangle E)
+\end{equation*}
+
+\begin{equation*}
+ce=e \ \cos(E_0) = \|q\| \|v\|^2-1
+\end{equation*}
+
+\begin{equation*}
+se= e \ \sin(E_0)=\frac{(q \cdot v)}{\sqrt{\mu \ a}}
+\end{equation*}
+
+\begin{equation*}
+a= \frac{\mu \|q\|}{2\mu-\|q\|\|v\|^2}
+\end{equation*}
+
+\begin{equation*}
+n= \frac{\mu^{\frac{1}{2}}}{a^{\frac{3}{2}}}
+\end{equation*}
+
+\paragraph*{\textbf{Biribiltze errorea}}. $\triangle E$ txikia denean, $\cos(\triangle E)-1$ espresioaaren kalkuluak biribiltze errore handia eragin dezake. Hori konpontzeko baliokidetasun hau erabiliko dugu,
+
+\begin{equation*}
+\cos(\triangle E)-1=-\frac{(\sin^2(\triangle E)}{1+\cos(\triangle E)}
+\end{equation*}  
+
+Eta beraz, kepler-en ekuazioak hauek izango dira,
+\begin{equation*}
+f(\triangle E)=\triangle E - ce \sin(\triangle E)+ se \bigg(\frac{(\sin^2(\triangle E)}{1+\cos(\triangle E)}\bigg)-n \triangle t=0
+\end{equation*}
+
+Eta $(q_1,v_1)$ balioak kalkulatzeko,
+
+\begin{equation*}
+b_{11}=(C-1) \frac{a}{\|q\|}, \longrightarrow b_{11}=-\frac{(\sin^2(\triangle E)}{1+\cos(\triangle E)} \frac{a}{\|q\|}
+\end{equation*}
+
