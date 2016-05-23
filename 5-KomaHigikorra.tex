@@ -132,6 +132,40 @@ $\tilde x,\tilde y \in \mathbb{F}$ emanik eta $z= \tilde x \ast \tilde y$ emaitz
 \tilde z=(\tilde x \circledast \tilde y)=z+\triangle z=z(1+\delta z), \ |\delta z|<u. 
 \end{equation*}
 
+
+\paragraph*{\textbf{Adibidea.}}
+Errore erlatiboak emitzaren digitu zuzenak neurtzen du:
+\begin{equation*}
+\delta z \approx 10^{-k} \Rightarrow \ \approx \ k \ digitu \ zuzen.
+\end{equation*}  
+
+\subsubsection*{Ezabapen arazoa.}
+
+Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbaki kentzen ditugunean gerta daitekeena. 
+
+\paragraph*{\textbf{Adibidea}}.
+
+CatastrophicCancelation.nb adibidea idatzi.
+
+
+\begin{lstlisting}
+>>  InputForm[N[Pi]]
+>> 3.141592653589793
+
+>> y=N[Pi]*10^(-10);
+>> InputForm[y]
+>> 3.1415926535897934*10^(-10)
+
+>> z=1.+y;
+>> InputForm[z]
+>> 1.0000000003141594
+
+>> InputForm[z-1.]
+>> 3.141593651889707*10^(-10)
+
+\end{lstlisting}
+ 
+
 \subsubsection*{Errore propagazioa.}
 
 Konputazioetan eragiketa aritmetiko kopuru handia egin behar dugu emaitza lortzeko eta biribiltze errorea metatu daiteke. Batzuetan, eragiketa bakoitzeko biribiltze errorea elkar ezereztatzen da baina kasu txarrenean, biribiltze errorea metatu eta magnitude handikoa izan daiteke.   

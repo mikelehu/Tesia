@@ -110,7 +110,7 @@ N gorputzeko problema grabitazionalari dagokionez, Eguzki sistemaren eredu sinpl
 $(N+1)$ gorputz kopurua izanik, $q_i,p_i\in \mathbb{R}^3, m_i \in \mathbb{R}$ gorputz bakoitzaren kokapena, momentua eta masa dira. Bestalde , momentua era honetan definituko dugu $p_i=m_i*v_i$ non $\frac{d q_i}{dt}=v_i$ den.
 
 
-\subsubsection*{Equations.}
+\subsubsection{Ekuazioak.}
 
 \paragraph*{Hamiltondarra.}
 
@@ -228,12 +228,16 @@ A=\left(\begin{array}{ccc}
 
 \end{enumerate}
 
-\subsubsection*{Hasierako balioak.}
+\subsubsection{Hasierako balioak.}
 
 The initial conditions and parameters have been taken from JPL Solar System ephemerids DE-405.
 We have modified the velocities to get zero linear momentum.
 
-\subsection{Inplementazioak.}
+Eguzki eta planeten hasierako kokapenak (au) eta abiadurak (au/day), Julian data (TDB) $2440400.5$ (Ekainaren $28$,$1969$) eta ICRFR2 (International Celestial Reference Frame) koordenatu sisteman,
+
+    
+
+\subsubsection{Kodeak.}
 
 \paragraph*{} Mathematicako NBodyProblem.m paketean honako funtzioak garatu ditugu.
 
@@ -252,4 +256,40 @@ We have modified the velocities to get zero linear momentum.
 \end{enumerate}
 
 
+\subsubsection*{Equations relativistic.}
 
+
+\paragraph*{Ekuazio diferentzialak.}
+
+\begin{equation}
+\dot{q_i}=v_i, \  i=0,1,\dots N
+\end{equation}
+
+\begin{multline} 
+\dot{v_i}= \sum_{j=0,j \neq i}^{N} \frac{Gm_j}{\|q_j-q_i\|^3} (q_j-q_i)
+           \bigg(1- \frac{2(\beta+\gamma)}{c^2} \sum\limits_{k=0, k \neq i}^{N} \frac{Gm_k}{\|q_k-q_i\|} 
+                  - \frac{2\beta-1}{c^2}        \sum\limits_{k=0, k \neq j}^{N} \frac{Gm_k}{\|q_k-q_j\|} \\
+                  + \gamma \big(\frac{v_i}{c}\big)^2 + (1+\gamma) \big(\frac{v_j}{c} \big)^2 
+                  - \frac{2(1+\gamma)}{c^2} v_i \ v_j \\
+                  - \frac{3}{2c^2} \big(\frac{(q_i-q_j) v_j}{\|q_j-q_i\|} \big)^2+                  
+                  \frac{1}{2c^2}(q_j-q_i) \dot{v_i} \bigg) \\
+           + \frac{1}{c^2} \sum_{j=0,j \neq i}^{N} \frac{Gm_j}{\|q_j-q_i\|^3} 
+             ((q_i-q_l) ((2+2\gamma)v_i-(1+2\gamma)v_j)) (v_i-v_j) \\
+           + \frac{3+4\gamma}{2c^2} \sum_{j=0,j \neq i}^{N} \frac{Gm_j \dot{v_j}}{\|q_j-q_i\|}                                      
+\end{multline}
+
+\begin{table}[h]
+\caption{Konstanteak}
+\label{tab:1}       % Give a unique label
+\begin{tabular}{ c c c }
+\hline 
+  c             &  $299792.458$ km/s           & Argiaren abiadura  \\
+\hline
+  au            &  $149597870.700$ km           & Astronomical unit  \\
+\hline 	       
+$\beta$          & $1.0$                       & PPN parametroa     \\
+\hline 
+$\gamma$         & $1.0$                       & PPN parametroa     \\
+\hline
+\end{tabular}
+\end{table}
