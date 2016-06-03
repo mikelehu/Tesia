@@ -1,65 +1,80 @@
-\select@language {english}
-\begingroup \small 
-\contentsline {section}{\numberline {1}Sarrera.}{5}
-\contentsline {subsection}{\numberline {1.1}Context of the Study}{5}
-\contentsline {subsection}{\numberline {1.2}Problem statement or motivation for the study.}{6}
-\contentsline {subsection}{\numberline {1.3}Aim and scope}{7}
-\contentsline {subsection}{\numberline {1.4}Overview of the study (structure of the Thesis).}{8}
-\contentsline {subsection}{\numberline {1.5}laburpena}{9}
-\contentsline {section}{\numberline {2}Zenbakizko Integratzaile Sinplektikoak.}{10}
-\contentsline {subsection}{\numberline {2.1}Sarrera.}{10}
-\contentsline {subsubsection}{\numberline {2.1.1}Hasierako baliodun problemak.}{10}
-\contentsline {subsubsection}{\numberline {2.1.2}Sistema-Hamiltondarrak.}{11}
-\contentsline {subsection}{\numberline {2.2}Gauss metodoak.}{12}
-\contentsline {subsubsection}{\numberline {2.2.1}Runge-Kutta metodoak.}{12}
-\contentsline {subsubsection}{\numberline {2.2.2}Kolokazio metodoak.}{14}
-\contentsline {paragraph}{\textbf {Definizioa.}}{14}
-\contentsline {paragraph}{\textbf {Theorem 1.4} (Guillou and Soule 1969, Wright 1970).}{14}
-\contentsline {paragraph}{\textbf {Definizioa}.}{15}
-\contentsline {paragraph}{\textbf {Adibidea}.}{15}
-\contentsline {subsection}{\numberline {2.3}Konposizio metodoak.}{15}
-\contentsline {subsubsection}{\numberline {2.3.1}Konposizio metodoak.}{15}
-\contentsline {subsubsection}{\numberline {2.3.2}Gure inplementazioa.}{16}
-\contentsline {subsection}{\numberline {2.4}Splitting metodoak.}{18}
-\contentsline {subsubsection}{\numberline {2.4.1}Splitting metodoak.}{18}
-\contentsline {subsubsection}{\numberline {2.4.2}Erreferentzia.}{19}
-\contentsline {subsection}{\numberline {2.5}Kepler fluxua.}{20}
-\contentsline {paragraph}{}{20}
-\contentsline {subsection}{\numberline {2.6}Laburpena.}{21}
-\contentsline {section}{\numberline {3}Problemak.}{23}
-\contentsline {subsection}{\numberline {3.1}Sarrera.}{23}
-\contentsline {subsection}{\numberline {3.2}Pendulu bikoitza.}{23}
-\contentsline {subsubsection}{\numberline {3.2.1}Ekuazioak.}{23}
-\contentsline {subsubsection}{\numberline {3.2.2}Hasierako balioak.}{24}
-\contentsline {subsubsection}{\numberline {3.2.3}Kodeak.}{25}
-\contentsline {subsection}{\numberline {3.3}N-Body problema.}{25}
-\contentsline {paragraph}{Jakobiarra.}{26}
-\contentsline {subsection}{\numberline {3.4}Inplementazioak.}{27}
-\contentsline {section}{\numberline {4}Koma Higikorreko Aritmetika.}{28}
-\contentsline {subsection}{\numberline {4.1}Sarrera.}{28}
-\contentsline {subsection}{\numberline {4.2}Adierazpena.}{28}
-\contentsline {subsection}{\numberline {4.3}Biribiltze errorea.}{30}
-\contentsline {subsubsection}{\numberline {4.3.1}Tresnak.}{31}
-\contentsline {subsection}{\numberline {4.4}Laburpena.}{32}
-\contentsline {section}{\numberline {5}Scientific Computing.}{33}
-\contentsline {subsection}{\numberline {5.1}Sarrera.}{33}
-\contentsline {section}{\numberline {6}IRK: Puntu-Finkoa.}{34}
-\contentsline {subsection}{\numberline {6.1}Sarrera.}{34}
-\contentsline {subsection}{\numberline {6.2}Hairer-en inplementazioa.}{34}
-\contentsline {subsection}{\numberline {6.3}Gure inplementazioa.}{35}
-\contentsline {subsubsection}{\numberline {6.3.1}Koefizienteak (1.proposamena).}{35}
-\contentsline {subsubsection}{\numberline {6.3.2}Geratze erizpidea (2.proposamena).}{37}
-\contentsline {subsubsection}{\numberline {6.3.3}Batura konpensatua (3.proposamena).}{37}
-\contentsline {paragraph}{}{38}
-\contentsline {subsubsection}{\numberline {6.3.4}Biribiltze errorearen estimazioa (4.proposamena).}{38}
-\contentsline {subsubsection}{\numberline {6.3.5}Atalen hasieraketa.}{40}
-\contentsline {subsubsection}{\numberline {6.3.6}Gauss-Seidel.}{41}
-\contentsline {subsubsection}{\numberline {6.3.7}Algoritmoa.}{41}
-\contentsline {subsection}{\numberline {6.4}Esperimentuak.}{41}
-\contentsline {subsubsection}{\numberline {6.4.1}Doitasun azterketa.}{41}
-\contentsline {subsubsection}{\numberline {6.4.2}Brouwer legea.}{43}
-\contentsline {subsubsection}{\numberline {6.4.3}Pendulu bikoitza.}{43}
-\contentsline {subsubsection}{\numberline {6.4.4}N-Body problema.}{44}
-\contentsline {section}{\numberline {7}Eranskinak}{48}
-\contentsline {subsection}{\numberline {7.1}Kepler ekuazioak eta definizioak.}{48}
-\endgroup 
+\select@language {basque}
+\select@language {basque}
+\contentsline {part}{I\hspace {1em}Introduction}{xi}{part.1}
+\contentsline {chapter}{\numberline {1}Sarrera.}{xiii}{chapter.1}
+\contentsline {section}{\numberline {1.1}Context of the Study}{xiii}{section.1.1}
+\contentsline {section}{\numberline {1.2}Problem statement or motivation for the study.}{xiv}{section.1.2}
+\contentsline {section}{\numberline {1.3}Aim and scope}{xv}{section.1.3}
+\contentsline {section}{\numberline {1.4}Overview of the study (structure of the Thesis).}{xvii}{section.1.4}
+\contentsline {section}{\numberline {1.5}laburpena}{xvii}{section.1.5}
+\contentsline {part}{II\hspace {1em}Background}{xix}{part.2}
+\contentsline {chapter}{\numberline {2}Zenbakizko Integratzaile Sinplektikoak.}{xxi}{chapter.2}
+\contentsline {section}{\numberline {2.1}Sarrera.}{xxi}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Zenbakizko metodoak.}{xxi}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Sistema-Hamiltondarrak.}{xxiii}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Metodo sinplektikoak.}{xxiv}{subsection.2.1.3}
+\contentsline {section}{\numberline {2.2}Gauss metodoak.}{xxiv}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Runge-Kutta metodoak.}{xxiv}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Kolokazio metodoak.}{xxvii}{subsection.2.2.2}
+\contentsline {paragraph}{\textbf {Definizioa}.}{xxvii}{section*.25}
+\contentsline {paragraph}{\textbf {Adibidea}.}{xxvii}{section*.27}
+\contentsline {section}{\numberline {2.3}Konposizio metodoak.}{xxviii}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Konposizio metodoak.}{xxviii}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Gure inplementazioa.}{xxix}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}Splitting metodoak.}{xxxi}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Splitting metodoak.}{xxxi}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Erreferentzia.}{xxxii}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Kepler fluxua.}{xxxiv}{section.2.5}
+\contentsline {section}{\numberline {2.6}Laburpena.}{xxxv}{section.2.6}
+\contentsline {chapter}{\numberline {3}Problemak.}{xxxvii}{chapter.3}
+\contentsline {section}{\numberline {3.1}Sarrera.}{xxxvii}{section.3.1}
+\contentsline {section}{\numberline {3.2}Pendulu bikoitza.}{xxxvii}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Ekuazioak.}{xxxviii}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Hasierako balioak.}{xxxviii}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Kodeak.}{xxxix}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}N-Body problema.}{xxxix}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Ekuazioak.}{xl}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Hasierako balioak.}{xl}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Kodeak.}{xli}{subsection.3.3.3}
+\contentsline {chapter}{\numberline {4}Koma Higikorreko Aritmetika.}{xliii}{chapter.4}
+\contentsline {section}{\numberline {4.1}Sarrera.}{xliii}{section.4.1}
+\contentsline {section}{\numberline {4.2}Adierazpena.}{xliii}{section.4.2}
+\contentsline {section}{\numberline {4.3}Biribiltze errorea.}{xlv}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Tresnak.}{xlvii}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Laburpena.}{xlix}{section.4.4}
+\contentsline {chapter}{\numberline {5}Scientific Computing.}{li}{chapter.5}
+\contentsline {section}{\numberline {5.1}Sarrera.}{li}{section.5.1}
+\contentsline {section}{\numberline {5.2}Parallel Hardware.}{lii}{section.5.2}
+\contentsline {section}{\numberline {5.3}Software liburutegiak.}{lvii}{section.5.3}
+\contentsline {section}{\numberline {5.4}Laburpena.}{lix}{section.5.4}
+\contentsline {chapter}{\numberline {6}Review.}{lxi}{chapter.6}
+\contentsline {section}{\numberline {6.1}Sarrera.}{lxi}{section.6.1}
+\contentsline {section}{\numberline {6.2}Efemerideak.}{lxi}{section.6.2}
+\contentsline {paragraph}{Influence of the methods of constructing ephemerides...}{lxii}{section*.126}
+\contentsline {section}{\numberline {6.3}Eguzki-sistemaren integrazio luzeak.}{lxii}{section.6.3}
+\contentsline {part}{III\hspace {1em}Core}{lxiii}{part.3}
+\contentsline {chapter}{\numberline {7}IRK: Puntu-Finkoa.}{lxv}{chapter.7}
+\contentsline {section}{\numberline {7.1}Sarrera.}{lxv}{section.7.1}
+\contentsline {section}{\numberline {7.2}Hairer-en inplementazioa.}{lxv}{section.7.2}
+\contentsline {section}{\numberline {7.3}Gure inplementazioa.}{lxvi}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Koefizienteak (1.proposamena).}{lxvii}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Geratze irizpidea (2.proposamena).}{lxviii}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Batura konpensatua (3.proposamena).}{lxix}{subsection.7.3.3}
+\contentsline {paragraph}{}{lxx}{section*.141}
+\contentsline {subsection}{\numberline {7.3.4}Biribiltze errorearen estimazioa (4.proposamena).}{lxx}{subsection.7.3.4}
+\contentsline {subsection}{\numberline {7.3.5}Atalen hasieraketa.}{lxxi}{subsection.7.3.5}
+\contentsline {subsection}{\numberline {7.3.6}Gauss-Seidel.}{lxxiii}{subsection.7.3.6}
+\contentsline {subsection}{\numberline {7.3.7}Algoritmoa.}{lxxiii}{subsection.7.3.7}
+\contentsline {section}{\numberline {7.4}Esperimentuak.}{lxxiv}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Doitasun azterketa.}{lxxiv}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Brouwer legea.}{lxxvii}{subsection.7.4.2}
+\contentsline {subsection}{\numberline {7.4.3}Pendulu bikoitza.}{lxxvii}{subsection.7.4.3}
+\contentsline {subsection}{\numberline {7.4.4}N-Body problema.}{lxxviii}{subsection.7.4.4}
+\contentsline {chapter}{\numberline {8}IRK: Newton.}{lxxxiii}{chapter.8}
+\contentsline {section}{\numberline {8.1}Sarrera.}{lxxxiii}{section.8.1}
+\contentsline {chapter}{\numberline {9}IRK: Eguzki-sistema.}{lxxxv}{chapter.9}
+\contentsline {section}{\numberline {9.1}Sarrera.}{lxxxv}{section.9.1}
+\contentsline {section}{\numberline {9.2}Meta-Algoritmoa.}{lxxxv}{section.9.2}
+\contentsline {part}{IV\hspace {1em}synthesys}{xciii}{part.4}
+\contentsline {chapter}{\numberline {10}Eranskinak}{xcv}{chapter.10}
+\contentsline {section}{\numberline {10.1}Kepler ekuazioak eta definizioak.}{xcv}{section.10.1}

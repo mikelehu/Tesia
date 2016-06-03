@@ -1,6 +1,6 @@
-\section{Scientific Computing.}
+\chapter{Scientific Computing.}
 
-\subsection{Sarrera.}
+\section{Sarrera.}
 
 Gaur-egun, orohar konputagailuak (superkonputagailu, portatila,...) paraleloak dira. 1986-2002 urteen artean,  prozesadore bakarreko konputagailuen eraginkortasuna hobetuz joan zen, txipean transistore dentsitatea handitzen zen heinean   baina teknologi-garapena muga fisikoetara iritsita, bide honetatik konputagailuen abiadura hobetzea ezinezkoa bilakatu zen. Horrela, 2005.urtetik aurrera fabrikatzaileek konputagailuen gaitasuna hobetzeko, txipan prozesadore bat baino gehiago erabiltzea erabaki zuten.      
 
@@ -24,9 +24,9 @@ Gaur-egun, orohar konputagailuak (superkonputagailu, portatila,...) paraleloak d
 
 \paragraph*{}Bestalde, inplementazio berrien garapenean optimizatutako liburutegiak erabiltzea komeni da. Horien artean, LAPACK eta BLAS algebra linealeko liburutegiak erabilgarriak izan zaizkigu. Liburutegi hauen gaineko azalpenak emango ditugu.
 
-\subsection{Parallel Hardware.}
+\section{Parallel Hardware.}
 
-\subsubsection*{\textbf{Zein azkarrak dira konputagailuak?}}
+\subsection*{\textbf{Zein azkarrak dira konputagailuak?}}
 
 \paragraph*{}Gaur egungo prozesadoreen abiadura Gigahertzioetan neurtzen da. 
 
@@ -61,7 +61,7 @@ $>1000$ segundu $1$GHz prozesagailuan.
 
 \paragraph*{} Zientzia konputazioaren eraginkortasuna neurtzeko, koma-higikorrezko eragiketa kopurua (flops) erabiltzen zen. Problema handia denean, datuen mugimendua koma-higikorrezko eragiketak baino garestiagoa da, eta beraz eraginkortasuna aztertzeko koma-higikorrezko eragiketa kopurua neurtzea okerra izan daiteke. Kodearen exekuzioa azkartzeko derrigorrezkoa da konputagailuan datuen mugimendua minimizatzea.
 
-\subsubsection*{\textbf{Memoria Hierarkia.}}
+\subsection*{\textbf{Memoria Hierarkia.}}
 
 \paragraph*{}Lehenik, konputagailuan dauden memoria mota ezberdinen hierarkia azalduko dugu. 
 
@@ -107,7 +107,7 @@ a=\left(\begin{array}{ccccc}
 
 \paragraph*{}CPUk datu bat behar duenean, memoria hierarkian zehar bilatuko du: lehenik $L1$ cachean, ondoren $L2$ cachean,...eta hauetan ez badago, memoria nagusira joko du. Memoria nagusi eta cache memoria arteko irakurketa eta idazketa guzti hauetan,  informazio konsistentzia mantentzeko hainbat arau aurrera ematen dira.  
 
-\subsubsection*{\textbf{Hardware.}}
+\subsection*{\textbf{Hardware.}}
 
 MIMD (Multiple instruction, multiple data) sistemak, guztiz independienteak diren prozesadore multzoak osatzen dituzte. Bi dira MIMD sistema nagusiak: memoria konpartitutako eta memoria distribuitutako sistemak. Memoria konpartitutako sistemetan, prozesadore guztiek memoria osoa konpartitzen dute eta inplizituki konpartitutako datuen atzipenaren bidez komunikatzen dira. Memoria distribuitutako sistemetan aldiz, prozesadore bakoitzak bere memoria pribatua du eta explizituki bidalitako mezuen bidez komunikatzen dira.
 
@@ -134,7 +134,7 @@ Jokuen eta animazio industriak, grafiko oso azkarrak beharrak biltzatuta  sortut
  \label{fig:61}
  \end{figure}  
 
-\subsubsection*{\textbf{Sofwarea.}}
+\subsection*{\textbf{Sofwarea.}}
 
 C-lengoaia programazio paraleloan erabiltzeko, lengoiaren bi extensio dira nagusienak: bata memori-distribuitutako sistemetarako diseinatuta  MPI (Message-Passing Inteface) eta bestea, memoria-konpartitutako sistemetarako diseinutakoa OpenMP (Open Specifications for MultiProcessing). MPI datu moten definizio, funtzio eta makroen liburegia da. OpenMP liburutegia bat  eta C konpiladorearen aldaketa batzuk. OpenMP erabili dugu gure inplementaziorako eta jarraian honi buruzko idei nagusienak emango ditugu.
 
@@ -165,7 +165,7 @@ Aldagai batean (threadcount) paralelizazioan zenbat hari erabili adierazten da e
      }
 \end{lstlisting}
 
-\subsection{Software liburutegiak.}
+\section{Software liburutegiak.}
 
 Matematika bi software errekurtso nagusienak aipatuko ditugu; BLAS (Basic Linear Algebra Subroutines) eta LAPACK (Linear Algebra Package). Kalitate handiko software orokorrak dira eta hauek erabiltzea abantaila asko ditu: 
 
@@ -184,7 +184,7 @@ Konputagailu hardware bakoitzerako optimizatutako bertsioak daude. Inplementazio
 \item Z: complex double.
 \end{enumerate}   
 
-\subsubsection*{\textbf{BLAS}}.
+\subsection*{\textbf{BLAS}}.
 
 BLAS liburutegian, bektore eta matrizeen arteko funtzio estandarrak inplementatuta daude. Hiru mailetan banatuta dago: 
 
@@ -220,7 +220,7 @@ Azpimarratu, BLAS-1 eta BLAS-2 funtzioen konputazio intetsitatea txikia dela eta
 Fabrikatzaile bakoitzak optimizatutako BLAS liburutegiak (AMD ACML,Intel MKL) dituzte eta beraz, multi-threaded dira.
 Beste aukera bat, optimizatutako BLAS instalazioa ATLAS (Automatically Tuned Linear Algebra Software) bidez egitea.    
 
-\subsubsection*{\textbf{LAPACK}}.
+\subsection*{\textbf{LAPACK}}.
 
 Zenbakizko algebra linealaren liburutegia da.
 
@@ -234,7 +234,9 @@ Zenbakizko algebra linealaren liburutegia da.
 Posible den guztietan, BLAS-3 funtzioetan oinarritzen da.
 
 
-\subsection{Laburpena.}
+\section{Laburpena.}
+
+Best practices for code vectorization and parallelization, and additional tips and tricks.
 
 Algoritmo bat inplementatzen dugunean kontutan hartu beharrekoa:
 
@@ -248,7 +250,6 @@ Algoritmo bat inplementatzen dugunean kontutan hartu beharrekoa:
 
 \item Optimizatutako beste hainbat kode erabiltzea komenigarria da. LAPACK aljebra lineal paketea Fortran eta C-lengoaitetatik deitu daiteke. Eraberean, LAPACKek BLAS subrutinak erabiltzen ditu.  Subrutinak hauek matrizen arteko biderketak, "inner product", ... BLAS konputagailu arkitektura ezberdinetarako optimizatutako bertsioak daude.
  
-
 
 \end{enumerate}
 

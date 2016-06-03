@@ -1,30 +1,50 @@
-\select@language {english}
-\contentsline {figure}{\numberline {1}{\ignorespaces \relax \fontsize {8}{9.5pt}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip Eguzki-sistema.\relax }}{8}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Planeten arteko distantziak.}}}{8}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Planeten arteko masa konparaketa.}}}{8}
-\contentsline {figure}{\numberline {2}{\ignorespaces Pendulu bikoitza.\relax }}{23}
-\contentsline {figure}{\numberline {3}{\ignorespaces Floating-point number line.\relax }}{28}
-\contentsline {figure}{\numberline {4}{\ignorespaces \relax \fontsize {8}{9.5pt}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip 32-biteko koma-higikorreko zenbakiaren adierazpena: exponentearentzat 8 bit eta mantisarentzat 24 bit (bit bat zeinuarentzat eta beste 23 bit, $1.F$ eran normalizatutako mantisarentzat) banatuta.\relax }}{29}
-\contentsline {figure}{\numberline {5}{\ignorespaces Biribiltze errorea.\relax }}{31}
-\contentsline {figure}{\numberline {6}{\ignorespaces Interpolazioa.\relax }}{40}
-\contentsline {figure}{\numberline {7}{\ignorespaces \relax \fontsize {8}{9.5pt}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip We show Non-Chaotic case (a,b) and Chaotic case (c,d). Left figure mean energy error evolution $\mathaccentV {bar}016{\triangle E_i}$ and right figure mean Global error evolution $\mathaccentV {bar}016{Ge_i}$ of the 100 integrations for \textit {Ideal Integrator} (black) , \textit {Double prec} (blue) and \textit {Classic Implementation} (gray).\relax }}{44}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Non chaotic: energy error.}}}{44}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Non chaotic: global error.}}}{44}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chaotic: energy error.}}}{44}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Chaotic: global error.}}}{44}
-\contentsline {figure}{\numberline {8}{\ignorespaces \relax \fontsize {8}{9.5pt}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip Histogram of energy errors for Non-Chaotic case (a,b) and for Chaotic case (c,d).\relax }}{45}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Non-Chaotic: Ideal.}}}{45}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Non-Chaotic: rdigits=0.}}}{45}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chaotic: Ideal.}}}{45}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Chaotic: rdigits=0.}}}{45}
-\contentsline {figure}{\numberline {9}{\ignorespaces \relax \fontsize {8}{9.5pt}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip Estimation round-off error. We compare evolution of our estimation error (blue) with evolution of global error (black). Estimation Quality. We show mean (blue) and standard deviation (red) of the quality according our definition of (\ref {eq:eq_Qi}).\relax }}{46}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Non Chaotic: estimation}}}{46}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Non Chaotic: quality of estimation}}}{46}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chaotic: estimation}}}{46}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Chaotic: quality of estimation}}}{46}
-\contentsline {figure}{\numberline {10}{\ignorespaces \relax \fontsize {8}{9.5pt}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip N-body: left figure mean energy error evolution $\mathaccentV {bar}016{\triangle E_i}$ and right figure mean Global error evolution $\mathaccentV {bar}016{Ge_i}$ of the 100 integrations for Ideal Integrator (black) and Double prec(blue).\relax }}{46}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Energy error.}}}{46}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Global error.}}}{46}
-\contentsline {figure}{\numberline {11}{\ignorespaces \relax \fontsize {8}{9.5pt}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ {\leftmargin \leftmargini \parsep 0\p@ plus1\p@ minus\p@ \topsep 4\p@ plus2\p@ minus4\p@ \itemsep 0\p@ }\belowdisplayskip \abovedisplayskip Left estimation round-off error, we compare evolution of our estimation error (blue) with evolution of global error (black). Right estimation Quality ,we show mean (blue) and standard deviation (red) of the quality according our definition of (\ref {eq:eq_Qi}). We use rdigits1=0 and rdigits2=3.\relax }}{47}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Estimation.}}}{47}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Quatlity.}}}{47}
+\select@language {basque}
+\select@language {basque}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Eguzki-sistema}}{xvi}{figure.caption.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Planeten arteko distantziak.}}}{xvi}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Planeten arteko masa konparaketa.}}}{xvi}{subfigure.1.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip kolokazio metodoak.\relax }}{xxviii}{figure.caption.26}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {kolokazio metodoak.}}}{xxviii}{subfigure.1.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pendulu bikoitza.\relax }}{xxxvii}{figure.caption.49}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Floating-point number line.\relax }}{xliv}{figure.caption.69}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 32-biteko koma-higikorra}}{xliv}{figure.caption.72}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Biribiltze errorea.\relax }}{xlviii}{figure.caption.88}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces www.top500.org, Top: total computing power of top 500 computers. Middle: 1 computer. Bottom: 500 computer.\relax }}{lii}{figure.caption.94}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Memoria hierarkia.\relax }}{liii}{figure.caption.107}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Shared Memory System.\relax }}{lv}{figure.caption.115}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Distribuited Memory System.\relax }}{lv}{figure.caption.116}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Shared Memory System (UMA).\relax }}{lvi}{figure.caption.118}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Fork-Join.\relax }}{lvii}{figure.caption.121}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces BLAS speeds.\relax }}{lix}{figure.caption.124}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Interpolazioa.\relax }}{lxxi}{figure.caption.145}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip We show Non-Chaotic case (a,b) and Chaotic case (c,d). Left figure mean energy error evolution $\mathaccentV {bar}016{\triangle E_i}$ and right figure mean Global error evolution $\mathaccentV {bar}016{Ge_i}$ of the 100 integrations for \textit {Ideal Integrator} (black) , \textit {Double prec} (blue) and \textit {Classic Implementation} (gray).\relax }}{lxxviii}{figure.caption.157}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Non chaotic: energy error.}}}{lxxviii}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Non chaotic: global error.}}}{lxxviii}{subfigure.2.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chaotic: energy error.}}}{lxxviii}{subfigure.2.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Chaotic: global error.}}}{lxxviii}{subfigure.2.4}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Histogram of energy errors for Non-Chaotic case (a,b) and for Chaotic case (c,d).\relax }}{lxxix}{figure.caption.159}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Non-Chaotic: Ideal.}}}{lxxix}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Non-Chaotic: rdigits=0.}}}{lxxix}{subfigure.3.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chaotic: Ideal.}}}{lxxix}{subfigure.3.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Chaotic: rdigits=0.}}}{lxxix}{subfigure.3.4}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Estimation round-off error. We compare evolution of our estimation error (blue) with evolution of global error (black). Estimation Quality. We show mean (blue) and standard deviation (red) of the quality according our definition of (\ref {eq:eq_Qi}).\relax }}{lxxx}{figure.caption.161}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Non Chaotic: estimation}}}{lxxx}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Non Chaotic: quality of estimation}}}{lxxx}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Chaotic: estimation}}}{lxxx}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Chaotic: quality of estimation}}}{lxxx}{subfigure.4.4}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip N-body: left figure mean energy error evolution $\mathaccentV {bar}016{\triangle E_i}$ and right figure mean Global error evolution $\mathaccentV {bar}016{Ge_i}$ of the 100 integrations for Ideal Integrator (black) and Double prec(blue).\relax }}{lxxx}{figure.caption.162}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Energy error.}}}{lxxx}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Global error.}}}{lxxx}{subfigure.5.2}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Left estimation round-off error, we compare evolution of our estimation error (blue) with evolution of global error (black). Right estimation Quality ,we show mean (blue) and standard deviation (red) of the quality according our definition of (\ref {eq:eq_Qi}). We use rdigits1=0 and rdigits2=3.\relax }}{lxxxi}{figure.caption.163}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Estimation.}}}{lxxxi}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Quatlity.}}}{lxxxi}{subfigure.6.2}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

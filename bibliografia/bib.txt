@@ -1,0 +1,26 @@
+@book{overton2001numerical,
+  title={Numerical computing with IEEE floating point arithmetic},
+  author={Overton, Michael L},
+  year={2001},
+  publisher={Siam}
+}
+
+@book{muller2009handbook,
+  title={Handbook of floating-point arithmetic},
+  author={Muller, Jean-Michel and Brisebarre, Nicolas and De Dinechin, Florent and Jeannerod, Claude-Pierre and Lefevre, Vincent and Melquiond, Guillaume and Revol, Nathalie and Stehl{\'e}, Damien and Torres, Serge},
+  year={2009},
+  publisher={Springer Science \& Business Media}
+}
+
+@article{corless2013graduate,
+  title={A graduate introduction to numerical methods},
+  author={Corless, Robert M and Fillion, Nicolas},
+  journal={AMC},
+  volume={10},
+  pages={12},
+  year={2013},
+  publisher={Springer}
+}
+
+
+

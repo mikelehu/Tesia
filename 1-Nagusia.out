@@ -1,0 +1,74 @@
+\BOOKMARK [-1][-]{part.1}{I Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Sarrera.}{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Context of the Study}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Problem statement or motivation for the study.}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Aim and scope}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Overview of the study \(structure of the Thesis\).}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{laburpena}{chapter.1}% 7
+\BOOKMARK [-1][-]{part.2}{II Background}{}% 8
+\BOOKMARK [0][-]{chapter.2}{Zenbakizko Integratzaile Sinplektikoak.}{part.2}% 9
+\BOOKMARK [1][-]{section.2.1}{Sarrera.}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.1.1}{Zenbakizko metodoak.}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.2}{Sistema-Hamiltondarrak.}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.3}{Metodo sinplektikoak.}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Gauss metodoak.}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{Runge-Kutta metodoak.}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{Kolokazio metodoak.}{section.2.2}% 16
+\BOOKMARK [1][-]{section.2.3}{Konposizio metodoak.}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{Konposizio metodoak.}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.2}{Gure inplementazioa.}{section.2.3}% 19
+\BOOKMARK [1][-]{section.2.4}{Splitting metodoak.}{chapter.2}% 20
+\BOOKMARK [2][-]{subsection.2.4.1}{Splitting metodoak.}{section.2.4}% 21
+\BOOKMARK [2][-]{subsection.2.4.2}{Erreferentzia.}{section.2.4}% 22
+\BOOKMARK [1][-]{section.2.5}{Kepler fluxua.}{chapter.2}% 23
+\BOOKMARK [1][-]{section.2.6}{Laburpena.}{chapter.2}% 24
+\BOOKMARK [0][-]{chapter.3}{Problemak.}{part.2}% 25
+\BOOKMARK [1][-]{section.3.1}{Sarrera.}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.2}{Pendulu bikoitza.}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.2.1}{Ekuazioak.}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.2}{Hasierako balioak.}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.3}{Kodeak.}{section.3.2}% 30
+\BOOKMARK [1][-]{section.3.3}{N-Body problema.}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.1}{Ekuazioak.}{section.3.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.2}{Hasierako balioak.}{section.3.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.3}{Kodeak.}{section.3.3}% 34
+\BOOKMARK [0][-]{chapter.4}{Koma Higikorreko Aritmetika.}{part.2}% 35
+\BOOKMARK [1][-]{section.4.1}{Sarrera.}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.2}{Adierazpena.}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.3}{Biribiltze errorea.}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.3.1}{Tresnak.}{section.4.3}% 39
+\BOOKMARK [1][-]{section.4.4}{Laburpena.}{chapter.4}% 40
+\BOOKMARK [0][-]{chapter.5}{Scientific Computing.}{part.2}% 41
+\BOOKMARK [1][-]{section.5.1}{Sarrera.}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.2}{Parallel Hardware.}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.3}{Software liburutegiak.}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.4}{Laburpena.}{chapter.5}% 45
+\BOOKMARK [0][-]{chapter.6}{Review.}{part.2}% 46
+\BOOKMARK [1][-]{section.6.1}{Sarrera.}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.2}{Efemerideak.}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.3}{Eguzki-sistemaren integrazio luzeak.}{chapter.6}% 49
+\BOOKMARK [-1][-]{part.3}{III Core}{}% 50
+\BOOKMARK [0][-]{chapter.7}{IRK: Puntu-Finkoa.}{part.3}% 51
+\BOOKMARK [1][-]{section.7.1}{Sarrera.}{chapter.7}% 52
+\BOOKMARK [1][-]{section.7.2}{Hairer-en inplementazioa.}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.3}{Gure inplementazioa.}{chapter.7}% 54
+\BOOKMARK [2][-]{subsection.7.3.1}{Koefizienteak \(1.proposamena\).}{section.7.3}% 55
+\BOOKMARK [2][-]{subsection.7.3.2}{Geratze irizpidea \(2.proposamena\).}{section.7.3}% 56
+\BOOKMARK [2][-]{subsection.7.3.3}{Batura konpensatua \(3.proposamena\).}{section.7.3}% 57
+\BOOKMARK [2][-]{subsection.7.3.4}{Biribiltze errorearen estimazioa \(4.proposamena\).}{section.7.3}% 58
+\BOOKMARK [2][-]{subsection.7.3.5}{Atalen hasieraketa.}{section.7.3}% 59
+\BOOKMARK [2][-]{subsection.7.3.6}{Gauss-Seidel.}{section.7.3}% 60
+\BOOKMARK [2][-]{subsection.7.3.7}{Algoritmoa.}{section.7.3}% 61
+\BOOKMARK [1][-]{section.7.4}{Esperimentuak.}{chapter.7}% 62
+\BOOKMARK [2][-]{subsection.7.4.1}{Doitasun azterketa.}{section.7.4}% 63
+\BOOKMARK [2][-]{subsection.7.4.2}{Brouwer legea.}{section.7.4}% 64
+\BOOKMARK [2][-]{subsection.7.4.3}{Pendulu bikoitza.}{section.7.4}% 65
+\BOOKMARK [2][-]{subsection.7.4.4}{N-Body problema.}{section.7.4}% 66
+\BOOKMARK [0][-]{chapter.8}{IRK: Newton.}{part.3}% 67
+\BOOKMARK [1][-]{section.8.1}{Sarrera.}{chapter.8}% 68
+\BOOKMARK [0][-]{chapter.9}{IRK: Eguzki-sistema.}{part.3}% 69
+\BOOKMARK [1][-]{section.9.1}{Sarrera.}{chapter.9}% 70
+\BOOKMARK [1][-]{section.9.2}{Meta-Algoritmoa.}{chapter.9}% 71
+\BOOKMARK [-1][-]{part.4}{IV synthesys}{}% 72
+\BOOKMARK [0][-]{chapter.10}{Eranskinak}{part.4}% 73
+\BOOKMARK [1][-]{section.10.1}{Kepler ekuazioak eta definizioak.}{chapter.10}% 74

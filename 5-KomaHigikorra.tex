@@ -1,12 +1,12 @@
-\section{Koma Higikorreko Aritmetika.}
+\chapter{Koma Higikorreko Aritmetika.}
 
-\subsection{Sarrera.}
+\section{Sarrera.}
 
-Gaur-egungo konputagailuetan,  IEEE-754 estandarraren araberako koma-higikorreko artimetika erabiltzen da. Koma-higikorreko aritmetikaren gaiak ez dira zenbaki errealak, koma-higikorreko zenbakiak baizik. Zenbaki errealak bit kopuru finituen bidez adierazten dira eta adierazpen finitu honek, biribiltze errorea eragiten du. Zenbakizko integrazio luzeetan  biribiltze errorearen garapenak garrantzia handia du eta errore honen gaineko ahalegin berezia beharrezkoa da.    
+Gaur-egungo konputagailuetan, IEEE-754 estandarraren araberako koma-higikorreko aritmetika erabiltzen da. Koma-higikorreko aritmetikaren gaiak ez dira zenbaki errealak, koma-higikorreko zenbakiak baizik. Zenbaki errealak bit kopuru finituen bidez adierazten dira eta adierazpen finitu honek, biribiltze errorea eragiten du. Zenbakizko integrazio luzeetan  biribiltze errorearen garapenak garrantzia handia du eta errore honen gaineko ahalegin berezia beharrezkoa da.    
 
-\subsection{Adierazpena.}
+\section{Adierazpena.}
 
-\paragraph*{\textbf{Definizioa}.}  Koma-higikorreko adierazpen zehatza duen zenbaki errealei koma-higikorreko zenbakiak deritzogu. Koma-higikorreko zenbakien multzoa ${\mathbb{F}}$ izendatuko dugu eta $\phi:\mathbb{F} \rightarrow W$ koma-higikorreko adierazpen funtzioa. 
+\paragraph*{\textbf{Definizioa.}} Koma-higikorreko adierazpen zehatza duen zenbaki errealei koma-higikorreko zenbakiak deritzogu. Koma-higikorreko zenbakien multzoa ${\mathbb{F}}$ izendatuko dugu eta $\phi:\mathbb{F} \rightarrow W$ koma-higikorreko adierazpen funtzioa. 
 
 \begin{equation*}
 \mathbb{F}\subset \mathbb{R},
@@ -15,7 +15,7 @@ Gaur-egungo konputagailuetan,  IEEE-754 estandarraren araberako koma-higikorreko
 \mathbb{F}=\{x \in \mathbb{R} \ \mid \ \phi(x) \in W\}.
 \end{equation}
 
-\paragraph*{}$\mathbb{F}$ zenbaki multzoa finitua da. Bai zenbaki positiboentzat,bai negatiboentzat, adieraz daitekeen zenbaki handienaren eta txikienaren arteko balio bakanez osatuta dago. Multzoaren kanpokaldean zenbaki hauek guztiak ditugu: batetik overflow tartean $(-\infty,\max_{x \in \mathbb{F_{-}}}|x|)$  eta $(\max_{x \in \mathbb{F_{+}}}|x|,\infty+)$ daudenak; bestetik underflow tartean  $(\min_{x \in \mathbb{F_{-}}}|x|,0)$ eta $(0,\min_{x \in \mathbb{F_{+}}}|x|)$ daudenak. 
+\paragraph*{}$\mathbb{F}$ zenbaki multzoa finitua da. Bai zenbaki positiboentzat,bai negatiboentzat, adieraz daitekeen zenbaki handienaren eta txikienaren arteko balio bakanez osatuta dago. Multzoaren kanpoaldean zenbaki hauek guztiak ditugu: batetik overflow tartean $(-\infty,\max_{x \in \mathbb{F_{-}}}|x|)$  eta $(\max_{x \in \mathbb{F_{+}}}|x|,\infty+)$ daudenak; bestetik underflow tartean  $(\min_{x \in \mathbb{F_{-}}}|x|,0)$ eta $(0,\min_{x \in \mathbb{F_{+}}}|x|)$ daudenak. 
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=12cm, height=2cm] {KomaHigikorra1}}
@@ -23,10 +23,10 @@ Gaur-egungo konputagailuetan,  IEEE-754 estandarraren araberako koma-higikorreko
 \label{fig:three}
 \end{figure} 
 
-\paragraph*{} IEEE-785 estadarraren arabera, $n$-biteko koma-higikorrezko adierazpenak bi zati ditu,
+\paragraph*{} IEEE-785 estandarraren arabera, $n$-biteko koma-higikorrezko adierazpenak bi zati ditu,
 \begin{enumerate}
 \item $m$ bitez osatutako zatia , mantisa deitutakoa eta $M$ zenbaki erreala adierazten duena. Horietako bit bat ($S_M$) zeinua adierazten du. Bestalde $M$ mantisa modu normalizatu honetan emana da, $\pm 1.F$ eta zati erreala ($F$) bakarrik gordetzen da.   
-\item Exponentea ($E$), $(n-m)$ bitez adierazitako zenbaki osoa. Zeinuarentzat ez da bit zehatz bat erabiltzen, baizik \it {bias} izeneko balio bat gehituz adierazten dira zenbaki positiboak eta negatiboak.  
+\item Esponentea ($E$), $(n-m)$ bitez adierazitako zenbaki osoa. Zeinuarentzat ez da bit zehatz bat erabiltzen, baizik \it {bias} izeneko balio bat gehituz adierazten dira zenbaki positiboak eta negatiboak.  
 \end{enumerate}
 
 \paragraph*{} Eta beraz, oinarri bitarrean koma-higikorreko zenbaki hauek adierazten dira,
@@ -36,12 +36,12 @@ M \times b^E, \ b=2.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=10cm, height=1cm] {KomaHigikorra2}}
-\caption{\small 32-biteko koma-higikorreko zenbakiaren adierazpena: exponentearentzat 8 bit eta mantisarentzat 24 bit (bit bat zeinuarentzat eta beste 23 bit, $1.F$ eran normalizatutako mantisarentzat) banatuta.}
+\caption[32-biteko koma-higikorra]{\small 32-biteko koma-higikorreko zenbakiaren adierazpena: esponentearentzat 8 bit eta mantisarentzat 24 bit (bit bat zeinuarentzat eta beste 23 bit, $1.F$ eran normalizatutako mantisarentzat) banatuta.}
 \label{fig:three}
 \end{figure} 
 
 \paragraph*{} 
-Bi koma-higikor zenbaki jarraien arteko diferentzia,
+Bi koma-higikor zenbaki jarraituen arteko diferentzia,
 \begin{equation*}
 \triangle x=x_1-x_2= 2^{E-m+1}
 \end{equation*} 
@@ -76,21 +76,21 @@ u=\frac{\epsilon_M}{2}=2^{-m}
 \end{tabular}
 \end{table}
 
-Gaur egungo konputagailuetan, Single eta Double koma-higikorreko aritmetika Hardwarez inplementatuta dago eta oso azkarrak dira. Single koma-higikorreko aritmetikak Double baino azkarragoa da: batetik garraiatu behar den bit kopuru erdia da eta bestetik, Inteleko txipen \it SSE modulo bereziei esker eragiketa artihmetikoak azkarragoak dira.
+Gaur egungo konputagailuetan, Single eta Double koma-higikorreko aritmetika Hardwarez inplementatuta dago eta oso azkarra da. Single koma-higikorreko aritmetikak Double baino azkarragoa da: batetik garraiatu behar den bit kopuru erdia da eta bestetik, Inteleko txipen \it SSE modulo bereziei esker eragiketa aritmetikoak azkarragoak dira.
 
-2008. urtean, IEEE-785 estandarrak 128 biteko koma-higikorreko aritmetika onartu zuen. Quadruple aritmetika softwarez inplementatuta dago eta horregaitik exekuzio motela da, gutxigorabehera Double aritmetika bainon 10 aldiz garestiago. Horretarako hainbat liburutegi daude, guk GCC libquadmath liburutegia aukeratu dugu gure garapeneterako.
+2008. urtean, IEEE-785 estandarrak 128 biteko koma-higikorreko aritmetika onartu zuen. Quadruple aritmetika softwarez inplementatuta dago eta horregatik exekuzio motela da, gutxi gorabehera Double aritmetika baino 10 aldiz garestiago. Horretarako hainbat liburutegi daude, guk GCC libquadmath liburutegia aukeratu dugu gure garapeneterako.
 
-Bestalde, badaude doitasun arbitrariotan lan egiteko beste software batzuk ere. Doitasun altuetako kalkulu hauekin, soluzio zehatzak lortzen dira eta horrela, algoritmoen testak egiteko bidea ematen dute. Matlab eta Mathematica bezalako softwareetan doitasun handian lan egiteko aukera ematen dute eta beraz, algoritmo berri baten garapenean oso tresna erabilgarriak izan daitezke.
+Bestalde, badaude doitasun arbitrariotan lan egiteko beste lan-ingurune (Problem Solving Enviroment \cite{Higham2015}) batzuk ere. Doitasun altuetako kalkulu hauekin, soluzio zehatzak lortzen dira eta horrela, algoritmoen testak egiteko bidea ematen dute. Matlab eta Mathematica bezalako softwareetan doitasun handian lan egiteko aukera ematen dute eta beraz, algoritmo berri baten garapenean oso tresna erabilgarriak izan daitezke.
 
  
-\subsection{Biribiltze errorea.}
+\section{Biribiltze errorea.}
 
-Bi motako biribiltze errorea dugu, bata adierzapen errorea eta beste eragiketa (aritmetika) errorea.  
+Bi motako biribiltze errorea dugu, bata adierazpen errorea eta beste eragiketa (aritmetika) errorea.  
 
-\subsubsection*{Adierazpen errorea.} 
+\subsection*{Adierazpen errorea.} 
 
 $x \in \mathbb{R}$ eta $fl: \mathbb{R} \rightarrow \mathbb{F}$ 
-koma-higikorreko zenbaki gertuen esleitzen duen funtzioa emanik, errore absolutuaren  $\triangle x$ definizioa,
+koma-higikorreko gertuen dagoen zenbakia esleitzen duen funtzioa emanik, errore absolutua,
 
 \begin{equation*}
 \triangle x= fl(x)-x= \tilde{x}-x,  
@@ -107,7 +107,7 @@ Aurreko bi definizioen ondorioz honako formula erabilgarria dugu,
 \end{equation*}
 zeinek IEEE-785 estandarrak $|\delta x|<u$ dela bermatzen duen.
 
-\subsubsection*{Eragiketen errorea.} 
+\subsection*{Eragiketen errorea.} 
  
 Zenbaki errealen arteko funtsezko eragiketak  $\ast: \mathbb{R}^2\rightarrow \mathbb{R}$, hauek dira
 \begin{equation*}
@@ -119,7 +119,7 @@ Modu berean, koma-higikorrezko zenbakien arteko funtsezko eragiketak hauek dira 
 \circledast\in \{\oplus,\ominus,\otimes,\oslash \}.
 \end{equation*}
 
-$\tilde x,\tilde y \in \mathbb{F}$ emanik eta $z= \tilde x \ast \tilde y$ emaitza zehatza bada, $\tilde z= \tilde x \circledast \tilde y$ eragiketaren emaitzaren errore absulotua eta erlaziboak definituko ditugu,
+$\tilde x,\tilde y \in \mathbb{F}$ emanik eta $z= \tilde x \ast \tilde y$ emaitza zehatza bada, $\tilde z= \tilde x \circledast \tilde y$ eragiketaren emaitzaren errore absolutua eta errore erlatiboa definituko ditugu,
 \begin{equation*}
 \triangle z=\tilde z-z =(\tilde x \circledast \tilde y) -(\tilde x \ast \tilde y)
 \end{equation*} 
@@ -128,27 +128,27 @@ $\tilde x,\tilde y \in \mathbb{F}$ emanik eta $z= \tilde x \ast \tilde y$ emaitz
 \delta z=\frac{\triangle z}{z}==\frac{(\tilde x \circledast \tilde y) -(\tilde x \ast \tilde y)}{(\tilde x \ast \tilde y)}
 \end{equation*} 
 
+Modu berean honako erlazio dugu,
 \begin{equation*}
-\tilde z=(\tilde x \circledast \tilde y)=z+\triangle z=z(1+\delta z), \ |\delta z|<u. 
+\tilde z=(\tilde x \circledast \tilde y)=z+\triangle z=z(1+\delta z),  
 \end{equation*}
+eta IEEE-785 estandarrak \ $|\delta z|<u$ dela bermatzen du.
 
 
 \paragraph*{\textbf{Adibidea.}}
-Errore erlatiboak emitzaren digitu zuzenak neurtzen du:
+
+Errore erlatiboak emaitzaren digitu zuzenak neurtzen du:
 \begin{equation*}
-\delta z \approx 10^{-k} \Rightarrow \ \approx \ k \ digitu \ zuzen.
+\delta z \approx 10^{-k} \Rightarrow \ \approx \ k \ \mbox{digitu hamartar zuzen}.
 \end{equation*}  
 
-\subsubsection*{Ezabapen arazoa.}
+\subsection*{Ezabapen arazoa.}
 
-Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbaki kentzen ditugunean gerta daitekeena. 
+Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbaki arteko kendura egiten dugunean gerta daitekeena. 
 
-\paragraph*{\textbf{Adibidea}}.
+\paragraph*{\textbf{Adibidea}.}
 
-CatastrophicCancelation.nb adibidea idatzi.
-
-
-\begin{lstlisting}
+\begin{lstlisting} [language=Mathematica]
 >>  InputForm[N[Pi]]
 >> 3.141592653589793
 
@@ -158,17 +158,17 @@ CatastrophicCancelation.nb adibidea idatzi.
 
 >> z=1.+y;
 >> InputForm[z]
->> 1.0000000003141594
+>> 1.0000000003141594           # 16-digitu hamartar zuzenak.
 
 >> InputForm[z-1.]
->> 3.141593651889707*10^(-10)
+>> 3.141593651889707*10^(-10)   # 6-digitu hamartar zuzenak.
 
 \end{lstlisting}
  
 
-\subsubsection*{Errore propagazioa.}
+\subsection*{Errore propagazioa.}
 
-Konputazioetan eragiketa aritmetiko kopuru handia egin behar dugu emaitza lortzeko eta biribiltze errorea metatu daiteke. Batzuetan, eragiketa bakoitzeko biribiltze errorea elkar ezereztatzen da baina kasu txarrenean, biribiltze errorea metatu eta magnitude handikoa izan daiteke.   
+Konputazioetan, eragiketa aritmetiko kopuru handia egin behar dugu emaitza lortzeko eta biribiltze errorea metatu daiteke. Batzuetan, eragiketa bakoitzeko biribiltze errorea elkar ezereztatzen da baina kasu txarrenean, biribiltze errorea metatu eta magnitude handikoa izan daiteke.   
 
 \paragraph*{\textbf{Adibidea}.} 
 Modu honetako batura batean , non $n>2$ eta $\tilde x_1,\dots,\tilde x_n \in \mathbb{F}$,  ezin daiteke bermatu,  
@@ -183,13 +183,13 @@ Modu honetako batura batean , non $n>2$ eta $\tilde x_1,\dots,\tilde x_n \in \ma
   +\tilde x_3 (1+\delta_2), \ \ \delta_1,\delta_2<u.
 \end{equation*}
 
-\subsubsection{Tresnak.}
+\subsection{Tresnak.}
 \subsubsection*{Batura konpensatua.}
    
-Batura errekurtsiboetan, biribiltze errorea gutxitzeko metodoa dugu.
+Batura errekurtsiboetan, biribiltze errorea gutxitzeko metodoa dugu \cite{Higham2002}.
 Ideia da, bi zenbakien baturan egindako biribiltze errorearen estimazioa lortu eta estimazio hau hurrengo baturan erabiltzea.
 
-\paragraph*{} Estimazioa nola kalkulatu azaltzeko ikus irudia (Fig. \ref{fig:lau}). Koma-higikorreko bi zenbaki baditugu, $\tilde x,\tilde y \in \mathbb{F}$ non $|\tilde x| \geq |\tilde y|$, eta $\tilde z= \tilde x \oplus \tilde y$ ,
+\paragraph*{} Estimazioa nola kalkulatu azaltzeko ikus irudia (Irudia \ref{fig:lau}). Koma-higikorreko bi zenbaki baditugu, $\tilde x,\tilde y \in \mathbb{F}$ non $|\tilde x| \geq |\tilde y|$, eta $\tilde z= \tilde x \oplus \tilde y$ ,
 
 \begin{equation*}
 \tilde e= - \bigg(\big(( \tilde x \oplus \tilde y) \ominus \tilde x\big) \ominus \tilde y\bigg) = (\tilde x \ominus \tilde z) \oplus \tilde y
@@ -201,7 +201,7 @@ Ideia da, bi zenbakien baturan egindako biribiltze errorearen estimazioa lortu e
 \label{fig:lau}
 \end{figure} 
 
-Lortutako errore estimazioa, koma-higikorreko aritmetikan zehazki benetazko biribiltze errorea da (frogapena Kahan),
+Lortutako errore estimazioa, koma-higikorreko aritmetikan zehazki benetako biribiltze errorea da,
 \begin{equation*}
 \tilde x+\tilde y= \tilde z+\tilde e.
 \end{equation*}
@@ -223,17 +223,34 @@ Lortutako errore estimazioa, koma-higikorreko aritmetikan zehazki benetazko biri
  \caption{Batura konpensatua.}
 \end{algorithm}
 
-\subsection*{Theorem Sterbenz}.
-Let x and y be floating point numbers with $\frac{y}{2}\leq x \leq 2y$. Then $x-y$ is computed exactly (assuming $x-y$ does not underflow.
 
-\subsection*{FMA.}
-IEEE-785 (2008 revision).
+\subsubsection*{Biderketaren errore estimazioa.}
+Konputagailu berrietan , hardware unitate bereziak bermatzen du biribiltze errore bakarra era honetako eragiketean,
 
 \begin{equation*}
-\tilde x \otimes \tilde y \oplus \tilde z= (\tilde x \times \tilde y+ \tilde z) (1+\delta), \ \delta<u 
+\tilde x \otimes \tilde y \oplus \tilde z= (\tilde x \times \tilde y+ \tilde z) (1+\delta), \ \delta<u.
 \end{equation*}
 
-\subsection{Laburpena.}
+Orduan konputagailuak FMA (fused multiply-add) eragiketak exekutatzen dituela esan ohi da. Hau honela den kasuetan, modu errezan estimatu daiteke biderketa baten biribiltze errorea,
 
 
+\begin{equation*}
+\tilde{z}=\tilde{x}\otimes\tilde{y}, \ \ \tilde{e}=(\tilde{x}\otimes\tilde{y})\ominus \tilde{z}
+\end{equation*}
+
+
+\subsubsection*{Sterbenz Teorema.}
+Sterbenz teoremaren arabera \cite{Sterbenz1973}, bi zenbaki elkarrekiko  gertu daudenean,  horien arteko kendura zehatza da.
+
+\begin{equation}
+\label{eq:4311}
+x,y \in \mathbb{F}, \ \ \frac{y}{2}\leq x \leq 2y \ \ \ \Rightarrow \ \ \ x-y\in \mathbb{F}
+\end{equation}
+
+
+
+
+\section{Laburpena.}
+
+Koma-higikorreko aritmetikan sakontzeko honako biografia azpimarratuko dugu, Overton \cite{Overton2001}, Muller  \cite{Muller2009} eta Corless \cite{Corless2013}.
 

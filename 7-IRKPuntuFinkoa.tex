@@ -1,23 +1,23 @@
-\section{IRK: Puntu-Finkoa.}
+\chapter{IRK: Puntu-Finkoa.}
 
-\subsection{Sarrera.}
+\section{Sarrera.}
 
-Gure helburua, biribiltze errore txikia duen IRK metodoaren inplementazioa proposatzea da. Integrazioaren exekuzio denborak onargarriak izan daitezen behartuta, honako aurrebaldintza finkatu dugu: ekuazio diferentzialaren eskubi aldeko funtzioaren 
-sarrera eta irteera argumentuak makina zenbakiak izatea, hau da, konputagailuan Hardware bidezko exekuzioa (azkarra) duen koma-higikorrezko aritmetika erabiltzea. Gaur-egun, zientzia-konputazioan \it{double} ($64$ bit) koma-higigorrezkoa aritmetikarekin lan egiten da eta beraz, praktikan erabiltzaileak ekuazio diferentziala \it{double} datu-mota honetan zehaztuko duela suposatuko dugu.      
+Gure helburua, biribiltze errore txikia duen IRK metodoaren inplementazioa proposatzea da. Integrazioaren exekuzio denborak onargarriak izan daitezen behartuta, honako aurrebaldintza finkatu dugu: ekuazio diferentzialaren eskuin aldeko funtzioaren 
+sarrera eta irteera argumentuak makina zenbakiak izatea, hau da, konputagailuan Hardware bidezko exekuzioa (azkarra) duen koma-higikorrezko aritmetika erabiltzea. Gaur-egun, zientzia-konputazioan \it{double} ($64$ bit) koma-higikorrezko aritmetikarekin lan egiten da eta beraz, praktikan erabiltzaileak ekuazio diferentziala \it{double} datu-mota honetan zehaztuko duela suposatuko dugu.      
 
-\paragraph*{} Lehenengo Hairer-en inplementazioa aztertuko dugu. Ondoren, IRK inplementazioa hobetzeko gure proposamenak azalduko ditugu. Azkenik, zenbakizko esperimentoetan erakutsiko dugu gure inplementazioaren emaitzak.
+\paragraph*{} Lehenengo Hairer-en inplementazioa aztertuko dugu. Ondoren, IRK inplementazioa hobetzeko gure proposamenak azalduko ditugu. Azkenik, zenbakizko gure inplementazioaren emaitzak erakutsiko dugu.
 
-\subsection{Hairer-en inplementazioa.}
+\section{Hairer-en inplementazioa.}
 
-Gure abiapuntua, Haier et al. [?] proposatutako inplementazio hartu dugu.  
+Gure abiapuntua, Haierek \cite{Hairer2008} proposatutako inplementazio hartu dugu.  
 Lan honetan, IRK metodo sinplektikoaren puntu-finkoaren inplementazio estandarraren biribiltze errorearen garapen okerraz jabetu ziren eta gainera, metodo sinplektiko esplizituetan agertzen ez zena. Hauen ustez, bi ziren errore honen jatorriak:
 
 \begin{enumerate}
 \item Integrazioan $a_{ij}, b_i \in \mathbb{R}$ koefiziente zehatzak erabili ordez, biribildutako $\tilde a_{ij},\tilde b_i \in \mathbb{F}$ erabiltzeak, aplikatutako IRK metodoa zehazki sinpletikoa ez izatea eragiten du.
-\item Puntu-finkoaren geratze erizpide estandarra dela eta, urrats bakoitzean errore sistematikoa gertatzen da.
+\item Puntu-finkoaren geratze irizpide estandarra dela eta, urrats bakoitzean errore sistematikoa gertatzen da.
 \end{enumerate}    
 
-\paragraph*{}Arrazoi hauek aztertu ondoren, honako konpobideak proposatu zituzten:
+\paragraph*{}Arrazoi hauek aztertu ondoren, honako konponbideak proposatu zituzten:
 
 \begin{enumerate}
 \item Doitasun handiagoko koefizienteak erabili, hauetako bakoitza bi koma-higikorreko koefizienteen batura kontsideratuz $a_{ij}= a^{\ast}_{ij}+\tilde a_{ij}, \ b_i= b^{\ast}_i+\tilde b_i$.
@@ -30,7 +30,7 @@ Lan honetan, IRK metodo sinplektikoaren puntu-finkoaren inplementazio estandarra
   	 	
 \end{enumerate}
 
-Jarraian Hairer-en algoritmoa laburtuko dugu  (notazioa sinplifikatze aldera $Y_{n,i}$ gaiaren ordez, $Y_i$ adierazpenak erabiliko ditugu).
+Jarraian Hairer-en algoritmoa laburtuko dugu  (notazioa sinplifikatze aldera $Y_{n,i}$ gaiaren ordez, $Y_i$ adierazpena erabiliko dugu).
 
 \begin{algorithm}[h]
  \BlankLine
@@ -62,12 +62,12 @@ Jarraian Hairer-en algoritmoa laburtuko dugu  (notazioa sinplifikatze aldera $Y_
 \end{algorithm}
 
 
-\subsection{Gure inplementazioa.}
+\section{Gure inplementazioa.}
 
-IRK metodoaren puntu-finkoaren inplementazioan lau proposamen berri egin ditugu. Lehen bi proposamenak  Hairer-ek bere lanean proposatutako konponbideen hobekuntzak dira. Batetik, IRK-ren birformulazio bat erabiliz, IRK metodoaren koma-higikorrezko koefizienteak sinplektizidade baldintza zehazki betetzea lortuko dugu. Bestetik, geratze erizpidean arazo batzu topatu ditugu eta arazo hauek gainditzen dituen geratze erizpide sendoagoa garatu dugu. Beste bi proposamenak dagokionez, bata batura-konpensatuari erlazionatuta dago eta bestea biribiltze errorea monitorizatzeko proposamena da.
+IRK metodoaren puntu-finkoaren inplementazioan lau proposamen berri egin ditugu. Lehen bi proposamenak  Hairer-ek bere lanean proposatutako konponbideen hobekuntzak dira. Batetik, IRK-ren birformulazio bat erabiliz, IRK metodoaren koma-higikorrezko koefizienteak sinplektizidade baldintza zehazki betetzea lortuko dugu. Bestetik, geratze irizpidean arazo batzuk topatu ditugu eta arazo hauek gainditzen dituen geratze irizpide sendoagoa garatu dugu. Beste bi proposamenak dagokionez, bata batura-konpensatuari erlazionatuta dago eta bestea biribiltze errorea monitorizatzeko proposamena da.
 \paragraph*{} Bestalde kapitulu honen bukaeran, batetik interpolazio bidezko atalen hasieraketa eta bestetik, Gauss-Seidel moduko puntu-finkoaren iterazioak azaldu ditugu. Bukatzeko, gure algoritmoa azalduko dugu.  
 
-\subsubsection{Koefizienteak (1.proposamena).}
+\subsection{Koefizienteak (1.proposamena).}
 
 IRK metodoa definitzen duten $a_{ij},b_i$ koefizienteak, biribildutako $\tilde a_{ij},\tilde b_i \in \mathbb{F}$ ordezkatzerakoan, sinpletizide baldintza ez da beteko,
 \begin{equation} \label{eq:61}
@@ -92,18 +92,18 @@ non
 \mu_{ij}=\frac{a_{ij}}{b_j}, \ \ 1 \le i,j \le s.
 \end{equation*}
 
-eta sinplekzidade baldintza,
+Eta sinplekzidade baldintza modu honetan berridatziko dugu,
 
 \begin{equation}
 \mu_{ij}+\mu_{ji}-1=0, \ \ \ 1 \le i,j \le s.
 \end{equation}
 
-\paragraph*{} Birformulazio honek formulazio estandarrarekiko duen abantaila handiena , sinplektizidade baldintzan biderketarik agertzen ez denez,  baldintza hau betetzen duten $\tilde \mu_{ij} \in \mathbb{F}$ koefizienteak aurkitzeko bidea errezten zaigu. Zehazki era honetan finkatuko ditugu gure koefizienteak:
+\paragraph*{} Formulazio honek  estandarrarekiko duen abantaila handiena , sinplektizidade baldintzan biderketarik agertzen ez denez,  baldintza hau betetzen duten $\tilde \mu_{ij} \in \mathbb{F}$ koefizienteak aurkitzeko bidea errazten zaigu. Zehazki era honetan finkatuko ditugu gure koefizienteak:
 
 \begin{enumerate}
 \item $\mu_{ij}$ koefizienteak.\\
 
-Batetik $s$-ataleko Gauss metodoetan, $\tilde \mu_{ii}:=\frac{1}{2}, \ i=1,\dots,s$. Bigarrenik $\tilde \mu_{ij}:=fl(\mu_{ij}), \ 1 \le j < i \le s$ finkatuko dugu. Azkenik $\frac{1}{2} < |\mu_{ij}| <2$ denez, eta Sterbenz-en Teoremaren arabera  $\tilde \mu_{ji}:=1-\tilde{\mu_{ij}}$ koma-higikorrezko adierazpen zehatza du. Ondorioz, simplektizitate baldintza zehazki betetzen duten koma-higikorrezko $\tilde \mu_{ij}$ koefizienteak lortu ditugu.   
+Batetik $s$-ataleko Gauss metodoetan, $\tilde \mu_{ii}:=\frac{1}{2}, \ i=1,\dots,s$. Bigarrenik $\tilde \mu_{ij}:=fl(\mu_{ij}), \ 1 \le j < i \le s$ finkatuko dugu. Azkenik $\frac{1}{2} < |\mu_{ij}| <2$ denez, eta Sterbenz-en Teoremaren (ikus. \ref{eq:4311}) arabera  $\tilde \mu_{ji}:=1-\tilde{\mu_{ij}}$ koma-higikorrezko adierazpen zehatza du. Ondorioz, simplektizitate baldintza zehazki betetzen duten koma-higikorrezko $\tilde \mu_{ij}$ koefizienteak lortu ditugu.   
 
 \begin{equation}
 \left(\begin{array}{cccc}
@@ -125,9 +125,9 @@ hb_1=hb_s:= h - \sum\limits_{i=2}^{s-1} hb_i
 
 \end{enumerate}
 
-\subsubsection{Geratze erizpidea (2.proposamena).}
+\subsection{Geratze irizpidea (2.proposamena).}
 
-Ekuazio inplizituaren (\ref{eq:62}) soluzioaren hurbilpena lortzeko puntu-finkoko iterazioa era honetan definituko dugu. Iterazioaren abiapuntua $Y_i^{[0]}$  finkatu eta $k=1,2,\dots$ iterazioetarako $Y_i^{[k]}$ hurbilpenak lortu dagokigun geratze erizpidea bete arte.
+Ekuazio inplizituaren (\ref{eq:62}) soluzioaren hurbilpena lortzeko puntu-finkoko iterazioa era honetan definituko dugu. Iterazioaren abiapuntua $Y_i^{[0]}$  finkatu eta $k=1,2,\dots$ iterazioetarako $Y_i^{[k]}$ hurbilpenak lortu dagokigun geratze irizpidea bete arte.
 
 \begin{equation}
 L_i^{[k]}=hb_if(Y_i^{[k-1]}), \ \ Y_i^{[k]}=y_n+\sum\limits_{j=1}^{s} \mu_{ij} L_j^{[k]}
@@ -142,9 +142,9 @@ L_i^{[k]}=hb_if(Y_i^{[k-1]}), \ \ Y_i^{[k]}=y_n+\sum\limits_{j=1}^{s} \mu_{ij} L
 \begin{equation}
 \|\triangle^{[k]}\| \le tol
 \end{equation}
-non $\|.\|$ aurre-finkatutako bektore norma eta tol tolerantzia errorea den . Tolerantzia txikiegia aukeratzen bada, gerta daiteke tolerantzi hori ez lortzea eta infinituki iterazioak exekutatzea. Baina tolerantzia ez bada behar adina txikia  aukeratzen, iterazioak puntu-finkora iritsi aurretik geratuko dira eta lortutako $Y_i^{[k]}$ hurbilpenaren errorea biribiltze errorea baino handiago izango da.
+non $\|.\|$ aurre-finkatutako bektore norma eta \emph{tol} tolerantzia errorea den . Tolerantzia txikiegia aukeratzen bada, gerta daiteke tolerantzia hori ez lortzea eta infinituki iterazioak exekutatzea. Baina tolerantzia ez bada behar adina txikia  aukeratzen, iterazioak puntu-finkora iritsi aurretik geratuko dira eta lortutako $Y_i^{[k]}$ hurbilpenak biribiltze errorea baino errore handiago izango du.
 
-\paragraph*{} Gogoratuz Hairer-ek proposatu zuen geratze erizpidea :  $\triangle^{[k]} = 0$ (puntu-finkora iritsi delako) ;  edo   $\triangle^{[k]} \geqslant \triangle^{[k-1]}$ (biribiltze errorea nagusi delako). Orokorrean, geratze erizpide honek ondo funzionatzen du baina batzuetan, iterazioak goizegi geratu direla konprobatu dugu. Gure iritziz, honen arrazoia da $\triangle^{[k]} \geqslant \triangle^{[k-1]}$ biribiltze errorea naguia dela adierazten duen arren, badago $j \in \{1,\dots,sd\}$ osagairik,   $|\triangle_j^{[k]}| < |\triangle_j^{[k-1]}|$ hobetzeko tartea duena. 
+\paragraph*{} Gogoratuz Hairer-ek proposatu zuen geratze irizpidea :  $\triangle^{[k]} = 0$ (puntu-finkora iritsi delako) ;  edo   $\triangle^{[k]} \geqslant \triangle^{[k-1]}$ (biribiltze errorea nagusi delako). Orokorrean, geratze irizpide honek ondo funtzionatzen du baina batzuetan, iterazioak goizegi geratu direla konprobatu dugu. Gure iritziz, honen arrazoia da $\triangle^{[k]} \geqslant \triangle^{[k-1]}$ biribiltze errorea nagusia dela adierazten duen arren, badago $j \in \{1,\dots,sd\}$ osagairik,   $|\triangle_j^{[k]}| < |\triangle_j^{[k-1]}|$ hobetzeko tartea duena. 
 
 \paragraph*{} Gure proposamena azaldutako arazoari soluzioa emateko asmoarekin, iterazioak jarraitzea honako baldintza betetzen ez den bitartean,
 
@@ -153,7 +153,7 @@ non $\|.\|$ aurre-finkatutako bektore norma eta tol tolerantzia errorea den . To
 \end{equation}
 
 
-\subsubsection{Batura konpensatua (3.proposamena).}
+\subsection{Batura konpensatua (3.proposamena).}
 
 Integrazioaren zenbakizko soluzioa  $y_n \approx y(t_n)$ ($n=1,2,\dots$) lortzeko, urrats bakoitzean honako batura dugu,
 \begin{equation*}
@@ -165,9 +165,9 @@ y_n=y_{n-1} + \phi(y_{n-1,h}).
 \phi(y_{n,h})=\sum\limits_{i=1}^{s} L_{n,i},
 \end{equation*}
 
-\paragraph*{title} non $L_{n,i}, (i=1,\dots,s)$ inplizituki definitzen diren.
+\paragraph*{} non $L_{n,i}$ ($i=1,\dots,s$) inplizituki definitzen diren.
 
-\paragraph*{} Urrats askotako integrazioetan, batura honetan gertatutako biribiltze erroreak doitasun galera garrantzitsua sortzen du. Beraz, zenbakizko integrazioetan oso erabilgarria zaigu batura konpensatu teknika aplikatzea biribiltze errorea gutxitzeko.
+\paragraph*{} Urrats askotako integrazioetan, batura honetan gertatutako biribiltze erroreak doitasun galera garrantzitsua sortzen du. Beraz, zenbakizko integrazioetan biribiltze errorea gutxitzeko oso erabilgarria zaigu batura konpensatu teknika aplikatzea.
 
 \begin{algorithm}[h]
  \BlankLine
@@ -185,13 +185,13 @@ y_n=y_{n-1} + \phi(y_{n-1,h}).
  \caption{Batura konpensatua}
 \end{algorithm}
 
-\paragraph*{}Badakigunez, $y_n \in \mathbb{R}^{d}, \ y_n=\tilde y_{n-1}+\tilde \delta_n$ soluzioa zehatza bada eta $\tilde y_n \in \mathbb{F}^{d}, \ \tilde y_n=\tilde y_{n-1} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, lortutako errore estimazioa $\tilde{e_n}$, zehazki benetazko biribiltze errorea da,
+\paragraph*{} $y_n \in \mathbb{R}^{d}$,  $y_n=\tilde y_{n-1}+\tilde \delta_n$ soluzioa zehatza izanik eta $\tilde y_n \in \mathbb{F}^{d}$,  $\tilde y_n=\tilde y_{n-1} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, lortutako errore estimazioa $\tilde{e_n}$ ,  zehazki benetako biribiltze errorea da,
 
 \begin{equation}
 y_n=\tilde {y}_n+\tilde {e}_n. 
 \end{equation}
 
-\paragraph*{} Horregaitik, IRK metodoaren inplementazioan, inplizituki $Y_{n,i}$ atalak askatzeko ekuazioetan, $\tilde {y}_n$ ordez $\tilde{y}_n \oplus \tilde{e}_n$  erabiltzea proposatzen dugu,   
+\paragraph*{} Horregatik, IRK metodoaren inplementazioan, inplizituki $Y_{n,i}$ atalak askatzeko ekuazioetan, $\tilde {y}_n$ ordez ($\tilde{y}_n \oplus \tilde{e}_n$) erabiltzea proposatzen dugu,   
 
 \begin{equation}
 L_i^{[k]}=hb_if(Y_i^{[k-1]}), \ \ Y_i^{[k]}=\tilde{y}_n \oplus \big(\tilde{e}_n \oplus \sum\limits_{j=1}^{s} \mu_{ij} L_j^{[k]}\big).
@@ -200,9 +200,9 @@ L_i^{[k]}=hb_if(Y_i^{[k-1]}), \ \ Y_i^{[k]}=\tilde{y}_n \oplus \big(\tilde{e}_n 
 \paragraph{}Aldaketa honekin, lortutako zenbakizko soluzioaren doitasuna pixka bat hobetzea espero dugu. 
 
 
-\subsubsection{Biribiltze errorearen estimazioa (4.proposamena).}
+\subsection{Biribiltze errorearen estimazioa (4.proposamena).}
 
-Zenbakizko integrazioaren biribiltze errorearen estimazioa, bigarren zenbakizko integrazio baten soluzioaren diferentzi gisa kalkulatuko dugu. Bigarren integrazio honetan, $Y_i^{[k]}$ atalak mantisa txikiagoko zenbakitara biribiltzen ditugu eta horrela doitasun gutxiagoko soluzioa lortzen dugu. 
+Zenbakizko integrazioaren biribiltze errorearen estimazioa, bigarren zenbakizko integrazio baten soluzioaren diferentzia gisa kalkulatuko dugu. Bigarren integrazio honetan, $Y_i^{[k]}$ atalak mantisa txikiagoko zenbakitara biribiltzen ditugu eta horrela doitasun gutxiagoko soluzioa lortzen dugu. 
 
 $r\ge0$ zenbaki osoa, eta $x \in \mathbb{F}$ ($m$ doitasunezko koma-higikorrezko zenbakia) izanik, honako funtzioa definituko dugu,\\
 
@@ -257,7 +257,7 @@ Gure algoritmoan estimazioa zuzenean lortzeko, bi integrazioak modu eraginkorrea
  \caption{RKG2: errore estimazioa}
 \end{algorithm}
 
-\subsubsection{Atalen hasieraketa.} 
+\subsection{Atalen hasieraketa.} 
 
 Ideia da, aurreko urratseko uneetako, $(t_{n-1}+hc_i,Y_{n-1,i}), \ i=1,\dots,s$ eta $(t_{n-1}+h,y_{n})$, balioei dagokien polinomio interpolatzailea erabiliz, urrats berriaren atalen hasieraketa  $(t_{n}+hc_i,Y_{n,i}^{[0]}), \ i=1,\dots,s$ kalkulatzea. 
 
@@ -297,21 +297,75 @@ P(t)=  l_1(t) Y_{n-1,1}+\dots+l_s(t) Y_{n-1,s}+l_{s+1}(t) y_n
 Y_{n,i} \approx Y_{n,i}^{[0]}= P(t_n+hc_i) = y_n+ h \sum\limits_{j=1}^{s} \lambda_{ij}f(Y_{n-1,j})
 \end{equation}
 
-\paragraph*{} Modu honetan s-ataletako IRK metodo bakoitzari dagokion $\lambda_{ij}$ koefiziente interpolatzaileak lortu daitezke. Polinomio interpolatzailearen bidezko hasieraketa ona izango da, emandako urratsa ez bada oso handia eta problema stiff ez denean. Era berean aipatu nahi genuke, atal askotako metodoetan (adibidez $s=16$)  interpolaziozko koefizienteen kalkuluan kantzelazio arazoak,  doitasun handian lan egitea behartzen gaituela interpolaziozko hasieraketa ona izateko.  
+\paragraph*{} Modu honetan s-ataletako IRK metodo bakoitzari dagokion $\lambda_{ij}$ koefiziente interpolatzaileak lortu daitezke. Polinomio interpolatzailearen bidezko hasieraketa ona izango da, emandako urratsa ez bada oso handia eta problema stiff ez denean. Era berean aipatu nahi genuke, atal askotako metodoetan (adibidez $s=16$)  interpolaziozko koefizienteen kalkuluan ezabapen arazoak,  doitasun handian lan egitea behartzen gaituela interpolaziozko hasieraketa ona izateko.  
 
-\subsubsection{Gauss-Seidel.}
+\subsection{Gauss-Seidel.}
 
-\subsubsection{Algoritmoa.}
+\subsection{Algoritmoa.}
 
-\subsection{Esperimentuak.}
+\paragraph*{} Formulazio berriari dagokion algoritmo orokorra,
+
+\begin{algorithm}[H]
+ \BlankLine
+  $e=0$\;
+  \For{$n\leftarrow 1$ \KwTo $endstep$}
+  {
+   \BlankLine
+   Hasieratu  $Y_{i,n}^{[0]} \ \ , \ \ i=1,\dots,s $\;
+   \BlankLine
+   \While{ (konbergentzia lortu)}
+   {
+    \BlankLine 
+    $L_{n,i}=hb_if(Y_{n,i}) \ \ , \ \  i=1,\dots,s$\;
+    $Y_{n,i}=y_{n-1}+ \ \sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}  \ \ , \ \  i=1,\dots,s$\;  
+   }
+   \BlankLine
+    $\delta_{n}= \sum\limits_{i=1}^{s} L_{n,i}+e $\;
+    $y_{n}=y_{n-1}+ \delta_{n} $\;
+    $e=(y_{n-1}-y_n)+\delta_n$\;
+   \BlankLine
+ }
+ \caption{Main Algorithm}
+\end{algorithm}
+
+
+\paragraph*{} Eta puntu-finkoa erabiliz,
+
+\begin{algorithm}[H]
+ \BlankLine
+  $e=0$\;
+  \For{$n\leftarrow 1$ \KwTo $endstep$}
+  {
+   \BlankLine
+   $k=0$\;
+   Hasieratu  $Y_{i}^{[0]}$\;
+   \BlankLine
+   \While{ (konbergentzia lortu)}
+   {
+    \BlankLine 
+    $k=k+1$\;
+    $L_{i}^{[k]}=hb_if(Y_{i}^{[k-1]}) $\;
+    $Y_{i}^{[k]}=y_{n-1} + \ \big(e+\sum\limits_{j=1}^{s} \mu_{ij} L_{j}^{[k]}\big)  $\;  
+   }
+   \BlankLine
+    $\delta_{n}= \sum\limits_{i=1}^{s} L_{i}^{[k]}+e $\;
+    $y_{n}=y_{n-1}+ \delta_{n} $\;
+    $e=(y_{n-1}-y_n)+\delta_n$\;
+   \BlankLine
+ }
+ \caption{Main Algorithm}
+\end{algorithm}
+
+
+\section{Esperimentuak.}
 
 Biribiltze erroreari dagokionez gure inplementazioa optimotik gertu dagoela erakutsi nahi dugu. Esperimentuetan lau integrazio mota egingo ditugu:
 
 \begin{enumerate}
 
-\item Quadruple doitasuna. Zenbakizko integrazio hau soluzio zehatzat hartuko dugu eta errore globala kalkultzeko errefentzizko soluzioa izango da.
+\item Quadruple doitasuna. Zenbakizko integrazio hau soluzio zehatza kontsideratuko dugu eta errore globala kalkulatzeko erreferentziazko soluzioa izango da.
 
-\item Integrazio optimoa (ideala). Ekuazio diferentzialaren eskubi aldeko funtzioaren ebaluazioa ezik, konputazioa doitasun quadruplean  egiten duen inplementazioa. 
+\item Integrazio optimoa (ideala). Ekuazio diferentzialaren eskuin aldeko funtzioaren ebaluazioa ezik, konputazioa doitasun quadruplean  egiten duen inplementazioa. 
 
 \item Double doitasuna.
 
@@ -319,9 +373,9 @@ Biribiltze erroreari dagokionez gure inplementazioa optimotik gertu dagoela erak
 
 \end{enumerate}
 
-\subsubsection{Doitasun azterketa.}
+\subsection{Doitasun azterketa.}
 
-Integrazio bakarra egin ordez, perturbatutako $P=100$ hasierako balioekin zenbakizko integrazioak exekutatu ditugu eta emaitza guzti hauen batazbestekoan oinarritu gara, biribiltze errorearen azterketa egokia egiteko.    
+Integrazio bakarra egin ordez, perturbatutako $P=100$ hasierako balioekin zenbakizko integrazioak exekutatu ditugu eta emaitza guzti hauen batezbestekoan oinarritu gara, biribiltze errorearen azterketa egokia egiteko.    
 
 \paragraph*{}  $ k. \ (1,\dots,P)$ integrazio bakoitzean $N$ urrats eman baditugu, $t_i=t_0+i*h, \ i=1,\dots,N$ uneetarako lortuko dugu 
 zenbakizko soluzioa,
@@ -343,6 +397,10 @@ E_i^{[k]}=H(q_i^{[k]},p_i^{[k]}).
            
            \begin{equation*}
            \bar{\triangle E_i}=\frac{1}{P} \sum_{k=1}^{P} \triangle E_i^{[k]}, \ \ i=1,\dots,N.
+           \end{equation*}
+           
+           \begin{equation*}
+           \sigma_i=\sqrt{\frac{1}{P} \sum_{k=1}^{P} (\triangle E_i^{[k]})^2-(\bar{\triangle E_i})^2}, \ \ i=1,\dots,N.
            \end{equation*}
            
            \begin{equation*}
@@ -403,7 +461,7 @@ E_i^{[k]}=H(q_i^{[k]},p_i^{[k]}).
               \bar{\sigma Q_i}=\sqrt{\frac{1}{P}\sum_{k=1}^{P} (Q_i^{[k]}-\bar{\mu Q_i})^2}\]
 \end{enumerate} 
 
-\subsubsection{Brouwer legea.}
+\subsection{Brouwer legea.}
 
 In order to test the randomness of numerical error (not systematic) in the integration, some researches verify that the method achieves Brouwer's law \cite{Brouwer1937}. Denote by $\epsilon_{n}$ the error contribution over one step in the Hamiltonian H(y),
 
@@ -413,12 +471,12 @@ Zenbakizko integrazioaren errorea hausazkoa dela ziurtatzeko, metodoak Broweren 
 H(y_{n+1})-H(y_{n})=\epsilon_{n}.
 \end{equation}
 
-Batazbestekoa zero eta bariantza, biribiltze errorearen karratuaren ($u^2=(2^{-m})^2$) proportzionala duen hausazko aldagaia dela kontsideratuz, 
+Batezbestekoa zero eta bariantza, biribiltze errorearen karratuaren ($u^2=(2^{-m})^2$) proportzionala duen hausazko aldagaia dela kontsideratuz, 
 Brouwer legearen arabera, energia-errorea ...
 
 and assuming it is a random variable with mean zero and variance proportional to the square of the round-off unit, Brouwer's law says that error of first integrals conservations due to round-off will grow like the square-root of time. See also Hairer \cite{Hairer2006}[VIII.5]. Figure \ref{fig:brouwer103} plots the histogram of the Local energy error against the normal distribution $N(\mu, \delta)$.
 
-\subsubsection{Pendulu bikoitza.}
+\subsection{Pendulu bikoitza.}
 
 \begin{table} [h]
 \caption{Summary of Non-Chaotic case.}
@@ -467,7 +525,7 @@ and assuming it is a random variable with mean zero and variance proportional to
 \label{fig:plot3}
 \end{figure}
 
-\subsubsection*{Brouwer-legea.}
+\subsection*{Brouwer-legea.}
 
 
 \begin{figure}[h]
@@ -489,7 +547,7 @@ and assuming it is a random variable with mean zero and variance proportional to
 \label{fig:brouwer103}
 \end{figure}
 
-\subsubsection*{Biribiltze erroreaen estimazioa.}
+\subsection*{Biribiltze erroreaen estimazioa.}
 
 
 \begin{figure}[h]
@@ -512,7 +570,7 @@ and assuming it is a random variable with mean zero and variance proportional to
 \label{fig:plotest}
 \end{figure}
 
-\subsubsection{N-Body problema.}
+\subsection{N-Body problema.}
 
 
 \begin{figure}[h]
