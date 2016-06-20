@@ -104,10 +104,45 @@ Mathematican DoublePendulum.m paketean honako funtzioak inplementatu ditugu:
 
 N-gorputzeko problema grabitazionalari dagokionez, Eguzki sistemaren eredu sinplea integratuko dugu. Eguzki-sistemaren gorputzak masa puntualak kontsideratuko ditugu eta gure ekuazio diferentzialek, gorputz hauen arteko erakarpen grabitazionalak bakarrik kontutan hartzen dituzte. Beraz, eguzki-sistemaren eredu konplexuagoetako erlatibitate efektua, gorputzen formaren eragina, eta beste zenbait indar ez-grabitazionalak ez dira kontutan hartu.
 
-$(N+1)$ gorputz kopurua izanik, $q_i,p_i\in \mathbb{R}^3$, $m_i \in \mathbb{R}$ gorputz bakoitzaren kokapena, momentua eta masa dira. Bestalde , momentua era honetan definituko dugu $p_i=m_i*v_i$ non $\dot{q_i}=v_i$ den.
+$(N+1)$ gorputz kopurua izanik, $\mathbf{q_i},\mathbf{p_i}\in \mathbb{R}^3$, $m_i \in \mathbb{R}, \ \ i=0,\dots,N$ gorputz bakoitzaren kokapena, momentua eta masa dira. Bestalde , momentua era honetan definituko dugu $\mathbf{p_i}=m_i*\mathbf{v_i}$ non $\dot{\mathbf{q_i}}=\mathbf{v_i}$ den.
+
+\subsection{Zailtasunak.}
+
+\paragraph*{} Kontutan hartzekoa da eguzki-sistemaren integrazioaren urrats kopuru handia. Eguzki-sistemaren bizi iraupena $5 \ \times \ 10^9$ urtetakoa izanik eta integrazioetako ohiko urratsa  $h=0.0025$ urteko bada (orbita txikieneko periodoaren $ \%1$ ), eman beharreko urrats kopurua $2 \ \times \ 10^{12}$ izango da. Era berean, kanpo planeten integrazioa $5 \ \times \ 10^{10}$ urrats kopuru ingurukoa da.     
+
+\paragraph{} Eguzki-sistemaren gorputzen denbora eskala oso ezberdinak dira. Gainera ilargia kontsideratuko bagenu, lurrarekiko distantzia $D_M=3.844 x 10^8$ eta periodoa $P_M=27.32$ egunekoa. 
+
+\begin{table} [h!]
+\caption{}
+\label{tab:1}       % Give a unique label
+\begin{tabular}{c c c} 
+\hline
+ Planeta   &  Axis a        & Periodoa    \\   
+           &   AU          &   years      \\ \hline
+ Merkurio  &   $0.39$      &  $0.24$     \\
+ Venus     &   $0.72$      &  $0.007$    \\
+ Earth     &   $1.00$      &  $1.007$    \\
+ Mars      &   $1.52$      &  $1.88$     \\ \hline
+ Jupiter   &   $5.20$      &  $11.86$    \\
+ Saturn    &   $9.54$      &  $29.42$    \\
+ Uranus    &   $19.19$     &  $83.75$    \\
+ Neptune   &   $30.06$     &  $163.72$    \\
+ Pluto     &   $39.53$     &  $248.02$    \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\subfloat[Eguzki-sistema.]{
+\includegraphics[width=.800\textwidth]{eguzkisistema3}
+}
+\caption{ \small Eguzki-sistema.}
+\label{fig:eguzki-sistema}
+\end{figure}
 
 
-\subsection{Ekuazioak.}
+\subsection{Ekuazio barizentrikoak.}
 
 \paragraph*{Hamiltondarra.}
 
@@ -163,6 +198,22 @@ $\gamma$         & $1.0$                       & PPN parametroa     \\
 \hline
 \end{tabular}
 \end{table}
+
+
+\subsection{Ekuazio Heliozentrikoak.}
+
+Ohikoa da ekuazio diferentzialak koordenatu heliozentrikoen (eguzkiaren zentroarekiko) arabera definitzea. Argitu koordenatu heliozentrikoak ere modu ezberdinean eman daitezkeela eta guk koordenatu heliozentriko kanonikoak deiturikoak erabili ditugula.
+
+\begin{equation*}
+\dot{\mathbf{Q_i}}=\mathbf{V_i}+ \sum\limits_{j\ne i,\ j=1}^{N} \frac{\mathbf{V_j} \ m_j}{(m_0+m_j)}, \ \ i=1,\dots, N.
+\end{equation*}
+   
+\begin{equation*}
+\dot{\mathbf{V_i}}=- G  \ \frac{(m_0+m_i)}{\|\mathbf{Q_i}\|^3 }\ \mathbf{Q_i}-G \ \frac{(m_0+m_i)}{m_0}
+                    \sum\limits_{j \ne i , \ j=1}^{N} \bigg( \frac{m_j}{\|\mathbf{Q_i}-\mathbf{Q_j}\|^3} (\mathbf{Q_i-\mathbf{Q_j}})     \bigg), \ \ i=1,\dots, N.
+\end{equation*}
+
+\paragraph*{} Ekuazioen garapen osoa eranskinean eman dugu.
 
 \subsection{Hasierako balioak.}
 

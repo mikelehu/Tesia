@@ -20,6 +20,18 @@ Sergio Blanes, Fernando Casas, Ariadna Farres, Jacques Laskar, Joseba Makazaga,
   astronomy}.
 \newblock {\em Applied Numerical Mathematics}, 68:\penalty0 58--72, 2013.
 
+\bibitem{Brouwer1937}
+Dirk Brouwer.
+\newblock \href{http://dx.doi.org/10.1086/105423}{On the accumulation of errors
+  in numerical integration}.
+\newblock {\em The Astronomical Journal}, 46:\penalty0 149--153, 1937.
+
+\bibitem{Butcher2008}
+John~Charles Butcher.
+\newblock \href{http://dx.doi.org/10.1002/9780470753767}{{\em Numerical Methods
+  for Ordinary Differential Equations}}.
+\newblock Second edition, Wiley, 2008.
+
 \bibitem{Carrier1988}
 J~Carrier, Leslie Greengard, and Vladimir Rokhlin.
 \newblock \href{http://dx.doi.org/10.1137/0909044}{A fast adaptive multipole
@@ -47,12 +59,28 @@ Martin~J Duncan, Harold~F Levison, and Man~Hoi Lee.
 \newblock {\em The Astronomical Journal}, 116\penalty0 (4):\penalty0 2067,
   1998.
 
+\bibitem{Farres2013}
+Ariadna Farr{\'e}s, Jacques Laskar, Sergio Blanes, Fernando Casas, Joseba
+  Makazaga, and Ander Murua.
+\newblock \href{http://dx.doi.org/10.1007/s10569-013-9479-6}{High precision
+  symplectic integrators for the solar system}.
+\newblock {\em Celestial Mechanics and Dynamical Astronomy}, 116\penalty0
+  (2):\penalty0 141--174, 2013.
+
 \bibitem{Folkner2014}
 William~M Folkner, James~G Williams, Dale~H Boggs, Ryan~S Park, and Petr
   Kuchynka.
 \newblock \href{http://ilrs.gsfc.nasa.gov/docs/2014/196C.pdf}{The planetary and
   lunar ephemerides de430 and de431}.
 \newblock {\em Interplanet. Netw. Prog. Rep}, 196:\penalty0 1--81, 2014.
+
+\bibitem{Fukushima2001}
+Toshio Fukushima.
+\newblock
+  \href{http://iopscience.iop.org/article/10.1086/319385/meta}{Reduction of
+  round-off error in symplectic integrators}.
+\newblock {\em The Astronomical Journal}, 121\penalty0 (3):\penalty0 1768,
+  2001.
 
 \bibitem{Hairer2006}
 Ernst Hairer, Christian Lubich, and Gerhard Wanner.
@@ -118,6 +146,14 @@ Robert~I McLachlan.
 \newblock {\em BIT Numerical Mathematics}, 35\penalty0 (2):\penalty0 258--268,
   1995.
 
+\bibitem{Morbidelli2002}
+A~Morbidelli.
+\newblock
+  \href{http://dx.doi.org/10.1146/annurev.earth.30.091201.140243}{Modern
+  integrations of solar system dynamics}.
+\newblock {\em Annual Review of Earth and Planetary Sciences}, 30\penalty0
+  (1):\penalty0 89--112, 2002.
+
 \bibitem{Muller2009}
 Jean-Michel Muller, Nicolas Brisebarre, Florent De~Dinechin, Claude-Pierre
   Jeannerod, Vincent Lefevre, Guillaume Melquiond, Nathalie Revol, Damien
@@ -143,6 +179,13 @@ M~Papadrakakis, M~Kojic, and I~Tuncer.
 \newblock \href{http://dx.doi.org/10.13140/2.1.5033.2969}{Fast detection of
   chaotic or regular behavior of double pendulum system: application of the
   fast norm vector indicator method}.
+
+\bibitem{Sofroniou2005}
+Mark Sofroniou and Giulia Spaletta.
+\newblock \href{http://dx.doi.org/10.1080/10556780500140664}{Derivation of
+  symmetric composition constants for symmetric integrators}.
+\newblock {\em Optimization Methods and Software}, 20\penalty0 (4-5):\penalty0
+  597--613, 2005.
 
 \bibitem{Sterbenz1973}
 Pat~H Sterbenz.

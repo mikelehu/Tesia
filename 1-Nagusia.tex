@@ -32,12 +32,41 @@
 
 % End-Mikel
 
+% ShareLatex (listings)
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+%    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+% End ShareLatex (listings)
+
+\pagenumbering{roman} %Required by SGPS
 
 \begin{document}
-\pagenumbering{roman} %Required by SGPS
+
+\frontmatter
 %Title page
 \include{titlepage} %title page in a subfile. Optional, but looks nicer.
-\addtocounter{page}{1}
+%\addtocounter{page}{1}
 
 %\title{N-Gorputzeko problema grabitazionalaren ebazpenerako zenbakizko metodoen azterketa.}
 
@@ -47,6 +76,7 @@
 %\begin{titlepage}
 %\maketitle
 %\end{titlepage}
+
 
 \setcounter{tocdepth}{3}
 \tableofcontents
@@ -65,19 +95,22 @@
 % \subclass{MSC code1 \and MSC code2 \and more}
 %\end{abstract}
 
+\mainmatter
+
 \part{Introduction}
 \include{2-Sarrera}
 \part{Background}
 \include{3-MetodoSinplektikoak} 
 \include{4-Problemak}
 \include{5-KomaHigikorra}
-\include{6-ScientificComputing}
+\include{6-ZientziaKonputazioa}
 \include{8-Review}
 \part{Core}
 \include{7-IRKPuntuFinkoa}
 \include{9-IRKNewton}
 \include{10-IRKEguzkiSistema}
-\part{synthesys}
+\part{Synthesys}
+\part{Eranskinak}
 \include{A-Eranskinak}   
 
 %\include{Appendix}

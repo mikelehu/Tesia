@@ -1,26 +1,21 @@
-@book{overton2001numerical,
-  title={Numerical computing with IEEE floating point arithmetic},
-  author={Overton, Michael L},
-  year={2001},
-  publisher={Siam}
+@article{blanes2013new,
+  title={New families of symplectic splitting methods for numerical integration in dynamical astronomy},
+  author={Blanes, Sergio and Casas, Fernando and Farres, Ariadna and Laskar, Jacques and Makazaga, Joseba and Murua, Ander},
+  journal={Applied Numerical Mathematics},
+  volume={68},
+  pages={58--72},
+  year={2013},
+  publisher={Elsevier}
 }
 
-@book{muller2009handbook,
-  title={Handbook of floating-point arithmetic},
-  author={Muller, Jean-Michel and Brisebarre, Nicolas and De Dinechin, Florent and Jeannerod, Claude-Pierre and Lefevre, Vincent and Melquiond, Guillaume and Revol, Nathalie and Stehl{\'e}, Damien and Torres, Serge},
-  year={2009},
-  publisher={Springer Science \& Business Media}
-}
-
-@article{corless2013graduate,
-  title={A graduate introduction to numerical methods},
-  author={Corless, Robert M and Fillion, Nicolas},
-  journal={AMC},
-  volume={10},
-  pages={12},
+@article{farres2013high,
+  title={High precision symplectic integrators for the solar system},
+  author={Farr{\'e}s, Ariadna and Laskar, Jacques and Blanes, Sergio and Casas, Fernando and Makazaga, Joseba and Murua, Ander},
+  journal={Celestial Mechanics and Dynamical Astronomy},
+  volume={116},
+  number={2},
+  pages={141--174},
   year={2013},
   publisher={Springer}
 }
-
-
 

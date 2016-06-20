@@ -85,6 +85,8 @@ Bestalde, badaude doitasun arbitrariotan lan egiteko beste lan-ingurune (Problem
  
 \section{Biribiltze errorea.}
 
+Zenbakizko integrazioen errorea, trunkatze eta biribiltze erroreez osatuta dago. Urrats tamaina adina txikia aukeratuz, trunkatze errorea biribiltze errorea baino txikiago izango da eta beraz, zenbakizko integrazioaren errorean biribiltze errorearen eragina nagusituko da. Biribiltze errorea gutxitzea funtsezkoa izango da epe luzeko integrazioetan.     
+
 Bi motako biribiltze errorea dugu, bata adierazpen errorea eta beste eragiketa (aritmetika) errorea.  
 
 \subsection*{Adierazpen errorea.} 
@@ -144,7 +146,7 @@ Errore erlatiboak emaitzaren digitu zuzenak neurtzen du:
 
 \subsection*{Ezabapen arazoa.}
 
-Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbaki arteko kendura egiten dugunean gerta daitekeena. 
+Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbaki arteko kendura egiten dugunean gerta daitekeena; edo magnitude oso ezberdinak diren bi zenbaki gehitzen ditugunean. 
 
 \paragraph*{\textbf{Adibidea}.}
 
@@ -165,6 +167,19 @@ Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea
 
 \end{lstlisting}
  
+\subsection*{Biderketa.}
+
+Orokorrean, $m$ digituzko bi mantisen biderketaren emaitza zehatza adierazteko, $2m$ digituzko mantisa behar dugu ($m$ digituzko galera) \cite{Fukushima2001}. Biderkagaietako bat $2$ren berredura bat bada, orduan biderketa zehatza da baina oro har, $m$ digitu galduko ditugu.  
+
+\paragraph*{} Adibidea.
+\begin{equation*}
+1,343 \times 2,103 = 2,824229 
+\end{equation*} 
+
+\begin{equation*}
+1,343 \times 2,103 \approx 2.824
+\end{equation*}    
+
 
 \subsection*{Errore propagazioa.}
 
@@ -222,7 +237,6 @@ Lortutako errore estimazioa, koma-higikorreko aritmetikan zehazki benetako birib
   }
  \caption{Batura konpensatua.}
 \end{algorithm}
-
 
 \subsubsection*{Biderketaren errore estimazioa.}
 Konputagailu berrietan , hardware unitate bereziak bermatzen du biribiltze errore bakarra era honetako eragiketean,

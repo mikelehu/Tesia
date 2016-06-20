@@ -2,6 +2,8 @@
 
 \section{Sarrera.}
 
+Koordenatu kartesiarrak erabiltzearen abantaila.
+
 \section{Meta-Algoritmoa.}
 
 Demagun Hamiltondar banagarria,
@@ -26,11 +28,13 @@ non $H_A \gg H_B$.
 
 \paragraph*{} \textbf{Adibidea}.
 
-N-gorputzen problemaren Hamiltondarra, alde Kepleriarra eta planeten interakzioen batura gisa bana daiteke,
+N-gorputzen problemaren Hamiltondarra, alde Kepleriarra (eguzkiarekiko interakzioa) eta planeten interakzioen batura gisa bana daiteke,
 
 \begin{equation*}
 H(q,p)=H_k+H_I, \ \ H_k \gg H_I.
 \end{equation*}  
+
+Eguzkiari dagokion azpindizea $i=0$ kontsideratzen badugu, 
 
 \begin{equation}
 H_k(q,p)=\frac{1}{2} \sum\limits_{i=0}^{N} \frac{p_i^2}{m_i}- Gm_0 \sum\limits_{i=1}^{N} \frac{m_i}{\|q_i-q_0\|}
@@ -199,20 +203,28 @@ IRK metodoa aplikatzeko meta algoritmoa planteatuko dugu.
   \For{$n\leftarrow 1$ \KwTo $endstep$}
   {
    \BlankLine
+   $k=0 $\;
    Hasieratu  $Y_{i}^{[0]} \ \ , \ \ i=1,\dots,s $\;   
    \BlankLine
-   $k=1 $\;
-   $g_{i}^{[0]}=\sum\limits_{j=1}^{s} \mu_{ij} \ hb_j \ g(Y_{j}^{[0]}) $\;
-   Askatu $Y_i^{[k]}=y_{n-1}+ \sum\limits_{j=1}^{s} \mu_{ij} \ hb_j \ k(Y_{j}^{[k]}) \ +g_{i}^{[k-1]} $\;
    \While{ (konbergentzia lortu)}
    {
     \BlankLine 
     $k=k+1$\;
-    $g_{i}^{[k-1]}=\sum\limits_{j=1}^{s} \mu_{ij} \ hb_j \ g(Y_{j}^{[k-1]}) $\;
-    Askatu $Y_i^{[k]}=y_{n-1}+ \sum\limits_{j=1}^{s} \mu_{ij} \ hb_j \ k(Y_{j}^{[k]}) \ +g_{i}^{[k-1]} $\;
+    \eIf{$k==1$}{
+    Hasieratu $G_{i}^{[0]}$\;
+    }
+    {$G_{i}^{[k-1]}=\sum\limits_{j=1}^{s} \mu_{ij} \ hb_j \ g(Y_{j}^{[k-1]}) $\;
+    }  
+    Askatu $Y_i^{[k]}=y_{n-1}+ \sum\limits_{j=1}^{s} \mu_{ij} \ hb_j \ k(Y_{j}^{[k]}) \ +G_{i}^{[k-1]} $\;
+%  \eIf{$(abs(x)>abs(y)$}{
+%    $s=(((x-r)+y)+yy)+xx$\;
+%   }{
+%   $s=(((y-r)+x)+xx)+yy$\;
+%  }
+
    }
    \BlankLine
-    $L_i= hb_i f(Y_i^{[k-1]})$\;
+    $L_i= hb_i f(Y_i^{[k]})$\;
     $\delta_{n}= \sum\limits_{i=1}^{s} L_{i}+e $\;
     $y_{n}=y_{n-1}+ \delta_{n} $\;
     $e=(y_{n-1}-y_n)+\delta_n$\;
@@ -410,3 +422,49 @@ f_1\left ( \begin{array}{c}
 \draw (-1,2) -- (-1,4);
 \draw (-1,2) -- (0,4);
 \end{tikzpicture}
+
+
+\section{Denbora birparametrizazioa.}
+
+
+\subsection{Denbora birparametrizazioa.}
+
+Demagun jatorrizko ekuazio diferentziala,
+
+\begin{equation*}
+\dot{y}=f(y(t)),
+\end{equation*}
+
+non $y$ menpeko aldagaia eta $t$ aldagai askea den.
+
+\paragraph*{} Aldagai askeari aldaketa bat aplikatuz ($s()$ izeneko funtzio), ekuazio diferentziala leuntzea lortuko dugu. 
+
+\begin{equation*}
+y=z,
+\end{equation*}
+
+\begin{equation*}
+\frac{dt}{d\tau}=s(z)
+\end{equation*}
+
+\paragraph*{} Honako garapena egingo dugu aldagai berriarekiko ($\tau$) ekuazioak lortzeko.
+
+\begin{equation*}
+y=z \ \ \Rightarrow \ \ \frac{dy}{dt}=\frac{dz}{d \tau} \ \frac{d \tau}{dt} \ \Rightarrow \ \frac{dz}{d \tau}= s(z) \ f(y(t)) 
+\end{equation*}
+
+\paragraph*{} Sistema berrian, mugimendua $z(\tau)$ funtzioak deskribatzen du: $z$ aldagai berria $\tau$ aldagai askearen menpekoa da. 
+
+\subsection{Adibidea.}
+
+Esperimentu honetan, IRK metodoan denbora birparametrizazioa modu errezean aplika daitekeela erakutsi nahi dugu. N9-Body probleman, merkurio ezentrizitate handiena duen planeta da: merkurio araberako denbora birparametrizazioa planteatuko dugu.
+
+\begin{equation}
+s(q)=r_{10}^{3/2}
+\end{equation}
+
+\begin{equation}
+r_{10}=\|q1-q0\|_2
+\end{equation}
+
+non $q_1=(q1_{x},q1_{y},q1_{z})$ merkurio plantearen kokapena eta $q_0=(q0_{x},q0_{y},q0_{z})$ eguzkiaren kokapena den.

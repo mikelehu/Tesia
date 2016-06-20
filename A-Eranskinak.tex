@@ -1,4 +1,4 @@
-\chapter{Eranskinak}.
+\chapter{A-Eranskinak}.
 
 \section{Kepler ekuazioak eta definizioak.}
 
@@ -134,3 +134,188 @@ Eta $(q_1,v_1)$ balioak kalkulatzeko,
 b_{11}=(C-1) \frac{a}{\|q\|}, \longrightarrow b_{11}=-\frac{(\sin^2(\triangle E)}{1+\cos(\triangle E)} \frac{a}{\|q\|}
 \end{equation*}
 
+\section{Ekuazio Heliozentrikoak.}
+
+\subsection*{Sarrera.}
+
+\paragraph*{} Lehenik koordenatu barizentrikoei,
+
+\begin{equation*}
+\mathbf{q_i}, \mathbf{p_i} \in \mathbb{R}^3, \ i=0,\dots,N
+\end{equation*}
+
+dagokien Hamiltondarra gogoratuko dugu, 
+\begin{equation}
+H(\mathbf{q},\mathbf{p})=\frac{1}{2}\ \sum^N_{i=0}{\ \frac{{\|\mathbf{p_i}\|}^2}{m_i}}-G\ \sum^N_{0\le i<j\le N}{\frac{m_im_j}{\|\mathbf{q_i}-\mathbf{q_j}\|}}.
+\end{equation}
+
+\paragraph*{} Koordenatu barizentrikoetatik abiatuta eta aldagai aldaketa bat aplikatuz ekuazio koordenatu heliozentrikoen
+
+\begin{equation*}
+\mathbf{Q_i}, \mathbf{P_i} \in \mathbb{R}^3, \ i=0,\dots,N
+\end{equation*}
+arabera berridatziko ditugu. 
+
+\subsection*{Aldagai aldaketa.}
+
+Lehenik honako aldagai aldaketa aplikatuko dugu,
+
+\begin{equation*}
+\mathbf{Q_0}=\mathbf{q_0}, \ \ \mathbf{Q_i}=\mathbf{q_i}-\mathbf{q_0}, \ \ i=1,\dots{,N}
+\end{equation*}
+
+\begin{equation*}
+\mathbf{P_0}=\sum\limits_{i=0}^{N}\mathbf{p_i}, \ \ \mathbf{P_i}=\mathbf{p_i}, \ \ i=1,\dots{,N}.
+\end{equation*}
+
+\paragraph*{} Hamiltondarra era honetan deskonposatu daiteke $H=H_k+T_1+U_1$,
+
+\begin{equation*}
+H_k=\sum\limits_{i=1}^{N}\bigg(\frac{\|\mathbf{P_i}\|^2}{2} \big(\frac{m_0+m_i}{m_0m_i}\big)-G \frac{m_0m_i}{\|\mathbf{Q_i}\|}\bigg)
+\end{equation*} 
+
+\begin{equation*}
+T_1=\sum\limits_{0<i<j\le N}^{N} \frac{\mathbf{P_i}\mathbf{P_j}}{m_0}.
+\end{equation*}
+
+\begin{equation*}
+U_1= -G \sum\limits_{0\le i<j\le N}^{N} \frac{m_im_j}{\|\mathbf{Q_i}-\mathbf{Q_j}\|}
+\end{equation*}
+
+\paragraph*{}Hamiltondarraren alde bakoitza bere aldetik deribatuz,
+
+\begin{enumerate}
+\item $H_k$.
+
+\begin{equation*}
+\dot{\mathbf{Q_i}}= \triangledown_p H_k \ \ \Rightarrow \ \  \dot{\mathbf{Q_i}}=\mathbf{P_i}\big(\frac{m_0+m_i}{m_0m_i}\big), \ \ i=1,\dots, N.
+\end{equation*}
+
+\begin{equation*}
+\dot{\mathbf{P_i}}= -\triangledown_q H_k \ \ \Rightarrow \ \  \dot{\mathbf{P_i}}= - G  \ \frac{m_0m_i}{\|\mathbf{Q_i}\|^3 }\ \mathbf{Q_i}, \ \ i=1,\dots, N.
+\end{equation*}
+
+\item $T_1$.
+
+\begin{equation*}
+\dot{\mathbf{Q_i}}= \triangledown_p T_1 \ \ \Rightarrow \ \  \dot{\mathbf{Q_i}}=\sum\limits_{j\ne i,\ j=1}^{N} \frac{\mathbf{P_i}}{m_0}, \ \ i=1,\dots, N.
+\end{equation*}
+
+\begin{equation*}
+\dot{\mathbf{P_i}}= -\triangledown_q T_1 \ \ \Rightarrow \ \  \dot{\mathbf{P_i}}= 0, \ \ i=1,\dots, N.
+\end{equation*}
+
+\item $U_1$.
+
+\begin{equation*}
+\dot{\mathbf{Q_i}}= \triangledown_p U_1 \ \ \Rightarrow \ \  \dot{\mathbf{Q_i}}=0, \ \ i=1,\dots, N.
+\end{equation*}
+
+\begin{equation*}
+\dot{\mathbf{P_i}}= -\triangledown_q U_1 \ \ \Rightarrow \ \ 
+ \dot{\mathbf{P_i}}= -G \ \sum\limits_{j \ne i , \ j=1}^{N} \bigg(\frac{m_im_j}{\|\mathbf{Q_i}-\mathbf{Q_j}\|^3} \ (\mathbf{Q_i-\mathbf{Q_j}}) \bigg), \ \ i=1,\dots, N.
+\end{equation*}
+
+\end{enumerate}
+
+%\subsection*{Kepler ekuazioak.}
+
+%Bigarrenik, $H_k$ aldeari dagokion ekuazioak kepler ekuazioak idazteko ohiko moduan lortzeko,
+
+%\begin{enumerate}
+%\item Bigarren ordeneko ekuazio diferentzial bezala idatzi $\mathbf{P_i}$ gaia kenduz,
+
+%\begin{equation*}
+%\frac{d^2}{dt^2} \dot{\mathbf{Q_i}}=- G  \ \frac{(m_0+m_i)}{\|\mathbf{Q_i}\|^3 }\ \mathbf{Q_i}, \ \ i=1,\dots, N. 
+%\end{equation*}
+
+%\item Berriz ere, lehen ordenako ekuazio diferentzial gisa idatziko dugu baina orain komeni zaigun \emph{aldagai artifiziala} $\mathbf{V_i}=\mathbf{P_i} (\frac{m_0+m_i}{m_0m_i})$ erabiliz,
+
+%\begin{equation*}
+%\dot{\mathbf{Q_i}}=\mathbf{V_i},
+%\end{equation*}
+
+%\begin{equation*}
+%\dot{\mathbf{V_i}}=- G  \ \frac{\mu_i}{\|\mathbf{Q_i}\|^3 }\ \mathbf{Q_i}, \ \ \mu_i=G(m_0+m_i),  \ \ i=1,\dots, N.  
+%\end{equation*}
+
+%\end{enumerate}  
+
+\subsection*{Ekuazio diferentzialak ($Q_i,V_i$).}
+
+Ekuazio diferentzialak ($\mathbf{Q_i},\mathbf{P_i}$) aldagai berriekiko idatziko ditugu, honako definizioa kontutan harturik,
+
+\begin{equation*}
+\mathbf{V_i}=\frac{\mathbf{P_i}}{(m_0+m_i)}, \ \ \mu_i=\frac{m_0m_i}{(m_0+m_i)}.
+\end{equation*}
+
+\begin{enumerate}
+\item $H_k$.
+
+\begin{equation*}
+\dot{\mathbf{Q_i}}=\mathbf{V_i} \ \ i=1,\dots, N.
+\end{equation*}
+
+\begin{equation*}
+\dot{\mathbf{V_i}}= - G  \ \frac{(m_0+m_i)}{\|\mathbf{Q_i}\|^3 }\ \mathbf{Q_i},  \ \ i=1,\dots, N.
+\end{equation*}
+
+\item $T_1$.
+
+\begin{equation*}
+\dot{\mathbf{Q_i}}=\sum\limits_{j\ne i,\ j=1}^{N} \frac{\mathbf{V_j} \ m_j}{(m_0+m_j)}, \ \ i=1,\dots, N.
+\end{equation*}
+
+\begin{equation*}
+\dot{\mathbf{V_i}}= 0, \ \ i=1,\dots, N.
+\end{equation*}
+
+\item $U_1$.
+
+\begin{equation*}
+\dot{\mathbf{Q_i}}=0, \ \ i=1,\dots, N.
+\end{equation*}
+
+\begin{equation*}
+\dot{\mathbf{V_i}}= -G \ \frac{(m_0+m_i)}{m_0}
+                    \sum\limits_{j \ne i , \ j=1}^{N} \bigg( \frac{m_j}{\|\mathbf{Q_i}-\mathbf{Q_j}\|^3} (\mathbf{Q_i-\mathbf{Q_j}})     \bigg), \ \ i=1,\dots, N.
+\end{equation*}
+
+\end{enumerate}
+
+
+\subsection*{Energia kalkulua.}
+
+Koordenatu heliozentrikoetan integrazioak egiten ditugunean, sistemaren energia kalkulatzeko koordenatu barizentrikoeetara bihurtuko dugu soluzioa.
+
+\paragraph*{} Hauek dira koordenatu heliozentrikoetatik abiatuta ($\mathbf{Q_i},\mathbf{V_i}$) , koordenatu barizentrikoak ($\mathbf{q_i},\mathbf{v_i}$) kalkulatzeko ekuazioak,
+
+\begin{enumerate}
+
+\item $\mathbf{q_i}, \ \ i=0,\dots,N$. 
+
+\begin{equation*}
+\mathbf{q_0}=-\sum\limits_{i=1}^{M} \frac{m_i \mathbf{Q_i}}{M}, \ \ M= \sum\limits_{i=0}^{N} m_i.
+\end{equation*} 
+
+\begin{equation*}
+\mathbf{q_i}=\mathbf{q_0}+\mathbf{Q_i}, \ \ i=1,\dots,N.
+\end{equation*}
+
+\item $\mathbf{v_i}, \ \ i=0,\dots,N$. 
+
+\begin{equation*}
+\mathbf{v_i}=\frac{m_0}{m_0+m_i} \ \mathbf{V_i}, \ \ i=1,\dots,N.
+\end{equation*}
+
+\begin{equation*}
+\mathbf{P_0}=\sum\limits_{i=0}^{N} \mathbf{p_i}=\sum\limits_{i=0}^{N} m_i \mathbf{v_i}=0 \Rightarrow \ \  m_0\mathbf{v_0}+ \sum\limits_{i=1}^{N} m_i \mathbf{v_i}=0 \Rightarrow \mathbf{v_0}=-\frac{1}{m_0} \sum\limits_{i=1}^{N} m_i \mathbf{v_i}. 
+\end{equation*}
+
+\end{enumerate}
+
+
+
+
+
+ 

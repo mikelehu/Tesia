@@ -6,7 +6,7 @@ A level-1 auxiliary file: 2-Sarrera.aux
 A level-1 auxiliary file: 3-MetodoSinplektikoak.aux
 A level-1 auxiliary file: 4-Problemak.aux
 A level-1 auxiliary file: 5-KomaHigikorra.aux
-A level-1 auxiliary file: 6-ScientificComputing.aux
+A level-1 auxiliary file: 6-ZientziaKonputazioa.aux
 A level-1 auxiliary file: 8-Review.aux
 A level-1 auxiliary file: 7-IRKPuntuFinkoa.aux
 A level-1 auxiliary file: 9-IRKNewton.aux
@@ -15,50 +15,50 @@ A level-1 auxiliary file: A-Eranskinak.aux
 The style file: myplain2-doi.bst
 Database file #1: ./bibliografia/mybib.bib
 Warning--entry type for "Karplus2014" isn't style-file defined
---line 258 of file ./bibliografia/mybib.bib
-Warning--I didn't find a database entry for "Brouwer1937"
+--line 330 of file ./bibliografia/mybib.bib
+Warning--I didn't find a database entry for "HairerGniComp"
 Warning--empty journal in Higham2015
 Warning--empty journal in Papadrakakis
 Warning--empty year in Papadrakakis
-You've used 25 entries,
+You've used 31 entries,
             2359 wiz_defined-function locations,
-            748 strings with 9020 characters,
-and the built_in function-call counts, 7835 in all, are:
-= -- 717
-> -- 376
+            796 strings with 10133 characters,
+and the built_in function-call counts, 9749 in all, are:
+= -- 904
+> -- 450
 < -- 1
-+ -- 158
-- -- 124
-* -- 621
-:= -- 1312
-add.period$ -- 73
-call.type$ -- 25
-change.case$ -- 131
++ -- 188
+- -- 148
+* -- 782
+:= -- 1627
+add.period$ -- 91
+call.type$ -- 31
+change.case$ -- 161
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 290
-empty$ -- 662
-format.name$ -- 124
-if$ -- 1591
+cite$ -- 34
+duplicate$ -- 359
+empty$ -- 829
+format.name$ -- 148
+if$ -- 1982
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 30
-newline$ -- 126
-num.names$ -- 50
-pop$ -- 163
+int.to.str$ -- 31
+missing$ -- 37
+newline$ -- 156
+num.names$ -- 62
+pop$ -- 188
 preamble$ -- 1
-purify$ -- 112
+purify$ -- 136
 quote$ -- 0
-skip$ -- 173
+skip$ -- 215
 stack$ -- 0
-substring$ -- 421
-swap$ -- 47
+substring$ -- 560
+swap$ -- 59
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 86
+type$ -- 108
 warning$ -- 3
-while$ -- 75
-width$ -- 27
-write$ -- 262
+while$ -- 96
+width$ -- 33
+write$ -- 328
 (There were 5 warnings)

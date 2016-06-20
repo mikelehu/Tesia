@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.28)  3 JUN 2016 13:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.28)  20 JUN 2016 19:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,9 +841,19 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip67
 )
 (./1-Nagusia.aux (./titlepage.aux) (./2-Sarrera.aux)
-(./3-MetodoSinplektikoak.aux) (./4-Problemak.aux
+(./3-MetodoSinplektikoak.aux
+
+LaTeX Warning: Label `eq41' multiply defined.
+
+
+LaTeX Warning: Label `fig:pendulua' multiply defined.
+
+) (./4-Problemak.aux
 
 LaTeX Warning: Label `eq:2' multiply defined.
+
+
+LaTeX Warning: Label `tab:1' multiply defined.
 
 
 LaTeX Warning: Label `tab:1' multiply defined.
@@ -864,9 +874,15 @@ LaTeX Warning: Label `fig:three' multiply defined.
 
 LaTeX Warning: Label `tab:1' multiply defined.
 
-) (./6-ScientificComputing.aux
+) (./6-ZientziaKonputazioa.aux
+
+LaTeX Warning: Label `fig:61' multiply defined.
+
 
 LaTeX Warning: Label `fig:three' multiply defined.
+
+
+LaTeX Warning: Label `fig:61' multiply defined.
 
 
 LaTeX Warning: Label `fig:61' multiply defined.
@@ -894,21 +910,21 @@ LaTeX Warning: Label `eq:63' multiply defined.
 ) (./A-Eranskinak.aux))
 \openout1 = `1-Nagusia.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -949,7 +965,7 @@ Package caption Info: End \AtBeginDocument code.
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box48
-Package hyperref Info: Link coloring ON on input line 36.
+Package hyperref Info: Link coloring ON on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -959,9 +975,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count161
 )
-LaTeX Info: Redefining \ref on input line 36.
-LaTeX Info: Redefining \pageref on input line 36.
-LaTeX Info: Redefining \nameref on input line 36.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
 
 (./1-Nagusia.out) (./1-Nagusia.out)
 \@outlinefile=\write4
@@ -983,9 +999,13 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) [2
+
+
+]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 82.
  (./1-Nagusia.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 3.
@@ -1000,399 +1020,231 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (3.4076pt too wide) detected at line 14
- []\T1/ptm/m/n/12 xxiii
- []
-
-
-Overfull \hbox (2.43584pt too wide) detected at line 15
- []\T1/ptm/m/n/12 xxiv
- []
-
-
-Overfull \hbox (2.43584pt too wide) detected at line 16
- []\T1/ptm/m/n/12 xxiv
- []
-
-
-Overfull \hbox (2.43584pt too wide) detected at line 17
- []\T1/ptm/m/n/12 xxiv
- []
-
-
-Overfull \hbox (6.07172pt too wide) detected at line 18
- []\T1/ptm/m/n/12 xxvii
- []
-
-
-Overfull \hbox (9.4076pt too wide) detected at line 21
- []\T1/ptm/m/n/12 xxviii
- []
-
-
-Overfull \hbox (9.4076pt too wide) detected at line 22
- []\T1/ptm/m/n/12 xxviii
- []
-
-
-Overfull \hbox (2.73584pt too wide) detected at line 23
- []\T1/ptm/m/n/12 xxix
- []
-
-
-Overfull \hbox (2.73584pt too wide) detected at line 24
- []\T1/ptm/m/n/12 xxxi
- []
-
-
-Overfull \hbox (2.73584pt too wide) detected at line 25
- []\T1/ptm/m/n/12 xxxi
- []
-
-
-Overfull \hbox (6.07172pt too wide) detected at line 26
- []\T1/ptm/m/n/12 xxxii
- []
-
-
-Overfull \hbox (8.43584pt too wide) detected at line 27
- []\T1/ptm/m/n/12 xxxiv
- []
-
-
-Overfull \hbox (5.39996pt too wide) detected at line 28
- []\T1/ptm/m/n/12 xxxv
- []
-
-
-Overfull \hbox (12.07172pt too wide) detected at line 30
- []\T1/ptm/m/n/12 xxxvii
- []
-
-
-Overfull \hbox (12.07172pt too wide) detected at line 31
- []\T1/ptm/m/n/12 xxxvii
- []
-
-
-Overfull \hbox (15.4076pt too wide) detected at line 32
- []\T1/ptm/m/n/12 xxxviii
- []
-
-[3
-
-
-]
-Overfull \hbox (15.4076pt too wide) detected at line 33
- []\T1/ptm/m/n/12 xxxviii
- []
-
-
-Overfull \hbox (8.73584pt too wide) detected at line 34
- []\T1/ptm/m/n/12 xxxix
- []
-
-
-Overfull \hbox (8.73584pt too wide) detected at line 35
- []\T1/ptm/m/n/12 xxxix
- []
-
-
-Overfull \hbox (0.74347pt too wide) detected at line 40
- []\T1/ptm/m/n/12 xliii
- []
-
-
-Overfull \hbox (0.74347pt too wide) detected at line 41
- []\T1/ptm/m/n/12 xliii
- []
-
-
-Overfull \hbox (3.4076pt too wide) detected at line 43
- []\T1/ptm/m/n/12 xlvii
- []
-
-
-Overfull \hbox (3.4076pt too wide) detected at line 60
- []\T1/ptm/m/n/12 lxvii
- []
-
-
-Overfull \hbox (6.74347pt too wide) detected at line 61
- []\T1/ptm/m/n/12 lxviii
- []
-
-
-Overfull \hbox (6.74347pt too wide) detected at line 66
- []\T1/ptm/m/n/12 lxxiii
- []
-
-
-Overfull \hbox (6.74347pt too wide) detected at line 67
- []\T1/ptm/m/n/12 lxxiii
- []
-
-
-Overfull \hbox (5.77171pt too wide) detected at line 68
- []\T1/ptm/m/n/12 lxxiv
- []
-
-
-Overfull \hbox (5.77171pt too wide) detected at line 69
- []\T1/ptm/m/n/12 lxxiv
- []
-
-[4]
-Overfull \hbox (9.4076pt too wide) detected at line 70
- []\T1/ptm/m/n/12 lxxvii
- []
-
-
-Overfull \hbox (9.4076pt too wide) detected at line 71
- []\T1/ptm/m/n/12 lxxvii
- []
-
-
-Overfull \hbox (12.74347pt too wide) detected at line 72
- []\T1/ptm/m/n/12 lxxviii
- []
-
-
-Overfull \hbox (12.74347pt too wide) detected at line 74
- []\T1/ptm/m/n/12 lxxxiii
- []
-
-
-Overfull \hbox (8.73584pt too wide) detected at line 76
- []\T1/ptm/m/n/12 lxxxv
- []
-
-
-Overfull \hbox (8.73584pt too wide) detected at line 77
- []\T1/ptm/m/n/12 lxxxv
- []
-
-)
+) [3] [4])
 \tf@toc=\write5
 \openout5 = `1-Nagusia.toc'.
 
- [5] [6
+ [5]
+[6
 
 ] (./1-Nagusia.lof
-Overfull \hbox (9.4076pt too wide) detected at line 8
- []\T1/ptm/m/n/12 xxviii
- []
-
-
-Overfull \hbox (12.07172pt too wide) detected at line 11
- []\T1/ptm/m/n/12 xxxvii
- []
-
-
-Overfull \hbox (6.74347pt too wide) detected at line 15
- []\T1/ptm/m/n/12 xlviii
- []
-
-
-Overfull \hbox (12.74347pt too wide) detected at line 27
- []\T1/ptm/m/n/12 lxxviii
- []
-
-
-Overfull \hbox (6.07172pt too wide) detected at line 32
- []\T1/ptm/m/n/12 lxxix
- []
-
-
-Overfull \hbox (2.73584pt too wide) detected at line 37
- []\T1/ptm/m/n/12 lxxx
- []
-
-
-Overfull \hbox (2.73584pt too wide) detected at line 42
- []\T1/ptm/m/n/12 lxxx
- []
-
-[7]
-Overfull \hbox (6.07172pt too wide) detected at line 45
- []\T1/ptm/m/n/12 lxxxi
+Overfull \hbox (0.50119pt too wide) in paragraph at lines 38--38
+ [][] [][][]\T1/ptm/m/n/12 Pendulu-bikoitza: ener-gia-ren erro-rea-ren eta erro
+-re glo-ba-la-ren ebo- 
  []
 
 )
 \tf@lof=\write6
 \openout6 = `1-Nagusia.lof'.
 
- [8] (./1-Nagusia.lot
-Overfull \hbox (5.39996pt too wide) detected at line 5
- []\T1/ptm/m/n/12 xxxv
- []
+ [7] [8
 
-
-Overfull \hbox (9.4076pt too wide) detected at line 16
- []\T1/ptm/m/n/12 lxxvii
- []
-
-
-Overfull \hbox (9.4076pt too wide) detected at line 17
- []\T1/ptm/m/n/12 lxxvii
- []
-
-)
+] (./1-Nagusia.lot)
 \tf@lot=\write7
 \openout7 = `1-Nagusia.lot'.
 
- [9
+ [9] [10
 
-] [10
+] [1
 
-] [11] [12]
+] [2]
 \openout2 = `2-Sarrera.aux'.
 
  (./2-Sarrera.tex
 Kapitulua 1.
-[13
+[3
 
 
-] [14] [15] <images/eguzkisistema1.png, id=543, 828.09375pt x 579.16376pt>
+] [4] <images/eguzkisistema1.png, id=607, 828.09375pt x 579.16376pt>
 File: images/eguzkisistema1.png Graphic file (type png)
 
 <use images/eguzkisistema1.png>
-Package pdftex.def Info: images/eguzkisistema1.png used on input line 64.
+Package pdftex.def Info: images/eguzkisistema1.png used on input line 54.
 (pdftex.def)             Requested size: 195.0pt x 136.37746pt.
 
-<images/eguzkisistema2.png, id=544, 401.5pt x 301.125pt>
+<images/eguzkisistema2.png, id=608, 401.5pt x 301.125pt>
 File: images/eguzkisistema2.png Graphic file (type png)
 
 <use images/eguzkisistema2.png>
-Package pdftex.def Info: images/eguzkisistema2.png used on input line 67.
+Package pdftex.def Info: images/eguzkisistema2.png used on input line 57.
 (pdftex.def)             Requested size: 195.0pt x 146.2522pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 64--68
+Overfull \hbox (12.0pt too wide) in paragraph at lines 54--58
  [][][][] 
  []
 
-[16 <./images/eguzkisistema1.png (PNG copy)> <./images/eguzkisistema2.png>]
-Overfull \hbox (4.6522pt too wide) in paragraph at lines 81--82
+[5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./images/eguzkisistema1.png (PNG copy)> <./images/eguzkisistema2.png>]
+Overfull \hbox (4.6522pt too wide) in paragraph at lines 71--72
 \T1/ptm/m/n/12 pli-fi-ka-tua mo-du era-gin-ko-rrean apli-ka-tze-ko tek-ni-ka pr
 o-po-sa-tzea izan da. S-ataletako
  []
 
-) [17] [18
+) [7] [8
 
 
-] [19] [20]
+] [9] [10]
 \openout2 = `3-MetodoSinplektikoak.aux'.
 
  (./3-MetodoSinplektikoak.tex
 Kapitulua 2.
 
-Overfull \hbox (28.75993pt too wide) in paragraph at lines 21--22
+Overfull \hbox (28.75993pt too wide) in paragraph at lines 27--28
  [] \T1/ptm/m/n/12 Me-to-do ana-li-ti-koak (fun-tzio eza-gu-nen ara-be-ra-ko so
 -lu-zio zeha-tza) eta erdi-analitikoak,
  []
 
+[11
 
-Overfull \hbox (34.84398pt too wide) in paragraph at lines 23--24
- [] \T1/ptm/m/n/12 Pro-ble-ma kao-ti-koak. Ha-sie-ra-ko ba-lio edo pa-ra-me-tro
-en per-tur-ba-zioe-ki-ko, diskretizazio-
+
+] [12]
+Overfull \hbox (5.4431pt too wide) in paragraph at lines 114--115
+[]\T1/ptm/m/n/12 Hasierako ba-lio edo pa-ra-me-troen per-tur-ba-zioe-ki-ko, dis
+kretizazio-erroreekiko
  []
 
-[21
-
-
-]
-Overfull \hbox (1.80464pt too wide) in paragraph at lines 46--47
- [] \T1/ptm/m/it/12 Oro-ko-rrean $[]$ hur-bil-ke-ta, au-rre-ko hur-bil-ke-ten $
-[]\OML/cmm/m/it/12 ; []; [] ; []$ \T1/ptm/m/it/12 ara-be-ra kal-
- []
-
-[22]
-Overfull \hbox (31.51472pt too wide) in paragraph at lines 74--75
- [] $\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p; q\OT1/cmr/m/n/12 )$
- \T1/ptm/m/it/12 fun-tzio leu-na iza-nik , non $\OML/cmm/m/it/12 H \OT1/cmr/m/n
-/12 :  \U/msb/m/n/12 R[]  [][]\OMS/cmsy/m/n/12 ! \U/msb/m/n/12 R$ \T1/ptm/m/it/
-12 eta $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p; q\OT1/cmr/m/n/12 ) = (\OML/cmm/m/i
-t/12 p[]; [] ; p[]; q[]; [] ; q[]\OT1/cmr/m/n/12 )$\T1/ptm/m/it/12 ,
+[13]
+Overfull \hbox (4.57939pt too wide) in paragraph at lines 128--129
+\T1/ptm/m/n/12 Ekuazio di-fe-ren-tzial arrun-ten (EDA) for-mu-la-zio Ha-mil-ton
+-da-rra era-bi-li ohi da errea-
  []
 
 
-Overfull \hbox (10.90436pt too wide) in paragraph at lines 98--99
-\T1/ptm/m/it/12 Hamiltondar ba-na-ga-rriak egi-tu-ra be-re-zi-ko sis-te-ma Ha-m
-il-ton-da-rrak di-tu-gu, Sistema-
+Overfull \hbox (30.3635pt too wide) in paragraph at lines 130--131
+ [] $\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 p\OML/cmm/m/it/12 ; \O
+T1/cmr/bx/n/12 q\OT1/cmr/m/n/12 )$ \T1/ptm/m/n/12 fun-tzio leu-na iza-nik, non 
+$\OML/cmm/m/it/12 H \OT1/cmr/m/n/12 :  \U/msb/m/n/12 R[]  [][]\OMS/cmsy/m/n/12 
+! \U/msb/m/n/12 R$ \T1/ptm/m/n/12 eta $\OT1/cmr/m/n/12 (\OT1/cmr/bx/n/12 p\OML/
+cmm/m/it/12 ; \OT1/cmr/bx/n/12 q\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 p[]; [] ;
+ p[]; q[]; [] ; q[]\OT1/cmr/m/n/12 )$
  []
 
-[23]
-Overfull \hbox (2.07034pt too wide) in paragraph at lines 132--134
-[]\T1/ptm/m/it/12 Aukera bat Ja-ko-bi koor-de-na-tuak era-bi-liz Ha-mil-ton-da-
-rra $\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p; q\OT1/cmr/m/n/12 ) 
-= \OML/cmm/m/it/12 H[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p; q\OT1/cmr/m/n/12 ) +
+<images/SinglePendulum.png, id=684, 187.70125pt x 174.6525pt>
+File: images/SinglePendulum.png Graphic file (type png)
 
- []
-
-[24] [25] [26]
-LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 247.
- <images/KolokazioMetodoa.png, id=650, 459.7175pt x 363.3575pt>
-File: images/KolokazioMetodoa.png Graphic file (type png)
-
-<use images/KolokazioMetodoa.png>
-Package pdftex.def Info: images/KolokazioMetodoa.png used on input line 280.
-(pdftex.def)             Requested size: 175.49881pt x 138.71487pt.
+<use images/SinglePendulum.png>
+Package pdftex.def Info: images/SinglePendulum.png used on input line 167.
+(pdftex.def)             Requested size: 97.5pt x 90.72388pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[27] [28 <./images/KolokazioMetodoa.png>]
-Overfull \hbox (0.2714pt too wide) in paragraph at lines 358--360
-[]\T1/ptm/m/it/12 Sekuentziala. Urrats ba-koi-tza-ren kal-ku-luak mo-du se-kuen
--tzia-lean egin behar
+
+Overfull \hbox (6.3917pt too wide) in paragraph at lines 174--175
+\T1/ptm/m/n/12 Hamiltondar ba-na-ga-rriak egi-tu-ra be-re-zi-ko sis-te-ma Ha-mi
+l-ton-da-rrak di-tu-gu. Sistema-
  []
 
-[29] [30] [31]
-Overfull \hbox (49.67482pt too wide) in paragraph at lines 473--475
-\T1/ptm/m/it/12 Split-ting me-to-doak kon-po-sa-tuz or-den al-tua-go-ko me-to-d
-oak lor-tzen di-ra. $\OML/cmm/m/it/12 a[]; b[]; a[]; [] ; a[]; b[]$
+[14] [15 <./images/SinglePendulum.png>]
+Overfull \hbox (21.86765pt too wide) in paragraph at lines 219--220
+[]\T1/ptm/m/n/12 Eguzki-sistemaren ka-suan, \T1/ptm/m/it/12 Ja-ko-bi \T1/ptm/m/
+n/12 koor-de-na-tuak era-bi-liz Ha-mil-ton-da-rra $\OML/cmm/m/it/12 H\OT1/cmr/m
+/n/12 (\OT1/cmr/bx/n/12 p\OML/cmm/m/it/12 ; \OT1/cmr/bx/n/12 q\OT1/cmr/m/n/12 )
+ =
+ []
+
+[16] [17] [18]
+<images/SymmetryCollocation.png, id=742, 538.01pt x 145.54375pt>
+File: images/SymmetryCollocation.png Graphic file (type png)
+
+<use images/SymmetryCollocation.png>
+Package pdftex.def Info: images/SymmetryCollocation.png used on input line 381.
+
+(pdftex.def)             Requested size: 331.50238pt x 89.67876pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./images/SymmetryCollocation.png>]
+Overfull \hbox (55.22438pt too wide) in paragraph at lines 456--462
+$[]$ 
  []
 
 
-Overfull \hbox (0.43956pt too wide) in paragraph at lines 502--503
-\T1/ptm/m/it/12 N-gorputzeko pro-ble-ma gra-bi-ta-zio-na-la-ren Ha-mil-ton-da-r
-ra $\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p; q\OT1/cmr/m/n/12 ) =
- \OML/cmm/m/it/12 T\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 ) + \OML/
-cmm/m/it/12 U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 )$\T1/ptm/m/it/
-12 ,
+Underfull \vbox (badness 1424) has occurred while \output is active []
+
+ [21]
+Overfull \hbox (55.22438pt too wide) in paragraph at lines 469--478
+$[]$ 
  []
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 520--522
+[22]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 555.
+ [23] <images/KolokazioMetodoa.png, id=800, 459.7175pt x 363.3575pt>
+File: images/KolokazioMetodoa.png Graphic file (type png)
+
+<use images/KolokazioMetodoa.png>
+Package pdftex.def Info: images/KolokazioMetodoa.png used on input line 577.
+(pdftex.def)             Requested size: 175.49881pt x 138.71487pt.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 595.
+ [24 <./images/KolokazioMetodoa.png>]
+Underfull \vbox (badness 1776) has occurred while \output is active []
+
+ [25]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 675.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 675.
+
+
+LaTeX Warning: Citation `HairerGniComp' on page 26 undefined on input line 710.
+
+
+[26] [27] [28]
+Overfull \hbox (9.80095pt too wide) in paragraph at lines 778--779
+ []\T1/ptm/b/n/12 Splittig me-to-do oro-ko-rrak. \T1/ptm/m/n/12 Kon-po-si-zio m
+e-to-doen mo-du be-rean, oi-na-rriz-ko Split-
+ []
+
+[29] [30]
+Underfull \hbox (badness 10000) in paragraph at lines 886--888
 
  []
 
-[33]
-Overfull \hbox (14.69202pt too wide) in paragraph at lines 572--573
- []\T1/ptm/b/n/12 Ideia na-gu-sia \T1/ptm/m/it/12 . Koor-de-na-tu kar-te-sia-rr
-e-ta-tik koor-de-na-tu elip-ti-koe-ta-ra $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; 
-e; i; \OT1/cmr/m/n/12 
+[31]
+Overfull \hbox (6.72406pt too wide) in paragraph at lines 949--950
+ []\T1/ptm/b/n/12 Ideia na-gu-sia. \T1/ptm/m/n/12 Koor-de-na-tu car-te-sia-rre-
+ta-tik koor-de-na-tu elip-ti-koe-ta-ra $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; e;
+ i; \OT1/cmr/m/n/12 
 \OML/cmm/m/it/12 ; E\OT1/cmr/m/n/12 )$
  []
 
-[34]) [35]
+[32]) [33]
 \openout2 = `4-Problemak.aux'.
 
- (./4-Problemak.tex [36
+ (./4-Problemak.tex [34
 
 
 
 ]
 Kapitulua 3.
-<images/DoublePendulum.pdf, id=747, 434.37282pt x 303.38344pt>
+<images/DoublePendulum.pdf, id=938, 434.37282pt x 303.38344pt>
 File: images/DoublePendulum.pdf Graphic file (type pdf)
 
 <use images/DoublePendulum.pdf>
 Package pdftex.def Info: images/DoublePendulum.pdf used on input line 11.
 (pdftex.def)             Requested size: 284.53947pt x 227.62497pt.
- [37 <./images/DoublePendulum.pdf>]
+ [35 <./images/DoublePendulum.pdf>]
 Overfull \hbox (34.2972pt too wide) detected at line 29
 \OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q; p\OT1/cmr/m/n/12 ) = [][
 ][][]  \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 C\OT1/cmr/m/n/12 6  [](^^B[]) \OMS
@@ -1400,8 +1252,24 @@ Overfull \hbox (34.2972pt too wide) detected at line 29
 2 ;[]
  []
 
-[38] [39]
-Overfull \hbox (51.59676pt too wide) detected at line 147
+[36]
+Overfull \hbox (1.5564pt too wide) in paragraph at lines 105--106
+\T1/ptm/m/n/12 N-gorputzeko pro-ble-ma gra-bi-ta-zio-na-la-ri da-go-kio-nez, Eg
+uz-ki sis-te-ma-ren ere-du sin-
+ []
+
+[37] <images/eguzkisistema3.png, id=1000, 996.72375pt x 558.085pt>
+File: images/eguzkisistema3.png Graphic file (type png)
+
+<use images/eguzkisistema3.png>
+Package pdftex.def Info: images/eguzkisistema3.png used on input line 139.
+(pdftex.def)             Requested size: 312.00119pt x 174.69066pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[38]
+Overfull \hbox (51.59676pt too wide) detected at line 182
  []$[]  [] \OT1/cmr/m/n/12 = [] [](\OML/cmm/m/it/12 q[] \OMS/cmsy/m/n/12 ^^@ \O
 ML/cmm/m/it/12 q[]\OT1/cmr/m/n/12 )[]1 \OMS/cmsy/m/n/12 ^^@ [] [] [] ^^@ [] [] 
 []$ 
@@ -1410,6 +1278,13 @@ ML/cmm/m/it/12 q[]\OT1/cmr/m/n/12 )[]1 \OMS/cmsy/m/n/12 ^^@ [] [] [] ^^@ [] []
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[39 <./images/eguzkisistema3.png>]
+Overfull \hbox (47.95451pt too wide) detected at line 214
+[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 G [] [] \OMS/cmsy/m/n
+/12 ^^@ \OML/cmm/m/it/12 G [] [] [][]\OT1/cmr/m/n/12 ([])[]\OML/cmm/m/it/12 ;  
+ i \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; [] ; N:
+ []
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1419,18 +1294,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[40] [41]) [42]
+[40]) [41] [42]
 \openout2 = `5-KomaHigikorra.aux'.
 
  (./5-KomaHigikorra.tex
 Kapitulua 4.
 
-Overfull \hbox (22.95369pt too wide) in paragraph at lines 5--6
-\T1/ptm/m/it/12 Gaur-egungo kon-pu-ta-gai-lue-tan, IEEE-754 es-tan-da-rra-ren a
-ra-be-ra-ko koma-higikorreko
+Overfull \hbox (16.00552pt too wide) in paragraph at lines 5--6
+\T1/ptm/m/n/12 Gaur-egungo kon-pu-ta-gai-lue-tan, IEEE-754 es-tan-da-rra-ren ar
+a-be-ra-ko koma-higikorreko
  []
 
-<images/KomaHigikorra1.png, id=840, 738.76pt x 111.41624pt>
+<images/KomaHigikorra1.png, id=1045, 738.76pt x 111.41624pt>
 File: images/KomaHigikorra1.png Graphic file (type png)
 
 <use images/KomaHigikorra1.png>
@@ -1444,7 +1319,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-] <images/KomaHigikorra2.png, id=850, 718.685pt x 72.27pt>
+] <images/KomaHigikorra2.png, id=1054, 718.685pt x 72.27pt>
 File: images/KomaHigikorra2.png Graphic file (type png)
 
 <use images/KomaHigikorra2.png>
@@ -1454,64 +1329,59 @@ Package pdftex.def Info: images/KomaHigikorra2.png used on input line 38.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44 <./images/KomaHigikorra1.png> <./images/KomaHigikorra2.png>] [45]
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
- [46]
-Overfull \hbox (49.20447pt too wide) in paragraph at lines 161--163
-[][][][][][][][][][][][][][][][][][] 
- []
+[44 <./images/KomaHigikorra1.png> <./images/KomaHigikorra2.png>] [45] [46]
+LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 157.
 
-
-Overfull \hbox (42.0044pt too wide) in paragraph at lines 164--166
-[][][][][][][][][][][][][][][][][][] 
- []
-
-[47] <images/Quick2Sum.pdf, id=902, 444.91219pt x 297.36093pt>
+[47] <images/Quick2Sum.pdf, id=1108, 444.91219pt x 297.36093pt>
 File: images/Quick2Sum.pdf Graphic file (type pdf)
 
 <use images/Quick2Sum.pdf>
-Package pdftex.def Info: images/Quick2Sum.pdf used on input line 199.
+Package pdftex.def Info: images/Quick2Sum.pdf used on input line 214.
 (pdftex.def)             Requested size: 341.43613pt x 113.8105pt.
  [48 <./images/Quick2Sum.pdf>]) [49]
-\openout2 = `6-ScientificComputing.aux'.
+\openout2 = `6-ZientziaKonputazioa.aux'.
 
 
-(./6-ScientificComputing.tex [50
+(./6-ZientziaKonputazioa.tex [50
 
 
 
 ]
 Kapitulua 5.
-<images/PerformanceDevelopment.png, id=961, 903.375pt x 803.0pt>
+<images/ProcessorClock.png, id=1169, 655.44875pt x 438.63875pt>
+File: images/ProcessorClock.png Graphic file (type png)
+
+<use images/ProcessorClock.png>
+Package pdftex.def Info: images/ProcessorClock.png used on input line 11.
+(pdftex.def)             Requested size: 284.52782pt x 170.72037pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/PerformanceDevelopment.png, id=1170, 903.375pt x 803.0pt>
 File: images/PerformanceDevelopment.png Graphic file (type png)
 
 <use images/PerformanceDevelopment.png>
 Package pdftex.def Info: images/PerformanceDevelopment.png used on input line 1
-2.
+8.
 (pdftex.def)             Requested size: 341.43896pt x 227.61984pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[51] [52 <./images/PerformanceDevelopment.png>]
-<images/MemoryHierarchy.png, id=982, 650.43pt x 330.23375pt>
+[51]
+LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+ [52 <./images/ProcessorClock.png>]
+<images/MemoryHierarchy.png, id=1191, 650.43pt x 330.23375pt>
 File: images/MemoryHierarchy.png Graphic file (type png)
 
 <use images/MemoryHierarchy.png>
-Package pdftex.def Info: images/MemoryHierarchy.png used on input line 69.
+Package pdftex.def Info: images/MemoryHierarchy.png used on input line 75.
 (pdftex.def)             Requested size: 284.53264pt x 113.80981pt.
- [53 <./images/MemoryHierarchy.png>]
-Overfull \hbox (84.34073pt too wide) in paragraph at lines 78--79
+ [53 <./images/PerformanceDevelopment.png>]
+Overfull \hbox (84.34073pt too wide) in paragraph at lines 84--85
 \T1/ptm/m/it/12 si-tik Cache-ra osa-gai ho-ne-taz gain ja-rrai-ko 16 osa-gaiak 
 eka-rri-ko di-ra ($\OML/cmm/m/it/12 a\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/
 cmr/m/n/12 1)\OML/cmm/m/it/12 ; a\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/
@@ -1519,64 +1389,104 @@ m/n/12 2)\OML/cmm/m/it/12 ; [] ; a\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr
 /m/n/12 16)$\T1/ptm/m/it/12 ).
  []
 
-[54] <images/SharedMemorySystem.png, id=1005, 792.9625pt x 347.2975pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[54 <./images/MemoryHierarchy.png>]
+<images/SharedMemorySystem.png, id=1211, 792.9625pt x 347.2975pt>
 File: images/SharedMemorySystem.png Graphic file (type png)
 
 <use images/SharedMemorySystem.png>
-Package pdftex.def Info: images/SharedMemorySystem.png used on input line 118.
+Package pdftex.def Info: images/SharedMemorySystem.png used on input line 124.
 (pdftex.def)             Requested size: 341.4391pt x 113.80832pt.
-
-<images/DistribuitedMemorySystem.png, id=1006, 757.83125pt x 309.155pt>
-File: images/DistribuitedMemorySystem.png Graphic file (type png)
-
-<use images/DistribuitedMemorySystem.png>
-Package pdftex.def Info: images/DistribuitedMemorySystem.png used on input line
- 124.
-(pdftex.def)             Requested size: 341.4372pt x 113.81004pt.
- [55 <./images/SharedMemorySystem.png> <./images/DistribuitedMemorySystem.png>]
-
-<images/SharedMemorySystemUMA.png, id=1013, 601.24625pt x 331.2375pt>
-File: images/SharedMemorySystemUMA.png Graphic file (type png)
-
-<use images/SharedMemorySystemUMA.png>
-Package pdftex.def Info: images/SharedMemorySystemUMA.png used on input line 13
-2.
-(pdftex.def)             Requested size: 341.43869pt x 113.807pt.
-
-Overfull \hbox (0.30795pt too wide) in paragraph at lines 147--148
-[]\T1/ptm/m/it/12 JOIN: ha-riak ko-de pa-ra-le-loa bu-ka-tzen du-te-nean, behin
- sin-kro-ni-za-tu-ta amai-
- []
-
-<images/ForkJoin.png, id=1014, 331.2375pt x 118.4425pt>
-File: images/ForkJoin.png Graphic file (type png)
-
-<use images/ForkJoin.png>
-Package pdftex.def Info: images/ForkJoin.png used on input line 151.
-(pdftex.def)             Requested size: 284.54027pt x 85.35985pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[56 <./images/SharedMemorySystemUMA.png>] [57 <./images/ForkJoin.png>]
-<images/BLASSpeed.png, id=1044, 715.67375pt x 641.39626pt>
+<images/DistribuitedMemorySystem.png, id=1212, 757.83125pt x 309.155pt>
+File: images/DistribuitedMemorySystem.png Graphic file (type png)
+
+<use images/DistribuitedMemorySystem.png>
+Package pdftex.def Info: images/DistribuitedMemorySystem.png used on input line
+ 130.
+(pdftex.def)             Requested size: 341.4372pt x 113.81004pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/SharedMemorySystemUMA.png, id=1213, 601.24625pt x 331.2375pt>
+File: images/SharedMemorySystemUMA.png Graphic file (type png)
+
+<use images/SharedMemorySystemUMA.png>
+Package pdftex.def Info: images/SharedMemorySystemUMA.png used on input line 13
+8.
+(pdftex.def)             Requested size: 341.43869pt x 113.807pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[55]
+Overfull \hbox (0.30795pt too wide) in paragraph at lines 153--154
+[]\T1/ptm/m/it/12 JOIN: ha-riak ko-de pa-ra-le-loa bu-ka-tzen du-te-nean, behin
+ sin-kro-ni-za-tu-ta amai-
+ []
+
+<images/ForkJoin.png, id=1224, 331.2375pt x 118.4425pt>
+File: images/ForkJoin.png Graphic file (type png)
+
+<use images/ForkJoin.png>
+Package pdftex.def Info: images/ForkJoin.png used on input line 166.
+(pdftex.def)             Requested size: 195.0pt x 69.72684pt.
+
+<images/OpenMP1.png, id=1225, 350.30875pt x 575.14874pt>
+File: images/OpenMP1.png Graphic file (type png)
+
+<use images/OpenMP1.png>
+Package pdftex.def Info: images/OpenMP1.png used on input line 169.
+(pdftex.def)             Requested size: 77.99881pt x 128.06013pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[56 <./images/SharedMemorySystem.png> <./images/DistribuitedMemorySystem.png>]
+Underfull \vbox (badness 7814) has occurred while \output is active []
+
+ [57 <./images/SharedMemorySystemUMA.png> <./images/ForkJoin.png> <./images/Ope
+nMP1.png>]
+<images/BLASSpeed.png, id=1250, 715.67375pt x 641.39626pt>
 File: images/BLASSpeed.png Graphic file (type png)
 
 <use images/BLASSpeed.png>
-Package pdftex.def Info: images/BLASSpeed.png used on input line 215.
+Package pdftex.def Info: images/BLASSpeed.png used on input line 238.
 (pdftex.def)             Requested size: 341.43372pt x 227.61407pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[58]) [59 <./images/BLASSpeed.png>]
+[58] [59 <./images/BLASSpeed.png>]
+<images/Optimization_Strength_Reduction.png, id=1275, 999.735pt x 532.99126pt>
+File: images/Optimization_Strength_Reduction.png Graphic file (type png)
+
+<use images/Optimization_Strength_Reduction.png>
+Package pdftex.def Info: images/Optimization_Strength_Reduction.png used on inp
+ut line 302.
+(pdftex.def)             Requested size: 341.43088pt x 113.81013pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[60] [61 <./images/Optimization_Strength_Reduction.png>]
+<images/Optimization_LoopTiling.png, id=1300, 914.41624pt x 539.01375pt>
+File: images/Optimization_LoopTiling.png Graphic file (type png)
+
+<use images/Optimization_LoopTiling.png>
+Package pdftex.def Info: images/Optimization_LoopTiling.png used on input line 
+363.
+(pdftex.def)             Requested size: 341.42624pt x 113.80484pt.
+) [62 <./images/Optimization_LoopTiling.png>]
 \openout2 = `8-Review.aux'.
 
- (./8-Review.tex [60
-
-
-
-]
+ (./8-Review.tex
 Kapitulua 6.
 
 Overfull \hbox (21.73807pt too wide) in paragraph at lines 18--19
@@ -1584,10 +1494,14 @@ Overfull \hbox (21.73807pt too wide) in paragraph at lines 18--19
 é-tai-re de l'Observatoire
  []
 
-[61]) [62] [63
+[63
 
 
-] [64]
+
+] [64]) [65] [66
+
+
+] [67] [68]
 \openout2 = `7-IRKPuntuFinkoa.aux'.
 
  (./7-IRKPuntuFinkoa.tex
@@ -1604,7 +1518,7 @@ Overfull \hbox (2.8514pt too wide) in paragraph at lines 17--18
  urrats ba-koi-tzean erro-
  []
 
-[65
+[69
 
 
 ]
@@ -1613,21 +1527,21 @@ Overfull \hbox (31.51955pt too wide) in paragraph at lines 23--24
  ba-koi-tza bi koma-higikorreko
  []
 
-[66]
+[70]
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-[67]
+[71]
 Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-[68]
+[72]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[69]
+[73]
 Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
@@ -1635,7 +1549,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--208
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 216.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [70]
+) [74]
 Overfull \hbox (12.1626pt too wide) in paragraph at lines 228--229
 []\T1/ptm/m/it/12 Biribiltze erro-rea-ren es-ti-ma-zioa, zen-ba-kiz-ko so-lu-zi
 o na-gu-sia-ren $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y[] \OT1/cmr/m/n/12 + \OML/c
@@ -1645,22 +1559,22 @@ mm/m/it/12 e[]\OT1/cmr/m/n/12 )$
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/Interpolazioa.png, id=1175, 653.44125pt x 223.83624pt>
+<images/Interpolazioa.png, id=1426, 653.44125pt x 223.83624pt>
 File: images/Interpolazioa.png Graphic file (type png)
 
 <use images/Interpolazioa.png>
 Package pdftex.def Info: images/Interpolazioa.png used on input line 265.
 (pdftex.def)             Requested size: 341.42659pt x 113.81342pt.
- [71 <./images/Interpolazioa.png>] [72]
+ [75 <./images/Interpolazioa.png>] [76]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [73]
-[74]
+ [77]
+[78]
 Underfull \hbox (badness 10000) in paragraph at lines 393--394
 
  []
 
-[75]
+[79]
 Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
@@ -1670,155 +1584,147 @@ Underfull \hbox (badness 10000) in paragraph at lines 448--449
 
  []
 
-
-LaTeX Warning: Citation `Brouwer1937' on page lxxvi undefined on input line 466
-.
-
-
-LaTeX Warning: Citation `Brouwer1937' on page lxxvi undefined on input line 468
-.
-
-[76] <images/plot3a.pdf, id=1235, 361.35pt x 220.825pt>
+[80] <images/plot3a.pdf, id=1489, 361.35pt x 220.825pt>
 File: images/plot3a.pdf Graphic file (type pdf)
 
 <use images/plot3a.pdf>
-Package pdftex.def Info: images/plot3a.pdf used on input line 513.
+Package pdftex.def Info: images/plot3a.pdf used on input line 502.
 (pdftex.def)             Requested size: 195.0pt x 119.16621pt.
- <images/plot3b.pdf, id=1236, 361.35pt x 234.8775pt>
+ <images/plot3b.pdf, id=1490, 361.35pt x 234.8775pt>
 File: images/plot3b.pdf Graphic file (type pdf)
 
 <use images/plot3b.pdf>
-Package pdftex.def Info: images/plot3b.pdf used on input line 516.
+Package pdftex.def Info: images/plot3b.pdf used on input line 505.
 (pdftex.def)             Requested size: 195.0pt x 126.74953pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 513--517
+Overfull \hbox (12.0pt too wide) in paragraph at lines 502--506
  [][][][] 
  []
 
-<images/plot3c.pdf, id=1237, 361.35pt x 216.81pt>
+<images/plot3c.pdf, id=1491, 361.35pt x 216.81pt>
 File: images/plot3c.pdf Graphic file (type pdf)
  <use images/plot3c.pdf>
-Package pdftex.def Info: images/plot3c.pdf used on input line 520.
+Package pdftex.def Info: images/plot3c.pdf used on input line 509.
 (pdftex.def)             Requested size: 195.0pt x 116.99956pt.
 
-<images/plot3d.pdf, id=1238, 361.35pt x 231.86626pt>
+<images/plot3d.pdf, id=1492, 361.35pt x 231.86626pt>
 File: images/plot3d.pdf Graphic file (type pdf)
  <use images/plot3d.pdf>
-Package pdftex.def Info: images/plot3d.pdf used on input line 523.
+Package pdftex.def Info: images/plot3d.pdf used on input line 512.
 (pdftex.def)             Requested size: 195.0pt x 125.12453pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 520--524
+Overfull \hbox (12.0pt too wide) in paragraph at lines 509--513
  [][][][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/brouwer4a.pdf, id=1239, 361.35pt x 225.84375pt>
+<images/brouwer4a.pdf, id=1493, 361.35pt x 225.84375pt>
 File: images/brouwer4a.pdf Graphic file (type pdf)
 
 <use images/brouwer4a.pdf>
-Package pdftex.def Info: images/brouwer4a.pdf used on input line 535.
+Package pdftex.def Info: images/brouwer4a.pdf used on input line 524.
 (pdftex.def)             Requested size: 175.49881pt x 109.6857pt.
 
-<images/brouwer4b.pdf, id=1240, 361.35pt x 227.85126pt>
+<images/brouwer4b.pdf, id=1494, 361.35pt x 227.85126pt>
 File: images/brouwer4b.pdf Graphic file (type pdf)
 
 <use images/brouwer4b.pdf>
-Package pdftex.def Info: images/brouwer4b.pdf used on input line 538.
+Package pdftex.def Info: images/brouwer4b.pdf used on input line 527.
 (pdftex.def)             Requested size: 175.49881pt x 110.66069pt.
 
-<images/brouwer4c.pdf, id=1241, 361.35pt x 222.8325pt>
+<images/brouwer4c.pdf, id=1495, 361.35pt x 222.8325pt>
 File: images/brouwer4c.pdf Graphic file (type pdf)
 
 <use images/brouwer4c.pdf>
-Package pdftex.def Info: images/brouwer4c.pdf used on input line 542.
+Package pdftex.def Info: images/brouwer4c.pdf used on input line 531.
 (pdftex.def)             Requested size: 175.49881pt x 108.22324pt.
 
-<images/brouwer4d.pdf, id=1242, 361.35pt x 228.855pt>
+<images/brouwer4d.pdf, id=1496, 361.35pt x 228.855pt>
 File: images/brouwer4d.pdf Graphic file (type pdf)
 
 <use images/brouwer4d.pdf>
-Package pdftex.def Info: images/brouwer4d.pdf used on input line 545.
+Package pdftex.def Info: images/brouwer4d.pdf used on input line 534.
 (pdftex.def)             Requested size: 175.49881pt x 111.14818pt.
- [77]
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/plot5a.pdf, id=1248, 361.35pt x 231.86626pt>
+<images/plot5a.pdf, id=1497, 361.35pt x 231.86626pt>
 File: images/plot5a.pdf Graphic file (type pdf)
  <use images/plot5a.pdf>
-Package pdftex.def Info: images/plot5a.pdf used on input line 557.
+Package pdftex.def Info: images/plot5a.pdf used on input line 546.
 (pdftex.def)             Requested size: 195.0pt x 125.12453pt.
 
-<images/plot5b.pdf, id=1249, 361.35pt x 240.9pt>
+<images/plot5b.pdf, id=1498, 361.35pt x 240.9pt>
 File: images/plot5b.pdf Graphic file (type pdf)
  <use images/plot5b.pdf>
-Package pdftex.def Info: images/plot5b.pdf used on input line 560.
+Package pdftex.def Info: images/plot5b.pdf used on input line 549.
 (pdftex.def)             Requested size: 195.0pt x 129.99951pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 557--561
+Overfull \hbox (12.0pt too wide) in paragraph at lines 546--550
  [][][][] 
  []
 
-<images/plot5c.pdf, id=1250, 361.35pt x 231.86626pt>
+<images/plot5c.pdf, id=1499, 361.35pt x 231.86626pt>
 File: images/plot5c.pdf Graphic file (type pdf)
  <use images/plot5c.pdf>
-Package pdftex.def Info: images/plot5c.pdf used on input line 564.
+Package pdftex.def Info: images/plot5c.pdf used on input line 553.
 (pdftex.def)             Requested size: 195.0pt x 125.12453pt.
 
-<images/plot5d.pdf, id=1251, 361.35pt x 240.9pt>
+<images/plot5d.pdf, id=1500, 361.35pt x 240.9pt>
 File: images/plot5d.pdf Graphic file (type pdf)
  <use images/plot5d.pdf>
-Package pdftex.def Info: images/plot5d.pdf used on input line 567.
+Package pdftex.def Info: images/plot5d.pdf used on input line 556.
 (pdftex.def)             Requested size: 195.0pt x 129.99951pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 564--568
+Overfull \hbox (12.0pt too wide) in paragraph at lines 553--557
  [][][][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/plot6a.pdf, id=1254, 361.35pt x 222.8325pt>
+<images/plot6a.pdf, id=1503, 361.35pt x 222.8325pt>
 File: images/plot6a.pdf Graphic file (type pdf)
  <use images/plot6a.pdf>
-Package pdftex.def Info: images/plot6a.pdf used on input line 580.
+Package pdftex.def Info: images/plot6a.pdf used on input line 569.
 (pdftex.def)             Requested size: 195.0pt x 120.24954pt.
 
-<images/plot6b.pdf, id=1255, 361.35pt x 228.855pt>
+<images/plot6b.pdf, id=1504, 361.35pt x 228.855pt>
 File: images/plot6b.pdf Graphic file (type pdf)
  <use images/plot6b.pdf>
-Package pdftex.def Info: images/plot6b.pdf used on input line 583.
+Package pdftex.def Info: images/plot6b.pdf used on input line 572.
 (pdftex.def)             Requested size: 195.0pt x 123.49953pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 580--584
+Overfull \hbox (12.0pt too wide) in paragraph at lines 569--573
  [][][][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/plot7a.pdf, id=1256, 361.35pt x 233.87375pt>
+<images/plot7a.pdf, id=1505, 361.35pt x 233.87375pt>
 File: images/plot7a.pdf Graphic file (type pdf)
  <use images/plot7a.pdf>
-Package pdftex.def Info: images/plot7a.pdf used on input line 592.
+Package pdftex.def Info: images/plot7a.pdf used on input line 581.
 (pdftex.def)             Requested size: 195.0pt x 126.20784pt.
 
-<images/plot7b.pdf, id=1257, 361.35pt x 238.8925pt>
+<images/plot7b.pdf, id=1506, 361.35pt x 238.8925pt>
 File: images/plot7b.pdf Graphic file (type pdf)
  <use images/plot7b.pdf>
-Package pdftex.def Info: images/plot7b.pdf used on input line 595.
+Package pdftex.def Info: images/plot7b.pdf used on input line 584.
 (pdftex.def)             Requested size: 195.0pt x 128.91618pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 592--596
+Overfull \hbox (12.0pt too wide) in paragraph at lines 581--585
  [][][][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [78 <./images/plot3a.pdf> <./images/plot3b.pdf
+) [81] [82 <./images/plot3a.pdf> <./images/plot3b.pdf
 
 pdfTeX warning: pdflatex (file ./images/plot3b.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
@@ -1830,7 +1736,7 @@ fs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./images/plot3d.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
->] [79 <./images/brouwer4a.pdf> <./images/brouwer4b.pdf
+>] [83 <./images/brouwer4a.pdf> <./images/brouwer4b.pdf
 
 pdfTeX warning: pdflatex (file ./images/brouwer4b.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
@@ -1842,7 +1748,7 @@ pdfTeX warning: pdflatex (file ./images/brouwer4c.pdf): PDF inclusion: multiple
 
 pdfTeX warning: pdflatex (file ./images/brouwer4d.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
->] [80 <./images/plot5a.pdf> <./images/plot5b.pdf
+>] [84 <./images/plot5a.pdf> <./images/plot5b.pdf
 
 pdfTeX warning: pdflatex (file ./images/plot5b.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
@@ -1862,53 +1768,65 @@ fs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./images/plot6b.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
->] [81 <./images/plot7a.pdf> <./images/plot7b.pdf
+>] [85 <./images/plot7a.pdf> <./images/plot7b.pdf
 
 pdfTeX warning: pdflatex (file ./images/plot7b.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
 >]
 \openout2 = `9-IRKNewton.aux'.
 
- (./9-IRKNewton.tex [82
+ (./9-IRKNewton.tex [86
 
 
 
 ]
 Kapitulua 8.
-) [83]
+) [87]
 \openout2 = `10-IRKEguzkiSistema.aux'.
 
- (./10-IRKEguzkiSistema.tex [84
+ (./10-IRKEguzkiSistema.tex [88
 
 
 
 ]
 Kapitulua 9.
-[85] [86]
-Overfull \hbox (11.69234pt too wide) in paragraph at lines 113--114
+[89] [90]
+Overfull \hbox (11.69234pt too wide) in paragraph at lines 117--118
 []\T1/ptm/m/it/12 s-ataleko IRK me-to-doa-ren ite-ra-zio ba-koi-tzean, ($\OML/c
 mm/m/it/12 s \OMS/cmsy/m/n/12 ^^C \OML/cmm/m/it/12 d$\T1/ptm/m/it/12 ) eze-za-g
 u-ne-ta-ko ($\OML/cmm/m/it/12 Y[]$\T1/ptm/m/it/12 ) ekuazio-
  []
 
-[87] [88]
-Overfull \hbox (29.3747pt too wide) in paragraph at lines 233--246
+[91] [92]
+Overfull \hbox (29.3747pt too wide) in paragraph at lines 245--258
 $[]$ 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [89]
-Overfull \hbox (15.79935pt too wide) in paragraph at lines 268--269
+ [93]
+Overfull \hbox (15.79935pt too wide) in paragraph at lines 280--281
 \T1/ptm/m/it/12 ra-zioak mo-du in-de-pen-den-tean kal-ku-la dai-tez-ke. N-gorpu
 tzen eguzki-sistemaren
  []
 
-[90] [91]) [92] [93
+[94] [95] [96])
+Overfull \hbox (5.45953pt too wide) in paragraph at lines 470--111
+[]\T1/ptm/m/it/12 non $\OML/cmm/m/it/12 q[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12
+ q\OT1/cmr/m/n/12 1[]\OML/cmm/m/it/12 ; q\OT1/cmr/m/n/12 1[]\OML/cmm/m/it/12 ; 
+q\OT1/cmr/m/n/12 1[])$ \T1/ptm/m/it/12 mer-ku-rio plan-tea-ren ko-ka-pe-na eta 
+$\OML/cmm/m/it/12 q[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 0[]\
+OML/cmm/m/it/12 ; q\OT1/cmr/m/n/12 0[]\OML/cmm/m/it/12 ; q\OT1/cmr/m/n/12 0[])$
+
+ []
+
+[97] [98
 
 
-] [94]
+] [99] [100] [101
+
+] [102]
 \openout2 = `A-Eranskinak.aux'.
 
  (./A-Eranskinak.tex
@@ -1925,7 +1843,7 @@ Overfull \hbox (20.63605pt too wide) detected at line 17
 []\OT1/cmr/m/n/12 )) = \OML/cmm/m/it/12 n\OMS/cmsy/m/n/12 4\OML/cmm/m/it/12 t
  []
 
-[95
+[103
 
 
 ]
@@ -1941,22 +1859,44 @@ n/12 ) + (\OML/cmm/m/it/12 se  []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OMS/cmsy/m
  \OT1/cmr/m/n/12 = 0
  []
 
-[96]) [97] (./1-Nagusia.bbl [98
+[104] [105]
+Overfull \hbox (0.2845pt too wide) in paragraph at lines 152--153
+ [] \T1/ptm/m/it/12 Koor-de-na-tu ba-ri-zen-tri-koe-ta-tik abia-tu-ta eta al-da
+-gai al-da-ke-ta bat apli-ka-tuz ekua-
+ []
+
+[106]
+Overfull \hbox (24.0426pt too wide) detected at line 217
+[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\U/msa/m/n/12 O[]\OML/cmm/m/it/12 U[] 
+  \OMS/cmsy/m/n/12 )   [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/1
+2 G  [] [][] \OT1/cmr/m/n/12 ([])[]\OML/cmm/m/it/12 ;   i \OT1/cmr/m/n/12 = 1\O
+ML/cmm/m/it/12 ; [] ; N:
+ []
+
+[107]
+Overfull \hbox (28.02058pt too wide) detected at line 313
+[] \OT1/cmr/m/n/12 = [] [] = [] \OML/cmm/m/it/12 m[][] \OT1/cmr/m/n/12 = 0 \OMS
+/cmsy/m/n/12 )   \OML/cmm/m/it/12 m[][] \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 m
+[][] \OT1/cmr/m/n/12 = 0 \OMS/cmsy/m/n/12 ) [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/
+12 ^^@[] [] \OML/cmm/m/it/12 m[][]:
+ []
+
+) [108] (./1-Nagusia.bbl [109
 
 
-] [99] [100])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
- [101]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
- (./1-Nagusia.aux
-(./titlepage.aux) (./2-Sarrera.aux) (./3-MetodoSinplektikoak.aux)
-(./4-Problemak.aux) (./5-KomaHigikorra.aux) (./6-ScientificComputing.aux)
-(./8-Review.aux) (./7-IRKPuntuFinkoa.aux) (./9-IRKNewton.aux)
-(./10-IRKEguzkiSistema.aux) (./A-Eranskinak.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
+] [110])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
+ [111]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
+ (./1-Nagusia.aux (./titlepage.aux)
+(./2-Sarrera.aux) (./3-MetodoSinplektikoak.aux) (./4-Problemak.aux)
+(./5-KomaHigikorra.aux) (./6-ZientziaKonputazioa.aux) (./8-Review.aux)
+(./7-IRKPuntuFinkoa.aux) (./9-IRKNewton.aux) (./10-IRKEguzkiSistema.aux)
+(./A-Eranskinak.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 Package rerunfilecheck Info: File `1-Nagusia.out' has not changed.
-(rerunfilecheck)             Checksum: 7669CD6AD39EE96105D6CC85A56AD30E;4859.
+(rerunfilecheck)             Checksum: 6887F979DC682BE4EEED2DD6A3D451F9;5828.
 
 
 LaTeX Warning: There were undefined references.
@@ -1964,16 +1904,16 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 126.
  ) 
 Here is how much of TeX's memory you used:
- 22425 strings out of 493304
- 371183 string characters out of 6139871
- 610571 words of memory out of 5000000
- 24790 multiletter control sequences out of 15000+600000
- 59851 words of font info for 82 fonts, out of 8000000 for 9000
+ 22695 strings out of 493304
+ 374849 string characters out of 6139871
+ 688629 words of memory out of 5000000
+ 24890 multiletter control sequences out of 15000+600000
+ 66087 words of font info for 98 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,21n,62p,978b,3827s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,21n,62p,906b,3883s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/
@@ -1996,10 +1936,10 @@ xlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on 1-Nagusia.pdf (100 pages, 1873642 bytes).
+Output written on 1-Nagusia.pdf (121 pages, 2545945 bytes).
 PDF statistics:
- 1862 PDF objects out of 2073 (max. 8388607)
- 1600 compressed objects within 16 object streams
- 606 named destinations out of 1000 (max. 500000)
- 760 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2211 PDF objects out of 2487 (max. 8388607)
+ 1917 compressed objects within 20 object streams
+ 767 named destinations out of 1000 (max. 500000)
+ 899 words of extra memory for PDF output out of 10000 (max. 10000000)
 
