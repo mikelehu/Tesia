@@ -1,87 +1,96 @@
-\BOOKMARK [-1][-]{part.1}{I Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Sarrera.}{part.1}% 2
-\BOOKMARK [1][-]{section.1.1}{Context of the Study}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Problem statement or motivation for the study.}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Aim and scope}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.4}{Overview of the study \(structure of the Thesis\).}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.5}{laburpena}{chapter.1}% 7
-\BOOKMARK [-1][-]{part.2}{II Background}{}% 8
-\BOOKMARK [0][-]{chapter.2}{Zenbakizko Integratzaile Sinplektikoak.}{part.2}% 9
-\BOOKMARK [1][-]{section.2.1}{Sarrera.}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.1.1}{Zenbakizko metodoak.}{section.2.1}% 11
-\BOOKMARK [2][-]{subsection.2.1.2}{Problema motak.}{section.2.1}% 12
-\BOOKMARK [2][-]{subsection.2.1.3}{Sistema-Hamiltondarrak.}{section.2.1}% 13
-\BOOKMARK [1][-]{section.2.2}{Metodo sinplektikoak.}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.3}{Gauss metodoak.}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.3.1}{Runge-Kutta metodoak.}{section.2.3}% 16
-\BOOKMARK [2][-]{subsection.2.3.2}{Kolokazio metodoak.}{section.2.3}% 17
-\BOOKMARK [1][-]{section.2.4}{Konposizio metodoak.}{chapter.2}% 18
-\BOOKMARK [2][-]{subsection.2.4.1}{Sarrera.}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.2}{CO1035: 10 ordeneko konposizio metodoa.}{section.2.4}% 20
-\BOOKMARK [1][-]{section.2.5}{Splitting metodoak.}{chapter.2}% 21
-\BOOKMARK [2][-]{subsection.2.5.1}{Sarrera.}{section.2.5}% 22
-\BOOKMARK [2][-]{subsection.2.5.2}{Eguzki-sistemari egokitutako splitting metodoak.}{section.2.5}% 23
-\BOOKMARK [1][-]{section.2.6}{Kepler fluxua.}{chapter.2}% 24
-\BOOKMARK [1][-]{section.2.7}{Laburpena.}{chapter.2}% 25
-\BOOKMARK [0][-]{chapter.3}{Problemak.}{part.2}% 26
-\BOOKMARK [1][-]{section.3.1}{Sarrera.}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.2}{Pendulu bikoitza.}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.2.1}{Ekuazioak.}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.2}{Hasierako balioak.}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.3}{Kodeak.}{section.3.2}% 31
-\BOOKMARK [1][-]{section.3.3}{N-Body problema.}{chapter.3}% 32
-\BOOKMARK [2][-]{subsection.3.3.1}{Zailtasunak.}{section.3.3}% 33
-\BOOKMARK [2][-]{subsection.3.3.2}{Ekuazio barizentrikoak.}{section.3.3}% 34
-\BOOKMARK [2][-]{subsection.3.3.3}{Ekuazio Heliozentrikoak.}{section.3.3}% 35
-\BOOKMARK [2][-]{subsection.3.3.4}{Hasierako balioak.}{section.3.3}% 36
-\BOOKMARK [2][-]{subsection.3.3.5}{Kodeak.}{section.3.3}% 37
-\BOOKMARK [0][-]{chapter.4}{Koma Higikorreko Aritmetika.}{part.2}% 38
-\BOOKMARK [1][-]{section.4.1}{Sarrera.}{chapter.4}% 39
-\BOOKMARK [1][-]{section.4.2}{Adierazpena.}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.3}{Biribiltze errorea.}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.3.1}{Tresnak.}{section.4.3}% 42
-\BOOKMARK [1][-]{section.4.4}{Laburpena.}{chapter.4}% 43
-\BOOKMARK [0][-]{chapter.5}{Zientzia konputazioa.}{part.2}% 44
-\BOOKMARK [1][-]{section.5.1}{Sarrera.}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.2}{Parallel Hardware.}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.3}{Software liburutegiak.}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.4}{Kode Optimizazioak.}{chapter.5}% 48
-\BOOKMARK [2][-]{subsection.5.4.1}{Scalar Tuning and General Optimization.}{section.5.4}% 49
-\BOOKMARK [2][-]{subsection.5.4.2}{Optimization of vectorization.}{section.5.4}% 50
-\BOOKMARK [2][-]{subsection.5.4.3}{Multi-threading.}{section.5.4}% 51
-\BOOKMARK [2][-]{subsection.5.4.4}{Memory access.}{section.5.4}% 52
-\BOOKMARK [1][-]{section.5.5}{Laburpena.}{chapter.5}% 53
-\BOOKMARK [0][-]{chapter.6}{Review.}{part.2}% 54
-\BOOKMARK [1][-]{section.6.1}{Sarrera.}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.2}{Efemerideak.}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.3}{Eguzki-sistemaren integrazio luzeak.}{chapter.6}% 57
-\BOOKMARK [-1][-]{part.3}{III Core}{}% 58
-\BOOKMARK [0][-]{chapter.7}{IRK: Puntu-Finkoa.}{part.3}% 59
-\BOOKMARK [1][-]{section.7.1}{Sarrera.}{chapter.7}% 60
-\BOOKMARK [1][-]{section.7.2}{Hairer-en inplementazioa.}{chapter.7}% 61
-\BOOKMARK [1][-]{section.7.3}{Gure inplementazioa.}{chapter.7}% 62
-\BOOKMARK [2][-]{subsection.7.3.1}{Koefizienteak \(1.proposamena\).}{section.7.3}% 63
-\BOOKMARK [2][-]{subsection.7.3.2}{Geratze irizpidea \(2.proposamena\).}{section.7.3}% 64
-\BOOKMARK [2][-]{subsection.7.3.3}{Batura konpensatua \(3.proposamena\).}{section.7.3}% 65
-\BOOKMARK [2][-]{subsection.7.3.4}{Biribiltze errorearen estimazioa \(4.proposamena\).}{section.7.3}% 66
-\BOOKMARK [2][-]{subsection.7.3.5}{Atalen hasieraketa.}{section.7.3}% 67
-\BOOKMARK [2][-]{subsection.7.3.6}{Gauss-Seidel.}{section.7.3}% 68
-\BOOKMARK [2][-]{subsection.7.3.7}{Algoritmoa.}{section.7.3}% 69
+\BOOKMARK [0][-]{chapter.1}{Sarrera.}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Ikerketaren testuingurua.}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Motibazioa.}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Helburua eta esparrua.}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Ekarpenak.}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Tesiaren egitura.}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.6}{Laburpena}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Zenbakizko Integratzaile Sinplektikoak.}{}% 8
+\BOOKMARK [1][-]{section.2.1}{Sarrera.}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{Zenbakizko metodoak.}{section.2.1}% 10
+\BOOKMARK [2][-]{subsection.2.1.2}{Problema motak.}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.3}{Sistema-Hamiltondarrak.}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.4}{Metodo sinplektikoak.}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Gauss metodoak.}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{Runge-Kutta metodoak.}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{Kolokazio metodoak.}{section.2.2}% 16
+\BOOKMARK [1][-]{section.2.3}{Konposizio eta Splitting metodoak.}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.3.1}{Sarrera.}{section.2.3}% 18
+\BOOKMARK [2][-]{subsection.2.3.2}{Konposizio metodoak.}{section.2.3}% 19
+\BOOKMARK [2][-]{subsection.2.3.3}{Splitting metodoak.}{section.2.3}% 20
+\BOOKMARK [2][-]{subsection.2.3.4}{Kepler fluxua.}{section.2.3}% 21
+\BOOKMARK [1][-]{section.2.4}{Laburpena.}{chapter.2}% 22
+\BOOKMARK [0][-]{chapter.3}{Problemak.}{}% 23
+\BOOKMARK [1][-]{section.3.1}{Sarrera.}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.2}{Pendulu bikoitza.}{chapter.3}% 25
+\BOOKMARK [2][-]{subsection.3.2.1}{Ekuazioak.}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.2}{Hasierako balioak.}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.3}{Kodeak.}{section.3.2}% 28
+\BOOKMARK [1][-]{section.3.3}{N-Body problema.}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.1}{Zailtasunak.}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.2}{Ekuazio barizentrikoak.}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.3}{Ekuazio Heliozentrikoak.}{section.3.3}% 32
+\BOOKMARK [2][-]{subsection.3.3.4}{Hasierako balioak.}{section.3.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.5}{Kodeak.}{section.3.3}% 34
+\BOOKMARK [1][-]{section.3.4}{Laburpena.}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{Koma Higikorreko Aritmetika.}{}% 36
+\BOOKMARK [1][-]{section.4.1}{Sarrera.}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{Adierazpena.}{chapter.4}% 38
+\BOOKMARK [1][-]{section.4.3}{Biribiltze errorea.}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.4}{Biribiltze errorea gutxitzeko teknikak.}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.5}{Brouwer legea.}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.6}{Laburpena.}{chapter.4}% 42
+\BOOKMARK [0][-]{chapter.5}{Zientzia konputazioa.}{}% 43
+\BOOKMARK [1][-]{section.5.1}{Sarrera.}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.2}{Eraginkortasuna.}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.3}{Hardwarea.}{chapter.5}% 46
+\BOOKMARK [2][-]{subsection.5.3.1}{Memori hierarkia.}{section.5.3}% 47
+\BOOKMARK [2][-]{subsection.5.3.2}{Hardware motak.}{section.5.3}% 48
+\BOOKMARK [1][-]{section.5.4}{Softwarea.}{chapter.5}% 49
+\BOOKMARK [2][-]{subsection.5.4.1}{Software liburutegiak.}{section.5.4}% 50
+\BOOKMARK [2][-]{subsection.5.4.2}{Programazio paraleloa.}{section.5.4}% 51
+\BOOKMARK [2][-]{subsection.5.4.3}{Konpiladorea.}{section.5.4}% 52
+\BOOKMARK [1][-]{section.5.5}{Kode Optimizazioak.}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.6}{Laburpena.}{chapter.5}% 54
+\BOOKMARK [0][-]{chapter.6}{Eguzki-sistemaren integraziorako metodoak \(review\).}{}% 55
+\BOOKMARK [1][-]{section.6.1}{Sarrera.}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.2}{Efemerideak.}{chapter.6}% 57
+\BOOKMARK [1][-]{section.6.3}{Eguzki-sistemaren integrazio luzeak.}{chapter.6}% 58
+\BOOKMARK [1][-]{section.6.4}{Laburpena.}{chapter.6}% 59
+\BOOKMARK [0][-]{chapter.7}{IRK: Puntu-Finkoa.}{}% 60
+\BOOKMARK [1][-]{section.7.1}{Sarrera.}{chapter.7}% 61
+\BOOKMARK [1][-]{section.7.2}{Hairer-en inplementazioa.}{chapter.7}% 62
+\BOOKMARK [1][-]{section.7.3}{Gure inplementazioa.}{chapter.7}% 63
+\BOOKMARK [2][-]{subsection.7.3.1}{Metodoaren birformulazioa \(1.proposamena\).}{section.7.3}% 64
+\BOOKMARK [2][-]{subsection.7.3.2}{Geratze irizpidea \(2.proposamena\).}{section.7.3}% 65
+\BOOKMARK [2][-]{subsection.7.3.3}{Biribiltze errorea gutxitzeko teknikak \(3.proposamena\).}{section.7.3}% 66
+\BOOKMARK [2][-]{subsection.7.3.4}{Biribiltze errorearen estimazioa \(4.proposamena\).}{section.7.3}% 67
+\BOOKMARK [2][-]{subsection.7.3.5}{Atalen hasieraketa.}{section.7.3}% 68
+\BOOKMARK [2][-]{subsection.7.3.6}{Algoritmoa.}{section.7.3}% 69
 \BOOKMARK [1][-]{section.7.4}{Esperimentuak.}{chapter.7}% 70
-\BOOKMARK [2][-]{subsection.7.4.1}{Doitasun azterketa.}{section.7.4}% 71
-\BOOKMARK [2][-]{subsection.7.4.2}{Brouwer legea.}{section.7.4}% 72
-\BOOKMARK [2][-]{subsection.7.4.3}{Pendulu bikoitza.}{section.7.4}% 73
-\BOOKMARK [2][-]{subsection.7.4.4}{N-Body problema.}{section.7.4}% 74
-\BOOKMARK [0][-]{chapter.8}{IRK: Newton.}{part.3}% 75
-\BOOKMARK [1][-]{section.8.1}{Sarrera.}{chapter.8}% 76
-\BOOKMARK [0][-]{chapter.9}{IRK: Eguzki-sistema.}{part.3}% 77
-\BOOKMARK [1][-]{section.9.1}{Sarrera.}{chapter.9}% 78
-\BOOKMARK [1][-]{section.9.2}{Meta-Algoritmoa.}{chapter.9}% 79
-\BOOKMARK [1][-]{section.9.3}{Denbora birparametrizazioa.}{chapter.9}% 80
-\BOOKMARK [2][-]{subsection.9.3.1}{Denbora birparametrizazioa.}{section.9.3}% 81
-\BOOKMARK [2][-]{subsection.9.3.2}{Adibidea.}{section.9.3}% 82
-\BOOKMARK [-1][-]{part.4}{IV Synthesys}{}% 83
-\BOOKMARK [-1][-]{part.5}{V Eranskinak}{}% 84
-\BOOKMARK [0][-]{chapter.10}{A-Eranskinak}{part.5}% 85
-\BOOKMARK [1][-]{section.10.1}{Kepler ekuazioak eta definizioak.}{chapter.10}% 86
-\BOOKMARK [1][-]{section.10.2}{Ekuazio Heliozentrikoak.}{chapter.10}% 87
+\BOOKMARK [2][-]{subsection.7.4.1}{Integrazio motak.}{section.7.4}% 71
+\BOOKMARK [2][-]{subsection.7.4.2}{Errore azterketa.}{section.7.4}% 72
+\BOOKMARK [2][-]{subsection.7.4.3}{Integrazio parametroak.}{section.7.4}% 73
+\BOOKMARK [2][-]{subsection.7.4.4}{Pendulu bikoitza ez-kaotikoa.}{section.7.4}% 74
+\BOOKMARK [2][-]{subsection.7.4.5}{Pendulu bikoitza kaotikoa.}{section.7.4}% 75
+\BOOKMARK [2][-]{subsection.7.4.6}{N-Body problema.}{section.7.4}% 76
+\BOOKMARK [1][-]{section.7.5}{Laburpena.}{chapter.7}% 77
+\BOOKMARK [0][-]{chapter.8}{IRK: Newton.}{}% 78
+\BOOKMARK [1][-]{section.8.1}{Sarrera.}{chapter.8}% 79
+\BOOKMARK [1][-]{section.8.2}{IRK-Newton formulazio orokorroa.}{chapter.8}% 80
+\BOOKMARK [1][-]{section.8.3}{IRK-Newton gure formulazioa.}{chapter.8}% 81
+\BOOKMARK [1][-]{section.8.4}{Laburpena.}{chapter.8}% 82
+\BOOKMARK [0][-]{chapter.9}{IRK: Eguzki-sistema.}{}% 83
+\BOOKMARK [1][-]{section.9.1}{Sarrera.}{chapter.9}% 84
+\BOOKMARK [1][-]{section.9.2}{Meta-Algoritmoa.}{chapter.9}% 85
+\BOOKMARK [1][-]{section.9.3}{Denbora birparametrizazioa.}{chapter.9}% 86
+\BOOKMARK [2][-]{subsection.9.3.1}{Denbora birparametrizazioa.}{section.9.3}% 87
+\BOOKMARK [2][-]{subsection.9.3.2}{Adibidea.}{section.9.3}% 88
+\BOOKMARK [1][-]{section.9.4}{Laburpena.}{chapter.9}% 89
+\BOOKMARK [0][-]{chapter.10}{Eztabaida.}{}% 90
+\BOOKMARK [1][-]{section.10.1}{Sarrera.}{chapter.10}% 91
+\BOOKMARK [1][-]{section.10.2}{Laburpena.}{chapter.10}% 92
+\BOOKMARK [0][-]{chapter.11}{Konklusioak.}{}% 93
+\BOOKMARK [1][-]{section.11.1}{Sarrera.}{chapter.11}% 94
+\BOOKMARK [1][-]{section.11.2}{Laburpena.}{chapter.11}% 95
+\BOOKMARK [0][-]{section.11.2}{Bibliografia}{}% 96

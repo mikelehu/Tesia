@@ -67,6 +67,12 @@ Ariadna Farr{\'e}s, Jacques Laskar, Sergio Blanes, Fernando Casas, Joseba
 \newblock {\em Celestial Mechanics and Dynamical Astronomy}, 116\penalty0
   (2):\penalty0 141--174, 2013.
 
+\bibitem{Feng2010}
+Kang Feng and Mengzhao Qin.
+\newblock \href{http://dx.doi.org/10.1007/978-3-642-01777-3}{{\em Symplectic
+  geometric algorithms for hamiltonian systems}}.
+\newblock Springer, 2010.
+
 \bibitem{Folkner2014}
 William~M Folkner, James~G Williams, Dale~H Boggs, Ryan~S Park, and Petr
   Kuchynka.
@@ -132,6 +138,12 @@ Jacques Laskar and Philippe Robutel.
   symplectic integrators for perturbed hamiltonian systems}.
 \newblock {\em Celestial Mechanics and Dynamical Astronomy}, 80\penalty0
   (1):\penalty0 39--62, 2001.
+
+\bibitem{Leimkuhler2004}
+Benedict Leimkuhler and Sebastian Reich.
+\newblock \href{http://dx.doi.org/10.2277/0521772907}{{\em Simulating
+  hamiltonian dynamics}}, volume~14.
+\newblock Cambridge University Press, 2004.
 
 \bibitem{Levison1994}
 Harold~F Levison and Martin~J Duncan.

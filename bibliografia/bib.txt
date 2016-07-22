@@ -1,21 +1,14 @@
-@article{blanes2013new,
-  title={New families of symplectic splitting methods for numerical integration in dynamical astronomy},
-  author={Blanes, Sergio and Casas, Fernando and Farres, Ariadna and Laskar, Jacques and Makazaga, Joseba and Murua, Ander},
-  journal={Applied Numerical Mathematics},
-  volume={68},
-  pages={58--72},
-  year={2013},
-  publisher={Elsevier}
+@book{leimkuhler2004simulating,
+  title={Simulating hamiltonian dynamics},
+  author={Leimkuhler, Benedict and Reich, Sebastian},
+  volume={14},
+  year={2004},
+  publisher={Cambridge University Press}
 }
 
-@article{farres2013high,
-  title={High precision symplectic integrators for the solar system},
-  author={Farr{\'e}s, Ariadna and Laskar, Jacques and Blanes, Sergio and Casas, Fernando and Makazaga, Joseba and Murua, Ander},
-  journal={Celestial Mechanics and Dynamical Astronomy},
-  volume={116},
-  number={2},
-  pages={141--174},
-  year={2013},
+@book{feng2010symplectic,
+  title={Symplectic geometric algorithms for hamiltonian systems},
+  author={Feng, Kang and Qin, Mengzhao},
+  year={2010},
   publisher={Springer}
 }
-

@@ -1,6 +1,7 @@
 
-\documentclass[12pt,a4paper]{book}
+\documentclass[12pt,a4paper]{basque-book}
 \usepackage[utf8]{inputenc}
+
 
 \usepackage{times}
 \usepackage[basque]{babel}
@@ -12,7 +13,10 @@
 \usepackage{graphicx}
 % Mikel : Nik gehitutako paketeak
 %\usepackage[english]{babel}
-\graphicspath{ {images/} }
+\graphicspath{ {2-Sarrera/figures/} {3-MetodoSinplektikoak/figures/} {4-Problemak/figures/}
+               {5-KomaHigikorra/figures/} {6-ZientziaKonputazioa/figures/} {7-IRKPuntuFinkoa/figures/}
+               {8-Review/figures/} {9-IRKNewton/figures/} {10-IRKEguzkiSistema} {21-Eztabaida/figures/}
+               {22-Konlusioak/figures/}}
 \usepackage{listings}   % kodea azaltzeko
 %\usepackage[ruled]{algorithm2e}
 \usepackage{algorithm2e}
@@ -20,6 +24,7 @@
 \usepackage {amsmath,amsfonts,amssymb}
 \usepackage{subfig}
 \usepackage{tikz}
+\usepackage{epigraph}
 
 %Higham (bibliostyle)
 \usepackage{texnames}
@@ -63,9 +68,12 @@
 
 \begin{document}
 
+
+%: ----------------------- generate cover page ------------------------
+
 \frontmatter
 %Title page
-\include{titlepage} %title page in a subfile. Optional, but looks nicer.
+\include{0-title/titlepage} %title page in a subfile. Optional, but looks nicer.
 %\addtocounter{page}{1}
 
 %\title{N-Gorputzeko problema grabitazionalaren ebazpenerako zenbakizko metodoen azterketa.}
@@ -78,13 +86,28 @@
 %\end{titlepage}
 
 
-\setcounter{tocdepth}{3}
+%: ----------------------- contents ------------------------
+
+\setcounter{secnumdepth}{3} % organisational level that receives a numbers
+\setcounter{tocdepth}{0}    % print table of contents for level 3
+%\tableofcontents
+
+{\expandafter\def\csname @starttoc\endcsname#1{\InputIfFileExists{\jobname.#1}{}{}}%
+\tableofcontents}
+
+
+\renewcommand*\contentsname{Gaien Aurkibidea (detailed)}
+
+\setcounter{tocdepth}{3}    % print table of contents for level 3
 \tableofcontents
-\newpage
-\listoffigures
-\newpage
-\listoftables
-\newpage
+
+%: ----------------------- list of figures/tables ------------------------
+
+%\newpage
+%\listoffigures
+%\newpage
+%\listoftables
+%\newpage
 
 
 
@@ -95,31 +118,50 @@
 % \subclass{MSC code1 \and MSC code2 \and more}
 %\end{abstract}
 
+
+%: --------------------------------------------------------------
+%:                  MAIN DOCUMENT SECTION
+% --------------------------------------------------------------
+
 \mainmatter
 
-\part{Introduction}
-\include{2-Sarrera}
-\part{Background}
-\include{3-MetodoSinplektikoak} 
-\include{4-Problemak}
-\include{5-KomaHigikorra}
-\include{6-ZientziaKonputazioa}
-\include{8-Review}
-\part{Core}
-\include{7-IRKPuntuFinkoa}
-\include{9-IRKNewton}
-\include{10-IRKEguzkiSistema}
-\part{Synthesys}
-\part{Eranskinak}
+%\part{Introduction}
+%\include{2-Sarrera}
+\include{2-Sarrera/Sarrera}
+%\part{Background}
+\include{3-MetodoSinplektikoak/MetodoSinplektikoak} 
+\include{4-Problemak/Problemak}
+\include{5-KomaHigikorra/KomaHigikorra}
+\include{6-ZientziaKonputazioa/ZientziaKonputazioa}
+\include{8-Review/Review}
+%\part{Core}
+\include{7-IRKPuntuFinkoa/IRKPuntuFinkoa}
+\include{9-IRKNewton/IRKNewton}
+\include{10-IRKEguzkiSistema/IRKEguzkiSistema}
+%\part{Synthesys}
+\include{21-Eztabaida/Eztabaida}
+\include{22-Konklusioak/Konklusioak}
+
+
+% --------------------------------------------------------------
+%:                  BACK MATTER: appendices, refs,..
+% --------------------------------------------------------------
+
+%\part{Eranskinak}
+\appendix
 \include{A-Eranskinak}   
 
 %\include{Appendix}
+
 
 %\begin{acknowledgements}
 %If you'd like to thank anyone, place your comments here
 %and remove the percent signs.
 %\end{acknowledgements}
+
+\backmatter
 \nocite{*}
+\addcontentsline{toc}{chapter}{Bibliografia}
 \bibliography{./bibliografia/mybib}
 \bibliographystyle{myplain2-doi}
 

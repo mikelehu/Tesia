@@ -125,6 +125,34 @@
   Url                      = {http://stacks.iop.org/1538-3881/116/i=4/a=2067}
 }
 
+@Article{Farres2013,
+  Title                    = {High precision symplectic integrators for the solar system},
+  Author                   = {Farr{\'e}s, Ariadna and Laskar, Jacques and Blanes, Sergio and Casas, Fernando and Makazaga, Joseba and Murua, Ander},
+  Journal                  = {Celestial Mechanics and Dynamical Astronomy},
+  Year                     = {2013},
+  Number                   = {2},
+  Pages                    = {141--174},
+  Volume                   = {116},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1007/s10569-013-9479-6},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2016.06.20}
+}
+
+@Book{Feng2010,
+  Title                    = {Symplectic geometric algorithms for hamiltonian systems},
+  Author                   = {Feng, Kang and Qin, Mengzhao},
+  Publisher                = {Springer},
+  Year                     = {2010},
+
+  __markedentry            = {[joseba:6]},
+  Doi                      = {10.2277/0521772907},
+  Owner                    = {joseba},
+  Timestamp                = {2016.07.13}
+}
+
 @Article{Folkner2014,
   Title                    = {The planetary and lunar ephemerides DE430 and DE431},
   Author                   = {Folkner, William M and Williams, James G and Boggs, Dale H and Park, Ryan S and Kuchynka, Petr},
@@ -256,6 +284,18 @@
   Timestamp                = {2016.05.29}
 }
 
+@Book{Leimkuhler2004,
+  Title                    = {Simulating hamiltonian dynamics},
+  Author                   = {Leimkuhler, Benedict and Reich, Sebastian},
+  Publisher                = {Cambridge University Press},
+  Year                     = {2004},
+  Volume                   = {14},
+
+  __markedentry            = {[joseba:6]},
+  Owner                    = {joseba},
+  Timestamp                = {2016.07.13}
+}
+
 @Article{Levison1994,
   Title                    = {The long-term dynamical behavior of short-period comets},
   Author                   = {Levison, Harold F and Duncan, Martin J},
@@ -295,7 +335,6 @@
   Pages                    = {89--112},
   Volume                   = {30},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1146/annurev.earth.30.091201.140243},
   Owner                    = {joseba},
   Publisher                = {Annual Reviews 4139 El Camino Way, PO Box 10139, Palo Alto, CA 94303-0139, USA},
@@ -352,8 +391,6 @@
   Number                   = {4-5},
   Pages                    = {597--613},
   Volume                   = {20},
-
-  __markedentry            = {[joseba:6]},
   Doi                      = {10.1080/10556780500140664},
   Owner                    = {joseba},
   Publisher                = {Taylor \& Francis},

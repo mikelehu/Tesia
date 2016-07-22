@@ -1,0 +1,76 @@
+\chapter{Eguzki-sistemaren integraziorako metodoak (review).}
+
+\section{Sarrera.}
+
+\section{Efemerideak.}
+
+Hiru dira planetak efemerideak,
+
+\begin{enumerate}
+\item Jet Propulsion Laboratory, DE (Development Ephemerides).
+
+      Integrazio tartea: $1550-2650$.
+
+      Zenbkizko metodoa: "DIVA" (Krogh,1997).A variable order Adams method.
+      
+      Doitasuna: "QIVA" a quaruple precision of "DIVA" : the equations of motion , the newtonian part is computed in quadruple precision; all of the rest are computed in double precision.
+
+\item Paris Observatory, INPOP (Intégrateur Númerique Planétaire de l'Observatoire de Paris).
+      
+      Integrazio tartea: .
+      
+	  Zenbakizko metodoa: The integrator is an Adams-Cowell method with fixed step-size.
+	  
+	  Doitasuna:  the programming is done in C language, thus allowing to use the extended precision (80 bits). 
+	  Integrating in quadruple precision would of course reduce the round off error in a very large amount, but the
+	  CPU time is about 15 time larger than for double precision arithmetic (or extended arithmetic) on our machine
+	  (Itanium II with Intel C++ compiler). Nevertheless, it was possible to obtain an additional order of magnitude im-
+	  provement by using a single addition in simulated quadruple precision in the corrector step with a very small over-
+	  head.
+	  
+	  Hardware: Intel Itanium II processors.
+	  
+\item St. Petersburg, EPM (Ephemerides Planets-Moon).
+      
+      Integrazio tartea: .
+      
+      Zenbakizko metodoa: Everhart. Implicit RK method (Gauss-Radau).
+      (An efficient integrator that uses Gauss-Radau Spacings)
+      
+      Doitasuna: double precision. The change of ERA system integrator (19 decimal digits instead of 15 ones) with the aim to reduce the round-off error. (Extended precision).
+      
+\end{enumerate}
+
+\paragraph{Influence of the methods of constructing ephemerides...}
+It is obvious that such ephemerides in themselves must have 128 bits, that is, comprise the coefficients calculated with quadruple precision.
+
+
+\section{Eguzki-sistemaren integrazio luzeak.}
+
+A.Morbidellik \cite{Morbidelli2002} eguzki-sistemaren zenbakizko integrazioen algoritmoen garapenaren azterketan, gaia hauek sailkatzen ditu:
+
+\begin{enumerate}
+
+\item The classical period.
+
+$90$. hamarkada hasiera arte,  
+
+\item The symplectic period.
+
+\item The statistic period.
+
+\item The planetary accretion period. 
+
+\end{enumerate}
+
+
+Wisdomek eta Holmanenek bere lanean \ycite[1991]{Sussman1992},  eguzki-sistemaren epe luzeko simulazioetarako integratzaile  sinplektikoen erabilerak arrakasta izan zuen. N-planeta eta masa nagusiko gorputza bat dugula kontsideratuta, problemaren Hamiltondarra bitan banatu zuten:  Hamiltondar Kleperiarra eta interakzioen Hamiltondarra. Metodo honetan, Hamiltondar bakoitzaren soluzioa tartekatuz, problema osoaren ebazpena kalkulatuko da. 
+
+Wisdom eta Holmanen inplementazioak ez ditu kolisio gertuko egoerak onartzen. Arazo hau gainditzeko, urteetan zehar algoritmo honen hainbat aldaera proposatu dira: Levinson eta Duncan-ek \ycite[1994]{Levison1994}  \emph{SWIFT} softwarea garatu zuten;  Duncan, Levinson eta Lee-k \ycite[1998]{Duncan1998} \emph{SYMBA} softwarea garatu zuten; Chambers-ek \cite{Chambers1999} \emph{MERCURY} softwarea garatu zuen. Berriki, Hernandez eta Bertschinger-ek \ycite[2015]{Hernandez2015} garapen berri bat proposatu dute.
+
+Koordenatu sistema aukera ezberdinak erabili dira Hamiltondarraren banaketa lortzeko. Jacobi koordenatuak eta koordenatu Heliozentrikoak erabili ohi dira bakoitzak bere abantaila eta desbaintailekin.
+
+Problema integratzeko oinarrizko metodoa \emph{leapfrog} metodoa dugu. Metodo hau 2 ordeneko da. Orden altuagoko splitting eskemak : McLachlan \ycite[1995]{McLachlan1995}, Laskar eta Robutel \cite[2001]{Laskar2001}, Blanes \cite{Blanes2013}.
+
+\section{Laburpena.}   
+       

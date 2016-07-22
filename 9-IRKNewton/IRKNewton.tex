@@ -1,0 +1,316 @@
+\chapter{IRK: Newton.}
+
+\section{Sarrera.}
+
+Newton metodoa, $G(X)=0, X\in \mathbf{R}^{n \times m}$ ekuazio sistema ez-linealen zenbakizko soluzioa aurkitzeko metodoa da. Hasierako soluzioaren estimazioa  $X^{[0]}$ emanda, benetako Newton metodoa,
+\begin{algorithm}[h]
+  \For{ (k=1,2,\dots)}
+  {
+   \BlankLine
+   $M^{[k]}=G'(X^{[k]})$\;
+   $Solve (\triangle X^{[k]}=- G(X^{[k]})/{M^{[k]}},\ \triangle X^{[k]})$\;
+   \BlankLine
+   $X^{[k]}=X^{[k-1]}+\triangle X^{[k]}$\;
+  }
+ \caption{Benetako Newton metodoa}
+\end{algorithm}
+
+
+Benetako Newton metodoa konputazionalki garestia da , iterazio bakoitzean $M^{[k]}=G'(X^{[k]})$ jakobiarraren ebaluazioa eta ($nm \times nm$) matrizearen \emph{LU} deskonposaketa kalkulatu behar delako. Horregatik konputazionalki merkeagoa diren Newton metodoaren aldaerak erabili ohi dira. 
+
+Jarraian Newton sinplifikatua definituko dugu, nagusiki erabili den metodoa: jakobiarraren ebaluazio $M=G'(X^{[0]})$ eta dagokion \emph{LU} deskonposaketa behin bakarrik kalkulatu behar da.
+\begin{algorithm}[h]
+  $M=G'(X^{[0]})$\;
+  \For{ (k=1,2,\dots)}
+  {
+   \BlankLine
+   $Solve (\triangle X^{[k]}=- G(X^{[k]})/{M}, \ \triangle X^{[k]})$\;
+   \BlankLine
+   $X^{[k]}=X^{[k-1]}+\triangle X^{[k]}$\;
+  }
+ \caption{Newton sinplifikatua ($L_i$).}
+\end{algorithm}
+ 
+\section{IRK-Newton formulazio orokorroa.}
+
+Demagun hasierako baliodun problema,
+\begin{equation}
+\label{eq:91}
+\dot{\mathbf{y}}=\mathbf{f}(\mathbf{y}),\ \ \ \mathbf{y}(t_0)=\mathbf{y_0}, 
+\end{equation}
+non  $\mathbf{y}=(q_1,\dots,q_n,p_1,\dots,p_n) \in \mathbb{R}^{d=2n}$  eta $\bf{f}: \  {\mathbb{R}}^d \ \longrightarrow {\mathbb{R}}^d$. 
+
+\paragraph*{}IRK metodoaren ekuazio sistema ez-lineala,
+\begin{equation*}
+r_i=-Y_i+y_n+h \sum\limits_{j=1}^{s} a_{ij} f(Y_j), \ \ i=1,\dots,s.
+\end{equation*}
+
+Modu baliokidean notazio hau erabiliko dugu,
+\begin{equation*}
+R(Y)=-Y+y_n+ h \ A \ F(Y), 
+\end{equation*}--
+
+non,
+\begin{equation*}
+Y^T=(Y_1,\dots,Y_s), \ \ \
+A=
+\begin{bmatrix}
+   a_{11} & a_{12} & \dots & a_{1s}\\
+   a_{21} & a_{22} & \dots & a_{2s}\\
+    \vdots & \ddots & & \vdots \\
+   a_{s1} & a_{s2} & \dots & a_{ss}\\
+\end{bmatrix}
+, \ \ \ 
+F(Y)=
+\begin{bmatrix}
+     f(Y_1) \\
+     f(Y_2) \\
+     \dots  \\
+     f(Y_s)
+\end{bmatrix}.     
+\end{equation*}
+
+\paragraph*{} Newton sinplifikatuaren metodoa,
+\begin{algorithm}[h]
+  $M=R'(Y^{[0]})$\;
+  \For{ (k=1,2,\dots)}
+  {
+   \BlankLine
+   $Solve(\triangle Y^{[k]}=- R(Y^{[k]})/M, \ \triangle Y^{[k]})$\;
+   \BlankLine
+   $Y^{[k]}=Y^{[k-1]}+\triangle Y^{[k]}$\;
+  }
+ \caption{Newton sinplifikatua}
+\end{algorithm}
+
+non 
+\begin{equation*}
+R'(Y^{[0]})=I_s \otimes I_d - h  
+\begin{bmatrix}
+a_{11} f'(Y_1^{[0]}) & \dots & a_{1s} f'(Y_1^{[0]}) \\
+a_{21} f'(Y_2^{[0]}) & \dots & a_{2s} f'(Y_2^{[0]}) \\
+\dots          & \dots & \dots \\
+a_{s1} f'(Y_s^{[0]}) & \dots & a_{ss} f'(Y_s^{[0]}) \\ 
+\end{bmatrix},
+\end{equation*}
+
+eta 
+\begin{equation*}
+f'(y)=
+\begin{bmatrix}
+    \frac{\partial f_1}{\partial q_1} & \dots & \frac{\partial f_1}{\partial q_n} & \frac{\partial f_{1}}{\partial p_1} & \dots & \frac{\partial f_{1}}{\partial p_n}\\    
+    \dots & \dots & \dots  & \dots & \dots\\    
+    \frac{\partial f_d}{\partial q_1} & \dots & \frac{\partial f_d}{\partial q_n} & \frac{\partial f_{d}}{\partial p_1} & \dots & \frac{\partial f_{d}}{\partial p_n}\\ 
+\end{bmatrix}
+\end{equation*}
+
+\paragraph*{}Problema stiff denean, erabili ohi den atalen hasieraketa $Y_i^{[0]}=y_n$, ($i=1,\dots,s$) da eta horregatik ekuazio sistema linealaren $M$ matrizea beste modu honetan adierazten da (\cite{Hairer2006}), 
+\begin{equation*}
+M=R'(Y^{[0]})=I_s \otimes I_d - h A \otimes J, \ \ J=f'(y_n).
+\end{equation*}
+
+\section{IRK-Newton gure formulazioa.}
+
+\subsection*{Lehen urratsa.}
+
+Gure IRK formulazioan, Newton metodoa aplikatzeko orduan egokiagoa da $L_i$ ($i=1,\dots,s$), ezezagunak eta $Y_i$ ($i=1,\dots,s$), aldagai auxliarrak kontsideratzea (zergaitik?),
+
+\begin{equation*}
+r_i=-L_i+hb_i f(Y_i), \ \      Y_i=y_n+h \sum\limits_{j=1}^{s} m_{ij} L_j, \ \ i=1,\dots,s.
+\end{equation*}
+
+Modu baliokidean notazio hau erabiliko dugu,
+\begin{equation*}
+R(L)=-L+ h \ B \ F(L), 
+\end{equation*}  
+
+non,
+\begin{equation*}
+L^T=(L_1,\dots,L_s), \ \ \
+B=
+\begin{bmatrix}
+   b_{1} & 0      & \dots & 0 \\
+   0     & b_{2}  & \dots & 0 \\
+    \vdots & \vdots & \vdots  & \vdots \\
+   0     & 0      & \dots & b_{s}\\
+\end{bmatrix}
+, \ \ \ 
+F(Y)=
+\begin{bmatrix}
+     f(Y_1) \\
+     f(Y_2) \\
+     \dots  \\
+     f(Y_s)
+\end{bmatrix},     
+\end{equation*}
+\begin{equation*}
+Y_i=y_n+h \sum\limits_{j=1}^{s} m_{ij} L_j, \ \ i=1,\dots,s.
+\end{equation*}
+
+
+\paragraph*{} Newton sinplifikatuaren metodoa,
+\begin{algorithm}[h]
+  $M=R'(L^{[0]})$\;
+  \For{ (k=1,2,\dots)}
+  {
+   \BlankLine
+   $Solve(\triangle L^{[k]}=- R(L^{[k]})/M, \ \triangle L^{[k]})$\;
+   \BlankLine
+   $L^{[k]}=L^{[k-1]}+\triangle L^{[k]}$\;
+  }
+ \caption{Newton sinplifikatua}
+\end{algorithm}
+
+non 
+\begin{equation*}
+R'(Y^{[0]})=I_s \otimes I_d - h  
+\begin{bmatrix}
+b_1 \  m_{11}  \ f'(Y_1^{[0]})   & \dots & b_1 \  m_{1s} \ f'(Y_1^{[0]})  \\
+b_2 \  m_{21} \ f'(Y_2^{[0]})   & \dots & b_2 \  m_{2s}  \ f'(Y_2^{[0]})  \\
+\dots          & \dots & \dots \\
+b_s \  m_{s1} \ f'(Y_s^{[0]})  & \dots & b_s \  m_{ss}  \ f'(Y_s^{[0]})   \\ 
+\end{bmatrix}
+\end{equation*}
+
+\paragraph*{} Newton sinplifikatuaren metodoa problema stiff-etarako, non $Li^{[0]}=0$ $(i=1,\dots,s)$,
+\begin{equation*}
+M=R'(L^{[0]})=I_s \otimes I_d - h \ (BAB^{-1} \otimes J), \ \ J=f'(y_n).
+\end{equation*}
+
+\subsection*{Bigarren urratsa.}
+
+Ekuazio sistema-lineala askatzeko ezezagun $Z \in \mathbf{R}^d$ berri bat gehituko dugu,
+\begin{equation*}
+Z=\frac{1}{2} (y_n+y_{n+1}) \ \ \Rightarrow \ \ Z=y_n+\frac{1}{2} \sum\limits_{i=1}^{s} L_i.
+\end{equation*}
+
+
+\paragraph*{}Beraz, ekuazio sistema-lineala,
+\begin{align*}
+r_i=L_i-hb_i f(Y_i), \\
+0=-Z+y_n+\frac{1}{2} \sum\limits_{i=1}^{s} L_i
+\end{align*}
+
+non
+\begin{equation*}
+Y_i=y_n+h \sum\limits_{j=1}^{s} m_{ij}L_j, \ \ i=1,\dots,s.
+\end{equation*}
+
+\paragraph*{} Notazio orokorra $W=\{L,Z\}$,
+\begin{equation*}
+R(W) =
+\begin{cases}
+R(L)=-L+ h \ B \ F(L)\\
+0=-Z+y_n+\frac{1}{2} \sum\limits_{i=1}^{s} L_i\\
+\end{cases}
+\end{equation*}
+
+\paragraph*{} Newton sinplifikatuaren metodoa,
+\begin{algorithm}[h]
+  $M=R'(W^{[0]})$\;
+  \For{ (k=1,2,\dots)}
+  {
+   \BlankLine
+   $Solve(\triangle W^{[k]}=- R(W^{[k]})/M, \ \triangle W^{[k]})$\;
+   \BlankLine
+   $L^{[k]}=L^{[k-1]}+\triangle L^{[k]}$\;
+  }
+ \caption{Newton sinplifikatua}
+\end{algorithm}
+
+non 
+\begin{equation*}
+R'(W^{[0]})=\begin{bmatrix}
+I_s \otimes I_d - h \alpha_{11} \ f'(Y_1^{[0]})   & \dots & I_s \otimes I_d - h \alpha_{1s} \  f'(Y_1^{[0]}) & \ \ -hb_1 f'(Y_1^{[0]}) \\
+I_s \otimes I_d - h \alpha_{21} \ f'(Y_2^{[0]})   & \dots & I_s \otimes I_d - h \alpha_{2s} \  f'(Y_2^{[0]}) & \ \ -hb_2 f'(Y_2^{[0]})
+\\
+\dots          & \dots & \dots \\
+I_s \otimes I_d - h \alpha_{s1} \ f'(Y_s^{[0]})   & \dots & I_s \otimes I_d - h \alpha_{ss} \  f'(Y_s^{[0]}) & \ \ -hb_s f'(Y_s^{[0]}) \\
+\\
+1/2 I_d                      & \dots & 1/2 I_d                      & -I_d \\
+\end{bmatrix}
+\end{equation*}
+
+eta 
+\begin{equation*}
+\alpha_{ij}=(b_i \ m_{ij}-b_i/2).
+\end{equation*}
+
+\paragraph*{} Newton sinplifikatuaren metodoa problema stiff-etarako,
+\begin{equation*}
+M=R'(W^{[0]})=
+\begin{bmatrix}
+    &      &      &  & \ \ -hb_1 \ J \\
+    &      &      &  & \ \ -hb_2 \ J \\
+    &      &      &  & \ \ \dots     \\    
+    &  & I_s \otimes I_d - h ((BAB^{-1}-b/2)\otimes J) & & \ \ \dots \\
+    &      &      &  & \ \ \dots      \\
+    &      &      &  & \ \ \ \ -hb_s \ J      \\
+1/2 I_d & 1/2 I_d & \dots & 1/2 I_d &  -I_d\\ 
+\end{bmatrix}
+%I_s \otimes I_d - h \ (BAB^{-1} \otimes J), \ \ J=f'(y_n).
+\end{equation*}
+
+\subsection*{Algoritmoa.}
+
+\begin{algorithm}[h]
+ \BlankLine
+  $e=0$\;
+  \For{$n\leftarrow 0$ \KwTo ($endstep-1$)}
+  {
+   \BlankLine
+   $k=0$\;
+   Init $(L_{n}^{[0]}) $\;
+   $Y_{n,i}^{[0]}=y_{n} + \ \big(e+\sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[0]}\big)  $\;  
+   \BlankLine
+   $ M=\mbox{LU} (R'(W_{n}^{[0]})) $\;
+   \BlankLine
+   \While{ (konbergentzia lortu)}
+   {
+    \BlankLine 
+    $k=k+1$\;
+    Solve $(\triangle W^{[k]}=-R(W^{[k]})/M, \ \triangle W^{[k]})$\;
+    $L^{[k]}=L^{[k-1]}+\triangle L^{[k]}$\;
+    $Y_{n,i}^{[k]}=y_{n} + \ \big(e+\sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[k]}\big)  $\;  
+   }
+   \BlankLine
+    $\delta_{n}= \sum\limits_{i=1}^{s} L_{n,i}^{[k]}+e $\;
+    $y_{n+1}=y_{n}+ \delta_{n} $\;
+    $e=(y_{n}-y_{n+1})+\delta_n$\;
+   \BlankLine
+ }
+ \caption{IRK (Newton-sinplifikatua).}
+\end{algorithm}
+
+
+\paragraph*{} Algoritmoaren hainbat zehaztapen emango ditugu,
+
+\begin{enumerate}
+
+\item LAPACK.
+
+\emph{LU deskonposaketa} egiteko funtzioa,
+\begin{lstlisting} [language=C]
+GETRF(LAPACK_ROW_MAJOR, n, m, MM, lda, ipiv);
+\end{lstlisting}
+
+Ekuazio sistemaren ebazpena (\emph{Solve}) egiteko,
+\begin{lstlisting} [language=C]
+GETRS(LAPACK_ROW_MAJOR,trans,n,nrhs,MM,lda,ipiv,fl,ldb);
+\end{lstlisting}
+
+\item Geratze erizpidea.
+
+Newton metodoan, $L$ atalen araberako geratze irizpide baliokidea erabili dugu,
+\begin{equation*}
+\triangle^{[k]}=(L_1^{[k]}-L_1^{[k-1]},\dots,L_s^{[k]}-L_s^{[k-1]}) \in \mathbb{R}^{sd},
+\end{equation*}
+
+Iterazioak jarraitu, honako baldintza betetzen den artean,
+\begin{equation}
+\exists j \in \{1,\dots,sd\} \ , \ |\triangle_j^{[1]}| >|\triangle_j^{[2]|}>\dots>|\triangle_j^{[k]}|>0.
+\end{equation} 
+
+\end{enumerate}
+
+\section{Laburpena.}
