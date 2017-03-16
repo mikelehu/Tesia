@@ -1,316 +1,953 @@
 \chapter{IRK: Newton.}
 
+\epigraph{The top 10 algorithms in Applied Mathematics: 1.Newton and quasi-Newton methods.}
+{\textit {Nick Higham (2016)}}
+
 \section{Sarrera.}
 
-Newton metodoa, $G(X)=0, X\in \mathbf{R}^{n \times m}$ ekuazio sistema ez-linealen zenbakizko soluzioa aurkitzeko metodoa da. Hasierako soluzioaren estimazioa  $X^{[0]}$ emanda, benetako Newton metodoa,
-\begin{algorithm}[h]
-  \For{ (k=1,2,\dots)}
-  {
-   \BlankLine
-   $M^{[k]}=G'(X^{[k]})$\;
-   $Solve (\triangle X^{[k]}=- G(X^{[k]})/{M^{[k]}},\ \triangle X^{[k]})$\;
-   \BlankLine
-   $X^{[k]}=X^{[k-1]}+\triangle X^{[k]}$\;
-  }
- \caption{Benetako Newton metodoa}
-\end{algorithm}
-
-
-Benetako Newton metodoa konputazionalki garestia da , iterazio bakoitzean $M^{[k]}=G'(X^{[k]})$ jakobiarraren ebaluazioa eta ($nm \times nm$) matrizearen \emph{LU} deskonposaketa kalkulatu behar delako. Horregatik konputazionalki merkeagoa diren Newton metodoaren aldaerak erabili ohi dira. 
-
-Jarraian Newton sinplifikatua definituko dugu, nagusiki erabili den metodoa: jakobiarraren ebaluazio $M=G'(X^{[0]})$ eta dagokion \emph{LU} deskonposaketa behin bakarrik kalkulatu behar da.
-\begin{algorithm}[h]
-  $M=G'(X^{[0]})$\;
-  \For{ (k=1,2,\dots)}
-  {
-   \BlankLine
-   $Solve (\triangle X^{[k]}=- G(X^{[k]})/{M}, \ \triangle X^{[k]})$\;
-   \BlankLine
-   $X^{[k]}=X^{[k-1]}+\triangle X^{[k]}$\;
-  }
- \caption{Newton sinplifikatua ($L_i$).}
-\end{algorithm}
+Runge-Kutta metodo inplizituen inplementazio eraginkorren arazo handiena, ekuazio sistema ez-lineala metodo iteratibo baten bidez askatzea da. Problema zurruna denean, puntu finkoaren iterazio ez da eraginkorra eta Newton interazioa aplikatu behar da. Gainera problema ez-zurruna izanik ere, Newton iterazioak interesgarriak izan daitezke; bereziki doitasun altuko (doitasun laukoitza) konputazioetan iterazio metodoaren konbergentzi ezaugarri onak direla eta. 
  
-\section{IRK-Newton formulazio orokorroa.}
+Newton metodo iteratiboa, ekuazio sistema ez-linealen zenbakizko soluzioa aurkitzeko metodoa da. $u\in \mathbb{R}^{n}$ eta $F: \mathbb{R}^n \ \longrightarrow {\mathbb{R}}^n$ emanik, $F(u)=0$ betetzen duen $u^{[*]}$ soluzioa aurkitu nahi dugu. Hasierako soluzioaren $u^{[0]}$ estimazioa  emanik,  Newton metodoa era honetan definituko dugu (Algoritmoa \ref{alg:801}).
 
-Demagun hasierako baliodun problema,
+\begin{algorithm}[H]
+  $ \text{Hasieratu} \ u^{[0]}$\;
+  \For{ (k=1,2,\dots \text{konbergentzia lortu arte})}
+  {
+   \BlankLine
+   $F^{[k]}=F(u^{[k-1]})$\;
+   $\text{Askatu} \ \ J(u^{[k-1]}) \ \Delta u^{[k]}=- F^{[k]}$\;
+   \BlankLine
+   $u^{[k]}=u^{[k-1]}+\Delta u^{[k]}$\;
+  }
+ \caption{Newton metodoa.}
+ \label{alg:801}
+\end{algorithm}
+
+non $J(u^{[k-1]})$, \ $n \times n$ tamainako matrize jacobiarra den ($J_{ij}(u)=\partial f_i/\partial u_j (u), \ \ 1 \leq i,j \leq n$).  Newton metodoak, $u^{[*]}$ soluzioarekiko konbergentzia koadratikoa du,
+\begin{equation*}
+\label{eq:801}
+\|u^{[k+1]}-u^{[*]}\| \le C \ \|u^{[k]}-u^{[*]}\|^2.
+\end{equation*}
+
+Newton metodo interesgarria da, baina konputazionalki garestia; iterazio bakoitzean $J(u^{[k-1]})$ jacobiarraren ebaluazioa eta $n \times n$ tamainako matrizearen \emph{LU} deskonposaketa kalkulatu behar da. Horregatik, konputazionalki merkeagoak diren Newton metodoaren aldaerak erabili ohi dira. Newton metodoaren aldaera horien artean, Newton sinplifikatua (Algoritmoa \ref{alg:802}) dugu aukera nagusienetako bat.
+
+\begin{algorithm}[H]
+  $ \text{Hasieratu} \ \ u^{[0]}   \quad \quad \quad \quad \quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad    (64-bit)$\;
+  $J^{[0]}=\frac{\partial F}{\partial u}(u^{[0]})  \ \ \quad \quad \quad \quad \quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad    (32-bit)$\;
+  $M=LU(J^{[0]}) \ \ \quad \quad \quad \quad \quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad    (32-bit)$\;
+  \For{ (k=1,2,\dots \text{konbergentzia lortu arte})}
+  {
+   \BlankLine
+   $F^{[k]}=F(u^{[k-1]}) \ \ \quad \ \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ \   (64-bit)$\;
+   $\text{Askatu} \ \ M \ \Delta u^{[k]}=- F^{[k]} \ \quad \ \quad \quad \quad \quad \quad \quad \quad \quad \ \ \  (32-bit)$\;
+   \BlankLine
+   $u^{[k]}=u^{[k-1]}+\Delta u^{[k]}  \ \ \ \quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \ \     (64-bit)$\;
+  }
+ \caption{Newton sinplifikatua.}
+ \label{alg:802}
+\end{algorithm}
+
+Argia da Newton sinplifikatua konputazionalki merkeagoa dela: urrats bakoitzean, jacobiarraren ebaluazio $J^{[0]}=\frac{\partial F}{\partial u}(u^{[0]})$ eta dagokion \emph{LU} deskonposaketa behin bakarrik kalkulatu behar dira. 
+
+Azpimarratzekoa da ere, Newton metodoaren eragiketa konplexuenak doitasun txikiagoan kalkula daitezkeela \cite{Baboulin20092526} eta honek, konputazionalki abantaila interesgarria suposatzen duela. Algoritmoaren (Algoritmoa \ref{alg:802}) eskubi aldean, doitasun bikoitzeko ($64$-bit) inplementazioa balitz, eragiketa bakoitzaren doitasuna zehaztu dugu: jacobiarraren balioztapena eta algebra linealeko eragiketak, doitasun arruntean ($32$-bit) kalkulatu daitezke.
+
+$S$-ataletako IRK metodoa, Newton iterazioaren bidez $d$-dimentsioko ODE sistemari aplikatzeko, urrats bakoitzean $sd \times sd$ tamaineko hainbat ekuazio sistema (iterazio bakoitzeko bat) askatu behar dira. Atal honetan, jatorrizko $sd$-dimentsioko ekuazio sistema, $(s+1)d$ sistema baliokide moduan berridatziko dugu eta sistema baliokidea,  $d \times d$ tamaineko $[s/2]+1$ matrize errealen \emph{LU}-deskonposaketa bidez askatuko dugu. Tamaina txikiko matrizeen LU-deskonposaketa azkarra denez, konputazionalki eraginkorragoa izatea espero dugu.   
+
+\section{IRK-Newton estandarra.}
+
+\paragraph*{}Demagun honako hasierako baliodun problema,
 \begin{equation}
-\label{eq:91}
-\dot{\mathbf{y}}=\mathbf{f}(\mathbf{y}),\ \ \ \mathbf{y}(t_0)=\mathbf{y_0}, 
+\label{eq:802}
+\dot{y}=f(t,y),\ \ \ y(t_0)=y_0, 
 \end{equation}
-non  $\mathbf{y}=(q_1,\dots,q_n,p_1,\dots,p_n) \in \mathbb{R}^{d=2n}$  eta $\bf{f}: \  {\mathbb{R}}^d \ \longrightarrow {\mathbb{R}}^d$. 
+non  $y=[q^1,\dots,q^n,p^1,\dots,p^n]^T \in \mathbb{R}^{d=2n}$  eta $f: \  {\mathbb{R}}^{d+1} \ \longrightarrow {\mathbb{R}}^d$ diren. 
 
-\paragraph*{}IRK metodoaren ekuazio sistema ez-lineala,
+\paragraph*{}S-ataletako IRK metodoa gogoratuz, hasierako baliodun problemaren $y(t)$ soluzioaren $y_{n}\approx y(t_{n})$ hurbilpena, era honetan kalkulatzen da,  
+\begin{equation}  
+\label{eq:803}
+y_{n+1}=y_n+h\sum^s_{i=1}{b_i \ f(t_n+c_ih,Y_{n,i})\ \ },\
+\end{equation} 
+
+non $Y_{n,i}$ atalak, era honetan inplizituki  definitzen diren,
+\begin{equation}
+\label{eq:804}
+Y_{n,i}=y_n+\ h\ \sum^s_{j=1}{a_{ij}\ f(t_n+c_jh,Y_{n,j})}\ \ \ \ \ i=1 ,\dots, s.\
+\end{equation} 
+
+$Y_{n,i} \in \mathbb{R}^d,\ i=1,\ldots,s$ ezezagunen eta $sd$ tamainako ekuazio sistema ez-lineala askatzeko (\ref{eq:803}), iterazio metodo bat aplikatu behar dugu. Aurreko atalean puntu-finkoaren iterazioa aztertu genuen eta atal honetan,  Newton metodoa modu eraginkorrean aplikatzeko bidea ikertuko dugu.
+
+\subsection*{Newton iterazioa.}
+
+Newton iterazioa, $k=1,2,\dots$  $Y_i^{[k]}$ atalen hurbilpenak kalkulatzeko algoritmoa, modu honetan definituko dugu,
+
+\begin{align}
+\label{eq:(1)Newton_iteration}
+1) & \quad r_i^{[k]} := -Y_{i}^{[k-1]} + y + h \sum_{j=1}^{s}\, a_{ij}\, f(t + c_j h,Y_{j}^{[k-1]}), \quad  i=1 ,\ldots, s, \\
+\label{eq:(2)Newton_iteration}
+\begin{split}
+2) & \quad \mathrm{Askatu \ } \Delta Y_{i}^{[k]},\\
+& \quad \Delta Y_{i}^{[k]}  - h \sum_{j=1}^{s}\, a_{ij}\, J_j^{[k]} \Delta Y_{j}^{[k]} = r_i^{[k]} \quad  i=1 ,\ldots, s, \\
+& \mbox{non} \quad  J_i^{[k]}=\frac{\partial f}{\partial y}(t + c_i h,Y_{i}^{[k]}) \quad \quad  i=1,\ldots, s, 
+\end{split} \\
+\label{eq:(3)Newton_iteration}
+3)& \quad Y_i^{[k]} := Y_i^{[k-1]} + \Delta Y_i^{[k]}, \quad  i=1 ,\ldots, s,
+\end{align}
+
+\paragraph*{}Azpimarratu behar da iterazio bakoitzeko,  $J_i^{[k]}$ jakobiarraren $s$-ebaluazio eta $sd \times sd$ tamainako matrizearen LU-deskonposaketa kalkulatu behar ditugula. Eragiketa hauek konplexuak dira eta beraz, Newton osoaren inplementazioa konputazionalki garestia da. 
+
+\subsection*{Newton sinplifikatuaren iterazioa.}
+
+Newton sinplifikatuaren iterazioa aplikatzerakoan, $J_i^{[k]}$ jacobiarra $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}) \ \ i=1,\cdots,s$ jacobiarraz ordezkatzen da eta askatu beharreko ekuazio sistema honakoa da,
+
 \begin{equation*}
-r_i=-Y_i+y_n+h \sum\limits_{j=1}^{s} a_{ij} f(Y_j), \ \ i=1,\dots,s.
+\Delta Y_{i}^{[k]}  - h \sum_{j=1}^{s}\, a_{ij}\, J_j^{[0]} \Delta Y_{j}^{[k]} = r_i^{[k]}, \quad  i=1 ,\ldots, s,
 \end{equation*}
+$\mbox{non} \quad  J_i^{[0]}=\frac{\partial f}{\partial y}(t + c_i h,Y_{i}^{[0]}) \quad \quad  i=1,\ldots, s$ den.
 
-Modu baliokidean notazio hau erabiliko dugu,
+Lehen sinplifikazio honetan, integrazioaren urrats bakoitzeko,  $J_i^{[0]}$ jakobiarraren s-ebaluazio eta $sd \times sd$ tamainako matrizearen LU-deskonposaketa behin bakarrik kalkulatu behar ditugu. Modu baliokidean, ekuazio lineala notazio matriziala erabiliz laburtu daiteke,
 \begin{equation*}
-R(Y)=-Y+y_n+ h \ A \ F(Y), 
-\end{equation*}--
+\label{eq:805}
+\left (I_s \otimes I_d - h  
+\begin{bmatrix}
+a_{11}  J_1^{[0]} & \dots & a_{1s}  J_s^{[0]} \\
+a_{21}  J_1^{[0]} & \dots & a_{2s}  J_s^{[0]} \\
+\dots            & \ddots & \dots \\
+a_{s1}  J_1^{[0]} & \dots & a_{ss}  J_s^{[0]} \\ 
+\end{bmatrix} \right) \Delta Y^{[k]} =r^{[k]}.
+\end{equation*}
 
 non,
 \begin{equation*}
-Y^T=(Y_1,\dots,Y_s), \ \ \
-A=
+\label{eq:806}
+Y^{[k]}=\begin{bmatrix}
+Y_1^{[k]} \\
+\vdots \\
+Y_s^{[k]}
+\end{bmatrix} \in \mathbb{R}^{sd}, \ \ \
+r^{[k]}=\begin{bmatrix}
+r_1^{[k]} \\
+\vdots \\
+r_s^{[k]}
+\end{bmatrix} \in \mathbb{R}^{sd},
+\end{equation*}
+
+\begin{equation*}
+\label{eq:807}
+J_{is}(y)=\left(\partial f^i/\partial y^j (y)\right)_{i,j}^d=
 \begin{bmatrix}
-   a_{11} & a_{12} & \dots & a_{1s}\\
-   a_{21} & a_{22} & \dots & a_{2s}\\
-    \vdots & \ddots & & \vdots \\
-   a_{s1} & a_{s2} & \dots & a_{ss}\\
-\end{bmatrix}
-, \ \ \ 
-F(Y)=
-\begin{bmatrix}
-     f(Y_1) \\
-     f(Y_2) \\
-     \dots  \\
-     f(Y_s)
-\end{bmatrix}.     
+    \frac{\partial f^1}{\partial y^1} & \cdots & \frac{\partial f^1}{\partial y^d}\\    
+    \vdots & \ddots & \vdots \\    
+    \frac{\partial f^d}{\partial y^1} & \cdots & \frac{\partial f^d}{\partial y^d}\\    
+\end{bmatrix} \in \mathbb{R}^{d \times d},\ is=1,\cdots,s.
 \end{equation*}
 
-\paragraph*{} Newton sinplifikatuaren metodoa,
-\begin{algorithm}[h]
-  $M=R'(Y^{[0]})$\;
-  \For{ (k=1,2,\dots)}
-  {
-   \BlankLine
-   $Solve(\triangle Y^{[k]}=- R(Y^{[k]})/M, \ \triangle Y^{[k]})$\;
-   \BlankLine
-   $Y^{[k]}=Y^{[k-1]}+\triangle Y^{[k]}$\;
-  }
- \caption{Newton sinplifikatua}
-\end{algorithm}
+\subsection*{Newton super-sinplifikatuaren iterazioa.}
 
-non 
-\begin{equation*}
-R'(Y^{[0]})=I_s \otimes I_d - h  
-\begin{bmatrix}
-a_{11} f'(Y_1^{[0]}) & \dots & a_{1s} f'(Y_1^{[0]}) \\
-a_{21} f'(Y_2^{[0]}) & \dots & a_{2s} f'(Y_2^{[0]}) \\
-\dots          & \dots & \dots \\
-a_{s1} f'(Y_s^{[0]}) & \dots & a_{ss} f'(Y_s^{[0]}) \\ 
-\end{bmatrix},
-\end{equation*}
+Bigarren sinplifikazioa bat aplika daiteke, $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}), \ \  i=1,\dots,s$ matrizeak,  $J_i^{[0]} \approx J, \ i=1,\cdots,s$ hurbilpen bakarrekin ordezkatuz. Era honetako ekuazio sistema lortuko dugu,   
 
-eta 
-\begin{equation*}
-f'(y)=
-\begin{bmatrix}
-    \frac{\partial f_1}{\partial q_1} & \dots & \frac{\partial f_1}{\partial q_n} & \frac{\partial f_{1}}{\partial p_1} & \dots & \frac{\partial f_{1}}{\partial p_n}\\    
-    \dots & \dots & \dots  & \dots & \dots\\    
-    \frac{\partial f_d}{\partial q_1} & \dots & \frac{\partial f_d}{\partial q_n} & \frac{\partial f_{d}}{\partial p_1} & \dots & \frac{\partial f_{d}}{\partial p_n}\\ 
-\end{bmatrix}
-\end{equation*}
+\begin{equation}
+\label{eq:808}
+(I_s \otimes I_d - h \ A \otimes J) \Delta Y^{[k]} = r^{[k]}.
+\end{equation}
+non $I_s,I_d$ identitate eta $A=(a_{ij})_{i,j}^s$ koefiziente matrizeak diren.
 
-\paragraph*{}Problema stiff denean, erabili ohi den atalen hasieraketa $Y_i^{[0]}=y_n$, ($i=1,\dots,s$) da eta horregatik ekuazio sistema linealaren $M$ matrizea beste modu honetan adierazten da (\cite{Hairer2006}), 
-\begin{equation*}
-M=R'(Y^{[0]})=I_s \otimes I_d - h A \otimes J, \ \ J=f'(y_n).
-\end{equation*}
+Ohikoa da $J=\partial f / \partial y \ (t+h/2, y_n)$ hurbilpena erabiltzea. Problema zurruna denean, atalen hasieraketa $Y_i^{[0]}=y_n$, ($i=1,\dots,s$)  erabili ohi da, eta jakobiarraren hurbilpen honekin ekuazio lineala askatzeak zentzua izango du.
 
-\section{IRK-Newton gure formulazioa.}
-
-\subsection*{Lehen urratsa.}
-
-Gure IRK formulazioan, Newton metodoa aplikatzeko orduan egokiagoa da $L_i$ ($i=1,\dots,s$), ezezagunak eta $Y_i$ ($i=1,\dots,s$), aldagai auxliarrak kontsideratzea (zergaitik?),
-
-\begin{equation*}
-r_i=-L_i+hb_i f(Y_i), \ \      Y_i=y_n+h \sum\limits_{j=1}^{s} m_{ij} L_j, \ \ i=1,\dots,s.
-\end{equation*}
-
-Modu baliokidean notazio hau erabiliko dugu,
-\begin{equation*}
-R(L)=-L+ h \ B \ F(L), 
-\end{equation*}  
-
-non,
-\begin{equation*}
-L^T=(L_1,\dots,L_s), \ \ \
-B=
-\begin{bmatrix}
-   b_{1} & 0      & \dots & 0 \\
-   0     & b_{2}  & \dots & 0 \\
-    \vdots & \vdots & \vdots  & \vdots \\
-   0     & 0      & \dots & b_{s}\\
-\end{bmatrix}
-, \ \ \ 
-F(Y)=
-\begin{bmatrix}
-     f(Y_1) \\
-     f(Y_2) \\
-     \dots  \\
-     f(Y_s)
-\end{bmatrix},     
-\end{equation*}
-\begin{equation*}
-Y_i=y_n+h \sum\limits_{j=1}^{s} m_{ij} L_j, \ \ i=1,\dots,s.
-\end{equation*}
-
-
-\paragraph*{} Newton sinplifikatuaren metodoa,
-\begin{algorithm}[h]
-  $M=R'(L^{[0]})$\;
-  \For{ (k=1,2,\dots)}
-  {
-   \BlankLine
-   $Solve(\triangle L^{[k]}=- R(L^{[k]})/M, \ \triangle L^{[k]})$\;
-   \BlankLine
-   $L^{[k]}=L^{[k-1]}+\triangle L^{[k]}$\;
-  }
- \caption{Newton sinplifikatua}
-\end{algorithm}
-
-non 
-\begin{equation*}
-R'(Y^{[0]})=I_s \otimes I_d - h  
-\begin{bmatrix}
-b_1 \  m_{11}  \ f'(Y_1^{[0]})   & \dots & b_1 \  m_{1s} \ f'(Y_1^{[0]})  \\
-b_2 \  m_{21} \ f'(Y_2^{[0]})   & \dots & b_2 \  m_{2s}  \ f'(Y_2^{[0]})  \\
-\dots          & \dots & \dots \\
-b_s \  m_{s1} \ f'(Y_s^{[0]})  & \dots & b_s \  m_{ss}  \ f'(Y_s^{[0]})   \\ 
-\end{bmatrix}
-\end{equation*}
-
-\paragraph*{} Newton sinplifikatuaren metodoa problema stiff-etarako, non $Li^{[0]}=0$ $(i=1,\dots,s)$,
-\begin{equation*}
-M=R'(L^{[0]})=I_s \otimes I_d - h \ (BAB^{-1} \otimes J), \ \ J=f'(y_n).
-\end{equation*}
-
-\subsection*{Bigarren urratsa.}
-
-Ekuazio sistema-lineala askatzeko ezezagun $Z \in \mathbf{R}^d$ berri bat gehituko dugu,
-\begin{equation*}
-Z=\frac{1}{2} (y_n+y_{n+1}) \ \ \Rightarrow \ \ Z=y_n+\frac{1}{2} \sum\limits_{i=1}^{s} L_i.
-\end{equation*}
-
-
-\paragraph*{}Beraz, ekuazio sistema-lineala,
+Newton iterazio bertsio honi super-sinplifikatua deitu diogu. Iterazio bakoitzean $f$ funtzioaren $s$ ebaluazio eta $sd$ tamainako ekuazio-sistema lineala askatu behar da. $(I_s \otimes I_d - h \ A \otimes J)$ matrizea iterazio guztietarako berdina da,  bere LU-deskonposaketa behin bakarrik egin behar da eta konputazionalki garestia da \cite{Butcher1976} \cite{Hairer1996},
 \begin{align*}
-r_i=L_i-hb_i f(Y_i), \\
-0=-Z+y_n+\frac{1}{2} \sum\limits_{i=1}^{s} L_i
+&\text{LU-deskonposaketa}, \ \ 2s^3d^3/3+\mathcal{O}(d^3), \\
+&\text{back substitution}, \ \ 2s^2d^2+\mathcal{O}(d).
 \end{align*}
 
-non
-\begin{equation*}
-Y_i=y_n+h \sum\limits_{j=1}^{s} m_{ij}L_j, \ \ i=1,\dots,s.
-\end{equation*}
-
-\paragraph*{} Notazio orokorra $W=\{L,Z\}$,
-\begin{equation*}
-R(W) =
-\begin{cases}
-R(L)=-L+ h \ B \ F(L)\\
-0=-Z+y_n+\frac{1}{2} \sum\limits_{i=1}^{s} L_i\\
-\end{cases}
-\end{equation*}
-
-\paragraph*{} Newton sinplifikatuaren metodoa,
-\begin{algorithm}[h]
-  $M=R'(W^{[0]})$\;
-  \For{ (k=1,2,\dots)}
-  {
-   \BlankLine
-   $Solve(\triangle W^{[k]}=- R(W^{[k]})/M, \ \triangle W^{[k]})$\;
-   \BlankLine
-   $L^{[k]}=L^{[k-1]}+\triangle L^{[k]}$\;
-  }
- \caption{Newton sinplifikatua}
-\end{algorithm}
-
-non 
-\begin{equation*}
-R'(W^{[0]})=\begin{bmatrix}
-I_s \otimes I_d - h \alpha_{11} \ f'(Y_1^{[0]})   & \dots & I_s \otimes I_d - h \alpha_{1s} \  f'(Y_1^{[0]}) & \ \ -hb_1 f'(Y_1^{[0]}) \\
-I_s \otimes I_d - h \alpha_{21} \ f'(Y_2^{[0]})   & \dots & I_s \otimes I_d - h \alpha_{2s} \  f'(Y_2^{[0]}) & \ \ -hb_2 f'(Y_2^{[0]})
-\\
-\dots          & \dots & \dots \\
-I_s \otimes I_d - h \alpha_{s1} \ f'(Y_s^{[0]})   & \dots & I_s \otimes I_d - h \alpha_{ss} \  f'(Y_s^{[0]}) & \ \ -hb_s f'(Y_s^{[0]}) \\
-\\
-1/2 I_d                      & \dots & 1/2 I_d                      & -I_d \\
-\end{bmatrix}
-\end{equation*}
-
-eta 
-\begin{equation*}
-\alpha_{ij}=(b_i \ m_{ij}-b_i/2).
-\end{equation*}
-
-\paragraph*{} Newton sinplifikatuaren metodoa problema stiff-etarako,
-\begin{equation*}
-M=R'(W^{[0]})=
-\begin{bmatrix}
-    &      &      &  & \ \ -hb_1 \ J \\
-    &      &      &  & \ \ -hb_2 \ J \\
-    &      &      &  & \ \ \dots     \\    
-    &  & I_s \otimes I_d - h ((BAB^{-1}-b/2)\otimes J) & & \ \ \dots \\
-    &      &      &  & \ \ \dots      \\
-    &      &      &  & \ \ \ \ -hb_s \ J      \\
-1/2 I_d & 1/2 I_d & \dots & 1/2 I_d &  -I_d\\ 
-\end{bmatrix}
-%I_s \otimes I_d - h \ (BAB^{-1} \otimes J), \ \ J=f'(y_n).
-\end{equation*}
+Jarraian, Newton super-sinplifikatuaren inplementazioaren algoritmo orokorra laburtu dugu (Algoritmoa \ref{alg:nss}).
 
 \subsection*{Algoritmoa.}
 
-\begin{algorithm}[h]
+\begin{algorithm}[H]
  \BlankLine
-  $e=0$\;
+  $\tilde{y}_0=fl(y_0)$\;
+  $e_0=fl(y_0-\tilde{y}_0)$\;
   \For{$n\leftarrow 0$ \KwTo ($endstep-1$)}
   {
    \BlankLine
    $k=0$\;
-   Init $(L_{n}^{[0]}) $\;
-   $Y_{n,i}^{[0]}=y_{n} + \ \big(e+\sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[0]}\big)  $\;  
+   \text{Hasieratu} $Y_{n,i}^{[0]} \ \ , \ \ i=1,\dots,s $\;
    \BlankLine
-   $ M=\mbox{LU} (R'(W_{n}^{[0]})) $\;
+   $J=\frac{\partial f}{\partial y}(t+h/2,y_n) $\; 
+   $M=LU(I_s \otimes I_d - h \ A \otimes J)$\;
    \BlankLine
-   \While{ (konbergentzia lortu)}
+   \While{ (\text{not konbergentzia})}
    {
     \BlankLine 
     $k=k+1$\;
-    Solve $(\triangle W^{[k]}=-R(W^{[k]})/M, \ \triangle W^{[k]})$\;
-    $L^{[k]}=L^{[k-1]}+\triangle L^{[k]}$\;
-    $Y_{n,i}^{[k]}=y_{n} + \ \big(e+\sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[k]}\big)  $\;  
+    $r_i^{[k]}=-Y_i^{[k-1]}+y+h \sum\limits_{j=1}^{s} a_{ij} f(t+c_jh,Y_j^{[k-1]}) $\;
+    Solve $(M \Delta Y^{[k]}=r^{[k]})$\;
+    $Y^{[k]}=Y^{[k-1]}+\Delta Y^{[k]}$\;
+    $\text{konbergentzia} \leftarrow \text{GeratzeErizpidea}(Y^{[k]},Y^{[k-1]},\Delta_{min}) $\;
    }
    \BlankLine
-    $\delta_{n}= \sum\limits_{i=1}^{s} L_{n,i}^{[k]}+e $\;
-    $y_{n+1}=y_{n}+ \delta_{n} $\;
-    $e=(y_{n}-y_{n+1})+\delta_n$\;
-   \BlankLine
+   \If{($\exists j \ \text{non} \ \Delta_j^{[K]}\neq 0$)}
+   {
+    \If{$(NormalizeDistance(Y^{[k]},Y^{[k-1]})>1$}
+     {$\text{fail convergence}$\;}
+   }
+   {$(\tilde y_{n+1},e_{n+1})\leftarrow \text{baturakonpensatua}(y_n,e_n,Y_n^{[k]})$\;}    
  }
- \caption{IRK (Newton-sinplifikatua).}
+ \caption{IRK (Newton super-sinplifikatua).}
+ \label{alg:nss}
 \end{algorithm}
 
 
-\paragraph*{} Algoritmoaren hainbat zehaztapen emango ditugu,
+
+\section{IRK-Newton eraginkorra.}
+\label{sec:s74}
+
+\subsection*{Sarrera.}
+
+Atal honetan, honako ekuazio lineala modu eraginkorrean askatzeko inplementazioa proposatuko,
+\begin{equation*}
+(I_s \otimes I_d - h \ A \otimes J) \ \Delta Y = r,
+\end{equation*}
+$J \in \mathbb{R}^{d \times d}$  eta $r \in \mathbb{R}^{s \times d}$ emandako matrizeak izanik.
+
+\paragraph*{}$S$-ataletako IRK metodoa, Newton iterazioaren bidez $d$-dimentsioko ODE sistemari aplikatzeko, urrats bakoitzean $sd \times sd$ tamaineko hainbat ekuazio sistema (iterazio bakoitzeko bat) askatu behar dira. Atal honetan, jatorrizko $sd$-dimentsioko ekuazio sistema, $(s+1)d$ sistema baliokide moduan berridatziko dugu eta sistema baliokidea,  $d \times d$ tamaineko $[s/2]+1$ matrize errealen \emph{LU}-deskonposaketa bidez askatuko dugu. Tamaina txikiko matrizeen LU-deskonposaketa azkarra denez, konputazionalki eraginkorragoa izatea espero dugu.      
+
+\paragraph*{}Gauss nodoetan oinarritutako \emph{IRK} metodoak sinplektikoak eta simetrikoak dira. 
+\begin{enumerate}
+\item Sinplektikoa.
+\begin{equation} 
+\label{eq:sympl}
+b_{i}a_{ij}+b_{j}a_{ji}-b_{i}b_{j}=0, \ \ 1 \leqslant i,j \leqslant s.
+\end{equation} 
+\item Simetrikoa.
+\begin{align}
+\label{eq:simm}
+b_{s+1-i}=b_i, \ \ {c}_{s+1-i}=1-{c}_i,& \quad \ 1\leqslant i,j \leqslant s, \\
+b_j={a}_{s+1-i,s+1-j}+a_{i,j},& \quad 1\leqslant i,j \leqslant s. 
+\end{align} 
+\end{enumerate}
+
+Proposamen berria, bi propietate hauetan oinarrituz garatuko dugu.
+
+\subsection*{Notazio alternatiboa.}
+
+Koefiziente notazioa berri bat finkatuta,
+\begin{equation*}
+\bar{c}_i=c_i-\frac{1}{2}, \ \ \bar{a}_{ij}=a_{ij}-\frac{b_j}{2}, \ \ 1\leqslant i,j \leqslant s,
+\end{equation*}
+sinplektikotasun (\ref{eq:sympl}) eta simetrikotasun (\ref{eq:simm}) propietateak modu baliokidean era honetan adieraziko ditugu,
+\begin{enumerate}
+\item {Sinplektikoa.}
+\begin{equation}
+\label{eq:eqlineala}
+(B \bar{A}) \ \ \mbox{antisimetrikoa da},
+\end{equation}
+non $\bar{A}=(\bar{a}_{ij})_{i,j=1}^s$ eta $B$, ($b_1,b_2,\dots,b_s$) balioen  matrize diagonala diren.
+
+\item {Simetrikoa.}
+\begin{align}
+\label{eq:simm2}
+b_{s+1-i}=b_i, \ \ \bar{c}_{s+1-i}=-\bar{c}_i,& \quad 1\leq i \leq s, \\
+\bar{a}_{s+1-i,s+1-j}=-\bar{a}_{ij},& \quad 1\leq i,j \leq s. \\
+\end{align} 
+
+\end{enumerate}
+
+Inplementazio berri honen matrizeen dimentsioak zehazteko, balio berri hauetan oinarrituko gara,
+$m=[(s+1)/2]$, eta $s-m =[s/2]$. Beraz metodoaren $s$-atal kopurua bikoiti ala bakoiti den arabera,
+\begin{itemize}
+\item $s$ bikoitia.
+
+Adibidea $s=6 \rightarrow m=3,s-m=3$.
+
+\item $s$ bakoitia.
+
+Adibidea $s=7 \rightarrow m=4, s-m=3$.
+\end{itemize}
+
+
+\subsubsection*{Sinplektikoa.}
+
+$(B \bar{A})$ antisimetrikoa bada, $B^{1/2}\bar{A}B^{-1/2}$ antisimetrikoa da. Era berean, honek $\bar{A}$ diagonalizagarria dela eta irudikari balio propio puruak dituela suposatzen du. Eta beraz,  $Q$ ($s \times s$) tamaineko matrize ortogonala existitzen da,
+\begin{align}
+\label{eq:syb}
+Q^{-1}\bar{A}Q=
+\left(
+\begin{matrix}
+0 & D \\
+-D^T & 0
+\end{matrix}
+\right)
+\end{align}
+non $D$, ($m \times (s-m)$) tamainako eta balio erreal positiboen matrize diagonala den. 
+
+\subsubsection*{Simetrikoa.}
+
+Sinplektikotasun eta simetri propietate hauetan oinarrituz jarraiko matrizeak definituko ditugu.
 
 \begin{enumerate}
+\item P matrizea.
 
-\item LAPACK.
+Kontsideratu ($s \times s$) tamainako $P=(P_1 \ P_2)$ matrize ortogonala. $x=(x_1,\dots,x_s)^T \in \mathbb{R}^s$, $P_1^Tx=(y_1,\dots,y_m)^T$, eta $P_2^Tx=(y_{m+1},\dots,y_s)^T$ non,
+\begin{align*}
+&y_i = \frac{\sqrt{2}}{2} (x_{s+1-i}+x_i), \ \ i=1,\dots,[s/2], \\
+&y_i =\frac{\sqrt{2}}{2} (x_{s+1-i}-x_{i}), \ \ i=m+1,\dots,s, \\
+&y_{m} = x_{m}, \ \ s \ \ \mbox{bakoitia bada}.
+\end{align*}  
 
-\emph{LU deskonposaketa} egiteko funtzioa,
-\begin{lstlisting} [language=C]
-GETRF(LAPACK_ROW_MAJOR, n, m, MM, lda, ipiv);
-\end{lstlisting}
+Matrizearen dimentsioak laburtuz, $P=(P_1 \ P_2) \in \mathbb{R}^{s \times s}$, $P_1 \in \mathbb{R}^{s \times m}$ eta $P_2 \in \mathbb{R}^{s \times (s-m)}$.
 
-Ekuazio sistemaren ebazpena (\emph{Solve}) egiteko,
-\begin{lstlisting} [language=C]
-GETRS(LAPACK_ROW_MAJOR,trans,n,nrhs,MM,lda,ipiv,fl,ldb);
-\end{lstlisting}
+\item K matrizea.
 
-\item Geratze erizpidea.
+Batetik, simetri propietateak (\ref{eq:simm2}),  $P_i^TB^{\frac{1}{2}}\bar{A}B^{-\frac{1}{2}}P_i=0, \ i=1,2$  eta bestetik, propietate sinplektikoak $B^{1/2}\bar{A}B^{-1/2}$ antisimetrikoa dela ziurtatzen duenez, $\bar{A}$ matrizea honako matrizearen antzekoa dela ondorioztatu daiteke,
+\begin{align}
+P^TB^{\frac{1}{2}}\bar{A}B^{-\frac{1}{2}}P=
+\left(
+\begin{matrix}
+0 & K \\
+-K^T & 0
+\end{matrix}
+\right)
+\end{align}
+non $K=P_1^TB^{\frac{1}{2}}\bar{A}B^{-\frac{1}{2}}P_2 \ \in \mathbb{R}^{m \times (s-m)}$ den.
 
-Newton metodoan, $L$ atalen araberako geratze irizpide baliokidea erabili dugu,
+\item D matrizea.
+
+$K=UDV^T$ balio singularraren deskonposaketa izanik, non $U \in \mathbb{R}^{m \times m}$, $V \in \mathbb{R}^{(s-m) \times (s-m)}$ matrize ortonormalak diren eta $D \in \mathbb{R}^{m \times (s-m)}$, $K$ matrizearen balio singularren ($\sigma_1, \dots, \sigma_{s-m}$) matrize diagonala da,
+\begin{align}
+\label{eq:Dmat}
+D=
+\left(
+\begin{matrix}
+\sigma_1 & 0 & \dots & 0 \\
+0 & \sigma_2 & \dots & 0 \\
+0 & 0 & \dots & 0 \\
+0 & 0 & \dots & \sigma_{s-m}
+\end{matrix}
+\right), \ \ \
+D=
+\left(
+\begin{matrix}
+\sigma_1 & 0 & \dots & 0 \\
+0 & \sigma_2 & \dots & 0 \\
+0 & 0 & \dots & 0 \\
+0 & 0 & \dots & \sigma_{s-m} \\
+0 & 0 & \dots & 0
+\end{matrix}
+\right).
+\end{align}
+s bikoitia bada, $D$ matrizea ezkerrean eta s bakoitia bada, $D$ matrizea eskubian ($\sigma_m=0$) irudikatu dugu. 
+
+\item Q matrizea.
+
+Simetrikoa den (\ref{eq:syb}) propietateari esker,
+\begin{align*}
+&Q=(Q_1 \ Q_2)=
+B^{-1/2}(P_1 \ P_2)
+\left(
+\begin{matrix}
+U & 0 \\
+0 & V
+\end{matrix}
+\right)=
+B^{-1/2} (P_1U \ P_2V), \\
+&Q^{-1}=Q^TB.
+\end{align*}  
+
+Matrizearen dimentsioak laburtuz, $Q=(Q_1 \ Q_2) \in \mathbb{R}^{s \times s}$, $Q_1 \in \mathbb{R}^{s \times m}$ eta $Q_2 \in \mathbb{R}^{s \times (s-m)}$.
+
+\end{enumerate}
+
+\subsection*{(s+1) ekuazio-sistema.}
+
+Aldagai berri bat kontsideratuko dugu $z \in \mathbb{R}^d$ eta honako ekuazio sistema kontsideratuko dugu,
+\begin{align*}
+&Y_{n,i}=y_n+\frac{z}{2}+ h\ \sum^s_{j=1}{\bar{a}_{ij}\ f(t_n+c_jh,Y_{n,j})}\ \ \ \ \ i=1 ,\dots, s,\\
+&z=h \sum_{i=1}^{s} {b_i f(t_n+c_jh,Y_{n,i})}.
+\end{align*} 
+Ekuazio berri hau, sistemari gehituz, $(s+1) \times d$ dimentsioko ekuazio sistema baliokidea dugu,
+\begin{align}
+\label{eq:s1s}
+(I_s \otimes I_d- h \ \bar{A} \otimes J) \ \Delta Y - \frac{1}{2}(e_s \otimes I_d) \ \Delta z =r,\\
+(-h e_s^T B \otimes J) \ \Delta Y+  \Delta z=0,
+\end{align}
+non $e_s^T=(1,\dots,1) \in \mathbb{R}^{1 \times s}$ den. Argi dagoenez, $(\Delta Y, \Delta z)$ ekuazio-sistema honen (\ref{eq:s1s}) soluzioa bada, $\Delta Y$ gure jatorrizko ekuazio sistemaren (\ref{eq:eqlineala}) soluzioa da.
+
+\paragraph*{} Ekuazio-sistemaren adierazpen matriziala lagungarria izan daiteke,
 \begin{equation*}
-\triangle^{[k]}=(L_1^{[k]}-L_1^{[k-1]},\dots,L_s^{[k]}-L_s^{[k-1]}) \in \mathbb{R}^{sd},
+\begin{bmatrix}
+    &      &      &  & \ \ -I_d/2 \\
+    &      &      &  & \ \ -I_d/2 \\
+    &      &      &  & \ \      \\    
+    &  & I_s \otimes I_d- h \ \bar{A} \otimes J & & \ \ \vdots \\
+    &      &      &  & \ \      \\
+    &      &      &  & \ \ \ \ -I_d/2    \\
+-hb_1 J & -hb_2 J & \dots & -hb_s J &  I_d\\ 
+\end{bmatrix}
+\begin{bmatrix}
+\Delta Y_1 \\
+\Delta Y_2 \\
+\vdots \\
+\Delta Y_s \\
+\Delta z\\
+\end{bmatrix}=
+\begin{bmatrix}
+r_1 \\
+r_2 \\
+\vdots \\
+r_s \\
+0\\
+\end{bmatrix}
+\end{equation*} 
+
+\subsubsection*{IRK metodo orokorren garapena.}
+
+Lehengo, garapena metodo sinplektikoentzat egingo dugu eta ondoren, metodoa simetrikoentzat. Honako aldagai aldaketa aplikatuz,
+\begin{equation*}
+ \Delta Y = (Q \otimes I_d) \ W,
+\end{equation*}
+
+eta metodoa simetrikoa izateagatik (\ref{eq:syb}) , ekuazio sistema baliokidea lortuko dugu,
+\begin{multline*}
+\left(
+\begin{matrix}
+I_m \otimes I_d & \ \ -h D \otimes J \\
+hD^T \otimes J &  \ \ I_{s-m} \otimes I_d 
+\end{matrix}
+\right)
+ W- \frac{1}{2}(Q^{-1} e_s \otimes I_d) \ \Delta z = (Q^{-1} \otimes I_d) \ r,
+\end{multline*}
+\begin{equation*}
+- h \ (e_s^T \ B \ Q \otimes J) \ W + \Delta z =0.
+\end{equation*}
+
+Eranskinean (\ref{serans:A31}), ekuazio baliokideak lortzeko eman diren urratsen zehaztapenak eman ditugu. 
+
+
+\subsubsection*{IRK metodo simetriko eta sinplektikoen garapena.}
+
+Honako aldagai aldaketarekin,
+\begin{equation*}
+ \Delta Y = (Q \otimes I_d) W= (Q_1 \otimes I_d) W'+ (Q_2 \otimes I_d) W'',
+\end{equation*}
+non,
+\begin{align*}
+W=\left(
+\begin{matrix}
+W^{'} \\
+W^{''} 
+\end{matrix}
+\right),\ \ W^{'} \in \mathbb{R}^{m \times d}, \ \ W^{''} \in \mathbb{R}^{(s-m) \times d},
+\end{align*}
+\begin{align*}
+Q=(Q_1 \ \ Q_2), \ \  Q_1 \in \mathbb{R}^{s \times m}, \ \ Q_2 \in \mathbb{R}^{s \times (s-m)},
+\end{align*}
+
+eta metodoa simetrikoa nahiz sinplektikoa izateagatik $e_s^TBP_2=0, \ e_s^TBQ_2=e_s^TBP_2V=0$~berdintasunak aplikatuz, honako ekuazio-sistema baliokidea lortuko dugu,
+\begin{align*}
+ W^{'}-h \ (D \otimes J) \ W^{''} -\frac{1}{2}\ (Q_1^T B \ e_s \otimes I_d) \ \Delta z &= (Q_1^T B \otimes I_d) \ r,\\
+ h \ (D^T \otimes J) \ W^{'}+W^{''} &= (Q_2^T B \otimes I_d) \ r,\\
+ - h \ (e_s^T B \ Q_1 \otimes J) \ W^{'} + \Delta z &=0. 
+\end{align*}
+
+Eranskinean (\ref{serans:A32}), ekuazio baliokideak lortzeko eman diren urratsen zehaztapenak eman ditugu.
+
+\paragraph*{Matrizearen egitura.} Ekuazio sistemaren adierazpen matrizialarekin ($s=6$), matrizearen egitura berezia ikus daiteke. Aldagai aldaketarekin lortutako ekuazio sistema baliokideak, blokeka diagonala da eta hau aprobetxatuz, Newton iterazioaren inplementazio eraginkorra lortuko dugu.    
+\begin{equation*}
+\begin{bmatrix}
+ I_d        &             &                     & \multicolumn{1}{|c}{-h\sigma_1 J} &            &                  &\multicolumn{1}{|c}{-\frac{\alpha_1}{2} I_d}\\
+            & I_d         &                     & \multicolumn{1}{|c}{}           & -h\sigma_2 J &                
+ &\multicolumn{1}{|c}{-\frac{\alpha_2}{2} I_d}\\
+            &             & I_d                 & \multicolumn{1}{|c}{}           &            & -h\sigma_3 J  
+ &\multicolumn{1}{|c}{-\frac{\alpha_3}{2} I_d}\\\cline{1-7}    
+h\sigma_1 J &             &                     & \multicolumn{1}{|c}{I_d}        &            &            
+ &\multicolumn{1}{|c}{0}\\
+            & h\sigma_2 J &                     & \multicolumn{1}{|c}{}           &  I_d       &             
+ &\multicolumn{1}{|c}{0}\\
+            &             &  h\sigma_3 J        & \multicolumn{1}{|c}{}           &            &  I_d        
+ &\multicolumn{1}{|c}{0}\\\cline{1-7}
+ -h\alpha_1 J       & -h\alpha_2 J              &  -h\alpha_3 J                    & \multicolumn{1}{|c}{$0$}        &  $0$       &  $0$         
+ &\multicolumn{1}{|c}{ I_d}\\
+\end{bmatrix}
+\begin{bmatrix}
+         \\
+ W^{'} \\
+    \\
+\cline{1-1} \\
+    \\
+ W^{''}   \\
+    \\
+    \cline{1-1} \\
+ \Delta z  \\
+\end{bmatrix}=
+\begin{bmatrix}
+         \\
+ R^{'} \\
+    \\
+\cline{1-1} \\
+    \\
+ R^{''}   \\
+    \\
+    \cline{1-1} \\
+ 0  \\
+\end{bmatrix}
+\end{equation*} 
+non 
+\begin{equation*}
+\begin{bmatrix}
+ R^{'}=(Q_1^{T}B^{1/2} \otimes I_d) \ r \\
+ R^{''}=(Q_2^{T}B^{1/2} \otimes I_d) \ r
+\end{bmatrix}, \ \
+\left(
+\begin{matrix}
+\alpha_1 \\
+\vdots \\
+\alpha_m
+\end{matrix}
+\right)=Q_1^TB \ e_s.
+\end{equation*}
+
+\paragraph*{}Jarraian, ekuazio sistemaren ezezagunak ($\Delta z,W^{'},W^{''}$) askatzeko aplikatuko ditugun espresioak laburtuko ditugu.
+\paragraph*{$W^{''}$ kalkulatzeko ekuazioak.}
+
+Bigarren ekuaziotik $W^{''}$ askatu,
+\begin{equation}
+W^{''}= -h \ (D^T \otimes J) \ W^{'}+(Q_2^T B \otimes I_d) \ r.
+\end{equation}
+
+\paragraph*{$W^{'}$ kalkulatzeko ekuazioak.}
+
+Eta lehen ekuazioan ordezkatuz,
+\begin{align*}
+(I_m \otimes I_d+ h^2DD^T \otimes J^2) \ W^{'}- \frac{1}{2}(Q_1^T B \ e_s \otimes I_d)\ \Delta z&=R, \\
+- h \ (e_s^T B \ Q_1 \otimes J) \ W^{'} + \Delta z &=0,
+\end{align*}
+non $R=(Q_1^T B \otimes I_d) \ r + h \  ( D Q_2^T B \otimes J)\,  r \in \mathbb{R}^{md}.$
+
+\paragraph*{}Goiko ekuazio sistema honako notazioaren arabera,  
+\begin{equation*}
+R=\begin{bmatrix}
+R_1 \\
+\vdots \\
+R_m
+\end{bmatrix}, \ \ \
+W^{'}=\begin{bmatrix}
+W_1 \\
+\vdots \\
+W_m
+\end{bmatrix}, 
+\ \ R_i,W_i \in \mathbb{R}^d, \ \ i=1,\dots,m  
+\end{equation*}
+
+era honetan berridatziko dugu,
+\begin{align*}
+(I_d+h^2\sigma_i^2J^2) \ W_i- \frac{\alpha_i}{2}\ \Delta z &=R_i, \ i=1,\dots,m,\\
+-h \ J \sum\limits_{i=1}^{m} \alpha_i W_i+\Delta z &=0,
+\end{align*}
+non,
+\begin{align*}
+\left(
+\begin{matrix}
+\alpha_1 \\
+\vdots \\
+\alpha_m
+\end{matrix}
+\right)=Q_1^TB \ e_s,
+\end{align*}
+eta $\sigma_1 \ge \cdots \sigma_{s/2}, \ K$ matrizearen balio singularrak diren; $s$ bakoitia denean $\sigma_m=0$ dela gogoratu (\ref{eq:Dmat}). 
+
+\paragraph*{$\Delta z$ kalkulatzeko ekuazioak.}
+
+Lehen ekuaziotik,$W_i$ askatuz, 
+\begin{equation*}
+W_i=(I_d+h^2\sigma_i^2J^2)^{-1} (R_i+\frac{\alpha_i}{2} \ \Delta z)
+\end{equation*}
+
+eta bigarren ekuazioan ordezkatuz, $\Delta z \in \mathbb{R}^d$ askatzeko ekuazioak lortuko ditugu,
+\begin{equation}
+M\ \Delta z=h \ J\sum\limits_{i=1}^{m}\alpha_i (I_d+h^2\sigma_i^2J^2)^{-1}R_i,
+\end{equation}
+non
+\begin{equation}M=I_d+ J \ \frac{h}{2}\ \sum\limits_{i=1}^{m} \alpha_i^2 (I_d+h^2 \sigma_i^2 J^2)^{-1} \in \mathbb{R}^{d \times d}.
+\end{equation}
+
+
+\section{IRK-Newton estandarra (formulazio berria).}
+
+\subsection*{Sarrera.}
+
+IRK-Newton inplementazioarentzat, IRK puntu-finkoaren inplementazioan erabilitako birformulazio (\ref{chap:IRK-PF}atala) berdina aplikatuko dugu. Newton iterazio metodoan ordea, $L_i$ ($i=1,\dots,s$) aldagai ezezagunatzat eta $Y_i$ ($i=1,\dots,s$) aldagai laguntzailea kontsideratzea \cite{Olsson2000} izango da egokiena,
+\begin{align}
+\label{eq:62}
+&\ L_{n,i}=hb_if(Y_{n,i}), \ \ Y_{n,i}=y_n+ \sum\limits_{j=1}^{s} \mu_{ij} \ L_{n,j},  \ \ i=1,\dots,s,\\
+&y_{n+1}=y_n+\sum\limits_{i=1}^{s} L_{n,i},
+\end{align}
+non  $\mu_{ij}=a_{ij}/{b_j}$, \ \  $1 \le i,j \le s$.
+
+\subsection*{Newton sinplifikatuaren iterazioa.}
+
+Newton metodo sinplifikatua, $k=1,2,\dots$  $L_i^{[k]}$ hurbilpenak kalkulatzeko,
+\begin{enumerate}
+\item 
+$g_i^{[k]}=-L_i^{[k-1]}+h b_i f(t+c_ih,\ y_n+ \sum\limits_{j=1}^{s} \mu_{ij} L_{j}^{[k-1]}), \ \ i=1,\dots,s.$
+
+\item Askatu $\Delta L_i^{[k]}$,
+
+$\Delta L_i^{[k]} - h b_i \ J_i^{[0]} \sum_{j=1}^{s} \mu_{ij}  \ \Delta L_j^{[k]} = g_i^{[k]}  , \ \ i=1,\dots,s.$
+
+\item $L_i^{[k]} = L_i^{[k-1]}+ \Delta L_i^{[k]}, \ \  i=1,\dots,s.$
+
+\end{enumerate}
+non $J_i^{[0]}=\frac{\partial f}{\partial y} (t+c_ih, Y_i^{[0]}) \ \  i=1,\dots,s$ den.
+
+\paragraph*{}Modu baliokidean, ekuazio lineala notazio matriziala erabiliz laburtu daiteke,
+\begin{equation*}
+\left (I_s \otimes I_d - h  
+\begin{bmatrix}
+b_1 \mu_{11} J_1^{[0]} & \dots & b_1 \mu_{1s} J_1^{[0]} \\
+b_2 \mu_{21} J_2^{[0]} & \dots & b_2 \mu_{2s} J_2^{[0]} \\
+\dots          & \ddots & \dots \\
+b_s \mu_{s1} J_s^{[0]} & \dots & b_s \mu_{ss} J_s^{[0]} \\ 
+\end{bmatrix} \right) \Delta L^{[k]} =g^{[k]}.
+\end{equation*}
+
+non,
+\begin{equation*}
+L^{[k]}=\begin{bmatrix}
+L_1^{[k]} \\
+\vdots \\
+L_s^{[k]}
+\end{bmatrix} \in \mathbb{R}^{sd}, \ \ \
+g^{[k]}=\begin{bmatrix}
+g_1^{[k]} \\
+\vdots \\
+g_s^{[k]}
+\end{bmatrix} \in \mathbb{R}^{sd},  
+\end{equation*}
+
+\begin{equation*}
+\label{eq:907}
+J_{is}(y)=\left(\partial f^i/\partial y^j (y)\right)_{i,j}^d=
+\begin{bmatrix}
+    \frac{\partial f^1}{\partial y^1} & \cdots & \frac{\partial f^1}{\partial y^d}\\    
+    \vdots & \ddots & \vdots \\    
+    \frac{\partial f^d}{\partial y^1} & \cdots & \frac{\partial f^d}{\partial y^d}\\    
+\end{bmatrix} \in \mathbb{R}^{d \times d}, \ is=1,\cdots,s.
+\end{equation*}
+
+\subsection*{Newton super-sinplifikatuaren iterazioa.}
+
+Honako bigarren sinplifikazioarekin, $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}), \ \  i=1,\dots,s$ matrizeak,  $J_i^{[0]} \approx J, \ i=0,\cdots,s$ hurbilpenarekin ordezkatuz, ekuazio sistema lineal hau lortuko dugu,
+\begin{equation}
+(I_s \otimes I_d - h \ BAB^{-1} \otimes J) \ \Delta L = g. 
+\end{equation}
+non
+\begin{equation*}
+I_s,\ I_d \ \ \text{identitateak eta }B=
+\begin{bmatrix}
+   b_{1} & 0      & \dots & 0 \\
+   0     & b_{2}  & \dots & 0 \\
+    \vdots & \vdots & \ddots  & \vdots \\
+   0     & 0      & \dots & b_{s}\\
+\end{bmatrix}.     
+\end{equation*}
+
+\subsection*{Algoritmoa.}
+
+Formulazio berrian Newton super-sinplifikatua deitu dugun algoritmoa laburtu dugu (Algoritmoa \ref{alg:nssli}).
+
+\begin{algorithm}[h!]
+ \BlankLine
+  $\tilde{y}_0=fl(y_0)$\;
+  $e_0=fl(y_0-\tilde{y}_0)$\;
+  \For{$n\leftarrow 0$ \KwTo ($endstep-1$)}
+  {
+   \BlankLine
+   $k=0$\;
+   \text{Hasieratu}  $L_{n,i}^{[0]} \ \ , \ \ i=1,\dots,s $\;
+   $Y_{n,i}^{[0]}=y_{n} + \ \big(e_n+\sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[0]}\big)  $\;
+   \BlankLine
+   $J=\frac{\partial f}{\partial y}(y_n) $\; 
+   $M=LU(I_s \otimes I_d - h \ BAB^{-1} \otimes J)$\;
+   \BlankLine
+   \While{ (\text{not konbergentzia})}
+   {
+    \BlankLine 
+    $k=k+1$\;
+    $g_i^{[k]}=-L_i^{[k-1]}+h b_i f(t+c_ih,\ y_n+ \sum\limits_{j=1}^{s} \mu_{ij} L_{j}^{[k-1]})$\;
+    Solve $(M \Delta L^{[k]}=g^{[k]})$\;
+    $L^{[k]}=L^{[k-1]}+\Delta L^{[k]}$\;
+    $Y_{n,i}^{[k]}=y_{n} + \ \big(e_n+\sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[k]}\big)  $\;
+    $\text{konbergentzia} \leftarrow \text{GeratzeErizpidea}(L^{[k]},L^{[k-1]},\Delta_{min}) $\;
+   }
+   \BlankLine
+   \If{($\exists j \ \text{non} \ \Delta_j^{[K]}\neq 0$)}
+   {
+    \If{$(NormalizeDistance(Y^{[k]},Y^{[k-1]})>1$}
+    {$\text{fail convergence}$\;}
+   }
+   $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpensatua}(\tilde y_{n},e_{n},L_{n}^{[k]})$\;
+ }
+ \caption{IRK (Newton super-sinplifikatua).}
+ \label{alg:nssli}
+\end{algorithm}
+
+\paragraph*{Interpolazio koefizienteak.} $L_{n,i}^{[0]}$ atalen hasieraketarentzat dagokien koefizienteak era honetan definituko ditugu. IRK puntu finkoaren inplementazioan finkatu genituen interpolazio koefizienteetatik abiatuta (\ref{eq: interpLi}) modu errezean definituko ditugu formulazio honi dagozkion interpolazio koefizienteak.
+\begin{align}
+\left \{ \begin{array}{c}
+  Y_{n,i}^{[0]}=y_n+\sum_{j=1}^{s} \mu_{ij} L_{n,j}^{[0]} \\[.25cm]
+  Y_{n,i}^{[0]}=y_n+\sum_{j=1}^{s} \nu_{ij} L_{n-1,j} \\
+          \end{array} \right. 
+\Rightarrow \ \ L_n^{{[0]}}=(Mu^{-1} Nu) L_{n-1}, \ \ (Mu^{-1} Nu)_{i,j}^{s}=\lambda_{ij}/a_{ij}.
+\end{align}
+
+\paragraph*{Geratze erizpidea.} Puntu-finkoan definitutako geratze erizpide berdina aplikatuko dugu baina $L_{n,i}, \ i=1,\cdots,s$ aldagei.
+\begin{equation*}
+\Delta^{[k]}=(L_1^{[k]}-L_1^{[k-1]},\dots,L_s^{[k]}-L_s^{[k-1]}) \in \mathbb{R}^{sd},
 \end{equation*}
 
 Iterazioak jarraitu, honako baldintza betetzen den artean,
+\begin{multline}
+\label{eq:not_stopping Li}
+\exists j \in \{1,\ldots,s d\} \quad \mbox{non} \quad \\
+%|\Delta_j^{[1]}| >\cdots > |\Delta_j^{[k-1]}|>0 \mbox{ and } \Delta_j^{[k]} \neq 0. 
+\min \left(\{|\Delta_j^{[1]}|,\cdots ,|\Delta_j^{[k-1]}|\} \ /\{0\} \right)>|\Delta_j^{[k]}| \mbox{ and } \Delta_j^{[k]} \neq 0. 
+\end{multline}
+
+\paragraph*{Batura konpensatua.}
+
+Batura konpesatua egiteko modua zehaztuko dugu. Lehenik $\Delta L_i$ gaiak gehituko ditugu,
+\begin{algorithm}[h]
+$\beta_{n}={e}_{n} + \sum\limits_{j=1}^{s}\Delta L_{n,j}^{[k]}$\;
+\end{algorithm}
+
+Bigarrenik, $y_{n+1}=y_{n}+ \sum_{i=1}^{s} L_{n,i}^{[k-1]} + \beta_{n}$ batuketa egiteko
+
+\begin{algorithm}[H]
+  \SetAlgoLined\DontPrintSemicolon
+  \SetKwFunction{algo}{algo}\SetKwFunction{BaturaKonpensatua}{BaturaKonpensatua}
+  \SetKwProg{myalg}{Algorithm}{}{}
+  \SetKwProg{myproc}{Function}{}{}
+  \myproc{\BaturaKonpensatua {$y_n$,\ $\beta_n$,\ $L_n^{[k-1]}$}}{
+     \BlankLine
+     $s_0=y_n$\;
+     $ee=\beta_n$\;
+     \For{$i\leftarrow 1$ \KwTo ($s$)}
+      {
+        $s_1=s_0$\;
+        $\delta= L_{n,i}^{[k-1]} +ee$\;
+        $s_0=s_1+\delta$\;
+        $ee=(s_1 - s_0)+ \delta$\;   
+      }
+     $y_{n+1}=s_0$\;
+     $e_{n+1}=ee$\;    
+    \KwRet ($y_{n+1}$,$e_{n+1}$) \;}
+  \caption{BaturaKonpensatua}
+\end{algorithm} 
+
+
+\section{IRK-Newton eraginkorra (formulazio berria).}
+
+
+Formulazio berrian honakoa da, modu eraginkorrean askatu behar dugun ekuazio-lineala,
 \begin{equation}
-\exists j \in \{1,\dots,sd\} \ , \ |\triangle_j^{[1]}| >|\triangle_j^{[2]|}>\dots>|\triangle_j^{[k]}|>0.
-\end{equation} 
+(I_s \otimes I_d - h \ BAB^{-1} \otimes J) \ \Delta L = g, 
+\end{equation}
+$J \in \mathbb{R}^{d \times d}$  eta $g \in \mathbb{R}^{s \times d}$ emandako matrizeak izanik. 
+
+
+\subsection*{Formulazio estandarretik formulazio berrirako urratsa.}
+
+Formulazio berriaren inplementazio eraginkorra, formulazio estandarrean emandako algoritmoaren (\ref{sec:s74} atala) moldatuz zehaztuko dugu.
+
+\paragraph*{} Hauek izango dira bi formulazioen aldagaien arteko erlazioak,
+
+\begin{enumerate}
+
+\item Aldagai aldaketa.
+\begin{align*}
+\Delta L &=(B \otimes I_d) \ \Delta Y, \\
+\Delta L &=(B Q \otimes I_d) \ W, \\
+\Delta L &=(B Q_1 \otimes I_d) \ W^{'}+(B Q_2 \otimes I_d) \ W^{''}.
+\end{align*}
+
+\item $R$ matrizea.
+
+$g \in \mathbb{R}^{sd} \ \  \rightarrow \ \ r=(B^{-1} \otimes I_d) g$.
+\begin{align*}
+R=&(Q_1^TB \otimes I_d) \ r + h \ (D Q_2^T B \otimes J) \ r ,\\
+R=&(Q_1^T \otimes I_d) \ g + h \ (D Q_2^T \otimes J) \ g,  \\
+R=& (Q_1^T) \ g  + (h D Q_2^T) \ g \ J^T.
+\end{align*}
+
+\item $W^{''}$ matrizea.
+\begin{align*}
+W^{''}&= -h \ (D^T \otimes J) \ W^{'}+ (Q_2^T B \otimes I_d) \ r, \\
+W^{''}&= -h \ (D^T \otimes J) \ W^{'}+ (Q_2^T \otimes I_d) \ g, \\
+\end{align*}
+
 
 \end{enumerate}
+
+\paragraph*{}Formulazio berrian IRK-Newton sinplifikatuaren inplementazioaren urratsak hauek dira,
+
+\begin{enumerate}
+
+\item $\Delta z$  askatu.
+\begin{equation*}
+M \ \Delta z=h \ J\sum\limits_{i=1}^{m}\alpha_i (I_d+h^2\sigma_i^2J^2)^{-1}R_i,
+\end{equation*}
+non $M=I_d+J \ \frac{h}{2}\sum\limits_{i=1}^{m} \alpha_i^2 (I_d+h^2 \sigma_i^2 J^2)^{-1} \in \mathbb{R}^{d \times d}$.
+
+\item  $W^{'}$ askatu.
+\begin{align*}
+W^{'}_i=(I_d+h^2\sigma_i^2J^2)^{-1} (R_i+\frac{\alpha_i}{2} \ \Delta z) \in \mathbb{R}^d, \ i=1,\dots,m
+\end{align*}
+
+\item $W^{''}$.
+\begin{align*}
+W^{''} &= -h \ (D^T \otimes J) \ W^{'}+(Q_2^T B \otimes I_d) \ r, \\
+W^{''} &= -h (D^T \otimes J) W^{'}+ (Q_2^T \otimes I_d) \ g, \\
+W^{``} &= (-hD^T) \ W^{`} \ J^T+Q_2^T \ g,
+\end{align*}
+
+
+\item $\Delta L$.
+\begin{align*}
+\Delta L &=(B Q_1 \otimes I_d) W^{'}+(B Q_2 \otimes I_d) W^{''}, \\
+\end{align*}
+
+\end{enumerate}
+
+\subsection*{AlgoritmoaV1.}
+
+IRK-Newton gure inplementazioaren algoritmoa laburtuko dugu (Algoritmoa \ref{alg:IRK-Newton-Li}), 
+
+\begin{algorithm}[h!]
+ \BlankLine
+  $\tilde{y}_0=fl(y_0)$\;
+  $e_0=fl(y_0-\tilde{y}_0)$\;
+  \For{$n\leftarrow 0$ \KwTo ($endstep-1$)}
+  {
+   \BlankLine
+   $k=0$\;
+   \text{Hasieratu}  $L_{n,i}^{[0]} \ \ , \ \ i=1,\dots,s $\;
+   $Y_{n,i}^{[0]}=y_{n} + \ \big(e_n+\sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[0]}\big)  $\; 
+   \BlankLine
+   $J=\frac{\partial f}{\partial y}(y_n) $\; 
+   \BlankLine
+   $ M=I_d- \ J \ \frac{h}{2}\ \sum\limits_{i=1}^{m} \alpha_i^2 (I_d+h^2 \sigma_i^2 J^2)^{-1} $\;
+   $ \text{LUM}=LU(M)$\;
+   \BlankLine  
+   \While{ (\text{not konbergentzia})}
+   {
+    \BlankLine 
+    $k=k+1$\;
+    \BlankLine
+    $g= (hB F(L)-L )$\;
+    \BlankLine
+    $R=Q_1^T \ g  + (h D Q_2^T) \ g \ J^T $\;
+    $d=h \ J \sum\limits_{i=1}^{m}\alpha_i (I_d+h^2\sigma_i^2J^2)^{-1}R_i$\;
+    $\text{Solve}(M \Delta z = d)$\;
+    \BlankLine 
+    $W^{'}_i=(I_d+h^2\sigma_i^2J^2)^{-1} (R_i+\frac{\alpha_i}{2} \ \Delta z), \ i=1,\dots,m$\;
+    \BlankLine
+    $W^{``}= (-hD^T) \ W^{`} \ J^T+Q_2^T \ g$\;
+    \BlankLine
+    $\Delta L =B Q_1 \ W^{`}+B Q_2 \ W^{``} $\;
+    $L^{[k]}=L^{[k-1]}+\Delta L^{[k]}$\;
+    $Y_{n,i}^{[k]}=y_{n} + \ \big(e_n+\sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[k]}\big)  $\;  
+    $\text{konbergentzia} \leftarrow \text{GeratzeErizpidea}(L^{[k]},L^{[k-1]},\Delta_{min}) $\;
+   }
+ \BlankLine
+   \If{($\exists j \ \text{non} \ \Delta_j^{[K]}\neq 0$)}
+   {
+    \If{$(NormalizeDistance(Y^{[k]},Y^{[k-1]})>1$}
+    {$\text{fail convergence}$\;}
+   }
+   $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpensatua}(\tilde y_{n},e_{n},L_{n}^{[k]})$\;
+ }
+ \caption{IRK (NSS-EraginkorraV1).}
+ \label{alg:IRK-Newton-Li}
+\end{algorithm}
+
+
+\clearpage
+
+
+\section{IRK Sasi-Newton.}
+
+
+\subsection*{Sarrera.}
+
+Doitasun laukoitzerako abantaila asko izango dituen proposamen berria egingo dugu. Doitasun laukoitzeko exekuzioetan, funtzio ebaluaztapena oso garestia da eta funtzio ebaluaztapen kopurua gutxitzea bilatuko dugu.
+
+Newton osoa aplikatzen dugunean pena mereziko du (Newton osoak ez du atalen hasieraketa ona behar eta Newton sinplifikatuak bai).
+
+Ideia nagusia hauxe da; Newton osoaren iterazioaren ekuazio sistema, modu iteratiboan askatzea,
+\begin{align*}
+&\Delta L_i^{[k]} - h b_i \ J_i^{[k]} \sum_{j=1}^{s} \mu_{ij}  \ \Delta L_j^{[k]} = g_i^{[k]}  , \ \ i=1,\dots,s,\\
+&J_i^{[k]}=\frac{\partial f}{\partial y} (t+c_ih, Y_i^{[k]}), \ \  i=1,\dots,s,\\
+\end{align*}
+
+Notazio berria finkatzen badugu, hau da askatu beharreko ekuazio sistema,
+\begin{equation*}
+M^{[k]} \Delta L^{[k]}=g^{[k]},
+\end{equation*}
+
+eta $G()$  funtzioa era honetan definituz,
+\begin{align*}
+G(\Delta L):&=g-M \ \Delta L,
+\end{align*}
+askatu nahi dugun ekuazioa,
+\begin{align*}
+G(\Delta L) \ &=0.
+\end{align*}
+
+Aurreko atalean,  $M^{[k]} \approx \tilde{M}$  hurbilketa, modu eraginkorrean askatzen ikusi dugu, 
+\begin{align*}
+\tilde{M} \ =(I_s \otimes I_d - h \ BAB^{-1} \otimes J).
+\end{align*}
+
+Eta beraz,
+\begin{algorithm}[h!]
+ \BlankLine
+  $\Delta L^{[0]}=0$\;
+  \For{$l=0,1,2,\cdots$}
+  {
+    $\Delta L^{[l+1]} = \Delta L^{[l]}+ \tilde{M}^{-1} \ G^{[l]}$\;
+  }
+ \caption{.}
+\end{algorithm}
+
+\subsection*{Sasi-Newton.}
+
+
+\begin{algorithm}[h!]
+  $ \Delta L^{[k,1]} = \tilde{M}^{-1} \ g^{[k]}$\;
+  \BlankLine
+  \For{ (l=2,3,\dots)}
+  {
+   \BlankLine
+   $G^{[k,l]} = g^{[k]}- M^{[k]} \Delta L^{[k,l-1]}$\;
+   \BlankLine
+   $\Delta L^{[k,l]}=\Delta L^{[k,l-1]}+ \tilde{M}^{-1} \ G^{[k,l]}$\;
+  }
+ \caption{Sasi-Newton Benetakoa.}
+ \label{alg:901}
+\end{algorithm}
+
+Non
+\begin{align*}
+ G_i^{[k,l]} &=g_i^{[k]}- (\Delta L_i^{[k,l-1]}-hb_i J_i^{[k]} \sum_{j=1}^{s} \mu_{ij} \Delta L_{j}^{[k,l-1]}), \ \ i=1,\dots,s,\\
+ G_i^{[k,l]} &=J_i^{[k]} \cdot (\sum_{j=1}^{s} hb_i\mu_{ij} \Delta L_{j}^{[k,l-1]})+(g_i^{[k]}-\Delta L_i^{[k,l-1]}), \ \ i=1,\dots,s.
+\end{align*}
+
+\paragraph*{} Proposamen berri honetan,
+\begin{itemize}
+\item Iterazioa=$1$: \emph{Newton Super-Sinplifikatua} (NSS-eraginkorra).
+\item Iterazioa=$\infty$: \emph{Newton Benetako} (NB-eraginkorra).
+\item Iterazioa=$2$ edo $3$: \emph{Sasi-Newton Benetakoa} (SNB-eraginkorra).
+\end{itemize}
 
 \section{Laburpena.}

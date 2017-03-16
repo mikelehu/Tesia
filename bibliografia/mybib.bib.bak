@@ -1,6 +1,46 @@
-% This file was created with JabRef 2.10b2.
+% This file was created with JabRef 2.10.
 % Encoding: UTF-8
 
+
+@Book{Aarseth2008,
+  Title                    = {The Cambridge n-body lectures},
+  Author                   = {Aarseth, Sverre and Tout, Christopher and Mardling, Rosemary},
+  Publisher                = {Springer},
+  Year                     = {2008},
+  Volume                   = {760},
+
+  Doi                      = {10.1007/978-1-4020-8431-7},
+  Owner                    = {joseba},
+  Timestamp                = {2016.11.04}
+}
+
+@Article{Baboulin20092526,
+  Title                    = {Accelerating scientific computations with mixed precision algorithms },
+  Author                   = {Marc Baboulin and Alfredo Buttari and Jack Dongarra and Jakub Kurzak and Julie Langou and Julien Langou and Piotr Luszczek and Stanimire Tomov},
+  Journal                  = {Computer Physics Communications },
+  Year                     = {2009},
+  Note                     = {40 \{YEARS\} \{OF\} CPC: A celebratory issue focused on quality software for high performance, grid and novel computing architectures },
+  Number                   = {12},
+  Pages                    = {2526 - 2533},
+  Volume                   = {180},
+
+  Doi                      = {http://dx.doi.org/10.1016/j.cpc.2008.11.005},
+  ISSN                     = {0010-4655},
+  Keywords                 = {Numerical linear algebra},
+  Owner                    = {joseba},
+  Timestamp                = {2016.10.14},
+  Url                      = {http://www.sciencedirect.com/science/article/pii/S0010465508003846}
+}
+
+@Book{Balaji2015,
+  Title                    = {Programming models for parallel computing},
+  Author                   = {Balaji, Pavan},
+  Publisher                = {MIT Press},
+  Year                     = {2015},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.02.18}
+}
 
 @Article{Barnes1986,
   Title                    = {A hierarchical O (N log N) force-calculation algorithm},
@@ -27,6 +67,31 @@
   Timestamp                = {2016.05.24}
 }
 
+@Article{Beylkin2014,
+  Title                    = {ODE solvers using band-limited approximations},
+  Author                   = {Beylkin, Gregory and Sandberg, Kristian},
+  Journal                  = {Journal of Computational Physics},
+  Year                     = {2014},
+  Pages                    = {156--171},
+  Volume                   = {265},
+
+  Doi                      = {dx.doi.org/10.1016/j.jcp.2014.02.001},
+  Owner                    = {joseba},
+  Publisher                = {Elsevier},
+  Timestamp                = {2016.12.04}
+}
+
+@Article{Bezanson2014,
+  Title                    = {Julia: A fresh approach to numerical computing},
+  Author                   = {Bezanson, Jeff and Edelman, Alan and Karpinski, Stefan and Shah, Viral B},
+  Journal                  = {arXiv preprint arXiv:1411.1607},
+  Year                     = {2014},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.02.18},
+  Url                      = {arXiv:1411.1607}
+}
+
 @Article{Blanes2013,
   Title                    = {New families of symplectic splitting methods for numerical integration in dynamical astronomy},
   Author                   = {Blanes, Sergio and Casas, Fernando and Farres, Ariadna and Laskar, Jacques and Makazaga, Joseba and Murua, Ander},
@@ -39,6 +104,21 @@
   Owner                    = {joseba},
   Publisher                = {Elsevier},
   Timestamp                = {2016.05.29}
+}
+
+@Article{Bradley2014,
+  Title                    = {Bandlimited implicit Runge--Kutta integration for astrodynamics},
+  Author                   = {Bradley, Ben K and Jones, Brandon A and Beylkin, Gregory and Sandberg, Kristian and Axelrad, Penina},
+  Journal                  = {Celestial Mechanics and Dynamical Astronomy},
+  Year                     = {2014},
+  Number                   = {2},
+  Pages                    = {143--168},
+  Volume                   = {119},
+
+  Doi                      = {10.1007/s10569-014-9551-x},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2017.01.23}
 }
 
 @Article{Brouwer1937,
@@ -54,6 +134,21 @@
   Timestamp                = {2016.06.13}
 }
 
+@Article{Brumberg2013,
+  Title                    = {Celestial mechanics: Past, present, future},
+  Author                   = {Brumberg, VA},
+  Journal                  = {Solar System Research},
+  Year                     = {2013},
+  Number                   = {5},
+  Pages                    = {347--358},
+  Volume                   = {47},
+
+  Doi                      = {10.1134/S0038094613040011},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2016.10.27}
+}
+
 @Book{Butcher2008,
   Title                    = {Numerical Methods for Ordinary Differential Equations},
   Author                   = {Butcher, John Charles},
@@ -64,6 +159,22 @@
   Doi                      = {10.1002/9780470753767},
   Owner                    = {joseba},
   Timestamp                = {2016.06.11}
+}
+
+@Article{Butcher1976,
+  Title                    = {On the implementation of implicit Runge-Kutta methods},
+  Author                   = {Butcher, John C},
+  Journal                  = {BIT Numerical Mathematics},
+  Year                     = {1976},
+  Number                   = {3},
+  Pages                    = {237--240},
+  Volume                   = {16},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1007/BF01932265},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2017.03.05}
 }
 
 @Article{Carrier1988,
@@ -110,6 +221,41 @@
   Timestamp                = {2016.06.03}
 }
 
+@Article{Danby1992,
+  Title                    = {Fundamentals of celestial mechanics},
+  Author                   = {Danby, John},
+  Journal                  = {Richmond: Willman-Bell,| c1992, 2nd ed.},
+  Year                     = {1992},
+  Volume                   = {1},
+
+  Owner                    = {joseba},
+  Timestamp                = {2016.10.18}
+}
+
+@Article{Dekker1971,
+  Title                    = {A floating-point technique for extending the available precision},
+  Author                   = {Dekker, Theodorus Jozef},
+  Journal                  = {Numerische Mathematik},
+  Year                     = {1971},
+  Number                   = {3},
+  Pages                    = {224--242},
+  Volume                   = {18},
+
+  Doi                      = {10.1007/BF01397083},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2016.09.22}
+}
+
+@Article{Dumitru,
+  Title                    = {Fast detection of chaotic or regular behavior of double pendulum system: application of the fast norm vector indicator method},
+  Author                   = {Dumitru N. Deleanu},
+
+  Doi                      = {10.13140/2.1.5033.2969},
+  Owner                    = {joseba},
+  Timestamp                = {2016.06.03}
+}
+
 @Article{Duncan1998,
   Title                    = {A multiple time step symplectic algorithm for integrating close encounters},
   Author                   = {Duncan, Martin J and Levison, Harold F and Lee, Man Hoi},
@@ -125,6 +271,18 @@
   Url                      = {http://stacks.iop.org/1538-3881/116/i=4/a=2067}
 }
 
+@Book{Eijkhout2011,
+  Title                    = {Introduction to High Performance Scientific Computing},
+  Author                   = {Victor Eijkhout},
+  Publisher                = {lulu.com},
+  Year                     = {2011},
+  Note                     = {Also available for download from \url{http://www.tacc.utexas.edu/~eijkhout/istc/istc.html}},
+  ISBN                     = {978-1-257-99254-6},
+  Owner                    = {joseba},
+  Timestamp                = {2017.02.20},
+  Url                      = {http://www.lulu.com/shop/victor-eijkhout/introduction-to-high-performance-scientific-computing/paperback/product-18783375.html}
+}
+
 @Article{Farres2013,
   Title                    = {High precision symplectic integrators for the solar system},
   Author                   = {Farr{\'e}s, Ariadna and Laskar, Jacques and Blanes, Sergio and Casas, Fernando and Makazaga, Joseba and Murua, Ander},
@@ -134,7 +292,6 @@
   Pages                    = {141--174},
   Volume                   = {116},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1007/s10569-013-9479-6},
   Owner                    = {joseba},
   Publisher                = {Springer},
@@ -147,10 +304,24 @@
   Publisher                = {Springer},
   Year                     = {2010},
 
-  __markedentry            = {[joseba:6]},
-  Doi                      = {10.2277/0521772907},
+  Doi                      = {10.1007/978-3-642-01777-3},
   Owner                    = {joseba},
   Timestamp                = {2016.07.13}
+}
+
+@Article{Fienga2008,
+  Title                    = {INPOP06: a new numerical planetary ephemeris},
+  Author                   = {Fienga, A and Manche, H and Laskar, J and Gastineau, Mickael},
+  Journal                  = {Astronomy \& Astrophysics},
+  Year                     = {2008},
+  Number                   = {1},
+  Pages                    = {315--327},
+  Volume                   = {477},
+
+  Doi                      = {10.1051/0004-6361:20066607},
+  Owner                    = {joseba},
+  Publisher                = {EDP Sciences},
+  Timestamp                = {2016.10.25}
 }
 
 @Article{Folkner2014,
@@ -181,6 +352,19 @@
   Url                      = {http://iopscience.iop.org/article/10.1086/319385/meta}
 }
 
+@Article{Grazier2005,
+  Title                    = {Achieving Brouwer's law with high-order Stormer multistep methods},
+  Author                   = {Grazier, KR and Newman, WI and Hyman, James M and Sharp, Philip W and Goldstein, David J},
+  Journal                  = {ANZIAM Journal},
+  Year                     = {2005},
+  Pages                    = {786--804},
+  Volume                   = {46},
+
+  Doi                      = {http://dx.doi.org/10.21914/anziamj.v46i0.990},
+  Owner                    = {joseba},
+  Timestamp                = {2016.12.28}
+}
+
 @Book{Hairer2006,
   Title                    = {Geometric numerical integration: structure-preserving algorithms for ordinary differential equations},
   Author                   = {Hairer, Ernst and Lubich, Christian and Wanner, Gerhard},
@@ -206,6 +390,33 @@
   Owner                    = {joseba},
   Publisher                = {Springer},
   Timestamp                = {2016.05.25}
+}
+
+@Book{Hairer1996,
+  Title                    = {Solving Ordinary Differential Equations II. Stiff and Differential-Algebraic Problems},
+  Author                   = {Hairer, E and Wanner, G},
+  Publisher                = {Springer, Berlin},
+  Year                     = {1996},
+
+  __markedentry            = {[joseba:6]},
+  Doi                      = {10.1007/978-3-642-05221-7},
+  Owner                    = {joseba},
+  Timestamp                = {2017.03.05}
+}
+
+@Article{Hayes2007,
+  Title                    = {Is the outer Solar System chaotic?},
+  Author                   = {Hayes, Wayne B},
+  Journal                  = {Nature Physics},
+  Year                     = {2007},
+  Number                   = {10},
+  Pages                    = {689--691},
+  Volume                   = {3},
+
+  Doi                      = {10.1038/nphys728},
+  Owner                    = {joseba},
+  Publisher                = {Nature Publishing Group},
+  Timestamp                = {2016.11.04}
 }
 
 @Article{Hernandez2015,
@@ -245,6 +456,41 @@
   Timestamp                = {2016.06.03}
 }
 
+@Book{Hogben2013,
+  Title                    = {Handbook of linear algebra},
+  Author                   = {Hogben, Leslie},
+  Publisher                = {Chapman and Hall/CRC},
+  Year                     = {2013},
+  Owner                    = {joseba},
+  Timestamp                = {2017.02.19},
+  Url                      = {http://orion.math.iastate.edu/lhogben/HLA.html}
+}
+
+@InProceedings{Ishiyama2012,
+  Title                    = {4.45 Pflops astrophysical N-body simulation on K computer: the gravitational trillion-body problem},
+  Author                   = {Ishiyama, Tomoaki and Nitadori, Keigo and Makino, Junichiro},
+  Booktitle                = {Proceedings of the International Conference on High Performance Computing, Networking, Storage and Analysis},
+  Year                     = {2012},
+  Organization             = {IEEE Computer Society Press},
+  Pages                    = {5},
+
+  Owner                    = {joseba},
+  Timestamp                = {2016.12.04},
+  Url                      = {dl.acm.org/citation.cfm?id=2388996.2389003}
+}
+
+@Article{Ito2007,
+  Title                    = {Trends in 20th century celestial mechanics},
+  Author                   = {Ito, Takashi and Tanikawa, Kiyotaka},
+  Journal                  = {Publ. Natl. Astron. Obs. Jpn},
+  Year                     = {2007},
+  Pages                    = {55--112},
+  Volume                   = {9},
+
+  Owner                    = {joseba},
+  Timestamp                = {2016.10.27}
+}
+
 @Book{JMSanz-Serna1994,
   Title                    = {Numerical Hamiltonian problems},
   Author                   = {JM Sanz-Serna, MP Calvo},
@@ -253,6 +499,130 @@
 
   Owner                    = {joseba},
   Timestamp                = {2016.05.25}
+}
+
+@Article{Joldes2016,
+  Title                    = {Arithmetic algorithms for extended precision using floating-point expansions},
+  Author                   = {Jolde{\c{s}}, Mioara and Marty, Olivier and Muller, Jean-Michel and Popescu, Valentina},
+  Journal                  = {IEEE Transactions on Computers},
+  Year                     = {2016},
+  Number                   = {4},
+  Pages                    = {1197--1210},
+  Volume                   = {65},
+
+  Doi                      = {10.1109/TC.2015.2441714},
+  Owner                    = {joseba},
+  Publisher                = {IEEE},
+  Timestamp                = {2017.02.01}
+}
+
+@Article{Kahan1965,
+  Title                    = {Further remarks on reducing truncation errors},
+  Author                   = {Kahan, W},
+  Journal                  = {Communications of the ACM},
+  Year                     = {1965},
+  Number                   = {1},
+  Pages                    = {40},
+  Volume                   = {8},
+
+  Owner                    = {joseba},
+  Publisher                = {ACM},
+  Timestamp                = {2016.12.27}
+}
+
+@Article{Kaplan2015,
+  Title                    = {Historical Reflections on the Work of IAU Commission 4 (Ephemerides)},
+  Author                   = {Kaplan, George H and Bangert, John A and Fienga, Agnes and Folkner, William and Hohenkerk, Catherine and Lukashova, Marina and Pitjeva, Elena V and Seidelmann, P Kenneth and Sveshnikov, Michael and Urban, Sean and others},
+  Journal                  = {arXiv preprint arXiv:1511.01546},
+  Year                     = {2015},
+
+  Owner                    = {joseba},
+  Timestamp                = {2016.10.27},
+  Url                      = {https://arxiv.org/abs/1511.01546}
+}
+
+@Article{Kholshevnikov2007,
+  Title                    = {Review of the works on the orbital evolution of solar system major planets},
+  Author                   = {Kholshevnikov, KV and Kuznetsov, ED},
+  Journal                  = {Solar System Research},
+  Year                     = {2007},
+  Number                   = {4},
+  Pages                    = {265--300},
+  Volume                   = {41},
+
+  Doi                      = {10.1134/S0038094607040016},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2016.10.27}
+}
+
+@Misc{Knuth1969,
+  Title                    = {The art of computer programming: Vol 2/seminumerical algorithms},
+
+  Author                   = {Knuth, D},
+  Year                     = {1969},
+
+  Owner                    = {joseba},
+  Publisher                = {Addison-Wesley},
+  Timestamp                = {2016.09.22}
+}
+
+@Article{Kvaerno2000,
+  Title                    = {A time-reversible, regularized, switching integrator for the N-body problem},
+  Author                   = {Kvaerno, Anne and Leimkuhler, Ben},
+  Journal                  = {SIAM Journal on Scientific Computing},
+  Year                     = {2000},
+  Number                   = {3},
+  Pages                    = {1016--1035},
+  Volume                   = {22},
+
+  Doi                      = {10.1137/S1064827599355566},
+  Owner                    = {joseba},
+  Publisher                = {SIAM},
+  Timestamp                = {2016.10.27}
+}
+
+@Article{Laburta1998,
+  Title                    = {Construction of starting algorithms for the RK-Gauss methods},
+  Author                   = {Laburta, MP},
+  Journal                  = {Journal of computational and applied mathematics},
+  Year                     = {1998},
+  Number                   = {2},
+  Pages                    = {239--261},
+  Volume                   = {90},
+
+  Doi                      = {10.1016/S0377-0427(98)00003-X},
+  Owner                    = {joseba},
+  Publisher                = {Elsevier},
+  Timestamp                = {2016.11.29}
+}
+
+@InProceedings{Laskar2015,
+  Title                    = {Numerical challenges in long term integrations of the solar system},
+  Author                   = {Laskar, Jacques},
+  Booktitle                = {Computer Arithmetic (ARITH), 2015 IEEE 22nd Symposium on},
+  Year                     = {2015},
+  Organization             = {IEEE},
+  Pages                    = {104--104},
+
+  Doi                      = {10.1109/ARITH.2015.35},
+  Owner                    = {joseba},
+  Timestamp                = {2017.01.23}
+}
+
+@Article{Laskar1999,
+  Title                    = {The limits of Earth orbital calculations for geological time-scale use},
+  Author                   = {Laskar, Jacques},
+  Journal                  = {Philosophical Transactions of the Royal Society of London A: Mathematical, Physical and Engineering Sciences},
+  Year                     = {1999},
+  Number                   = {1757},
+  Pages                    = {1735--1759},
+  Volume                   = {357},
+
+  Doi                      = {10.1098/rsta.1999.0399},
+  Owner                    = {joseba},
+  Publisher                = {The Royal Society},
+  Timestamp                = {2016.11.04}
 }
 
 @Article{Laskar2011,
@@ -291,7 +661,7 @@
   Year                     = {2004},
   Volume                   = {14},
 
-  __markedentry            = {[joseba:6]},
+  Doi                      = {10.2277/0521772907},
   Owner                    = {joseba},
   Timestamp                = {2016.07.13}
 }
@@ -311,6 +681,21 @@
   Timestamp                = {2016.05.29}
 }
 
+@Article{Luszczek2014,
+  Title                    = {Looking back at dense linear algebra software},
+  Author                   = {Luszczek, Piotr and Kurzak, Jakub and Dongarra, Jack},
+  Journal                  = {Journal of Parallel and Distributed Computing},
+  Year                     = {2014},
+  Number                   = {7},
+  Pages                    = {2548--2560},
+  Volume                   = {74},
+
+  Doi                      = {10.1016/j.jpdc.2013.10.005},
+  Owner                    = {joseba},
+  Publisher                = {Elsevier},
+  Timestamp                = {2016.09.28}
+}
+
 @Article{McLachlan1995,
   Title                    = {Composition methods in the presence of small parameters},
   Author                   = {McLachlan, Robert I},
@@ -324,6 +709,21 @@
   Owner                    = {joseba},
   Publisher                = {Springer},
   Timestamp                = {2016.05.29}
+}
+
+@Article{McLachlan1992,
+  Title                    = {The accuracy of symplectic integrators},
+  Author                   = {McLachlan, Robert I and Atela, Pau},
+  Journal                  = {Nonlinearity},
+  Year                     = {1992},
+  Number                   = {2},
+  Pages                    = {541},
+  Volume                   = {5},
+
+  Owner                    = {joseba},
+  Publisher                = {IOP Publishing},
+  Timestamp                = {2016.12.29},
+  Url                      = {http://iopscience.iop.org/article/10.1088/0951-7715/5/2/011/meta}
 }
 
 @Article{Morbidelli2002,
@@ -363,6 +763,21 @@
   Timestamp                = {2016.05.24}
 }
 
+@Article{Olsson2000,
+  Title                    = {The approximate Runge-Kutta computational process},
+  Author                   = {Olsson, Hans and Sderlind, Gustaf},
+  Journal                  = {BIT Numerical Mathematics},
+  Year                     = {2000},
+  Number                   = {2},
+  Pages                    = {351--373},
+  Volume                   = {40},
+
+  Doi                      = {10.1023/A:1022399225591},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2016.11.13}
+}
+
 @Book{Overton2001,
   Title                    = {Numerical computing with IEEE floating point arithmetic},
   Author                   = {Overton, Michael L},
@@ -374,13 +789,66 @@
   Timestamp                = {2016.06.03}
 }
 
-@Article{Papadrakakis,
-  Title                    = {Fast detection of chaotic or regular behavior of double pendulum system: application of the fast norm vector indicator method},
-  Author                   = {Papadrakakis, M and Kojic, M and Tuncer, I},
+@Book{Pacheco2011,
+  Title                    = {An introduction to parallel programming},
+  Author                   = {Pacheco, Peter},
+  Publisher                = {Elsevier},
+  Year                     = {2011},
 
-  Doi                      = {10.13140/2.1.5033.2969},
   Owner                    = {joseba},
-  Timestamp                = {2016.06.03}
+  Timestamp                = {2017.02.19},
+  Url                      = {https://www.elsevier.com/books/an-introduction-to-parallel-programming/pacheco/978-0-12-374260-5}
+}
+
+@Article{Pitjeva2014,
+  Title                    = {Development of planetary ephemerides EPM and their applications},
+  Author                   = {Pitjeva, EV and Pitjev, NP},
+  Journal                  = {Celestial Mechanics and Dynamical Astronomy},
+  Year                     = {2014},
+  Number                   = {3-4},
+  Pages                    = {237--256},
+  Volume                   = {119},
+
+  Doi                      = {10.1007/s10569-014-9569-0},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2016.10.25}
+}
+
+@Article{Saha1994,
+  Title                    = {Long-term planetary integration with individual time steps},
+  Author                   = {Saha, Prasenjit and Tremaine, Scott},
+  Journal                  = {arXiv preprint astro-ph/9403057},
+  Year                     = {1994},
+
+  Doi                      = {10.1086/117210},
+  Owner                    = {joseba},
+  Timestamp                = {2016.11.03}
+}
+
+@Article{Sanz-Serna1992,
+  Title                    = {Symplectic integrators for Hamiltonian problems: an overview},
+  Author                   = {Sanz-Serna, Jes{\'u}s Mar{\'\i}a},
+  Journal                  = {Acta numerica},
+  Year                     = {1992},
+  Pages                    = {243--286},
+  Volume                   = {1},
+
+  Doi                      = {https://doi.org/10.1017/S0962492900002282},
+  Owner                    = {joseba},
+  Publisher                = {Cambridge Univ Press},
+  Timestamp                = {2016.12.04}
+}
+
+@TechReport{Sharp2001,
+  Title                    = {Long initial value test problems from simulations of the Solar System},
+  Author                   = {Sharp, PW},
+  Institution              = {Department of Mathematics, The University of Auckland, New Zealand},
+  Year                     = {2001},
+
+  Owner                    = {joseba},
+  Timestamp                = {2016.11.03},
+  Url                      = {http://hdl.handle.net/2292/5160}
 }
 
 @Article{Sofroniou2005,
@@ -391,6 +859,7 @@
   Number                   = {4-5},
   Pages                    = {597--613},
   Volume                   = {20},
+
   Doi                      = {10.1080/10556780500140664},
   Owner                    = {joseba},
   Publisher                = {Taylor \& Francis},
@@ -419,6 +888,36 @@
   Url                      = {http://web.mit.edu/wisdom/www/ss-chaos.pdf}
 }
 
+@Article{Wilson2014,
+  Title                    = {Best practices for scientific computing},
+  Author                   = {Wilson, Greg and Aruliah, DA and Brown, C Titus and Hong, Neil P Chue and Davis, Matt and Guy, Richard T and Haddock, Steven HD and Huff, Kathryn D and Mitchell, Ian M and Plumbley, Mark D and others},
+  Journal                  = {PLoS Biol},
+  Year                     = {2014},
+  Number                   = {1},
+  Pages                    = {e1001745},
+  Volume                   = {12},
+
+  Doi                      = {http://dx.doi.org/10.1371/journal.pbio.1001745},
+  Owner                    = {joseba},
+  Publisher                = {Public Library of Science},
+  Timestamp                = {2016.12.05}
+}
+
+@Article{Wisdom2015,
+  Title                    = {A fast and accurate universal Kepler solver without Stumpff series},
+  Author                   = {Wisdom, Jack and Hernandez, David M},
+  Journal                  = {Monthly Notices of the Royal Astronomical Society},
+  Year                     = {2015},
+  Number                   = {3},
+  Pages                    = {3015--3023},
+  Volume                   = {453},
+
+  Doi                      = {10.1093/mnras/stv1862},
+  Owner                    = {joseba},
+  Publisher                = {Oxford University Press},
+  Timestamp                = {2016.10.18}
+}
+
 @Article{Wisdom1991,
   Title                    = {Symplectic maps for the n-body problem},
   Author                   = {Wisdom, Jack and Holman, Matthew},
@@ -430,5 +929,28 @@
   Doi                      = {10.1086/115978},
   Owner                    = {joseba},
   Timestamp                = {2016.05.29}
+}
+
+@Other{WolframResearch,
+  Title                    = {Mathematica},
+  Author                   = {{Wolfram Research, Inc.}},
+  Date                     = {2016},
+  Owner                    = {joseba},
+  Timestamp                = {2016.09.28},
+  Url                      = {https://www.wolfram.com},
+  Version                  = {Version 11.0}
+}
+
+@InCollection{Yoshida1993,
+  Title                    = {Recent progress in the theory and application of symplectic integrators},
+  Author                   = {Yoshida, Haruo},
+  Booktitle                = {Qualitative and Quantitative Behaviour of Planetary Systems},
+  Publisher                = {Springer},
+  Year                     = {1993},
+  Pages                    = {27--43},
+
+  Doi                      = {10.1007/978-94-011-2030-2_3},
+  Owner                    = {joseba},
+  Timestamp                = {2016.11.04}
 }
 

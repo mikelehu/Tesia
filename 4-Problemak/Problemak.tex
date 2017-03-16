@@ -2,222 +2,412 @@
 
 \section{Sarrera.}
 
+
+Tesiaren erdigunea N-gorputzeko problema grabitazioanala da eta gure helburua, eguzki sistemaren problemaren simulaziorako zenbakizko integratzaile eraginkorra inplementatzea da. Gure esperimentuetan, eguzki sistemaren bi eredu sinple kontsideratu ditugu: lehena, \emph{kanpoko planeten} izeneko problema (eguzkia, kanpoko planetak eta pluto) eta bigarrena eredu konplexuagoa, \emph{9-planeten problema} izeneko problema (eguzkia, 8 planetak eta pluto). Bi eredu hauetan, gorputzak masa puntualak dira eta gorputz hauen arteko erakarpen grabitazionalak bakarrik kontsideratu ditugu (erlatibitate efektua eta beste hainbat indar ez-grabitazionalak gure lan-eremutik kanpo utzi ditugu).
+
+Zenbakizko metodo sinplektiko nagusienak esplizituak direla eta Hamiltondar banagarriak diren problemei aplika daitezkeela, gogoratu behar dugu. Hortaz gain, problema zurruna bada metodo esplizituak ez direla eraginkorrak eta metodo inplizituek abantaila azaltzen dutela esan beharra dago. Gauss metodoa orokorra  eta inplizitua izanik, gure inplementazioa problema zurrunetarako eta Hamiltondar banagarria ez den problemetarako  aplikagarria dela ere erakutsi nahi dugu. 
+ 
+Aurretik esandakoari jarraituz, zenbakizko esperimentuak modu aberatsago eta zabalago batean egiteko, pendulu bikoitzaren problema osagarri gisa aukeratu dugu. Pendulu bikoitzaren bi bertsio kontsideratu ditugu: pendulu bikoitz arrunta eta pendulu bikoitz zurruna. N-gorputzeko problemaren Hamiltondarra banagarria da baina pendulu bikoitzarena aldiz, ez da banagarria. Bestalde, pendulu bikoitzari malguki bat gehituz  problema zurruna izatea lortuko dugu eta problema hauen zailtasunei aurre egitea. Gainera,  eguzki sistema kaotiko  kontsideratzen dela \cite{Laskar1999} jakinik, pendulu bikoitz arruntak izaera kaotiko nabarmena azaltzen duen hasierako balio zehatzak aukeratu ditugu. Problema kaotikoak,  hasierako balio edo parametroen perturbazioekiko, diskretizazio-errorekiko (trunkatze) edo birbitze erroreekiko esponentzialki oso sentikorrak dira.
+
+
 \section{Pendulu bikoitza.}
 
-Planoan pendulu bikoitzaren problema era honetan definitzen da: $m_1$,$m_2$ masadun bi pendulu eta  $l_1$, $l_2$ luzerako makilez (masa gabekoak kontsideratuko ditugunak) elkar lotuta. Penduluen aldagai-egoerak bi angelu ($\Theta_1$,$\Theta_2$) eta dagokion momentuak ($P_1$,$P_2$) dira.
+Pendulu bikoitzaren bi bertsio deskribatuko dugu: lehena, pendulu bikoitz arrunta eta bigarren problema konplexuagoa, pendulu bikoitz zurruna. 
 
+\subsection*{Pendulu bikoitza arrunta.}
+
+Planoan pendulu bikoitzaren problema (ikus \ref{fig:dp} irudia) era honetan definituko dugu: $m_1$ eta $m_2$ masadun bi penduluz eta elkar lotuta dauden $l_1$ eta $l_2$ luzerako makilez (masa gabekoak kontsideratuko ditugunak) osatuta sistema mekanikoa. Sistemaren egoera aldagaiak, bi angelu $q=(\phi,\theta)$ eta dagozkion momentuak $p=(p_{\phi},p_{\theta})$ dira. $\phi$ lehen penduluaren ardatz bertikalarekiko angelua da eta bigarren penduluaren angelua, era honetan definituko dugu $\psi=\phi+\theta$.
 
 \begin{figure} [h]
-\centerline{\includegraphics [width=10cm, height=8cm] {DoublePendulum}}
+\centerline{\includegraphics [width=10cm, height=8cm] {MyDoublePendulum}}
 \caption{Pendulu bikoitza.}
-\label{fig:41}
+\label{fig:dp}
 \end{figure} 
 
-\subsection{Ekuazioak.}
+\paragraph*{Hamiltondar funtzioa} $H(q,p)$  honakoa da,
 
-\paragraph*{\textbf{Hamiltondarra.}}
+\begin{multline}
+ \label{eq:2}
+-\frac{ {l_1}^2 \ (m_1+m_2) \ {p_{\theta}}^2 +{l_2}^2 \ m_2 \ (p_{\theta} -p_{\phi})^2 + 2 \ l_1 \ l_2 \ m_2 \ p_{\theta} \ (p_{\theta} -p_{\phi}) \  \cos(\theta )} {{l_1}^2  \ {l_2}^2 \ m_2 \  (-2 \ m_1 - m_2 + m_2 \ \cos(2 \theta ))} \\
+-g  \ \cos (\phi) \  (l_1 \ (m_1+m_2)+l_2 \ m_2 \ \cos(\theta))+g \ l_2 \ m_2 \ \sin(\theta) \sin(\phi),
+\end{multline}
 
-\begin{equation*}
-q=(\Theta_1,\Theta_2) \ \ , \ \ p=(P_1,P_2) \ \ , 
-\end{equation*}
-
-\begin{equation*} \label{eq:2}
-H(q,p)= \bigg(\frac {C1 \ P_1^2 + C2 \ P_2^2 + 
- C3 \ P_1 \ P_2 \ \cos(\Theta_1 - \Theta_2)} {
- (C4 + C5 \ \sin^2 (Q_1 - Q_2))}\bigg)\\
-       -C6 \ \cos(\Theta_1)-\ C7 \ \cos(\Theta_2), 
-\end{equation*}
-
-non,
-\begin{align*}
-C1 &= l_2^2*m_2, & C2 = l_1^2*(m_1 + m_2),\\
-C3 &= -2*l_1*l_2*l_2, & C4 = 2*l_1^2*l_2^2*m_2*m_1,\\
-C5 &= 2*m_1^2*l_2^2*m_2^2, & C6 = g*l_1*(m_1 + m_2),\\
-C7 &= g*l_2*m_2.
-\end{align*}
-
-\paragraph*{\textbf{Ekuazio diferentzialak.}}
-
-\begin{align*}
-\dot{\Theta_1} & = \frac {2*C1*P1+C3*\cos(Q1-Q2)*P2}{aux1},\\
-\dot{\Theta_2} & = \frac{(2*C2*P2+C3*\cos(Q1-Q2)*P1)}{aux1},\\
-\dot{P1} &=-(aux4+C6*\sin(Q1)), \\
-\dot{P1} &=(aux4-C7*\sin(Q2)).
-\end{align*}
-
-non,
-\begin{align*}
-aux1 &=C4+C5*\sin(Q1-Q2)*\sin(Q1-Q2), \\
-aux2 &=C3*\cos(Q1-Q2),\\
-aux3 &=2*C5*\sin(Q1-Q2)*\cos(Q1-Q2),
-\end{align*}
-\begin{multline*}
-aux4 =(-1/aux2)*(C1*P1^2+C2*P2^2+P1*P2*aux2*aux3)\\
-       -(C3*P1*P2*\sin(Q1-Q2))/{aux1}. 
-\end{multline*}
-
-\subsection{Hasierako balioak.}
-
-\paragraph*{\textbf{Sistemaren parametroak}.} 
+\paragraph*{Sistemaren parametroak.} 
 Gure esperimentuetarako honako parametroak kontsideratuko ditugu,
-\begin{align*} 
-\label{eq:17}
-g & =9.8 \ m/sec^2,\\
-l_1 & =1 \ m \ , \ l_2=1 \ m\ ,\\
-m_1 & =1 \ kg\ , \ m_2=1 \ kg.
-\end{align*} 
+\begin{equation*}
+ \label{eq:17}
+g=9.8 \ \frac{m}{sec^2}\ ,\ \ l_1=1.0 \ m \ , \ l_2=1.0 \ m\ , \ m_1=1.0 \ kg\ , \ m_2=1.0 \ kg.
+\end{equation*} 
 
-\paragraph*{\textbf{Hasierako balioak}.}
-Pendulu bikoitza izaera kaotikoa duen sistema ez-lineala da. Zentzu honetan bi hasierako balio ezberdin kontsideratu ditugu \cite{Papadrakakis}:
+\paragraph*{Hasierako balioak.}
+Bi hasierako balio ezberdin kontsideratu ditugu \cite{Dumitru}: lehenak, izaera ez-kaotiko du eta bigarrenak, izaera kaotikoa duen mugimendua agertzen du.
 
 \begin{enumerate}
-   \item Hasierako balio ez-kaotikoak: 
-     
-   \ $q(0)=(1.1, \ 0)$ \ , \ $p(0)=(0,\ 2.7746)$.    
-   \item Hasierako balio kaotikoak: 
-      
-   $q(0)=(0, \ 0)$ \ , \ \ \  $p(0)=(0,\ 3.873)$.
+   \item Hasierako balio ez-kaotikoak (NCDP): 
+   \ $q(0)=(1.1, \ -1.1)$  eta $p(0)=( 2.7746,\ 2.7746)$. Urrats luzera $h=2^{-7}$ aukeratuz, ~$T_{end}=2^{12}$ segunduko integrazioa egin dugu. Zenbakizko soluzioa, $m=2^{10}$ urratsero itzuli dugu.   
+   
+   \item Hasierako balio kaotikoak (CDP):      
+    $q(0)=(0, \ 0)$ eta  $p(0)=(3.873,\ 3.873)$. Urrats luzera $h=2^{-7}$ aukeratuz, ~$T_{end}=2^{8}$ segunduko integrazioa egin dugu. Zenbakizko soluzioa, $m=2^{8}$ urratsero itzuli dugu.  
 \end{enumerate}
 
+\subsection*{Pendulu bikoitza (zurruna).}
 
-\subsection{Kodeak.}
+Pendulu bikoitz arruntari malguki bat gehitutako sistema da (ikus \ref{fig:dp_zurruna} Irudia). Malgukiaren zurruntasuna $k$ parametroaren araberakoa da; $k$-ren balioa zenbat eta handiago izan orduan eta malgukia zurrunagoa da.
 
-Mathematican DoublePendulum.m paketean honako funtzioak inplementatu ditugu:
+\begin{figure} [h]
+\centerline{\includegraphics [width=10cm, height=8cm] {MyDoublePendulumSTIFF}}
+\caption{Pendulu bikoitza (zurruna).}
+\label{fig:dp_zurruna}
+\end{figure} 
 
-\begin{enumerate}
-   \item Hamiltondarra: DoublePendulumHam.
-   \item EDA: DoublePendulumODE.
-   \item Jakobiarra: DoublePendulumJAC.
-\end{enumerate}
+\paragraph*{}Formulazio Lagrangiarrean,
+\begin{equation*}
+L=T-V
+\end{equation*}
+energia potentzialari $1/2 \ k \ \theta^2$ gaia gehituz, dagokion $H(q,p)$ funtzio Hamiltondarra lortuko dugu,
+\begin{multline}
+ \label{eq:2}
+-\frac{ {l_1}^2 \ (m_1+m_2) \ {p_{\theta}}^2 +{l_2}^2 \ m_2 \ (p_{\theta} -p_{\phi})^2 + 2 \ l_1 \ l_2 \ m_2 \ p_{\theta} \ (p_{\theta} -p_{\phi}) \  \cos(\theta )} {{l_1}^2  \ {l_2}^2 \ m_2 \  (-2 \ m_1 - m_2 + m_2 \ \cos(2 \theta ))} \\
+-g  \ \cos (\phi) \  (l_1 \ (m_1+m_2)+l_2 \ m_2 \ \cos(\theta))+g \ l_2 \ m_2 \ \sin(\theta) \sin(\phi)+\frac{k}{2} \ \theta^2 ,
+\end{multline}
 
-\paragraph*{}C-lengoaian GaussUserProblem.c fitxategian honako funtzioak inplementatu ditugu:
+\paragraph*{Sistemaren parametroak.} 
+Gure esperimentuetarako honako parametroak finkoak kontsideratuko ditugu,
+\begin{equation*}
+ \label{eq:17}
+g=9.8 \ \frac{m}{sec^2}\ ,\ \ l_1=1.0 \ m \ , \ l_2=1.0 \ m\ , \ m_1=1.0 \ kg\ , \ m_2=1.0 \ kg,
+\end{equation*} 
+eta  pendulu bikoitz zurruntasun maila ezberdinak aztertzeko, $k$ parametroari balio ezberdinak emango dizkiogu, 
+\begin{equation*}
+k=c^{2} \ \ \text{non} \ \ c=2^{i}, \ \ i=0,\dots,11.
+\end{equation*}  
 
-\begin{enumerate}
-   \item Hamiltondarra: HamPendulum().
-   \item EDA: OdePendulum().
-   \item Jakobiarra: JacPendulum().
-\end{enumerate}
+Hauek dira izaera ez-zurruneko hasierako balioak \cite{Dumitru} :  $q(0)=(1.1, -1.1)$ and $p(0)=(2.7746,2.7746)$
+eta $k$ balio bakoitzari dagokionak, era honetan kalkulatu ditugu,
+\begin{equation*}
+q(0)=\left(1.1, \frac{-1.1}{\sqrt{1+100k}}\right), \ \ 
+p(0)=(2.7746,2.7746)
+\end{equation*}
+
+Urrats luzera $h=2^{-7}$ aukeratuz,~$T_{end}=2^{12}$ segunduko integrazioa egin dugu. Zenbakizko soluzioa, $m=2^{10}$ urratsero itzuli dugu.   
 
 \section{N-Body problema.}
 
-N-gorputzeko problema grabitazionalari dagokionez, Eguzki sistemaren eredu sinplea integratuko dugu. Eguzki-sistemaren gorputzak masa puntualak kontsideratuko ditugu eta gure ekuazio diferentzialek, soilik gorputz hauen arteko erakarpen grabitazionalak kontutan hartu ditugu. Beraz, eguzki-sistemaren eredu konplexuagoetako erlatibitate efektua, gorputzen formaren eragina, eta beste zenbait indar ez-grabitazionalak ez dira kontutan hartu.
+Newtonen lege grabitazionalen araberako N-Body problemaren ekuazio diferentzialak era honetan definitzen dira,
+\begin{equation}
+m_i\ddot{q_i}= G \sum_{j=0,j \neq i}^{N} \frac{m_im_j}{\|q_j-q_i\|^3} (q_j-q_i) , \ \  i=0,1,\dots, N,
+\end{equation}
+non $(N+1)$ gorputz kopurua den, eta $q_i\in \mathbb{R}^3$, $m_i \in \mathbb{R}, \ \ i=0,\dots,N$ gorputz bakoitzaren kokapena eta masa den. 
 
-$(N+1)$ gorputz kopurua izanik, $\mathbf{q_i},\mathbf{p_i}\in \mathbb{R}^3$, $m_i \in \mathbb{R}, \ \ i=0,\dots,N$ gorputz bakoitzaren kokapena, momentua eta masa dira. Bestalde , momentua era honetan definituko dugu $\mathbf{p_i}=m_i*\mathbf{v_i}$ non $\dot{\mathbf{q_i}}=\mathbf{v_i}$ den.
+\paragraph*{Hamiltondar sistema.}
+Momentuen definizio hau ordezkatuz  $p_i=m_i*\dot{q}_i$, N-Body problemaren formulazio Hamiltondarra  lortzen da,  
 
-\subsection{Zailtasunak.}
+\begin{equation}
+H(q,p)=\frac{1}{2}\ \sum^N_{i=0}{\ \frac{{\|p_i\|}^2}{m_i}}-G\ \sum^N_{0\le i<j\le N}{\frac{m_im_j}{\|q_i-q_j\|}}. 
+\end{equation}
 
-Kontutan hartzekoa da eguzki-sistemaren integrazioaren urrats kopuru handia. Eguzki-sistemaren bizi iraupena $5  \times 10^9$ urtetakoa izanik eta integrazioetako ohiko urratsa  $h=0.0025$ urteko bada (orbita txikieneko periodoaren $ \%1$ ), eman beharreko urrats kopurua $2 \times 10^{12}$ izango da. Era berean, kanpo planeten integrazioa $5 \times 10^{10}$ urrats kopuru ingurukoa da.     
+\paragraph*{Ekuazio diferentzialak.} Abiaduraren eta kokapenaren araberako ekuazioak hauek dira,
 
-Eguzki-sistemaren gorputzen denbora eskala oso ezberdinak dira. Gainera ilargia kontsideratuko bagenu, lurrarekiko distantzia $D_M=3.844 \times 10^8$ eta periodoa $P_M=27.32$ egunekoa. 
+\begin{align}
+\dot{q_i} &=v_i, \ \  i=0,1,\dots, N,\\
+\dot{v_i} &= \sum_{j=0,j \neq i}^{N} \frac{Gm_j}{\|q_j-q_i\|^3} (q_j-q_i) , \ \  i=0,1,\dots, N
+\end{align}
+
+
+
+\paragraph*{Problemaren integralak.}
+Integrazioan zehar konstante mantentzen diren kantitateei problemaren integralak edo inbarianteak deitzen zaie. N-gorputzen problemak $10$ integral ditu:
+\begin{enumerate}
+
+
+\item Masa zentroaren sei integralak.
+
+Era honetan definitzen dugun $P$, konstantea dela modu errezean froga daiteke, 
+\begin{equation*}
+P=\sum_{i=0}^{N} m_i \dot{q}_i=\sum_{i=0}^{N} p_i=kons. 
+\end{equation*}
+Eta ondorioz,
+\begin{equation*}
+O=\sum_{i=0}^{N} m_i {q}_i=Pt+B, \ B=kons. 
+\end{equation*}
+
+$P$ eta $B$ bektoreen osagaiei masa zentroaren sei integralak esaten zaie. Masa zentruaren kokapen ($Q$) eta abiadura ($V$)  era honetan definitzen dira, 
+\begin{equation*}
+Q={\left(\sum\limits_{i=0}^{N} m_i \ q_i\right)}/{M}, \ V={\left(\sum\limits_{i=0}^{N} m_i \ \dot{q}_i\right)}/{M}
+\end{equation*}
+non $M=\sum\limits_{i=0}^{N}Gm_i$ den.
+
+
+\item Momentu angeluarra.
+
+Momentu angeluarra ($L$) problemaren beste hiru integralak ditugu, 
+\begin{equation*}
+L=\sum_{i=0}^{N} p_i \times q_i=\sum_{i=0}^{N} \dot{q}_i \times m_i q_i=kons.
+\end{equation*}
+
+\item Energia.
+
+Hamitondarra sistema osoaren energia da eta problemaren beste integrala da,
+\begin{equation*}
+E=H(q,p)=kons.
+\end{equation*}
+
+\end{enumerate}
+
+Problemaren $10$ integral hauek, sistemaren ordena gutxitzeko edo zenbakizko integrazioa doitasuna neurtzeko erabili daitezke. Guk koordenatu barizentrikoak (koordenatu sistemaren jatorria masa zentroaren kokapena) erabiliko ditugu eta koordenatu hauetan, $P=0$ eta $B=0$ dira. Beraz, gorputzen kokapen eta abiadurak $\hat{Q}=0$ eta $\hat{V}=0$ izan daitezen, modu honetan finkatuko ditugu,
+\begin{equation*}
+\hat{q}_i=q_i-R, \ \  \hat{v}_i=v_i-V, \ \ i=0,\dots,N.
+\end{equation*}
+
+Momentu angeluarra eta energia zenbakizko integrazioaren doitasuna neurtzeko erabiltzen dira. Energia zenbakizko integrazioen biribiltze errorea neurtzeko integral egokiena da.
+
+\section{Eguzki-sistema.}
+
+Eguzki-sistemaren planeten orbiten mugimenduaren eredu matematikoa, Hamiltondarrean oinarritutako ekuazio diferentzial arrunten bidez formulatzen da. Ekuazio diferentzial arrunten sistema, $6N$ ordenekoa da ($N$ planeten kopurua izanik).
+
+Eguzki sistemaren eredu sinplea integratuko dugu. Eguzki-sistemaren gorputzak masa puntualak kontsideratuko ditugu eta gure ekuazio diferentzialak definitzeko, soilik gorputz hauen arteko erakarpen grabitazionalak kontutan hartu ditugu. Eguzki-sistemaren eredu konplexuagoetako erlatibitate efektua, gorputzen formaren eragina, eta beste zenbait indar ez-grabitazionalak ez ditugu kontsideratu.
+
+Eguzki-sistemaren gorputz nagusien (eguzkia eta planetak) integrazioetara mugatuko gara. Ereduen gorputz kopurua txikia izango da, $N=9$ eta $N=16$ (ilargia, Pluto eta asteroide nagusienak ere kontsideratzen ditugunean) gorputz kopuruen artekoa.
+
+Eguzkiak planetak baino $1.000$ aldiz masa handiago du eta hauxe da, eguzki-sistemaren ezaugarri garrantzitsuenetakoa: eguzkiaren grabitazio indar nagusi batek eta planeten arteko perturbazio txikiek sortzen duten sistema dinamikoa da. Planetak eta bere sateliteen mugimenduan kolisio gertuko egoerarik edo eszentrizidade handiko orbitarik ez dago. Beraz, ikuspuntu honetatik, sistema dinamiko sinplea kontsideratu daiteke.  
+
+Eguzki sistema egonkorra kontsideratzen da, hau da, hurrengo bilioi urteetan  planeten arteko talkarik edo planeten kanporatzerik ez da espero  \cite{Laskar1999} \cite{Hayes2007}. Egonkortasunaren azterketa zehatzago batean, sistema erregularrak eta kaotikoak bereiz ditzakegu. Sistema erregularretan, hasierako balioen perturbazio txikien eragina, denboran poliki hasiko da  eta beraz, epe luzeko predikzio zehatzak posible dira. Sistema kaotikoetan aldiz, hasierako balioekiko oso sentikorra da eta gertuko soluzioen diferentzia esponentzialki hasiko da. Hasierako unean, diferentzia $d(0)=d_0$ bada orduan,
+\begin{equation*}
+d(t)\approx d(0)e^{t \lambda},
+\end{equation*}  
+non $\lambda$ \emph{Lyapunov exponentziala} deitzen zaio. Eguzki sistema kaotikoa kontsideratzen da eta Laskarrek \cite{Laskar1999} \emph{Lyapunov denbora} $\lambda^{-1}\approx 5$ milioi urtetan finkatzen du. Honako espresioa kalkulatzeko modu zuzenena proposatzen du,
+\begin{equation*}
+d(t)\approx d(0)10^{t / 10}.
+\end{equation*}     
+Espresio honen arabera,  $10^{-10}$ tamainako hasierako erroreak , $d(10)\approx 10^{-9}$ eta $d(100)\approx 1$. Azaldutakoaren arabera, eguzki sistemaren soluzio doitasun handiko soluzioak lortuko ditugu $10-20$ milioi eta $100$ milioi soluzioak ez dira esanguratsuak izango.   
+
+Eguzki sistemaren epe luzeko integrazioak aztertu nahi ditugu eta beraz, urrats kopurua oso handia da. Eguzki sistemaren bizi iraupena $5  \times 10^9$ urtetakoa izanik eta eguzki sistema osoaren integrazioetako ohiko urratsa  $h=0.0025$ urteko bada (orbita txikieneko periodoaren $ \%1$ ), eman beharreko urrats kopurua $2 \times 10^{12}$ izango da. Era berean, kanpo planeten integrazioan erabilitako urrats tamaina handiago denez, $5 \times 10^{10}$ urrats kopuru ingurukoa da.  Gainera ilargia kontsideratuko bagenu, lurrarekiko distantzia $D_M=3.844 \times 10^8$ eta periodoa $P_M=27.32$ egunekoa.   
+
+Eguzki sistemaren probleman eskalak oso zabalak dira. Denbora eskalari dagokionez, ilargiak lurraren inguruko orbita $27.32$ egunetakoa da, lurrak eguzkiarekiko inguruko orbitaren periodoa $1$ urtekoa eta Neptunorena $163$ urtekoa. (\ref{fig:lbes}) irudian, planeta nagusien tamainak konparatu  eta eguzkiarekiko distantziak irudikatu ditugu .
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[\small {Planeten tamainak.}]
+{\includegraphics[width=.5 \textwidth]{PanetenMasak}}
+&
+\subfloat[\small {Planeneten egukiarekiko distantziak.}]
+{\includegraphics[width=.5\textwidth]{PlanetenDistantziak}}
+\end{tabular}
+\caption{ \small  Ezkerreko (a) irudian planeten arteko tamaina proportzioak eta eskubiko irudian, planeten eguzkiarekiko distantziak irudikatu ditugu.}
+\label{fig:lbes}
+\end{figure} 
+
 
 \begin{table} [h!]
 \caption{}
 \label{tab:1}       % Give a unique label
-\begin{tabular}{c c c} 
+\begin{tabular}{l l l l} 
 \hline
- Planeta   &  Axis a        & Periodoa    \\   
-           &   AU          &   years      \\ \hline
- Merkurio  &   $0.39$      &  $0.24$     \\
- Venus     &   $0.72$      &  $0.007$    \\
- Earth     &   $1.00$      &  $1.007$    \\
- Mars      &   $1.52$      &  $1.88$     \\ \hline
- Jupiter   &   $5.20$      &  $11.86$    \\
- Saturn    &   $9.54$      &  $29.42$    \\
- Uranus    &   $19.19$     &  $83.75$    \\
- Neptune   &   $30.06$     &  $163.72$    \\
- Pluto     &   $39.53$     &  $248.02$    \\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{figure}[h]
-\centering
-\subfloat[Eguzki-sistema.]{
-\includegraphics[width=.800\textwidth]{eguzkisistema3}
-}
-\caption{ \small Eguzki-sistema.}
-\label{fig:eguzki-sistema}
-\end{figure}
-
-
-\subsection{Ekuazio barizentrikoak.}
-
-\paragraph*{Hamiltondarra.}
-
-\begin{equation}
-H(q,p)=\frac{1}{2}\ \sum^N_{i=0}{\ \frac{{\|p_i\|}^2}{m_i}}-G\ \sum^N_{0\le i<j\le N}{\frac{m_im_j}{\|q_i-q_j\|}} 
-\end{equation}
-
-\paragraph*{Ekuazio diferentzialak.}
-
-\begin{equation}
-\dot{q_i}=v_i, \ \  i=0,1,\dots, N
-\end{equation}
-
-\begin{equation}
-\dot{v_i}= \sum_{j=0,j \neq i}^{N} \frac{Gm_j}{\|q_j-q_i\|^3} (q_j-q_i) , \ \  i=0,1,\dots, N
-\end{equation}
-
-\paragraph*{Ekuazio diferentzialak.}
-Eguzkiaren erlatibitate efektua kontutan hartzen duten ekuazio diferentzialak azalduko ditugu.
-
-\begin{equation}
-\dot{q_i}=v_i, \  i=0,1,\dots N
-\end{equation}
-
-\begin{multline} 
-\dot{v_i}= \sum_{j=0,j \neq i}^{N} \frac{Gm_j}{\|q_j-q_i\|^3} (q_j-q_i)
-           \bigg(1- \frac{2(\beta+\gamma)}{c^2} \sum\limits_{k=0, k \neq i}^{N} \frac{Gm_k}{\|q_k-q_i\|} 
-                  - \frac{2\beta-1}{c^2}        \sum\limits_{k=0, k \neq j}^{N} \frac{Gm_k}{\|q_k-q_j\|} \\
-                  + \gamma \big(\frac{v_i}{c}\big)^2 + (1+\gamma) \big(\frac{v_j}{c} \big)^2 
-                  - \frac{2(1+\gamma)}{c^2} v_i \ v_j \\
-                  - \frac{3}{2c^2} \big(\frac{(q_i-q_j) v_j}{\|q_j-q_i\|} \big)^2+                  
-                  \frac{1}{2c^2}(q_j-q_i) \dot{v_i} \bigg) \\
-           + \frac{1}{c^2} \sum_{j=0,j \neq i}^{N} \frac{Gm_j}{\|q_j-q_i\|^3} 
-             ((q_i-q_l) ((2+2\gamma)v_i-(1+2\gamma)v_j)) (v_i-v_j) \\
-           + \frac{3+4\gamma}{2c^2} \sum_{j=0,j \neq i}^{N} \frac{Gm_j \dot{v_j}}{\|q_j-q_i\|}                                      
-\end{multline}
-
-\begin{table}[h]
-\caption{Konstanteak}
-\label{tab:1}       % Give a unique label
-\centering
-\begin{tabular}{ c c c }
-\hline
-  c             &  $299792.458$ km/s           & Argiaren abiadura  \\
-\hline
-  au            &  $149597870.700$ km           & Astronomical unit  \\
-\hline 	       
-$\beta$          & $1.0$                       & PPN parametroa     \\
-\hline 
-$\gamma$         & $1.0$                       & PPN parametroa     \\
+ Planeta   &  Masak                 & Distantzia   & Periodoa    \\   
+           &  kg                    & AU           &   urteak      \\ \hline
+ Eguzkia   &  $1.99 \times 10^{30}$ &              &              \\         
+ Merkurio  &  $3.30 \times 10^{23}$ & $0.39$       &  $0.24$     \\
+ Venus     &  $4.87 \times 10^{24}$ & $0.72$       &  $0.007$    \\
+ Earth     &  $5.97 \times 10^{24}$ & $1.00$       &  $1.007$    \\
+ Mars      &  $6.42 \times 10^{23}$ & $1.52$       &  $1.88$     \\ \hline
+ Jupiter   &  $1.90 \times 10^{27}$ & $5.20$       &  $11.86$    \\
+ Saturn    &  $5.68 \times 10^{26}$ & $9.54$       &  $29.42$    \\
+ Uranus    &  $8.68 \times 10^{25}$ & $19.19$      &  $83.75$    \\
+ Neptune   &  $1.02 \times 10^{26}$ & $30.06$      &  $163.72$    \\
+ Pluto     &  $1.31 \times 10^{22}$ & $39.53$      &  $248.02$    \\
 \hline
 \end{tabular}
 \end{table}
 
+\subsection*{Koordenatu sistemak.}
 
-\subsection{Ekuazio Heliozentrikoak.}
+Hiru dira erabiltzen diren koordenatu sistema nagusienak:
 
-Ohikoa da ekuazio diferentzialak koordenatu heliozentrikoen (eguzkiaren zentroarekiko) arabera definitzea. Argitu koordenatu heliozentrikoak ere modu ezberdinean eman daitezkeela eta guk koordenatu \emph{heliozentriko kanonikoak} deiturikoak erabili ditugula.
+\begin{enumerate}
+\item Koordenatu kartesiarrak.
+\item Koordenatu Heliozentrikoak.
+\item Koordenatu Jakobiarrak.
+\end{enumerate}
 
-\begin{align*}
-\dot{\mathbf{Q_i}} &=\mathbf{V_i}+ \sum\limits_{j\ne i,\ j=1}^{N} \frac{\mathbf{V_j} \ m_j}{(m_0+m_j)},\\
-\dot{\mathbf{V_i}} &=- G  \ \frac{(m_0+m_i)}{\|\mathbf{Q_i}\|^3 }\ \mathbf{Q_i}-G \ \frac{(m_0+m_i)}{m_0}
-                    \sum\limits_{j \ne i , \ j=1}^{N} \bigg( \frac{m_j}{\|\mathbf{Q_i}-\mathbf{Q_j}\|^3} (\mathbf{Q_i-\mathbf{Q_j}})     \bigg), \ \ i=1,\dots, N.
-\end{align*}
-
+Ohikoa da ekuazio diferentzialak koordenatu heliozentrikoen (eguzkiaren zentroarekiko) arabera definitzea. 
 Ekuazioen garapen osoa eranskinean eman dugu.
 
-\subsection{Hasierako balioak.}
 
-Eguzki eta planeten hasierako kokapenak (au) eta abiadurak (au/day), Julian data (TDB) $2440400.5$ ($1969$. ekainaren $28$) eta ICRFR2 (International Celestial Reference Frame) koordenatu sisteman \cite{Folkner2014},
+\subsection*{Problema motak.}
+
+Eguzki sistemaren simulaziorako test problemak deskribatuko ditugu. Bi gorputzen problematik abiatuta, gero eta problema konplexuagoak azalduko ditugu. PW, Sharp-ek ($2.001$) eguzki sistemaren problemen bilduma interesgarria egin zuen \cite{Sharp2001} , eta bertan problema guzti hauek problema ez-zurrunak kontsideratzen dituela nabarmentzekoa da.      
+
+\subsubsection*{Kepler problema.}
+\label{ss:keplerproblem}
+
+Kepler problema, bi gorputzen problemaren kasu partikularra da eta  honako Hamiltondarra dagokio,
+\begin{equation}
+H(p,q)=\frac{p^2}{2m}-\frac{\mu}{\|q\|},
+\end{equation}
+non $m$ eta $\mu$ konstanteen balioak formulazioaren araberakoak diren.
+
+\paragraph*{}Koordenatu sistema $q=q_2-q_1$ duen formulazioa aukeratzen badugu, konstanteen balioak hauek dira,  
+\begin{equation*}
+m=(1/m_1+1/m_2)^{-1},\ \ \mu=Gm_1m_2,
+\end{equation*} 
+
+eta ekuazio diferentzialak era honetan definitzen dira,
+\begin{equation}
+\dot{q}=p, \ \ \dot{p}= - \frac{k \ q}{\|q\|^3} ,
+\end{equation}
+non $k= \mu / m$ eta  $q,p \in \mathbb{R}^3$.
+
+\paragraph{} Kepler hasierako baliodun problemaren soluzio zehatza kalkulatu daiteke: une bateko kokapen eta abiadurak emanik, denbora tarte bat ($\triangle t$) igarotakoan (positibo ala negatiboa), zehazki kokapen eta abiadura berriak ezagutu daitezke. Azpimarratu nahi dugu, funtsezkoa dela eguzki sistemaren integrazio metodoentzat, kepler problemaren doitasun handiko eta kalkulu eraginkorra konputatzea. Erreferentziazko kepler problemaren inplementazioak, Danby ($1992$) \cite{Danby1992} eta J.Wisdom ($2015$) \cite{Wisdom2015} ditugu. 
+
+Gure aldetik, kepler problemaren inplementazioa garatu dugu eta ideia nagusia, hitzez azalduko dugu. Lehenik, koordenatu cartesiarretatik koordenatu eliptikoetara $(a,e,i,\Omega,E)$ itzulpena egingo dugu. Koordenatu berrietan $E$ (\emph{eccentric anomaly}) aldagai izan ezik, beste aldagaiek konstante mantentzen dira: beraz $E_0$ balioa emanda, $\triangle t$ denbora tartea aurrera egin eta $E_1$ balioa berria kalkulatuko dugu. Azkenik, koordenatu eliptikoetatik koordenatu cartesiarretara itzulpena eginez, kokapen eta abiadura berriak eskuratuko ditugu. 
+
+\begin{equation*}
+(q_0,v_0) \in \mathbb{R}^6 \ \ \ \longrightarrow \ \ \  (a,e,i,\Omega,E_0) \in \mathbb{R}^6 
+\end{equation*}
+\begin{equation*}
+\quad \quad \quad \quad \quad \quad \quad \quad \downarrow \triangle t
+\end{equation*}
+\begin{equation*}
+(q_1,v_1) \in \mathbb{R}^6 \ \ \ \longleftarrow \ \ \  (a,e,i,\Omega,E_1) \in \mathbb{R}^6 
+\end{equation*}
+
+Inplementazioaren garapenaren zehaztasun guztiak eranskinaren (\ref{eranskin:A}) atalean eman ditugu.
+
+\subsubsection*{Hiru gorputzen problema.}
+
+Hiru Gorputzen Problema Murriztuan (\emph{R3BP}),  
+masa ezberdineko hiru gorputz elkarrekiko erakarpen eraginpean, espazioan libreki mugitzen dira. Honako hurbilpenak kontsideratuz, definitzen da Hiru Gorputzen Problema Murriztua:
+
+\begin{itemize}
+\item Ohikoa den moduan Newton eredu grabitazionalean, gorputzak masa puntualak kontsideratuko ditugu. 
+\item  Horietako bi gorputz nagusiak ($m_1,m_2$), bere masa zentroaren inguruan orbita zirkularrean mugitzen dira. Adibidez, lurra eta ilargia kontsideratu daitezke. Ilargiak ezentrizidade txikiko ($e=0.05$) mugimendu eliptikoa du eta suposizio hau onargarria da.
+\item Problema orokorrean, hiru gorputzen masak edozein izan daitezke. Murriztuan aldiz, bi gorputz nagusien masa edozein delarik, hirugarrenarena beste bi gorputzen masa baino askoz ere txikiagoa da. Adibidez satelite artifizial bat kontsideratzen badugu, bere masa $1.000$ tonatako ($10^6$ kg) ingurukoa izango da  eta ilargiaren masarekin konparatuko bagenu ($I_M=7.3477 \times 10^{22}$ kg), bere masa askoz ere txikiagoa da.
+\item Hirugarren gorputzak ($m_3$) beste bi gorputz nagusien masarekin alderatuta oso masa txikia denez, ez du $m_1$ eta $m_2$ gorputzen mugimenduarekiko eraginik. Hirugarren gorputza, bi gorputz nagusien eraginpean hauen orbitaren plano berdinean mugitzen dela suposatuko dugu.
+\item Eguzki-sistemaren beste gorputzen eragina baztertu da. Lurra-Ilargi sisteman, eguzkiaren grabitazio indarra ez dagoela kontsideratu da. 
+\end{itemize} 
+
+$(x, y)$ masa txikiko gorputzaren kokapen koordenatuak izanik, hauek dira errotazio koordenatu sisteman dagokion mugimenduaren ekuazioak ($4$ dimentsioko sistema dinamikoa),
+\begin{align*}
+\dot{x} &=p_x+y,\\
+\dot{y} &=p_y-x,\\
+\dot{p_x} &=p_y-umu \frac{x+\mu}{r_1^3}-\mu \frac{x-(umu)}{r_2^3},\\
+\dot{p_y} &=-p_x-umu \frac{y}{r_1^3}-\mu \frac{y}{r_2^3},
+\end{align*}
+non, $r_1=((x+\mu)^2+y^2))^{1/2}$, $r_2=((x-umu)^2+y^2)^{1/2}$, $\mu=0.01277471$, $-\mu=(-{m}/{M+m})$ eta $umu=1-\mu$.
+
+Problema ezberdinak deskribatzen dira $\mu$ parametroaren arabera. Guk aztertutako problema zehatzean, $\mu = 0.01277471$ balioa Lurra-Ilargia modeloari dagokio. Gorputz nagusi handiena, Lurra, ($-\mu$, $0$) eta gorputz
+nagusi txikiena, Ilargia, ($1 - \mu$, $0$) posizioan kokatzen dira. Ilargiak orbita zirkularra du lurraren inguruan eta ekuazio diferentzialak satelitearen mugimendua deskribatzen dute.
+
+\paragraph*{}Sistema dinamikoaren energia, soluzioan zehar konstante mantentzen da,
+\begin{equation*}
+E=\frac{1}{2} (p_x^2+p_y^2)+p_x y-p_y x - (\frac{1-\mu}{r_1})-\frac{\mu}{r_2}-\frac{1}{2} \mu (1-\mu).
+\end{equation*}
+
+Ezaguna da, hasierako balio hauetarako (\ref{tab:r3bp0} taula) soluzioa $t=17.0652165601579625588917206249$ periodikoa dela (\ref{fig:41a} irudia),
 
 \begin{table}[h]
-\caption[Eguzki-sistemaren hasierako balioak]{Eguzki eta planeten hasierako balioak integrazio jatorriarekiko.}
+\caption[R3BP problemaren hasierako balioak.]{R3BP problemaren hasierako balioak.}
+\label{tab:r3bp0}       % Give a unique label
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ c c c c}
+\hline 
+Kokapenak        &  $x,y$         & $0.994$ & $0$  \\\hline
+Momentuak        &  $p_x,p_y$     & $0.$ & $-2.00158510637908252240537862224 + 0.994$ \\\hline
+ 
+\end{tabular}}
+\end{table}
+
+%\begin{figure} [h]
+%\centerline{\includegraphics [width=6cm, height=8cm] {r3bp1}}
+%\caption{Arenstorf orbita izeneko soluzio periodikoa.}
+%\label{fig:41a}
+%\end{figure} 
+
+\begin{figure}[!h]
+\centering
+\subfloat[Arenstorf orbita.]{
+\includegraphics[width=.500\textwidth]{r3bp1}
+%plot3a-2
+}
+\subfloat[Kolisiotik gertuko egoera.]{
+\includegraphics[width=.250\textwidth]{r3bp2}
+%plot3b
+}
+\caption[R3BP.]
+        {\small R3BP. 
+        Arenstorf orbita izeneko soluzio periodikoa.        
+        $t=0$ unean kolisiotik gertuko egoera; Ilargia
+        ($0.987723, 0$) eta satelitea ($0.994, 0$) posizioa.
+        
+        }
+\label{fig:41a}
+\end{figure}      
+
+\subsubsection*{Kanpoko planeten problema.}
+
+
+Eguzki-sistemaren kanpo planeten  mugimenduaren azterketa interesgarria da. Lehenik, planetan nagusi hauen eboluzioa eguzki-sistema osoaren zati garrantzitsuena da eta barne planeten mugimendua kontutan hartzeak ala ez, kanpo planeten zenbakizko integrazioarengan oso eragin txikia du. Bigarrenik, urrats luzera handi erabili daiteke eta beraz, epe luzeko integrazioak errazten dira (konputazio denbora gutxiago behar delako). Hirugarrenik, Pluto orbitaren berezitasunak ikertzea,  $1960-1980$ urteetan interes handikoa izan zen.        
+
+Kanpo planeten problemaren ereduan, eguzkia, lau planeta nagusiak (Jupiter, Saturno, Urano, Neptuno) eta Pluto kontsideratuko ditugu. Unitateei dagokionez, planeten masak eguzkiarekiko erlatiboak dira, hau da, eguzkiaren masa $1$ da eta grabitazio konstantea $G=2.95912208286 \ 10^{-4}$. Barne planeten masak eguzkiaren masari gehitu zaio eta horregatik, eguzkiaren masak, $m_0=1.00000597682$ balioa hartzen du.
+
+Hasierako balioak Hairer~\cite{Hairer2006} liburutik hartu ditugu. Planetei dagokien masak (\ref{tab:ossm0} taula) eta kokapenak/abiadurak (\ref{tab:oss0} taula) tauletan laburtu ditugu.
+
+\begin{table}[h]
+\caption{Kanpo planeten masa parametroak.}
+\label{tab:ossm0}       % Give a unique label
+\centering
+\begin{tabular}{ l c }
+\hline 
+  Gorputza         &  Masa          \\\hline
+  Eguzkia          &  $1.000005976823$ \\\hline
+  Jupiter          &  $0.000954786104043$ \\\hline
+  Saturn           &  $0.000285583733151$ \\\hline
+  Uranus           &  $0.0000437273164546$ \\\hline
+  Neptune          &  $0.0000517759138449$ \\\hline
+  Pluto            &  ${1}/{(1.3 \ 10^8)}$ \\\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption[Kanpoko planeten problema.]{Kanpoko planeten problema.}
+\label{tab:oss0}       % Give a unique label
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ l l r r r }
+\hline 
+  Eguzkia        &  $x,y,z$         & $0.$ & $0$ &	$0.$    \\\hline
+                 &  $v_x,v_y,v_z$   & $0.$ & $0.$ & $0.$    \\\hline
+  Jupiter        &  $x,y,z$         & $-3.5023653$ &  $-3.8169847$ & $-1.5507963$ \\\hline
+                 &  $v_x,v_y,v_z$   & $0.00565429$ &  $-0.00412490$ & $-0.00190589$ \\\hline                     
+  Saturn         &  $x,y,z$         &  $9.0755314$	& $-3.0458353$ & $-1.6483708$	    \\\hline
+                 &  $v_x,v_y,v_z$   &  $0.00168318$ & $0.00483525$ & $0.00192462$     \\\hline
+  Uranus         &  $x,y,z$         &  $8.3101420$ & $-16.2901086$ & $-7.2521278$  \\\hline
+                 &  $v_x,v_y,v_z$   &  $0.00354178$ & $0.00137102$ & $0.00055029$ \\\hline
+  Neptune        &  $x,y,z$         &  $11.4707666$ &	$-25.7294829$	& $-10.8169456$    \\\hline
+                 &  $v_x,v_y,v_z$   &  $0.00288930$  &	$0.00114527$ & $0.00039677$     \\\hline
+  Pluto          &  $x,y,z$         &  $-15.5387357$ &  $-25.2225594$ & $-3.1902382$ \\\hline
+                 &  $v_x,v_y,v_z$   &  $0.00276725$ &	$-0.00170702$ & $-0.00136504$ \\\hline       
+\end{tabular}}
+\end{table}
+
+
+\subsubsection*{9 planeten problema.}
+
+
+Eguzki-sistemaren 9 planeten zenbakizko integrazioak, kanpoko planeten problemak baino konplexutasun handiago du. Planeten eta eguzkiaren arteko interakzio kopurua $45$ (kanpoko planeten probleman $15$) da. Orbita-periodoa txikiena  $50$ aldiz txikiagoa (Merkuriok $0.24$ urtetakoa eta Jupiterrek $11.86$ urtetakoa) da. Merkuriok eszentrizidade handieneko orbita $e=0.206$ (Jupiterrek $e=0.048$) du. Konplexutasun handiago honen ondorioz, problema honen zenbakizko integrazioaren konputazioak zailtasun handiagoa du.   
+
+Eredu honetan, lur-ilargi sistema masa puntual bakarra kontsideratzen da. Lur-ilargi sistemaren masa, bi gorputzen masen arteko batura da eta kokapena, sistemaren barizentroan finkatzen da.
+  
+Hasierako balioak \emph{DE-430} ($2.014$) \cite{Folkner2014} azken efemeride artikulutik hartu ditugu. Eguzki eta planeten hasierako kokapenak (AU) eta abiadurak (AU/egun), Julian data (TDB) $2440400.5$ ($1969$. ekainaren $28$) eta ICRFR2 (International Celestial Reference Frame) koordenatu sisteman ,
+
+\begin{table}[h]
+\caption[9 planeten problemaren hasierako balioak]{Eguzki eta 9 planeten hasierako balioak integrazio jatorriarekiko.}
 \label{tab:1}       % Give a unique label
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{ c c c c c }
+\begin{tabular}{ l l r r r }
 \hline 
   Eguzkia        &  $x,y,z$         & $0.00450250878464055477$ & $0.00076707642709100705$ &	$0.00026605791776697764$    \\\hline
                  &  $v_x,v_y,v_z$   & $-0.00000035174953607552$ & $0.00000517762640983341$ & $0.00000222910217891203$    \\\hline
@@ -242,6 +432,86 @@ Eguzki eta planeten hasierako kokapenak (au) eta abiadurak (au/day), Julian data
 \end{tabular}}
 \end{table}
 
+
+                 
+\begin{table}[h]
+\caption{Planeten masa parametroak.}
+\label{tab:1}       % Give a unique label
+\centering
+\begin{tabular}{l c }
+\hline 
+  Gorputza         &  GM ($au^3/day^3$)          \\
+  \hline
+  Eguzkia          &  $0.295912208285591100e-03$ \\\hline
+  Mercury          &  $0.491248045036476000e-10$ \\\hline   
+  Venus            &  $0.724345233264412000e-09$ \\\hline
+  Earth            &  $0.888769244512563400e-09$ \\\hline
+  Mars             &  $0.954954869555077000e-10$ \\\hline
+  Jupiter          &  $0.282534584083387000e-06$ \\\hline
+  Saturn           &  $0.845970607324503000e-07$ \\\hline
+  Uranus           &  $0.129202482578296000e-07$ \\\hline
+  Neptune          &  $0.152435734788511000e-07$ \\\hline
+  Pluto            &  $0.217844105197418000e-11$ \\\hline
+  Moon             &  $0.109318945074237400e-10$ \\\hline
+\end{tabular}
+\end{table}
+
+\subsubsection*{Laskaren eredua.}
+
+Eguzki-sistemaren mugimenduaren azterketa egokia egiteko, planeten eta ilargiaren orbiten mugimenduaren ekuazioak nahiz lur eta ilargiaren errotazio mugimenduaren ekuazioak integratu behar dira. 
+
+Laskarrek, $2.011.$ urteko epe luzeko zenbakizko integraziorako \cite{Laskar2011} erabilitako eredua deskribatuko dugu. Hasierako integrazioetan, eguzkia, 8 planetak, Pluto eta ilargia bakarrik kontsideratu zituen. Eguzkiaren erlatibitate efektua (Saha eta Tremainen \cite{Saha1994} teknikaren arabera) eta eredu errealistaren indar ez grabitazional garrantzitsuenak aplikatu zituen. Azken integrazioetan, Ceres, Pallas, Vesta, Iris eta Bamberga asteorideak gehitu zituen zituen.  
+ 
+
+\begin{table} [h!]
+\caption{}
+\label{tab:laskp}       % Give a unique label
+\begin{tabular}{l r r r r } 
+\hline
+ Planeta   &  Distantzia   & Periodoa    & GM             & Ezentrizitatea \\   
+           &   AU          &   urte      & ($au^3/egun^3$) & \\ \hline
+ Sun       &               &             & $0.2959e-03$   & \\          
+ Mercure   &   $0.39$      &  $0.24$     & $0.4912e-10$   & $0.205$ \\
+ Venus     &   $0.72$      &  $0.007$    & $0.7243e-09$   & $0.007$\\
+ Earth     &   $1.00$      &  $1.007$    & $0.8887e-09$   & $0.017$\\
+ Moon      &               &             & $0.1093e-10$   & $0.055$\\ 
+ Mars      &   $1.52$      &  $1.88$     & $0.9549e-10$   & $0.094$\\ \hline
+ Jupiter   &   $5.20$      &  $11.86$    & $0.2825e-06$   & $0.049$\\
+ Saturn    &   $9.54$      &  $29.42$    & $0.8459e-07$   & $0.057$\\ 
+ Uranus    &   $19.19$     &  $83.75$    & $0.1292e-07$   & $0.046$\\
+ Neptune   &   $30.06$     &  $163.72$   & $0.1524e-07$   & $0.011$ \\ \hline
+ Ceres     &   $2.77$      &  $4.6$      & $0.1400e-12$   & $0.07$ \\
+ Pallas    &   $2.77$      &  $4.61$     & $0.3104e-13$   & $0.23$ \\
+ Vesta     &   $2.36$      &  $3.63$     & $0.3854e-13$   & $0.08$\\
+ Iris      &   $2.38$      &  $3.68$     & $0.2136e-14$   & $0.21$ \\
+ Bamberga  &   $2.68$      &  $4.39$     & $0.1388e-14$   & $0.34$ \\ \hline
+ Pluto     &   $39.53$     &  $248.02$   & $0.2178e-11$   & $0.244$ \\
+\hline
+\end{tabular}
+\end{table}
+
+Ilargia gorputz independente gisa kontsideratu zuen. Ilargiaren lurrarekiko distantzia ($380.000$km) , beste gorputzekiko distantziekin alderatzen badugu (eguzkiarekiko $150.000.000$ km eta Venus-ekiko $45.000.000$ km) oso txikia da. Hori dela eta, ilargiaren zenbakizko integrazioa, eguzki-sistemaren barizentroarekiko kalkulatu beharrean, lurrarekiko kalkulatuz doitasun handiago lortuko da. Lur-eguzkiarekiko $q_e$ kokapen eta ilargi-eguzkiarekiko $q_m$ kokapen aldagaiak, hurrenez-hurren $q_B$ lur-ilargi sistemaren barizentroa eta $q_{em}$ ilargia-lurrarekiko kokapen oaldagaiekin ordezkatzen dira,
+\begin{align*}
+& q_B =\frac{Gm_e \ q_e+Gm_m \ q_m}{Gm_e+Gm_m},\\
+& q_{em} =q_m-q_e.
+\end{align*}
+Argitzea komeni da, ekuazio diferentzialaren eskubiko aldeko espresioa ebaluatzeko ($q_e,q_m$) aldagaiak erabiliko ditugula eta aldagai berriak. ($q_B,q_{em}$) integratzeko erabiliko ditugula.
+
+\begin{algorithm}[H]
+ \BlankLine
+  $\mbox{Lurra, Ilargia}=\{q_B,q_{em}\}$\;
+  \For{$i\leftarrow 1$ \KwTo $endstep$}
+  {
+   \BlankLine
+     $\{q_e,q_m\} \leftarrow \{q_B,q_{em}\} $\;
+     $\mbox{Ebaluatu} \ \dot{y}=f(y)$\;
+     $ \{q_B,q_{em}\} \leftarrow \{q_e,q_m\} $\;
+     $\mbox{Integrazioa}\ (q_B,q_{em})$\;
+   \BlankLine
+  }
+ \caption{Ilargiaren kalkuluak.}
+\end{algorithm}
+
 \begin{table}[h]
 \caption{Ilargiaren Lurrarekiko hasierako balioak.}
 \label{tab:1}       % Give a unique label
@@ -252,64 +522,8 @@ Eguzki eta planeten hasierako kokapenak (au) eta abiadurak (au/day), Julian data
   Ilargia         &  $x,y,z$         & $-0.00080817735147818490$ &	$-0.00199462998549701300$ &	$-0.00108726268307068900$    \\\hline
                  &  $v_x,v_y,v_z$   & $0.00060108481561422370$ & $-0.00016744546915764980$ &	$-0.00008556214140094871$ \\\hline
 \end{tabular}}
-\end{table}
-                 
-\begin{table}[h]
-\caption{Planeten masa parametroak.}
-\label{tab:1}       % Give a unique label
-\centering
-\begin{tabular}{ c c }
-\hline 
-  Gorputza         &  GM ($au^3/day^3$)          \\\hline
-  Eguzkia          &  $0.295912208285591100E-03$ \\\hline
-  Mercury          &  $0.491248045036476000E-10$ \\\hline   
-  Venus            &  $0.724345233264412000E-09$ \\\hline
-  Earth            &  $0.888769244512563400E-09$ \\\hline
-  Mars             &  $0.954954869555077000E-10$ \\\hline
-  Jupiter          &  $0.282534584083387000E-06$ \\\hline
-  Saturn           &  $0.845970607324503000E-07$ \\\hline
-  Uranus           &  $0.129202482578296000E-07$ \\\hline
-  Neptune          &  $0.152435734788511000E-07$ \\\hline
-  Pluto            &  $0.217844105197418000E-11$ \\\hline
-  Moon             &  $0.109318945074237400E-10$ \\\hline
-\end{tabular}
-\end{table}
+\end{table}     
+          
 
-
-\paragraph*{Masa zentrua.} Integrazio hasieran, gorputzen kokapen eta abiadurak   masa zentruaren kokapen eta abiadurak zero izateko aldatzen dira.
-
-\begin{equation*}
-M=\sum\limits_{i=0}^{N}Gm_i
-\end{equation*} 
-
-Masa zentruaren kokapena ($Q$) eta abiadura ($V$),
-\begin{equation*}
-Q=\frac{(\sum\limits_{i=0}^{N} Gm_i*q_i)}{M}, \ V=\frac{(\sum\limits_{i=0}^{N} Gm_i*v_i)}{M}
-\end{equation*}
-
-Eta integrazio hasierako balioak,
-\begin{equation*}
-qnew_i=q_i-R, \ \  vnew_i=v_i-V, \ \ i=0,\dots,N.
-\end{equation*}
-
-
-                 
-\subsection{Kodeak.}
-
-\paragraph*{} Mathematicako NBodyProblem.m paketean honako funtzioak garatu ditugu.
-
-\begin{enumerate}
-   \item Hamiltondarra: NBodyHAM.
-   \item EDA: NBodyODE.
-   \item Jakobiarra: Ez dut garatu.
-\end{enumerate}
-
--\paragraph*{} C-lengoaiako inplementazioa:
-
-\begin{enumerate}
-   \item Hamiltondarra: HamNBody().
-   \item EDA: OdeNbody().
-   \item Jakobiarra: JacNBody().
-\end{enumerate}
 
 \section{Laburpena.}

@@ -1,0 +1,32 @@
+\chapter{Nire-Argibideak}.
+
+Niretzako dokumentatutako argibide batzuk. Ez ditut tesian sartu behar.
+
+\section{IRK-Newton.}
+
+\subsection*{Newton sinplifikatuaren iterazioa.}
+Newton sinplifikatuaren iterazioan formulazio berrian ekuazio honen jatorria:
+
+\begin{align*}
+\mbox{Askatu} \ \ & \triangle L_i^{[k]} \\
+\ \ &\triangle L_i^{[k]} - h b_i \ J_i \sum_{j=1}^{s} \mu_{ij}  \ \triangle L_j^{[k]} = g_i^{[k]}  , \ \ i=1,\dots,s.
+\end{align*}
+
+\paragraph*{Frogapena.}
+
+Abiapuntua.
+\begin{align*}
+& \triangle L_i=L_i-L_i^{[k]},\\
+& L_i-h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij}L_j)=0
+\end{align*}
+
+Honako garapena egingo dugu.
+\begin{align*}
+L_i-h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij}L_j)= L_i^{[k]}+\triangle L_i-h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij} (L_j^{[k]}+\triangle L_j)).
+\end{align*}
+Eta $f(y_n+\sum_{j=1}^{s} \mu_{ij} (L_j^{[k]}+\triangle L_j))$ linealizatuz,
+\begin{align*}
+& \approxeq L_i^{[k]}+\triangle L_i-h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij}L_j^{[k]})-h b_i f'(y_n+\sum_{j=1}^{s} \mu_{ij} L_j^{[k]}) (\sum_{j=1}^{s} \mu_{ij} \triangle L_j))= \\
+& \triangle L_i- hb_i J_i \ (\sum_{j=1}^{s} \mu_{ij} \triangle L_j))= -L_i^{[k]}+h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij}L_j)
+\end{align*}
+non $J_i=f'(y_n+\sum_{j=1}^{s} \mu_{ij} L_j^{[k]})=f'(Y_i)$.

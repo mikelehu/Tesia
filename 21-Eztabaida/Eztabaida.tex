@@ -2,4 +2,62 @@
 
 \section{Sarrera.}
 
+\section{IRK Puntu finkoa.}
+
+\section{IRK Newton.}
+
+$(I_s \otimes I_d - h \ A \otimes J) \triangle Y = r$ ekuazio sistema askatzeko, Hairer-en inplementazio estandarrean, $A$ matrizearen,
+\begin{equation*}
+A=P^{-1}DP, \ \,
+D=\begin{bmatrix}
+\sigma_1 & 0            & \cdots & 0  \\
+ 0       & \sigma_2     & \cdots & 0   \\
+ \cdots  & \cdots       & \cdots & \cdots  \\
+ 0       &  0           &        & \sigma_s \\
+\end{bmatrix}
+\end{equation*}
+diagonalizazioa proposatzen da. $D$ matrizeak, balio propio konplexuak ditu. Zenbaki konplexuekin lana ez bada egin nahi, zenbaki errealeko deskonposaketa baliokidea,
+
+\begin{equation*}
+A=Q^{-1}RQ, \ \,
+R=\begin{bmatrix}
+\sigma_{1A} & \sigma_{1B}   &  0          &  0            & \cdots &  0           &    0       \\
+\sigma_{1C} & \sigma_{1D}   & 0           &  0            & \cdots &  0           &    0       \\
+ 0          & 0             & \sigma_{2A} & \sigma_{2B}   & \cdots &  0           &    0       \\
+ 0          & 0             & \sigma_{2C} & \sigma_{2D}   & \cdots &  0           &    0       \\
+ \cdots     & \cdots        &  \cdots     & \cdots        & \cdots & \cdots       &    \cdots   \\
+ 0          & 0             &  0          & 0             & \cdots & \sigma_{sA}  & \sigma_{sB} \\
+ 0          & 0             &  0          & 0             & \cdots & \sigma_{sC}  & \sigma_{sD} \\
+\end{bmatrix}
+\end{equation*}
+Honen arabera, Hiarer-en inplementazioan,
+\begin{itemize}
+\item $s$ bikoitia $\rightarrow$ $(2d \times 2d)$ tamainako $[s/2]$  LU deskonposaketa.
+\item $s$ bakoitia $\rightarrow$ $(2d \times 2d)$ tamainako $(s+1)/2$  LU deskonposaketa.
+\end{itemize}
+
+\paragraph*{}Gure inplementazioan, $\bar{A}$ matrizearen,
+\begin{equation*}
+\bar{A}=P^{-1}DP
+\end{equation*}
+diagonalizatzen dugu eta $D$ matrizeak, irudikari puruak ditu. Eta ondorioz, gure inplementazioaren bertsio errealean,
+\begin{equation*}
+\bar{A}=Q^{-1}RQ, \ \,
+R=\begin{bmatrix}
+0           & -\sigma_{1}   &  0          &  0            & \cdots &  0           &    0       \\
+ \sigma_{1} & 0             & 0           &  0            & \cdots &  0           &    0       \\
+ 0          & 0             & 0           & -\sigma_{2}   & \cdots &  0           &    0       \\
+ 0          & 0             & \sigma_{2}  & 0             & \cdots &  0           &    0       \\
+ \cdots     & \cdots        &  \cdots     & \cdots        & \cdots & \cdots       &    \cdots   \\
+ 0          & 0             &  0          & 0             & \cdots & 0            & -\sigma_{s} \\
+ 0          & 0             &  0          & 0             & \cdots & \sigma_{s}   & 0            \\
+\end{bmatrix}
+\end{equation*}
+zeroak agertzen dira. Honen arabera, gure inplementazioan,
+\begin{itemize}
+\item $s$ bikoitia $\rightarrow$ $(d \times d)$ tamainako $[s/2]+1$  LU deskonposaketa.
+\item $s$ bakoitia $\rightarrow$ $(d \times d)$ tamainako $(s+1)/2$  LU deskonposaketa.
+\end{itemize}
+
+
 \section{Laburpena.}

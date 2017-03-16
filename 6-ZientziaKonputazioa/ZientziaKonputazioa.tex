@@ -1,50 +1,28 @@
 \chapter{Zientzia konputazioa.}
 
-\epigraph{Processor speed doubles every 18 months.}{\textit {Moore's Law (1965)}}
-\epigraph{Number of cores per chip can double every two years.}{\textit Moore's Law Reinterpreter (2006)}
+\epigraph{Optimizing a program can be a better solution than buying a faster computer!}
+{\textit {Performance optimization of Numerically Intensive Codes(2001)}}
 
 \section{Sarrera.}
 
-Gaur-egungo konputagailuak (super-konputagailu, eramangarri,...) orokorrean paraleloak dira. 1986-2002 urteen artean, txip barruan transistore dentsitatea handitzen zen heinean, prozesadore bakarreko konputagailuen eraginkortasuna hobetuz joan zen. Baina teknologi-garapena muga fisikoetara iritsita, bide honetatik konputagailuen abiadura hobetzea ezinezkoa bilakatu zen (Irudia \ref{fig:51}). Horrela, 2005.urtetik aurrera fabrikatzaileek konputagailuen gaitasuna hobetzeko, txipan prozesadore bat baino gehiago erabiltzea erabaki zuten.      
+Azken hamarkadetan, zientzia konputazionalaren hazkundea oso handia izan da eta bere erabilera ia zientzia arlo guztietara zabaldu da. Zientzialariek ahalmen handiko tresna berria (zenbakizko simulazioa) eskuragarri dute, neurri handi batean konputagailuen teknologiaren garapen handiari esker. Egungo oinarrizko konputagailuek, orain urte gutxitako superordenagailuen ahalmen berdina dute eta superordenagailuen konputazio gaitasuna ere, maila berdinean hazi da. Zenbakizko algoritmoek ere, garapen handia izan dute; algoritmo eraginkorragoak, idei berriak garatuz eta konputagailuen gaitasunei etekina atereaz garatu dira.
 
-\begin{figure}[h]
-\centerline{\includegraphics[width=10cm, height=6cm] {ProcessorClock}}
-\caption[Processor clock rate.]{\small Processor clock rate growth halted around 2005.}
-\label{fig:51}
-\end{figure} 
+Konputazioaren alde garestiena, memoria eta prozesadorearen arteko datu mugimendua da. Prozesadoreak gero eta azkarragoak dira, baina memori atzipenaren abiaduraren hobekuntza mugatuagoa dago. Horregatik algoritmo eraginkorrak, prozesadorearen konputazio arik eta handiena  memoria komunikazio arik eta txikienarekin lortzeko helburuarekin  diseinatu behar dira.      
+ 
+Azkenik aipatu nahi dugu ere, aplikazio baten eraginkortasuna ez dela exekuzio denboraren arabera bakarrik neurtu behar. Hori bezain garrantzitsua da kode ona idaztea \cite{Wilson2014} eta zentzu honetan hiru ezaugarri hauek bereziki zaindu behar dira:
+\begin{itemize}
+\item Errorerik gabeko kodea.
+\item Kode argia idaztea.
+\item Etorkizunean erraz aldatu daitekeen kodea.
+\end{itemize}
 
-%\begin{figure}[h]
-%\centerline{\includegraphics[width=12cm, height=8cm] {PerformanceDevelopment}}
-%\caption[Konputagailuen eraginkortasuna.]{www.top500.org, Top: total computing power of top 500 computers. Middle: 1 %computer. Bottom: 500 computer.}
-%\label{fig:61}
-%\end{figure} 
 
-Konputagailuen eredu aldaketa honen ondorioz, algoritmo azkarrak garatzeko kodearen paralelizazio gaitasunari heldu behar zaio. Programazio paralelo teknikak inplementatzeko, beharrezko da prozesadore berrien hardware arkitekturak nahiz software ingurune berriak ulertzea. Gaia nahiko konplexua izanik, ikuspegi orokorra eman ondoren, gure inplementazioan erabilitako hardware arkitektura eta software teknika zehatzak azalduko ditugu: memoria-konpartitutako sistemak eta OpenMP programazio eredua.
+\section{Eraginkortasuna}
 
-Bi dira, algoritmo azkarrak diseinatzeko erronkak: 
-\begin{enumerate}
-\item Paralizatzeko pisuko lana identifikatzea.
-\item Memoria eta prozesadorearen arteko datu mugimendua gutxitzea. 
-\end{enumerate}
+Zientzia konputazioaren eraginkortasuna neurtzeko, koma-higikorreko eragiketa kopurua (\emph{flops}) erabili ohi da baina problema handia denean, datuen mugimendua koma-higikorreko eragiketak baino garestiagoa da, eta beraz eraginkortasuna eragiketa kopuruaren arabera neurtzea okerra izan daiteke. 
 
-Bestalde, inplementazio berrien garapenean optimizatutako liburutegiak erabiltzea komeni da. Horien artean, LAPACK eta BLAS algebra linealeko liburutegiak erabilgarriak izan zaizkigu. Liburutegi hauen gaineko azalpenak emango ditugu.
-
-\section{Eraginkortasuna.}
-
-\subsection*{\textbf{Zein azkarrak dira konputagailuak?}}
-
-Gaur egungo prozesadoreen maiztasun-abiadura hertzetan neurtzen da, hau da,  \emph{makina ziklo segundoko} kopuruaren arabera. Une honetako prozesadoreak gigahertz mailakoak dira.
-\begin{description}
-\item {Kilo} = mila ($10^3$).
-\item {Mega} = milioi ($10^6$).
-\item {Giga} = bilioi ($10^9$).
-\item {Tera} = trilioi ($10^{12}$).
-\item {Peta} = $10^{15}$.
-\item {Exa} = $10^{18}$. 
-\end{description}
-
-Koma-higikorreko oinarrizko eragiketa bat egiteko ($\oplus,\ominus,\otimes,\oslash$) ziklo gutxi batzuk behar dira. Honek esan nahi du, $1$ GHz-ko prozesadore batek,
-$>100.000.000$ koma-higikorreko eragiketa segundoko egiten dituela ($>100$ megaflops).
+Prozesadoreen maiztasun-abiadura hertzetan neurtzen da, hau da,  \emph{makina ziklo segundoko} kopuruaren arabera. Une honetako prozesadoreak gigahertz (Giga = $10^9$) mailakoak dira. Koma-higikorreko oinarrizko eragiketa bat ($\oplus,\ominus,\otimes,\oslash$) exekutatzeko  ziklo gutxi batzuk behar dira eta beraz, $1$ GHz-ko prozesadore batek
+$>10^8$ koma-higikorreko eragiketa segundoko egiten ditu ($>100$ megaflops).
 
 \paragraph*{\textbf{Adibidea}.} 
 Demagun $A,B$ eta $C \ (n \times n)$ dimentsioko matrizeak ditugula eta $C=AB$ matrize arteko biderketa egiteko behar dugun denbora jakin nahi dugula.
@@ -54,18 +32,21 @@ c_{ij}=\sum\limits_{i,j=1}^{n} a_{ij}*b_{ji}.
 
 \begin{itemize}
 \item $c_{ij}$ gai bakoitza kalkulatzeko $n$ biderketa eta ($n-1$) batura egin behar ditugu.
-\item $C$ matrizeak $n^2$ osagaia ditu $\Rightarrow$ $O(n^3)$ koma-higikorrezko ariketak exekutatu behar dira.
+\item $C$ matrizeak $n^2$ osagaia ditu $\Rightarrow$ $\mathcal{O}(n^3)$ koma-higikorreko ariketak exekutatu behar dira.
 \end{itemize}
 
-Adibidez, $n=100$ bada $\ \Rightarrow \ n^3=10^{6}$ eragiketa egin behar ditugu. $1$GHz prozesadorean exekutatzeko, $>10^(-2)$ segundo beharko genituzke. 
+Matrizearen tamaina $n=100$ bada,  orduan  $\mathcal{O}(n^3)=10^{6}$ eragiketa egin behar ditugu. $1$-GHz prozesadore batean exekutatzeko, $10^{-2}$ segundo baino gehiago beharko genituzke. Baina matrize honek,  $3.9$ \emph{MB} memoria beharrezkoa du eta suposatuz konputagailuaren Cache memoria baino handiagoa dela, exekuzio denboran datuen mugimenduaren eragina nabarmena izango da. 
 
-\paragraph*{} Zientzia konputazioaren eraginkortasuna neurtzeko, koma-higikorreko eragiketa kopurua (\emph{flops}) erabili ohi zen. Problema handia denean, datuen mugimendua koma-higikorreko eragiketak baino garestiagoa da, eta beraz eraginkortasuna eragiketa kopuruaren arabera neurtzea okerra izan daiteke. Kodearen exekuzioa azkartzeko derrigorrezkoa da konputagailuan datuen mugimendua minimizatzea.
+\paragraph*{}Konputazio gaitasuna (\emph{peak}), hardwareak fisikoki exekutatu dezakeen eragiketa kopuru maximoa bada, aplikazio gehienak, konputagailuaren konputazio gaitasunaren  $\%10$ baino gutxiagorekin exekutatzen dira.  Eraginkortasun horren txikia, memoria irakurketa/idazketetan galtzen da. Azpimarratu nahi dugu, $t_f$ eragiketa aritmetiko bat egiteko denbora bada eta $t_m$ datu bat memoria nagusitik cache memoriara mugitzeko denbora bada,
+\begin{equation*}
+ t_f \ll t_m,
+\end{equation*}
+eta gainera, etorkizunean diferentzia handituz joango dela. Beraz, kodearen exekuzioa azkartzeko derrigorrezkoa da konputagailuan memorien arteko datuen mugimendua minimizatzea.
+       
 
-\paragraph*{\textbf{Adibidea},} $n=400$ tamainako matrizeak hartzen baditugu, $15,6$ \emph{MB} memoria behar dugu (suposatuz konputagailuaren CACHE memoria baino handiagoa) eta datuen mugimenduaren eragina nabarituko da exekuzio denboran.
+\subsubsection*{Exekuzio denboren neurketa.}
 
-\subsubsection*{Timing code.}
-
-Unix \emph{time} agindua erabili daiteke, konputazioen denborak ezagutzeko:
+Unixeko \emph{time} agindua, konputazioen denborak ezagutzeko erabili daiteke:
 
 \begin{lstlisting} 
 S time ./a.out
@@ -76,49 +57,122 @@ user 0m38.789s
 sys  0m0.004s
 \end{lstlisting}
 
-Agindu honekin, \emph{./a.out} C programa exekutatuko da eta ondoren, programa exekutatzeko behar izan duen denboraren informazioa pantailaratuko du: \emph{real} hasi eta bukatu arteko denbora (\emph{wall-time}); \emph{user} prozesadoreak gure programa exekutatzen erabili duen denbora (\emph{CPU-time}); \emph{sys} programa exekutatu ahal izateko, sistema eragile lanetan emandako denbora.   
+Agindu honekin, \emph{./a.out} C programa exekutatuko da eta ondoren, programa exekutatzeko behar izan duen denboraren informazioa pantailaratuko du:
+\begin{itemize}
+\item  \emph{real}: hasi eta bukatu arteko denbora (\emph{wall-time} edo \emph{elapsed-time}).
+\item \emph{user}:  prozesadoreak gure programa exekutatzen erabili duen denbora (\emph{CPU-time}).
+\item \emph{sys}:  programa exekutatu ahal izateko, sistema eragile lanetan emandako denbora. 
+\end{itemize}
 
-\paragraph*{} C lengoaian badaude, denbora neurtzeko funtzioak. Jarraian, exekuzio denbora (\emph{Wall-time}) eta cpu denborak \emph{CPU-time} nola kalkulatu azaldu dugu.
+\paragraph*{} Programa osoaren konputazio denborak ezagutu beharrean, kodearen zati bat neurtu nahi dugunean, C lengoaiaren bi funtzio hauek erabilgarriak ditugu:
+
+\begin{enumerate}
+\item clock().
+
+Funtzioaren bi deien arteko CPU denbora neurtzeko erabiliko dugu (\textbf{CPU time}).
 
 \begin{lstlisting}[language=C]
 
 #include <time.h>
 
-    time_t  wtime0,wtime1;
     clock_t clock0, clock1; 
+    double elapsed_cpu_time;
 
-    wtime0= time(NULL);
     clock0= clock();
 
     <neurtu nahi den kodea>
 
-    wtime1= time(NULL);
     clock1=clock();
     
-    Wall_time=(wtime1 - wtime0);
-    CPU_Time=(clock1 - clock0)/CLOCKS_PER_SEC);
+    elapsed_cpu_time=(clock1 - clock0)/CLOCKS_PER_SEC);
 
 \end{lstlisting}
 
-\emph{Wall-time} deiturikoa izango da algoritmo baten denborak neurtzeko gure irizpidea. Programazio paraleloan, algoritmoen exekuzio denborak egokien neurtzen duen aldagaia da. Dena den, une berean programa bakarra exekutatzea behartuta gaude.       
+\item time().
+
+Funtzioaren bi deien artean igarotako denbora neurtzeko erabiliko dugu (\textbf{elapsed-time}).
+
+\begin{lstlisting}[language=C]
+
+#include <time.h>
+
+    time_t  time0,time1;
+    double elapsed_time;
+
+    time(&time0);
+
+    <neurtu nahi den kodea>
+
+    time(&time0);
+    
+    elapsed_time=difftime(time1,time0);
+
+\end{lstlisting}
+
+\end{enumerate}
+
+CPU denborari dagokion zehaztasun bat ematea komeni da. Neurtzen ari garen kodea sekuentzialki exekutatzen bada, hau da, hari (\emph{thread}) bakarrekoa, orduan kode zati hori exekutatzeko erabili duen CPU denbora itzuliko du. Aldiz, kodea paraleloan exekutatzen bada, orduan , hari guztien CPU denboren batura itzuliko ditu. 
+
+
+\paragraph*{Adibidea.} Argiago azaltzeko, $C=AB$ matrize biderketaren kodearen bi exekuzioen denboren neurketak zehaztuko ditugu:
+
+\begin{enumerate}
+\item $200 \times 200$ tamainako, bi matrizeen biderketa sekuentzialaren denborak hauek izan dira:
+\begin{lstlisting}
+elapsed-time=2.1s
+elapsed-cpu-time=2.07s
+\end{lstlisting}
+
+\item $200 \times 200$ tamainako, bi matrizeen biderketa paraleloaren (hariak=$2$) denborak hauek izan dira:
+\begin{lstlisting}
+elapsed-time=1.0s
+elapsed-cpu-time=2.35s
+\end{lstlisting}
  
+ 
+\end{enumerate}
+ 
+\emph{Elapsed-time} deiturikoa, kode paraleloen denborak neurtzeko irizpidea da. Programazio paraleloan, algoritmoen exekuzio denborak egokien neurtzen duen aldagaia da baina, une berean programa bakarra exekutatzea behartuta gaude.       
+
 
 \section{Hardwarea.}
 
-\subsection{Memori hierarkia.}
 
-Lehenik, konputagailuan dauden memoria mota ezberdinen hierarkia azalduko dugu. 
+Orokorrean, gaur-egungo konputagailuak (super-konputagailu, eramangarri,...) paraleloak dira. $1986-2002$ urteen artean, txip barruko transistore dentsitatea handitzen zen heinean, prozesadore bakarreko konputagailuen eraginkortasuna hobetuz joan zen. Baina teknologi honen garapena muga fisikoetara iritsi zenean, bide honetatik konputagailuen abiadura hobetzea ezinezkoa bilakatu zen. Horrela, 2005.urtetik aurrera fabrikatzaileek konputagailuen gaitasuna hobetzeko, txipan prozesadore bat baino gehiago erabiltzea erabaki zuten.  
+
+\begin{itemize}
+\item Moore's Law (1965). Processor speed doubles every 18 months.
+\item Moore's Law Reinterpreter (2006). Number of cores per chip can double every two years.
+\end{itemize}    
+
+Konputagailuen eredu aldaketa honen ondorioz, algoritmo azkarrak garatzeko kodearen paralelizazio gaitasunari heldu behar zaio. Programazio paralelo teknikak inplementatzeko, beharrezko da prozesadore berrien hardware arkitekturak sistema berriak ulertzea. Gaia nahiko konplexua izanik, ikuspegi orokor bat ematera mugatuko gara.
+
+\subsection*{Memori hierarkia.}
+
+Memorien arteko datuen komunikazioak, algoritmoaren eraginkortasuna baldintzatuko du eta zentzu honetan, konputagailuaren memoria hierarkiaren kudeaketa egokia egitea funtsezkoa da. Konputagailuaren memoria mota ezberdinen hierarkia eta funtzionamendua deskribatuko dugu. 
 \begin{figure}[h]
 \centerline{\includegraphics[width=10cm, height=4cm] {MemoryHierarchy}}
 \caption{Memoria hierarkia.}
 \label{fig:three}
 \end{figure} 
 
-\paragraph*{} CPU-k koma-higikorrezko eragiketak egiten ditu: erregistroetatik datuak irakurri, eragiketak egin eta emaitza erregistroetan idazten ditu. Memoria nagusia eta erregistroen artean, 2 edo 3 mailako Cache memoria dugu: lehen Cache memoria (L1) txikiena eta azkarrena da, eta beste mailak (L2,L3,...), handiagoak eta motelagoak. Memoria nagusian, exekutatzen diren programak eta datuak gordetzen dira ($1-4$ GB artekoa). Azkenik, disko gogorrean konputagailuko datu (argazki, bideo,...) eta erabilgarri ditugun programa guztiak gordetzen dira.  
+\paragraph*{} CPU-k koma-higikorreko eragiketak exekutatzen ditu: erregistroetatik datuak irakurri, eragiketak egin eta emaitza erregistroetan idazten ditu. Memoria nagusia eta erregistroen artean, $2$ edo $3$ mailako cache memoria dugu: lehen cache memoria ($L1$) txikiena eta azkarrena da, eta beste mailak ($L2$, $L3$,\dots), handiagoak eta motelagoak dira. Memoria nagusian, exekutatzen diren programak eta datuak gordetzen dira ($1-4$ GB artekoa). Azkenik, disko gogorrean konputagailuko datu (argazki, bideo,...) eta erabilgarri ditugun programa guztiak gordetzen dira.  
 
-Cache memoria lerroka egituratuta dago eta lerro bakoitza $64$ edo $128$ bytez ($8$ edo $16$ double zenbaki) osatuta dago. Programa batek datu bat behar duenean, memoria nagusitik lerro tamainako datu taldea irakurriko du eta Cachean idatziko ditu. Komunikazio hau minimizatzeko memorian datuak gordetzeko ordenak badu garrantzia. Beraz, datu-egiturak diseinatzen direnean, kontutan hartu behar da une berean beharko diren datuak memorian gertu gordetzea   
+CPUk datu bat behar duenean, memoria hierarkian zehar bilatuko du: lehenik $L1$ cachean, ondoren $L2$ cachean,...eta hauetan ez badago, memoria nagusira joko du. Memoria nagusi eta cache memoria arteko irakurketa eta idazketa guzti hauetan,  informazio konsistentzia mantentzeko hainbat arau aurrera ematen dira. 
 
-\paragraph*{\textbf{Adibidea}.}Badakigunez, C-lengoaian matrizeak lerroka gordetzen dira. Beheko adibidean,  matrizearen lehen osagaia $a(1,1)$ behar dugunean, memoria nagusitik Cachera osagai honetaz gain jarraiko 16 osagaiak ekarriko dira ($a(1,1),a(1,2),\dots,a(1,16)$). Honela, hurrengo $15$ batura egiteko behar ditugun datuak Cachean eskuara izango ditugu memoria irakurketa berririk egin gabe. 
+Cache memoria lerroka egituratuta dago eta lerro bakoitza $64$ edo $128$ bytez ($8$ edo $16$ doitasun bikoitzeko zenbaki) osatuta dago. Programa batek datu bat behar duenean, memoria nagusitik lerro tamainako datu taldea (memorian jarraian gordetako datuak) irakurriko du eta cachean idatziko du. Programatzaileak, algoritmo eraginkorrak inplementatzeko memorien arteko komunikazio hau minimizatzen saiatu behar du eta horretarako, inplementazioaren diseinua datuen memoria atzipen jarraian oinarritu behar du. Ezaugarri hau, \emph{spatial/data locality} izenaz ezaguna da eta helburua, cachera ekartzen diren datuak, memoria nagusian idatzi aurretik gutxienez behin erabiltzea da. 
+
+\paragraph*{Adibidea.} Adibide honetan, $A=(a_{ij})_{i,j}^{n,m}$ matrize baten osagaien batura ($sum=\sum_{i,j=0}^{n,m} a_{ij}$) kalkulatzeko bi inplementazio aztertuko ditugu. C lengoaian matrizeak lerroka gordetzen dira ($n=m=100$),
+\begin{equation*}
+A=\left(\begin{array}{ccccc}
+  1    & 2    & 3    & \dots & 100 \\
+  101 & 102 & 103 &\dots & 200 \\
+  201 & 202 & 203 &\dots & 300 \\
+  \dots & \dots & \dots & \dots & \dots \\
+  9.901 & 9.902 & 9.903 &\dots & 10.000 \\
+  \end{array}\right).  
+\end{equation*}
+eta horregatik, lehen aukera bigarrena baino eraginkorragoa izango da. Lehen inplementazioan, kanpo iterazioa lerroka (Algoritmoa \ref{algo:lerroka}):  matrizearen lehen osagaia $a(1,1)$ behar dugunean, memoria nagusitik Cachera osagai honetaz gain, jarraiko 16 osagaiak ekarriko dira ($a(1,1),a(1,2),\dots,a(1,16)$). Honela, hurrengo $15$ batura egiteko behar ditugun datuak Cachean eskura izango ditugu memoria irakurketa berririk egin gabe. Bigarren inplementazioan, kanpo iterazioa zutabeka (Algoritmoa \ref{algo:zutabeka}): bigarren osagaia ($a(2,1)$) gehitzeko memoria irakurketa berri bat egin behar dugu. 
 
 \begin{algorithm}[h]
  \BlankLine
@@ -135,157 +189,148 @@ Cache memoria lerroka egituratuta dago eta lerro bakoitza $64$ edo $128$ bytez (
     $sum+=a(i,j)$\;
    }
  }
- \caption{Memoria atzipena.}
+ \caption{Memoria atzipena eraginkorra.}
+ \label{algo:lerroka}
+\end{algorithm} 
+\begin{algorithm}[h]
+ \BlankLine
+  $int \ n$\;
+  $double \ a[n][m]$\;
+  \BlankLine
+  $sum=0$\;
+  \For{$j\leftarrow 1$ \KwTo $m$}
+  {
+   \BlankLine
+    \For{$i\leftarrow 1$ \KwTo $n$}
+   {
+    \BlankLine 
+    $sum+=a(i,j)$\;
+   }
+ }
+ \caption{Memoria atzipena ez-eraginkorra.}
+ \label{algo:zutabeka}
 \end{algorithm} 
 
-\begin{equation*}
-a=\left(\begin{array}{ccccc}
-  1    & 2    & 3    & \dots & 1000 \\
-  1001 & 1002 & 1003 &\dots & 2000 \\
-  2001 & 2002 & 2003 &\dots & 2000 \\
-  \dots & \dots & \dots & \dots & \dots \\
-  9001 & 9002 & 9003 &\dots & 10000 \\
-  \end{array}\right).  
-\end{equation*}
 
-\paragraph*{}CPUk datu bat behar duenean, memoria hierarkian zehar bilatuko du: lehenik $L1$ cachean, ondoren $L2$ cachean,...eta hauetan ez badago, memoria nagusira joko du. Memoria nagusi eta cache memoria arteko irakurketa eta idazketa guzti hauetan,  informazio konsistentzia mantentzeko hainbat arau aurrera ematen dira.  
 
-\subsection{Hardware motak.}
 
-MIMD (Multiple instruction, multiple data) sistemak, guztiz independenteak diren prozesadore multzoak osatzen dituzte. Bi dira MIMD sistema nagusiak: memoria konpartitutako eta memoria banatutako sistemak. Memoria konpartitutako sistemetan, prozesadore guztiek memoria osoa konpartitzen dute eta inplizituki konpartitutako datuen atzipenaren bidez komunikatzen dira. Memoria banatutakotako sistemetan aldiz, prozesadore bakoitzak bere memoria pribatua du eta esplizituki bidalitako mezuen bidez komunikatzen dira.
+\subsection*{Arkitektura motak.}
 
-Hirugarren hardware arkitektura ere aipatuko dugu, general purpose GPU computing (Graphical Processor Unit).
-Jokoen eta animazio industrian, grafiko oso azkarrak beharrak bultzatuta  sortutako teknologia da. Oinarrian, imajinak pantailaratzeko prozesagailu asko paraleloan lan egiten dute. Azken hamarkadan, GPU unitate hauek zientzia konputaziora zabaldu dira.  
+Prozesadore anitzeko konputagailu hardware berriak, konplexuak eta heterogeneoak dira. Egoera honetan, programatzaileak zailtasun handiak ditu arkitektura berriek eskaintzen dituzten gaitasunak ondo kudeatzeko \cite{Luszczek2014}.   
+
+Lehen hurbilpen modura bi sistema nagusi bereiziko ditugu:  memoria konpartitutako eta memoria banatutako sistemak. Memoria konpartitutako sistemetan, prozesadore guztiek memoria osoa konpartitzen dute eta inplizituki konpartitutako datuen atzipenaren bidez komunikatzen dira (\ref{fig:mks} irudia). Memoria banatutakotako sistemetan aldiz, prozesadore bakoitzak bere memoria pribatua du eta esplizituki bidalitako mezuen bidez komunikatzen dira (\ref{fig:mbs} irudia). Aipatzekoa da, sistema handietan bi memoria motak nahasten direla, hau da, batetik goiko mailan memoria banatuta alde bat eta bestetik, konputazio unitate bakoitzak memoria konpartitutako aldea.    
+
+Hirugarren sistema osagarria ere aipatuko dugu, general purpose GPU computing (Graphical Processor Unit).
+Jokoen eta animazio industrian, grafiko oso azkarrak beharrak bultzatuta  sortutako teknologia da. Oinarrian, imajinak pantailaratzeko prozesagailu asko paraleloan lan egiten dute eta azken hamarkadan, \emph{GPU} unitate hauek zientzia konputaziora zabaldu dira.  
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=12cm, height=4cm] {SharedMemorySystem}}
+\centerline{\includegraphics[width=12cm, height=6cm] {Arkitektura1}}
 \caption{Memoria konpartitutako sistemak.}
-\label{fig:61}
+\label{fig:mks}
 \end{figure}  
 
 \begin{figure}[h]
-\centerline{\includegraphics[width=12cm, height=4cm] {DistribuitedMemorySystem}}
+\centerline{\includegraphics[width=12cm, height=4cm] {Arkitektura2}}
 \caption{Memoria banatutako sistemak.}
-\label{fig:61}
+\label{fig:mbs}
 \end{figure}  
 
-\paragraph*{\textbf{Memoria konpartitutako sistemak}.}
+\subsubsection*{Oinarrizko konputagailu paraleloa.}
 
-Multicore bat edo gehiagoz osatutako sistema dugu. Multicore prozesadore bakoitzak txipean CPU bat baino gehiago ditu. Normalean CPU bakoitzak $L1$ bere cache memoria du. Aipatzeko da, era honetako sistemetan prozesadore kopurua ezin dela nahi adina handitu eta mugatua dela (normalean $\leq 32$ ).
+Gure lanerako, oinarrizko konputagailu paraleloak kontsideratuko ditugu: memoria konpartitutako eta prozesadore anitzeko unitate bat edo gehiagoz osatutako sistemak. Prozesadore anitzeko unitate bakoitzak txipean CPU bat baino gehiago ditu. Normalean CPU bakoitzak $L1$ bere cache memoria du. Aipatzeko da, era honetako sistemetan prozesadore kopurua mugatua dela (normalean $\leq 32$ ).
+
+Memoria konpartitutako sistemen artean bi mota bereiziko ditugu:
+
+\begin{enumerate}
+\item UMA sistemak (uniform memory access). 
+Txip prozesadore guztiak zuzenean memoria konektatuta daude eta guztiak atzipen denbora berdina dute (\ref{fig:UMA}.irudia).
 
  \begin{figure}[h]
- \centerline{\includegraphics[width=12cm, height=4cm] {SharedMemorySystemUMA}}
+ \centerline{\includegraphics[width=12cm, height=5cm] {ArkitekturaUMA}}
  \caption{Memoria konpartitutako sistemak (UMA).}
- \label{fig:61}
+ \label{fig:UMA}
  \end{figure}  
 
-\section{Softwarea.}
+\item NUMA sistemak (nonuniform memory access).
+Txip prozesadore bakoitza, hardware berezi baten bidez zuzenean memoria bloke bati konektatuta dago. Zuzenean konektatuta dagoen memori blokearen atzipen denbora, beste txipan zehar konektatutako memoriaren atzipena baina azkarragoa da ( \ref{fig:NUMA}.irudia).
 
+ \begin{figure}[h]
+ \centerline{\includegraphics[width=12cm, height=4cm] {ArkitekturaNUMA}}
+ \caption{Memoria konpartitutako sistemak (NUMA).}
+ \label{fig:NUMA}
+ \end{figure}  
+\end{enumerate}  
 
-\subsection{Software liburutegiak.}
+\subsubsection*{SIMD eragiketak.}
 
-Matematika bi software errekurtso nagusienak aipatuko ditugu; BLAS (Basic Linear Algebra Subroutines) eta LAPACK (Linear Algebra Package). Kalitate handiko software orokorrak dira eta hauek erabiltzea abantaila asko ditu: 
+Konputagailuek, \emph{Single Instruction Multiple Data} (SIMD) instrukzioetan oinarritutako paralelizazio eskeintzen dute. CPU-ak eragiketa berdina aplikatzen du bektore erregistroan gorde diren zenbaki multzo bati. Bektore erregistro hauen tamaina $256$-biteko ingurukoa ($256/64=4$ doitasun bikoitzeko zenbakia) izan ohi da eta orohar, oinarrizko eragiketa aritmetikoak (batuketa, kenketa, biderketa eta zatiketa) aplika daitezke.    
+
+Adibide moduan, hurrengo pseudokodearen bidez, iterazio bakoitzean 4 osagaien bektore baten batura erakutsiko nahi dugu,
+
+\begin{algorithm}[H]
+ \BlankLine
+  \For{$i=0$; $i<n$ ; $i+=4$}
+  {
+   \BlankLine
+    $A[i:(i+4)]=A[i:(i+4)]+B[i:(i+4)]$\;
+   \BlankLine
+  }
+ \caption{SIMD (bektorizazioa).}
+\end{algorithm}
+
+\section{Programazio lengoaiak.}
+
+Fortran eta C, aplikazio zientifikoetan gehien erabiltzen diren programazio lengoaiak dira \cite{Higham2015}. Fortran (formula translation) 1950 hamarkadan garatutako goi-mailako lehen lengoaia izan zen eta oraindik ere, oso zabaldua da. Fortran estandarraren hainbat bertsio 
+sortu dira: Fortran 66, 77, 90, 95, 2003 eta 2008. Hauetako bertsio bakoitzean funtzionalitate berriak  eta C lengoaiarekin lan egiteko bateragarritasuna gehitu zaizkio.  C lengoaia, 1970 hamarkadan jaio zen eta "hardwarekiko hurbiltasun" ezaugarri nagusiak, konpiladoreari kode eraginkorra sortzeko aukera ematen dio. C lengoaia \emph{UNIX} sistema eragileari lotuta jaio zen eta hurrengo garapenetan bere izaera askea mantendu du. C lengoaiaren estandarrak 1989, 1999 eta 2011 dira.   
+
+Fortran eta C lengoaiek, ez dituzte kodea paraleloan exekutatzeko tresnarik, hau da, ez dago konputazio banatu, eta prozesadore ezberdinen artean aldi berean exekuzioak zehazteko modurik. Konputazioa paraleloa inplementatzeko, bi dira interfaze aplikazio programa (\emph{API}) moduan inplementatuta dauden sistema nagusiak \cite{Pacheco2011}:
+
 \begin{enumerate}
-\item Garapen berriak egiteko denbora aurrezten da. 
-\item Problema askotan ondo probatutako softwareak dira.
-\item Konplexutasun handikoak dira, modu seguruan eta azkarrean exekutatzeko diseinatu direlako. 
+\item  \emph{MPI} (Message Passing Interface).
+Erabiliena da, memoria banatutako sistemetarako pentsatua baina memoria konpartitutako sistemetan ere aplika daitekeena.
+
+\item  \emph{Open MP} (Open Specifications for MultiProcessing).
+Erabiltzeko errazagoa eta memoria konpartitutako sistemetan bakarrik aplika daitekeena.
+
 \end{enumerate}
 
-Konputagailu hardware bakoitzerako optimizatutako bertsioak daude. Inplementazioa Fortranen egina dago eta datu-motei dagokionez:
-\begin{enumerate}
-\item S: float ($32$ bit).
-\item D: double ($64$ bit).
-\item C: complex.
-\item Z: complex double.
-\end{enumerate}   
+Eraginkortasun altuko konputazioaren (\emph{high performance computing}) programazioa konplexua da: espezializazio handikoa  eta konputagailuen hardware-n jakin baterako egokitutakoa. Zaitasun hauek, proiektu zientifikoak aurrera ateratzeko eta mantentzeko arazo asko eragiten ditu. Azken urteotan, eragozpen hau gainditzeko, programazio lengoaia interesgarriak sortu dira (adibidez, Julia \cite{Bezanson2014} edo Chapel \cite{Balaji2015}) baina oraindik, hauen arrakasta ikustekoa da.
 
-\subsubsection*{\textbf{BLAS}.}
+Azkenik, zientzia konputazioan \emph{problemak ebazteko inguruneak} (Problem Solving Enviroments) deituriko softwareak aipatuko ditugu. Ingurune hauek, programazio leiho interaktibo batean, goi-mailako lengoai batean inplementazioen garapena eta emaitzen azterketa egiteko aukera eskaintzen dute. Matlab eta Mathematica \cite{WolframResearch} programazio ingurune nagusienak dira eta guk bi modutara erabili dugu. Lehenik, prototipoak garatzeko tresna gisa: idei berriak garatu eta probatu, inplementazioa C lengoaian egin aurretik. Bigarrenik, gure C inplementazioen esperimentuak Mathematica ingurunetik exekutatu eta emaitzak grafikoki aztertu ditugu. Era honetan, irakurleari Mathematicako dokumentuetan esperimentuen zehaztasun guztiak eta esperimentu berdina errepikatzeko aukera ematen diogu.       
 
-BLAS liburutegian, bektore eta matrizeen arteko funtzio estandarrak inplementatuta daude. Hiru mailetan banatuta dago: 
+\subsection*{OpenMP}   
 
-\begin{enumerate}
-\item BLAS-1: bektore-bektore eragiketak.
+\emph{OpenMP}, memoria konpartitutako sistemetan programazio paraleloa exekutatzeko interfaze aplikazio programa (\emph{API}) da. \emph{OpenMP} programazioan, memoria osoaren atzipena duten prozesadore multzo batek osatzen du konputazio sistema.
 
- Adibidez: $y=\alpha*x+y$ , $2n$ flop eta $3n$ irakurketa/idazketa.
+Hasieran programaren hari bakarra prozesadore batean exekutatuko da, kode-paraleloko unera iritsi arte. Orduan, hari multzo independenteak exekutatuko dira une paraleloa bukaera iritsi arte. Exekuzio kontrolari, \emph{fork-join} eredua deitzen zaio eta grafikoki (\ref{fig:forkjoin} irudian ) adierazi dugu.
  
- Konputazio intentsitatea: $\frac{2n}{3n}=\frac{2}{3}$. 
-
-\item BLAS-2: matrize-bektore eragiketak.
-
- Adibidez: $y=\alpha*A*x+\beta*x$, $O(n^2)$ flop eta $O(n^2)$ irakurketa/idazketa.
- 
- Konputazio intentsitatea: $\approx \frac{2n^2}{n^2}=2$. 
- 
-\item BLAS-3: matrize-matrize eragiketak.
-
- Adibidez: $C=\alpha*A*B+\beta*C$, $O(n^3)$ flop eta $O(n^2)$ irakurketa/idazketa.
- 
- Konputazio intentsitatea: $\approx \frac{2n^3}{4n^2}=\frac{n}{2}$. 
-
-\end{enumerate}
-
-Azpimarratu, BLAS-1 eta BLAS-2 funtzioen konputazio intentsitatea txikia dela eta beraz, datuen komunikazioa nagusia dela. BLAS-3 aldiz, konputazio intentsitatea handiagoa da eta ezaugarri honi esker, konputagailuaren konputazio gaitasuna ondo aprobetxatu ahal izango da.
-
 \begin{figure}[h]
-\centerline{\includegraphics[width=12cm, height=8cm] {BLASSpeed}}
-\caption{BLAS speeds.}
-\label{fig:61}
-\end{figure}    
-
-Fabrikatzaile bakoitzak optimizatutako BLAS liburutegiak (AMD ACML,Intel MKL) dituzte eta beraz, multi-threaded dira.
-Beste aukera bat, optimizatutako BLAS instalazioa ATLAS (Automatically Tuned Linear Algebra Software) bidez egitea.    
-
-\subsubsection*{\textbf{LAPACK}}.
-
-Zenbakizko aljebra linealaren liburutegia da.
-
-\begin{enumerate}
-\item Sistema linealak: $AX=b$.
-\item Least Square: choose $x$ to minimize $\|Ax-b\|$.
-\item Eigenvalues.
-\item Balio singularren deskonposaketa (SVD).
-\end{enumerate}
-
-Posible den guztietan, BLAS-3 funtzioetan oinarritzen da.
-
-\subsection{Programazio paraleloa.}
-
-C-lengoaia programazio paraleloan erabiltzeko, lengoaiaren bi extensio dira nagusienak: bata memori-banatutako sistemetarako diseinatuta  MPI (Message-Passing Inteface) eta bestea, memoria-konpartitutako sistemetarako diseinutakoa OpenMP (Open Specifications for MultiProcessing). MPI datu moten definizio, funtzio eta makroen liburutegia da. OpenMP liburutegia bat  eta C konpiladorearen aldaketa batzuk. OpenMP erabili dugu gure inplementaziorako eta jarraian honi buruzko idei nagusienak emango ditugu.
-
-\paragraph*{\textbf{OpenMP}.}
-
-Memoria konpartitutako programazio paraleloaren estandarra dugu. 
-Programazioan paralelizazio kontrola, "fork-join" modeloa jarraituz egiten da.
-
-\begin{enumerate}
+\centerline{\includegraphics[width=12cm, height=4cm] {ForkJoin}}
+\caption[OpenMP programazio modeloa.]{OpenMp programazio modeloa.}
+\label{fig:forkjoin}
+\end{figure}  
+ 
+\begin{itemize}
 \item OpenMP programen hasieran prozesu bakarra dago, hari (thread) nagusia. 
 \item FORK: hari nagusiak hari talde paraleloa sortzen du.
-\item JOIN: hariak kode paraleloa bukatzen dutenean, behin sinkronizatuta amaitzen dute eta hari nagusiak bakarrik jarraitzen du.
-\end{enumerate}
+\item JOIN: kode-paraleloko hari guztiak bukatzen dutenean (sinkronizazioa), hari nagusiak soilik jarraitzen du.
+ \end{itemize}
 
-% \begin{figure}[h]
-% \centerline{\includegraphics[width=10cm, height=3cm] {ForkJoin}}
-% \caption{Fork-Join.}
-% \label{fig:61}
-% \end{figure}  
- 
- \begin{figure}[h]
- \centering
- \subfloat[Fork-Join.]{
- \includegraphics[width=.500\textwidth]{ForkJoin}
- }
- \subfloat[Fork-Join.]{
- \includegraphics[width=.200\textwidth]{OpenMP1}
- }
-  \caption[OpenMp programazio modeloa.]{\small OpenMp programazio modeloa.}
- \label{fig:forkjoin}
- \end{figure}
+Paralelizazioan hari kopurua zehaztu behar da, eta ohikoa izaten da hari bat prozesadore bakoitzeko sortzea. Konpilazio direktiben bidez (C kodean \emph{pragma} izeneko preprozesadore aginduak),  paralelizazioa nola exekutatu behar den zehazten zaio.
+\begin{itemize}
+\item Kode paralelizagarria adierazi.
+\item Hariaren datu pribatuak zehaztu.
+\item Harien arteko sinkronizazioa.
+\end{itemize}
 
-Aldagai batean (threadcount) paralelizazioan zenbat hari erabili adierazten da eta ohikoa izaten da hari bat prozesadore bakoitzeko sortzea.  Konpilazio direktiben bidez,  paralelizazioa nola exekutatu behar den zehazten zaio.
 
-\paragraph*{\textbf{Adibidea}}.
+\paragraph*{\textbf{Adibidea1.}} C lengoaian, \emph{OpenMP} konpilazio direktibak adierazteko \emph{pragma} hitza lerroaren hasieran idatziko dugu. Adibide honetan, programaren \emph{for-iterazioa} paraleloan exekutatu daitekeela  eta hari kopurua bi dela zehaztu dugu. 
 
 \begin{lstlisting}[language=C]
+#    include <omp.h>
+
+     int thread_count=2;
+
 #    pragma omp parallel for num_threads(thread_count) 
      for (i = 0; i<n; i++)
      {
@@ -293,69 +338,276 @@ Aldagai batean (threadcount) paralelizazioan zenbat hari erabili adierazten da e
      }
 \end{lstlisting}
 
-OpenMP Version 4.5.	
+Konpilazioan, \emph{-fopenmp} aukera zehaztu behar dugu,
+\begin{lstlisting}[language=C]
+$ gcc -g -Wall -fopenmp adibidea.c -o adibidea.o.
+\end{lstlisting}
+Orokorrean, defektuz aldagaia guztiak harien artean konpartituta daude eta aldagaiak pribatuak direla zehazteko, esplizituki adierazi behar da. Goiko adibidea salbuespena da; \emph{for} iterazioaren kontagailua  (adibideko $i$ aldagaia) pribatua da.
 
-gcc -v (gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3))
 
-A number of compilers from various vendors or open source communities implement the OpenMP API:
+\paragraph*{} Algoritmo batean, kodearen zati bat bakarrik  da paralelizagarria. Suposa dezagun, konputazioaren $\%50$ sekuentziala dela eta beste $\%50$ paraleloan exekutatu daitekeela. Zati sekuentzialak, lortu daitekeen konputazio optimoena (zati paralelizagarriaren exekuzio denbora zero dela kontsideratzea) mugatuko du eta beraz, gehienez exekuzio sekuentziala baino bi aldiz azkarrago izango da. 
+Kontzeptu hau orokortzen badugu, konputazioaren $(1/S)$ sekuentziala eta gainontzekoa, $(1-1/S)$ paralizagarria kontsideratuz, orduan kode optimoena prozesadore kopurua edozein delarik, $S$ faktorea hobea izango da. $T_s$ makina sekuentzial batean exekuzio denbora izendatzen badugu, $P$ prozesadore kopurua erabiliz lortuko den konputazio denbora $T_p$,
+\begin{align*}
+T_p &=(1/S)T_s + (1-1/S)T_s/P,
+\end{align*}
+eta prozesadore kopuru oso handia kontsideratuko bagenu,
+\begin{align*}
+T_p &\rightarrow (1/S) T_s ,  \ \ P \rightarrow \infty.
+\end{align*} 
+
+Konputazio paralelo batean, $T_p$ denborari paralelizazioak duen gainkarga gehitu behar zaio. Gainkarga hau, kontzeptu ezberdinez osatuta dago eta milisegunduko mailako erakigetak izan daitezke.  
+\begin{itemize}
+\item Prozesuak edo hariak sortzeko denbora.
+\item Sinkronizazio denbora.
+\item Datu konpartitutako komunikazioa.
+\end{itemize}
+
+   
+\section{Algebra lineal dentsorako liburutegiak.}
+
+
+Zenbakizko integrazioetan, algebra lineala konputazio denboraren eta memoria komunikazioaren zati nagusienetakoa da. 
+\begin{enumerate}
+\item Matrize-Matrize biderketak, Matrize-bektore biderketak, \dots
+\item Ekuazio sistemen \emph{LU-deskonposaketak}, forward and backward substitution, \dots
+\end{enumerate}   
+
+Algebra linealeko eragiketak inplementatzen dituzten kalitate handiko liburutegiak daude (\href{http://www.netlib.org}{Netlib}) eta algoritmo berriak, liburutegi hauetan oinarritzea gomendagarria da \cite{Hogben2013}. Honako abantailak azpimarratuko ditugu:
+\begin{enumerate}
+\item Garapen berriak egiteko denbora aurrezten da. 
+\item Problema askotan ondo probatutako softwareak dira.
+\item Konplexutasun handikoak dira, modu seguruan eta azkarrean exekutatzeko diseinatu direlako. 
+\end{enumerate}
+
+Hauek dira, algebra linealerako liburutegi aipagarrienak:
+\begin{itemize}
+\item BLAS : Basic Linear Algebra Subroutines.
+\item LAPACK: Linear Algebra Package.
+\item ScaLAPACK: Parallel Distributed Dense Linear Algebra.
+\end{itemize}
+
+Inplementazio hauen funtzioak \emph{Fortran} lengoaian garatuta daude eta beste lengoietatik (C, C++, Java, Python) ere deitu daitezke. 
+\begin{enumerate}
+\item Datu-mota hauetarako aplika daitezke:
 
 \begin{enumerate}
-\item From GCC 4.7.0, OpenMP 3.1 is fully supported. 
+\item S: doitasun arrunta (\emph{float}, $32$-bit).
+\item D: doitasun bikoitza(\emph{double}, $64$-bit).
+\item C: zenbaki konplexua doitasun arruntean (complex).
+\item Z: zenbaki konplexua doitasun bikoitzean (complex double).
+\end{enumerate}  
 
-\item From GCC 6.1, OpenMP 4.5 is fully supported in C and C++.
+\item Matrize dentsoetarako liburutegiak dira. Matrize egitura hauek zehaztu daitezke.
+\begin{enumerate}
+\item Matrize orokorrak.
+
+ GE=General; GB=General Band.
+\item Matrize simetrikoak.
+
+ SY=SYmmetric ; SB=Symmetric Band; SP=Symmetric Packed.
+\item Hermitiar matrizeak.
+
+ HE=HErmitian ; HB=Hermitian Band; HP=Hermitian Packed.
+\item Matrize triangualarrak.
+
+ TR=TRiangular ; TB=TRiangular Band; TP=Triangular Packed.
+\end{enumerate}
 
 \end{enumerate}   
 
+\subsection*{BLAS.}
 
-\subsection{Konpiladorea.}
+Algebra linealeko aplikazioen exekuzio denboraren zati garrantzitsua, behe-mailako eragiten konputazioak ematen du. Behe-mailako eragiketen hauen optimizazioak, konputagailu bakoitzaren araberakoak dira eta espezializazio handia eskatzen du. Konputagailu araberako, algebra linealeko oinarrizko funtzio eraginkorrak, \emph{BLAS} liburutegia, makina plataforma bakoitzarentzat eskuragarri daude. \emph{BLAS} (\url{www.netlib.org/blas}) liburutegian, bektore eta matrizeen arteko funtzio estandarrak inplementatuta daude. \emph{BLAS} liburutegiaren eraginkortasuna matrizeen biderkaduraren funtzioaren  (\emph{cblas\_dgemm}) bidez aztertu dugu eta gure inplementazio arrunta baino $10\times$ azkarragoa dela baieztatu dugu (Taula \ref{tab:blas}). 
 
-\subsubsection*{Sarrera.}
+\begin{table}
+\caption[BLAS liburutegiaren eraginkortasuna.] 
+{\small{BLAS liburutegiaren eraginkortasuna. Portatilean egindako esperimentua: Ubuntu $16.04$ bertsioa eta $4$-CPU. Gure C lengoaiako garapena (C-arrunta) eta BLAS liburutegiaren cblas\_dgemm() inplementazioak konparatu ditugu. $n$ tamainako ezberdineko matrizeak biderkatu ditugu eta $ntest$ kopurua eragiketa aritmetikoa berdinak izan daitezen finkatu dugu}}
+\label{tab:blas}      
+\centering
+{%
+\begin{tabular}{l c c c c c } 
+ \hline
+  $n$     & ntests        &  \multicolumn{2}{c}{C-Arrunta}  & \multicolumn{2}{c}{cblas\_dgemm} \\
+ \\
+          &                   & Wall T. & CPU T. &  Wall T. & CPU T. \\
+ \hline         
+ $10$  &   $5.00\times10^8$   & $478.$   & $478.$  & $205.$  & $206.$   \\ 
+ $20$  &   $6.25\times10^7$   & $491.$   &  $491.$  & $92.$   & $91.$   \\ 
+ $30$  &   $1.85\times10^7$   & $474.$    & $474.$ & $78.$   & $78.$   \\ 
+ $40$  &   $7.81\times10^6$   & $523.$    & $523.$ & $66.$   & $66.$   \\ 
+ $50$  &   $4.00\times10^6$   & $493.$    & $493.$ & $64.$   & $64.$   \\ 
+ $60$  &   $2.31\times10^6$   & $479.$    & $479.$ & $58.$   & $58.$   \\ 
+ $70$  &   $1.45\times10^6$   & $475.$    & $475.$ & $43.$   & $170.$   \\ 
+ $80$  &   $9.76\times10^5$   & $469.$    & $469.$ & $45.$   & $177.$   \\ 
+ $90$  &   $6.85\times10^5$   & $491.$    & $491.$ & $47.$   & $186.$   \\ 
+ $100$ &   $5.00\times10^5$   & $466.$    & $466.$ & $39.$   & $156.$   \\ 
+ $200$ &   $6.25\times10^4$   & $504.$    & $504.$ & $34.$   & $138.$   \\ 
+ $400$ &   $7.81\times10^3$   & $657.$    & $657.$ & $35.$   & $140.$   \\ 
+   \hline
+ \end{tabular}}
+\end{table}
 
-Erabiliko dugun konpiladorea,
 
+Denetara $142$ errutinaz osatzen da eta hauek, hiru taldeetan sailkatzen dira: 
 \begin{enumerate}
+\item BLAS-1: $\mathcal{O}(n)$ bektore-bektore eragiketak.
 
-\item \emph{gcc} - \emph{GNU} open source compiler.
+ Adibidea.
+ $y=\alpha*x+y, \ \text{non} \ \alpha \in \mathbb{R}, \ \text{eta} \  x,y \in \mathbb{R}^n$. \\
+ $2n$ eragiketa aritmetiko eta $3n$ irakurketa/idazketa.
+ 
+ Konputazio intentsitatea: $2n/3n=2/3$. 
 
-\begin{lstlisting}
-$ gcc -v
-$ gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
-\end{lstlisting}
+\item BLAS-2: $\mathcal{O}(n^2)$ matrize-bektore eragiketak.
 
-\item Several comercial compilers also are avalaible.
+ Adibidea.
+ $y=\alpha*A*x+\beta*y, \ \text{non} \ \alpha,\beta \in \mathbb{R},\ x,y \in \mathbb{R}^n \text{eta} \ A \in \mathbb{R}^{n \times n}$. \\ 
+ $\mathcal{O}(n^2)$ eragiketa aritmetiko eta $\mathcal{O}(n^2)$ irakurketa/idazketa.
+ 
+ Konputazio intentsitatea: $\approx {2n^2}/{n^2}=2$. 
+ 
+\item BLAS-3: $\mathcal{O}(n^3)$ matrize-matrize eragiketak.
+
+ Adibidea.
+ $C=\alpha*A*B+\beta*C, \ \text{non} \ \alpha,\beta \in \mathbb{R} \ \text{eta} \ A,B \in \mathbb{R}^{n \times n}$. \\ 
+ $\mathcal{O}(n^3)$ eragiketa aritmetiko eta $\mathcal{O}(n^2)$ irakurketa/idazketa.
+ 
+ Konputazio intentsitatea: $\approx {2n^3}/{4n^2}={n}/{2}$. 
 
 \end{enumerate}
 
+BLAS-1 eta BLAS-2 funtzioen konputazio intentsitatea txikia da eta beraz, talde hauetako funtzioetan datuen komunikazioa nagusia da. BLAS-3 aldiz, konputazio intentsitatea handiagoa da eta ezaugarri honi esker, konputagailuaren konputazio gaitasuna ondo aprobetxatu ahal izango da (irudia \ref{fig:61}).
 
-C11 (formerly C1X) is an informal name for ISO/IEC 9899:2011,[1] the current standard for the C programming language.It replaces the previous C standard, informally known as C99. This new version mainly standardizes features that have already been supported by common contemporary compilers, and includes a detailed memory model to better support multiple threads of execution.
+\begin{figure}[h]
+\centerline{\includegraphics[width=12cm, height=8cm] {BLASSpeed}}
+\caption{BLAS speeds.}
+\label{fig:61}
+\end{figure}    
 
-gcc requires you specify -std=c99 or -std=c11
+Fabrikatzaile bakoitzak optimizatutako BLAS liburutegia du (AMD-ACML,Intel-MKL) eta hauek, paraleligarritasun gaitasuna (multi-threaded) dute. Bestalde, optimizatutako BLAS instalazioa, \emph{ATLAS} (Automatically Tuned Linear Algebra Software) izeneko aplikazioaren bidez ere egin daiteke. Inplementazio guztiek, interfaze berdina erabiltzen dute eta beraz, BLAS-en oinarritutako garapena edozein konputagailuan erabili daiteke (portable).
 
+Aipatu dugunez, \emph{BLAS} Fortran lengoaian inplementatuta dago eta C-lengoaiatik deitzeko kontu handiz egin beharra dago. C lengoaiatik \emph{BLAS} funtzioen erabilpena errezteko, \emph{BLAS} funtzioei deitzeko \emph{cblas} interfazea erabiltzea gomendagarria da. 
+   
 
-\paragraph*{Optimizations} (-Olevel).
-        
-Optimizes the code for execution speed according to the level specified by level , which can be 1, 2, or 3. If no level is specified, as in –O , then 1 is the default. Larger numbers  indicate higher levels of optimization.
+\subsection*{LAPACK.}
 
--O2 (default) Optimize for code speed. This is the generally recommended optimization level. -O3 Enable -O2 optimizations and in addition, enable more aggressive optimizations such as loop and memory access transformation, and prefetching. 
+LAPACK $1992.$ urtean garatu zen \cite{Higham2002} eta algebra linealaren problemak ebazteko programen liburutegia da. Jatorrizko bertsioa \emph{Fortran 77} lengoaian inplementatuta dago eta liburutegiaren dokumentazioa nahiz kodea \emph{Netlib} errepositorioan (\url{http://www.netlib.org/lapack/}) aurkitu daiteke. Matrize dentsoetarako garatuta dago eta honako problemetarako errutinak biltzen ditu: 
+\begin{itemize}
+\item Ekuazio sistema lineal: $AX=b$.
+\item Linear least square problems: choose $x$ to minimize $\|Ax-b\|$.
+\item Eigenvalues problems.
+\item Balio singularren deskonposaketa (SVD).
+\end{itemize}
 
-Every compiler offers a collection of standard optimization options (-O0,-O1,. . . ).  However, all compilers refrain from most optimizations at level -O0, which is hence the correct choice for analyzing the code with a debugger. At higher levels, optimizing compilers mix up source lines, detect and eliminate “redundant” variables, rearrange arithmetic expressions, etc.,      
+LAPACK liburutegiaren diseinua, konputagailu sekuentzial eta memoria konpartitutako konputagailuetan bateragarria izateko oinarritzen da, zeinetan eraginkortasuna \emph{BLAS} funtzio optimizatuen menpe dagoen. LAPACK liburutegiaren funtzioen inplementazioa, gehien bat BLAS-3 taldeko funtzioen erabilpenean oinarritzen da. 
 
-\subsubsection*{Konpilazioa.}
+LAPACK liburutegiaren hainbat garapen daude eta horien artean, \emph{LAPACKE} liburutegia C-lengoaiatik LAPACK funtzioei deitzeko interfazea da. 
 
-\paragraph*{Oinarrizko erabilpena.}
+\paragraph*{}LAPACK liburutegiaren errutinak hiru taldeeten banatzen dira:
+\begin{enumerate}
+\item Problema osoa ebazten dituzten errutinak (drivers). Talde honetan funtzio arruntak eta funtzio espezializatuak daude.
+
+Adibidea.
 
 \begin{enumerate}
-\item Compiles and links and creates an executable adibidea.exe.
+\item LAPACKE-dgelsv (LAPACK-ROW-MAJOR, n, nrhs, A, lda, ipiv, B, ldb);
+
+Computes the solution to system of linear equations A * X = B for GE matrices.
+
+\item LAPACKE-dgelsvx (...);
+
+Computes the solution to the system of linear equations with a square coefficient matrix A and multiple right-hand sides, and provides error bounds on the solution.
+
+\item LAPACKE-dgelsvxx (...)
+
+Uses extra precise iterative refinement to compute the solution to the system of linear equations with a square coefficient matrix A and multiple right-hand sides
+
+\end{enumerate}
+
+\item Konputazio errutinak. Lan zehatz bat exekutatzen duen errutinak.
+
+Adibidea.
+
+\begin{enumerate}
+\item LAPACKE-dgetrf (LAPACK-ROW-MAJOR, n, m, A, lda, ipiv);
+
+Errutina honek $A$ ($n \times m$) tamainako matrizearen $LU$ faktorizazioa kalkulatzen du, $A=P*L*U$.
+\item LAPACKE-dgetrs (LAPACK-ROW-MAJOR,trans,n,nrhs,A,lda,ipiv,B,ldb);
+
+Errutina honek $A*X=B$ ekuazio sistemaren $X$ soluzioa kalkulatzen du.
+\end{enumerate}   
+
+\item Errutina auxiliarrak.
+\end{enumerate}
+
+
+\subsection*{Matrize bakanak.}
+
+
+$A \in \mathbb{R}^{m \times n}$ matrizeari bakana esaten zaio, baldin abantaila atera daitekeen zero osagai kopuru adina baditu. Honek esan nahi du, matrizearen zero ez diren osagaien kopurua $n_{nz}$,
+\begin{equation*}
+n_{nz} \ll mn.
+\end{equation*}
+
+\begin{figure}[h]
+\centerline{\includegraphics[width=6cm, height=6cm] {SparseMatrizeak}}
+\caption{Matrize bakanak.}
+\label{fig:61}
+\end{figure}    
+
+Bakantasunak memoria eta exekuzio denbora gutxitu dezake.
+
+\begin{enumerate}
+\item Doitasun bikoitzeko $A \in \mathbb{R}^{m \times n}$ matrizea,
+\begin{enumerate}
+\item Dentsoa: $8mn$ byte.
+\item Bakana: $\approx16n_{nz}$ (gordetzeko teknikaren arabera).
+\end{enumerate} 
+\item $y=y+Ax, \ y,x \in \mathbb{R}^n \text{eta} \ A \in \mathbb{R}^{m \times n}$,
+\begin{enumerate}
+\item Dentsoa: $\mathcal{O}(mn), eragiketa aritmetikoak$.
+\item Bakna: $\mathcal{O}(n_{nz}), eragiketa aritmetikoak$.
+\end{enumerate}
+\end{enumerate}
+
+\paragraph*{} Matrize bakanentzako oraindik \emph{BLAS} liburutegia estadarra ez dagoela \url{http://www.netlib.org/blas/blast-forum} konprobatu dugu. Aldiz, Intelen \emph{Math Kernel Library} izeneko liburutegian matrize bakanentzako \emph{BLAS} eta \emph{LAPACK} funtzioak garatuta dituzte \url{https://software.intel.com/en-us/intel-mkl-support/documentation}.
+
+\section{Konpiladorea.}
+
+
+Konpiladorearen zeregina konplexua da, goi mailan idatzitako programari dagokion makina kodea sortzea (konputagailuaren errekurtsoak modu eraginkorrean erabiltzen dituenak). Konpiladoreak heuristikotan oinarritutako kode aldaketak eragiten ditu, eraginkortasuna hobetzeko asmoarekin. Horregatik, programatzaileak konpiladorearen optimizazio automatiko hauek kontutan hartu behar ditu eta ahal duen neurrian, bere kodean erraztu.      
+
+\paragraph*{Konpiladore} aukera ezberdinak daude:
+\begin{enumerate}
+\item \emph{gcc} - \emph{GNU} open source compiler.
+\begin{lstlisting}
+$ gcc -v
+$ gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.2) 
+\end{lstlisting}
+
+\item Hainbat konpiladore komertzialak daude (adibidez intel-en \emph{icc} konpiladorea).
+
+\end{enumerate}
+
+\paragraph*{Konpilazio optimizazioak.}
+Konpiladore guztiek optimizazio maila estandarrak eskaintzen dituzte. Orokorrean, hurrengo kode optimizazioak izango ditugu:
+\begin{enumerate}
+\item \emph{-O0}.
+Kode optimizazio nagusienak aplikatzen deneko aukera da. Kodea \emph{debugger} moduan aztertzen ari garenean gomendatzen da.
+\item \emph{-O2}.
+Kode azkarra sortzeko aukera gomendagarriena. Maila gehiagoko optimizazioak aplika daitezke, baina optimizazio ez egokiak gerta daitezke eta beraz, arriskutsuak dira.   
+\end{enumerate}  
+
+
+\paragraph{Konpilazio aginduak.}
+
+\begin{enumerate}
+\item Konpilazioa, esteka egin eta adibidea.exe exekutagarria sortzeko
 \begin{lstlisting}[language=C]
 $ gcc adibidea.c -o adibidea.exe
 \end{lstlisting}
 
-\begin{lstlisting}[language=C]
-$ ./adibidea.exe
-\end{lstlisting}
-
-\item Compile and link steps.
-
+\item Konpilazio eta esteka urratsak banatuta.
 \begin{lstlisting}[language=C]
 $ gcc adibidea.c  # creates adibidea.o
 $ gcc adibidea.o -o adibidea.exe
@@ -367,213 +619,11 @@ $ gcc adibidea.o -o adibidea.exe
 gcc -O2 -Wall -std=c99 -fno-common adibidea.c
 \end{lstlisting}
 
-\subsubsection*{Makefile.}
+\paragraph*{Makefile.}
 
-A common way of automating software builds and other complex tasks with dependencies.
+Normalean, aplikazioaren kodea fitxategi ezberdinetan egituratzen da eta konpilazio prozesua konplexua izan daiteke. \emph{Makefile}-a, lengoaia berezi bat erabiliz, konpilazio prozesua automatizatzeko programa moduko bat dugu.
 
-A Makefile is itself a program in a special language.
-
-\paragraph*{Adibidea.}
-Demangun programa bat hiru fitxategieten banatuta dugula,
-
-\begin{lstlisting}[language=C]
-/*file: main.c*/
-void main()
-{
-    printf("Main program");
-    sub1();
-    sub2();
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language=C]
-/*file: sub1.c*/
-void sub1()
-{
-    printf("sub1");
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language=C]
-/*file: sub2.c*/
-void sub2()
-{
-    printf("sub2");
-}
-\end{lstlisting}
-
-Programa exekutagarria lortzeko makefile fitxategia,
-
-\begin{lstlisting} [language=C]
-main.exe: main.o sub1.o sub2.o
-	      gcc main.o sub1.o sub2.o -o main.exe
-main.o: main.c
-        gcc -c main.c
-sub1.o: sub1.c
-        gcc -c sub1.c        
-sub2.o: sub2.c
-        gcc -c sub2.c        
-\end{lstlisting}
-
-\begin{lstlisting}
-$ make main.exe
-gcc -c main.c
-gcc -c sub1.c
-gcc -c sub2.c
-gcc main.o sub1.o sub2.o -o main.exe
-\end{lstlisting}
-
-Typical element in the simple Makefile:
-
-\begin{lstlisting}
-target: dependencies
->TAB>  command(s) to make the target
-\end{lstlisting}
-
-Typing "make target" means:
-\begin{itemize}
-\item Make sure all dependencies are update (those that are also targets).
-\item If target older than any dependency, recreate it using specified commands.
-\item The rules are applied recursively.
-\end{itemize}
-
-\paragraph*{\textbf{MakefileV2}}
-
-\begin{lstlisting} [language=C]
-
-CC = /usr/bin/gcc
-FLAGS=-O2 -Wall -std=c99 -fno-common 
-OBJECTS=  main.o sub1.o sub2.o
-.PHONY: clean help
-
-main.exe: $(OBJECTS)
-	      ${CC} $(OBJECTS) -o main.exe
-	      
-%.o: %.c
-     ${CC} ${FLAGS} -c $<	      
-	      
-clean:
-     rm -f $(OBJECTS) main.exe
-
-help:
-    @echo "Valid targets;"
-    @echo " main.exe"
-    @echo " main.o"
-    @echo " sub1.o"
-    @echo " sub2.o"
-    @echo " clean"
-             
-\end{lstlisting}
-
-
-\section{Kode Optimizazioak.}
-
-Applications have two general challenges:
-\begin{enumerate}
-\item Numerical Method.
-
-Performance required computation the shortest account of time.
-
-\item. Computer Program.
-
-Express the algorithm as fast computer problem, you have realized computer hardware eficiently.
-
-\end{enumerate}
-
-Optimization areas are:
-\begin{enumerate}
-\item Vectorization.
-\item Paralelization.
-\item Memory trafic control.
-\end{enumerate}
-
-Optimization areas:
-\begin{enumerate}
-\item scalar optimization (compiler friendly practices).
-
-\item vectorization (must use 16 or 8 wide vectors).
-
-\item multi-threading (must  scale to $100+$ threads).
-
-\item memory access (streaming acces).
-
-\item communication (offload, MPI traffic control).
-
-\end{enumerate}
-
-
-\subsection*{Scalar Tuning and General Optimization.}
-
-Optimization of scalar arithmetics.
-
-One of the most important scalar optimizazion techincs is  \textbf{strength reduction} : replace expensive operation for less expensive operations.
-
-\begin{figure}[h]
- \centerline{\includegraphics[width=12cm, height=4cm] {Optimization_Strength_Reduction}}
- \caption{Optimization.}
- \label{fig:61}
-\end{figure}  
-
-\paragraph*{} Precision control.
-
-\begin{enumerate}
-\item Precision Control for transcendental functions.
-
-\item Floating-point semantics.
-
-\item Consistency of precision: constants and constants.
-
-Using incorrect function names in the single precsion is a common mistake
-
-\end{enumerate}
-
-\subsection*{Optimization of vectorization.}
-
-\begin{enumerate}
-
-\item Preferably unid-stride access to data.
-Very important step in the optimization.
-
-Artikulua "Auto-Vectorization with the Intel Compilers".
-
-Most CPU architectures today include Single Instruction Multiple Data (SIMD) parallelism in the form
-of a vector instruction set. Serial codes (i.e., running with a single thread), as well as instruction-parallel cal-
-culations (running with several threads) can take advantage of SIMD instructions and significantly increase
-the performance of some computations. Each CPU core performs SIMD operations on several numbers (in-
-tegers, single or double precision floating-point numbers) simultaneously, when these variables are loaded
-into the processor’s vector registers, and a vector instruction is applied to them. SIMD instructions include
-common arithmetic operations (addition, subtraction, multiplication and division), as well as comparisons,
-reduction and bit-masked operations (see, e.g., the list of SSE 2 intrinsics). Libraries such as the Intel Math
-Library provide SIMD implementations of common transcendental functions, and other libraries provide
-vectorized higher-level operations for linear algebra, signal analysis, statistics, etc.
-
-\item Data Alignment and Padding.
-
-An important consideration for efficient vectorization is data alignment.
-
-
-\end{enumerate}
-
-\subsection*{Multi-threading.}
-
-Do you have enough parallelism in your code? 
-
-Expanding iteration space, if it is no enough iterations in parallel loop.
-
-Three layers of parallelism: MPI processes, OpenMP threads, vectorization.
-
-
-\subsection*{Memory access.}
-
-Memory access and Cache utilization.
-
-loop tiling technics
-
-\begin{figure}[h]
- \centerline{\includegraphics[width=12cm, height=4cm] {Optimization_LoopTiling}}
- \caption{Optimization.}
- \label{fig:61}
-\end{figure}  
+Eranskinean \emph{Makefile} legoaiaren oinarrizko adibideak eman ditugu.
 
 \section{Laburpena.}
 
@@ -591,6 +641,8 @@ Algoritmo bat inplementatzen dugunean kontutan hartu beharrekoa:
 
 \item Optimizatutako beste hainbat kode erabiltzea komenigarria da. LAPACK aljebra lineal paketea Fortran eta C-lengoaitetatik deitu daiteke. Eraberean, LAPACKek BLAS subrutinak erabiltzen ditu.  Subrutinak hauek matrizen arteko biderketak, "inner product", ... BLAS konputagailu arkitektura ezberdinetarako optimizatutako bertsioak daude.
  
-
 \end{enumerate}
 
+\paragraph*{} Atal honi dagokion gomendatutako bibliografia. 
+Introduction to High Performance Scientific Computing \cite{Eijkhout2011}
+Best Practices for Scientific Computing  \cite{Wilson2014}
