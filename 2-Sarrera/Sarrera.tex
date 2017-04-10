@@ -24,7 +24,7 @@ Gure helburua, eguzki-sistemaren epe luzeko eta doitasun handiko integrazioetara
 Epe luzeko integrazio hauetarako zenbakizko hainbat metodo erabiltzen dira, bereziki beren izaera Hamiltondarra mantentzen duten metodoak (metodo sinplektikoak).
 
 Konputazio-teknologi aurrerapenak handiak izan arren, eguzki-sistemaren simulazio hauek konputazionalki oso garestiak dira eta exekuzio denbora luzeak behar dituzte; adibidez, Laskarrek \ycite[2010]{Laskar2011} bere azken integrazioa burutzeko 18 hilabete behar izan zituen.
-Azken urteotako konputagailu berrien arkitekturaren bilakaerak, algoritmo azkarren diseinua aldatu du: simulazioak azkartzeko algoritmoak paralelizazioan oinarritu behar dira. Azpimarratzekoa da ere, integrazio luze hauen erronka handienetako bat, biribiltze errorearen metaketa kontu handiz egitea da, non errorearen edozein joera ekiditzen den \cite{Laskar2015}.
+Azken urteotako konputagailu berrien arkitekturaren bilakaerak, algoritmo azkarren diseinua aldatu du: simulazioak azkartzeko algoritmoak paralelizazioan oinarritu behar dira. Azpimarratzekoa da ere, integrazio luze hauen erronka handienetako bat, biribiltze errorearen metaketa kontu handiz egitea da, non errorearen edozein joera ekiditen den \cite{Laskar2015}.
  
 
 \section{Motibazioa.}
@@ -61,7 +61,7 @@ Sarrera honetan paralelizazioari buruzko ohar batzuk ematea komeni da. Algoritmo
 \section{Ekarpenak.}
 
 Tesiaren lana hiru ataletan banatu dugu. Lehen urratsean, Gauss metodoaren puntu finkoko iterazioaren inplementazioa aztertu dugu eta gure inplementazioen oinarriak finkatu ditugu. Bigarren fasean, Gauss metodoaren Newton iterazioaren inplementazio eraginkorra lortzeko ahalegin berezia egin dugu. Problema zurruna denean, puntu finkoaren iterazio ez da eraginkorra eta Newton iterazioa aplikatu behar da. Gainera problema ez-zurruna izanik ere, Newton iterazioak interesgarriak izan daitezke; bereziki doitasun altuko (doitasun
-laukoitza) konputazioetan iterazio metodoaren konbergentzi ezaugarri onak direla eta.  Hirugarren fasean ...
+laukoitza) konputazioetan iterazio metodoaren konbergentzia ezaugarri onak direla eta.  Hirugarren fasean ...
 
 Jarraian, atal bakoitzean egindako ekarpena nagusienak laburtuko ditugu:
 
@@ -73,11 +73,11 @@ Gauss metodoaren puntu finkoko inplementazioaren azterketa sakon bat egin dugu e
 \begin{enumerate}
 \item Metodoaren birformulazioa.
 
-Gauss inplizitua aplikatzen dugunean, metodoa definitzen duten biribildutako koefiziente errealak ($\tilde{a}_{ij}, \tilde{b}_i \in \mathbb{F}$) erabiltzen dira. Formulazio estandarra erabiliz, koefiziente hauek ez dute metodoa sinplektikoa izateko baldintza zehazki betetzen eta beraz, izaera sinplektikoaren propietate onak galtzen dira. Metodoaren birformulazio baliokide bat proposatu dugu, non sinplektizidade baldintza zehazki beteko duten koefizieteak modu errezean finkatu daitezkeen.
+Gauss inplizitua aplikatzen dugunean, metodoa definitzen duten biribildutako koefiziente errealak ($\tilde{a}_{ij}, \tilde{b}_i \in \mathbb{F}$) erabiltzen dira. Formulazio estandarra erabiliz, koefiziente hauek ez dute metodoa sinplektikoa izateko baldintza zehazki betetzen eta beraz, izaera sinplektikoaren propietate onak galtzen dira. Metodoaren birformulazio baliokide bat proposatu dugu, non sinplektizidade baldintza zehazki beteko duten koefizienteak modu errazean finkatu daitezkeen.
 
 \item Geratze erizpide berria.
 
-Orokorrean, Hairer-en inplementazioaren puntu finkoko iterazioaren geratze erizpide zuzena dela ikusi dugu baina kasu batzuetan goizegi geratzen dela baieztatu dugu. Arrazoiak bi direla ikusirik, bere geratze erizpidea bi zentzutan garatu/zorroztu dugu. Lehenik, Hairer-en inplementazioan, hobekuntza neurtzeko ataletako diferentziaren norma batean oinarritzen da. Normaren independientea den geratze erizpidea aplikatzea zuzenagoa da, eta horregaitik, ataletako edozein osagaiaren diferentzia txikitzen den bitartean iterazioan jarraitzea finkatu dugu. Bigarrenik, iterazioen hobekuntza ez du zertan beherakorra izan behar, eta okertzen diren tarteko iterazioak gerta daitezke. Arazo hau gainditzeko, iterazioren batean osagai guztien diferentzia handitzea gertatzen denean, seguridadeko bi iterazio gehigarri emango ditugu, iteraziotik irten aurretik.   
+Orokorrean, Hairer-en inplementazioaren puntu finkoko iterazioaren geratze irizpide zuzena dela ikusi dugu baina kasu batzuetan goizegi geratzen dela baieztatu dugu. Arrazoiak bi direla ikusirik, bere geratze erizpidea bi zentzutan garatu/zorroztu dugu. Lehenik, Hairer-en inplementazioan, hobekuntza neurtzeko ataletako diferentziaren norma batean oinarritzen da. Normaren independentea den geratze irizpidea aplikatzea zuzenagoa da, eta horregatik, ataletako edozein osagaiaren diferentzia txikitzen den bitartean iterazioan jarraitzea finkatu dugu. Bigarrenik, iterazioen hobekuntza ez du zertan beherakorra izan behar, eta okertzen diren tarteko iterazioak gerta daitezke. Arazo hau gainditzeko, iterazioren batean osagai guztien diferentzia handitzea gertatzen denean, seguritateko bi iterazio gehigarri emango ditugu, iteraziotik irten aurretik.   
 
 \item Atalen espresioaren aldaketa.
 
@@ -89,8 +89,8 @@ Y_{n,i}=y_n + \left(e_n+ \sum_{j=1}^{s}\mu_{ij} L_{n,j} \right).
   
 \item Biribiltze errorearen estimazioa.
 
-Zenbakizko soluzioaren $\tilde{y}_n+e_n \approx y(t_n), \ n=1,2,\dots$ biribitze errorearen estimazioa, doitasun txikiagoko bigarren zenbakizko soluzioaren $\hat{y}_n+\hat{e}_n \approx y(t_n), \ n=1,2,\dots$  diferentzia gisa kalkulatuko dugu.
-Erabiltzaileari zenbakizko soluzioaren estimazioa ezagutzeko, exekuzio bakarrean  eta \emph{CPU} gainkarga txikiarekin, bi integrazioak sekuentzialki kalkulatzeko aukera eskeiniko zaio. 
+Zenbakizko soluzioaren $\tilde{y}_n+e_n \approx y(t_n), \ n=1,2,\dots$ biribiltze errorearen estimazioa, doitasun txikiagoko bigarren zenbakizko soluzioaren $\hat{y}_n+\hat{e}_n \approx y(t_n), \ n=1,2,\dots$  diferentzia gisa kalkulatuko dugu.
+Erabiltzaileari zenbakizko soluzioaren estimazioa ezagutzeko, exekuzio bakarrean  eta \emph{CPU} gainkarga txikiarekin, bi integrazioak sekuentzialki kalkulatzeko aukera eskainiko zaio. 
 
 
 \end{enumerate}
@@ -101,18 +101,21 @@ Erabiltzaileari zenbakizko soluzioaren estimazioa ezagutzeko, exekuzio bakarrean
 \begin{enumerate}
 \item Ekarpen nagusia.
 
-Newton metodoa, $s$-ataletako IRK metodoarekin $d$-dimentsioko ekuazio diferentzial  sistemari aplikatzeko, urrats bakoitzean $sd \times sd$ tamaineko hainbat ekuazio sistema (iterazio bakoitzeko bat) askatu behar dira. Atal honetan, jatorrizko $sd$-dimentsioko ekuazio sistema, $(s+1)d$ sistema baliokide moduan berridatziko dugu eta sistema baliokidea,  $d \times d$ tamaineko $[s/2]+1$ matrize errealen \emph{LU}-deskonposaketa bidez askatuko dugu. Tamaina txikiko matrizeen LU-deskonposaketa azkarra denez, konputazionalki eraginkorragoa izatea espero dugu.   
+$S$-ataletako IRK metodoa,  Newton iterazioaren bidez $d$-dimentsioko ekuazio diferentzial  sistemari aplikatzeko, urrats bakoitzean $sd \times sd$ tamainako hainbat ekuazio sistema (iterazio bakoitzeko bat) askatu behar dira. Atal honetan, jatorrizko $sd$-dimentsioko ekuazio sistema, $(s+1)d$ dimentsioko ekuazio-sistema baliokide moduan berridatziko dugu. Ekuazio-sistema baliokidea,  $d \times d$ tamainako $[s/2]+1$ matrize errealen \emph{LU}-deskonposaketa bidez askatuko dugu. Tamaina txikiko matrizeen LU deskonposaketa azkarra denez, konputazionalki eraginkorra izatea espero dugu.   
 
 \item Doitasun laukoitzeko inplementazioa.
 
-Doitasun laukoitzeko exekuzioetan, funtzio ebaluaztapena oso garestia da eta funtzio ebaluaztapen kopurua gutxitzea bilatuko dugu. Newton osoa aplikatzen dugunean pena mereziko du, Gaussen Newton iterazioko inplementazioaren ekuazio lineala askatzeko metodo iteratiboa aplikatzea. 
+Doitasun laukoitzeko exekuzioetan, funtzio balioztapena oso garestia da eta funtzio balioztapenen kopurua gutxitzea bilatuko dugu. Newton osoa aplikatzen dugunean pena mereziko du, Gaussen Newton iterazioko inplementazioaren ekuazio lineala askatzeko metodo iteratiboa aplikatzea. 
+
+\item Newton mixtoa.
+
 
 \end{enumerate}
   
 
 \item IRK Eguzki-sistema.
 
-Hirugarren urratsean, eguzki-sistemaren epe luzeko integrazioan arituko gara. Ekarpen handiena, atalen hasieraketa berri bat aplikatzea da alde Kepleriarraren fluxuan oinarrituz. IRK metodoak eskaintzen digun malgutasunari esker eta N gorputzetako problema grabitazionalaren ezaugarriez baliatuz inplementazio ezberdinak egingo ditugu. Inplementazio hauen eraginkortasuna, egungo integratzaile simplektiko esplizituekin konparatuko ditugu.
+Hirugarren urratsean, eguzki-sistemaren epe luzeko integrazioan arituko gara. Ekarpen handiena, atalen hasieraketa berri bat aplikatzea da alde Kepleriarraren fluxuan oinarrituz. IRK metodoak eskaintzen digun malgutasunari esker eta N gorputzetako problema grabitazionalaren ezaugarriez baliatuz inplementazio ezberdinak egingo ditugu. Inplementazio hauen eraginkortasuna, egungo integratzaile sinplektiko esplizituekin konparatuko ditugu.
 
 \item Birparametrizazioa.
 
@@ -123,9 +126,9 @@ Azken urratsean, esperimentalki, eguzki-sistemaren integrazioan  denbora birpara
 
 \section{Tesiaren egitura.}
 
-Tesiaren lehenengo $(1-5)$ kapituluetan, zenbakizko integrazio sinplektikoak eta zientzia konputazionalaren oinarriak azaldu ditugu. Bigarren kapituluaren lehen zatian, \emph{Zenbakizko integratzaile sinplektikoen} inguruko oinarrizko kontzeptuak azaldu ditugu. Kapitulu honen bigarren zatian, Gauss metodo estandarra deskribitu eta bere propietaten nagusienak eman ditugu. Kapitulu honen azken zatian, eguzki-sistemaren integraziorako metodo sinplektiko eta esplizitu nagusienak laburtu ditugu. Hirugarren kapituluan, lan honetan zenbakizko esperimentuetan erabili ditugun hasierako baliodun problemen zehaztasunak eman ditugu. Laugarren kapituluan koma-higikorreko aritmetika murgidu gara eta biribiltze errorearen inguruko gaiak argitu nahi izan ditugu. Bostgarren kapituluan, egungo konputazio zientziaren hardware eta software kontzeptu nagusienak ezagutarazi nahi izan ditugu.     
+Tesiaren lehenengo $(1-5)$ kapituluetan, zenbakizko integrazio sinplektikoak eta zientzia konputazionalaren oinarriak azaldu ditugu. Bigarren kapituluaren lehen zatian, \emph{Zenbakizko integratzaile sinplektikoen} inguruko oinarrizko kontzeptuak azaldu ditugu. Kapitulu honen bigarren zatian, Gauss metodo estandarra deskribatu eta bere propietate nagusienak eman ditugu. Kapitulu honen azken zatian, eguzki-sistemaren integraziorako metodo sinplektiko eta esplizitu nagusienak laburtu ditugu. Hirugarren kapituluan, lan honetan zenbakizko esperimentuetan erabili ditugun hasierako baliodun problemen zehaztasunak eman ditugu. Laugarren kapituluan koma-higikorreko aritmetika murgildu gara eta biribiltze errorearen inguruko gaiak argitu nahi izan ditugu. Bostgarren kapituluan, egungo konputazio zientziaren hardware eta software kontzeptu nagusienak ezagutarazi nahi izan ditugu.     
 
-Tesiaren $(6-8)$ kapituluetan, gure inplementazio berriak landu ditugu eta bakoitzaren konportamendua zenbazki esperimentuetan erakutsi dugu. Lehenik, $6$.~kapituluan Gauss metodoaren puntu finkoko iterazioaren inplementazio berria eman dugu. Ondoren, $7$.~kapituluan Gauss metodoaren Newton iterazioaren inplementazio eraginkorrak azaldu ditugu. $8$.~kapituluan, eguzki-sistemaren integraziorako inplementazio deskribapena egin dugu.  
+Tesiaren $(6-8)$ kapituluetan, gure inplementazio berriak landu ditugu eta bakoitzaren konportamendua zenbakizko esperimentuetan erakutsi dugu. Lehenik, $6$.~kapituluan Gauss metodoaren puntu finkoko iterazioaren inplementazio berria eman dugu. Ondoren, $7$.~kapituluan Gauss metodoaren Newton iterazioaren inplementazio eraginkorrak azaldu ditugu. $8$.~kapituluan, eguzki-sistemaren integraziorako inplementazio deskribapena egin dugu.  
 
 Tesiaren $(9-10)$ kapituluetan, gure hipotesiaren eztabaida eta lanaren konklusioak idatzi ditugu.
 

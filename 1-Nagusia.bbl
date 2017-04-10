@@ -6,6 +6,13 @@ Sverre Aarseth, Christopher Tout, and Rosemary Mardling.
   n-body lectures}}, volume 760.
 \newblock Springer, 2008.
 
+\bibitem{Antonana2017}
+Mikel Anto{\~n}ana, Joseba Makazaga, and Ander Murua.
+\newblock \href{http://dx.doi.org/10.1007/s11075-017-0287-z}{Reducing and
+  monitoring round-off error propagation for symplectic implicit runge-kutta
+  schemes}.
+\newblock {\em Numerical Algorithms}, pages 1--20, 2017.
+
 \bibitem{Baboulin20092526}
 Marc Baboulin, Alfredo Buttari, Jack Dongarra, Jakub Kurzak, Julie Langou,
   Julien Langou, Piotr Luszczek, and Stanimire Tomov.
@@ -46,6 +53,13 @@ Jeff Bezanson, Alan Edelman, Stefan Karpinski, and Viral~B Shah.
   computing}.
 \newblock {\em arXiv preprint arXiv:1411.1607}, 2014.
 
+\bibitem{Bickart1977}
+Theodore~A Bickart.
+\newblock \href{http://dx.doi.org/10.1137/0714069}{An efficient solution
+  process for implicit runge--kutta methods}.
+\newblock {\em SIAM Journal on Numerical Analysis}, 14\penalty0 (6):\penalty0
+  1022--1027, 1977.
+
 \bibitem{Blanes2013}
 Sergio Blanes, Fernando Casas, Ariadna Farres, Jacques Laskar, Joseba Makazaga,
   and Ander Murua.
@@ -67,6 +81,12 @@ Dirk Brouwer.
 \newblock \href{http://dx.doi.org/10.1086/105423}{On the accumulation of errors
   in numerical integration}.
 \newblock {\em The Astronomical Journal}, 46:\penalty0 149--153, 1937.
+
+\bibitem{Brugnano2014}
+Luigi Brugnano, Gianluca~Frasca Caccia, and Felice Iavernaro.
+\newblock \href{http://dx.doi.org/10.1007/s11075-014-9825-0}{Efficient
+  implementation of gauss collocation and hamiltonian boundary value methods}.
+\newblock {\em Numerical Algorithms}, 65\penalty0 (3):\penalty0 633--650, 2014.
 
 \bibitem{Brumberg2013}
 VA~Brumberg.
@@ -252,6 +272,11 @@ Takashi Ito and Kiyotaka Tanikawa.
 \newblock Trends in 20th century celestial mechanics.
 \newblock {\em Publ. Natl. Astron. Obs. Jpn}, 9:\penalty0 55--112, 2007.
 
+\bibitem{Jay2009}
+Laurent~O. Jay.
+\newblock Preconditioning of implicit runge-kutta methods.
+\newblock {\em Scalable Computing: Practice and Experience}, 10, 2009.
+
 \bibitem{JMSanz-Serna1994}
 MP~Calvo JM~Sanz-Serna.
 \newblock {\em Numerical Hamiltonian problems}.
@@ -343,6 +368,13 @@ Harold~F Levison and Martin~J Duncan.
   dynamical behavior of short-period comets}.
 \newblock {\em Icarus}, 108\penalty0 (1):\penalty0 18--36, 1994.
 
+\bibitem{Liniger1970}
+Werner Liniger and Ralph~A Willoughby.
+\newblock \href{http://dx.doi.org/10.1137/0707002}{Efficient integration
+  methods for stiff systems of ordinary differential equations}.
+\newblock {\em SIAM Journal on Numerical Analysis}, 7\penalty0 (1):\penalty0
+  47--66, 1970.
+
 \bibitem{Luszczek2014}
 Piotr Luszczek, Jakub Kurzak, and Jack Dongarra.
 \newblock \href{http://dx.doi.org/10.1016/j.jpdc.2013.10.005}{Looking back at
@@ -413,6 +445,12 @@ EV~Pitjeva and NP~Pitjev.
 \newblock {\em Celestial Mechanics and Dynamical Astronomy}, 119\penalty0
   (3-4):\penalty0 237--256, 2014.
 
+\bibitem{Saad2003}
+Yousef Saad.
+\newblock \href{http://dx.doi.org/dx.doi.org/10.1137/1.9780898718003.bm}{{\em
+  Iterative methods for sparse linear systems}}.
+\newblock SIAM, 2003.
+
 \bibitem{Saha1994}
 Prasenjit Saha and Scott Tremaine.
 \newblock \href{http://dx.doi.org/10.1086/117210}{Long-term planetary
@@ -477,6 +515,13 @@ Jack Wisdom and Matthew Holman.
 \bibitem{WolframResearch}
 {Wolfram Research, Inc.}
 \newblock \href{https://www.wolfram.com}{Mathematica}.
+
+\bibitem{Xie2009}
+Dexuan Xie.
+\newblock A new numerical algorithm for efficiently implementing implicit
+  runge-kutta methods.
+\newblock {\em Department of Mathematical Sciences. University of Wisconsin,
+  Milwaukee, Wisconsin, USA}, 2009.
 
 \bibitem{Yoshida1993}
 Haruo Yoshida.

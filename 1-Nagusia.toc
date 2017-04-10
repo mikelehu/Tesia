@@ -20,99 +20,107 @@
 \contentsline {paragraph}{Adibidea.}{27}{section*.35}
 \contentsline {subsection}{\numberline {2.2.3.}IRK inplementazioa.}{29}{subsection.2.2.3}
 \contentsline {paragraph}{Interpolazio bidezko hasieraketa.}{30}{section*.41}
-\contentsline {section}{\numberline {2.3.}Konposizio eta Splitting metodoak.}{33}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1.}Konposizio metodoak.}{33}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2.}Splitting metodoak.}{35}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3.}Eguzki-sistemari egokitutako splitting metodoak.}{37}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4.}Laburpena.}{39}{section.2.4}
-\contentsline {chapter}{\numberline {3.}Problemak.}{41}{chapter.3}
-\contentsline {section}{\numberline {3.1.}Sarrera.}{41}{section.3.1}
-\contentsline {section}{\numberline {3.2.}Pendulu bikoitza.}{42}{section.3.2}
-\contentsline {section}{\numberline {3.3.}N-Body problema.}{45}{section.3.3}
-\contentsline {section}{\numberline {3.4.}Eguzki-sistema.}{46}{section.3.4}
-\contentsline {paragraph}{}{49}{section*.87}
-\contentsline {section}{\numberline {3.5.}Laburpena.}{56}{section.3.5}
-\contentsline {chapter}{\numberline {4.}Koma Higikorreko Aritmetika.}{57}{chapter.4}
-\contentsline {section}{\numberline {4.1.}Sarrera.}{57}{section.4.1}
-\contentsline {section}{\numberline {4.2.}\emph {IEEE-754} estandarra.}{57}{section.4.2}
-\contentsline {section}{\numberline {4.3.}Biribiltze errorea.}{60}{section.4.3}
-\contentsline {section}{\numberline {4.4.}Biribiltze errorearen gutxitzeko teknikak.}{63}{section.4.4}
-\contentsline {section}{\numberline {4.5.}Laburpena.}{65}{section.4.5}
-\contentsline {chapter}{\numberline {5.}Zientzia konputazioa.}{67}{chapter.5}
-\contentsline {section}{\numberline {5.1.}Sarrera.}{67}{section.5.1}
-\contentsline {section}{\numberline {5.2.}Eraginkortasuna}{68}{section.5.2}
-\contentsline {section}{\numberline {5.3.}Hardwarea.}{71}{section.5.3}
-\contentsline {section}{\numberline {5.4.}Programazio lengoaiak.}{76}{section.5.4}
-\contentsline {section}{\numberline {5.5.}Algebra lineal dentsorako liburutegiak.}{79}{section.5.5}
-\contentsline {section}{\numberline {5.6.}Konpiladorea.}{85}{section.5.6}
-\contentsline {paragraph}{Konpilazio aginduak.}{86}{section*.156}
-\contentsline {section}{\numberline {5.7.}Laburpena.}{86}{section.5.7}
-\contentsline {part}{II.\hspace {1em}Ekarpenak.}{87}{part.2}
-\contentsline {chapter}{\numberline {6.}IRK: Puntu-Finkoa.}{89}{chapter.6}
-\contentsline {section}{\numberline {6.1.}Sarrera.}{89}{section.6.1}
-\contentsline {section}{\numberline {6.2.}Hairer-en inplementazioa.}{89}{section.6.2}
-\contentsline {section}{\numberline {6.3.}Gure inplementazioa.}{92}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1.}Metodoaren birformulazioa (1.proposamena).}{92}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2.}Geratze irizpidea (2.proposamena).}{94}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3.}Biribiltze errorea gutxitzeko teknikak (3.proposamena).}{96}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4.}Biribiltze errorearen estimazioa (4.proposamena).}{98}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5.}Algoritmoa.}{99}{subsection.6.3.5}
-\contentsline {section}{\numberline {6.4.}Inplementazio estadarraren xehetasunak.}{102}{section.6.4}
-\contentsline {section}{\numberline {6.5.}Esperimentuak.}{104}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1.}Sarrera.}{104}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2.}Energia errore jatorriak.}{105}{subsection.6.5.2}
-\contentsline {subsection}{\numberline {6.5.3.}Errore azterketa estadistikoa.}{106}{subsection.6.5.3}
-\contentsline {subsection}{\numberline {6.5.4.}Round-off estimation}{108}{subsection.6.5.4}
-\contentsline {section}{\numberline {6.6.}zaharra}{113}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1.}Integrazio motak.}{113}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2.}N-Body problema.}{122}{subsection.6.6.2}
-\contentsline {subsection}{\numberline {6.6.3.}Ondorioak.}{122}{subsection.6.6.3}
-\contentsline {section}{\numberline {6.7.}Laburpena.}{123}{section.6.7}
-\contentsline {chapter}{\numberline {7.}IRK: Newton.}{127}{chapter.7}
-\contentsline {section}{\numberline {7.1.}Sarrera.}{127}{section.7.1}
-\contentsline {section}{\numberline {7.2.}IRK-Newton estandarra.}{129}{section.7.2}
-\contentsline {section}{\numberline {7.3.}IRK-Newton eraginkorra.}{132}{section.7.3}
-\contentsline {section}{\numberline {7.4.}IRK-Newton estandarra (formulazio berria).}{139}{section.7.4}
-\contentsline {section}{\numberline {7.5.}IRK-Newton eraginkorra (formulazio berria).}{142}{section.7.5}
-\contentsline {section}{\numberline {7.6.}IRK Sasi-Newton.}{146}{section.7.6}
-\contentsline {section}{\numberline {7.7.}Laburpena.}{147}{section.7.7}
-\contentsline {chapter}{\numberline {8.}IRK: Eguzki-sistema.}{149}{chapter.8}
-\contentsline {section}{\numberline {8.1.}Sarrera.}{149}{section.8.1}
-\contentsline {section}{\numberline {8.2.}Eguzki-sistemaren integraziorako metodoak (review).}{149}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1.}Efemerideak.}{149}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2.}Eguzki-sistemaren integrazio luzeak.}{152}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3.}Gure inplementazioa.}{155}{section.8.3}
-\contentsline {section}{\numberline {8.4.}Denbora birparametrizazioa.}{163}{section.8.4}
-\contentsline {subsection}{\numberline {8.4.1.}Adibidea.}{164}{subsection.8.4.1}
-\contentsline {section}{\numberline {8.5.}Atalen hasieraketa.}{164}{section.8.5}
-\contentsline {section}{\numberline {8.6.}Laburpena.}{165}{section.8.6}
-\contentsline {part}{III.\hspace {1em}Ondorioak.}{167}{part.3}
-\contentsline {chapter}{\numberline {9.}Eztabaida.}{169}{chapter.9}
-\contentsline {section}{\numberline {9.1.}Sarrera.}{169}{section.9.1}
-\contentsline {section}{\numberline {9.2.}IRK Puntu finkoa.}{169}{section.9.2}
-\contentsline {section}{\numberline {9.3.}IRK Newton.}{169}{section.9.3}
-\contentsline {section}{\numberline {9.4.}Laburpena.}{170}{section.9.4}
-\contentsline {chapter}{\numberline {10.}Konklusioak.}{171}{chapter.10}
-\contentsline {section}{\numberline {10.1.}Sarrera.}{171}{section.10.1}
-\contentsline {section}{\numberline {10.2.}Laburpena.}{171}{section.10.2}
-\contentsline {part}{IV.\hspace {1em}Eranskinak}{173}{part.4}
-\contentsline {chapter}{\numberline {A.}Ekuazio garapenak.}{175}{appendix.A}
-\contentsline {section}{\numberline {A.1.}Kepler hasierako baliodun problema.}{175}{section.A.1}
-\contentsline {section}{\numberline {A.2.}Koordenatu sistemak.}{178}{section.A.2}
-\contentsline {section}{\numberline {A.3.}Newton eraginkorraren garapena.}{181}{section.A.3}
-\contentsline {chapter}{\numberline {B.}Kodea}{183}{appendix.B}
-\contentsline {section}{\numberline {B.1.}Gauss metodoa}{183}{section.B.1}
-\contentsline {section}{\numberline {B.2.}Zientzia konputazioa.}{183}{section.B.2}
-\contentsline {section}{\numberline {B.3.}Problemak}{186}{section.B.3}
-\contentsline {section}{\numberline {B.4.}Fortran kodeak}{187}{section.B.4}
-\contentsline {section}{\numberline {B.5.}IRK-Puntu finkoa}{188}{section.B.5}
-\contentsline {section}{\numberline {B.6.}IRK-Newton}{188}{section.B.6}
-\contentsline {subsection}{\numberline {B.6.1.}IRK-Newton koefizienteak.}{188}{subsection.B.6.1}
-\contentsline {subsection}{\numberline {B.6.2.}IRK-Newton eraginkorra.}{188}{subsection.B.6.2}
-\contentsline {section}{\numberline {B.7.}Eguzki-sistema}{188}{section.B.7}
-\contentsline {chapter}{\numberline {C.}Notazioa.}{189}{appendix.C}
-\contentsline {section}{\numberline {C.1.}Notazioa.}{189}{section.C.1}
-\contentsline {section}{\numberline {C.2.}Hitz-zerrenda.}{189}{section.C.2}
-\contentsline {chapter}{\numberline {D.}Nire-Argibideak}{193}{appendix.D}
-\contentsline {section}{\numberline {D.1.}IRK-Newton.}{193}{section.D.1}
-\contentsline {chapter}{Bibliografia}{195}{section*.319}
+\contentsline {section}{\numberline {2.3.}Konposizio eta Splitting metodoak.}{34}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1.}Konposizio metodoak.}{34}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2.}Splitting metodoak.}{37}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3.}Eguzki-sistemari egokitutako splitting metodoak.}{39}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4.}Laburpena.}{41}{section.2.4}
+\contentsline {chapter}{\numberline {3.}Problemak.}{43}{chapter.3}
+\contentsline {section}{\numberline {3.1.}Sarrera.}{43}{section.3.1}
+\contentsline {section}{\numberline {3.2.}Pendulu bikoitza.}{44}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1.}Pendulu bikoitza arrunta.}{44}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2.}Pendulu bikoitza (zurruna).}{45}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3.}N-Body problema.}{47}{section.3.3}
+\contentsline {section}{\numberline {3.4.}Eguzki-sistema.}{49}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1.}Koordenatu sistemak.}{50}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2.}Problema motak.}{51}{subsection.3.4.2}
+\contentsline {paragraph}{}{52}{section*.84}
+\contentsline {section}{\numberline {3.5.}Laburpena.}{58}{section.3.5}
+\contentsline {chapter}{\numberline {4.}Koma Higikorreko Aritmetika.}{59}{chapter.4}
+\contentsline {section}{\numberline {4.1.}Sarrera.}{59}{section.4.1}
+\contentsline {section}{\numberline {4.2.}\emph {IEEE-754} estandarra.}{59}{section.4.2}
+\contentsline {section}{\numberline {4.3.}Biribiltze errorea.}{62}{section.4.3}
+\contentsline {section}{\numberline {4.4.}Biribiltze errorearen gutxitzeko teknikak.}{65}{section.4.4}
+\contentsline {section}{\numberline {4.5.}Laburpena.}{68}{section.4.5}
+\contentsline {chapter}{\numberline {5.}Zientzia konputazioa.}{69}{chapter.5}
+\contentsline {section}{\numberline {5.1.}Sarrera.}{69}{section.5.1}
+\contentsline {section}{\numberline {5.2.}Eraginkortasuna}{70}{section.5.2}
+\contentsline {section}{\numberline {5.3.}Hardwarea.}{72}{section.5.3}
+\contentsline {section}{\numberline {5.4.}Programazio lengoaiak.}{78}{section.5.4}
+\contentsline {section}{\numberline {5.5.}Algebra lineal dentsorako liburutegiak.}{81}{section.5.5}
+\contentsline {section}{\numberline {5.6.}Konpiladorea.}{87}{section.5.6}
+\contentsline {paragraph}{Konpilazio aginduak.}{87}{section*.156}
+\contentsline {section}{\numberline {5.7.}Laburpena.}{88}{section.5.7}
+\contentsline {part}{II.\hspace {1em}Ekarpenak.}{89}{part.2}
+\contentsline {chapter}{\numberline {6.}IRK: Puntu-Finkoaren Iterazioa.}{91}{chapter.6}
+\contentsline {section}{\numberline {6.1.}Sarrera.}{91}{section.6.1}
+\contentsline {section}{\numberline {6.2.}Hairer-en inplementazioa.}{92}{section.6.2}
+\contentsline {section}{\numberline {6.3.}Gure inplementazioa.}{94}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1.}Metodoaren birformulazioa.}{95}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2.}Geratze irizpidea.}{97}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3.}Biribiltze errorea gutxitzeko teknikak.}{99}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4.}Biribiltze errorearen estimazioa.}{101}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5.}Algoritmoa.}{103}{subsection.6.3.5}
+\contentsline {section}{\numberline {6.4.}Zenbakizko esperimentuak.}{105}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1.}Problemak.}{105}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2.}Energia errorearen jatorria.}{105}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3.}Errore azterketa estatistikoa.}{107}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4.}Biribiltze errorearen estimazioa}{112}{subsection.6.4.4}
+\contentsline {section}{\numberline {6.5.}Laburpena.}{114}{section.6.5}
+\contentsline {chapter}{\numberline {7.}IRK: Newtonen Iterazioa.}{115}{chapter.7}
+\contentsline {section}{\numberline {7.1.}Sarrera.}{115}{section.7.1}
+\contentsline {section}{\numberline {7.2.}IRK-Newton estandarra.}{116}{section.7.2}
+\contentsline {section}{\numberline {7.3.}IRK-Newton eraginkorra.}{120}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1.}Ekuazio-sistema.}{120}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2.}IRK metodo sinplektikoen garapena.}{123}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3.}IRK metodo simetriko sinplektikoen garapena.}{123}{subsection.7.3.3}
+\contentsline {section}{\numberline {7.4.}IRK-Newton estandarra (formulazio berria).}{127}{section.7.4}
+\contentsline {section}{\numberline {7.5.}IRK-Newton eraginkorra (formulazio berria).}{131}{section.7.5}
+\contentsline {section}{\numberline {7.6.}IRK-Newton Mixtoa.}{135}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1.}Sasi-Newton iterazioa.}{135}{subsection.7.6.1}
+\contentsline {subsection}{\numberline {7.6.2.}IRK-Newton Mixtoa}{135}{subsection.7.6.2}
+\contentsline {section}{\numberline {7.7.}Zenbakizko esperimentuak.}{139}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1.}Problemak}{139}{subsection.7.7.1}
+\contentsline {subsection}{\numberline {7.7.2.}Biribiltze errorearen azterketa.}{139}{subsection.7.7.2}
+\contentsline {subsection}{\numberline {7.7.3.}Puntu-finkoa versus Newton iterazioa}{141}{subsection.7.7.3}
+\contentsline {section}{\numberline {7.8.}Laburpena.}{142}{section.7.8}
+\contentsline {chapter}{\numberline {8.}IRK: Eguzki-sistema.}{143}{chapter.8}
+\contentsline {section}{\numberline {8.1.}Sarrera.}{143}{section.8.1}
+\contentsline {section}{\numberline {8.2.}Eguzki-sistemaren integraziorako metodoak (review).}{143}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1.}Efemerideak.}{143}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2.}Eguzki-sistemaren integrazio luzeak.}{146}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3.}Gure inplementazioa.}{149}{section.8.3}
+\contentsline {section}{\numberline {8.4.}Denbora birparametrizazioa.}{156}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1.}Adibidea.}{157}{subsection.8.4.1}
+\contentsline {section}{\numberline {8.5.}Atalen hasieraketa.}{158}{section.8.5}
+\contentsline {section}{\numberline {8.6.}Laburpena.}{158}{section.8.6}
+\contentsline {part}{III.\hspace {1em}Ondorioak.}{161}{part.3}
+\contentsline {chapter}{\numberline {9.}Eztabaida.}{163}{chapter.9}
+\contentsline {section}{\numberline {9.1.}Sarrera.}{163}{section.9.1}
+\contentsline {section}{\numberline {9.2.}IRK Puntu finkoa.}{163}{section.9.2}
+\contentsline {section}{\numberline {9.3.}IRK Newton.}{163}{section.9.3}
+\contentsline {section}{\numberline {9.4.}Laburpena.}{164}{section.9.4}
+\contentsline {chapter}{\numberline {10.}Konklusioak.}{165}{chapter.10}
+\contentsline {section}{\numberline {10.1.}Sarrera.}{165}{section.10.1}
+\contentsline {section}{\numberline {10.2.}Laburpena.}{165}{section.10.2}
+\contentsline {part}{IV.\hspace {1em}Eranskinak}{167}{part.4}
+\contentsline {chapter}{\numberline {A.}Ekuazio garapenak.}{169}{appendix.A}
+\contentsline {section}{\numberline {A.1.}Kepler hasierako baliodun problema.}{169}{section.A.1}
+\contentsline {section}{\numberline {A.2.}Koordenatu sistemak.}{172}{section.A.2}
+\contentsline {section}{\numberline {A.3.}Newton eraginkorraren garapena.}{175}{section.A.3}
+\contentsline {chapter}{\numberline {B.}Kodea}{177}{appendix.B}
+\contentsline {section}{\numberline {B.1.}Gauss metodoa}{177}{section.B.1}
+\contentsline {section}{\numberline {B.2.}Zientzia konputazioa.}{177}{section.B.2}
+\contentsline {section}{\numberline {B.3.}Problemak}{180}{section.B.3}
+\contentsline {section}{\numberline {B.4.}Fortran kodeak}{181}{section.B.4}
+\contentsline {section}{\numberline {B.5.}IRK-Puntu finkoa}{182}{section.B.5}
+\contentsline {section}{\numberline {B.6.}IRK-Newton}{182}{section.B.6}
+\contentsline {subsection}{\numberline {B.6.1.}IRK-Newton koefizienteak.}{182}{subsection.B.6.1}
+\contentsline {subsection}{\numberline {B.6.2.}IRK-Newton eraginkorra.}{182}{subsection.B.6.2}
+\contentsline {section}{\numberline {B.7.}Eguzki-sistema}{182}{section.B.7}
+\contentsline {chapter}{\numberline {C.}Notazioa.}{183}{appendix.C}
+\contentsline {section}{\numberline {C.1.}Notazioa.}{183}{section.C.1}
+\contentsline {section}{\numberline {C.2.}Hitz-zerrenda.}{183}{section.C.2}
+\contentsline {chapter}{\numberline {D.}Nire-Argibideak}{187}{appendix.D}
+\contentsline {section}{\numberline {D.1.}IRK-Newton.}{187}{section.D.1}
+\contentsline {chapter}{Bibliografia}{189}{section*.283}

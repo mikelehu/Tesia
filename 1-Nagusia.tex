@@ -12,7 +12,8 @@
 \usepackage{graphicx}
 % Mikel : Nik gehitutako paketeak
 %\usepackage[english]{babel}
-\graphicspath{ {2-Sarrera/figures/}
+\graphicspath{ {0-title/figures/}
+               {2-Sarrera/figures/}
                {3-MetodoSinplektikoak/figures/} 
                {4-Problemak/figures/}
                {5-KomaHigikorra/figures/} 
@@ -27,6 +28,11 @@
 %\usepackage[ruled]{algorithm2e}
 %\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \usepackage{algorithm2e}
+\SetAlFnt{\footnotesize}
+\SetAlCapFnt{\small}
+\SetAlCapNameFnt{\small}
+
+
 \renewcommand{\algorithmcfname}{Algoritmoa}
 \usepackage {amsmath,amsfonts,amssymb}
 \usepackage{subfig}
@@ -77,6 +83,19 @@
 
 \pagenumbering{roman} %Required by SGPS
 
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\N}{\mathcal{N}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\Q}{\mathcal{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\fl}{\mathrm{fl}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\algorithmcfname}{Algorithm}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\dim}{d}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\half}{\textstyle \frac12}
 
 \begin{document}
 

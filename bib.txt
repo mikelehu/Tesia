@@ -1,8 +1,0 @@
-@article{folkner2014planetary,
-  title={The planetary and lunar ephemerides DE430 and DE431},
-  author={Folkner, William M and Williams, James G and Boggs, Dale H and Park, Ryan S and Kuchynka, Petr},
-  journal={Interplanet. Netw. Prog. Rep},
-  volume={196},
-  pages={1--81},
-  year={2014}
-}

@@ -14,6 +14,19 @@
   Timestamp                = {2016.11.04}
 }
 
+@Article{Antonana2017,
+  Title                    = {Reducing and monitoring round-off error propagation for symplectic implicit Runge-Kutta schemes},
+  Author                   = {Anto{\~n}ana, Mikel and Makazaga, Joseba and Murua, Ander},
+  Journal                  = {Numerical Algorithms},
+  Year                     = {2017},
+  Pages                    = {1--20},
+
+  Doi                      = {10.1007/s11075-017-0287-z},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2017.03.13}
+}
+
 @Article{Baboulin20092526,
   Title                    = {Accelerating scientific computations with mixed precision algorithms },
   Author                   = {Marc Baboulin and Alfredo Buttari and Jack Dongarra and Jakub Kurzak and Julie Langou and Julien Langou and Piotr Luszczek and Stanimire Tomov},
@@ -92,6 +105,22 @@
   Url                      = {arXiv:1411.1607}
 }
 
+@Article{Bickart1977,
+  Title                    = {An efficient solution process for implicit Runge--Kutta methods},
+  Author                   = {Bickart, Theodore A},
+  Journal                  = {SIAM Journal on Numerical Analysis},
+  Year                     = {1977},
+  Number                   = {6},
+  Pages                    = {1022--1027},
+  Volume                   = {14},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1137/0714069},
+  Owner                    = {joseba},
+  Publisher                = {SIAM},
+  Timestamp                = {2017.03.18}
+}
+
 @Article{Blanes2013,
   Title                    = {New families of symplectic splitting methods for numerical integration in dynamical astronomy},
   Author                   = {Blanes, Sergio and Casas, Fernando and Farres, Ariadna and Laskar, Jacques and Makazaga, Joseba and Murua, Ander},
@@ -134,6 +163,22 @@
   Timestamp                = {2016.06.13}
 }
 
+@Article{Brugnano2014,
+  Title                    = {Efficient implementation of Gauss collocation and Hamiltonian boundary value methods},
+  Author                   = {Brugnano, Luigi and Caccia, Gianluca Frasca and Iavernaro, Felice},
+  Journal                  = {Numerical Algorithms},
+  Year                     = {2014},
+  Number                   = {3},
+  Pages                    = {633--650},
+  Volume                   = {65},
+
+  __markedentry            = {[joseba:6]},
+  Doi                      = {10.1007/s11075-014-9825-0},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2017.03.14}
+}
+
 @Article{Brumberg2013,
   Title                    = {Celestial mechanics: Past, present, future},
   Author                   = {Brumberg, VA},
@@ -170,7 +215,6 @@
   Pages                    = {237--240},
   Volume                   = {16},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1007/BF01932265},
   Owner                    = {joseba},
   Publisher                = {Springer},
@@ -277,6 +321,7 @@
   Publisher                = {lulu.com},
   Year                     = {2011},
   Note                     = {Also available for download from \url{http://www.tacc.utexas.edu/~eijkhout/istc/istc.html}},
+
   ISBN                     = {978-1-257-99254-6},
   Owner                    = {joseba},
   Timestamp                = {2017.02.20},
@@ -398,7 +443,7 @@
   Publisher                = {Springer, Berlin},
   Year                     = {1996},
 
-  __markedentry            = {[joseba:6]},
+  __markedentry            = {[joseba:]},
   Doi                      = {10.1007/978-3-642-05221-7},
   Owner                    = {joseba},
   Timestamp                = {2017.03.05}
@@ -461,6 +506,7 @@
   Author                   = {Hogben, Leslie},
   Publisher                = {Chapman and Hall/CRC},
   Year                     = {2013},
+
   Owner                    = {joseba},
   Timestamp                = {2017.02.19},
   Url                      = {http://orion.math.iastate.edu/lhogben/HLA.html}
@@ -489,6 +535,18 @@
 
   Owner                    = {joseba},
   Timestamp                = {2016.10.27}
+}
+
+@Article{Jay2009,
+  Title                    = {Preconditioning of implicit Runge-Kutta methods},
+  Author                   = {Laurent O. Jay},
+  Journal                  = {Scalable Computing: Practice and Experience},
+  Year                     = {2009},
+  Volume                   = {10},
+
+  __markedentry            = {[joseba:6]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.03.14}
 }
 
 @Book{JMSanz-Serna1994,
@@ -679,6 +737,22 @@
   Owner                    = {joseba},
   Publisher                = {Elsevier},
   Timestamp                = {2016.05.29}
+}
+
+@Article{Liniger1970,
+  Title                    = {Efficient integration methods for stiff systems of ordinary differential equations},
+  Author                   = {Liniger, Werner and Willoughby, Ralph A},
+  Journal                  = {SIAM Journal on Numerical Analysis},
+  Year                     = {1970},
+  Number                   = {1},
+  Pages                    = {47--66},
+  Volume                   = {7},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1137/0707002},
+  Owner                    = {joseba},
+  Publisher                = {SIAM},
+  Timestamp                = {2017.03.18}
 }
 
 @Article{Luszczek2014,
@@ -939,6 +1013,17 @@
   Timestamp                = {2016.09.28},
   Url                      = {https://www.wolfram.com},
   Version                  = {Version 11.0}
+}
+
+@Article{Xie2009,
+  Title                    = {A new numerical algorithm for efficiently implementing implicit runge-kutta methods},
+  Author                   = {Xie, Dexuan},
+  Journal                  = {Department of Mathematical Sciences. University of Wisconsin, Milwaukee, Wisconsin, USA},
+  Year                     = {2009},
+
+  __markedentry            = {[joseba:6]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.03.14}
 }
 
 @InCollection{Yoshida1993,

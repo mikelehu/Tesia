@@ -19,52 +19,52 @@ A level-1 auxiliary file: Z-Argibideak/Argibideak.aux
 The style file: myplain2-doi.bst
 Database file #1: ./bibliografia/mybib.bib
 Warning--entry type for "Karplus2014" isn't style-file defined
---line 755 of file ./bibliografia/mybib.bib
+--line 829 of file ./bibliografia/mybib.bib
 Warning--entry type for "WolframResearch" isn't style-file defined
---line 934 of file ./bibliografia/mybib.bib
+--line 1020 of file ./bibliografia/mybib.bib
 Warning--I didn't find a database entry for "HairerGniComp"
 Warning--empty journal in Dumitru
 Warning--empty year in Dumitru
 Warning--empty journal in Higham2015
-You've used 72 entries,
+You've used 79 entries,
             2359 wiz_defined-function locations,
-            1096 strings with 18118 characters,
-and the built_in function-call counts, 23246 in all, are:
-= -- 2178
-> -- 1059
-< -- 6
-+ -- 440
-- -- 350
-* -- 1844
-:= -- 3842
-add.period$ -- 215
-call.type$ -- 72
-change.case$ -- 376
+            1142 strings with 19315 characters,
+and the built_in function-call counts, 25328 in all, are:
+= -- 2382
+> -- 1136
+< -- 7
++ -- 473
+- -- 374
+* -- 1993
+:= -- 4186
+add.period$ -- 236
+call.type$ -- 79
+change.case$ -- 408
 chr.to.int$ -- 0
-cite$ -- 75
-duplicate$ -- 853
-empty$ -- 1978
-format.name$ -- 350
-if$ -- 4767
+cite$ -- 82
+duplicate$ -- 936
+empty$ -- 2162
+format.name$ -- 374
+if$ -- 5202
 int.to.chr$ -- 0
-int.to.str$ -- 72
-missing$ -- 83
-newline$ -- 362
-num.names$ -- 144
-pop$ -- 426
+int.to.str$ -- 79
+missing$ -- 91
+newline$ -- 397
+num.names$ -- 158
+pop$ -- 457
 preamble$ -- 1
-purify$ -- 317
+purify$ -- 343
 quote$ -- 0
-skip$ -- 536
+skip$ -- 592
 stack$ -- 0
-substring$ -- 1406
-swap$ -- 156
-text.length$ -- 6
+substring$ -- 1537
+swap$ -- 173
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 256
+type$ -- 282
 warning$ -- 3
-while$ -- 227
-width$ -- 74
-write$ -- 772
+while$ -- 250
+width$ -- 81
+write$ -- 847
 (There were 6 warnings)

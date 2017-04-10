@@ -3,7 +3,7 @@
 \section{Sarrera.}
 
 
-Tesiaren erdigunea N-gorputzeko problema grabitazioanala da eta gure helburua, eguzki sistemaren problemaren simulaziorako zenbakizko integratzaile eraginkorra inplementatzea da. Gure esperimentuetan, eguzki sistemaren bi eredu sinple kontsideratu ditugu: lehena, \emph{kanpoko planeten} izeneko problema (eguzkia, kanpoko planetak eta pluto) eta bigarrena eredu konplexuagoa, \emph{9-planeten problema} izeneko problema (eguzkia, 8 planetak eta pluto). Bi eredu hauetan, gorputzak masa puntualak dira eta gorputz hauen arteko erakarpen grabitazionalak bakarrik kontsideratu ditugu (erlatibitate efektua eta beste hainbat indar ez-grabitazionalak gure lan-eremutik kanpo utzi ditugu).
+Tesiaren erdigunea N-gorputzeko problema grabitazionala da eta gure helburua, eguzki sistemaren problemaren simulaziorako zenbakizko integratzaile eraginkorra inplementatzea da. Gure esperimentuetan, eguzki sistemaren bi eredu sinple kontsideratu ditugu: lehena, \emph{kanpoko planeten} izeneko problema (eguzkia, kanpoko planetak eta Pluto) eta bigarrena eredu konplexuagoa, \emph{9-planeten problema} izeneko problema (eguzkia, 8 planetak eta Pluto). Bi eredu hauetan, gorputzak masa puntualak dira eta gorputz hauen arteko erakarpen grabitazionalak bakarrik kontsideratu ditugu (erlatibitate efektua eta beste hainbat indar ez-grabitazionalak gure lan-eremutik kanpo utzi ditugu).
 
 Zenbakizko metodo sinplektiko nagusienak esplizituak direla eta Hamiltondar banagarriak diren problemei aplika daitezkeela, gogoratu behar dugu. Hortaz gain, problema zurruna bada metodo esplizituak ez direla eraginkorrak eta metodo inplizituek abantaila azaltzen dutela esan beharra dago. Gauss metodoa orokorra  eta inplizitua izanik, gure inplementazioa problema zurrunetarako eta Hamiltondar banagarria ez den problemetarako  aplikagarria dela ere erakutsi nahi dugu. 
  
@@ -11,10 +11,12 @@ Aurretik esandakoari jarraituz, zenbakizko esperimentuak modu aberatsago eta zab
 
 
 \section{Pendulu bikoitza.}
+\label{s:32}
 
 Pendulu bikoitzaren bi bertsio deskribatuko dugu: lehena, pendulu bikoitz arrunta eta bigarren problema konplexuagoa, pendulu bikoitz zurruna. 
 
-\subsection*{Pendulu bikoitza arrunta.}
+\subsection{Pendulu bikoitza arrunta.}
+\label{ss:321}
 
 Planoan pendulu bikoitzaren problema (ikus \ref{fig:dp} irudia) era honetan definituko dugu: $m_1$ eta $m_2$ masadun bi penduluz eta elkar lotuta dauden $l_1$ eta $l_2$ luzerako makilez (masa gabekoak kontsideratuko ditugunak) osatuta sistema mekanikoa. Sistemaren egoera aldagaiak, bi angelu $q=(\phi,\theta)$ eta dagozkion momentuak $p=(p_{\phi},p_{\theta})$ dira. $\phi$ lehen penduluaren ardatz bertikalarekiko angelua da eta bigarren penduluaren angelua, era honetan definituko dugu $\psi=\phi+\theta$.
 
@@ -50,9 +52,10 @@ Bi hasierako balio ezberdin kontsideratu ditugu \cite{Dumitru}: lehenak, izaera 
     $q(0)=(0, \ 0)$ eta  $p(0)=(3.873,\ 3.873)$. Urrats luzera $h=2^{-7}$ aukeratuz, ~$T_{end}=2^{8}$ segunduko integrazioa egin dugu. Zenbakizko soluzioa, $m=2^{8}$ urratsero itzuli dugu.  
 \end{enumerate}
 
-\subsection*{Pendulu bikoitza (zurruna).}
+\subsection{Pendulu bikoitza (zurruna).}
+\label{ss:322}
 
-Pendulu bikoitz arruntari malguki bat gehitutako sistema da (ikus \ref{fig:dp_zurruna} Irudia). Malgukiaren zurruntasuna $k$ parametroaren araberakoa da; $k$-ren balioa zenbat eta handiago izan orduan eta malgukia zurrunagoa da.
+Pendulu bikoitz arruntari malguki bat gehitutako sistema da (ikus \ref{fig:dp_zurruna}~irudia) : $l_1$ eta $l_2$ luzerako makilez elkar lotuta dauden  $m_1$ eta $m_2$ masadun bi pendulu eta hauen artean $k$ malgutasun duen malgukia osatzen duten sistema mekanikoa. $k=0$ balioarentzat, problema ez da zurruna eta problemaren zurruntasuna, $k$ balioarekin batera handitzen da. 
 
 \begin{figure} [h]
 \centerline{\includegraphics [width=10cm, height=8cm] {MyDoublePendulumSTIFF}}
@@ -60,38 +63,39 @@ Pendulu bikoitz arruntari malguki bat gehitutako sistema da (ikus \ref{fig:dp_zu
 \label{fig:dp_zurruna}
 \end{figure} 
 
-\paragraph*{}Formulazio Lagrangiarrean,
+Sistemaren egoera aldagaiak, bi angelu $q=(\phi,\theta)$ eta dagozkion momentuak $p=(p_{\phi},p_{\theta})$ dira.  $\phi$ lehen penduluaren ardatz bertikalarekiko angelua da eta bigarren penduluaren angelua, era honetan definituko dugu  $\psi=\phi+\theta$.
+
+Formulazio Lagrangiarrean,
 \begin{equation*}
 L=T-V
 \end{equation*}
 energia potentzialari $1/2 \ k \ \theta^2$ gaia gehituz, dagokion $H(q,p)$ funtzio Hamiltondarra lortuko dugu,
 \begin{multline}
- \label{eq:2}
+\label{eq:Hpb2}
 -\frac{ {l_1}^2 \ (m_1+m_2) \ {p_{\theta}}^2 +{l_2}^2 \ m_2 \ (p_{\theta} -p_{\phi})^2 + 2 \ l_1 \ l_2 \ m_2 \ p_{\theta} \ (p_{\theta} -p_{\phi}) \  \cos(\theta )} {{l_1}^2  \ {l_2}^2 \ m_2 \  (-2 \ m_1 - m_2 + m_2 \ \cos(2 \theta ))} \\
 -g  \ \cos (\phi) \  (l_1 \ (m_1+m_2)+l_2 \ m_2 \ \cos(\theta))+g \ l_2 \ m_2 \ \sin(\theta) \sin(\phi)+\frac{k}{2} \ \theta^2 ,
 \end{multline}
 
-\paragraph*{Sistemaren parametroak.} 
-Gure esperimentuetarako honako parametroak finkoak kontsideratuko ditugu,
-\begin{equation*}
- \label{eq:17}
+Honako parametroak kontsideratu ditugu,
+\begin{equation*} \label{eq:17}
 g=9.8 \ \frac{m}{sec^2}\ ,\ \ l_1=1.0 \ m \ , \ l_2=1.0 \ m\ , \ m_1=1.0 \ kg\ , \ m_2=1.0 \ kg,
 \end{equation*} 
-eta  pendulu bikoitz zurruntasun maila ezberdinak aztertzeko, $k$ parametroari balio ezberdinak emango dizkiogu, 
+eta $k$ malgutasun parametroaren balio batzuk finkatu ditugu, zurruntasun maila ezberdineko pendulu bikoitzaren dinamikak aztertzeko 
 \begin{equation*}
-k=c^{2} \ \ \text{non} \ \ c=2^{i}, \ \ i=0,\dots,11.
+k=2^{2i}, \ \ i=0,\dots,11.
 \end{equation*}  
 
-Hauek dira izaera ez-zurruneko hasierako balioak \cite{Dumitru} :  $q(0)=(1.1, -1.1)$ and $p(0)=(2.7746,2.7746)$
-eta $k$ balio bakoitzari dagokionak, era honetan kalkulatu ditugu,
+Hasierako balioak, era honetan aukeratu ditugu: $k=0$ problemarako, \cite{Dumitru} artikulutik izaera ez-kaotikoa duen hasierako balioak hartu ditugu: $q(0)=(1.1, -1.1)$ and $p(0)=(2.7746,2.7746)$. $k\neq 0$ problemetarako hasierako balioak,
 \begin{equation*}
 q(0)=\left(1.1, \frac{-1.1}{\sqrt{1+100k}}\right), \ \ 
-p(0)=(2.7746,2.7746)
+p(0)=(2.7746,2.7746),
 \end{equation*}
+aukeratu ditugu, non sistemaren energia $k \rightarrow \infty$ bornatua dagoen.
 
-Urrats luzera $h=2^{-7}$ aukeratuz,~$T_{end}=2^{12}$ segunduko integrazioa egin dugu. Zenbakizko soluzioa, $m=2^{10}$ urratsero itzuli dugu.   
+$k=0$ problema ez-zurrunerako, $h=2^{-7}$ urrats luzera, trunkatze errorea biribiltze errorea baino txikiagoa izan dadin finkatu dugu eta gainontzeko integrazio guztietarako urrats luzera berdina erabili dugu. $k>0$ zurruntasun balio batetik aurrera, trunkatze errorea birbiltze errorea baino garrantzitsuago da. $T_{end}=2^{12}$  segundoko integrazioa egin dugu eta zenbakizko soluzioa, $m=2^{10}$ urrats oro itzuli dugu.   
 
 \section{N-Body problema.}
+\label{s:33}
 
 Newtonen lege grabitazionalen araberako N-Body problemaren ekuazio diferentzialak era honetan definitzen dira,
 \begin{equation}
@@ -131,7 +135,7 @@ Eta ondorioz,
 O=\sum_{i=0}^{N} m_i {q}_i=Pt+B, \ B=kons. 
 \end{equation*}
 
-$P$ eta $B$ bektoreen osagaiei masa zentroaren sei integralak esaten zaie. Masa zentruaren kokapen ($Q$) eta abiadura ($V$)  era honetan definitzen dira, 
+$P$ eta $B$ bektoreen osagaiei masa zentroaren sei integralak esaten zaie. Masa zentroaren kokapen ($Q$) eta abiadura ($V$)  era honetan definitzen dira, 
 \begin{equation*}
 Q={\left(\sum\limits_{i=0}^{N} m_i \ q_i\right)}/{M}, \ V={\left(\sum\limits_{i=0}^{N} m_i \ \dot{q}_i\right)}/{M}
 \end{equation*}
@@ -162,6 +166,7 @@ Problemaren $10$ integral hauek, sistemaren ordena gutxitzeko edo zenbakizko int
 Momentu angeluarra eta energia zenbakizko integrazioaren doitasuna neurtzeko erabiltzen dira. Energia zenbakizko integrazioen biribiltze errorea neurtzeko integral egokiena da.
 
 \section{Eguzki-sistema.}
+\label{ss:34}
 
 Eguzki-sistemaren planeten orbiten mugimenduaren eredu matematikoa, Hamiltondarrean oinarritutako ekuazio diferentzial arrunten bidez formulatzen da. Ekuazio diferentzial arrunten sistema, $6N$ ordenekoa da ($N$ planeten kopurua izanik).
 
@@ -220,7 +225,8 @@ Eguzki sistemaren probleman eskalak oso zabalak dira. Denbora eskalari dagokione
 \end{tabular}
 \end{table}
 
-\subsection*{Koordenatu sistemak.}
+\subsection{Koordenatu sistemak.}
+\label{ss:341}
 
 Hiru dira erabiltzen diren koordenatu sistema nagusienak:
 
@@ -234,7 +240,8 @@ Ohikoa da ekuazio diferentzialak koordenatu heliozentrikoen (eguzkiaren zentroar
 Ekuazioen garapen osoa eranskinean eman dugu.
 
 
-\subsection*{Problema motak.}
+\subsection{Problema motak.}
+\label{ss:342}
 
 Eguzki sistemaren simulaziorako test problemak deskribatuko ditugu. Bi gorputzen problematik abiatuta, gero eta problema konplexuagoak azalduko ditugu. PW, Sharp-ek ($2.001$) eguzki sistemaren problemen bilduma interesgarria egin zuen \cite{Sharp2001} , eta bertan problema guzti hauek problema ez-zurrunak kontsideratzen dituela nabarmentzekoa da.      
 

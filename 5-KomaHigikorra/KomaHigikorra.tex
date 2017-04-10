@@ -230,37 +230,73 @@ Ideia, teknika hauek zenbakizko integrazioaren inplementazioaren kalkulu "kritik
 
 Era honetako batura errekurtsiboetan,
 \begin{equation*}
-z=\sum\limits_{i=1}^{n} \tilde x_i,
+z_{n+1}= z_0+\sum\limits_{i=0}^{n} x_i,
 \end{equation*}
 biribiltze errorea gutxitzeko teknika ezaguna da \cite{Higham2002}.
-Ideia da, bi zenbakien baturan egindako biribiltze errorea lortu, eta errore hau hurrengo baturan erabiltzea. Jarraian azaltzen den moduan, urrats bakoitzaren amaieran errore estimazioa ($e$) kalkulatuko dugu eta hurrengo urratsean, batugaiari gehituko diogu.
+Ideia da, bi zenbakien baturan egindako biribiltze errorea lortu, eta errore hau hurrengo baturan erabiltzea. Jarraian azaltzen den moduan, urrats bakoitzaren amaieran errore estimazioa ($e_{i}$) kalkulatuko dugu eta hurrengo urratsean, batugaiari gehituko diogu.
 
 \begin{algorithm}[H]
  \BlankLine
-  $z=0; \ e=0$\;
-  \For{$i\leftarrow 1$ \KwTo $n$}
+  $\tilde z_0= z_0; \ e_0=0$\;
+  \For{$i\leftarrow 0$ \KwTo $n$}
   {
    \BlankLine
-    $x=z$\;
-    $y=\tilde x_i+e$\;
-    $z=x+y$\;
-    $e=(x-z)+y$\;
+    $x=\tilde z_i$\;
+    $y= x_i+e_i$\;
+    $\tilde z_{i+1}=x+y$\;
+    $e_{i+1}=(x-z)+y$\;
    \BlankLine
   }
- \caption{Batura konpensatua.}
+ \caption{Kahan-en batura konpensatua.}
+   \label{alg:KahanBK}
 \end{algorithm}
 
-\paragraph*{}Knuth-ek eta Kahan-ek \cite{Muller2009},  batura konpensatuko algoritmoaren bidez kalkulatutako $z$ batura honakoa betetzen duela, 
+\paragraph*{}Knuth-ek eta Kahan-ek \cite{Muller2009},  batura konpensatuko algoritmoaren bidez kalkulatutako $z_{n+1}$ batura honakoa betetzen duela, 
 \begin{equation*}
-\left | z - \sum_{i=1}^{n} x_i \right | \leq (2u+ \mathcal{O}(nu^2)) \sum_{i=1}^{n} |x_i|,
+\left | z_{n+1} - (z_0+\sum_{i=0}^{n} x_i) \right | \leq (2u+ \mathcal{O}(nu^2)) \left(|z_0|+\sum_{i=1}^{n} |x_0|\right),
 \end{equation*}
 frogatu zuten.
+
+\paragraph*{} Jakina, algoritmoaren gaiak bektoreak, $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$ diren kasurako orokortu daiteke. Beraz, \ref{alg:KahanBK} algoritmoa $n$ eta $d$ parametroak dituen funtzio familia gisa interpretatu daiteke,
+\begin{equation*}
+S_{n,d} : \mathbb{F}^{(n+3)d} \rightarrow \mathbb{F}^{2d},
+\end{equation*}
+zein $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$ argumentuak emanik, $\tilde z_{n+1}, e_{n+1} \in \mathbb{F}^d$ balioak itzultzen ditu, eta $\tilde z_{n+1}+e_{n+1}$, honako batura $\tilde z_0+e_0+x_0+x_1+ \dots+x_n$ adierazi nahi duen.
+ 
 
 \paragraph*{} Zenbakizko integrazioetan, era honetako batura errekurtsiboa kalkulatu behar ditugu,
 \begin{equation*}
 y_{n+1}=y_n+\delta_n,
 \end{equation*}  
 non $|\delta_n|<|y_n|$ izan ohi da. Beraz, integrazioaren batura honen birbiltze errorea gutxitzeko, batura konpensatua erabiliko dugu.  
+
+$y_{n+1} \in \mathbb{R}^{d},\quad y_{n+1}=\tilde y_{n}+\tilde \delta_n$ batura zehatza izanik eta $\tilde y_{n+1} \in \mathbb{F}^{d}, \quad \tilde y_{n+1}=\tilde y_{n} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, batura konpensatuaren bidez lortutako errorearen estimazioa $e_{n+1}$ ,
+
+\begin{algorithm}[H]
+ \BlankLine
+  $\tilde{y}_{0}=fl(y_{0}); \ e_0=fl(y_0-\tilde{y}_0)$\;
+ \BlankLine
+  \For{$n=1,2,\cdots \quad$}
+  {
+   \BlankLine
+    $inc=\tilde {\delta}_n \oplus e_n$\;
+    $\tilde {y}_{n+1}=\tilde{y}_n \oplus inc$\;
+    $e_{n+1}=(\tilde{y}_n \ominus \tilde {y}_{n+1}) \oplus inc$\;
+   \BlankLine
+  }
+ \caption{Batura konpensatua(zenbakizko integrazioa).}
+\end{algorithm}
+
+\paragraph*{}baturan egindako  biribiltze errore zehatza da,
+\begin{equation}
+y_{n+1}=\tilde {y}_{n+1}+e_{n+1}. 
+\end{equation}
+
+\paragraph*{}Goian aipatutako ideia,  beste ikuspegi batetik ere azaldu daiteke. Ikuspegi honen arabera, gure zenbakizko soluzioa, bi \emph{double} balioren bidez ($\tilde{y}_n,e_n$)  adierazten ari gara (ia doitasun laukoitza) eta beraz, interpretazio honen arabera, konputazio eragiketa batzuk ia doitasun laukoitzean egiten ariko ginateke. Zentzu honetan gure inplementazioan, hasierako balio zehatza $y_0=y(t_0)$, doitasun bikoitzeko bi zenbakiren bidez ($\tilde{y}_0, e_0$) hasieratuko dugu,
+\begin{align*}
+\tilde{y}_0 &=fl(y_0) ,\\
+e_0 &=fl(y_0-\tilde{y}_0).
+\end{align*}
 
 \subsection*{Bidekerta: 2MultFMA.}
 
@@ -282,6 +318,7 @@ fl(\tilde x \times \tilde y \pm \tilde z)= (\tilde x \times \tilde y\pm \tilde z
  }
  \BlankLine
  \caption{2MultFMA.}
+ \label{alg:2MultFMA}
 \end{algorithm}
 
 \subsection*{Sterbenz Teorema.}
@@ -294,5 +331,5 @@ x,y \in \mathbb{F}, \ \ \frac{y}{2}\leq x \leq 2y \ \ \ \Rightarrow \ \ \ x-y\in
 
 \section{Laburpena.}
 
-Koma-higikorreko aritmetikan sakontzeko honako biografia azpimarratuko dugu: Numerical computing with IEEE floating point arithmetic (Michael L.Overton) \cite{Overton2001}, Handbook of floating-point arithmetic (Jean-Michael Muller) \cite{Muller2009}, Accuracy and stability of numerical algorithms (Nicholas J Higham) \cite{Higham2002} eta A graduate introduction to numerical methods (Rober M Corless) \cite{Corless2013}.
+Koma-higikorreko aritmetikan sakontzeko honako bibliografia azpimarratuko dugu: Numerical computing with IEEE floating point arithmetic (Michael L.Overton) \cite{Overton2001}, Handbook of floating-point arithmetic (Jean-Michael Muller) \cite{Muller2009}, Accuracy and stability of numerical algorithms (Nicholas J Higham) \cite{Higham2002} eta A graduate introduction to numerical methods (Rober M Corless) \cite{Corless2013}.
 
