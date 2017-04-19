@@ -1,23 +1,23 @@
-\chapter{Zenbakizko Integratzaile Sinplektikoak.}
+\chapter{Zenbakizko integratzaile sinplektikoak.}
 
 \section{Sarrera.}
 
 
 Sarrera honen lehen zatian, zenbakizko integrazio metodoen inguruko oinarrizko definizioak eta kontzeptuak azalduko ditugu. 
-Bigarren zatian sistema Hamiltondarrak eta metodo sinplektikoen sarrera eman dugu. Sarrera honetako azalpenak ulergarriak emateko, zenbakizko metodo sinpletan (Euler metodoak) oinarritu gara eta hauek, hainbat adibideekin lagunduko ditugu. 
+Bigarren zatian sistema Hamiltondarren eta metodo sinplektikoen sarrera emango dugu. Azalpenak ulergarriak izateko, zenbakizko metodo sinpletan (Euler metodoak) eta adibideetan oinarritu gara. 
 
 \subsection{Zenbakizko integrazio metodoak.}
 
-Ekuazio diferentzial arruntak (\emph{ODE}), egoera aldaketak aztertzeko problemen eredu matematikoak dira. Zientziaren eta ingeniaritzaren arlo askotan azaltzen zaizkigu: planeten mugimendua astronomian, erreakzio kimikoak, molekulen dinamiken simulazioak, zirkuitu elektronikoak, populazio-hazkunde eta interakzioak biologian, ekonomi azterketak \ldots  
+Ekuazio diferentzial arruntak, egoera aldaketak dituzten problemen azterketarako eredu matematikoak dira. Zientziaren eta ingeniaritzaren arlo askotan azaltzen zaizkigu: planeten mugimenduen ereduetan (astronomia), erreakzio kimikoen formulazioetan, molekulen dinamiken simulazioetan, zirkuitu elektronikoen diseinuan, populazio-hazkunde eta interakzioetan (biologian), ekonomi azterketetan, \ldots  
 
-Ekuazio diferentzial arrunta, $y(t)$ soluzio ezezagunaren eta bere $\dot{y}(t)$ deribatuaren arteko erlazioa da. $t$ aldagaiak maiz denbora adierazten du eta $y(t) \in \mathbb{R}^{d}$ bektorea da. Deribatua, modu esplizituan denbora eta egoeraren arabera  adierazi daitekeenean, era honetako ekuazioak ditugu,
+Ekuazio diferentzial arrunta, $y(t)$ soluzio ezezagunaren eta bere $\dot{y}(t)$ deribatuaren arteko erlazioa da. $t$ aldagaiak, maiz denbora adierazten du eta $y(t) \in \mathbb{R}^{d}$ soluzio bektorea da. Deribatua, modu esplizituan denbora eta egoeraren arabera  adierazi daitekeenean, era honetako ekuazioak ditugu,
 \begin{equation}
  \label{eq:201}
 \dot{y}(t)=f(t,y(t)). 
 \end{equation} 
 $\dot{y}$ notazioa erabiliko dugu $dy/dt$ adierazteko.
 
-\paragraph*{} Ekuazio diferentzial arruntetarako hasierako baliodun problemetan (\emph{IVP}),~  $y(t_0)=y_0 \in \mathbb{R}^d$ hasierako balio bat finkatzen da, eta $f(t,y)$ funtzioa, $f: \mathbb{R}^{d+1} \longrightarrow \mathbb{R}^d, \ \ t_0$ ingurunean diferentziagarria bada, orduan hasierako baliodun problemaren soluzioa existitzen da eta bakarra da \cite{Hairer2006},
+Ekuazio diferentzial arruntetarako hasierako baliodun problemetan,  $y(t_0)=y_0 \in \mathbb{R}^d$ hasierako balio bat finkatzen da, eta $f(t,y)$ funtzioa, $f: \mathbb{R}^{d+1} \longrightarrow \mathbb{R}^d, \ \ t_0$ ingurunean diferentziagarria bada, orduan hasierako baliodun problemaren soluzioa existitzen da eta bakarra da \cite{Hairer2006},
 \begin{equation}
  \label{eq:ivp}
 \dot{y}(t)=f(t,y(t)), \ \ \ y(t_0)=y_0.
@@ -25,22 +25,22 @@ $\dot{y}$ notazioa erabiliko dugu $dy/dt$ adierazteko.
 
 Goiko ekuazio-sistema bektoriala (\ref{eq:ivp}), ekuazio-sistema modu eskalarrean idatziko dugu orokorrean erabiliko dugun notazioa argitzeko:
 \begin{align*}
-&\dot{y}^1(t)=f^1(t,(y^1(t),y^2(t),\ldots,y^d(t)), \\
-&\dot{y}^2(t)=f^2(t,(y^1(t),y^2(t),\ldots,y^d(t)), \\
+&\dot{y}^1(t)=f^1(t,(y^1(t),y^2(t),\ldots,y^d(t))), \\
+&\dot{y}^2(t)=f^2(t,(y^1(t),y^2(t),\ldots,y^d(t))), \\
 &\ldots\ \ ,\\
-&\dot{y}^d(t)=f^d(t,(y^1(t),y^2(t),\ldots,y^d(t)),  \\
+&\dot{y}^d(t)=f^d(t,(y^1(t),y^2(t),\ldots,y^d(t))),  \\
 & y(t_0)=(y_{0}^1,\ y_{0}^2,\ \ldots \ , \ y_{0}^d).
 \end{align*}
 
 
 Oso problema gutxitarako aurki daiteke ekuazio diferentzial arrunten soluzioa analitikoa (funtzio ezagunen araberako soluzio zehatza) eta beraz, ia problemak gehienak zenbakizko integrazio metodoen bidez ebazten dira.
-Zenbakizko integrazioan, soluzioaren hurbilpena,
+Zenbakizko integrazioetan, soluzioaren hurbilpena,
 \begin{align*}
- y_n \approx y(t_n), \ t_n=t_{n-1}+h_n, 
+ y_n \approx y(t_n), \ t_n=t_{n-1}+h_n, \ n=1,2,\dots
 \end{align*}
-$n=1,2,\dots$ une diskretu konkretuetarako, zehaztutako tarte batean ($t_0\le t \le t_f$) lortuko da. Zenbakizko soluzioa, sekuentzialki urratsez-urrats kalkulatzen da eta lortutako balio  multzoak $(t_o,y_0),(t_1,y_1),\dots,(t_f,y_f)$ zenbakizko soluzioa definitzen du.   
+une diskretu konkretuetarako, zehaztutako tarte batean ($t_0\le t \le t_f$) lortuko da. Zenbakizko soluzioa, sekuentzialki urratsez-urrats kalkulatzen da eta lortutako balio  multzoak $(t_0,y_0),(t_1,y_1),\dots,(t_f,y_f)$ zenbakizko soluzioa definitzen du.   
 
-Zenbakizko soluzioaren ($y_n$) kalitatea bi errore mota nagusien araberakoa izango da: zenbakizko integrazio metodoak sortutakoa (trunkatze errorea) eta konputazioan aritmetika finituak eragindakoa (biribiltze errorea). 
+Zenbakizko soluzioaren ($y_n$) kalitatea, bi errore mota nagusien araberakoa izango da: zenbakizko integrazio metodoak sortutakoa (trunkatze errorea) eta konputazioan aritmetika finituak eragindakoa (biribiltze errorea). 
 
 Ekuazio diferentziala beti \emph{sistema autonomo} moduan, hau da, denborarekiko independentea, idatz daiteke. Hori horrela izanik, notazioa sinplifikatzeko era honetako hasierako baliodun problemak kontsideratuko ditugu,   
 \begin{equation}
@@ -53,7 +53,7 @@ Jarraian zenbakizko integrazioen metodoen oinarrizko kontzeptuak eta notazioa fi
 \begin{enumerate}
 \item Fluxua.
 
-Fase-espazioko edozein $y_0$ balioari, $y(t_0)=y_0$ hasierako balio duen $y(t)$ soluzioa esleitzen dion funtzioari fluxua deitzen diogu. Izendatzeko $\varphi_t$ notazioa erabiliko dugu,
+Fase-espazioko edozein $y_0$ balioari, $y(t_0)=y_0$ hasierako balio duen $y(t)$ soluzioa esleitzen dion funtzioari fluxua deitzen zaio. Izendatzeko $\varphi_t$ notazioa erabiliko dugu,
 \begin{equation*}
 \label{eq:fluxua}
 \varphi_t(y_0)=y(t) \ \ \mbox{baldin}  \ \  y(t_0)=y_0.
@@ -61,7 +61,7 @@ Fase-espazioko edozein $y_0$ balioari, $y(t_0)=y_0$ hasierako balio duen $y(t)$ 
 
 \item Zenbakizko diskretizazioa.
 
-$y_{n},y_{n-1},\dots ,y_0$ balioak emanda, $y_{n+1}\approx y(t_{n+1})$ soluzioaren hurbilpena kalkulatzeko formulari \emph{zenbakizko fluxua} deritzogu. Honako notazioa erabiliko dugu,
+$y_0, \dots,y_{n-1},y_{n}$ balioak emanda, $y_{n+1}\approx y(t_{n+1})$ soluzioaren hurbilpena kalkulatzeko formulari \emph{zenbakizko fluxua} deritzogu. Honako notazioa erabiliko dugu,
 \begin{equation*}\label{eq:204}
 y_{n+1}=\phi(y_{n+1},y_{n},\dots,y_0;h;f).
 \end{equation*}
@@ -84,15 +84,15 @@ le(t_{k+1})=y_{k+1}-y(t_{k+1}), \ \ y(t_k)=y_k.
 ge(t_k)=y_k-y(t_k).
 \end{equation*}
 
-Zenbakizko integrazioaren urrats bakoitzaren abiapuntua, $y_(t_k)$ soluzio zehatzaren ordez $y_k$ balioa hartzen denez, garrantzitsua da ulertzea errore lokalaren propagazioa. Horretarako, hurrengo irudian (Irudia \ref{fig:deferror}) oinarrituko gara. Lerro bakoitzak, hasierako balio ezberdin baten zenbakizko soluzioa da . Marra bertikal lodi bakoitza errore lokala da eta urratsez-urrats propagatzen dena. Errore globala, $t_n$ unean propagatutako errore lokalen batura da.
+Zenbakizko integrazioaren urrats bakoitzaren abiapuntua, $y_(t_k)$ soluzio zehatzaren ordez $y_k$ balioa hartzen denez, garrantzitsua da ulertzea errore lokalaren propagazioa. Horretarako, hurrengo irudian (Irudia \ref{fig:deferror}) oinarrituko gara. Irudiaren lerro bakoitzak, hasierako balio ezberdin baten zenbakizko soluzioa da . Marra bertikal lodi bakoitza errore lokala da. urratsez-urrats propagatzen dena. Errore globala, $t_n$ unean propagatutako errore lokalen batura da.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=12cm, height=6cm] {ErrorePropagazioa}}
-\caption{Errore propagazioa.}
+\caption{Errore lokalaren propagazioa. Irudian soluzio zehatza eta hasierako bi balio ezberdinei dagokien zenbakizko soluzioak irudikatu ditugu.}
 \label{fig:deferror}
 \end{figure}     
 
-\item Metodoaren ordena. $h$ urrats luzera finkoko $\phi$ metodoak $p$ ordenekoa dela esaten da, $ge(t)$ errore globala $\mathcal{O}(h^{p})$ ordenekoa bada  $h \rightarrow 0$,
+\item Metodoaren ordena. $h$ urrats luzera finkoko $\phi$ metodoak $p$ ordenakoa dela esaten da, $ge(t)$ errore globala $\mathcal{O}(h^{p})$ ordenekoa bada  $h \rightarrow 0$,
 \begin{equation*} 
 \label{eq:metordena}
 \|y_k-y(t_k)\|=\mathcal{O}(h^{p}), \ \ h \rightarrow 0.
@@ -108,6 +108,7 @@ Urrats bakarreko $\phi_h$ metodoa simetrikoa da, honako baldintza betetzen badu,
 \phi_h \circ \phi_{-h}=id,  \ \ \text{edo} \ \ \phi_h=\phi_{-h}^{-1}.
 \end{equation*}
 
+
 \end{enumerate}
 
 
@@ -118,15 +119,15 @@ Eulerrek $1768.$ urtean proposatutako zenbakizko metodoa da. Hasierako balio bat
  \label{eq:202a}
 y_{n+1}=y_{n}+h_n f(t_n,y_n).
 \end{equation*}
-Oinarrizko metodoa esplizitua da eta urratsa emateko dagoen konputazio konplexutasuna bakarra, $f$ funtzioaren ebaluazio da. Lehen ordenako metodoa da,
+Oinarrizko metodo esplizitua da eta urratsa emateko dagoen konputazio konplexutasuna bakarra, $f$ funtzioaren ebaluazio da. Lehen ordenako metodoa da,
 \begin{equation*}
 \|y_n-y(t_n)\| \leqslant C h,
 \end{equation*}
-eta beraz, doitasuna bikoizteko lan konputazionala bikoiztu behar dugu. Orden altugoko metodoekin, doitasuna handiagoa lortuko dugu lan konputazional gutxiagorekin. 
+eta beraz, doitasuna bikoizteko, lan konputazionala bikoiztu behar dugu. Ikusiko dugunez, ordena altuagoko metodoekin, doitasuna handiagoa lortuko dugu, lan konputazional gutxiagorekin. 
 
 \subsubsection*{Euler metodo inplizitua.}
 
-Eulerrek proposatutako beste metodo honetan funtsezko aldaketa dakar,  $y_{n+1}$ hurbilketa inplizituki definitzen dela. $f$ funtzioaren argumentua, aurreko hurbilpenaren ordez hurbilpen berria hartuz definitzen da,
+Eulerrek proposatutako beste metodo honek, $y_{n+1}$ hurbilketa, inplizituki definitzen den funtsezko ezaugarria du. $f$ funtzioaren argumentua, aurreko hurbilpenaren ordez hurbilpen berria hartuz definitzen da,
 \begin{equation*}
  \label{eq:202b}
 y_{n+1}=y_{n}+h_n \ f(t_{n+1},y_{n+1}).
@@ -141,20 +142,20 @@ Laburki, ekuazio sistema ez-linealen soluzioa askatzeko bi iterazio metodo nagus
 
 \item Puntu-finkoaren iterazioa.
 
-Demagun $x=f(x)$ ekuazioa, non $f: \  {\mathbb{R}}^n \ \longrightarrow {\mathbb{R}}^n$ eta  $x^{[0]} \in \mathbb{R}^n$ soluzioaren hasierako hurbilpen bat emanda, puntu finko iterazioa era honetan definitzen da,
+Demagun $x=f(x)$ ekuazioa, non $f: {\mathbb{R}}^n  \longrightarrow {\mathbb{R}}^n$ eta  $x^{[0]} \in \mathbb{R}^n$ soluzioaren hasierako hurbilpen bat emanda, puntu-finkoaren iterazioa era honetan definitzen da,
 \begin{equation*}
  x^{[k+1]}=f(x^{[k]}) \, \ \ \ \ \ k=1,2,\dots
 \end{equation*}
 Iterazioak $x^{\ast}$ soluzioarengana konbergitu dezake.
 
-Eta  Euler metodo inplizituaren ekuazio ez-lineala askatzeko, $y_{n+1}^{[0]}$ balioa finkatuta, puntu finkoko iterazioa era honetan aplikatuko dugu, 
+Eta  Euler metodo inplizituaren ekuazio ez-lineala askatzeko, $y_{n+1}^{[0]}$ balioa finkatuta, puntu-finkoaren iterazioa era honetan aplikatuko dugu, 
 \begin{equation*}
 y_{n+1}^{[k+1]}=y_{n}+h_n \ f(t_{n+1},y_{n+1}^{[k]}), \ \ \ \ \ k=1,2,\dots
 \end{equation*}  
 
-\item Newton metodoa.
+\item Newtonen iterazioa.
 
-Demagun $f(x)=0$ ekuazioa askatzeko, non $f: \  {\mathbb{R}}^n \ \longrightarrow {\mathbb{R}}^n$ eta  $x^{[0]} \in \mathbb{R}^n$ soluzioaren hasierako hurbilpen bat emanda, Newton iterazioa era honetan definitzen da,
+Demagun $f(x)=0$ ekuazioa askatzeko, non $f: \  {\mathbb{R}}^n \ \longrightarrow {\mathbb{R}}^n$ eta  $x^{[0]} \in \mathbb{R}^n$ soluzioaren hasierako hurbilpen bat emanda, Newtonen iterazioa era honetan definitzen da,
 \begin{equation*}
  x^{[k+1]}=x^{[k]}-\frac{f(x^{[k]})}{f`(x^{[k]})} \, \ \ \ \ \ k=1,2,\dots
 \end{equation*}
@@ -169,22 +170,22 @@ $(\triangle y_{n+1}^{[k]} - h_n \ J_n \ \triangle y_{n+1}^{[k]}) =- r_{n+1}^{[k]
 
 \item $y_{n+1}^{[k+1]} = y_{n+1}^{[k]}+ \triangle y_{n+1}^{[k]}$.
 \end{enumerate}
-non $J_n$,  ~jacobiar matrizearen $\frac{\partial f}{\partial y} (t_n, y_n)$ hurbilpen bat den.
+non $J_n \approx \frac{\partial f}{\partial y} (t_n, y_n)$ hurbilpen bat den.
 
 \end{enumerate}
 
-\paragraph*{}Urratsaren konputazioa konplexutasuna, metodo esplizitua baino nabarmen handiagoa da: metodo honetan, iterazio bakoitzean jacobiarraren ebaluazioa, ekuazio sistema lineala askatu eta $f$ funtzioaren ebaluazioa kalkulatu behar dira.
+Urratsaren konputazioa konplexutasuna, metodo esplizitua baino nabarmen handiagoa da: metodo honetan, iterazio bakoitzean Jacobiarraren ebaluazioa, ekuazio sistema lineala askatu eta $f$ funtzioaren ebaluazioa kalkulatu behar dira.
 
-\paragraph*{}Iterazio metodoaren konbergentzia abiadura. $\{x^{[k]}\}$, $x^{\ast}$ soluziorantz konbergitzen duen bektore seriea bada, errorea $e^{[n]}=x^{[*]}-x^{[n]}, \ n=1,2,\dots$ izendatuko dugu. Konbergentzia $p$ ordenekoa dela esaten dugu honakoa betetzen dada,
+Iterazio metodoaren konbergentzia abiadura. $\{x^{[0]},x^{[1]},\dots,x^{[k]}\}$, $x^{\ast}$ soluziorantz konbergitzen duen bektore seriea bada, errorea $e^{[n]}=x^{[*]}-x^{[n]}, \ n=1,2,\dots$ izendatuko dugu. Konbergentzia $p$ ordenakoa dela esaten dugu honakoa betetzen dada,
 \begin{equation*}
 \lim\limits_{n\rightarrow \inf} \frac{\|e^{[n+1]}\|}{\|e^{[n]}\|^p}= C \ne 0.
 \end{equation*}
 
-Puntu finkoko iterazioaren konbergentzia lineala da ($p=1$) eta Newton iterazioaren konbergentzia koadratikoa da ($p=2$). Konbergentzia koadratikoa izatea oso interesgarria da, iterazio bakoitzean soluzioaren digitu hamartar zuzenen kopurua bikoizten ditugulako. Konbergentzia linealean, ordea, iterazio bakoitzean digitu hamartar kopuru finkoa hobetzen dugu. 
+Puntu-finkoaren iterazioak konbergentzia lineala ($p=1$) eta Newtonen iterazioak koadratikoa ($p=2$) du. Konbergentzia koadratikoa izatea oso interesgarria da, iterazio bakoitzean soluzioaren digitu hamartar zuzenen kopurua bikoizten ditugulako. Konbergentzia linealean, ordea, iterazio bakoitzean digitu hamartar kopuru finkoa hobetzen dugu. 
   
 \subsubsection*{Problema zurruna.}
 
-Konputazio konplexutasun handiagoa izan arren, problema batzuetan metodo inplizitua aplikatzea esplizitua baino egokiago izan daiteke, eta hori erakusteko Germund Dahlquist-en ($1963$) adibidea azalduko dugu,
+Konputazio konplexutasun handiagoa izan arren, problema batzuetan metodo inplizituak, esplizituak aplikatzea baino egokiago izan daiteke, eta hori erakusteko Germund Dahlquist-en ($1963$) adibidea azalduko dugu,
 \begin{equation}
  \label{eq:202c}
 \dot y=\lambda y,
@@ -218,7 +219,7 @@ non $H: {\mathbb{R}}^{2d} \ \longrightarrow {\mathbb{R}}$  den eta  $p=[p^1, \do
 H(p(t),q(t))=const.
 \end{equation*}
 
-\paragraph*{}Beste notazio laburtu hau ere erabili ohi da,
+Beste notazio laburtu hau ere erabili ohi da,
 \begin{equation*}
  \label{eq:213}
 \dot{y}=J^{-1}\triangledown H(y),
@@ -240,23 +241,23 @@ I_{d \times d}=\left(\begin{array}{cccc}
 \end{equation*}
 
 
-\paragraph*{Hamiltondar banagarriak.} Sistema dinamikoen Hamiltondarrak maiz egitura berezia du,
+\paragraph*{Hamiltondar banagarriak.} Sistema dinamikoen Hamiltondarrak, maiz egitura berezia du,
 \begin{equation*}
 H({p},{q})=T(p)+U({q}).
 \end{equation*} 
 
 Horien artean, \emph{bigarren ordeneko} ekuazio diferentzialak aipatu behar ditugu, zeintzuk Hamiltondar banagarrien kasu partikularra bat diren,  
 \begin{equation*}
-H(\mathbf(p,q)=\frac{1}{2}p^Tp +U(q).
+H(\mathbf(p,q)=\frac{1}{2}p^Tp +U(q),
 \end{equation*}
-Eta dagokien ekuazio diferentzialak,
+eta dagokien ekuazio diferentzialak hauek diren,
 \begin{equation}
 \label{eq:biorden}
 \dot{p}=-\frac{\partial U(q)}{\partial q}, \ \ \dot{q}=p. 
 \end{equation}
 
 \paragraph*{Adibidea.}
-\emph{Bi-gorputzen problema} edo \emph{Kepler problema}. Planoan elkar erakartzen diren bi gorputzen (adibidez eguzkia eta planeta bat) mugimendua kalkulatzeko, horietako gorputz baten kokapena koordenatu sistemaren jatorria kontsideratuko dugu eta beste gorputzaren kokapenaren koordenatuak $q=(q_1,q_2)$ izendatuko ditugu. 
+\emph{Bi gorputzen} edo \emph{Kepler problema}. Planoan elkar erakartzen diren bi gorputzen (adibidez eguzkia eta planeta bat) mugimendua kalkulatzeko, horietako gorputz baten kokapena koordenatu sistemaren jatorria kontsideratuko dugu eta beste gorputzaren kokapenaren koordenatuak $q=(q_1,q_2)$ izendatuko ditugu. 
 
 Funtzio Hamiltondarra hauxe da,
 \begin{equation*}
@@ -269,26 +270,26 @@ Dagozkion ekuazio dieferentzialak,
 \dot{q}_i &=p_i, \ \ \ \ \ i=1,2.
 \end{align*}
 
-\paragraph*{} Planetaren mugimendua orbita eliptiko bat da. Honako hasierako balioei dagokien soluzioa zehatza,
+Planetaren mugimendua orbita eliptiko bat da. Honako hasierako balioei dagokien soluzioa zehatza,
 \begin{equation*}
 q_1(0)=1-e, \ q_2(0)=0, \ p_1(0)=0, \ p_2(0)=\sqrt{ \frac{1+e}{1-e}}, 
 \end{equation*}
-$e$ ezentrizidade ($0\le e < 1$)  eta $P=2\pi$ periodoa duen elipsea da. 
+$e$ ezentrizidadea ($0\le e < 1$)  eta $P=2\pi$ periodoa duen elipsea da. 
 
 \paragraph*{Hamiltondar perturbatuak.} Hamiltondar perturbatuak, honako egitura duten sistemak ditugu,
 \begin{equation*}
 H=H_A+\epsilon H_B \ \  \text{non} \ \ |H_B|\ll |H_A|.
 \end{equation*}
 
-\paragraph*{Adibidea.} Eguzki-sistemaren probleman, Hamiltondarra modu honetan idatzi daiteke $H=H_k+H_I$, non alde nagusia $H_K$ planeta bakoitzaren eguzki inguruko mugimendu Kepleriarra den eta $H_I$ aldiz, planeten arteko interakzioek eragiten duten perturbazio txikia.   
+\paragraph*{Adibidea.} Eguzki-sistemaren probleman, Hamiltondarra modu honetan banatu daiteke $H=H_k+H_I$, non alde nagusia $H_K$ planeta bakoitzaren eguzkiaren inguruko mugimendu Kepleriarrari eta $H_I$ aldiz, planeten arteko interakzioek eragiten duten perturbazio txikiari dagokion.   
 
 \subsection{Metodo sinplektikoak.}
 
 Hamiltondar sistemen problemetarako, Euler esplizitua eta Euler inplizitua ez dira zenbakizko metodo egokiak. Problema hauen propietate geometrikoak mantentzen dituzte integratzaile bereziak beharrezkoak dira. Metodo sinplektikoak sistema Hamiltondarrak integratzeko  metodo egokiak dira, eta abantaila handiena, epe luzeko integrazioetan azaltzen dute.
 
-Metodo sinplektikoak bi taldeetan banatuko ditugu: metodo sinplektiko inplizituak eta  esplizituak. Lehenengo taldean,  Runge-Kutta metodo inplizituak (Gauss metodoak) ditugu. Metodo hauek zenbakizko metodo estandarrak dira eta ekuazio diferentzial orokorrei aplika daitezke. Bigarren taldean, konposizioan eta splitting-ean oinarritutako metodoak ditugu. Azken talde honetako metodoak, bakarrik Hamiltondar sistemei aplika daitezke eta gainera, Hamiltondarrak egitura berezia izan behar du baina aplika daitezkeenean, oso eraginkorrak dira.   
+Metodo sinplektikoak bi taldeetan banatuko ditugu: metodo sinplektiko inplizituak eta  esplizituak. Lehenengo taldean,  Runge-Kutta metodo inplizituak (Gauss kolokazio metodoak) ditugu. Metodo hauek zenbakizko metodo estandarrak dira eta ekuazio diferentzial orokorrei aplika daitezke. Bigarren taldean, konposizioan eta splitting-ean oinarritutako metodoak ditugu. Azken talde honetako metodoak, bakarrik Hamiltondar sistemei aplika daitezke eta gainera, Hamiltondarrak banagarria izan behar du. Konposizio eta splitting metodoak oso eraginkorrak dira.   
 
-\paragraph*{Metodo sinplektikoen abantaila.}
+\paragraph*{Adibidea.}
 
 \begin{figure}[h!]
 \centering
@@ -298,7 +299,7 @@ Metodo sinplektikoak bi taldeetan banatuko ditugu: metodo sinplektiko inplizitua
 }
 &
 \subfloat[Integrazioa.]{
-\includegraphics[width=.30\textwidth]{pcam-irudia}
+\includegraphics[width=.40\textwidth]{pcam-irudia}
 }
 \end{tabular}
 \caption{ \small Pendulu problemaren hiru zenbakizko metodoen zenbakizko soluzioak irudikatu ditugu. Hiruretan urrats luzera berdina $h=0.3$ baina bakoitza hasierako balio ezberdinarekin. Euler esplizitua $(p(0),q(0))=(0,1.7)$; Euler sinplektikoa $(p(0),q(0))=(0,1.5)$; Euler inplizitua $(p(0),q(0))=(0,1.3)$.}
@@ -306,38 +307,40 @@ Metodo sinplektikoak bi taldeetan banatuko ditugu: metodo sinplektiko inplizitua
 \end{figure}
 
 
-Penduluaren problemaren (masa $m=1$, $l=1$ luzerako makila eta $g=1$ grabitazioa) $d=1$ askatasuneko sistema Hamiltondarra,
+Metodo sinplektikoen abantaila azaltzeko penduluaren problemaren adibidea azalduko dugu. Penduluaren problemaren (masa $m=1$, $l=1$ luzerako makila eta $g=1$ grabitazioa) $d=1$ askatasuneko sistema Hamiltondarra,
 \begin{equation*}
-H(p,q)= \frac{p^2}{2}- cos (q).
+H(p,q)= \frac{p^2}{2}- cos (q),
 \end{equation*}
 
-Ekuazio diferentzialak,
+eta ekuazio diferentzialak,
 \begin{equation}
 \label{eq:pendulua}
 \dot{p}= -sin (q), \ \ \dot{q}=p.
 \end{equation}
 
-Irudian (\ref{fig:pendulua} Irudia) ikusi daiteke, Euler esplizitu eta inplizituaren konportamendu koalitatiboki okerra dela. Euler sinplektikoa ordea, 
+\ref{fig:pendulua} irudian ikusi daitekenez, Euler esplizitu eta inplizituaren konportamendu koalitatiboki okerra da. Era honetan definitzen den Euler sinplektikoa ordea, 
 \begin{align}
 \label{eq:eulersin}
+\begin{split}
 p_{n+1} & =p_n-h \ \frac{\partial H }{\partial q} (p_{n+1},q_{n}), \\
-q_{n+1} & =q_n+h \ \frac{\partial H}{\partial p} (p_{n+1},q_{n}).
+q_{n+1} & =q_n+h \ \frac{\partial H}{\partial p} (p_{n+1},q_{n}),
+\end{split}
 \end{align}
 sistemaren energia kontserbatzen du integrazio luzean zehar.
 
 
 \subsubsection*{Metodo sinplektikoen propietateak.}
 
-Funtsezkoa da, integratzaile sinplektiko baten bidez lortutako $H$ Hamiltondar sistemaren zenbakizko soluzioa, perturbatutako beste Hamiltondar $\widetilde{H}$ baten soluzio zehatza gisa ulertzea. Kontutan hartu behar da, zenbakizko integrazioak eragiten dituen perturbazio hauek, sistema dinamiko baten $H$ Hamiltondar eredu eraikitzerakoan hartzen  diren hurbilpenek edo datu ez ziurrek (uncertainty) eragiten duten baino errore maila txikiagoa suposatzen dutela.    
+Funtsezkoa da, integratzaile sinplektiko baten bidez lortutako $H$ Hamiltondar sistemaren zenbakizko soluzioa, perturbatutako beste Hamiltondar $\widetilde{H}$ baten soluzio zehatza gisa ulertzea. Kontutan hartu behar da, zenbakizko integrazioak eragiten dituen perturbazio hauek, sistema dinamiko baten $H$ Hamiltondar eredu eraikitzerakoan, hartzen  diren hurbilpenek edo datu ez ziurrek eragiten duten baino errore maila txikiagoa suposatzen dutela.    
  
 
 \paragraph{Adibidea.}
-Demagun, askatasun maila bakarra duen sistema Hamiltondar banagarria $H=T(p)+V(q)$ ~Euler metodo sinplektikoaren (\ref{eq:eulersin}) bidez integratzen dugula.  $(p_n,q_n)$ zenbakizko soluzioak, integratu nahi dugun $S$ Hamiltondar sistemaren $(p(t_n),q(t_n))$ soluzio zehatza hurbiltzen du.  Modu honetan, benetako fluxua $\psi_h^H$ eta zenbakizko integrazioa $\phi_h^H$ izendatzen baditugu,
+Demagun, askatasun maila bakarra duen sistema Hamiltondar banagarria $H=T(p)+V(q)$, Euler metodo sinplektikoaren (\ref{eq:eulersin}) bidez integratzen dugula.  $(p_n,q_n)$ zenbakizko soluzioak, integratu nahi dugun $S$ Hamiltondar sistemaren $(p(t_n),q(t_n))$ soluzio zehatza hurbiltzen du.  Modu honetan, benetako fluxua $\psi_h^H$ eta zenbakizko integrazioa $\phi_h^H$ izendatzen baditugu,
 \begin{align*}
 &(p_{n+1},q_{n+1}) =\phi_h^H(p_n,q_n), \\
-&(p(t_{n+1}),q(t_{n+1})) =\psi_h^H(p(t_n),q(t_n), 
+&(p(t_{n+1}),q(t_{n+1})) =\psi_h^H(p(t_n),q(t_n)), 
 \end{align*} 
-eta Euler sinplektikoa $p=1$ ordeneko metodoa denez,
+eta Euler sinplektikoa $p=1$ ordenako metodoa denez,
 \begin{equation*}
 \phi_h^H(p_n,q_n)-\psi_h^H(p(t_n),q(t_n))= \mathcal{O}(h^2).
 \end{equation*}    
@@ -366,7 +369,7 @@ Irudian (\ref{fig:MetSinplektikoa} Irudia), pendulu problema (\ref{eq:pendulua})
 \label{fig:MetSinplektikoa}
 \end{figure}
 
-Kasu orokorra, posible da $S_p$ Hamiltondar sistema perturbatua eraikitzea, zeinekin Euler sinplektikoa $p$ ordenekoa den. Beraz, konklusio gisa esango dugu, Hamiltondar sistema bati aplikatzen diogun metodo sinplektikoaren zenbakizko soluzioa, perturbatutako Hamiltondar sistema baten soluzio ia zehatza kontsideratu behar dugula. 
+Kasu orokorra, posible da $S_p$ Hamiltondar sistema perturbatua eraikitzea, zeinekin Euler sinplektikoa $p$ ordenakoa den. Beraz, konklusio gisa esango dugu, Hamiltondar sistema bati aplikatzen diogun metodo sinplektikoaren zenbakizko soluzioa, perturbatutako Hamiltondar sistema baten soluzio ia zehatza kontsideratu behar dugula. 
 
 
 \paragraph*{Propietate nagusiak.}Metodo sinplektikoen propietate hauek azpimarratuko ditugu,
@@ -397,11 +400,11 @@ Gehienetan, $p$ eta $q$ osagaien errorea $\mathcal{O}(h^p)$ da eta hazkundea, li
 
 \section{Runge-Kutta metodo sinplektikoak.}
 
-\emph{Gauss} metodoa, Runge-Kutta metodo interesgarria da. Metodo sinplektikoa, inplizitua da eta s-ataleko orden altueneko metodoa ($p=2s$) da. 
+\emph{Gauss} metodoa, Runge-Kutta metodo interesgarria da. Metodo sinplektikoa, inplizitua da eta s-ataleko ordena altueneko metodoa ($p=2s$) da. 
 
 \subsection{Runge-Kutta metodoak.}
 
-Runge-Kutta metodoak, urrats bakarreko ekuazio diferentzial arrunten zenbakizko integrazio metodoak dira.  $b_{i}$, $a_{ij}$ eta $c_i=\sum\limits_{i=0}^{s} a_{ij} \ (1 \leq i,j \leq s)$ koefiziente errealek s-ataleko Runge-Kutta metodoa definitzen dute eta \emph{Butcher} izeneko taulan moduan laburtu ohi dira, 
+Runge-Kutta metodoak, urrats bakarreko ekuazio diferentzial arrunten zenbakizko integrazio metodoak dira.  $b_{i}$, $a_{ij}$ eta $c_i=\sum\limits_{j=1}^{s} a_{ij} \ (1 \leq i,j \leq s)$ koefiziente errealek s-ataleko Runge-Kutta metodoa definitzen dute eta \emph{Butcher} izeneko taulan moduan laburtu ohi dira, 
 \begin{equation}
 \label{eq:btchtaula}
 \begin{array}{c|c}
@@ -412,14 +415,14 @@ Runge-Kutta metodoak, urrats bakarreko ekuazio diferentzial arrunten zenbakizko 
 \begin{array}{c|cccc}
   \ c_1 &  a_{11} & a_{12} & \dots & a_{1s}\\
   \ c_2 &  a_{21} & a_{22} & \dots &a_{2s}\\
-  \ \vdots & \vdots & \ddots & & \vdots \\
+  \ \vdots & \vdots & \vdots & \ddots & \vdots \\
   \ c_s & a_{s1} & a_{s2} & \dots & a_{ss}\\
   \hline
   \  & b_{1} & b_{2} & \dots & b_{s}\\
 \end{array}
 \end{equation}
 
-\paragraph*{} Hasierako baliodun problema baten (\ref{eq:ivp}) $y(t)$ soluzioaren $y_n \approx y(t_n)$ hurbilpena era honetan kalkulatzen da,
+\paragraph*{} Hasierako baliodun problemaren (\ref{eq:ivp})  $y_n \approx y(t_n)$ soluzioaren hurbilpena era honetan kalkulatzen da,
 
 \begin{equation}  
 y_{n+1}=y_n+h\sum^s_{i=1}{b_i \ f(t_n+c_ih,Y_{n,i})\ \ },\
@@ -477,34 +480,36 @@ Y_{n,1}=y_n+\ \frac{h}{2} \ f(t_n+\frac{h}{2},Y_{n,1}).
 
 \end{enumerate}
 
-\emph{ERK} lau-ataletako  metodo klasikoa, $p=4$ ordenekoa dugu. Orden altuko \emph{ERK} metodoak aurkitzea konplexua da,  koefizienteek bete behar dituzten orden baldintzen kopurua esponentzialki hazten baitira. Esate baterako, orden altuko \emph (ERK) metodo hauek aurkitu dira:  $s=11$ ataletako $p=8$ ordeneko metodoa,  $s=17$ ataletako $p=10$ ordeneko metodoa eta  $s=25$ ataletako $p=12$ ordeneko metodoa.
+\emph{ERK} lau-ataletako  metodo klasikoa, $p=4$ ordenakoa dugu. Ordena altuko \emph{ERK} metodoak aurkitzea konplexua da,  koefizienteek bete behar dituzten orden baldintzen kopurua esponentzialki hazten baitira. Esate baterako, ordena altuko \emph {ERK} metodo hauek aurkitu dira:  $s=11$ ataletako $p=8$ ordenako metodoa,  $s=17$ ataletako $p=10$ ordenako metodoa eta  $s=25$ ataletako $p=12$ ordenako metodoa.
  
-Orden altuko \emph{IRK} metodoak, \emph{ERK} metodoak baino modu errazagoan eraiki daitezke.  \emph{Butcher sinplifikazio baldintzen} \cite{Butcher2008} arabera definitzen dira,
+Ordena altuko \emph{IRK} metodoak, \emph{ERK} metodoak baino modu errazagoan eraiki daitezke.  \emph{Butcher sinplifikazio baldintzen} \cite{Butcher2008} arabera definitzen dira,
 \begin{align*}
 B(p) &: \ \ \ \sum\limits_{i=1}^{s} b_ic_i^{q-1} =\frac{1}{q}, \ \ & q=1,\dots,p. \\
 C(\eta) &: \ \ \ \sum\limits_{j=1}^{s} a_{ij}c_j^{q-1}  =\frac{c_i^q}{q},& \ \ i=1,\dots,s, \ q=1,\dots,\eta.\\
 D(\zeta) &:  \ \ \ \sum\limits_{i=1}^{s}  b_i c_i^{q-1}  a_{ij} = \frac{b_j}{q} (1-c_j^q),&  \ j=1,\dots,s, \  q=1,\dots,\zeta.
 \end{align*}
 
-Taula honetan (\ref{tab:irk} Taula), \emph{IRK} metodo nagusienak laburtu ditugu.
+\ref{tab:irk} taulan, \emph{IRK} metodo nagusienak laburtu ditugu.
 \begin{table}
 \centering
 \caption{Runge-Kutta metodo inplizituak.}
 \label{tab:irk}       % Give a unique label
 \begin{tabular}{ l l l l c } 
  \hline
+ \\
  Metodoa          &  Baldintzak             &                        &                 & Ordena \\
+ \\
  \hline
  Gauss            &  $B(2s)$                & $C(s)$                 & $D(s)$          & $2s$    \\
- \hline
+% \hline
  Radau IA         &  $B(2s-1)$              & $C(s-1)$               & $D(s)$          & $2s-1$  \\
- \hline 
- Radau IA         &  $B(2s-1)$              & $C(s)$                 & $D(s-1)$        & $2s-1$  \\
- \hline 
+% \hline 
+ Radau IB         &  $B(2s-1)$              & $C(s)$                 & $D(s-1)$        & $2s-1$  \\
+% \hline 
  Lobatto IIIA     &  $B(2s-2)$              & $C(s)$                 & $D(s-2)$        & $2s-2$  \\
- \hline
+% \hline
  Lobatto IIIB     &  $B(2s-2)$              & $C(s-2)$               & $D(s)$          & $2s-2$  \\
- \hline 
+% \hline 
  Lobatto IIIC     &  $B(2s-2)$              & $C(s-1)$               & $D(s-1)$        & $2s-2$  \\
   \hline
  \end{tabular}
@@ -512,7 +517,7 @@ Taula honetan (\ref{tab:irk} Taula), \emph{IRK} metodo nagusienak laburtu ditugu
 
 \subsection{Gauss metodoa.}
 
-Gauss metodoa beste \emph{IRK} metodoekin alderatuta, bi ezaugarri bereizten ditu:  Runge-Kutta metodo sinplektiko bakarra eta $s$-ataletako orden altueneko ($p=2s$) IRK da. 
+Gauss metodoa beste \emph{IRK} metodoekin alderatuta, bi ezaugarri bereizten ditu:  Runge-Kutta metodo sinplektiko bakarra eta $s$-ataletako ordena altueneko ($p=2s$) IRK da. 
 
 \subsubsection*{Kolokazio metodoak.}
 
@@ -545,18 +550,21 @@ Nodo hauetan oinarritutako Runge-Kutta metodoa $p=2s$ ordena du.
 
 \subsubsection*{Gauss metodoaren koefizienteak.}
 
-Gauss metodoaren koefizienteak kalkulatzeko bi aukera ditugu. Lehen aukera,  \emph{Mathematicak} NDSolve paketean inplementatuta dagoen koefizienteak kalkulatzeko funtzioa: ImplicitRungeKuttaGaussCoefficients[]. Bigarren aukera, guk koefizienteak kalkulatzeko garatutako funtzioa erabiltzea (\ref{sec:B1}).  
+Gauss metodoaren koefizienteak kalkulatzeko bi aukera ditugu. Lehen aukera,  \emph{Mathematicak} NDSolve paketean inplementatuta dagoen koefizienteak kalkulatzeko funtzioa erabili daiteke: ImplicitRungeKuttaGaussCoefficients[]. Bigarren aukera, guk koefizienteak kalkulatzeko garatutako funtzioa erabiltzea (\ref{sec:B1}).  
 
 \paragraph{Adibidea.} Hauek dira, $s=1$, $s=2$ eta $s=3$ ataletako Gauss metodoak \cite{Hairer2006}.
 \begin{equation*}
 \begin{array}{c|c}
   \frac{1}{2} & \ \frac{1}{2} \\
+  \\
   \hline
    & 1 \\
 \end{array} \ \ \ ,  \ \ \ \ \ \ \ \ \
 \begin{array}{c|c c}
   \frac{1}{2}-\frac{\sqrt{3}}{6} & \ \frac{1}{4} & \ \frac{1}{4}-\frac{\sqrt{3}}{6} \\
+  \\
   \frac{1}{2}+\frac{\sqrt{3}}{6} & \ \frac{1}{4}+\frac{\sqrt{3}}{6} & \ \frac{1}{4} \\
+  \\
   \hline
          &  \frac{1}{2} & \ \frac{1}{2} \\
 \end{array}
@@ -565,8 +573,11 @@ Gauss metodoaren koefizienteak kalkulatzeko bi aukera ditugu. Lehen aukera,  \em
 \begin{equation*}
 \begin{array}{c|c c c}
   \frac{1}{2}-\frac{\sqrt{15}}{10} & \ \frac{5}{36} & \ \frac{2}{9}-\frac{\sqrt{15}}{15} & \ \frac{5}{36}-\frac{\sqrt{15}}{30} \\
+  \\
   \frac{1}{2}   & \ \frac{5}{36}+\frac{\sqrt{15}}{24} & \ \frac{2}{9} & \ \frac{5}{36}-\frac{\sqrt{15}}{24} \\
+  \\
   \frac{1}{2}+\frac{\sqrt{15}}{10}   & \ \frac{5}{36}+\frac{\sqrt{15}}{30} & \ \frac{2}{9}+\frac{\sqrt{15}}{15} & \ \frac{5}{36} \\
+  \\
   \hline
   & \frac{5}{18} & \ \frac{4}{9} & \ \frac{5}{18}
 \end{array}
@@ -574,7 +585,7 @@ Gauss metodoaren koefizienteak kalkulatzeko bi aukera ditugu. Lehen aukera,  \em
 
 \subsubsection*{Gauss metodoaren propietateak.}
 
-\paragraph*{}Jarraian, Gauss metodoaren ezaugarri orokorrak azalduko ditugu:  
+Jarraian, Gauss metodoaren ezaugarri orokorrak azalduko ditugu:  
 \begin{enumerate}
 \item{Metodo sinplektikoa.}
 
@@ -604,8 +615,8 @@ Kolokazio metodo simetrikoetan, $c_i$ balioak integrazio urratsaren erdigunearek
  \label{fig:simetrikoa}
  \end{figure}
  
-\item{Orden altuko metodoa.}
-Edozein ordeneko Gauss metodoa eraiki daiteke. Doitasun handiko konputazioetarako orden altuko metodoak beharrezkoak dira: doitasun bikoitzeko aritmetikan ($u\approx10^{-16}$) ~$p\ge8$ ordeneko metodoak gomendagarriak dira eta doitasun laukoitzeko aritmetikan ($u\approx10^{-35}$) orden altuagoko metodoak beharrezkoak dira.  
+\item{Ordena altuko metodoa.}
+Edozein ordenako Gauss metodoa eraiki daiteke. Doitasun handiko konputazioetarako ordena altuko metodoak beharrezkoak dira: doitasun bikoitzeko aritmetikan ($u\approx10^{-16}$) ~$p\ge8$ ordenako metodoak gomendagarriak dira eta doitasun laukoitzeko aritmetikan ($u\approx10^{-35}$) ordena altuagoko metodoak beharrezkoak dira.  
 
 \item{Metodo orokorra.}
 Gauss metodoa edozein ekuazio diferentzialari aplika daiteke. Sistema Hamiltondarren problemetan, ez du zertan banagarria izan behar.
@@ -622,11 +633,11 @@ A-stable methods have a central role in the numerical solution of stiff problems
 \end{enumerate}
 
       
-\subsection{IRK inplementazioa.}.
+\subsection{IRK inplementazioa.}
 
 \subsubsection*{IRK algoritmoa.}
 
-\emph{IRK} metodoen erronka handiena, ekuazio-sistema ez-linealaren zenbakizko soluzioaren inplementazio eraginkorra da. Problema ez-zurrunetarako, atalen hasieraketa ($Y_i^{[0]}$) egoki bat duen puntu finkoko iterazioa erabil daiteke. Problema zurrunetarako, puntu-finkoa iterazioak urrats tamaina txikiegia erabiltzea behartuko luke eta ondorioz, Newton iterazio sinplifikatua erabili ohi da.  
+\emph{IRK} metodoen erronka handiena, ekuazio-sistema ez-linealaren zenbakizko soluzioaren inplementazio eraginkorra da. Problema ez-zurrunetarako, atalen hasieraketa ($Y_i^{[0]}$) egoki bat duen puntu-finkoaren iterazioa erabil daiteke. Problema zurrunetarako, puntu-finkoaren iterazioak urrats tamaina txikiegia erabiltzea behartuko luke eta ondorioz, Newtonen iterazio sinplifikatua erabili ohi da.  
 
 Jarraian, \emph{IRK} metodoaren inplementazioaren algoritmo orokorraren (Algoritmo \ref{alg:IRK1}) laguntzarekin, inplementazioaren alde orokor batzuk deskribatuko ditugu.
 
@@ -668,7 +679,7 @@ Y_{n,i}^{[0]}=g(Y_{n-1,i}) \ , \ i=1, \dots, s.
 
 \paragraph{Interpolazio bidezko hasieraketa.} 
 
-Aurreko urratseko $Y_{n-1,i}, \ i=1,\dots,s$ eta $(t_{n-1}+h,y_{n})$ uneetako balioei dagokien polinomio interpolatzailearen bidez, urrats berriaren atalen hasieraketa  $Y_{n,i}^{[0]}$ kalkulatzea (\ref{fig:AtalHasieraketa} Irudia). 
+Aurreko urratseko $Y_{n-1,i}, \ i=1,\dots,s$ eta $(t_{n-1}+h,y_{n})$ uneetako balioei dagokien polinomio interpolatzailearen bidez, urrats berriaren atalen hasieraketa  $Y_{n,i}^{[0]}$ kalkulatuko dugu (\ref{fig:AtalHasieraketa} Irudia). 
 \begin{figure}[h!]
 \centerline{\includegraphics[width=14cm, height=4cm] {YiAtalenHasieraketa}}
 \caption{Interpolazioa.}
@@ -705,12 +716,12 @@ Y_{n,i} \approx Y_{n,i}^{[0]}= P(t_n+hc_i) = y_n+ h \sum\limits_{j=1}^{s} \lambd
 
 \paragraph*{} Modu honetan s-ataletako IRK metodo bakoitzari dagokion $\lambda_{ij}$ koefiziente interpolatzaileak lortu daitezke (\ref{sec:B1} atala). Polinomio interpolatzailearen bidezko hasieraketa ona izango da, emandako urratsa ez bada oso handia eta problema zurruna ez denean. Era berean aipatu nahi genuke, atal askotako metodoetan (adibidez $s=16$)  interpolaziozko koefizienteen kalkuluan ezabapen arazoak, doitasun handian lan egitera behartzen gaituela interpolaziozko hasieraketa ona izateko.   
 
-Laburtaren lanean aurkitu daiteke hasieraketa aurreratuei buruzko informazioa \cite{Laburta1998}.  
+Laburtaren lanean \cite{Laburta1998}, hasieraketa aurreratuei buruzko informazioa aurkitu daiteke.  
 
 
 \subsubsection*{Iterazio metodoa.}
 
-Ekuazio-sistema ez lineala metodo iteratibo bat erabiliz askatu beharra dago. Aplikatutako metodoa problemaren araberako izango da: puntu-finkoaren metodoa edo Newton  metodoa izan daiteke. Azpimarratu, Newton metodoaren iterazioak, puntu finkoko metodoaren iterazioak baino azkarrago konbergitzen duela baina konputazionalki garestiagoa dela. 
+Ekuazio-sistema ez lineala metodo iteratibo bat erabiliz askatu beharra dago. Aplikatutako metodoa problemaren araberako izango da: puntu-finkoaren iterazioa edo Newtonen iterazioa izan daiteke. Azpimarratu, Newtonen iterazio metodoak, puntu-finkoaren iterazio metodoak baino azkarrago konbergitzen duela baina konputazionalki garestiagoa dela. 
 
 \begin{enumerate}
 
@@ -726,12 +737,12 @@ Ekuazio-sistema ez lineala metodo iteratibo bat erabiliz askatu beharra dago. Ap
  \label{alg:rkpf}
 \end{algorithm}
 
-Konbergentzia $\|Y^k-Y\|=O(h) \|Y^{k-1}-Y\|$.
+Konbergentzia $\|Y^k-Y\|=\mathcal{O}(h) \|Y^{k-1}-Y\|$.
 
 
-\item Newton metodoaren iterazioa. 
+\item Newtonen iterazioa. 
 
-Newton metodoa iterazio bakoitza konputazionalki garestia da. Batetik,  $\frac{\partial f}{\partial y}(t_n+c_ih,Y_i^{[k-1]}), \ i=1,\dots,s$ Jakobiarrak ebaluatu behar dira. Bestetik, s-ataletako IRK metodoa eta  d-dimentsioko \emph{EDA} baditugu, $sd \times sd$ matrizearen \emph{LU-deskonposaketa} kalkulatu behar da.    
+Newton metodoa iterazio bakoitza konputazionalki garestia da. Batetik,  $\frac{\partial f}{\partial y}(t_n+c_ih,Y_i^{[k-1]}), \ i=1,\dots,s$ Jacobiarrak ebaluatu behar dira. Bestetik, s-ataletako IRK metodoa eta  d-dimentsioko ekuazio diferentziala baditugu, $sd \times sd$ matrizearen \emph{LU-deskonposaketa} kalkulatu behar da.    
 
 
 \begin{algorithm}[H]
@@ -745,7 +756,7 @@ Newton metodoa iterazio bakoitza konputazionalki garestia da. Batetik,  $\frac{\
  \caption{Newton metodoaren iterazioa}
 \end{algorithm}
 
-Konbergentzia $\|Y^k-Y\|=O(h^2) \|Y^{k-1}-Y\|$.
+Konbergentzia $\|Y^k-Y\|=\mathcal{O}(h^2) \|Y^{k-1}-Y\|$.
 
 \end{enumerate}
 
@@ -756,7 +767,7 @@ Era honetako ekuazio diferentzialak, garrantzitsuak dira,
 \dot{p}=f(q), \ \ \dot{q}=g(p).
 \end{equation*}
 
-Esaterako, Hamiltondar banagarriak $H(q,p)=T(p)+U(q)$ eta bigarren ordeneko ekuazio diferentzialak $\ddot{q}=f(q)$ era honetako ekuazio diferentzialen kasu partikularrak dira.
+Esaterako, Hamiltondar banagarriak $H(q,p)=T(p)+U(q)$ eta bigarren ordenako ekuazio diferentzialak $\ddot{q}=f(q)$ era honetako ekuazio diferentzialen kasu partikularrak dira.
 
 Zenbakizko soluzioa $(p_{n+1},q_{n+1}) \approx (p(t_{n+1}),q(t_{n+1}))$ era honetan kalkulatuko dugu,
 \begin{align}
@@ -783,7 +794,7 @@ Problema hauetan,  funtsean puntu-finkoaren iterazioa (\ref{alg:rkpf}~algoritmoa
    $P_{n,i}^{[k]}=p_{n}+ h \ \sum\limits_{j=1}^{s} a_{ij} \ f(t_n+c_jh,Q_{n,j}^{[k-1]})$\; 
    $Q_{n,i}^{[k]}=q_{n}+ h \ \sum\limits_{j=1}^{s} a_{ij} \ g(t_n+c_jh,P_{n,j}^{[k]}), \ \ \ \ i=1,\dots,s $\; 
   }
- \caption{Puntu-finkoaren iterazioa (Gauss-Seidel).}
+ \caption{Puntu-finkoaren iterazioa (Metodo partizionatuak).}
  \label{alg:rkfppart}
 \end{algorithm}
 
@@ -818,7 +829,7 @@ Bigarren ordenako ekuazio diferentzialen puntu-finkoaren iterazioa modu eraginko
  \caption{Puntu-finkoaren iterazioa (bigarren ordenako EDA)}
 \end{algorithm} 
 
-\paragraph*{}IRK algoritmoa-III (bigarren ordeneko EDA).
+\paragraph*{}IRK algoritmoa-III (bigarren ordenako EDA).
 
 \begin{algorithm}[H]
  \BlankLine
@@ -886,7 +897,7 @@ Konposizio eta Splitting ideietan oinarrituz, aplikazio eremu ezberdinetarako ha
 
 \subsection{Konposizio metodoak.}
 
-Konposizio metodoak, oinarrizko metodo bat edo gehiago konposatuz eraikitako zenbakizko integrazio metodoak dira.  Oinarrizko metodoekin segidan exekutatutako azpi-urrats kopuru batek, konposizio metodoaren integrazioaren urrats bat osatzen du. Helburua, orden baxuko metodo batetik abiatuta, orden altuko metodoa eraikitzea da; konposizio metodoak  konposatutako metodoaren propietateak (simetrikoa, sinplektikoa,\dots) jasotzen ditu. 
+Konposizio metodoak, oinarrizko metodo bat edo gehiago konposatuz eraikitako zenbakizko integrazio metodoak dira.  Oinarrizko metodoekin segidan exekutatutako azpi-urrats kopuru batek, konposizio metodoaren integrazioaren urrats bat osatzen du. Helburua, orden baxuko metodo batetik abiatuta, ordena altuko metodoa eraikitzea da; konposizio metodoak  konposatutako metodoaren propietateak (simetrikoa, sinplektikoa,\dots) jasotzen ditu. 
 
 \subsubsection*{Konposizio orokorrak.}
 $\phi_h$ oinarrizko metodoa eta $\gamma_1,\dots,\gamma_s$ zenbaki errealak emanik, urrats luzera hauen $\gamma_1 h,\gamma_2 h,\dots,\gamma_s h$ konposaketari dagokion konposizio metodoa,
@@ -1204,11 +1215,17 @@ non $a_i$, $b_i$ koefizienteak (\ref{tab:33} Taula) taulan definitzen diren.
 \end{table}
 
 
+Zehazki koefizienteak sekuentzia honetan exekutatuko dira,
+\begin{equation*}
+a_1 b_1 \ a_2 b_2 \ a_3 b_3 \ a_4 b_4 \ a_5 b_5 a_5 \ b_4 a_4 \ b_3 a_3 \ b_2 a_2 \ b_1 a_1
+\end{equation*}
+
+
 \section{Laburpena.}
 
 Hurrengo taulan (\ref{tab:int_sinp} Taulan) orden altuko hiru integratzaile sinplektikoen ezaugarriak laburtu ditugu. 
 
-\begin{table}{h}
+\begin{table}{H}
 \centering
 \caption{Integrazio metodoen laburpena}
 \label{tab:int_sinp}       % Give a unique label

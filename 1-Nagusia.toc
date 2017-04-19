@@ -8,18 +8,18 @@
 \contentsline {section}{\numberline {1.4.}Ekarpenak.}{8}{section.1.4}
 \contentsline {section}{\numberline {1.5.}Tesiaren egitura.}{11}{section.1.5}
 \contentsline {section}{\numberline {1.6.}Laburpena}{11}{section.1.6}
-\contentsline {chapter}{\numberline {2.}Zenbakizko Integratzaile Sinplektikoak.}{13}{chapter.2}
+\contentsline {chapter}{\numberline {2.}Zenbakizko integratzaile sinplektikoak.}{13}{chapter.2}
 \contentsline {section}{\numberline {2.1.}Sarrera.}{13}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1.}Zenbakizko integrazio metodoak.}{13}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2.}Sistema-Hamiltondarrak.}{18}{subsection.2.1.2}
 \contentsline {subsection}{\numberline {2.1.3.}Metodo sinplektikoak.}{20}{subsection.2.1.3}
-\contentsline {paragraph}{Adibidea.}{22}{section*.23}
+\contentsline {paragraph}{Adibidea.}{22}{section*.18}
 \contentsline {section}{\numberline {2.2.}Runge-Kutta metodo sinplektikoak.}{24}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1.}Runge-Kutta metodoak.}{24}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2.}Gauss metodoa.}{26}{subsection.2.2.2}
-\contentsline {paragraph}{Adibidea.}{27}{section*.35}
+\contentsline {paragraph}{Adibidea.}{27}{section*.30}
 \contentsline {subsection}{\numberline {2.2.3.}IRK inplementazioa.}{29}{subsection.2.2.3}
-\contentsline {paragraph}{Interpolazio bidezko hasieraketa.}{30}{section*.41}
+\contentsline {paragraph}{Interpolazio bidezko hasieraketa.}{30}{section*.35}
 \contentsline {section}{\numberline {2.3.}Konposizio eta Splitting metodoak.}{34}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1.}Konposizio metodoak.}{34}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2.}Splitting metodoak.}{37}{subsection.2.3.2}
@@ -34,7 +34,7 @@
 \contentsline {section}{\numberline {3.4.}Eguzki-sistema.}{49}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1.}Koordenatu sistemak.}{50}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2.}Problema motak.}{51}{subsection.3.4.2}
-\contentsline {paragraph}{}{52}{section*.84}
+\contentsline {paragraph}{}{52}{section*.78}
 \contentsline {section}{\numberline {3.5.}Laburpena.}{58}{section.3.5}
 \contentsline {chapter}{\numberline {4.}Koma Higikorreko Aritmetika.}{59}{chapter.4}
 \contentsline {section}{\numberline {4.1.}Sarrera.}{59}{section.4.1}
@@ -49,7 +49,7 @@
 \contentsline {section}{\numberline {5.4.}Programazio lengoaiak.}{78}{section.5.4}
 \contentsline {section}{\numberline {5.5.}Algebra lineal dentsorako liburutegiak.}{81}{section.5.5}
 \contentsline {section}{\numberline {5.6.}Konpiladorea.}{87}{section.5.6}
-\contentsline {paragraph}{Konpilazio aginduak.}{87}{section*.156}
+\contentsline {paragraph}{Konpilazio aginduak.}{87}{section*.150}
 \contentsline {section}{\numberline {5.7.}Laburpena.}{88}{section.5.7}
 \contentsline {part}{II.\hspace {1em}Ekarpenak.}{89}{part.2}
 \contentsline {chapter}{\numberline {6.}IRK: Puntu-Finkoaren Iterazioa.}{91}{chapter.6}
@@ -123,4 +123,4 @@
 \contentsline {section}{\numberline {C.2.}Hitz-zerrenda.}{183}{section.C.2}
 \contentsline {chapter}{\numberline {D.}Nire-Argibideak}{187}{appendix.D}
 \contentsline {section}{\numberline {D.1.}IRK-Newton.}{187}{section.D.1}
-\contentsline {chapter}{Bibliografia}{189}{section*.283}
+\contentsline {chapter}{Bibliografia}{189}{section*.277}
