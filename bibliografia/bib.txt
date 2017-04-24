@@ -1,27 +1,8 @@
-@article{brugnano2014efficient,
-  title={Efficient implementation of Gauss collocation and Hamiltonian boundary value methods},
-  author={Brugnano, Luigi and Caccia, Gianluca Frasca and Iavernaro, Felice},
-  journal={Numerical Algorithms},
-  volume={65},
-  number={3},
-  pages={633--650},
-  year={2014},
-  publisher={Springer}
-}
-
-@article{Jay2009PreconditioningOI,
-  title={Preconditioning of implicit Runge-Kutta methods},
-  author={Laurent O. Jay},
-  journal={Scalable Computing: Practice and Experience},
-  year={2009},
-  volume={10}
-}
-
-@article{xie2009new,
-  title={A new numerical algorithm for efficiently implementing implicit runge-kutta methods},
-  author={Xie, Dexuan},
-  journal={Department of Mathematical Sciences. University of Wisconsin, Milwaukee, Wisconsin, USA},
-  year={2009}
+@book{hogben2013handbook,
+  title={Handbook of linear algebra},
+  author={Hogben, Leslie},
+  year={2013},
+  publisher={Chapman and Hall/CRC}
 }
 
 

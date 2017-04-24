@@ -889,6 +889,18 @@
   Timestamp                = {2016.10.25}
 }
 
+@Book{Saad2003,
+  Title                    = {Iterative methods for sparse linear systems},
+  Author                   = {Saad, Yousef},
+  Publisher                = {SIAM},
+  Year                     = {2003},
+
+  __markedentry            = {[joseba:6]},
+  Doi                      = {dx.doi.org/10.1137/1.9780898718003.bm},
+  Owner                    = {joseba},
+  Timestamp                = {2017.03.18}
+}
+
 @Article{Saha1994,
   Title                    = {Long-term planetary integration with individual time steps},
   Author                   = {Saha, Prasenjit and Tremaine, Scott},

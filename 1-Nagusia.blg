@@ -19,9 +19,9 @@ A level-1 auxiliary file: Z-Argibideak/Argibideak.aux
 The style file: myplain2-doi.bst
 Database file #1: ./bibliografia/mybib.bib
 Warning--entry type for "Karplus2014" isn't style-file defined
---line 829 of file ./bibliografia/mybib.bib
+--line 823 of file ./bibliografia/mybib.bib
 Warning--entry type for "WolframResearch" isn't style-file defined
---line 1020 of file ./bibliografia/mybib.bib
+--line 1014 of file ./bibliografia/mybib.bib
 Warning--I didn't find a database entry for "HairerGniComp"
 Warning--empty journal in Dumitru
 Warning--empty year in Dumitru
