@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  23 APR 2017 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.31)  25 APR 2017 23:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1137,7 +1137,7 @@ LaTeX Info: Redefining \nameref on input line 100.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 7.
 
-<0-title/figures/Ehu-Logoa.jpg, id=485, 108.405pt x 50.1072pt>
+<0-title/figures/Ehu-Logoa.jpg, id=489, 108.405pt x 50.1072pt>
 File: 0-title/figures/Ehu-Logoa.jpg Graphic file (type jpg)
 
 <use 0-title/figures/Ehu-Logoa.jpg>
@@ -1187,15 +1187,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  (./2-Sarrera/Sarrera.tex
 1. Kapitulua
 
-LaTeX Warning: Citation `Karplus2014' on page 5 undefined on input line 8.
-
-
-LaTeX Warning: Citation `Folkner2014' on page 5 undefined on input line 14.
-
-
-LaTeX Warning: Citation `Beylkin2014' on page 5 undefined on input line 14.
-
-
 Overfull \hbox (5.39568pt too wide) in paragraph at lines 15--17
 []\T1/ptm/m/n/12 Epe lu-ze-ko bai-na doi-ta-sun txi-ki-ko in-te-gra-zioak. Den-
 bo-ra epe lu-zean, planeta-
@@ -1207,71 +1198,22 @@ Overfull \hbox (0.39223pt too wide) in paragraph at lines 15--17
 rra (zehaz-ta-sun han-
  []
 
-
-LaTeX Warning: Citation `Ishiyama2012' on page 5 undefined on input line 18.
-
 [5
 
 
 ]
-
-LaTeX Warning: Citation `Sussman1992' on page 6 undefined on input line 22.
-
-
-LaTeX Warning: Citation `Berger2012' on page 6 undefined on input line 22.
-
-
 Overfull \hbox (0.56065pt too wide) in paragraph at lines 22--23
 \T1/ptm/m/n/12 zioe-ta-ra-ko in-ple-men-ta-zio era-gin-ko-rra ga-ra-tzea da. Au
 -rre-ko ha-mar-ka-de-tan, eguzki-
  []
 
-
-LaTeX Warning: Citation `Laskar2011' on page 6 undefined on input line 26.
-
-
-LaTeX Warning: Citation `Laskar2015' on page 6 undefined on input line 27.
-
-
-LaTeX Warning: Citation `Hairer2006' on page 6 undefined on input line 36.
-
-
-LaTeX Warning: Citation `Hairer2008' on page 6 undefined on input line 36.
-
-
-LaTeX Warning: Citation `JMSanz-Serna1994' on page 6 undefined on input line 36
-.
-
-
-LaTeX Warning: Citation `Bradley2014' on page 6 undefined on input line 36.
-
-
-LaTeX Warning: Citation `Beylkin2014' on page 6 undefined on input line 36.
-
-[6]
-
-LaTeX Warning: Citation `Sanz-Serna1992' on page 7 undefined on input line 40.
-
-
-LaTeX Warning: Citation `Laskar2015' on page 7 undefined on input line 50.
-
-[7]
+[6] [7]
 Overfull \hbox (0.42839pt too wide) in paragraph at lines 54--55
 \T1/ptm/m/n/12 gor-de-tze-ra-koan, bai hauen ar-te-ko kal-ku-lu arit-me-ti-koak
  egi-te-ra-koan, bi-ri-bil-tze erro-
  []
 
-
-LaTeX Warning: Citation `Barnes1986' on page 8 undefined on input line 58.
-
-
-LaTeX Warning: Citation `Carrier1988' on page 8 undefined on input line 58.
-
-[8]
-
-LaTeX Warning: Citation `Hairer2008' on page 9 undefined on input line 71.
-
-[9] [10]) [11]
+[8] [9] [10]) [11]
 \openout2 = `3-MetodoSinplektikoak/MetodoSinplektikoak.aux'.
 
  (./3-MetodoSinplektikoak/MetodoSinplektikoak.tex [12
@@ -1280,174 +1222,130 @@ LaTeX Warning: Citation `Hairer2008' on page 9 undefined on input line 71.
 
 ]
 2. Kapitulua
-[13]
-
-LaTeX Warning: Citation `Hairer2006' on page 14 undefined on input line 22.
-
-[14]
-<3-MetodoSinplektikoak/figures/ErrorePropagazioa.pdf, id=753, 332.74312pt x 226
+[13] [14] [15]
+<3-MetodoSinplektikoak/figures/ErrorePropagazioa.pdf, id=819, 332.74312pt x 226
 .59656pt>
 File: 3-MetodoSinplektikoak/figures/ErrorePropagazioa.pdf Graphic file (type pd
 f)
  <use 3-MetodoSinplektikoak/figures/ErrorePropagazioa.pdf>
 Package pdftex.def Info: 3-MetodoSinplektikoak/figures/ErrorePropagazioa.pdf us
-ed on input line 92.
+ed on input line 93.
 (pdftex.def)             Requested size: 341.45483pt x 170.71803pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[15] [16 <./3-MetodoSinplektikoak/figures/ErrorePropagazioa.pdf>]
-Overfull \hbox (4.02835pt too wide) in paragraph at lines 179--180
+ [16 <./3-MetodoSinplektikoak/figures/ErrorePropagazioa.pdf>] [17]
+Overfull \hbox (4.02835pt too wide) in paragraph at lines 180--181
 \T1/ptm/m/n/12 han-dia-goa da: me-to-do ho-ne-tan, ite-ra-zio ba-koi-tzean Ja-c
 o-bia-rra-ren eba-lua-zioa, ekua-
  []
 
-[17] [18] [19]
+[18]
+Overfull \hbox (2.9984pt too wide) in paragraph at lines 213--214
+\T1/ptm/m/n/12 Hamiltondar sis-te-mak [[]], ekua-zio di-fe-ren-tzial mo-ta ga-r
+ran-tzi-tsu bat di-ra. $\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p; 
+q\OT1/cmr/m/n/12 )$
+ []
 
-LaTeX Warning: Citation `JMSanz-Serna1994' on page 20 undefined on input line 2
-90.
+[19] [20]
+<3-MetodoSinplektikoak/figures/NgramSymplectic.pdf, id=909, 975.645pt x 332.442
+02pt>
+File: 3-MetodoSinplektikoak/figures/NgramSymplectic.pdf Graphic file (type pdf)
 
+ <use 3-MetodoSinplektikoak/figures/NgramSymplectic.pdf>
+Package pdftex.def Info: 3-MetodoSinplektikoak/figures/NgramSymplectic.pdf used
+ on input line 297.
+(pdftex.def)             Requested size: 390.0pt x 132.8882pt.
 
-LaTeX Warning: Citation `JMSanz-Serna1994' on page 20 undefined on input line 2
-92.
-
-
-LaTeX Warning: Citation `Hairer2006' on page 20 undefined on input line 292.
-
-
-LaTeX Warning: Citation `Leimkuhler2004' on page 20 undefined on input line 292
-.
-
-[20]
-<3-MetodoSinplektikoak/figures/PenduluArrunta.pdf, id=841, 174.6525pt x 158.090
+<3-MetodoSinplektikoak/figures/PenduluArrunta.pdf, id=913, 174.6525pt x 158.090
 62pt>
 File: 3-MetodoSinplektikoak/figures/PenduluArrunta.pdf Graphic file (type pdf)
  <use 3-MetodoSinplektikoak/figures/PenduluArrunta.pdf>
 Package pdftex.def Info: 3-MetodoSinplektikoak/figures/PenduluArrunta.pdf used 
-on input line 321.
+on input line 329.
 (pdftex.def)             Requested size: 117.00119pt x 105.9081pt.
 
-<3-MetodoSinplektikoak/figures/pcam-irudia.pdf, id=842, 303.534pt x 191.114pt>
+<3-MetodoSinplektikoak/figures/pcam-irudia.pdf, id=914, 303.534pt x 191.114pt>
 File: 3-MetodoSinplektikoak/figures/pcam-irudia.pdf Graphic file (type pdf)
 
 <use 3-MetodoSinplektikoak/figures/pcam-irudia.pdf>
 Package pdftex.def Info: 3-MetodoSinplektikoak/figures/pcam-irudia.pdf used on 
-input line 325.
+input line 333.
 (pdftex.def)             Requested size: 155.99762pt x 98.21921pt.
- [21 <./3-MetodoSinplektikoak/figures/PenduluArrunta.pdf> <./3-MetodoSinplektik
-oak/figures/pcam-irudia.pdf>]
-Overfull \hbox (7.61977pt too wide) in paragraph at lines 366--367
-[][][]\T1/ptm/m/n/12 2.3.[][] iru-dian, pen-du-lu pro-ble-ma-ren ([][]2.7[][]) 
+ [21 <./3-MetodoSinplektikoak/figures/NgramSymplectic.pdf>] [22 <./3-MetodoSinp
+lektikoak/figures/PenduluArrunta.pdf> <./3-MetodoSinplektikoak/figures/pcam-iru
+dia.pdf>]
+Overfull \hbox (7.61977pt too wide) in paragraph at lines 374--375
+[][][]\T1/ptm/m/n/12 2.4.[][] iru-dian, pen-du-lu pro-ble-ma-ren ([][]2.7[][]) 
 ha-sie-ra-ko ba-lio hauei ($\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (0) = 0\OML/cmm/m
 /it/12 ;  q\OT1/cmr/m/n/12 (0) =
  []
 
 
-<3-MetodoSinplektikoak/figures/MetSinplektikoa.pdf, id=871, 350.10799pt x 337.2
+<3-MetodoSinplektikoak/figures/MetSinplektikoa.pdf, id=958, 350.10799pt x 337.2
 6pt>
 File: 3-MetodoSinplektikoak/figures/MetSinplektikoa.pdf Graphic file (type pdf)
 
  <use 3-MetodoSinplektikoak/figures/MetSinplektikoa.pdf>
 Package pdftex.def Info: 3-MetodoSinplektikoak/figures/MetSinplektikoa.pdf used
- on input line 370.
+ on input line 378.
 (pdftex.def)             Requested size: 155.99762pt x 150.27835pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[22] [23 <./3-MetodoSinplektikoak/figures/MetSinplektikoa.pdf>]
-
-LaTeX Warning: Citation `JMSanz-Serna1994' on page 24 undefined on input line 3
-98.
-
-[24]
-
-LaTeX Warning: Citation `Butcher2008' on page 25 undefined on input line 486.
-
-[25]
-
-LaTeX Warning: Citation `JMSanz-Serna1994' on page 26 undefined on input line 5
-21.
-
-
-Overfull \hbox (2.06952pt too wide) in paragraph at lines 534--535
+[23] [24 <./3-MetodoSinplektikoak/figures/MetSinplektikoa.pdf>] [25] [26]
+Overfull \hbox (2.06952pt too wide) in paragraph at lines 551--552
 []\T1/ptm/m/n/12 Kolokazio me-to-doak, zen-ba-kiz-ko in-te-gra-zio me-to-do ga-
 rran-tzi-tsuak di-ra. Gauss
  []
 
-[26]
-
-LaTeX Warning: Citation `Hairer2006' on page 27 undefined on input line 550.
-
-
-LaTeX Warning: Citation `Hairer2006' on page 27 undefined on input line 565.
-
-[27]
-<3-MetodoSinplektikoak/figures/Simetria.pdf, id=931, 381.67593pt x 134.75343pt>
+[27] [28]
+<3-MetodoSinplektikoak/figures/Simetria.pdf, id=1028, 381.67593pt x 134.75343pt
+>
 File: 3-MetodoSinplektikoak/figures/Simetria.pdf Graphic file (type pdf)
-<use 3-MetodoSinplektikoak/figures/Simetria.pdf>
+ <use 3-MetodoSinplektikoak/figures/Simetria.pdf>
 Package pdftex.def Info: 3-MetodoSinplektikoak/figures/Simetria.pdf used on inp
-ut line 615.
+ut line 632.
 (pdftex.def)             Requested size: 234.00238pt x 82.61687pt.
- [28 <./3-MetodoSinplektikoak/figures/Simetria.pdf>]
+ [29 <./3-MetodoSinplektikoak/figures/Simetria.pdf>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 667.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 684.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 667.
- [29]
-<3-MetodoSinplektikoak/figures/YiAtalenHasieraketa.pdf, id=983, 303.38344pt x 9
-4.85437pt>
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 684.
+ [30]
+<3-MetodoSinplektikoak/figures/YiAtalenHasieraketa.pdf, id=1082, 303.38344pt x 
+94.85437pt>
 File: 3-MetodoSinplektikoak/figures/YiAtalenHasieraketa.pdf Graphic file (type 
 pdf)
  <use 3-MetodoSinplektikoak/figures/YiAtalenHasieraketa.pdf>
 Package pdftex.def Info: 3-MetodoSinplektikoak/figures/YiAtalenHasieraketa.pdf 
-used on input line 682.
+used on input line 699.
 (pdftex.def)             Requested size: 398.34717pt x 113.81308pt.
 
-Overfull \hbox (20.78888pt too wide) in paragraph at lines 696--696
+Overfull \hbox (20.78888pt too wide) in paragraph at lines 713--713
 [] 
  []
 
-[30 <./3-MetodoSinplektikoak/figures/YiAtalenHasieraketa.pdf>]
-
-LaTeX Warning: Citation `Laburta1998' on page 31 undefined on input line 717.
-
-
-Overfull \hbox (29.3747pt too wide) in paragraph at lines 728--736
+[31 <./3-MetodoSinplektikoak/figures/YiAtalenHasieraketa.pdf>]
+Overfull \hbox (29.3747pt too wide) in paragraph at lines 745--753
 $[]$ 
  []
 
 
-Overfull \hbox (29.3747pt too wide) in paragraph at lines 745--754
+Overfull \hbox (29.3747pt too wide) in paragraph at lines 762--771
 $[]$ 
  []
 
-[31] [32] [33]
-Overfull \hbox (1.4357pt too wide) in paragraph at lines 866--867
+[32] [33] [34]
+Overfull \hbox (1.4357pt too wide) in paragraph at lines 883--884
 \T1/ptm/m/n/12 Konposizio eta Split-ting ideie-tan oi-na-rri-tuz, apli-ka-zio e
 re-mu ez-ber-di-ne-ta-ra-ko hain-
  []
 
-
-LaTeX Warning: Citation `Hairer2006' on page 34 undefined on input line 870.
-
-[34]
-
-LaTeX Warning: Citation `Sofroniou2005' on page 35 undefined on input line 939.
-
-
-
-LaTeX Warning: Citation `Hairer2006' on page 35 undefined on input line 943.
-
-
-LaTeX Warning: Citation `Hairer2006' on page 35 undefined on input line 943.
-
+[35]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[35] [36]
-Overfull \hbox (6.18556pt too wide) in paragraph at lines 1036--1037
+[36] [37]
+Overfull \hbox (6.18556pt too wide) in paragraph at lines 1053--1054
  []\T1/ptm/b/n/12 Adibidea. \T1/ptm/m/n/12 Ha-mil-ton-dar ba-na-ga-rrie-ta-ra-k
 o $\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p; q\OT1/cmr/m/n/12 ) = 
 \OML/cmm/m/it/12 T\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p\OT1/cmr/m/n/12 ) + \OML/c
@@ -1455,83 +1353,35 @@ mm/m/it/12 V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 )$\T1/ptm/m/n/12
  ,  \T1/ptm/m/it/12 Störmer-
  []
 
-[37] [38]
-
-LaTeX Warning: Citation `Laskar2001' on page 39 undefined on input line 1108.
-
-
-LaTeX Warning: Citation `Blanes2013' on page 39 undefined on input line 1108.
-
-
-LaTeX Warning: Citation `Farres2013' on page 39 undefined on input line 1108.
-
-
-Overfull \hbox (10.10039pt too wide) in paragraph at lines 1108--1109
+[38] [39]
+Overfull \hbox (10.10039pt too wide) in paragraph at lines 1125--1126
 \T1/ptm/m/n/12 ba-kiz-ko bi in-te-gra-tzai-le sin-plek-ti-ko azal-du-ko di-tu-g
 u. Lehe-na, Laskar-ek eta Robutel-
  []
 
 
-LaTeX Warning: Citation `Laskar2001' on page 39 undefined on input line 1113.
-
-
-LaTeX Warning: Citation `Laskar2011' on page 39 undefined on input line 1117.
-
-
-LaTeX Warning: Citation `Laskar2001' on page 39 undefined on input line 1129.
-
-
-LaTeX Warning: Citation `Laskar2001' on page 39 undefined on input line 1129.
-
-
-Overfull \hbox (4.23576pt too wide) in paragraph at lines 1131--1147
+Overfull \hbox (4.23576pt too wide) in paragraph at lines 1148--1164
  [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `Blanes2013' on page 39 undefined on input line 1151.
-
-[39]
-
-LaTeX Warning: Citation `Blanes2013' on page 40 undefined on input line 1173.
-
-
-LaTeX Warning: Citation `Blanes2013' on page 40 undefined on input line 1173.
-
+[40]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `JMSanz-Serna1994' on page 40 undefined on input line 1
-223.
-
-
-LaTeX Warning: Citation `Hairer2006' on page 40 undefined on input line 1223.
-
-
-LaTeX Warning: Citation `Leimkuhler2004' on page 40 undefined on input line 122
-3.
-
-
-LaTeX Warning: Citation `Feng2010' on page 40 undefined on input line 1223.
-
-) [40] [41]
+) [41] [42]
 \openout2 = `4-Problemak/Problemak.aux'.
 
- (./4-Problemak/Problemak.tex [42
+ (./4-Problemak/Problemak.tex
+3. Kapitulua
+[43
 
 
 
 ]
-3. Kapitulua
-
-LaTeX Warning: Citation `Laskar1999' on page 43 undefined on input line 12.
-
-[43]
-<4-Problemak/figures/MyDoublePendulum.pdf, id=1150, 417.81094pt x 297.36093pt>
+<4-Problemak/figures/MyDoublePendulum.pdf, id=1289, 417.81094pt x 297.36093pt>
 File: 4-Problemak/figures/MyDoublePendulum.pdf Graphic file (type pdf)
 
 <use 4-Problemak/figures/MyDoublePendulum.pdf>
@@ -1539,11 +1389,7 @@ Package pdftex.def Info: 4-Problemak/figures/MyDoublePendulum.pdf used on input
  line 26.
 (pdftex.def)             Requested size: 284.5412pt x 227.62102pt.
  [44 <./4-Problemak/figures/MyDoublePendulum.pdf>]
-
-LaTeX Warning: Citation `Dumitru' on page 45 undefined on input line 47.
-
-
-<4-Problemak/figures/MyDoublePendulumSTIFF.pdf, id=1190, 304.88907pt x 287.5743
+<4-Problemak/figures/MyDoublePendulumSTIFF.pdf, id=1329, 304.88907pt x 287.5743
 7pt>
 File: 4-Problemak/figures/MyDoublePendulumSTIFF.pdf Graphic file (type pdf)
  <use 4-Problemak/figures/MyDoublePendulumSTIFF.pdf>
@@ -1554,11 +1400,7 @@ input line 65.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[45]
-
-LaTeX Warning: Citation `Dumitru' on page 46 undefined on input line 93.
-
-[46 <./4-Problemak/figures/MyDoublePendulumSTIFF.pdf>]
+[45] [46 <./4-Problemak/figures/MyDoublePendulumSTIFF.pdf>]
 Overfull \hbox (11.44482pt too wide) in paragraph at lines 122--123
  []\T1/ptm/b/n/12 Ekuazio di-fe-ren-tzia-lak. \T1/ptm/m/n/12 Abia-du-ra-ren eta
  ko-ka-pe-na-ren ara-be-ra-ko ekua-zioak hauek
@@ -1575,15 +1417,6 @@ Overfull \hbox (0.9123pt too wide) in paragraph at lines 187--188
 \T1/ptm/m/n/12 ga-tu-ko ga-ra. Ere-duen gor-putz ko-pu-rua txi-kia izan-go da, 
 $\OML/cmm/m/it/12 N \OT1/cmr/m/n/12 = 6$ \T1/ptm/m/n/12 (eguzki-sistemaren
  []
-
-
-LaTeX Warning: Citation `Laskar1999' on page 49 undefined on input line 189.
-
-
-LaTeX Warning: Citation `Hayes2007' on page 49 undefined on input line 189.
-
-
-LaTeX Warning: Citation `Laskar1999' on page 49 undefined on input line 195.
 
 
 Overfull \hbox (9.63495pt too wide) in paragraph at lines 194--196
@@ -1604,7 +1437,7 @@ Overfull \hbox (0.28436pt too wide) in paragraph at lines 201--202
 e-ta-ko ohi-ko urra-tsa $\OML/cmm/m/it/12 h \OT1/cmr/m/n/12 =
  []
 
-<4-Problemak/figures/PanetenMasak.pdf, id=1266, 424.58624pt x 167.62625pt>
+<4-Problemak/figures/PanetenMasak.pdf, id=1412, 424.58624pt x 167.62625pt>
 File: 4-Problemak/figures/PanetenMasak.pdf Graphic file (type pdf)
 
 <use 4-Problemak/figures/PanetenMasak.pdf>
@@ -1612,7 +1445,7 @@ Package pdftex.def Info: 4-Problemak/figures/PanetenMasak.pdf used on input lin
 e 208.
 (pdftex.def)             Requested size: 195.0pt x 76.98622pt.
 
-<4-Problemak/figures/PlanetenDistantziak.pdf, id=1267, 318.43968pt x 195.73125p
+<4-Problemak/figures/PlanetenDistantziak.pdf, id=1413, 318.43968pt x 195.73125p
 t>
 File: 4-Problemak/figures/PlanetenDistantziak.pdf Graphic file (type pdf)
  <use 4-Problemak/figures/PlanetenDistantziak.pdf>
@@ -1628,16 +1461,11 @@ Overfull \hbox (24.0pt too wide) in paragraph at lines 206--213
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [50 <./4-Problemak/figures/PanetenMasak.pdf> <./4-Problemak/figures/PlanetenDis
-tantziak.pdf>]
-
-LaTeX Warning: Citation `Sharp2001' on page 51 undefined on input line 254.
-
-[51]
-
-LaTeX Warning: Citation `Danby1992' on page 52 undefined on input line 276.
-
-
-LaTeX Warning: Citation `Wisdom2015' on page 52 undefined on input line 276.
+tantziak.pdf>] [51]
+Overfull \hbox (5.72446pt too wide) in paragraph at lines 276--277
+\T1/ptm/m/n/12 fe-ren-tziaz-ko ke-pler pro-ble-ma-ren in-ple-men-ta-zioak, Danb
+y ($\OT1/cmr/m/n/12 1992$\T1/ptm/m/n/12 ) [[]] eta J.Wisdom
+ []
 
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 298.
 
@@ -1656,14 +1484,14 @@ r/m/n/12 = 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 01277471$
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<4-Problemak/figures/r3bp1.png, id=1302, 545.03625pt x 556.0775pt>
+<4-Problemak/figures/r3bp1.png, id=1454, 545.03625pt x 556.0775pt>
 File: 4-Problemak/figures/r3bp1.png Graphic file (type png)
 
 <use 4-Problemak/figures/r3bp1.png>
 Package pdftex.def Info: 4-Problemak/figures/r3bp1.png used on input line 346.
 (pdftex.def)             Requested size: 195.0pt x 198.94893pt.
 
-<4-Problemak/figures/r3bp2.png, id=1303, 634.37pt x 382.42876pt>
+<4-Problemak/figures/r3bp2.png, id=1455, 634.37pt x 382.42876pt>
 File: 4-Problemak/figures/r3bp2.png Graphic file (type png)
 
 <use 4-Problemak/figures/r3bp2.png>
@@ -1679,23 +1507,10 @@ Overfull \hbox (9.10483pt too wide) in paragraph at lines 364--365
 -gu. Eguzki-sistemaren kanpo-
  []
 
-[53]
-
-LaTeX Warning: Citation `Hairer2006' on page 54 undefined on input line 367.
-
-[54 <./4-Problemak/figures/r3bp1.png (PNG copy)> <./4-Problemak/figures/r3bp2.p
-ng (PNG copy)>] [55]
-
-LaTeX Warning: Citation `Folkner2014' on page 56 undefined on input line 420.
-
+[53] [54 <./4-Problemak/figures/r3bp1.png (PNG copy)> <./4-Problemak/figures/r3
+bp2.png (PNG copy)>] [55]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation `Laskar2011' on page 56 undefined on input line 484.
-
-
-LaTeX Warning: Citation `Saha1994' on page 56 undefined on input line 484.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1733,7 +1548,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
 
 
 ]
-<5-KomaHigikorra/figures/ZenbakiErrealak.pdf, id=1357, 442.65375pt x 87.32625pt
+<5-KomaHigikorra/figures/ZenbakiErrealak.pdf, id=1514, 442.65375pt x 87.32625pt
 >
 File: 5-KomaHigikorra/figures/ZenbakiErrealak.pdf Graphic file (type pdf)
  <use 5-KomaHigikorra/figures/ZenbakiErrealak.pdf>
@@ -1741,7 +1556,7 @@ Package pdftex.def Info: 5-KomaHigikorra/figures/ZenbakiErrealak.pdf used on in
 put line 23.
 (pdftex.def)             Requested size: 398.35765pt x 85.36327pt.
 
-<5-KomaHigikorra/figures/ZenbakiErrealak2.pdf, id=1359, 401.24907pt x 65.49469p
+<5-KomaHigikorra/figures/ZenbakiErrealak2.pdf, id=1516, 401.24907pt x 65.49469p
 t>
 File: 5-KomaHigikorra/figures/ZenbakiErrealak2.pdf Graphic file (type pdf)
  <use 5-KomaHigikorra/figures/ZenbakiErrealak2.pdf>
@@ -1752,23 +1567,9 @@ nput line 44.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `Muller2009' on page 60 undefined on input line 69.
-
 [60 <./5-KomaHigikorra/figures/ZenbakiErrealak.pdf> <./5-KomaHigikorra/figures/
-ZenbakiErrealak2.pdf>]
-
-LaTeX Warning: Citation `Joldes2016' on page 61 undefined on input line 71.
-
-
-LaTeX Warning: Citation `Laskar2011' on page 61 undefined on input line 80.
-
-[61]
-
-LaTeX Warning: Citation `Fukushima2001' on page 62 undefined on input line 126.
-
-
-[62] [63] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+ZenbakiErrealak2.pdf>] [61] [62] [63]
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -1780,16 +1581,7 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 196.
  [64]
-
-LaTeX Warning: Citation `Dekker1971' on page 65 undefined on input line 213.
-
-
-LaTeX Warning: Citation `Higham2002' on page 65 undefined on input line 213.
-
-
-LaTeX Warning: Citation `Dekker1971' on page 65 undefined on input line 219.
-
-<5-KomaHigikorra/figures/Fast2Sum.pdf, id=1465, 444.91219pt x 297.36093pt>
+<5-KomaHigikorra/figures/Fast2Sum.pdf, id=1631, 444.91219pt x 297.36093pt>
 File: 5-KomaHigikorra/figures/Fast2Sum.pdf Graphic file (type pdf)
 
 <use 5-KomaHigikorra/figures/Fast2Sum.pdf>
@@ -1800,30 +1592,7 @@ e 234.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Citation `Higham2002' on page 65 undefined on input line 245.
-
-[65]
-
-LaTeX Warning: Citation `Muller2009' on page 66 undefined on input line 264.
-
-[66 <./5-KomaHigikorra/figures/Fast2Sum.pdf>] [67]
-
-LaTeX Warning: Citation `Sterbenz1973' on page 68 undefined on input line 337.
-
-
-LaTeX Warning: Citation `Overton2001' on page 68 undefined on input line 346.
-
-
-LaTeX Warning: Citation `Muller2009' on page 68 undefined on input line 346.
-
-
-LaTeX Warning: Citation `Higham2002' on page 68 undefined on input line 346.
-
-
-LaTeX Warning: Citation `Corless2013' on page 68 undefined on input line 346.
-
-
+[65] [66 <./5-KomaHigikorra/figures/Fast2Sum.pdf>] [67]
 Overfull \hbox (3.04349pt too wide) in paragraph at lines 346--347
 \T1/ptm/m/n/12 gu: Nu-me-ri-cal com-pu-ting with IEEE floa-ting point arith-me-
 tic (Michael L.Overton)
@@ -1835,16 +1604,13 @@ tic (Michael L.Overton)
  (./6-ZientziaKonputazioa/ZientziaKonputazioa.tex
 5. Kapitulua
 
-LaTeX Warning: Citation `Wilson2014' on page 69 undefined on input line 12.
-
-
 Overfull \hbox (13.18425pt too wide) in paragraph at lines 22--23
 \T1/ptm/m/n/12 Zientzia kon-pu-ta-zioa-ren in-ple-men-ta-zio be-rri ba-ten era-
 gin-kor-ta-su-na neur-tze-ko, koma-
  []
 
 
-Underfull \vbox (badness 3189) has occurred while \output is active []
+Underfull \vbox (badness 1590) has occurred while \output is active []
 
  [69
 
@@ -1876,7 +1642,7 @@ era-man-ga-rri,...) pa-
  []
 
 [72]
-<6-ZientziaKonputazioa/figures/MemoryHierarchy.png, id=1603, 650.43pt x 330.233
+<6-ZientziaKonputazioa/figures/MemoryHierarchy.png, id=1781, 650.43pt x 330.233
 75pt>
 File: 6-ZientziaKonputazioa/figures/MemoryHierarchy.png Graphic file (type png)
 
@@ -1894,11 +1660,8 @@ Overfull \hbox (3.05132pt too wide) in paragraph at lines 164--165
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `Luszczek2014' on page 74 undefined on input line 216.
-
 [74]
-<6-ZientziaKonputazioa/figures/Arkitektura1.pdf, id=1625, 298.11375pt x 161.101
+<6-ZientziaKonputazioa/figures/Arkitektura1.pdf, id=1805, 298.11375pt x 161.101
 87pt>
 File: 6-ZientziaKonputazioa/figures/Arkitektura1.pdf Graphic file (type pdf)
  <use 6-ZientziaKonputazioa/figures/Arkitektura1.pdf>
@@ -1906,7 +1669,7 @@ Package pdftex.def Info: 6-ZientziaKonputazioa/figures/Arkitektura1.pdf used on
  input line 224.
 (pdftex.def)             Requested size: 341.45439pt x 170.72292pt.
 
-<6-ZientziaKonputazioa/figures/Arkitektura2.pdf, id=1626, 280.04625pt x 130.989
+<6-ZientziaKonputazioa/figures/Arkitektura2.pdf, id=1806, 280.04625pt x 130.989
 38pt>
 File: 6-ZientziaKonputazioa/figures/Arkitektura2.pdf Graphic file (type pdf)
  <use 6-ZientziaKonputazioa/figures/Arkitektura2.pdf>
@@ -1918,7 +1681,7 @@ Package pdftex.def Info: 6-ZientziaKonputazioa/figures/Arkitektura2.pdf used on
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [75 <./6-ZientziaKonputazioa/figures/Arkitektura1.pdf>]
-<6-ZientziaKonputazioa/figures/ArkitekturaUMA.pdf, id=1641, 249.18094pt x 150.5
+<6-ZientziaKonputazioa/figures/ArkitekturaUMA.pdf, id=1821, 249.18094pt x 150.5
 625pt>
 File: 6-ZientziaKonputazioa/figures/ArkitekturaUMA.pdf Graphic file (type pdf)
  <use 6-ZientziaKonputazioa/figures/ArkitekturaUMA.pdf>
@@ -1926,7 +1689,7 @@ Package pdftex.def Info: 6-ZientziaKonputazioa/figures/ArkitekturaUMA.pdf used
 on input line 246.
 (pdftex.def)             Requested size: 341.46326pt x 142.27771pt.
 
-<6-ZientziaKonputazioa/figures/ArkitekturaNUMA.pdf, id=1643, 250.68657pt x 142.
+<6-ZientziaKonputazioa/figures/ArkitekturaNUMA.pdf, id=1823, 250.68657pt x 142.
 28156pt>
 File: 6-ZientziaKonputazioa/figures/ArkitekturaNUMA.pdf Graphic file (type pdf)
 
@@ -1935,32 +1698,15 @@ Package pdftex.def Info: 6-ZientziaKonputazioa/figures/ArkitekturaNUMA.pdf used
  on input line 255.
 (pdftex.def)             Requested size: 341.47238pt x 113.81671pt.
  [76 <./6-ZientziaKonputazioa/figures/Arkitektura2.pdf> <./6-ZientziaKonputazio
-a/figures/ArkitekturaUMA.pdf>]
-
-LaTeX Warning: Citation `Higham2015' on page 77 undefined on input line 280.
-
-[77 <./6-ZientziaKonputazioa/figures/ArkitekturaNUMA.pdf>]
-
-LaTeX Warning: Citation `Pacheco2011' on page 78 undefined on input line 283.
-
-
-LaTeX Warning: Citation `Bezanson2014' on page 78 undefined on input line 294.
-
-
-LaTeX Warning: Citation `Balaji2015' on page 78 undefined on input line 294.
-
-
-LaTeX Warning: Citation `WolframResearch' on page 78 undefined on input line 29
-6.
-
-
+a/figures/ArkitekturaUMA.pdf>] [77 <./6-ZientziaKonputazioa/figures/Arkitektura
+NUMA.pdf>]
 Overfull \hbox (1.30154pt too wide) in paragraph at lines 296--297
 []\T1/ptm/m/n/12 Azkenik, zien-tzia kon-pu-ta-zioan \T1/ptm/m/it/12 pro-ble-mak
  ebaz-te-ko in-gu-ru-neak \T1/ptm/m/n/12 (Pro-blem Sol-
  []
 
 
-<6-ZientziaKonputazioa/figures/ForkJoin.pdf, id=1680, 498.36188pt x 158.09062pt
+<6-ZientziaKonputazioa/figures/ForkJoin.pdf, id=1866, 498.36188pt x 158.09062pt
 >
 File: 6-ZientziaKonputazioa/figures/ForkJoin.pdf Graphic file (type pdf)
  <use 6-ZientziaKonputazioa/figures/ForkJoin.pdf>
@@ -1971,13 +1717,10 @@ ut line 305.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[78] [79 <./6-ZientziaKonputazioa/figures/ForkJoin.pdf>]
-
-LaTeX Warning: Citation `Hogben2013' on page 80 undefined on input line 365.
-
-[80]
+[78] [79 <./6-ZientziaKonputazioa/figures/ForkJoin.pdf>] [80]
 LaTeX Font Info:    Try loading font information for T1+pcr on input line 406.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [81]
 Overfull \hbox (0.40457pt too wide) in paragraph at lines 436--437
@@ -1988,11 +1731,8 @@ ako era-gi-ke-ten hauen
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `Higham2002' on page 82 undefined on input line 472.
-
 [82] [83]
-<6-ZientziaKonputazioa/figures/SparseMatrizeak.pdf, id=1759, 228.855pt x 221.62
+<6-ZientziaKonputazioa/figures/SparseMatrizeak.pdf, id=1952, 228.855pt x 221.62
 8pt>
 File: 6-ZientziaKonputazioa/figures/SparseMatrizeak.pdf Graphic file (type pdf)
 
@@ -2000,64 +1740,19 @@ File: 6-ZientziaKonputazioa/figures/SparseMatrizeak.pdf Graphic file (type pdf)
 Package pdftex.def Info: 6-ZientziaKonputazioa/figures/SparseMatrizeak.pdf used
  on input line 519.
 (pdftex.def)             Requested size: 170.72241pt x 170.71834pt.
- [84 <./6-ZientziaKonputazioa/figures/SparseMatrizeak.pdf>] [85]
-
-LaTeX Warning: Citation `Eijkhout2011' on page 86 undefined on input line 608.
-
-
-LaTeX Warning: Citation `Wilson2014' on page 86 undefined on input line 608.
-
-
-LaTeX Warning: Citation `Hogben2013' on page 86 undefined on input line 608.
-
-) [86] [87
+ [84 <./6-ZientziaKonputazioa/figures/SparseMatrizeak.pdf>] [85]) [86] [87
 
 
 ] [88]
 \openout2 = `7-IRKPuntuFinkoa/IRKPuntuFinkoa.aux'.
 
- (./7-IRKPuntuFinkoa/IRKPuntuFinkoa.tex
+
+(./7-IRKPuntuFinkoa/IRKPuntuFinkoa.tex
 6. Kapitulua
-
-LaTeX Warning: Citation `Hairer2006' on page 89 undefined on input line 9.
-
-
-LaTeX Warning: Citation `Hairer2008' on page 89 undefined on input line 15.
-
 [89
 
 
-]
-
-LaTeX Warning: Citation `Hairer2008' on page 90 undefined on input line 21.
-
-[90]
-
-LaTeX Warning: Citation `Grazier2005' on page 91 undefined on input line 115.
-
-[91]
-
-LaTeX Warning: Citation `Hairer2008' on page 92 undefined on input line 122.
-
-
-LaTeX Warning: Citation `Kahan1965' on page 92 undefined on input line 124.
-
-
-LaTeX Warning: Citation `Higham2002' on page 92 undefined on input line 124.
-
-
-LaTeX Warning: Citation `Muller2009' on page 92 undefined on input line 124.
-
-[92]
-
-LaTeX Warning: Citation `JMSanz-Serna1994' on page 93 undefined on input line 1
-53.
-
-
-LaTeX Warning: Citation `JMSanz-Serna1994' on page 93 undefined on input line 1
-61.
-
-
+] [90] [91] [92]
 Overfull \hbox (13.75854pt too wide) in paragraph at lines 185--186
 \T1/ptm/m/n/12 lioak fin-koak di-ra ($[] \OT1/cmr/m/n/12 := 1\OML/cmm/m/it/12 =
 \OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ;  i \OT1/cmr/m/n/12 = 1\OML/cmm/m/it/12 ; []
@@ -2070,17 +1765,7 @@ Overfull \hbox (13.71106pt too wide) in paragraph at lines 202--203
 -ta-te bal-din-tza ([][]6.11[][]) zehaz-
  []
 
-[94]
-
-LaTeX Warning: Citation `Hairer2006' on page 95 undefined on input line 246.
-
-
-LaTeX Warning: Citation `Hairer2008' on page 95 undefined on input line 246.
-
-
-LaTeX Warning: Citation `Hairer2008' on page 95 undefined on input line 256.
-
-[95] <7-IRKPuntuFinkoa/figures/Fig1.pdf, id=1895, 501.875pt x 297.11pt>
+[94] [95] <7-IRKPuntuFinkoa/figures/Fig1.pdf, id=2108, 501.875pt x 297.11pt>
 File: 7-IRKPuntuFinkoa/figures/Fig1.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig1.pdf>
@@ -2088,21 +1773,15 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig1.pdf used on input line 2
 80.
 (pdftex.def)             Requested size: 155.99762pt x 92.35248pt.
 
-<7-IRKPuntuFinkoa/figures/Fig2.pdf, id=1896, 501.875pt x 295.1025pt>
+<7-IRKPuntuFinkoa/figures/Fig2.pdf, id=2109, 501.875pt x 295.1025pt>
 File: 7-IRKPuntuFinkoa/figures/Fig2.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig2.pdf>
 Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig2.pdf used on input line 2
 83.
 (pdftex.def)             Requested size: 155.99762pt x 91.72847pt.
+ [96 <./7-IRKPuntuFinkoa/figures/Fig1.pdf> <./7-IRKPuntuFinkoa/figures/Fig2.pdf
 
-
-LaTeX Warning: Citation `Hairer2008' on page 96 undefined on input line 285.
-
-
-LaTeX Warning: Citation `Hairer2008' on page 96 undefined on input line 285.
-
-[96 <./7-IRKPuntuFinkoa/figures/Fig1.pdf> <./7-IRKPuntuFinkoa/figures/Fig2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./7-IRKPuntuFinkoa/figures/Fig2.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
@@ -2129,19 +1808,6 @@ Overfull \hbox (6.3345pt too wide) in paragraph at lines 523--524
 \T1/ptm/m/n/12 Es-pe-ri-men-tu hauen kon-pu-ta-zio-ra-ko, $\OT1/cmr/m/n/12 64$\
 T1/ptm/m/n/12 -biteko doi-ta-su-ne-ko IEEE koma-higikorreko
  []
-
-
-LaTeX Warning: Citation `Hairer2006' on page 103 undefined on input line 527.
-
-
-LaTeX Warning: Citation `Dumitru' on page 103 undefined on input line 527.
-
-
-LaTeX Warning: Citation `Sanz-Serna1992' on page 103 undefined on input line 53
-7.
-
-
-LaTeX Warning: Citation `Hairer2008' on page 103 undefined on input line 537.
 
 
 Overfull \hbox (12.80783pt too wide) in paragraph at lines 542--543
@@ -2171,7 +1837,7 @@ Overfull \hbox (6.51099pt too wide) in paragraph at lines 578--579
 en ba-lioak era-bi-liz (hauei
  []
 
-<7-IRKPuntuFinkoa/figures/Fig4.pdf, id=2009, 501.875pt x 327.2225pt>
+<7-IRKPuntuFinkoa/figures/Fig4.pdf, id=2228, 501.875pt x 327.2225pt>
 File: 7-IRKPuntuFinkoa/figures/Fig4.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig4.pdf>
@@ -2179,7 +1845,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig4.pdf used on input line 5
 90.
 (pdftex.def)             Requested size: 234.00238pt x 152.5713pt.
 
-<7-IRKPuntuFinkoa/figures/Fig5.pdf, id=2010, 501.875pt x 324.21124pt>
+<7-IRKPuntuFinkoa/figures/Fig5.pdf, id=2229, 501.875pt x 324.21124pt>
 File: 7-IRKPuntuFinkoa/figures/Fig5.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig5.pdf>
@@ -2191,10 +1857,10 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig5.pdf used on input line 5
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Citation `Hairer2008' on page 105 undefined on input line 600.
-
-
-LaTeX Warning: Citation `Hairer2008' on page 105 undefined on input line 608.
+Overfull \hbox (6.58908pt too wide) in paragraph at lines 600--601
+\T1/ptm/m/n/12 ba-koi-tza-ren-tzat, ha-sie-ra-ko ba-lioa-ren osa-gai ba-koi-tza
+ au-saz per-tur-ba-tu-ta-ko ($\OMS/cmsy/m/n/12 O\OT1/cmr/m/n/12 (10[])$
+ []
 
 
 Overfull \hbox (8.02357pt too wide) in paragraph at lines 612--613
@@ -2202,7 +1868,7 @@ Overfull \hbox (8.02357pt too wide) in paragraph at lines 612--613
  DP in-ple-men-ta-zioa, Hairer-
  []
 
-[105] <7-IRKPuntuFinkoa/figures/Fig6.pdf, id=2023, 361.35pt x 227.85126pt>
+[105] <7-IRKPuntuFinkoa/figures/Fig6.pdf, id=2244, 361.35pt x 227.85126pt>
 File: 7-IRKPuntuFinkoa/figures/Fig6.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig6.pdf>
@@ -2210,7 +1876,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig6.pdf used on input line 6
 42.
 (pdftex.def)             Requested size: 155.99762pt x 98.36351pt.
 
-<7-IRKPuntuFinkoa/figures/Fig7.pdf, id=2024, 361.35pt x 222.8325pt>
+<7-IRKPuntuFinkoa/figures/Fig7.pdf, id=2245, 361.35pt x 222.8325pt>
 File: 7-IRKPuntuFinkoa/figures/Fig7.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig7.pdf>
@@ -2231,18 +1897,12 @@ Overfull \hbox (1.38509pt too wide) in paragraph at lines 655--656
 erro-reak era-gin-da-ko ener-
  []
 
-
-LaTeX Warning: Citation `Grazier2005' on page 107 undefined on input line 659.
-
-
-LaTeX Warning: Citation `Brouwer1937' on page 107 undefined on input line 659.
-
 [107 <./7-IRKPuntuFinkoa/figures/Fig6.pdf> <./7-IRKPuntuFinkoa/figures/Fig7.pdf
 
 
 pdfTeX warning: /usr/bin/pdflatex (file ./7-IRKPuntuFinkoa/figures/Fig7.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
->] <7-IRKPuntuFinkoa/figures/Fig8.pdf, id=2096, 501.875pt x 324.21124pt>
+>] <7-IRKPuntuFinkoa/figures/Fig8.pdf, id=2319, 501.875pt x 324.21124pt>
 File: 7-IRKPuntuFinkoa/figures/Fig8.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig8.pdf>
@@ -2250,7 +1910,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig8.pdf used on input line 6
 80.
 (pdftex.def)             Requested size: 155.99762pt x 100.77654pt.
 
-<7-IRKPuntuFinkoa/figures/Fig9.pdf, id=2097, 501.875pt x 324.21124pt>
+<7-IRKPuntuFinkoa/figures/Fig9.pdf, id=2320, 501.875pt x 324.21124pt>
 File: 7-IRKPuntuFinkoa/figures/Fig9.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig9.pdf>
@@ -2258,7 +1918,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig9.pdf used on input line 6
 83.
 (pdftex.def)             Requested size: 155.99762pt x 100.77654pt.
 
-<7-IRKPuntuFinkoa/figures/Fig10.pdf, id=2098, 501.875pt x 323.2075pt>
+<7-IRKPuntuFinkoa/figures/Fig10.pdf, id=2321, 501.875pt x 323.2075pt>
 File: 7-IRKPuntuFinkoa/figures/Fig10.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig10.pdf>
@@ -2266,7 +1926,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig10.pdf used on input line
 686.
 (pdftex.def)             Requested size: 155.99762pt x 100.46452pt.
 
-<7-IRKPuntuFinkoa/figures/Fig11.pdf, id=2099, 501.875pt x 310.15875pt>
+<7-IRKPuntuFinkoa/figures/Fig11.pdf, id=2322, 501.875pt x 310.15875pt>
 File: 7-IRKPuntuFinkoa/figures/Fig11.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig11.pdf>
@@ -2283,7 +1943,7 @@ Overfull \hbox (2.56062pt too wide) in paragraph at lines 699--700
  in-ple-men-ta-zioan, ener-
  []
 
-<7-IRKPuntuFinkoa/figures/Fig12.pdf, id=2104, 752.8125pt x 488.82625pt>
+<7-IRKPuntuFinkoa/figures/Fig12.pdf, id=2327, 752.8125pt x 488.82625pt>
 File: 7-IRKPuntuFinkoa/figures/Fig12.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig12.pdf>
@@ -2291,7 +1951,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig12.pdf used on input line
 707.
 (pdftex.def)             Requested size: 155.99762pt x 101.29156pt.
 
-<7-IRKPuntuFinkoa/figures/Fig13.pdf, id=2105, 752.8125pt x 479.7925pt>
+<7-IRKPuntuFinkoa/figures/Fig13.pdf, id=2328, 752.8125pt x 479.7925pt>
 File: 7-IRKPuntuFinkoa/figures/Fig13.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig13.pdf>
@@ -2308,7 +1968,7 @@ Overfull \hbox (4.86467pt too wide) in paragraph at lines 716--717
 iru-dian, FPIEA, DP eta Hairer-
  []
 
-<7-IRKPuntuFinkoa/figures/Fig14.pdf, id=2107, 501.875pt x 322.20375pt>
+<7-IRKPuntuFinkoa/figures/Fig14.pdf, id=2330, 501.875pt x 322.20375pt>
 File: 7-IRKPuntuFinkoa/figures/Fig14.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig14.pdf>
@@ -2316,7 +1976,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig14.pdf used on input line
 723.
 (pdftex.def)             Requested size: 155.99762pt x 100.15253pt.
 
-<7-IRKPuntuFinkoa/figures/Fig15.pdf, id=2108, 501.875pt x 322.20375pt>
+<7-IRKPuntuFinkoa/figures/Fig15.pdf, id=2331, 501.875pt x 322.20375pt>
 File: 7-IRKPuntuFinkoa/figures/Fig15.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig15.pdf>
@@ -2324,7 +1984,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig15.pdf used on input line
 726.
 (pdftex.def)             Requested size: 155.99762pt x 100.15253pt.
 
-<7-IRKPuntuFinkoa/figures/Fig16.pdf, id=2109, 501.875pt x 323.2075pt>
+<7-IRKPuntuFinkoa/figures/Fig16.pdf, id=2332, 501.875pt x 323.2075pt>
 File: 7-IRKPuntuFinkoa/figures/Fig16.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig16.pdf>
@@ -2332,7 +1992,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig16.pdf used on input line
 729.
 (pdftex.def)             Requested size: 155.99762pt x 100.46452pt.
 
-<7-IRKPuntuFinkoa/figures/Fig17.pdf, id=2110, 501.875pt x 323.2075pt>
+<7-IRKPuntuFinkoa/figures/Fig17.pdf, id=2333, 501.875pt x 323.2075pt>
 File: 7-IRKPuntuFinkoa/figures/Fig17.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig17.pdf>
@@ -2340,7 +2000,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig17.pdf used on input line
 732.
 (pdftex.def)             Requested size: 155.99762pt x 100.46452pt.
 
-<7-IRKPuntuFinkoa/figures/Fig18.pdf, id=2111, 501.875pt x 324.21124pt>
+<7-IRKPuntuFinkoa/figures/Fig18.pdf, id=2334, 501.875pt x 324.21124pt>
 File: 7-IRKPuntuFinkoa/figures/Fig18.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig18.pdf>
@@ -2348,7 +2008,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig18.pdf used on input line
 735.
 (pdftex.def)             Requested size: 155.99762pt x 100.77654pt.
 
-<7-IRKPuntuFinkoa/figures/Fig19.pdf, id=2112, 501.875pt x 318.18875pt>
+<7-IRKPuntuFinkoa/figures/Fig19.pdf, id=2335, 501.875pt x 318.18875pt>
 File: 7-IRKPuntuFinkoa/figures/Fig19.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig19.pdf>
@@ -2404,7 +2064,7 @@ PDF inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /usr/bin/pdflatex (file ./7-IRKPuntuFinkoa/figures/Fig19.pdf): 
 PDF inclusion: multiple pdfs with page group included in a single page
->] <7-IRKPuntuFinkoa/figures/Fig20.pdf, id=2437, 501.875pt x 322.20375pt>
+>] <7-IRKPuntuFinkoa/figures/Fig20.pdf, id=2661, 501.875pt x 322.20375pt>
 File: 7-IRKPuntuFinkoa/figures/Fig20.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig20.pdf>
@@ -2412,7 +2072,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig20.pdf used on input line
 753.
 (pdftex.def)             Requested size: 155.99762pt x 100.15253pt.
 
-<7-IRKPuntuFinkoa/figures/Fig21.pdf, id=2438, 501.875pt x 322.20375pt>
+<7-IRKPuntuFinkoa/figures/Fig21.pdf, id=2662, 501.875pt x 322.20375pt>
 File: 7-IRKPuntuFinkoa/figures/Fig21.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig21.pdf>
@@ -2420,7 +2080,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig21.pdf used on input line
 756.
 (pdftex.def)             Requested size: 155.99762pt x 100.15253pt.
 
-<7-IRKPuntuFinkoa/figures/Fig22.pdf, id=2439, 501.875pt x 322.20375pt>
+<7-IRKPuntuFinkoa/figures/Fig22.pdf, id=2663, 501.875pt x 322.20375pt>
 File: 7-IRKPuntuFinkoa/figures/Fig22.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig22.pdf>
@@ -2428,7 +2088,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig22.pdf used on input line
 759.
 (pdftex.def)             Requested size: 155.99762pt x 100.15253pt.
 
-<7-IRKPuntuFinkoa/figures/Fig23.pdf, id=2440, 501.875pt x 322.20375pt>
+<7-IRKPuntuFinkoa/figures/Fig23.pdf, id=2664, 501.875pt x 322.20375pt>
 File: 7-IRKPuntuFinkoa/figures/Fig23.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig23.pdf>
@@ -2436,7 +2096,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig23.pdf used on input line
 762.
 (pdftex.def)             Requested size: 155.99762pt x 100.15253pt.
 
-<7-IRKPuntuFinkoa/figures/Fig24.pdf, id=2441, 501.875pt x 312.16624pt>
+<7-IRKPuntuFinkoa/figures/Fig24.pdf, id=2665, 501.875pt x 312.16624pt>
 File: 7-IRKPuntuFinkoa/figures/Fig24.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig24.pdf>
@@ -2444,7 +2104,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig24.pdf used on input line
 765.
 (pdftex.def)             Requested size: 155.99762pt x 97.03252pt.
 
-<7-IRKPuntuFinkoa/figures/Fig25.pdf, id=2442, 501.875pt x 318.18875pt>
+<7-IRKPuntuFinkoa/figures/Fig25.pdf, id=2666, 501.875pt x 318.18875pt>
 File: 7-IRKPuntuFinkoa/figures/Fig25.pdf Graphic file (type pdf)
 
 <use 7-IRKPuntuFinkoa/figures/Fig25.pdf>
@@ -2481,52 +2141,11 @@ PDF inclusion: multiple pdfs with page group included in a single page
 
  (./9-IRKNewton/IRKNewton.tex
 7. Kapitulua
-
-LaTeX Warning: Citation `Butcher1976' on page 113 undefined on input line 19.
-
-
-LaTeX Warning: Citation `Liniger1970' on page 113 undefined on input line 19.
-
-
-LaTeX Warning: Citation `Bickart1977' on page 113 undefined on input line 19.
-
 [113
 
 
 
-]
-
-LaTeX Warning: Citation `Baboulin20092526' on page 114 undefined on input line 
-48.
-
-[114] [115]
-
-LaTeX Warning: Citation `Saad2003' on page 116 undefined on input line 110.
-
-
-LaTeX Warning: Citation `Butcher1976' on page 116 undefined on input line 119.
-
-
-LaTeX Warning: Citation `Liniger1970' on page 116 undefined on input line 119.
-
-
-LaTeX Warning: Citation `Bickart1977' on page 116 undefined on input line 119.
-
-
-Overfull \hbox (15.08981pt too wide) in paragraph at lines 119--120
- [] \T1/ptm/m/n/12 Mo-du es-tan-da-rre-nean [[]] [[]] [[]] , $\OML/cmm/m/it/12 
-A$ \T1/ptm/m/n/12 ma-tri-zea-ren dia-go-na-li-za-tzen da $\OT1/cmr/m/n/12 ^^C =
- \OML/cmm/m/it/12 S[]AS \OT1/cmr/m/n/12 =
- []
-
-
-LaTeX Warning: Citation `Brugnano2014' on page 116 undefined on input line 125.
-
-
-
-LaTeX Warning: Citation `Jay2009' on page 116 undefined on input line 125.
-
-
+] [114] [115]
 Overfull \hbox (18.19638pt too wide) in paragraph at lines 134--135
 \T1/ptm/m/n/12 Newton sin-pli-fi-ka-tua-ren ite-ra-zioa apli-ka-tze-ra-koan, $\
 OML/cmm/m/it/12 J[]$ \T1/ptm/m/n/12 Ja-co-bia-rrak, $\OML/cmm/m/it/12 J[] \OT1/
@@ -2534,22 +2153,7 @@ cmr/m/n/12 = \OML/cmm/m/it/12 @f=@y \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t \OT1/cm
 r/m/n/12 +
  []
 
-[116]
-
-LaTeX Warning: Citation `Xie2009' on page 117 undefined on input line 187.
-
-
-LaTeX Warning: Citation `Butcher1976' on page 117 undefined on input line 189.
-
-
-LaTeX Warning: Citation `Hairer1996' on page 117 undefined on input line 189.
-
-[117] [118]
-
-LaTeX Warning: Citation `Sanz-Serna1992' on page 119 undefined on input line 24
-9.
-
-[119]
+[116] [117] [118] [119]
 Overfull \hbox (4.30086pt too wide) in paragraph at lines 351--353
 []\T1/ptm/m/n/12 Inplementazio be-rrian, ma-tri-zeen di-men-tsioak zehaz-te-ko,
  pa-ra-me-tro be-rri haue-
@@ -2567,10 +2171,6 @@ a-ren eze-za-gu-nak as-ka-tze-ko ekua-zioak
  []
 
 [124]
-
-LaTeX Warning: Citation `Olsson2000' on page 125 undefined on input line 640.
-
-
 Overfull \hbox (26.6772pt too wide) in paragraph at lines 678--679
 []\T1/ptm/m/n/12 Newton sin-pli-fi-ka-tua-ren ite-ra-zioa apli-ka-tze-ra-koan, 
 $\OML/cmm/m/it/12 J[]$ \T1/ptm/m/n/12 Ja-co-bia-rra $\OML/cmm/m/it/12 J[] \OT1/
@@ -2606,22 +2206,12 @@ eta pa-ra-me-troak, [][]3.2.2.[][] ata-
  []
 
 
-LaTeX Warning: Citation `Dumitru' on page 137 undefined on input line 1216.
-
-
-Overfull \hbox (1.23999pt too wide) in paragraph at lines 1216--1217
-\T1/ptm/m/n/12 ku-lu-tik izae-ra ez-kaotikoa duen ha-sie-ra-ko ba-lioak har-tu 
-di-tu-gu: $\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 (0) = (1\OML/cmm/m/it/12 :\OT1/cmr
-/m/n/12 1\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1\OML/cmm/m/it/
-12 :\OT1/cmr/m/n/12 1)$
+Overfull \hbox (7.91174pt too wide) in paragraph at lines 1216--1217
+\T1/ptm/m/n/12 ti-ku-lu-tik izae-ra ez-kaotikoa duen ha-sie-ra-ko ba-lioak har-
+tu di-tu-gu: $\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 (0) = (1\OML/cmm/m/it/12 :\OT1/
+cmr/m/n/12 1\OML/cmm/m/it/12 ; \OMS/cmsy/m/n/12 ^^@\OT1/cmr/m/n/12 1\OML/cmm/m/
+it/12 :\OT1/cmr/m/n/12 1)$
  []
-
-
-LaTeX Warning: Citation `Antonana2017' on page 137 undefined on input line 1226
-.
-
-
-LaTeX Warning: Citation `Hairer2008' on page 137 undefined on input line 1228.
 
 [137
 
@@ -2632,7 +2222,7 @@ Package pdftex.def Info: 7-IRKPuntuFinkoa/figures/Fig2.pdf used on input line 1
 236.
 (pdftex.def)             Requested size: 155.99762pt x 91.72847pt.
 
-<9-IRKNewton/figures/Fig3.pdf, id=2834, 501.875pt x 297.11pt>
+<9-IRKNewton/figures/Fig3.pdf, id=3086, 501.875pt x 297.11pt>
 File: 9-IRKNewton/figures/Fig3.pdf Graphic file (type pdf)
 
 <use 9-IRKNewton/figures/Fig3.pdf>
@@ -2681,9 +2271,6 @@ Overfull \hbox (7.71317pt too wide) in paragraph at lines 7--7
  []
 
 
-LaTeX Warning: Citation `Kaplan2015' on page 141 undefined on input line 11.
-
-
 Overfull \hbox (2.1175pt too wide) in paragraph at lines 15--16
 []\T1/ptm/m/n/12 Efemerideetarako eguzki-sistemaren ere-du kon-ple-xua era-bil-
 tzen da. N-gorputz
@@ -2701,7 +2288,7 @@ ML/cmm/m/it/12 q[]\OT1/cmr/m/n/12 )[]1 \OMS/cmsy/m/n/12 ^^@ [] [] [] ^^@ [] []
  []
 
 
-<10-IRKEguzkiSistema/figures/Asteroideak.pdf, id=2873, 421.575pt x 380.62201pt>
+<10-IRKEguzkiSistema/figures/Asteroideak.pdf, id=3127, 421.575pt x 380.62201pt>
 File: 10-IRKEguzkiSistema/figures/Asteroideak.pdf Graphic file (type pdf)
 <use 10-IRKEguzkiSistema/figures/Asteroideak.pdf>
 Package pdftex.def Info: 10-IRKEguzkiSistema/figures/Asteroideak.pdf used on in
@@ -2711,90 +2298,15 @@ put line 67.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[142]
-
-LaTeX Warning: Citation `Folkner2014' on page 143 undefined on input line 78.
-
-[143 <./10-IRKEguzkiSistema/figures/Asteroideak.pdf>]
-
-LaTeX Warning: Citation `Fienga2008' on page 144 undefined on input line 88.
-
-
-LaTeX Warning: Citation `Pitjeva2014' on page 144 undefined on input line 93.
-
-
-<10-IRKEguzkiSistema/figures/Efemerideak.pdf, id=2896, 703.428pt x 288.27701pt>
+[142] [143 <./10-IRKEguzkiSistema/figures/Asteroideak.pdf>]
+<10-IRKEguzkiSistema/figures/Efemerideak.pdf, id=3153, 703.428pt x 288.27701pt>
 File: 10-IRKEguzkiSistema/figures/Efemerideak.pdf Graphic file (type pdf)
 <use 10-IRKEguzkiSistema/figures/Efemerideak.pdf>
 Package pdftex.def Info: 10-IRKEguzkiSistema/figures/Efemerideak.pdf used on in
 put line 104.
 (pdftex.def)             Requested size: 284.53258pt x 170.71977pt.
-
-
-LaTeX Warning: Citation `Morbidelli2002' on page 144 undefined on input line 11
-2.
-
-[144 <./10-IRKEguzkiSistema/figures/Efemerideak.pdf>]
-
-LaTeX Warning: Citation `Sussman1992' on page 145 undefined on input line 122.
-
-
-LaTeX Warning: Citation `Aarseth2008' on page 145 undefined on input line 134.
-
-
-LaTeX Warning: Citation `Kholshevnikov2007' on page 145 undefined on input line
- 136.
-
-
-LaTeX Warning: Citation `Brumberg2013' on page 145 undefined on input line 136.
-
-
-
-LaTeX Warning: Citation `Ito2007' on page 145 undefined on input line 136.
-
-
-LaTeX Warning: Citation `Sussman1992' on page 145 undefined on input line 140.
-
-[145]
-
-LaTeX Warning: Citation `Levison1994' on page 146 undefined on input line 148.
-
-
-LaTeX Warning: Citation `Duncan1998' on page 146 undefined on input line 148.
-
-
-LaTeX Warning: Citation `Chambers1999' on page 146 undefined on input line 152.
-
-
-
-LaTeX Warning: Citation `Kvaerno2000' on page 146 undefined on input line 153.
-
-
-LaTeX Warning: Citation `Yoshida1993' on page 146 undefined on input line 155.
-
-
-LaTeX Warning: Citation `Laskar2001' on page 146 undefined on input line 155.
-
-
-LaTeX Warning: Citation `McLachlan1995' on page 146 undefined on input line 163
-.
-
-
-LaTeX Warning: Citation `Laskar2001' on page 146 undefined on input line 163.
-
-
-LaTeX Warning: Citation `Blanes2013' on page 146 undefined on input line 163.
-
-[146]
-
-LaTeX Warning: Citation `Hernandez2015' on page 147 undefined on input line 165
-.
-
-
-LaTeX Warning: Citation `Hernandez2015' on page 147 undefined on input line 165
-.
-
-[147] [148] [149] [150]
+ [144 <./10-IRKEguzkiSistema/figures/Efemerideak.pdf>] [145] [146] [147] [148] 
+[149] [150]
 Overfull \hbox (29.3747pt too wide) in paragraph at lines 387--400
 $[]$ 
  []
@@ -2818,7 +2330,7 @@ L/cmm/m/it/12 ; q\OT1/cmr/m/n/12 0[]\OML/cmm/m/it/12 ; q\OT1/cmr/m/n/12 0[])$
  []
 
 [155]
-<10-IRKEguzkiSistema/figures/AtalenHasieraketa1.pdf, id=3004, 166.37157pt x 188
+<10-IRKEguzkiSistema/figures/AtalenHasieraketa1.pdf, id=3289, 166.37157pt x 188
 .95593pt>
 File: 10-IRKEguzkiSistema/figures/AtalenHasieraketa1.pdf Graphic file (type pdf
 )
@@ -2827,7 +2339,7 @@ Package pdftex.def Info: 10-IRKEguzkiSistema/figures/AtalenHasieraketa1.pdf use
 d on input line 674.
 (pdftex.def)             Requested size: 195.0pt x 221.48407pt.
 
-<10-IRKEguzkiSistema/figures/AtalenHasieraketa2.pdf, id=3005, 202.50656pt x 222
+<10-IRKEguzkiSistema/figures/AtalenHasieraketa2.pdf, id=3290, 202.50656pt x 222
 .07968pt>
 File: 10-IRKEguzkiSistema/figures/AtalenHasieraketa2.pdf Graphic file (type pdf
 )
@@ -2844,7 +2356,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 674--682
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-<10-IRKEguzkiSistema/figures/AtalenHasieraketa3.pdf, id=3006, 295.1025pt x 111.
+<10-IRKEguzkiSistema/figures/AtalenHasieraketa3.pdf, id=3291, 295.1025pt x 111.
 41624pt>
 File: 10-IRKEguzkiSistema/figures/AtalenHasieraketa3.pdf Graphic file (type pdf
 )
@@ -2928,7 +2440,7 @@ L/cmm/m/it/12 ;   Q[]Bes \OT1/cmr/m/n/12 =
 
  (./B-Eranskina/B-Eranskina.tex
 B. Eranskina
-<B-Eranskina/figures/Code_Gauss.pdf, id=3196, 614.295pt x 794.97pt>
+<B-Eranskina/figures/Code_Gauss.pdf, id=3481, 614.295pt x 794.97pt>
 File: B-Eranskina/figures/Code_Gauss.pdf Graphic file (type pdf)
 
 <use B-Eranskina/figures/Code_Gauss.pdf>
@@ -2954,9 +2466,6 @@ m pa-ke-te-tan, hurrenez-
  []
 
 [178]
-
-LaTeX Warning: Citation `Hairer2006' on page 179 undefined on input line 179.
-
 
 LaTeX Warning: Citation `HairerGniComp' on page 179 undefined on input line 179
 .
@@ -3037,20 +2546,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.203 KR~Grazier, WI~N
+l.210 KR~Grazier, WI~N
                       ewman, James~M Hyman, Philip~W Sharp, and David~J Gold...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[189]
-Underfull \hbox (badness 1221) in paragraph at lines 318--323
+[189] [190]
+Underfull \hbox (badness 1221) in paragraph at lines 340--345
 []\T1/ptm/m/n/12 Anne Kvaer-no and Ben Leim-kuh-ler.  [][]A time-reversible, re
 -gu-la-ri-zed,
  []
 
-[190] [191] [192])
+[191] [192])
 No file 1-Nagusia.ind.
 [193]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 212.
@@ -3066,15 +2575,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 212.
 (./Z-Argibideak/Argibideak.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 212.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 212.
+Package rerunfilecheck Info: File `1-Nagusia.out' has not changed.
+(rerunfilecheck)             Checksum: F613C1FEA8678735BCDD8CF0D31F19D7;8128.
 
-
-Package rerunfilecheck Warning: File `1-Nagusia.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `1-Nagusia.out':
-(rerunfilecheck)             Before: B382BA7A874EFA4ADA7CC204625D02F4;8070
-(rerunfilecheck)             After:  1F51DBA5BB251A638C02C2603B9EDE30;8128.
 
 LaTeX Warning: There were undefined references.
 
@@ -3083,10 +2586,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25999 strings out of 493029
- 450570 string characters out of 6136234
- 741814 words of memory out of 5000000
- 27671 multiletter control sequences out of 15000+600000
+ 26031 strings out of 493029
+ 451182 string characters out of 6136234
+ 744878 words of memory out of 5000000
+ 27694 multiletter control sequences out of 15000+600000
  77174 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,21n,62p,1274b,3149s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3115,10 +2618,10 @@ f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on 1-Nagusia.pdf (201 pages, 5831064 bytes).
+Output written on 1-Nagusia.pdf (201 pages, 5881047 bytes).
 PDF statistics:
- 3977 PDF objects out of 4296 (max. 8388607)
- 3342 compressed objects within 34 object streams
- 1253 named destinations out of 1440 (max. 500000)
- 1235 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4200 PDF objects out of 4296 (max. 8388607)
+ 3556 compressed objects within 36 object streams
+ 1261 named destinations out of 1440 (max. 500000)
+ 1248 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -114,7 +114,6 @@
   Pages                    = {1022--1027},
   Volume                   = {14},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1137/0714069},
   Owner                    = {joseba},
   Publisher                = {SIAM},
@@ -172,7 +171,6 @@
   Pages                    = {633--650},
   Volume                   = {65},
 
-  __markedentry            = {[joseba:6]},
   Doi                      = {10.1007/s11075-014-9825-0},
   Owner                    = {joseba},
   Publisher                = {Springer},
@@ -315,6 +313,18 @@
   Url                      = {http://stacks.iop.org/1538-3881/116/i=4/a=2067}
 }
 
+@InCollection{Eggl2010,
+  Title                    = {An introduction to common numerical integration codes used in dynamical astronomy},
+  Author                   = {Eggl, Siegfried and Dvorak, Rudolph},
+  Booktitle                = {Dynamics of small solar system bodies and exoplanets},
+  Publisher                = {Springer},
+  Year                     = {2010},
+  Pages                    = {431--480},
+  Doi                      = {10.1007/978-3-642-04458-8_9},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.25}
+}
+
 @Book{Eijkhout2011,
   Title                    = {Introduction to High Performance Scientific Computing},
   Author                   = {Victor Eijkhout},
@@ -410,6 +420,22 @@
   Timestamp                = {2016.12.28}
 }
 
+@InCollection{Hairer2015a,
+  Title                    = {Numerical Solution of Ordinary Differential Equations},
+  Author                   = {E. Hairer and C. Lubich},
+  Booktitle                = {The Princeton Companion to Applied Mathematics},
+  Publisher                = {Princeton University Press},
+  Year                     = {2015},
+
+  Address                  = {Princeton, NJ, USA},
+  Editor                   = {Nicholas J. Higham and Mark R. Dennis and Paul Glendinning and
+ Paul A. Martin and Fadil Santosa and Jared Tanner},
+  Pages                    = {293-305},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.25},
+  Url                      = {http://press.princeton.edu/titles/10592.html}
+}
+
 @Book{Hairer2006,
   Title                    = {Geometric numerical integration: structure-preserving algorithms for ordinary differential equations},
   Author                   = {Hairer, Ernst and Lubich, Christian and Wanner, Gerhard},
@@ -437,13 +463,27 @@
   Timestamp                = {2016.05.25}
 }
 
+@InCollection{Hairer2015,
+  Title                    = {Initial Value Problems},
+  Author                   = {E. Hairer and G. Wanner},
+  Booktitle                = {Encyclopedia of Applied and Computational Mathematics},
+  Publisher                = {springer},
+  Year                     = {2015},
+  Editor                   = {Engquist, B},
+  Pages                    = {691-694},
+
+  __markedentry            = {[joseba:]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.25},
+  Url                      = {10.1007/978-3-540-70529-1}
+}
+
 @Book{Hairer1996,
   Title                    = {Solving Ordinary Differential Equations II. Stiff and Differential-Algebraic Problems},
   Author                   = {Hairer, E and Wanner, G},
   Publisher                = {Springer, Berlin},
   Year                     = {1996},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1007/978-3-642-05221-7},
   Owner                    = {joseba},
   Timestamp                = {2017.03.05}
@@ -544,7 +584,6 @@
   Year                     = {2009},
   Volume                   = {10},
 
-  __markedentry            = {[joseba:6]},
   Owner                    = {joseba},
   Timestamp                = {2017.03.14}
 }
@@ -748,7 +787,6 @@
   Pages                    = {47--66},
   Volume                   = {7},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1137/0707002},
   Owner                    = {joseba},
   Publisher                = {SIAM},
@@ -895,7 +933,6 @@
   Publisher                = {SIAM},
   Year                     = {2003},
 
-  __markedentry            = {[joseba:6]},
   Doi                      = {dx.doi.org/10.1137/1.9780898718003.bm},
   Owner                    = {joseba},
   Timestamp                = {2017.03.18}
@@ -910,6 +947,48 @@
   Doi                      = {10.1086/117210},
   Owner                    = {joseba},
   Timestamp                = {2016.11.03}
+}
+
+@Article{Saha1992,
+  Title                    = {Symplectic integrators for solar system dynamics},
+  Author                   = {Saha, Prasenjit and Tremaine, Scott},
+  Journal                  = {The Astronomical Journal},
+  Year                     = {1992},
+  Pages                    = {1633--1640},
+  Volume                   = {104},
+  Doi                      = {10.1086/116347},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.25}
+}
+
+@InCollection{SSerna2015,
+  Title                    = {Symplectic Methods},
+  Author                   = {JM. Sanz-Serna},
+  Booktitle                = {Encyclopedia of Applied and Computational Mathematics},
+  Publisher                = {springer},
+  Year                     = {2015},
+  Editor                   = {Engquist, B},
+  Pages                    = {1451-1458},
+
+  __markedentry            = {[joseba:]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.25},
+  Url                      = {10.1007/978-3-540-70529-1}
+}
+
+@InCollection{SSerna2015,
+  Title                    = {Hamiltonian Systems},
+  Author                   = {JM. Sanz-Serna},
+  Booktitle                = {Encyclopedia of Applied and Computational Mathematics},
+  Publisher                = {springer},
+  Year                     = {2015},
+  Editor                   = {Engquist, B},
+  Pages                    = {617-624},
+
+  __markedentry            = {[joseba:]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.25},
+  Url                      = {10.1007/978-3-540-70529-1}
 }
 
 @Article{Sanz-Serna1992,
@@ -989,6 +1068,22 @@
   Timestamp                = {2016.12.05}
 }
 
+@Article{Wisdom2006,
+  Title                    = {Symplectic correctors for canonical heliocentric n-body maps},
+  Author                   = {Wisdom, Jack},
+  Journal                  = {The Astronomical Journal},
+  Year                     = {2006},
+  Number                   = {4},
+  Pages                    = {2294},
+  Volume                   = {131},
+
+  __markedentry            = {[joseba:6]},
+  Owner                    = {joseba},
+  Publisher                = {IOP Publishing},
+  Timestamp                = {2017.04.25},
+  Url                      = {http://iopscience.iop.org/article/10.1086/500829/meta#citations}
+}
+
 @Article{Wisdom2015,
   Title                    = {A fast and accurate universal Kepler solver without Stumpff series},
   Author                   = {Wisdom, Jack and Hernandez, David M},
@@ -1033,7 +1128,6 @@
   Journal                  = {Department of Mathematical Sciences. University of Wisconsin, Milwaukee, Wisconsin, USA},
   Year                     = {2009},
 
-  __markedentry            = {[joseba:6]},
   Owner                    = {joseba},
   Timestamp                = {2017.03.14}
 }
