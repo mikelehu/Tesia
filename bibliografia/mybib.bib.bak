@@ -320,6 +320,7 @@
   Publisher                = {Springer},
   Year                     = {2010},
   Pages                    = {431--480},
+
   Doi                      = {10.1007/978-3-642-04458-8_9},
   Owner                    = {joseba},
   Timestamp                = {2017.04.25}
@@ -392,6 +393,22 @@
   Url                      = {http://ilrs.gsfc.nasa.gov/docs/2014/196C.pdf}
 }
 
+@Article{Fousse2007,
+  Title                    = {MPFR: A multiple-precision binary floating-point library with correct rounding},
+  Author                   = {Fousse, Laurent and Hanrot, Guillaume and Lef{\`e}vre, Vincent and P{\'e}lissier, Patrick and Zimmermann, Paul},
+  Journal                  = {ACM Transactions on Mathematical Software (TOMS)},
+  Year                     = {2007},
+  Number                   = {2},
+  Pages                    = {13},
+  Volume                   = {33},
+
+  __markedentry            = {[joseba:6]},
+  Doi                      = {10.1145/1236463.1236468},
+  Owner                    = {joseba},
+  Publisher                = {ACM},
+  Timestamp                = {2017.04.26}
+}
+
 @Article{Fukushima2001,
   Title                    = {Reduction of round-off error in symplectic integrators},
   Author                   = {Fukushima, Toshio},
@@ -431,6 +448,7 @@
   Editor                   = {Nicholas J. Higham and Mark R. Dennis and Paul Glendinning and
  Paul A. Martin and Fadil Santosa and Jared Tanner},
   Pages                    = {293-305},
+
   Owner                    = {joseba},
   Timestamp                = {2017.04.25},
   Url                      = {http://press.princeton.edu/titles/10592.html}
@@ -463,6 +481,16 @@
   Timestamp                = {2016.05.25}
 }
 
+@Book{Hairer1993,
+  Title                    = {Solving ordinary differential equations I: nonstiff problems, vol. 8},
+  Author                   = {Hairer, E and N{\o}rsett, SP and Wanner, G},
+  Year                     = {1993},
+  Doi                      = {10.1007/978-3-540-78862-1},
+  Journal                  = {Springer Ser. Comput. Math},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.26}
+}
+
 @InCollection{Hairer2015,
   Title                    = {Initial Value Problems},
   Author                   = {E. Hairer and G. Wanner},
@@ -471,8 +499,6 @@
   Year                     = {2015},
   Editor                   = {Engquist, B},
   Pages                    = {691-694},
-
-  __markedentry            = {[joseba:]},
   Owner                    = {joseba},
   Timestamp                = {2017.04.25},
   Url                      = {10.1007/978-3-540-70529-1}
@@ -519,6 +545,20 @@
   Timestamp                = {2016.05.29}
 }
 
+@InProceedings{Hida2001,
+  Title                    = {Algorithms for quad-double precision floating point arithmetic},
+  Author                   = {Hida, Yozo and Li, Xiaoye S and Bailey, David H},
+  Booktitle                = {Computer Arithmetic, 2001. Proceedings. 15th IEEE Symposium on},
+  Year                     = {2001},
+  Organization             = {IEEE},
+  Pages                    = {155--162},
+
+  __markedentry            = {[joseba:6]},
+  Doi                      = {10.1109/ARITH.2001.930115},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.26}
+}
+
 @Article{Higham2015,
   Title                    = {Programming Languages: An Applied Mathematics View},
   Author                   = {Higham, Nicholas J},
@@ -550,6 +590,17 @@
   Owner                    = {joseba},
   Timestamp                = {2017.02.19},
   Url                      = {http://orion.math.iastate.edu/lhogben/HLA.html}
+}
+
+@Article{IEEE2008,
+  Title                    = {Ieee standard for floating-point arithmetic},
+  Author                   = {IEEE},
+  Year                     = {2008},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1109/IEEESTD.2008.4610935},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.26}
 }
 
 @InProceedings{Ishiyama2012,
@@ -653,6 +704,16 @@
   Timestamp                = {2016.10.27}
 }
 
+@Article{Klioner2016,
+  Title                    = {Basic Celestial Mechanics},
+  Author                   = {Klioner, Sergei A},
+  Journal                  = {arXiv preprint arXiv:1609.00915},
+  Year                     = {2016},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.26},
+  Url                      = {https://arxiv.org/abs/1609.00915}
+}
+
 @Misc{Knuth1969,
   Title                    = {The art of computer programming: Vol 2/seminumerical algorithms},
 
@@ -734,6 +795,20 @@
   Owner                    = {joseba},
   Publisher                = {EDP Sciences},
   Timestamp                = {2016.05.24}
+}
+
+@Article{Laskar2009,
+  Title                    = {Existence of collisional trajectories of Mercury, Mars and Venus with the Earth},
+  Author                   = {Laskar, Jacques and Gastineau, Mickael},
+  Journal                  = {Nature},
+  Year                     = {2009},
+  Number                   = {7248},
+  Pages                    = {817--819},
+  Volume                   = {459},
+  Doi                      = {10.1038/nature08096},
+  Owner                    = {joseba},
+  Publisher                = {Nature Publishing Group},
+  Timestamp                = {2017.04.26}
 }
 
 @Article{Laskar2001,
@@ -956,24 +1031,10 @@
   Year                     = {1992},
   Pages                    = {1633--1640},
   Volume                   = {104},
+
   Doi                      = {10.1086/116347},
   Owner                    = {joseba},
   Timestamp                = {2017.04.25}
-}
-
-@InCollection{SSerna2015,
-  Title                    = {Symplectic Methods},
-  Author                   = {JM. Sanz-Serna},
-  Booktitle                = {Encyclopedia of Applied and Computational Mathematics},
-  Publisher                = {springer},
-  Year                     = {2015},
-  Editor                   = {Engquist, B},
-  Pages                    = {1451-1458},
-
-  __markedentry            = {[joseba:]},
-  Owner                    = {joseba},
-  Timestamp                = {2017.04.25},
-  Url                      = {10.1007/978-3-540-70529-1}
 }
 
 @InCollection{SSerna2015,
@@ -984,8 +1045,19 @@
   Year                     = {2015},
   Editor                   = {Engquist, B},
   Pages                    = {617-624},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.25},
+  Url                      = {10.1007/978-3-540-70529-1}
+}
 
-  __markedentry            = {[joseba:]},
+@InCollection{SSerna2015b,
+  Title                    = {Symplectic Methods},
+  Author                   = {JM. Sanz-Serna},
+  Booktitle                = {Encyclopedia of Applied and Computational Mathematics},
+  Publisher                = {springer},
+  Year                     = {2015},
+  Editor                   = {Engquist, B},
+  Pages                    = {1451-1458},
   Owner                    = {joseba},
   Timestamp                = {2017.04.25},
   Url                      = {10.1007/978-3-540-70529-1}
@@ -1076,8 +1148,6 @@
   Number                   = {4},
   Pages                    = {2294},
   Volume                   = {131},
-
-  __markedentry            = {[joseba:6]},
   Owner                    = {joseba},
   Publisher                = {IOP Publishing},
   Timestamp                = {2017.04.25},

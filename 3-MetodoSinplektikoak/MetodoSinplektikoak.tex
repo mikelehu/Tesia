@@ -87,11 +87,11 @@ le(t_{k+1})=y_{k+1}-y(t_{k+1}), \ \ y(t_k)=y_k.
 ge(t_k)=y_k-y(t_k).
 \end{equation*}
 
-Zenbakizko integrazioaren urrats bakoitzaren abiapuntua, $y_(t_k)$ soluzio zehatzaren ordez $y_k$ balioa hartzen denez, garrantzitsua da ulertzea errore lokalaren propagazioa. Horretarako, hurrengo irudian \ref{fig:deferror} irudian oinarrituko gara \cite{Hairer2015a}. Irudiaren lerro bakoitzak, hasierako balio ezberdin baten zenbakizko soluzioa da . Marra bertikal lodi bakoitza errore lokala da. urratsez-urrats propagatzen dena. Errore globala, $t_n$ unean propagatutako errore lokalen batura da.
+Zenbakizko integrazioaren urrats bakoitzaren abiapuntua, $y_(t_k)$ soluzio zehatzaren ordez $y_k$ balioa hartzen denez, garrantzitsua da ulertzea errore lokalaren hedapena. Horretarako, hurrengo irudian \ref{fig:deferror} irudian oinarrituko gara \cite{Hairer2015a}. Irudiaren lerro bakoitzak, hasierako balio ezberdin baten zenbakizko soluzioa da . Marra bertikal lodi bakoitza errore lokala da. urratsez-urrats propagatu egiten dena. Errore globala, $t_n$ unean hedatutako errore lokalen batura da.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=12cm, height=6cm] {ErrorePropagazioa}}
-\caption{Errore lokalaren propagazioa. Irudian soluzio zehatza eta hasierako bi balio ezberdinei dagokien zenbakizko soluzioak irudikatu ditugu}
+\caption{Errore lokalaren hedapena. Irudian soluzio zehatza eta hasierako bi balio ezberdinei dagokien zenbakizko soluzioak irudikatu ditugu}
 \label{fig:deferror}
 \end{figure}     
 
@@ -397,7 +397,7 @@ Zenbakizko soluzioak ordea, ez du $H(p_n,q_n)$  konstante mantentzen. Integrazio
 \end{equation*}
 non $k\in \mathbb{R}$ den.
 
-\item Errore propagazio lineala.
+\item Errorearen hedapen lineala.
 
 Gehienetan, $p$ eta $q$ egoera aldagaien errorea $\mathcal{O}(h^p)$ da eta hazkundea lineala. Oro har, integratzaile arruntek errore hazkunde koadratikoa dute eta ondorioz, integrazio luzeetan konportamendu txarra azaltzen dute.
 
@@ -911,7 +911,7 @@ Jarraian, s-ataletako konposizio metodoen inplementazioaren \ref{alg:konp} algor
     $y_{n+1}=Y_{s,n}$\;
    \BlankLine
  }
- \caption{Konposizio metodoak.}
+ \caption{Konposizio metodoen inplementazioa.}
  \label{alg:konp}
 \end{algorithm}
  
@@ -938,6 +938,7 @@ Bigarren ordenako ekuazio diferentziala ($\ddot{q}=f(p)$), \emph{Störmer-Verlet
 &p_{n+1}=p_n+h \ f(q_{{n+1}/{2}}),\\
 &q_{n+1}=q_{{n+1}/{2}}+\frac{h}{2} \ p_{n+1},
 \end{split}
+\label{eq:stverlet}
 \end{align}
 $s$-ataletako konposizio metodoarekin integratzeko, urrats bakoitzean, ekuazio diferentzialaren $s$ balioztapena egin behar ditugu.
 
@@ -953,7 +954,7 @@ non $\gamma_s=\gamma_1, \gamma_{s-1}=\gamma_2,\dots$
 
 \subsubsection*{CO1035: $10$ ordenako konposizio metodoa.}
 
-Sofroniou eta Spaletta-ren \cite[~2004]{Sofroniou2005} $s=35$ eta $p=10$ ordenako metodoa, orain arteko lortutako ordena altueneko konposizio metodo eraginkorrena kontsideratu daiteke (\ref{tab:co1035} taula). Konposizio metodo simetrikoa da eta oinarrizko metodoa simetrikoa eta $p=2$ ordenakoa dela baliatuz eraikitako metodoa da.  
+Sofroniou eta Spaletta-ren \cite[~2004]{Sofroniou2005} $s=35$ eta $p=10$ ordenako metodoa, orain arteko lortutako ordena altueneko konposizio metodo eraginkorrena kontsideratu daiteke (\ref{tab:co1035} taula). Konposizio metodo simetrikoa : oinarrizko metodoa simetrikoa eta $p=2$ ordenakoa dela baliatuz eraikitako metodoa da.  
 
 \begin{table}[h]
 \caption[CO1035 konposizio metodoa.] 
@@ -978,7 +979,7 @@ Sofroniou eta Spaletta-ren \cite[~2004]{Sofroniou2005} $s=35$ eta $p=10$ ordenak
  \end{tabular}}
 \end{table}
 
-Hamiltondarra $H=H_1+H_2$ izanik, eta \emph{Stömer-Verlet} metodoan ($\phi_h=\varphi_{h/2}^{H_1} \circ \varphi_{h}^{H_2} \circ \varphi_{h/2}^{H_1}$) oinarritutako konposizio metodoaren inplementazioaren zehaztasunak emango ditugu.
+Hamiltondarra $H=H_1+H_2$ izanik, eta \emph{Stömer-Verlet} metodoan (\ref{eq:stverlet}) ($\phi_h=\varphi_{h/2}^{H_1} \circ \varphi_{h}^{H_2} \circ \varphi_{h/2}^{H_1}$) oinarritutako konposizio metodoaren inplementazioaren zehaztasunak emango ditugu.
 \begin{enumerate}
 \item Konposizio metodo orokorra.
 \begin{equation*}
@@ -1015,11 +1016,13 @@ non $a_1=a_{s+1}=\gamma_1/2$, $b_i=\gamma_i$, $a_k=(\gamma_k+\gamma_{k-1})/2$, $
 
 \subsection{Splitting metodoak.}
 
-\emph{Splitting metodoak}, $f: \mathbb{R}^d \rightarrow \mathbb{R}^d$ sistema osoa integratzeko, $f^{[i]}$ ($f=\sum\limits_{i=1}^{m} f^{[i]}$) azpiproblemetan deskonposatu daitezkeen ekuazio diferentzialetarako zenbakizko integrazio metodoak dira.  
+\emph{Splitting metodoak}, $f: \mathbb{R}^d \rightarrow \mathbb{R}^d$ sistema osoa integratzeko, $f^{[i]}$ ($f=\sum\limits_{i=1}^{m} f^{[i]}$) azpiproblemetan deskonposatu daitezkeen ekuazio diferentzialetarako zenbakizko integrazio metodoak dira \cite{SSerna2015b,Hairer2006}.
+
+Splitting metodoa modu errazean aplika daiteke, $H$ Hamiltondarra, $H=H_1+H_2$ eran bana daitekeenean eta Hamiltondar bakoitzari dagokion sistema modu esplizituan integratu daitezkeenean.  
 
 \subsubsection*{Splitting arruntak.}
 
-Splitting arrunta, $H$ Hamiltondarra, $H=H_1+H_2$ banatu eta Hamiltondar bakoitzari dagokion sistema modu esplizituan integratu daitezkeenean aplika daiteke. Sistemen fluxu zehatzak $\varphi_t^{[H_2]}$ eta $\varphi_t^{[H_1]}$ izendatzen baditugu, honako splitting metodoak definituko ditugu:
+$H_1 \ \text{eta} \ H_2$ sistemen fluxu zehatzak $\varphi_t^{[H_2]}$ eta $\varphi_t^{[H_1]}$ izendatzen baditugu, honako splitting metodoak definituko ditugu:
 
 \begin{enumerate}
 
@@ -1050,7 +1053,7 @@ q_{n+1}&=q_{n}+h \triangledown T(p_n).
 
 \paragraph*{Adibidea.}
 
-Hamiltondar banagarrietarako $H(p,q)=T(p)+V(q)$, ~\emph{Störmer-Verlet-LeapFrog metodo} ezaguna lortzen da,
+Hamiltondar banagarrietarako $H(p,q)=T(p)+V(q)$, ~\emph{Störmer-Verlet metodo} ezaguna lortzen da,
 \begin{align*}
 &q_{{n+1}/{2}} =q_n+\frac{h}{2} \triangledown T(p_n), \\
 &p_{n+1} =p_n-\frac{h}{2} \triangledown V(q_{{n+1}/{2}}), \\
@@ -1112,26 +1115,28 @@ Demagun, N-gorputzeko problema grabitazionalaren Hamiltondarra,
 H(p,q)=T(p)+U(q).
 \end{equation*}
 
-Eguzki-sistemaren integraziorako erabiltzen diren koordenatu sistema nagusiak \emph{Jacobi} edo koordenatu heliozentrikoak dira.  Bi koordenatu sistema hauekin, Hamiltondarra beste modu honetan berridatzi daiteke,
+Eguzki-sistemaren integraziorako erabiltzen diren koordenatu sistema nagusiak \emph{Jacobi} edo koordenatu heliozentrikoak dira \cite{Wisdom2006,Farres2013}.  Bi koordenatu sistema hauekin, Hamiltondarra beste modu honetan berridatzi daiteke,
 \begin{equation*}
 H=H_A+\epsilon H_B,  \ \ \ \ |H_B|\ll|H_A|,
 \end{equation*}
-non alde nagusia $H_A$ planeta bakoitzaren eguzki inguruko mugimendu Kepleriarra den eta $H_B$ aldiz, planeten arteko interakzioek eragiten duten perturbazio txikia. Berridatzitako Hamiltondar funtzioak (ikus \ref{erans:A2} eranskina), \emph{Jacobi} ($H_{Jab}$) koordenatuetan $H_B$ bakarrik kokapenen araberakoa eta \emph{Heliozentrikoetan} ($H_{Hel}$), $H_B$ kokapen naiz abiaduraren araberakoa da.
+non alde nagusia $H_A$ planeta bakoitzaren eguzki inguruko mugimendu Kepleriarra den eta $H_B$ aldiz, planeten arteko interakzioek eragiten duten perturbazio txikia. Koordenatu bakoitzari dagokion Hamiltondar funtzioa (ikus \ref{erans:A2} eranskina), \emph{Jacobi} ($H_{Jab}$) koordenatuetan $H_B$ bakarrik kokapenen araberakoa eta \emph{Heliozentrikoetan} ($H_{Hel}$), $H_B$ kokapen naiz abiaduraren araberakoa da.
 \begin{align*}
 &H_{Jab}=H_A(p,q)+H_B(q), \\
 &H_{Hel}=H_A(p,q)+H_B(p,q), 
 \end{align*}       
 
-Eguzki-sistemaren N-gorputzeko problema grabitazionalari egokitutako zenbakizko bi integratzaile sinplektiko azalduko ditugu. Lehena, Laskar-ek eta Robutel-ek \cite[~2001]{Laskar2001} definitutako \emph{$SABAC_4$} integratzailea eta bigarrena, Blanes-ek \cite[~2013]{Blanes2013} \cite{Farres2013} definitutako \emph{$ABAH1064$} integratzailea. 
+$H_A(p,q)$ (mugimendu Kepleriarrari dagokion zatia), Kepler-en fluxua kalkulatzen duen inplementazio bat aplikatuz (\ref{ss:342}~atala) zehazki kalkulatuko da.
+
+Eguzki-sistemaren N-gorputzeko problema grabitazionalari egokitutako zenbakizko bi integratzaile sinplektiko azalduko ditugu. Lehena, Laskar-ek eta Robutel-ek \cite{Laskar2001} definitutako \emph{$SABAC_4$} integratzailea eta bigarrena, Blanes-ek \cite{Blanes2013,Farres2013} definitutako \emph{$ABAH1064$} integratzailea. 
 
 
 \subsubsection*{$SABAC_4$ integratzailea.}
 
 Laskarrek ($2001$) $SABA_n$ eta $SBAB_n$ integratzaile sinplektikoak \cite{Laskar2001} proposatu zituen. Metodoen ordena $K_{SABA_n}=K_{SBAB_n}=\mathcal{O}(h^{2n} \epsilon+ h^2 \epsilon^2)$ da; urrats luzera handitarako eta $\epsilon$ balio txikitarako , gai nagusia ($h^{2n} \epsilon$) izango da.
 
-Bigarren integratzaile famili bat ere $CSABA_n$ eta $CSBAB_n$ (\emph{Corrected integrators}) definitzen ditu. Hauetan, urrats bat gehitutako integratzaileak dira eta ordena $K_{CSABA_n}=K_{CSBAB_n}=\mathcal{O}(h^{4} \epsilon+ h^{p} \epsilon^2)$, non $p=n+2$ edo $p=n+3$ den. Bigarren metodo hauek, urrats tamaina txikia beharrezkoa den  doitasun handiko integrazioetarako erabilgarriak dira.
+Bigarren integratzaile famili bat ere $CSABA_n$ eta $CSBAB_n$ (\emph{Corrected integrators}) definitu zituen. Urrats bat gehitutako integratzaileak dira eta ordena $K_{CSABA_n}=K_{CSBAB_n}=\mathcal{O}(h^{p} \epsilon+ h^{4} \epsilon^2)$, non $p=n+2$ edo $p=n+3$ den. Bigarren metodo hauek, urrats tamaina txikia beharrezkoa den  doitasun handiko integrazioetarako erabilgarriak dira.
 
-Eguzki sistemaren epe luzeko integrazioan \cite{Laskar2011} erabilitako $CSABA_4$ integratzailea deskribatuko dugu. Hamiltondarra $H=H_A+\epsilon H_B$ bada, era honetan definituko dugu metodoa,
+Eguzki-sistemaren epe luzeko integrazioan \cite{Laskar2011} erabilitako $CSABA_4$ integratzailea deskribatuko dugu. Hamiltondarra $H=H_A+\epsilon H_B$ bada, era honetan definituko dugu metodoa,
 \begin{align*}
 &SABA_4 =\varphi^{[A]}_{c_1 h} \circ \varphi^{[B]}_{d_1 h} \circ \varphi^{[A]}_{c_2 h} \circ \varphi^{[B]}_{d_2 h}
          \circ  \varphi^{[A]}_{c_3 h}   \circ
@@ -1165,12 +1170,12 @@ eta koefizienteak \ref{tab:CSABA4} taulan zehaztu ditugu.
 
 \subsubsection*{$ABAH1064$ integratzailea.}
 
-Blanes-ek ($2013$), $ABA$ eta $ABAH$ metodo sinplektikoak proposatu zituen \cite{Blanes2013}. $ABA$ metodoak, Jacobi koordenatuak erabiltzen direnean egokitutako integratzaileak eta $ABAH$ integratzaileak, koordenatu Heliozentrikoak erabiltzen direnean egokitutako integratzaileak.
+Blanes-ek ($2013$), $ABA$ eta $ABAH$ metodo sinplektikoak proposatu zituen \cite{Blanes2013,Farres2013}. $ABA$ metodoak, Jacobi koordenatuak erabiltzen direnean egokitutako integratzaileak eta $ABAH$ integratzaileak, koordenatu heliozentrikoak erabiltzen direnean egokitutako integratzaileak.
 
-Atal honetan, koordenatu Heliozentrikoei egokitutako $ABAH1064$, $p=10$ ordenako metodoa deskribatuko dugu.  
-Eguzki sistemaren integraziorako koordenatu Heliozentrikoei dagokion Hamiltondarra era honetakoa dugu,
+Atal honetan, koordenatu heliozentrikoei egokitutako $ABAH1064$, $p=10$ ordenako metodoa deskribatuko dugu.  
+Eguzki-sistemaren integraziorako koordenatu heliozentrikoei dagokion Hamiltondarra era honetakoa dugu,
 \begin{equation*}
-H(p,q)=H_K(p,q)+H_I(p,q), \ \ H_I(p,q)=T_1(p)+U_1(q). 
+H_{Hel}(p,q)=H_K(p,q)+H_I(p,q), \ \ H_I(p,q)=T_1(p)+U_1(q). 
 \end{equation*}
 
 $H_I(p,q)$ fluxua zehazki kalkulatu ordez honen hurbilpen bat erabiliko dugu,
@@ -1180,9 +1185,9 @@ $H_I(p,q)$ fluxua zehazki kalkulatu ordez honen hurbilpen bat erabiliko dugu,
 
 $ABAH1064$, $p=10$ eta $s=9$ splitting metodoa definituko dugu,
 \begin{equation*}
-ABAH1064=\prod\limits_{i=1}^{s} \varphi_{a_ih}^K \circ \tilde{\varphi}_{b_ih}^I
+ABAH1064=\prod\limits_{i=1}^{s} \varphi_{a_ih}^K \circ (\varphi_{{hb_i}/{2}}^{[U_1]} \circ \varphi_{hb_i}^{[T_1]} \circ \varphi_{{hb_i}/{2}}^{[U_1]})
 \end{equation*}
-non $a_i$, $b_i$ koefizienteak (\ref{tab:33} Taula) taulan definitzen diren.  
+non $a_i$, $b_i$ koefizienteak, \ref{tab:33} taulan definitzen diren.  
 
 \begin{table}
 \centering
@@ -1213,27 +1218,28 @@ non $a_i$, $b_i$ koefizienteak (\ref{tab:33} Taula) taulan definitzen diren.
 
 \section{Laburpena.}
 
-Hurrengo \ref{tab:int_sinp} taulan ordena altuko hiru integratzaile sinplektikoen ezaugarriak laburtu ditugu. 
+Atal honetan, metodo sinplektikoen ikuspegi orokorra eman dugu. Hurrengo \ref{tab:int_sinp} taulan, ordena altuko lau integratzaile sinplektikoen ezaugarriak laburtu ditugu. Izaera inplizituen inplementazioen (\ref{alg:IRK1} algoritmoa) eta izaera esplizituen (\ref{alg:konp} ,\ref{alg:split} algoritmoak) inplementazioen  konplexutasuna erakutsi dugu. 
+
 
 \begin{table}[h!]
 \centering
 \caption{Integrazio metodo sinplektikoen laburpena}
 \label{tab:int_sinp}       % Give a unique label
-\begin{tabular}{ l l l l } 
+\begin{tabular}{ l l l l l } 
 \hline
 \\
-               &  C1035             &  ABAH1064           & GAUSS-12           \\
+               &  $C1035$        &  $CSABA_4$      &  $ABAH1064$           & $GAUSS-12$     \\
 % 	       & Konposizio met.    & Splitting met.     & IRK met.            \\
 % 	       & Sofronio (2004)    & Blanes et al. 2013 &                     \\
 \\ 
  \hline 
-               &                    &                    &                 \\
- Hamiltondarra & Banagarria         & Perturbatua        & Orokorra        \\ 	    
- Mota          & Esplizitua         & Esplizitua         & Inplizitua      \\ 
- Koordenatuak  & Orokorra           & Heliozentrikoa     & Orokorra        \\
- Ordena        & 10                 & 10                 & 12              \\ 
- Atalak        & 35                 & 9                  & 6               \\ 
- Paralelizagarri       & Ez                 & Ez                 & Bai             \\  
+               &               &                &                    &                 \\
+ Hamiltondarra & Banagarria    & Banagarria     & Perturbatua        & Orokorra        \\ 	    
+ Mota          & Esplizitua    & Esplizitua     & Esplizitua         & Inplizitua      \\ 
+ Koordenatuak  & Orokorra      & Helio/Jacobi   & Heliozentrikoa     & Orokorra        \\
+ Ordena        & $10$          &                & $10$               & $12$            \\ 
+ Atalak        & $35$          &    $9$         & $9$                & $6$             \\ 
+ Paralelizagarri       & Ez    &    Ez          & Ez                 & Bai             \\  
  \hline
 \end{tabular}
 \end{table}

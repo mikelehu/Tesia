@@ -18,53 +18,57 @@ A level-1 auxiliary file: C-Eranskina/C-Eranskina.aux
 A level-1 auxiliary file: Z-Argibideak/Argibideak.aux
 The style file: myplain2-doi.bst
 Database file #1: ./bibliografia/mybib.bib
+Warning--entry type for "libquad" isn't style-file defined
+--line 427 of file ./bibliografia/mybib.bib
 Warning--entry type for "Karplus2014" isn't style-file defined
---line 867 of file ./bibliografia/mybib.bib
+--line 952 of file ./bibliografia/mybib.bib
 Warning--entry type for "WolframResearch" isn't style-file defined
---line 1115 of file ./bibliografia/mybib.bib
+--line 1195 of file ./bibliografia/mybib.bib
 Warning--I didn't find a database entry for "HairerGniComp"
 Warning--empty journal in Dumitru
 Warning--empty year in Dumitru
+Warning--empty publisher in Hairer1993
 Warning--empty journal in Higham2015
-You've used 86 entries,
+Warning--empty journal in IEEE2008
+You've used 93 entries,
             2359 wiz_defined-function locations,
-            1188 strings with 20346 characters,
-and the built_in function-call counts, 28358 in all, are:
-= -- 2673
-> -- 1241
-< -- 12
-+ -- 512
-- -- 405
-* -- 2203
-:= -- 4634
-add.period$ -- 257
-call.type$ -- 86
-change.case$ -- 440
+            1232 strings with 21491 characters,
+and the built_in function-call counts, 30509 in all, are:
+= -- 2869
+> -- 1339
+< -- 13
++ -- 551
+- -- 437
+* -- 2361
+:= -- 4982
+add.period$ -- 277
+call.type$ -- 93
+change.case$ -- 476
 chr.to.int$ -- 0
-cite$ -- 89
-duplicate$ -- 1080
-empty$ -- 2435
-format.name$ -- 405
-if$ -- 5891
+cite$ -- 98
+duplicate$ -- 1168
+empty$ -- 2621
+format.name$ -- 437
+if$ -- 6341
 int.to.chr$ -- 0
-int.to.str$ -- 86
-missing$ -- 98
-newline$ -- 432
-num.names$ -- 180
-pop$ -- 499
+int.to.str$ -- 93
+missing$ -- 105
+newline$ -- 466
+num.names$ -- 194
+pop$ -- 550
 preamble$ -- 1
-purify$ -- 368
+purify$ -- 398
 quote$ -- 0
-skip$ -- 704
+skip$ -- 766
 stack$ -- 0
-substring$ -- 1768
-swap$ -- 234
-text.length$ -- 12
+substring$ -- 1866
+swap$ -- 256
+text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 310
-warning$ -- 3
-while$ -- 282
-width$ -- 88
-write$ -- 930
-(There were 6 warnings)
+type$ -- 336
+warning$ -- 5
+while$ -- 302
+width$ -- 95
+write$ -- 1000
+(There were 9 warnings)
