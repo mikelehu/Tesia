@@ -1,10 +1,34 @@
 \begin{thebibliography}{10}
 
+\bibitem{Intel2015}
+\href{https://software.intel.com/en-us/articles/mkl-reference-manual}{{\em
+  Intel Math Kernel Library. Refrence Manual.}}
+\newblock Intel, 2015.
+
+\bibitem{OpenMP}
+\href{http://www.openmp.org/}{he openmp api specification for parallel
+  programming}, 2017.
+
 \bibitem{Aarseth2008}
 Sverre Aarseth, Christopher Tout, and Rosemary Mardling.
 \newblock \href{http://dx.doi.org/10.1007/978-1-4020-8431-7}{{\em The Cambridge
   n-body lectures}}, volume 760.
 \newblock Springer, 2008.
+
+\bibitem{Anderson1999}
+Edward Anderson, Zhaojun Bai, Christian Bischof, L~Susan Blackford, James
+  Demmel, Jack Dongarra, Jeremy Du~Croz, Anne Greenbaum, Sven Hammarling, Alan
+  McKenney, et~al.
+\newblock \href{http://dx.doi.org/10.1137/1.9780898719604}{{\em LAPACK Users'
+  guide}}.
+\newblock SIAM, 1999.
+
+\bibitem{Andrey2013}
+KV~Vladimirov Andrey.
+\newblock
+  \href{https://goparallel.sourceforge.net/wp-content/uploads/2013/01/Colfax_Nbody_Xeon_Phi.pdf}{Test-driving
+  intel xeon phi coprocessors with a basic n-body simulation}.
+\newblock {\em Coflax International}, 3:\penalty0 2, 2013.
 
 \bibitem{Antonana2017}
 Mikel Anto{\~n}ana, Joseba Makazaga, and Ander Murua.
@@ -160,16 +184,6 @@ Siegfried Eggl and Rudolph Dvorak.
 \newblock In {\em Dynamics of small solar system bodies and exoplanets},
   Springer, 2010, pages 431--480.
 
-\bibitem{Eijkhout2011}
-Victor Eijkhout.
-\newblock
-  \href{http://www.lulu.com/shop/victor-eijkhout/introduction-to-high-performance-scientific-computing/paperback/product-18783375.html}{{\em
-  Introduction to High Performance Scientific Computing}}.
-\newblock lulu.com, 2011.
-\newblock Also available for download from
-  \url{http://www.tacc.utexas.edu/~eijkhout/istc/istc.html}.
-\newblock ISBN 978-1-257-99254-6.
-
 \bibitem{Farres2013}
 Ariadna Farr{\'e}s, Jacques Laskar, Sergio Blanes, Fernando Casas, Joseba
   Makazaga, and Ander Murua.
@@ -218,6 +232,12 @@ Toshio Fukushima.
 GNU.
 \newblock \href{https://gcc.gnu.org/onlinedocs/libquadmath/}{libquadmath v
   1.3}, 2008.
+
+\bibitem{Goedecker2001}
+Stefan Goedecker and Adolfy Hoisie.
+\newblock \href{http://dx.doi.org/10.1137/1.9780898718218.appa}{{\em
+  Performance optimization of numerically intensive codes}}.
+\newblock SIAM, 2001.
 
 \bibitem{Grazier2005}
 KR~Grazier, WI~Newman, James~M Hyman, Philip~W Sharp, and David~J Goldstein.
@@ -572,6 +592,12 @@ Gerald~J Sussman and Jack Wisdom.
 \newblock \href{http://web.mit.edu/wisdom/www/ss-chaos.pdf}{Chaotic evolution
   of the solar system}.
 \newblock Technical report, DTIC Document, 1992.
+
+\bibitem{EijkhoutHPC}
+Robert van de~Geijn Victor~Eijkhout and Edmond Chow.
+\newblock \href{http://pages.tacc.utexas.edu/~eijkhout/istc/istc.html}{{\em
+  Introduction to High Performance Scientific Computing}}.
+\newblock lulu.com, 2011.
 
 \bibitem{Wilson2014}
 Greg Wilson, DA~Aruliah, C~Titus Brown, Neil P~Chue Hong, Matt Davis, Richard~T

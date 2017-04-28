@@ -19,56 +19,61 @@ A level-1 auxiliary file: Z-Argibideak/Argibideak.aux
 The style file: myplain2-doi.bst
 Database file #1: ./bibliografia/mybib.bib
 Warning--entry type for "libquad" isn't style-file defined
---line 427 of file ./bibliografia/mybib.bib
+--line 438 of file ./bibliografia/mybib.bib
 Warning--entry type for "Karplus2014" isn't style-file defined
---line 952 of file ./bibliografia/mybib.bib
+--line 975 of file ./bibliografia/mybib.bib
 Warning--entry type for "WolframResearch" isn't style-file defined
---line 1195 of file ./bibliografia/mybib.bib
+--line 1232 of file ./bibliografia/mybib.bib
+Warning--entry type for "OpenMP" isn't style-file defined
+--line 1265 of file ./bibliografia/mybib.bib
 Warning--I didn't find a database entry for "HairerGniComp"
+Warning--to sort, need author or key in OpenMP
+Warning--to sort, need author, editor, or key in Intel2015
+Warning--empty author and editor in Intel2015
 Warning--empty journal in Dumitru
 Warning--empty year in Dumitru
 Warning--empty publisher in Hairer1993
 Warning--empty journal in Higham2015
 Warning--empty journal in IEEE2008
-You've used 93 entries,
+You've used 98 entries,
             2359 wiz_defined-function locations,
-            1232 strings with 21491 characters,
-and the built_in function-call counts, 30509 in all, are:
-= -- 2869
-> -- 1339
+            1255 strings with 22197 characters,
+and the built_in function-call counts, 31941 in all, are:
+= -- 2979
+> -- 1425
 < -- 13
-+ -- 551
-- -- 437
-* -- 2361
-:= -- 4982
-add.period$ -- 277
-call.type$ -- 93
-change.case$ -- 476
++ -- 586
+- -- 467
+* -- 2473
+:= -- 5204
+add.period$ -- 287
+call.type$ -- 98
+change.case$ -- 502
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 1168
-empty$ -- 2621
-format.name$ -- 437
-if$ -- 6341
+cite$ -- 106
+duplicate$ -- 1231
+empty$ -- 2755
+format.name$ -- 467
+if$ -- 6642
 int.to.chr$ -- 0
-int.to.str$ -- 93
-missing$ -- 105
-newline$ -- 466
-num.names$ -- 194
-pop$ -- 550
+int.to.str$ -- 98
+missing$ -- 111
+newline$ -- 486
+num.names$ -- 200
+pop$ -- 605
 preamble$ -- 1
-purify$ -- 398
+purify$ -- 422
 quote$ -- 0
-skip$ -- 766
+skip$ -- 802
 stack$ -- 0
-substring$ -- 1866
-swap$ -- 256
+substring$ -- 1894
+swap$ -- 266
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 336
-warning$ -- 5
-while$ -- 302
-width$ -- 95
-write$ -- 1000
-(There were 9 warnings)
+type$ -- 350
+warning$ -- 8
+while$ -- 309
+width$ -- 100
+write$ -- 1041
+(There were 13 warnings)

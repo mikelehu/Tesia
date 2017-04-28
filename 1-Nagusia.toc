@@ -43,14 +43,14 @@
 \contentsline {chapter}{\numberline {5.}Zientzia konputazioa.}{71}{chapter.5}
 \contentsline {section}{\numberline {5.1.}Sarrera.}{71}{section.5.1}
 \contentsline {section}{\numberline {5.2.}Eraginkortasuna}{72}{section.5.2}
-\contentsline {section}{\numberline {5.3.}Hardwarea.}{74}{section.5.3}
-\contentsline {section}{\numberline {5.4.}Programazio lengoaiak.}{79}{section.5.4}
-\contentsline {section}{\numberline {5.5.}Aljebra lineal dentsorako liburutegiak.}{82}{section.5.5}
-\contentsline {paragraph}{Adibidea.}{84}{section*.120}
+\contentsline {section}{\numberline {5.3.}Hardwarea.}{75}{section.5.3}
+\contentsline {section}{\numberline {5.4.}Programazio lengoaiak.}{80}{section.5.4}
+\contentsline {section}{\numberline {5.5.}Aljebra lineal dentsorako liburutegiak.}{83}{section.5.5}
+\contentsline {paragraph}{Adibidea.}{84}{section*.117}
 \contentsline {section}{\numberline {5.6.}Konpiladorea.}{87}{section.5.6}
-\contentsline {paragraph}{Konpiladoreak.}{87}{section*.125}
-\contentsline {paragraph}{Optimizazioak.}{87}{section*.126}
-\contentsline {paragraph}{Konpilazio aginduak}{87}{section*.127}
+\contentsline {paragraph}{Konpiladoreak.}{87}{section*.122}
+\contentsline {paragraph}{Optimizazioak.}{87}{section*.123}
+\contentsline {paragraph}{Konpilazio aginduak}{88}{section*.124}
 \contentsline {section}{\numberline {5.7.}Laburpena.}{88}{section.5.7}
 \contentsline {part}{II.\hspace {1em}Ekarpenak.}{89}{part.2}
 \contentsline {chapter}{\numberline {6.}IRK: Puntu-finkoaren iterazioa.}{91}{chapter.6}
@@ -124,4 +124,4 @@
 \contentsline {section}{\numberline {C.2.}Hitz-zerrenda.}{183}{section.C.2}
 \contentsline {chapter}{\numberline {D.}Nire-Argibideak}{187}{appendix.D}
 \contentsline {section}{\numberline {D.1.}IRK-Newton.}{187}{section.D.1}
-\contentsline {chapter}{Bibliografia}{189}{section*.253}
+\contentsline {chapter}{Bibliografia}{189}{section*.251}

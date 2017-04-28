@@ -14,6 +14,32 @@
   Timestamp                = {2016.11.04}
 }
 
+@Book{Anderson1999,
+  Title                    = {LAPACK Users' guide},
+  Author                   = {Anderson, Edward and Bai, Zhaojun and Bischof, Christian and Blackford, L Susan and Demmel, James and Dongarra, Jack and Du Croz, Jeremy and Greenbaum, Anne and Hammarling, Sven and McKenney, Alan and others},
+  Publisher                = {SIAM},
+  Year                     = {1999},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1137/1.9780898719604},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.27}
+}
+
+@Article{Andrey2013,
+  Title                    = {Test-driving Intel Xeon Phi coprocessors with a basic N-body simulation},
+  Author                   = {Andrey, KV Vladimirov},
+  Journal                  = {Coflax International},
+  Year                     = {2013},
+  Pages                    = {2},
+  Volume                   = {3},
+
+  __markedentry            = {[joseba:6]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.27},
+  Url                      = {https://goparallel.sourceforge.net/wp-content/uploads/2013/01/Colfax_Nbody_Xeon_Phi.pdf}
+}
+
 @Article{Antonana2017,
   Title                    = {Reducing and monitoring round-off error propagation for symplectic implicit Runge-Kutta schemes},
   Author                   = {Anto{\~n}ana, Mikel and Makazaga, Joseba and Murua, Ander},
@@ -326,19 +352,6 @@
   Timestamp                = {2017.04.25}
 }
 
-@Book{Eijkhout2011,
-  Title                    = {Introduction to High Performance Scientific Computing},
-  Author                   = {Victor Eijkhout},
-  Publisher                = {lulu.com},
-  Year                     = {2011},
-  Note                     = {Also available for download from \url{http://www.tacc.utexas.edu/~eijkhout/istc/istc.html}},
-
-  ISBN                     = {978-1-257-99254-6},
-  Owner                    = {joseba},
-  Timestamp                = {2017.02.20},
-  Url                      = {http://www.lulu.com/shop/victor-eijkhout/introduction-to-high-performance-scientific-computing/paperback/product-18783375.html}
-}
-
 @Article{Farres2013,
   Title                    = {High precision symplectic integrators for the solar system},
   Author                   = {Farr{\'e}s, Ariadna and Laskar, Jacques and Blanes, Sergio and Casas, Fernando and Makazaga, Joseba and Murua, Ander},
@@ -401,8 +414,6 @@
   Number                   = {2},
   Pages                    = {13},
   Volume                   = {33},
-
-  __markedentry            = {[joseba:6]},
   Doi                      = {10.1145/1236463.1236468},
   Owner                    = {joseba},
   Publisher                = {ACM},
@@ -422,6 +433,28 @@
   Publisher                = {IOP Publishing},
   Timestamp                = {2016.06.12},
   Url                      = {http://iopscience.iop.org/article/10.1086/319385/meta}
+}
+
+@Electronic{libquad,
+  Title                    = {libquadmath V 1.3},
+  Author                   = {GNU},
+  Url                      = {https://gcc.gnu.org/onlinedocs/libquadmath/},
+  Year                     = {2008},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.26}
+}
+
+@Book{Goedecker2001,
+  Title                    = {Performance optimization of numerically intensive codes},
+  Author                   = {Goedecker, Stefan and Hoisie, Adolfy},
+  Publisher                = {SIAM},
+  Year                     = {2001},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1137/1.9780898718218.appa},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.27}
 }
 
 @Article{Grazier2005,
@@ -485,6 +518,7 @@
   Title                    = {Solving ordinary differential equations I: nonstiff problems, vol. 8},
   Author                   = {Hairer, E and N{\o}rsett, SP and Wanner, G},
   Year                     = {1993},
+
   Doi                      = {10.1007/978-3-540-78862-1},
   Journal                  = {Springer Ser. Comput. Math},
   Owner                    = {joseba},
@@ -499,6 +533,7 @@
   Year                     = {2015},
   Editor                   = {Engquist, B},
   Pages                    = {691-694},
+
   Owner                    = {joseba},
   Timestamp                = {2017.04.25},
   Url                      = {10.1007/978-3-540-70529-1}
@@ -552,8 +587,6 @@
   Year                     = {2001},
   Organization             = {IEEE},
   Pages                    = {155--162},
-
-  __markedentry            = {[joseba:6]},
   Doi                      = {10.1109/ARITH.2001.930115},
   Owner                    = {joseba},
   Timestamp                = {2017.04.26}
@@ -596,8 +629,6 @@
   Title                    = {Ieee standard for floating-point arithmetic},
   Author                   = {IEEE},
   Year                     = {2008},
-
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1109/IEEESTD.2008.4610935},
   Owner                    = {joseba},
   Timestamp                = {2017.04.26}
@@ -709,6 +740,7 @@
   Author                   = {Klioner, Sergei A},
   Journal                  = {arXiv preprint arXiv:1609.00915},
   Year                     = {2016},
+
   Owner                    = {joseba},
   Timestamp                = {2017.04.26},
   Url                      = {https://arxiv.org/abs/1609.00915}
@@ -805,6 +837,7 @@
   Number                   = {7248},
   Pages                    = {817--819},
   Volume                   = {459},
+
   Doi                      = {10.1038/nature08096},
   Owner                    = {joseba},
   Publisher                = {Nature Publishing Group},
@@ -1045,6 +1078,7 @@
   Year                     = {2015},
   Editor                   = {Engquist, B},
   Pages                    = {617-624},
+
   Owner                    = {joseba},
   Timestamp                = {2017.04.25},
   Url                      = {10.1007/978-3-540-70529-1}
@@ -1058,6 +1092,7 @@
   Year                     = {2015},
   Editor                   = {Engquist, B},
   Pages                    = {1451-1458},
+
   Owner                    = {joseba},
   Timestamp                = {2017.04.25},
   Url                      = {10.1007/978-3-540-70529-1}
@@ -1125,6 +1160,17 @@
   Url                      = {http://web.mit.edu/wisdom/www/ss-chaos.pdf}
 }
 
+@Book{EijkhoutHPC,
+  Title                    = {Introduction to High Performance Scientific Computing},
+  Author                   = {Victor Eijkhout, Robert van de Geijn and Edmond Chow},
+  Publisher                = {lulu.com},
+  Year                     = {2011},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.27},
+  Url                      = {http://pages.tacc.utexas.edu/~eijkhout/istc/istc.html}
+}
+
 @Article{Wilson2014,
   Title                    = {Best practices for scientific computing},
   Author                   = {Wilson, Greg and Aruliah, DA and Brown, C Titus and Hong, Neil P Chue and Davis, Matt and Guy, Richard T and Haddock, Steven HD and Huff, Kathryn D and Mitchell, Ian M and Plumbley, Mark D and others},
@@ -1148,6 +1194,7 @@
   Number                   = {4},
   Pages                    = {2294},
   Volume                   = {131},
+
   Owner                    = {joseba},
   Publisher                = {IOP Publishing},
   Timestamp                = {2017.04.25},
@@ -1213,5 +1260,15 @@
   Doi                      = {10.1007/978-94-011-2030-2_3},
   Owner                    = {joseba},
   Timestamp                = {2016.11.04}
+}
+
+@Book{Intel2015,
+  Title                    = {Intel Math Kernel Library. Refrence Manual.},
+  Publisher                = {Intel},
+  Year                     = {2015},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.27},
+  Url                      = {https://software.intel.com/en-us/articles/mkl-reference-manual}
 }
 

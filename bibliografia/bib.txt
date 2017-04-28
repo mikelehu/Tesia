@@ -1,35 +1,11 @@
-@article{joldecs2016arithmetic,
-  title={Arithmetic algorithms for extended precision using floating-point expansions},
-  author={Jolde{\c{s}}, Mioara and Marty, Olivier and Muller, Jean-Michel and Popescu, Valentina},
-  journal={IEEE Transactions on Computers},
-  volume={65},
-  number={4},
-  pages={1197--1210},
-  year={2016},
-  publisher={IEEE}
+@article{andrey2013test,
+  title={Test-driving Intel Xeon Phi coprocessors with a basic N-body simulation},
+  author={Andrey, KV Vladimirov},
+  journal={Coflax International},
+  volume={3},
+  pages={2},
+  year={2013}
 }
-
-@article{fousse2007mpfr,
-  title={MPFR: A multiple-precision binary floating-point library with correct rounding},
-  author={Fousse, Laurent and Hanrot, Guillaume and Lef{\`e}vre, Vincent and P{\'e}lissier, Patrick and Zimmermann, Paul},
-  journal={ACM Transactions on Mathematical Software (TOMS)},
-  volume={33},
-  number={2},
-  pages={13},
-  year={2007},
-  publisher={ACM}
-}
-
-
-@inproceedings{hida2001algorithms,
-  title={Algorithms for quad-double precision floating point arithmetic},
-  author={Hida, Yozo and Li, Xiaoye S and Bailey, David H},
-  booktitle={Computer Arithmetic, 2001. Proceedings. 15th IEEE Symposium on},
-  pages={155--162},
-  year={2001},
-  organization={IEEE}
-}
-
 
 
 
