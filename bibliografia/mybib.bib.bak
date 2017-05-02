@@ -20,7 +20,6 @@
   Publisher                = {SIAM},
   Year                     = {1999},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1137/1.9780898719604},
   Owner                    = {joseba},
   Timestamp                = {2017.04.27}
@@ -34,7 +33,6 @@
   Pages                    = {2},
   Volume                   = {3},
 
-  __markedentry            = {[joseba:6]},
   Owner                    = {joseba},
   Timestamp                = {2017.04.27},
   Url                      = {https://goparallel.sourceforge.net/wp-content/uploads/2013/01/Colfax_Nbody_Xeon_Phi.pdf}
@@ -51,6 +49,28 @@
   Owner                    = {joseba},
   Publisher                = {Springer},
   Timestamp                = {2017.03.13}
+}
+
+@Article{Antonana2017a,
+  Title                    = {Efficient implementation of symplectic implicit Runge-Kutta schemes with simplified Newton iterations},
+  Author                   = {Anto{\~n}ana, Mikel and Makazaga, Joseba and Murua, Ander},
+  Journal                  = {arXiv preprint arXiv:1703.07697},
+  Year                     = {2017},
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.29},
+  Url                      = {https://arxiv.org/abs/1703.07697}
+}
+
+@Book{Atmanspacher2016,
+  Title                    = {Reproducibility: Principles, Problems, Practices, and Prospects},
+  Author                   = {Atmanspacher, Harald and Maasen, Sabine},
+  Publisher                = {John Wiley \& Sons},
+  Year                     = {2016},
+
+  __markedentry            = {[joseba:6]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.01},
+  Url                      = {http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118864972.html}
 }
 
 @Article{Baboulin20092526,
@@ -378,6 +398,18 @@
   Timestamp                = {2016.07.13}
 }
 
+@Conference{Feinga2015,
+  Title                    = {International Workshop in Astronomy and Dynamics},
+  Author                   = {A. Fienga},
+  Booktitle                = {INPOP planetary ephemerides: from 2013 to 2015.},
+  Year                     = {2015},
+  Organization             = {Observatoire de Paris},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.30},
+  Url                      = {https://www.ceremade.dauphine.fr/~fejoz/Colloques/ad2015.php}
+}
+
 @Article{Fienga2008,
   Title                    = {INPOP06: a new numerical planetary ephemeris},
   Author                   = {Fienga, A and Manche, H and Laskar, J and Gastineau, Mickael},
@@ -414,6 +446,7 @@
   Number                   = {2},
   Pages                    = {13},
   Volume                   = {33},
+
   Doi                      = {10.1145/1236463.1236468},
   Owner                    = {joseba},
   Publisher                = {ACM},
@@ -451,7 +484,6 @@
   Publisher                = {SIAM},
   Year                     = {2001},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1137/1.9780898718218.appa},
   Owner                    = {joseba},
   Timestamp                = {2017.04.27}
@@ -587,6 +619,7 @@
   Year                     = {2001},
   Organization             = {IEEE},
   Pages                    = {155--162},
+
   Doi                      = {10.1109/ARITH.2001.930115},
   Owner                    = {joseba},
   Timestamp                = {2017.04.26}
@@ -629,6 +662,7 @@
   Title                    = {Ieee standard for floating-point arithmetic},
   Author                   = {IEEE},
   Year                     = {2008},
+
   Doi                      = {10.1109/IEEESTD.2008.4610935},
   Owner                    = {joseba},
   Timestamp                = {2017.04.26}
@@ -755,6 +789,18 @@
   Owner                    = {joseba},
   Publisher                = {Addison-Wesley},
   Timestamp                = {2016.09.22}
+}
+
+@Article{Krogh1997,
+  Title                    = {An Adams Guy Does the Runge-Kutta},
+  Author                   = {Krogh, Fred T},
+  Year                     = {1997},
+
+  __markedentry            = {[joseba:]},
+  Owner                    = {joseba},
+  Publisher                = {Citeseer},
+  Timestamp                = {2017.04.30},
+  Url                      = {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.37.3929&rep=rep1&type=pdf}
 }
 
 @Article{Kvaerno2000,
@@ -1180,7 +1226,7 @@
   Pages                    = {e1001745},
   Volume                   = {12},
 
-  Doi                      = {http://dx.doi.org/10.1371/journal.pbio.1001745},
+  Doi                      = {dx.doi.org/10.1371/journal.pbio.1001745},
   Owner                    = {joseba},
   Publisher                = {Public Library of Science},
   Timestamp                = {2016.12.05}
@@ -1260,6 +1306,15 @@
   Doi                      = {10.1007/978-94-011-2030-2_3},
   Owner                    = {joseba},
   Timestamp                = {2016.11.04}
+}
+
+@Electronic{OpenMP,
+  Title                    = {he OpenMP API specification for parallel programming},
+  Url                      = {http://www.openmp.org/},
+  Year                     = {2017},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.04.27}
 }
 
 @Book{Intel2015,

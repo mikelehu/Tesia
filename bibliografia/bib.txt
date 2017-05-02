@@ -1,13 +1,10 @@
-@article{andrey2013test,
-  title={Test-driving Intel Xeon Phi coprocessors with a basic N-body simulation},
-  author={Andrey, KV Vladimirov},
-  journal={Coflax International},
-  volume={3},
-  pages={2},
-  year={2013}
+@book{frenkel2001understanding,
+  title={Understanding molecular simulation: from algorithms to applications},
+  author={Frenkel, Daan and Smit, Berend},
+  volume={1},
+  year={2001},
+  publisher={Academic press}
 }
-
-
 
 
 

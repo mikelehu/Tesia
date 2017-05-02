@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{Intel2015}
 \href{https://software.intel.com/en-us/articles/mkl-reference-manual}{{\em
@@ -30,12 +30,25 @@ KV~Vladimirov Andrey.
   intel xeon phi coprocessors with a basic n-body simulation}.
 \newblock {\em Coflax International}, 3:\penalty0 2, 2013.
 
+\bibitem{Antonana2017a}
+Mikel Anto{\~n}ana, Joseba Makazaga, and Ander Murua.
+\newblock \href{https://arxiv.org/abs/1703.07697}{Efficient implementation of
+  symplectic implicit runge-kutta schemes with simplified newton iterations}.
+\newblock {\em arXiv preprint arXiv:1703.07697}, 2017.
+
 \bibitem{Antonana2017}
 Mikel Anto{\~n}ana, Joseba Makazaga, and Ander Murua.
 \newblock \href{http://dx.doi.org/10.1007/s11075-017-0287-z}{Reducing and
   monitoring round-off error propagation for symplectic implicit runge-kutta
   schemes}.
 \newblock {\em Numerical Algorithms}, pages 1--20, 2017.
+
+\bibitem{Atmanspacher2016}
+Harald Atmanspacher and Sabine Maasen.
+\newblock
+  \href{http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118864972.html}{{\em
+  Reproducibility: Principles, Problems, Practices, and Prospects}}.
+\newblock John Wiley \& Sons, 2016.
 
 \bibitem{Baboulin20092526}
 Marc Baboulin, Alfredo Buttari, Jack Dongarra, Jakub Kurzak, Julie Langou,
@@ -198,6 +211,14 @@ Kang Feng and Mengzhao Qin.
   geometric algorithms for hamiltonian systems}}.
 \newblock Springer, 2010.
 
+\bibitem{Feinga2015}
+A.~Fienga.
+\newblock
+  \href{https://www.ceremade.dauphine.fr/~fejoz/Colloques/ad2015.php}{International
+  workshop in astronomy and dynamics}.
+\newblock In {\em INPOP planetary ephemerides: from 2013 to 2015.},
+  Observatoire de Paris, 2015.
+
 \bibitem{Fienga2008}
 A~Fienga, H~Manche, J~Laskar, and Mickael Gastineau.
 \newblock \href{http://dx.doi.org/10.1051/0004-6361:20066607}{Inpop06: a new
@@ -219,6 +240,13 @@ Laurent Fousse, Guillaume Hanrot, Vincent Lef{\`e}vre, Patrick P{\'e}lissier,
   multiple-precision binary floating-point library with correct rounding}.
 \newblock {\em ACM Transactions on Mathematical Software (TOMS)}, 33\penalty0
   (2):\penalty0 13, 2007.
+
+\bibitem{Frenkel2001}
+Daan Frenkel and Berend Smit.
+\newblock \href{http://www.sciencedirect.com/science/book/9780122673511}{{\em
+  Understanding molecular simulation: from algorithms to applications}},
+  volume~1.
+\newblock Academic press, 2001.
 
 \bibitem{Fukushima2001}
 Toshio Fukushima.
@@ -392,6 +420,13 @@ Sergei~A Klioner.
 D~Knuth.
 \newblock The art of computer programming: Vol 2/seminumerical algorithms,
   1969.
+
+\bibitem{Krogh1997}
+Fred~T Krogh.
+\newblock
+  \href{http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.37.3929&rep=rep1&type=pdf}{An
+  adams guy does the runge-kutta}.
+\newblock 1997.
 
 \bibitem{Kvaerno2000}
 Anne Kvaerno and Ben Leimkuhler.
@@ -603,8 +638,7 @@ Robert van de~Geijn Victor~Eijkhout and Edmond Chow.
 Greg Wilson, DA~Aruliah, C~Titus Brown, Neil P~Chue Hong, Matt Davis, Richard~T
   Guy, Steven~HD Haddock, Kathryn~D Huff, Ian~M Mitchell, Mark~D Plumbley,
   et~al.
-\newblock
-  \href{http://dx.doi.org/http://dx.doi.org/10.1371/journal.pbio.1001745}{Best
+\newblock \href{http://dx.doi.org/dx.doi.org/10.1371/journal.pbio.1001745}{Best
   practices for scientific computing}.
 \newblock {\em PLoS Biol}, 12\penalty0 (1):\penalty0 e1001745, 2014.
 

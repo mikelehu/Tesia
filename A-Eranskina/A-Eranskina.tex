@@ -1,4 +1,4 @@
-\chapter{Ekuazio garapenak.}
+\chapter{Ekuazioen garapenak.}
 \label{eranskin:A}
 
 \section{Kepler hasierako baliodun problema.}
@@ -123,8 +123,6 @@ b_{11}=(C-1) \frac{a}{\|q\|}, \longrightarrow b_{11}=-\frac{\sin^2(\triangle E)}
 \section{Koordenatu sistemak.}
 \label{erans:A2}
 
-\subsection*{Sarrera.}
-
 Lehenik koordenatu barizentrikoei $q_i, p_i \in \mathbb{R}^3, \ i=0,\dots,N$ dagokien Hamiltondarra gogoratuko dugu,
 \begin{equation}
 H(q,p)=\frac{1}{2}\ \sum^N_{i=0}{\ \frac{{\|p_i\|}^2}{m_i}}-G\ \sum^N_{0\le i<j\le N}{\frac{m_im_j}{\|q_i-q_j\|}}.
@@ -142,31 +140,21 @@ Q_0 &=q_0, \ \ Q_i=q_i-q_0, \\
 P_0 &=\sum\limits_{i=0}^{N}p_i, \ \ P_i=p_i, \ \ i=1,\dots{,N}.
 \end{align*}
 
-Hamiltondarra era honetan deskonposatu daiteke
+Hamiltondarra era honetan deskonposatu daiteke,
 \begin{equation*}
-H=H_K+T_1+U_1.
+H=H_K+(T_1+U_1)
 \end{equation*}
 
-\begin{enumerate}
-\item $H_K$.
-\begin{equation*}
-H_K=\sum\limits_{i=1}^{N}\bigg(\frac{\|P_i\|^2}{2 \mu_i} -\frac{G m_0 m_i}{\|Q_i\|}\bigg), \ \ \mu_i=\frac{m_0m_i}{(m_0+m_i)}.
-\end{equation*} 
-
-\item $T_1$.
-\begin{equation*}
-T_1=\frac{1}{m_0} \left(\sum\limits_{0<i<j\le N}^{N} P_i\ P_j \right).
-\end{equation*}
-
-\item $U_1$.
-\begin{equation*}
-U_1= -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
-\end{equation*}
-\end{enumerate}
+non
+\begin{align*}
+&H_K=\sum\limits_{i=1}^{N}\bigg(\frac{\|P_i\|^2}{2 \mu_i} -\frac{G m_0 m_i}{\|Q_i\|}\bigg), \ \ \mu_i=\frac{m_0m_i}{(m_0+m_i)}, \\
+&T_1=\frac{1}{m_0} \left(\sum\limits_{0<i<j\le N}^{N} P_i\ P_j \right),\\
+&U_1= -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
+\end{align*}
 
 \subsubsection*{Ekuazio diferentzialak.}
 
-\paragraph*{}Hamiltondar bakoitza independienteki kontsideratuta dagokio ekuazio diferentzialak lortzen ditugu:
+Hamiltondar bakoitza independienteki kontsideratuta dagokio ekuazio diferentzialak lortzen ditugu:
 \begin{enumerate}
 \item $H_K$.
 \begin{align*}
@@ -189,7 +177,7 @@ U_1= -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
 
 \end{enumerate}
 
-\paragraph*{}Azkenik, $V_i=P_i/\mu_i$ aplikatuta integrazioan erabiliko ditugun ekuazioak laburtuko ditugu.
+Azkenik, $V_i=P_i/\mu_i$ aplikatuta integrazioan erabiliko ditugun ekuazioak laburtuko ditugu.
 \begin{enumerate}
 \item $H_k$.
 \begin{align*}
@@ -214,10 +202,9 @@ U_1= -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
 
 \subsubsection*{Energia.}
 
-Koordenatu heliozentrikoetan integrazioak egiten ditugunean, sistemaren energia kalkulatzeko, soluzioa koordenatu barizentrikoetara bihurtuko dugu .  Hauek dira koordenatu heliozentrikoetatik abiatuta ($Q_i,V_i$) , koordenatu barizentrikoak ($q_i,v_i$) kalkulatzeko ekuazioak,
+Koordenatu heliozentrikoetan integrazioak egiten ditugunean, sistemaren energia kalkulatzeko, soluzioa koordenatu sistema barizentrikoetara bihurtuko dugu. Hauek dira koordenatu heliozentrikoetatik abiatuta ($Q_i,V_i$) , koordenatu barizentrikoak ($q_i,v_i$) kalkulatzeko ekuazioak,
 
 \begin{enumerate}
-
 \item $q_i, \ \ i=0,\dots,N$. 
 \begin{align*}
 q_0 &=-\sum\limits_{i=1}^{M} \frac{m_i Q_i}{M}, \ \ M= \sum\limits_{i=0}^{N} m_i, \\
@@ -235,7 +222,7 @@ P_0 &=\sum\limits_{i=0}^{N} p_i=\sum\limits_{i=0}^{N} m_i v_i=0 \Rightarrow \ \ 
 
 \subsection*{Koordenatu Jacobiarrak.}
 
-Koordenatu barizentrikoetatik abiatuta eta aldagai aldaketa bat aplikatuz ekuazioak koordenatu Jacobiarren  $Q_i,P_i \in \mathbb{R}^3, \ i=0,\dots,N$ arabera berridatziko ditugu. 
+Koordenatu barizentrikoetatik abiatuta eta aldagai aldaketa bat aplikatuz, ekuazioak koordenatu Jacobiarren  $Q_i,P_i \in \mathbb{R}^3, \ i=0,\dots,N$ arabera berridatziko ditugu. 
 
 \subsubsection*{Aldagai aldaketa.}
 Lehenik honako aldagai aldaketa aplikatuko dugu,
@@ -245,21 +232,18 @@ P_0 &=\sum\limits_{i=0}^{N}p_i, \ \ \ P_i =\left(\eta_{i-1} \ p_i- m_i \sum_{j=0
 \end{align*}
 non $\eta_i=\sum_{j=0}^{i} m_j$ den.
 
-\paragraph*{}Era berean, jacobi masak $m'_i=(\eta_{i-1} m_i)/\eta_i$ eta $\mu'_i=m_i \eta_{i-1}$ ekuazioetan ordezkatuko ditugu. Hamiltondarra era honetan deskonposatu daiteke,
+\paragraph*{}Era berean, Jacobi masak $m'_i=(\eta_{i-1} m_i)/\eta_i$ eta $\mu'_i=m_i \eta_{i-1}$ ekuazioetan ordezkatuko ditugu. Hamiltondarra era honetan deskonposatu daiteke,
 \begin{equation*}
-H=H_K+H_I.
+H=H_K+H_I,
 \end{equation*} 
 
-\begin{enumerate}
-\item $H_K$.
-\begin{equation*}
-H_K=\sum\limits_{i=1}^{N}\bigg(\frac{\|P_i\|^2}{2 m'_i} -\frac{\mu'_i}{\|Q_i\|}\bigg).
-\end{equation*} 
-\item $H_I$.
-\begin{equation*}
-H_I=\left(\frac{\mu'_i}{Q_i}-\frac{Gm_0m_i}{q_i} \right) -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
-\end{equation*} 
-\end{enumerate} 
+non
+\begin{align*}
+\begin{split}
+&H_K=\sum\limits_{i=1}^{N}\bigg(\frac{\|P_i\|^2}{2 m'_i} -\frac{\mu'_i}{\|Q_i\|}\bigg), \\
+&H_I=\left(\frac{\mu'_i}{Q_i}-\frac{Gm_0m_i}{q_i} \right) -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
+\end{split}
+\end{align*}
 
 \section{Newton eraginkorraren garapena.}
 \label{erans:A3}

@@ -1,211 +1,100 @@
-\chapter{Kodea}.
+\chapter{Inplementazioak.}
 
-Kodeari buruzko hainbat ohar emateko.
+Lan honetan, ekarpen bakoitzari dagokion C lengoaiako inplementazio bat garatu dugu eta \href{https://github.com/mikelehu/}{kode bilgunean} eskuragarri jarri dugu. Kodea eskuragarri jartzeari, lehentasuna eman diogu \cite{Atmanspacher2016,Wilson2014}. Batetik, garapenak modu argian dokumentatzea behartu gaitu; bertan zehaztasun guztiak aztertu daitezke eta gure lanaren baliagarritasuna baieztatu daiteke. Bestetik, ikerlariei gure lana erabiltzeko eta hobetzeko aukera eskaintzen diegu.
 
-\section{Gauss metodoa}
-\label{sec:B1}
+Konputazio zientzian, idatzitako kodearen $200$ lerro oro, errore bat izaten dela \cite{Frenkel2001} estimatzen da. Gure inplementazioak ondo frogatu baditugu ere, errorerik ez denik izango ezin dugu ziurtatu. Akatsen bat izatekotan, larria ez izatea espero dugu eta edozein kasutan  erabiltzaileak jakinaraztea eskertu genuke.   
 
-\subsection*{Metodoaren koefizienteak.}
-GaussCollocationCoefficients.nb funtzioa.
+Inplementazioen kodea antolatzeko, irizpide berdinak erabili ditugu. Lehenengo, inplementazioen egitura orokorra azaldu dugu eta ondoren, garapen bakoitzaren argibideak emango ditugu.      
 
-\begin{figure}[h!]
-\centerline{\includegraphics[width=14cm, height=18cm] {Code_Gauss}}
-\caption{Code Gauss.}
-\label{fig:bost}
-\end{figure}
+\section{Egitura orokorra.}
 
-\subsection*{Atalen hasieraketa koefizienteak.}
-
-\section{Zientzia konputazioa.}
-\label{sec:C1}
-
-\subsection*{FMA.}
-
-Nola jakin gure \emph{linux} konputagailu batek \emph{FMA} instrukzioak dituen ala ez ? Honako agindua exekutatu eta \emph{fma} flaga azaltzen den ala ez begiratu behar dugu.
-\begin{lstlisting}
-$ grep fma < /proc/cpuinfo
-\end{lstlisting}
-eta konpilatzeko \emph{-mfma} flag-a zehaztu behar da,
-\begin{lstlisting}
-$ gcc -O2 -Wall -std=c99 -fno-common -mfma adibidea.c
-\end{lstlisting}
-
-\subsection*{OpenMP}
-
-\paragraph*{\textbf{Adibidea2.}} \emph{Reduction} direktiba $+,-,*,min,max$ funtzioekin erabili daiteke. Direktiba honen adibidea emateko, trapezio erregelaren bidezko zenbakizko integrazioaren inplementazioa erakutsiko dugu.
-\begin{align*}
-approx=h*(f(x_0)/2+f(x_1)+f(x_2)+\dots+f(x_{n-1})+f(x_{n}))
-\end{align*} 
-
-\begin{lstlisting}[language=C]
-#    include <omp.h>
-
-     int thread_count=2;
-     
-     h= (b-a)/n;
-     approx = (f(a)+f(b))/2.0;
-     
-#    pragma omp parallel for num_threads(thread_count) \
-     reduction(+: approx)
-      for (i = 0; i<n; i++) approx+= f(a+i*h);
-      
-     approx=h*approx;
-\end{lstlisting}
-
-\subsection*{Makefile adibideak.}
-
- 
-\paragraph*{Adibidea1.}
-Adibide sinple baten bidez azalduko dugu bere erabilpena. Hauxe da, \emph{Makefile}-aren oinarrizko elementua,
-\begin{lstlisting}
-helburua: dependentziak
->TAB>  helburua lortzeko aginduak
-\end{lstlisting}
-
-Demagun aplikazioa bat hiru fitxategietan banatuta dugula,
-\begin{lstlisting}[language=C]
-/*file: main.c*/
-void main()
-{
-    printf("Main program");
-    sub1();
-    sub2();
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language=C]
-/*file: sub1.c*/
-void sub1()
-{
-    printf("sub1");
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language=C]
-/*file: sub2.c*/
-void sub2()
-{
-    printf("sub2");
-}
-\end{lstlisting}
-
-Konpilazioa automatizatzeko \emph{make} fitxategia,
-
-\begin{lstlisting} [language=C]
-main.exe: main.o sub1.o sub2.o
-	      gcc main.o sub1.o sub2.o -o main.exe
-main.o: main.c
-        gcc -c main.c
-sub1.o: sub1.c
-        gcc -c sub1.c        
-sub2.o: sub2.c
-        gcc -c sub2.c        
-\end{lstlisting}
-
-Eta erabilpena,
-
-\begin{lstlisting}
-$ make main.exe
-  gcc -c main.c
-  gcc -c sub1.c
-  gcc -c sub2.c
-  gcc main.o sub1.o sub2.o -o main.exe
-\end{lstlisting} 
-
-\paragraph*{Adibidea2.} 
-Aurreko adibidea, modu egokiagoan idatzitako \emph{make} fitxategia,
-
-\begin{lstlisting} [language=C]
-
-CC = /usr/bin/gcc
-FLAGS=-O2 -Wall -std=c99 -fno-common 
-OBJECTS=  main.o sub1.o sub2.o
-.PHONY: clean help
-
-main.exe: $(OBJECTS)
-	      ${CC} $(OBJECTS) -o main.exe
-	      
-%.o: %.c
-     ${CC} ${FLAGS} -c $<	      
-	      
-clean:
-     rm -f $(OBJECTS) main.exe
-
-help:
-    @echo "Valid targets;"
-    @echo " main.exe"
-    @echo " main.o"
-    @echo " sub1.o"
-    @echo " sub2.o"
-    @echo " clean"
-             
-\end{lstlisting}
-
-
-
-\section{Problemak}
-
-\subsection*{Pendulu bikoitza}
-
-Mathematican,  DoublePendulum.m eta DoublePendulumSTIFF.m paketetan, hurrenez-hurren pendulu bikoitz arruntaren eta pendulu bikoitz zurrunaren honako funtzioen inplementazioak garatu ditugu:
-\begin{enumerate}
-   \item Hamiltondarra: DoublePendulumHam eta DoublePendulumSTIFFHam.
-   \item EDA: DoublePendulumODE eta DoublePendulumSTIFFODE.
-   \item Jakobiarra: DoublePendulumJAC eta DoublePendulumSTIFFJAC.
-\end{enumerate}
-
-\paragraph*{}C-lengoaiako inplementazio baliokidea, GaussUserProblem.c fitxategian inplementatu ditugu. Pendulu bikoitz arruntaren problema $problem=5$ gisa  (ode5, jac5, ham5) eta pendulu bikoitz zurrunaren problema $problem=6$ gisa (ode6, jac6, ham6) izendatu dugu.
-
-\subsection*{N-body problema}
-
-\paragraph*{} Mathematicako NBodyProblem.m paketean honako funtzioak garatu ditugu.
-
-\begin{enumerate}
-   \item Hamiltondarra: NBodyHAM.
-   \item EDA: NBodyODE.
-   \item Jakobiarra: Ez dut garatu.
-\end{enumerate}
-
--\paragraph*{} C-lengoaiako inplementazioa:
-
-\begin{enumerate}
-   \item Hamiltondarra: HamNBody().
-   \item EDA: OdeNbody().
-   \item Jakobiarra: JacNBody().
-\end{enumerate}
-
-\section{Fortran kodeak}.
-
-\paragraph*{} Haireren konposizio metodoaren Fortran kodearen  C-lengoaiako itzulpena egin dugu. Konposizio metodoaren azalpenak liburuko \cite{Hairer2006}  \emph{II.4} eta \emph{V.3} ataletan ematen dira. \emph{GNI-Comp} izeneko kodea eskuragarri dago \cite{HairerGniComp} helbidean.  
-
-\section{IRK-Puntu finkoa}
-
-\section{IRK-Newton}
-
-
-\subsection{IRK-Newton koefizienteak.}
-
-GaussCoefficients(s).nb mathematicako fntzioaren bidez aurrekalkulatzen ditugu koefizienteak.
-
-\subsection{IRK-Newton eraginkorra.}
-
-\paragraph*{} Algoritmoaren hainbat zehaztapen emango ditugu,
-
+Inplementazioen edukia, direktorio hauetan banatu dugu:
 \begin{enumerate}
 
-\item LAPACK.
+\item CoefficcientsData.
 
-\emph{LU deskonposaketa} egiteko funtzioa,
-\begin{lstlisting} [language=C]
-GETRF(LAPACK_ROW_MAJOR, n, m, MM, lda, ipiv);
-\end{lstlisting}
+Mathematican, IRK Gauss kolokazio metodoaren koefizienteak sortzeko aplikazio bat garatu dugu. Gure esperimentuetarako $s=6,s=8$ eta $s=16$ ataletako Gaussen metodoak aplikatu ditugu eta metodo bakoitzari dagokien doitasun bikoitzeko ($64$-bit) koefizienteak, azpidirektorio batean bildu ditugu.
 
-Ekuazio sistemaren ebazpena (\emph{Solve}) egiteko,
-\begin{lstlisting} [language=C]
-GETRS(LAPACK_ROW_MAJOR,trans,n,nrhs,MM,lda,ipiv,fl,ldb);
-\end{lstlisting}
+\item PerturbationsData.
+
+Errorearen azterketa estatistikoak egiteko, hasierako balio ezagun baten $P=1000$ hasierako balio perturbatuak sortu ditugu; hasierako balio originalaren osagai bakoitza ausaz perturbatu dugu ($\mathcal{O}(10^{-6})$ tamainako errore erlatiboarekin). Problema bakoitzari dagokion, $P=1000$ hasierako balio perturbatuak, fitxategi bitar batean idatzi dugu eta horrela, fitxategi hauetatik hasierako balioak  irakurrita, esperimentu bera errepikatu daiteke.
+
+\item Packages.
+
+Esperimentuak, Mathematica ingurunetik exekutatu ditugu eta direktorio honetan, soluzioen azterketak egiteko hainbat funtzio garatu ditugu. Batetik, problema bakoitzari dagokion ekuazio diferentzialak eta Hamiltondarra inplementatu ditugu. Bestetik, esperimentuen grafikoak irudikatzeko funtzioak garatu ditugu. 
+
+\item Examples.
+
+Mathematica erabiliz egindako zenbakizko integrazioen adibideak eman ditugu. Adibide bakoitza, azpidirektorio batean bildu dugu: zenbakizko integrazioa eta honen analisia, modu independentean exekutatu daitezke. Horretarako, integrazioaren soluzioak fitxategi bitarretan idazten dira eta analisiak, fitxategi hauek irakurriko ditu.       
+
+\item Code.
+
+C lengoaian garatutako gure inplementazioa. 
 
 \end{enumerate}
 
-\section{Eguzki-sistema}
+\subsection*{Exekuzioa.}
 
+Code/Readme.txt fitxategian, inplementazioaren argibideak eman ditugu. Inplementazioa bi modutan exekutatu daiteke.
+
+\begin{enumerate}
+\item Linux terminala.
+
+Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
+
+\item Mathematica ingurunetik.
+
+Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu. Mathematicatik gure C inplementazioaren funtzio nagusia deitu ahal izateko, 'math-IRK.tm' eta 'math-IRK.c' fitxategiak definitu ditugu. Exekutagarria, Mathematicatik bateragarria izan dadin, konpilazio eta esteka egiteko moduak \emph{makefile} fitxategian kontsultatu daitezke.    
+
+\end{enumerate}
+
+Erabiltzaileak, bere problemaren ekuazio diferentzialak eta integrazioen emaitzak definituko dituela espero da. 
+
+\subsection*{Paralelizazioa.}
+
+IRK metodoen s-ataletako funtzioen konputazioak ($f(Y_i), \ i=1,\dots,s$), paraleloan exekutatu daitezke. Gure inplementazioan, OpenMP erabili dugu:  \emph{PARALLEL} konpilazio parametroarekin aktibatu daiteke eta orduan, prozesadore kopurua 'threadcount' aldagaian, zehaztu behar da. 
+
+
+\section{IRK puntu-finkoa.}
+
+Puntu-finkoaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/IRK-FixedPoint}{kodea} helbidean eskuragarri dago. Bi modutara exekutatu daiteke: puntu-finkoaren iterazio estandarra edo puntu-finkoaren iterazio partizionatua. 
+
+Code/Readme.txt fitxategian, IRK puntu-finkoaren inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
+\begin{lstlisting}
+IRKFP (t0,t1,h,&method,&u,&system,&options,&thestat);
+\end{lstlisting}
+
+Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
+Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu.    
+
+Inplementazio honetan, ez dugu \emph{BLAS} liburutegia erabili. 
+
+\section{IRK Newton.}
+
+Newton sinplifikatuaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/IRK-Newton}{kodea} helbidean eskuragarri dago. Bi inplementazio exekutatu daitezke: Newton sinplifikatuaren inplementazio eraginkorra eta artikuluan, proposatutako Newton iterazioan oinarritutako IRK inplementazio berria.
+
+Code/Readme.txt fitxategian, IRK puntu-finkoaren inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
+\begin{lstlisting}
+IRKNEWTON (t0,t1,h,&method,&u,&system,&options,&thestat);
+\end{lstlisting}
+
+Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
+Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu. 
+
+Inplementazio honetan, \emph{BLAS} eta \emph{LAPACK} liburutegiak erabili ditugu.
+
+\section{IRK Eguzki-sistema.}
+
+\section{Konposizio-Splitting metodoak.}
+
+Newton sinplifikatuaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/Composition}{kodea} helbidean eskuragarri dago. Bi inplementazio exekutatu daitezke: konposizio metodoak (CO1035) eta splitting metodoak (ABAH1064).
+
+Code/Readme.txt fitxategian, konposizio/Splitting inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
+\begin{lstlisting}
+Solve_Comp (t0,t1,h,&method,basic,&system,&options,&u,&thestat);
+\end{lstlisting}
+
+Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
+Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu. 
+
+Eguzki-sistemari egokitutako Splitting metodoak aplikatzeko, Kepler fluxuaren inplementazio berri bat garatu dugu. Inplementazio honen C kodean, 'Kepler.c' fitxategian aurkitzen da. 

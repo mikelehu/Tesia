@@ -14,19 +14,17 @@ A level-1 auxiliary file: 21-Eztabaida/Eztabaida.aux
 A level-1 auxiliary file: 22-Konklusioak/Konklusioak.aux
 A level-1 auxiliary file: A-Eranskina/A-Eranskina.aux
 A level-1 auxiliary file: B-Eranskina/B-Eranskina.aux
-A level-1 auxiliary file: C-Eranskina/C-Eranskina.aux
 A level-1 auxiliary file: Z-Argibideak/Argibideak.aux
 The style file: myplain2-doi.bst
 Database file #1: ./bibliografia/mybib.bib
 Warning--entry type for "libquad" isn't style-file defined
---line 438 of file ./bibliografia/mybib.bib
+--line 485 of file ./bibliografia/mybib.bib
 Warning--entry type for "Karplus2014" isn't style-file defined
---line 975 of file ./bibliografia/mybib.bib
+--line 1033 of file ./bibliografia/mybib.bib
 Warning--entry type for "WolframResearch" isn't style-file defined
---line 1232 of file ./bibliografia/mybib.bib
+--line 1290 of file ./bibliografia/mybib.bib
 Warning--entry type for "OpenMP" isn't style-file defined
---line 1265 of file ./bibliografia/mybib.bib
-Warning--I didn't find a database entry for "HairerGniComp"
+--line 1323 of file ./bibliografia/mybib.bib
 Warning--to sort, need author or key in OpenMP
 Warning--to sort, need author, editor, or key in Intel2015
 Warning--empty author and editor in Intel2015
@@ -35,45 +33,46 @@ Warning--empty year in Dumitru
 Warning--empty publisher in Hairer1993
 Warning--empty journal in Higham2015
 Warning--empty journal in IEEE2008
-You've used 98 entries,
+Warning--empty journal in Krogh1997
+You've used 103 entries,
             2359 wiz_defined-function locations,
-            1255 strings with 22197 characters,
-and the built_in function-call counts, 31941 in all, are:
-= -- 2979
-> -- 1425
-< -- 13
-+ -- 586
-- -- 467
-* -- 2473
-:= -- 5204
-add.period$ -- 287
-call.type$ -- 98
-change.case$ -- 502
+            1283 strings with 23095 characters,
+and the built_in function-call counts, 33225 in all, are:
+= -- 3089
+> -- 1483
+< -- 14
++ -- 610
+- -- 485
+* -- 2555
+:= -- 5424
+add.period$ -- 302
+call.type$ -- 103
+change.case$ -- 524
 chr.to.int$ -- 0
-cite$ -- 106
-duplicate$ -- 1231
-empty$ -- 2755
-format.name$ -- 467
-if$ -- 6642
+cite$ -- 112
+duplicate$ -- 1293
+empty$ -- 2872
+format.name$ -- 485
+if$ -- 6907
 int.to.chr$ -- 0
-int.to.str$ -- 98
-missing$ -- 111
-newline$ -- 486
-num.names$ -- 200
-pop$ -- 605
+int.to.str$ -- 103
+missing$ -- 118
+newline$ -- 511
+num.names$ -- 210
+pop$ -- 645
 preamble$ -- 1
-purify$ -- 422
+purify$ -- 441
 quote$ -- 0
-skip$ -- 802
+skip$ -- 836
 stack$ -- 0
-substring$ -- 1894
-swap$ -- 266
-text.length$ -- 13
+substring$ -- 1920
+swap$ -- 276
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 350
-warning$ -- 8
-while$ -- 309
-width$ -- 100
-write$ -- 1041
+type$ -- 366
+warning$ -- 9
+while$ -- 319
+width$ -- 106
+write$ -- 1092
 (There were 13 warnings)
