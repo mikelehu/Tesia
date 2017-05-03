@@ -2,10 +2,10 @@
 
 \section{Sarrera.}
 
-Lan honen xede nagusia, N-gorputzeko sistema grabitazionalaren problemen zenbakizko simulaziorako algoritmoak garatzea da. Era horretako problemen artean, eguzki-sistemaren epe luzeko simulaziorako inplementazioak aztertuko ditugu \cite{Kholshevnikov2007,Brumberg2013} . Gaur egun, era horretako simulaziorako hainbat zenbakizko metodo erabiltzen dira, bereziki bere izaera Hamiltondarra mantentzen duten metodo sinplektikoak \cite{Eggl2010,Saha1992,Farres2013}. Metodo horien artean, gehien erabiltzen direnak izaera esplizituko algoritmoak diren arren, metodo inplizituak, modu egokian inplementatuz gero, hauek baino eraginkorragoak izan daitezke. Gauss zenbakizko integrazio metodo inplizituaren inplementazio eraginkorra aztertuko dugu.   
+Lan honen xede nagusia, N-gorputzeko sistema grabitazionalaren problemen zenbakizko integraziorako algoritmoak garatzea edo daudenak hobetzea da. Era horretako problemen artean, eguzki-sistemaren epe luzeko integraziorako inplementazioak aztertuko ditugu \cite{Kholshevnikov2007,Brumberg2013} . Gaur egun, era horretako integrazioetarako hainbat zenbakizko metodo erabiltzen dira, bereziki bere izaera Hamiltondarra mantentzen duten metodo sinplektikoak \cite{Eggl2010,Saha1992,Farres2013}. Metodo horien artean, gehien erabiltzen direnak izaera esplizituko algoritmoak diren arren, metodo inplizituak, modu egokian inplementatuz gero, hauek baino eraginkorragoak izan daitezke. Zenbakizko integraziorako Gauss metodo inplizituaren inplementazio eraginkorra aztertuko dugu.   
 
-Atal honen lehen zatian, zenbakizko integrazio metodoen inguruko oinarrizko definizioak eta kontzeptuak azalduko ditugu. 
-Jarraian, sistema Hamiltondarren eta metodo sinplektikoen sarrera emango dugu. Ondoren, zenbakizko integratzaile sinplektiko nagusienak aztertuko ditugu: alde batetik, Runge-Kutta metodo sinplektikoak (inplizituak) ; beste alde batetik, konposizio eta splitting metodo sinplektikoak (esplizituak). Azalpenak ulergarriak izateko, zenbakizko metodo sinpletan (Euler metodoak) eta adibideetan oinarritu gara. 
+Atal honen lehen zatian, zenbakizko integrazio-metodoen inguruko oinarrizko definizioak eta kontzeptuak azalduko ditugu. 
+Jarraian, sistema Hamiltondarrak zer diren eta halakoak integratzeko erabiltzen diren metodo sinplektikoak azalduko ditugu. Ondoren, zenbakizko integratzaile sinplektiko nagusienak aztertuko ditugu: alde batetik, Runge-Kutta metodo sinplektikoak (inplizituak); eta bestetik, konposizio eta splitting metodo sinplektikoak (esplizituak).
 
 \section{Zenbakizko integrazio metodoak}
 
@@ -20,7 +20,7 @@ Ekuazio diferentzial arrunta, $y(t)$ soluzio ezezagunaren eta bere $\dot{y}(t)$ 
 \end{equation} 
 $\dot{y}$ notazioa erabiliko dugu $dy/dt$ adierazteko.
 
-Ekuazio diferentzial arruntetarako hasierako baliodun problemetan,  $y(t_0)=y_0 \in \mathbb{R}^d$ hasierako balio bat finkatzen da, eta $f(t,y)$ funtzioa, $f: \mathbb{R}^{d+1} \longrightarrow \mathbb{R}^d, \ \ t_0$ ingurunean diferentziagarria bada, orduan hasierako baliodun problemaren soluzioa existitzen da eta bakarra da \cite{Hairer2006},
+Ekuazio diferentzial arruntetarako hasierako baliodun problemetan,  $y(t_0)=y_0 \in \mathbb{R}^d$ hasierako balio bat finkatuz, eta $f(t,y)$ funtzioa, $f: \mathbb{R}^{d+1} \longrightarrow \mathbb{R}^d, \ \ t_0$ ingurunean diferentziagarria bada, orduan hasierako baliodun problemaren soluzioa existitzen da eta bakarra da \cite{Hairer2006},
 \begin{equation}
  \label{eq:ivp}
 \dot{y}(t)=f(t,y(t)), \ \ \ y(t_0)=y_0.
@@ -36,14 +36,12 @@ Goiko ekuazio-sistema bektoriala (\ref{eq:ivp}), ekuazio-sistema modu eskalarrea
 \end{align*}
 
 
-Oso problema gutxitarako aurki daiteke ekuazio diferentzial arrunten soluzioa analitikoa (funtzio ezagunen araberako soluzio zehatza) eta beraz, ia problemak gehienak zenbakizko integrazio metodoen bidez ebazten dira.
+Oso problema gutxitarako aurki daiteke ekuazio diferentzial arrunten soluzio analitikoa (funtzio ezagunen araberako soluzio zehatza) eta beraz, ia problema gehienak zenbakizko integrazio metodoen bidez ebazten dira.
 Zenbakizko integrazioetan, soluzioaren hurbilpena,
 \begin{align*}
  y_n \approx y(t_n), \ t_n=t_{n-1}+h_n, \ n=1,2,\dots
 \end{align*}
 une diskretu konkretuetarako, zehaztutako tarte batean ($t_0\le t \le t_f$) lortuko da. Zenbakizko soluzioa, sekuentzialki urratsez-urrats kalkulatzen da eta lortutako balio  multzoak $(t_0,y_0),(t_1,y_1),\dots,(t_f,y_f)$ zenbakizko soluzioa definitzen du.   
-
-Zenbakizko soluzioaren ($y_n$) kalitatea, bi errore mota nagusien araberakoa izango da: zenbakizko integrazio metodoak sortutakoa (trunkatze errorea) eta konputazioan aritmetika finituak eragindakoa (biribiltze errorea). 
 
 Ekuazio diferentziala beti \emph{sistema autonomo} moduan, hau da, denborarekiko independentea, idatz daiteke. Hori horrela izanik, notazioa sinplifikatzeko era honetako hasierako baliodun problemak kontsideratuko ditugu,   
 \begin{equation}
@@ -56,46 +54,37 @@ Jarraian zenbakizko integrazioen metodoen oinarrizko kontzeptuak eta notazioa fi
 \begin{enumerate}
 \item Fluxua.
 
-Fase-espazioko edozein $y_0$ balioari, $y(t_0)=y_0$ hasierako balio duen $y(t)$ soluzioa esleitzen dion funtzioari fluxua deitzen zaio. Izendatzeko $\varphi_t$ notazioa erabiliko dugu,
+Fase-espazioko edozein $y_0$ balioari, $y(t_0)=y_0$ hasierako balioa duen $y(t)$ soluzioa esleitzen dion funtzioari fluxua deitzen zaio. Izendatzeko $\varphi_h$ notazioa erabiliko dugu,
 \begin{equation*}
 \label{eq:fluxua}
-\varphi_t(y_0)=y(t) \ \ \mbox{baldin}  \ \  y(t_0)=y_0.
+\varphi_h(y_0)=y(t_0+h) \ \ \mbox{baldin}  \ \  y(t_0)=y_0.
 \end{equation*}
 
 \item Zenbakizko diskretizazioa.
 
-$y_0, \dots,y_{n-1},y_{n}$ balioak emanda, $y_{n+1}\approx y(t_{n+1})$ soluzioaren hurbilpena kalkulatzeko formulari \emph{zenbakizko fluxua} deritzogu. Honako notazioa erabiliko dugu,
-\begin{equation*}\label{eq:204}
-y_{n+1}=\phi(y_{n+1},y_{n},\dots,y_0;h;f).
-\end{equation*}
-
-$\phi$ zenbakizko metodoa, $y_{n+1}$ balioaren menpe ez dagoenean, $y_{n+1}$ zuzenean kalkula daiteke eta metodoari \emph{esplizitua} dela esaten zaio. Aldiz, $\phi$ metodoa $y_{n+1}$ menpe dagoenean, $y_{n+1}$ askatzeko metodo iteratibo bat erabili behar da (puntu-finkoaren iterazioa edo Newtonen iterazioa) eta metodoari \emph{inplizitua} dela esaten zaio.  
+$y_{n}$ balioa emanda, $y_{n+1}\approx y(t_{n+1})$ soluzioaren hurbilpena kalkulatzeko formulari \emph{zenbakizko fluxua} deritzogu. Honako notazioa erabiliko dugu,
+\begin{equation}
+\label{eq:204}
+y_{n+1}=\phi_h(y_{n}).
+\end{equation}
 
 \item Metodoaren ordena.
 
 \begin{enumerate}
-\item Errore lokala ($le$), $y(t_k)=y_k$ soluzio zehatzetik abiatuta, integrazio metodoaren urrats bat ($h_k=t_{k+1}-t_k$) eman ondorengo erroreari deritzogu,
+\item Errore lokala,  $y(t_0)=y_0$ soluzio zehatzetik abiatuta, integrazio metodoaren urrats bat eman ondoren lortutako zenbakizko soluzioak, benetako soluzioarekiko duen aldeari deritzo.
 \begin{equation*}
 \label{eq:le}
-le(t_{k+1})=y_{k+1}-y(t_{k+1}), \ \ y(t_k)=y_k.
+\delta(y,h)=\varphi_h(y)-\phi_h(y).
 \end{equation*}   
 
 
-\item Errore globala ($ge$), zenbakizko soluzioaren $t_0$ hasierako unetik $t_k$ une arteko errore globalari esaten zaio,
+\item Errore globala, zenbakizko soluzioaren $t_0$ hasierako unetik $t_k$ une arteko errore globalari esaten zaio,
 \begin{equation*}
  \label{eq:ge}
-ge(t_k)=y_k-y(t_k).
-\end{equation*}
+E(t_k)=y_k-y(t_k).
+\end{equation*}  
 
-Zenbakizko integrazioaren urrats bakoitzaren abiapuntua, $y_(t_k)$ soluzio zehatzaren ordez $y_k$ balioa hartzen denez, garrantzitsua da ulertzea errore lokalaren hedapena. Horretarako, hurrengo irudian \ref{fig:deferror} irudian oinarrituko gara \cite{Hairer2015a}. Irudiaren lerro bakoitzak, hasierako balio ezberdin baten zenbakizko soluzioa da . Marra bertikal lodi bakoitza errore lokala da. urratsez-urrats propagatu egiten dena. Errore globala, $t_n$ unean hedatutako errore lokalen batura da.
-
-\begin{figure}[h]
-\centerline{\includegraphics[width=12cm, height=6cm] {ErrorePropagazioa}}
-\caption{Errore lokalaren hedapena. Irudian soluzio zehatza eta hasierako bi balio ezberdinei dagokien zenbakizko soluzioak irudikatu ditugu}
-\label{fig:deferror}
-\end{figure}     
-
-\item Metodoaren ordena. $h$ urrats luzera finkoko $\phi$ metodoak $p$ ordenakoa dela esaten da, $ge(t)$ errore globala $\mathcal{O}(h^{p})$ ordenekoa bada  $h \rightarrow 0$,
+\item Metodoaren ordena. $h$ urrats luzera finkoko $\phi$ metodoa $p$ ordenakoa dela esaten da, $E(t)$ errore globala $\mathcal{O}(h^{p})$ ordenakoa bada  $h \rightarrow 0$,
 \begin{equation*} 
 \label{eq:metordena}
 \|y_k-y(t_k)\|=\mathcal{O}(h^{p}), \ \ h \rightarrow 0.
@@ -124,7 +113,7 @@ y_{n+1}=y_{n}+h_n f(t_n,y_n).
 \end{equation*}
 Oinarrizko metodo esplizitua da eta urratsa emateko dagoen konputazio konplexutasuna bakarra, $f$ funtzioaren ebaluazio da. Lehen ordenako metodoa da,
 \begin{equation*}
-\|y_n-y(t_n)\| \leqslant C h,
+\|y_n-y(t_n)\| \leqslant C h, \ C \in \mathbb{R}
 \end{equation*}
 eta beraz, doitasuna bikoizteko, lan konputazionala bikoiztu behar dugu. Ikusiko dugunez, ordena altuagoko metodoekin, doitasuna handiagoa lortuko dugu, lan konputazional gutxiagorekin. 
 
@@ -139,7 +128,7 @@ Urratsa emateko, ekuazio sistema ez-linealaren soluzioa askatu behar da. Horreta
 
 \subsubsection*{Iterazio metodoak}
 
-Laburki, ekuazio sistema ez-linealen soluzioa askatzeko bi iterazio metodo nagusienak azalduko ditugu.
+Ekuazio sistema ez-linealen soluzioa askatzeko bi iterazio metodo azalduko ditugu.
 
 \begin{enumerate}
 
@@ -159,36 +148,27 @@ y_{n+1}^{[k+1]}=y_{n}+h_n \ f(t_{n+1},y_{n+1}^{[k]}), \ \ \ \ \ k=1,2,\dots
 \item Newtonen iterazioa.
 
 Demagun $f(x)=0$ ekuazioa askatzeko, non $f: \  {\mathbb{R}}^n \ \longrightarrow {\mathbb{R}}^n$ eta  $x^{[0]} \in \mathbb{R}^n$ soluzioaren hasierako hurbilpen bat emanda, Newtonen iterazioa era honetan definitzen da,
-\begin{equation*}
- x^{[k+1]}=x^{[k]}-\frac{f(x^{[k]})}{f`(x^{[k]})} \, \ \ \ \ \ k=1,2,\dots
-\end{equation*}
-
-Eta Euler metodo inplizituaren ekuazio ez-lineala askatzeko, $k=1,2,\dots$ iterazioetarako,
-\begin{enumerate}
-\item $r_{n+1}^{[k]}=y_{n+1}^{[k]}-y_n-h_n \ f(t_{n+1},y_{n+1}^{[k]})$,
-
-\item Askatu $\triangle y_{n+1}^{[k]}$,
-
-$(\triangle y_{n+1}^{[k]} - h_n \ J_n \ \triangle y_{n+1}^{[k]}) =- r_{n+1}^{[k]}$,
-
-\item $y_{n+1}^{[k+1]} = y_{n+1}^{[k]}+ \triangle y_{n+1}^{[k]}$.
-\end{enumerate}
-non $J_n \approx \frac{\partial f}{\partial y} (t_n, y_n)$ hurbilpen bat den.
+\begin{align*}
+&k=1,2,\dots \\
+&\Delta x^{[k]} \ J(x^{[k]})=-f(x^{[k]}), \\
+&x^{[k+1]}=x^{[k]}+\Delta x^{[k]} 
+\end{align*}
+non $J(x)=\frac{\partial f}{\partial x} (x)$ den.
 
 \end{enumerate}
 
-Urratsaren konputazioa konplexutasuna, metodo esplizitua baino nabarmen handiagoa da: metodo honetan, iterazio bakoitzean Jacobiarraren ebaluazioa, ekuazio sistema lineala askatu eta $f$ funtzioaren ebaluazioa kalkulatu behar dira.
+Urratsaren konputazioaren konplexutasuna, metodo esplizituan baino nabarmen handiagoa da: metodo honetan, iterazio bakoitzean Jacobiarraren ebaluazioa, ekuazio sistema lineala askatu eta $f$ funtzioaren ebaluazioa kalkulatu behar dira.
 
 Iterazio metodoaren konbergentzia abiadura. $\{x^{[0]},x^{[1]},\dots,x^{[k]}\}$, $x^{\ast}$ soluziorantz konbergitzen duen bektore seriea bada, errorea $e^{[n]}=x^{[*]}-x^{[n]}, \ n=1,2,\dots$ izendatuko dugu. Konbergentzia $p$ ordenakoa dela esaten dugu honakoa betetzen dada,
 \begin{equation*}
 \lim\limits_{n\rightarrow \inf} \frac{\|e^{[n+1]}\|}{\|e^{[n]}\|^p}= C \ne 0.
 \end{equation*}
 
-Puntu-finkoaren iterazioak konbergentzia lineala ($p=1$) eta Newtonen iterazioak koadratikoa ($p=2$) du. Konbergentzia koadratikoa izatea oso interesgarria da, iterazio bakoitzean soluzioaren digitu hamartar zuzenen kopurua bikoizten ditugulako. Konbergentzia linealean, ordea, iterazio bakoitzean digitu hamartar kopuru finkoa hobetzen dugu. 
+Puntu-finkoaren iterazioak konbergentzia lineala ($p=1$) du, Newtonen iterazioak, berriz, koadratikoa ($p=2$). Konbergentzia koadratikoa izatea oso interesgarria da, iterazio bakoitzean soluzioaren digitu hamartar zuzenen kopurua bikoizten dugulako. Konbergentzia linealean, ordea, iterazio bakoitzean digitu hamartar kopuru finkoa hobetzen dugu. 
   
 \subsubsection*{Problema zurruna.}
 
-Konputazio konplexutasun handiagoa izan arren, problema batzuetan metodo inplizituak, esplizituak aplikatzea baino egokiago izan daiteke, eta hori erakusteko Germund Dahlquist-en ($1963$) adibidea azalduko dugu,
+Urrats baten konputazio-kostua handiagoa izan arren, problema batzuetan metodo inplizituak, esplizituak aplikatzea baino egokiago izan daiteke, eta hori erakusteko Germund Dahlquist-en ($1963$) adibidea azalduko dugu,
 \begin{equation}
  \label{eq:202c}
 \dot y=\lambda y,
@@ -213,13 +193,13 @@ Euler inplizitua, Euler esplizitua baino eraginkorra den ekuazio diferentzialei 
 Hamiltondar sistemak \cite{SSerna2015}, ekuazio diferentzial mota garrantzitsu bat dira. $H(p,q)$ funtzio leunari dagokion \emph{Hamiltondar sistema} osatzen duten $2d$ ekuazio diferentzialak, era honetan definitzen dira,
 \begin{align*}
 \label{eq:212}
-\frac{d}{dt} \ {p}^i & =-\frac{\partial H }{\partial q^i} (p,q), \\
-\frac{d}{dt} \ {q}^i & =+\frac{\partial H}{\partial p^i} (p,q), \ \ \ \ i=1,\dots,d,
+\frac{d {p}^i}{dt} & =-\frac{\partial H (p,q)}{\partial q^i} , \\
+\frac{d {q}^i}{dt} & =+\frac{\partial H (p,q)}{\partial p^i} , \ \ \ \ i=1,\dots,d,
 \end{align*}
 non $H: {\mathbb{R}}^{2d} \ \longrightarrow {\mathbb{R}}$  den eta  $p=[p^1, \dots , p^d]^T$, $q=[q^1, \dots , q^d]^T$ domeinuaren aldagaiak diren. Egoera aldagaien bektoreen $d$ dimentsioari, sistemaren \emph{askatasun maila} esaten zaio. $H(p,q)$ funtzioari \emph{Hamiltondarra} deritzo, eta sistemaren energia adierazten du. Energia, integrazioan zehar konstante mantentzen da,
 \begin{equation*}
 \label{eq:212b}
-H(p(t),q(t))=const.
+H(p(t),q(t))=K, \ K \in \mathbb{R}.
 \end{equation*}
 
 Beste notazio laburtu hau ere erabili ohi da,
@@ -249,18 +229,18 @@ I_{d \times d}=\left(\begin{array}{cccc}
 H({p},{q})=T(p)+U({q}).
 \end{equation*} 
 
-Horien artean, \emph{bigarren ordenako} ekuazio diferentzialak aipatu behar ditugu, zeintzuk Hamiltondar banagarrien kasu partikularra bat diren,  
+Horien artean, \emph{bigarren ordenako} ekuazio diferentzialak aipatu behar ditugu. Hauek Hamiltondar banagarrien kasu partikular bat dira. Bere Hamiltondarra  
 \begin{equation*}
 H(\mathbf(p,q)=\frac{1}{2}p^Tp +U(q),
 \end{equation*}
-eta dagokien ekuazio diferentzialak hauek diren,
+da eta dagokien ekuazio diferentzialak hauek dira,
 \begin{equation}
 \label{eq:biorden}
 \dot{p}=-\frac{\partial U(q)}{\partial q}, \ \ \dot{q}=p. 
 \end{equation}
 
 \paragraph*{Adibidea.}
-\emph{Bi gorputzen} edo \emph{Kepler problema} \cite{Hairer2006}. Planoan elkar erakartzen diren bi gorputzen (adibidez eguzkia eta planeta bat) mugimendua kalkulatzeko, horietako gorputz baten kokapena koordenatu sistemaren jatorria kontsideratuko dugu eta beste gorputzaren kokapenaren koordenatuak $q=(q_1,q_2)$ izendatuko ditugu. 
+\emph{Kepler problema} \cite{Hairer2006}. Planoan elkar erakartzen diren bi gorputzen (adibidez eguzkia eta planeta bat) mugimendua adierazten duen problema da. Gorputz baten kokapena, koordenatu sistemaren jatorria kontsideratuko dugu eta beste gorputzaren kokapenaren koordenatuak $q=(q_1,q_2)$ izendatuko ditugu. $p=(p_1,p_2)$ momentuak dira. 
 
 Funtzio Hamiltondarra hauxe da,
 \begin{equation*}
@@ -284,7 +264,7 @@ $e$ ezentrizidadea ($0\le e < 1$)  eta $P=2\pi$ periodoa duen elipsea da.
 H=H_A+\epsilon H_B \ \  \text{non} \ \ |H_B|\ll |H_A|.
 \end{equation*}
 
-\paragraph*{Adibidea.} Eguzki-sistemaren probleman \cite{Saha1992,Wisdom2006}, Hamiltondarra modu honetan banatu daiteke $H=H_k+H_I$, non alde nagusia $H_K$ planeta bakoitzaren eguzkiaren inguruko mugimendu Kepleriarrari eta $H_I$ aldiz, planeten arteko interakzioek eragiten duten perturbazio txikiari dagokion.   
+\paragraph*{Adibidea.} Eguzki-sistemaren probleman \cite{Saha1992,Wisdom2006}, Hamiltondarra modu honetan bana daiteke $H=H_k+H_I$, non alde nagusia $H_K$ planeta bakoitzaren eguzkiaren inguruko mugimendu Kepleriarrari dagokion eta $H_I$, aldiz, planeten arteko interakzioek eragiten duten perturbazio txikiari.   
 
 \subsection{Metodo sinplektikoak.}
 

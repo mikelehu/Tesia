@@ -1,63 +1,112 @@
 \chapter{Eztabaida.}
 
-\section{Sarrera.}
+\section{Koordenatu sistemak.}
 
-\section{IRK Puntu finkoa.}
+\section{Hamiltondar banagarriak.}
 
 \section{IRK Newton.}
 
-$(I_s \otimes I_d - h \ A \otimes J) \triangle Y = r$ ekuazio sistema askatzeko, Hairer-en inplementazio estandarrean, $A$ matrizearen,
-\begin{equation*}
-A=P^{-1}DP, \ \,
-D=\begin{bmatrix}
-\sigma_1 & 0            & \cdots & 0  \\
- 0       & \sigma_2     & \cdots & 0   \\
- \cdots  & \cdots       & \cdots & \cdots  \\
- 0       &  0           &        & \sigma_s \\
-\end{bmatrix}
-\end{equation*}
-diagonalizazioa proposatzen da. $D$ matrizeak, balio propio konplexuak ditu. Zenbaki konplexuekin lana ez bada egin nahi, zenbaki errealeko deskonposaketa baliokidea,
+$(I_s \otimes I_d - h \ A \otimes J) \triangle Y = r$ ekuazio sistema modu eraginkorrean askatzeko, inplementazio estandarraren eta gure inplementazioen konplexutasunak konparatuko ditugu.
 
+\subsection*{Inplementazio estandarra.}
+
+Butcher edota Hairer-en inplementazio estandarraren konputazio bi modutan egin daiteke:
+
+\begin{enumerate}
+\item Zenbaki konplexuak.
+
+$A$ matrizearen diagonalizazioak balio propio konplexuak ditu, 
 \begin{equation*}
-A=Q^{-1}RQ, \ \,
-R=\begin{bmatrix}
-\sigma_{1A} & \sigma_{1B}   &  0          &  0            & \cdots &  0           &    0       \\
-\sigma_{1C} & \sigma_{1D}   & 0           &  0            & \cdots &  0           &    0       \\
- 0          & 0             & \sigma_{2A} & \sigma_{2B}   & \cdots &  0           &    0       \\
- 0          & 0             & \sigma_{2C} & \sigma_{2D}   & \cdots &  0           &    0       \\
- \cdots     & \cdots        &  \cdots     & \cdots        & \cdots & \cdots       &    \cdots   \\
- 0          & 0             &  0          & 0             & \cdots & \sigma_{sA}  & \sigma_{sB} \\
- 0          & 0             &  0          & 0             & \cdots & \sigma_{sC}  & \sigma_{sD} \\
-\end{bmatrix}
+P^{-1}AP=\begin{bmatrix}
+  \gamma_1 &                &          &                &           &                 \\
+           & \bar{\gamma_1} &          &                &           &                 \\
+           &                & \gamma_2 &                &           &                 \\
+           &                &          & \bar{\gamma_2} &           &                 \\ 
+           &                &          &                & \gamma_3   &                 \\
+           &                &          &                &            & \bar{\gamma_3} \\  
+\end{bmatrix},
 \end{equation*}
-Honen arabera, Hiarer-en inplementazioan,
+
+eta ekuazio-sistema, zenbaki konplexuen aritmetika erabiliz ebatzi daiteke.
+\begin{align*}
+&(I-h \gamma_j J) \ X = b, \ \ j=1,\dots,3, \\
+&(I-h \bar{\gamma}_j J) \ X = \bar{b}. 
+\end{align*}
+
+\item Zenbaki errealak.
+
+Zenbaki konplexuekin ez bada lana egin nahi, zenbaki errealeko deskonposaketa baliokidea,
+\begin{align*}
+&\gamma_j=\alpha_j + i \ \beta_j,\\
+&P^{-1}AP=\begin{bmatrix}
+\alpha_{1} & -\beta_{1}   &  0            &  0            &  0           &    0       \\
+\beta_{1}  & \alpha_{1}   & 0             &  0            &  0           &    0       \\
+ 0          & 0             & \alpha_{2}  & -\beta_{2}    &  0           &    0       \\
+ 0          & 0             & \beta_{2}   & \alpha_{2}    &  0           &    0       \\
+ 0          & 0             &  0          & 0             & \alpha_{3}  & -\beta_{3}  \\
+ 0          & 0             &  0          & 0             & \beta_{3}   & \alpha_{3}  \\
+\end{bmatrix}
+\end{align*}
+
+\end{enumerate}
+
+Hairer-en inplementazioan,
 \begin{itemize}
-\item $s$ bikoitia $\rightarrow$ $(2d \times 2d)$ tamainako $[s/2]$  LU deskonposaketa.
-\item $s$ bakoitia $\rightarrow$ $(2d \times 2d)$ tamainako $(s+1)/2$  LU deskonposaketa.
+\item $s$ bikoitia bada $\rightarrow$ $(2d \times 2d)$ tamainako $[s/2]$  LU deskonposaketa.
+\item $s$ bakoitia bada $\rightarrow$ $(2d \times 2d)$ tamainako $(s+1)/2$  LU deskonposaketa.
 \end{itemize}
 
-\paragraph*{}Gure inplementazioan, $\bar{A}$ matrizearen,
-\begin{equation*}
-\bar{A}=P^{-1}DP
-\end{equation*}
-diagonalizatzen dugu eta $D$ matrizeak, irudikari puruak ditu. Eta ondorioz, gure inplementazioaren bertsio errealean,
+\subsection*{Gure inplementazio berria.}
+
+$\bar{A}$ matrizearen, $\bar{A}=P^{-1}DP$ diagonalizatzen dugu eta $D$ matrizeak, irudikari puruak ditu,
 \begin{equation*}
 \bar{A}=Q^{-1}RQ, \ \,
 R=\begin{bmatrix}
-0           & -\sigma_{1}   &  0          &  0            & \cdots &  0           &    0       \\
- \sigma_{1} & 0             & 0           &  0            & \cdots &  0           &    0       \\
- 0          & 0             & 0           & -\sigma_{2}   & \cdots &  0           &    0       \\
- 0          & 0             & \sigma_{2}  & 0             & \cdots &  0           &    0       \\
- \cdots     & \cdots        &  \cdots     & \cdots        & \cdots & \cdots       &    \cdots   \\
- 0          & 0             &  0          & 0             & \cdots & 0            & -\sigma_{s} \\
- 0          & 0             &  0          & 0             & \cdots & \sigma_{s}   & 0            \\
+0           & -\gamma_{1}   &            &               &             &           \\
+ \gamma_{1} & 0             &            &               &             &           \\
+            &               & 0           & -\gamma_{2}  &             &           \\
+            &               & \gamma_{2}  & 0              &           &           \\
+            &               &             &                & 0            & -\gamma_{3} \\
+            &               &             &                & \gamma_{3}   & 0            \\
 \end{bmatrix}
 \end{equation*}
-zeroak agertzen dira. Honen arabera, gure inplementazioan,
+
+Gure inplementazioan,
 \begin{itemize}
-\item $s$ bikoitia $\rightarrow$ $(d \times d)$ tamainako $[s/2]+1$  LU deskonposaketa.
-\item $s$ bakoitia $\rightarrow$ $(d \times d)$ tamainako $(s+1)/2$  LU deskonposaketa.
+\item $s$ bikoitia bada $\rightarrow$ $(d \times d)$ tamainako $[s/2]+1$  LU deskonposaketa.
+\item $s$ bakoitia bada $\rightarrow$ $(d \times d)$ tamainako $(s+1)/2$  LU deskonposaketa.
 \end{itemize}
 
+\subsection*{Konplexutasun konparaketa}
 
-\section{Laburpena.}
+Lehenengo eragiketa aljebraikoen konplexutasunak gogoratuko ditugu,
+\begin{align*}
+&\text{LU deskonposaketa}:  \ \ 2s^3d^3/3+\mathcal{O}(d^2), \\
+&\text{Back substitution}:  \ \ 2s^2d^2+\mathcal{O}(d), \\
+&\text{inv}: \ \ 2s^3d^3
+\end{align*}
+
+Bi inplementazioen konplexutasunen laburpena,
+\begin{table}[h!]
+\caption[LU deskonposaketak] 
+{\small{}}
+\label{tab:Olu}       
+\centering
+{%
+\begin{tabular}{ l l l l l } 
+ \hline
+\\
+                 &  \multicolumn{2}{c}{LU}  & \multicolumn{2}{c}{Back Substitution}  \\
+ s               & Estandarra  & Berria     &  Estandarra  &              Berria     \\
+\\
+ \hline
+\\
+ $2m$            &   $\frac{8m}{3} d^3$                              &  $\frac{2}{3} (2m+1) d^3$ 
+                 &   $4m (2d^2)$      &     $(6m+4)d^2$                                             \\
+ \\
+ $2m+1$          &   $\left(\frac{8m}{3} + \frac{2}{3}\right) d^3$   &  $\left(\frac{4m}{3}+\frac{2}{3}\right) d^3$
+                 &   $(8m+2)d^2$      &     $(6m+4)d^2$\\  
+ \\  
+   \hline
+ \end{tabular}}
+\end{table}
