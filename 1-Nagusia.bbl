@@ -159,6 +159,13 @@ John~E Chambers.
 \newblock {\em Monthly Notices of the Royal Astronomical Society}, 304\penalty0
   (4):\penalty0 793--799, 1999.
 
+\bibitem{Chartier2010}
+Philippe Chartier, Ander Murua, and Jesus~Maria Sanz-Serna.
+\newblock \href{http://dx.doi.org/10.1007/s10208-010-9074-0}{Higher-order
+  averaging, formal series and numerical integration i: B-series}.
+\newblock {\em Foundations of Computational Mathematics}, 10\penalty0
+  (6):\penalty0 695--727, 2010.
+
 \bibitem{Corless2013}
 Robert~M Corless and Nicolas Fillion.
 \newblock \href{http://dx.doi.org/10.1007/978-1-4614-8453-0}{A graduate
@@ -255,6 +262,13 @@ Toshio Fukushima.
   round-off error in symplectic integrators}.
 \newblock {\em The Astronomical Journal}, 121\penalty0 (3):\penalty0 1768,
   2001.
+
+\bibitem{Fukushima2007}
+Toshio Fukushima.
+\newblock \href{http://stacks.iop.org/1538-3881/133/i=6/a=2815}{Numerical
+  comparison of two-body regularizations}.
+\newblock {\em The Astronomical Journal}, 133\penalty0 (6):\penalty0 2815,
+  2007.
 
 \bibitem{libquad}
 GNU.

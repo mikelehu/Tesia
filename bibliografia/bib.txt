@@ -1,9 +1,12 @@
-@book{frenkel2001understanding,
-  title={Understanding molecular simulation: from algorithms to applications},
-  author={Frenkel, Daan and Smit, Berend},
-  volume={1},
-  year={2001},
-  publisher={Academic press}
+@article{chartier2010higher,
+  title={Higher-order averaging, formal series and numerical integration I: B-series},
+  author={Chartier, Philippe and Murua, Ander and Sanz-Serna, Jesus Maria},
+  journal={Foundations of Computational Mathematics},
+  volume={10},
+  number={6},
+  pages={695--727},
+  year={2010},
+  publisher={Springer}
 }
 
 

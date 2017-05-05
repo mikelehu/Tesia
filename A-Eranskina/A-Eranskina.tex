@@ -373,6 +373,249 @@ Honako berdintza hauek kontutan hartuz, $Q^{-1}=Q^TB, \ \ es^TBQ_2=0, \ \ Q_2^TB
   - h \ (e_s^T B \ Q_1 \otimes J) \ W^{'} + \Delta z &=0. 
 \end{align*}
 
+\section{Kepler fluxuaren aldagai aldaketa.}
+\label{erans:A4}
 
 
+\subsection*{Alde Kepleriar bakarra.}
 
+
+Satelite baten orbitaren ekuazio diferentzialak, era honetan idatz daiteke,
+\begin{equation*}
+\frac{d}{dt}\left(\begin{array}{c}
+                q  \\
+                v  \\
+\end{array}\right)
+= k(t,q,v)         
++ g(t,q,v), 
+\end{equation*}
+non,
+\begin{equation*}
+k(t,q,v)=\left(\begin{array}{c}
+                 v \\
+                -\frac{\mu}{\|q\|^3} \ q\\
+\end{array}\right).
+\end{equation*}
+
+\paragraph*{Aldagai aldaketa.} Honako aldagai aldaketa aplikatuko dugu,
+\begin{equation}
+\label{eq:aldfl1}
+\left(\begin{array}{c}
+                q  \\
+                v  \\
+\end{array}\right)= \varphi_t(Q,V)
+\end{equation}
+
+\paragraph*{Aldagai berriekiko ekuazio diferentzialak.}
+Aldagai berriarekiko ekuazio diferentzialak definituko ditugu. (\ref{eq:aldfl1}) ekuazioak deribatuko ditugu (katearen erregela),
+\begin{align*}
+&\frac{d}{dt}\left(\begin{array}{c}
+                q(t)  \\
+                v(t)  \\
+\end{array}\right)=
+ \frac{d}{dt} \left(\varphi_t(Q(t),V(t)) \right), \\
+&\frac{d}{dt}\left(\begin{array}{c}
+                q(t)  \\
+                v(t)  \\
+\end{array}\right)= 
+\dot{\varphi}_t (Q(t),V(t)) + \varphi'_t(Q(t),V(t)) 
+\frac{d}{dt}\left(\begin{array}{c}
+                Q(t)  \\
+                V(t)  \\
+\end{array}\right).
+\end{align*}
+
+Fluxuaren definizioaz,
+\begin{equation*}
+\dot{\varphi}_t (Q(t),V(t))=k(q(t),v(t)),
+\end{equation*}
+eta beraz,
+\begin{equation*}
+g(t,q,v)=g(t, \varphi_t(Q,V))=\varphi'_t(Q(t),V(t)) 
+\frac{d}{dt}\left(\begin{array}{c}
+                Q(t)  \\
+                V(t)  \\
+\end{array}\right).
+\end{equation*}
+
+Azkenik, $Q(t),V(t)$ aldagairekiko deribatu partzialen espresioak lortuko ditugu,
+\begin{align}
+\begin{split}
+\frac{d}{dt}\left(\begin{array}{c}
+                Q(t)  \\
+                V(t)  \\
+\end{array}\right)= \varphi'_t(Q(t),V(t))^{-1} \ g(t, \varphi_t(Q,V)), \\
+G(t,Q,V)=\varphi'_t(Q(t),V(t))^{-1} \ g(t, \varphi_t(Q,V)).
+\end{split}
+\end{align}
+
+\paragraph*{Perturbazio Hamiltondarra.}
+Lehenik, perturbazioa Hamiltondarra den kasua kontsideratuko dugu,
+\begin{equation*}
+g(t,q,v)=
+\left(\begin{array}{c}
+                \triangledown_p \ r(t,q,v)  \\
+                -\triangledown_q \ r(t,q,v)  \\
+\end{array}\right)
+=J^{-1} \triangledown r(t,q,v),
+\end{equation*}
+non, 
+\begin{equation*}
+ J=\left(\begin{array}{cc}
+   \ 0 & \ -I \\
+     I & \ 0  \\
+\end{array}\right), \ \ J^{-1}=-J.
+\end{equation*}
+
+Bestalde, fluxu Kepleriarra Hamiltondarra da eta sinplektikoa izateagatik honako propietatea betetzen du,
+\begin{equation}
+\label{eq:Ksymp}
+(\varphi'_t(Q,V))^{T} \ J \ \varphi'_t(Q,V)=J. 
+\end{equation}
+
+Eta goiko (\ref{eq:Ksymp}) garatuz, honakoa ere betetzen dela badakigu,
+\begin{equation*}
+J^{-1} (\varphi'_t(Q,V))^T=(\varphi'_t(Q,V))^{-1} \ J^{-1}.
+\end{equation*}
+
+Definizio hau emanik,
+\begin{equation*}
+R(t,Q,V)=r(t, \varphi_t(Q,V)),
+\end{equation*}
+berdintza hau betetzen dela erakutsi nahi dugu,
+\begin{equation*}
+J^{-1} (\varphi'_t(Q,V))^T \triangledown r=J^{-1} \triangledown \ R(t,Q,V).
+\end{equation*}
+$\triangledown \ R(t,Q,V)$ katearen erregela aplikatuz zuzenean baieztatzen da.
+
+\paragraph*{Perturbazio Ez-Hamiltondarra.}
+
+Kepler-en fluxua sinplektikoa da eta propietate horretan oinarritzen gara fluxuaren alderantzikoaren kalkulua saihesteko.
+\begin{align*}
+         \left\{ 
+            \begin{array}{l}
+            \frac{d}{dt}\left(\begin{array}{c}
+                            Q(t)  \\
+                            V(t)  \\
+            \end{array}\right)=(\varphi'_t(Q,V))^{-1} g(t, \varphi_t(Q,V)) 
+             \\
+            J^{-1} (\varphi'_t(Q,V))^T J=(\varphi'_t(Q,v))^{-1}   \\                          
+            \end{array} 
+         \right. \ \ \rightarrow
+ \end{align*}
+ 
+ \begin{align}
+ \label{eq: gEzH}
+\rightarrow \ \ \frac{d}{dt}\left(\begin{array}{c}
+                Q(t)  \\
+                V(t)  \\
+\end{array}\right) =J^{-1}(\varphi'_t(Q,V))^T \ J \ g.
+ \end{align}
+
+Deribazio automatiko prozedura aplikatuz (\ref{eq: gEzH}) kalkulatuko dugu.
+
+\paragraph*{Algoritmoa.}
+
+$(Q,V)$ aldagai berrien kalkulua hiru urratsetan egingo dugu,
+\begin{enumerate}
+\item KeplerFlowGen.
+\begin{align*}
+(q,v)= \varphi_t(Q,V). 
+\end{align*}
+(aux, gero erabiliko ditugun tarteko aldagaiak ere itzuliko ditu).
+\item GFcn.
+\begin{equation*}
+g=GFcn(t,q,v)
+\end{equation*}
+\item KeplerFlowGFcnaux.
+\begin{align*}
+J^{-1} ( \varphi'_t(Q,V))^T \ J \ g
+\end{align*}
+\end{enumerate} 
+
+\subsection*{Alde Kepleriar bat baino gehiago.}
+
+Alde Kepleriar bat baino gehiago den kasurako azterketa egingo dugu. $k$, alde Kepleriar kopurua esago diogu.
+\begin{equation*}
+\frac{d}{dt}\left(\begin{array}{c}
+                q  \\
+                v  \\
+\end{array}\right)=
+\left(\begin{array}{c}
+                q_1  \\
+                v_1  \\
+                q_2  \\
+                v_2  \\
+                \vdots \\
+                q_k    \\
+                v_k    \\
+                w      \\
+\end{array}\right)=
+\left(\begin{array}{c}
+                v_1  \\
+                -\mu_1 \ q_1/\|q_1\|^3  \\
+                v_2  \\
+                -\mu_2 \ q_2/\|q_2\|^3  \\
+                \vdots \\
+                v_k    \\
+                -\mu_k \ q_k/\|q_k\|^3  \\
+                0      \\
+\end{array}\right)+
+g(t,q_1,v_1,\dots, q_k,v_k,w).
+\end{equation*} 
+non 
+\begin{equation*}
+g(t,q_1,v_1,\dots, q_k,v_k,w)=
+\left(\begin{array}{c}
+                g_1(t,q_1,v_1,\dots, q_k,v_k,w)      \\
+                g_2 (t,q_1,v_1,\dots, q_k,v_k,w)     \\
+                \vdots   \\
+                g_k (t,q_1,v_1,\dots, q_k,v_k,w)      \\
+                g_{k+1}(t,q_1,v_1,\dots, q_k,v_k,w)    \\
+\end{array}\right)
+\end{equation*}
+
+Gorputz bakoitzari dagokion aldagai aldaketa lokala da,
+\begin{align}
+\label{eq:aldfl2}
+\begin{split}
+\left(\begin{array}{c}
+                q_j  \\
+                v_j  \\
+\end{array}\right)&= \varphi_t^{\mu_j}(Q_j,V_j), \ \ j=1,\dots,k, \\
+w&=W.
+\end{split}
+\end{align}
+
+Fluxuaren Jacobiarra diagonala da,
+\begin{equation*}
+\left(\begin{array}{c c c c}
+                \varphi_t^{\mu_1'}(Q_1,V_1) &  &                           &   \\
+                                            & \ddots  &                           &   \\
+                                            &         &\varphi_t^{\mu_k'}(Q_k,V_k) &   \\
+                                            &         &                           & I \\                      
+\end{array}\right).
+\end{equation*}
+
+(\ref{eq: gEzH}) aplikatzen badugu,
+\begin{equation*}
+\frac{d}{dt}\left(\begin{array}{c}
+                q  \\
+                v  \\
+\end{array}\right)=
+\left(\begin{array}{c}
+                q_1  \\
+                v_1  \\
+                \vdots \\
+                q_k    \\
+                v_k    \\
+                w      \\
+\end{array}\right)=
+\left(\begin{array}{c}
+               \varphi_t^{\mu_1'}(Q_1,V_1) \ g_1 \\ 
+               \varphi_t^{\mu_2'}(Q_2,V_2) \ g_2 \\
+               \vdots \\
+               \varphi_t^{\mu_k'}(Q_k,V_k) \ g_k \\
+               g_{k+1}
+\end{array}\right)
+\end{equation*}
