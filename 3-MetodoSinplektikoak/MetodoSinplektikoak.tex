@@ -323,46 +323,47 @@ Metodo sinplektikoak bi taldeetan banatuko ditugu: metodo sinplektiko inplizitua
 %Zuzenketa Joseba 04-05-2017
 %Funtsezkoa da, integratzaile sinplektiko baten bidez lortutako $H$ Hamiltondar sistemaren zenbakizko soluzioa, perturbatutako beste %Hamiltondar $\widetilde{H}$ baten soluzio zehatza gisa ulertzea \cite{SSerna2015b}. Kontutan hartu behar da, zenbakizko integrazioak %eragiten dituen perturbazio hauek, sistema dinamiko baten $H$ Hamiltondar eredua eraikitzerakoan, hartzen  diren hurbilpenek edo datu ez %ziurrek eragiten duten baino errore maila txikiagoa suposatzen dutela.    
  
-Integratzaile sinplektiko baten bidez sistema Hamiltondar baten soluzioa lortzen dugunean, ez dugu lortzen jatorrizko sistemaren soluzio zehatza, baina lortutako soluzio hori bera jatorrizko sistemaren perturbazio baten soluzio zehatza da \cite{SSerna2015b}. Alegia, lortuta soluzioa, perturbatutako sistema Hamiltondar baten soluzio zehatza da.  
+Integratzaile sinplektiko baten bidez sistema Hamiltondar baten soluzioa lortzen dugunean, ez dugu lortzen jatorrizko sistemaren soluzio zehatza, baina lortutako soluzio hori bera jatorrizko sistemaren perturbazio baten soluzio zehatza da \cite{SSerna2015b}. Alegia, lortuta soluzioa, beste sistema Hamiltondar baten soluzio zehatza da.  
 
-\paragraph{Adibidea.}
-Demagun, askatasun maila bakarra duen sistema Hamiltondar banagarria $H=T(p)+V(q)$, Euler metodo sinplektikoaren (\ref{eq:eulersin}) bidez integratzen dugula.  $(p_n,q_n)$ zenbakizko soluzioak, integratu nahi dugun $S$ Hamiltondar sistemaren $(p(t_n),q(t_n))$ soluzio zehatza hurbiltzen du.  Modu honetan, benetako fluxua $\varphi_h^H$ eta zenbakizko integrazioa $\phi_h^H$ izendatzen baditugu,
-\begin{align*}
-&(p_{n+1},q_{n+1}) =\phi_h^H(p_n,q_n), \\
-&(p(t_{n+1}),q(t_{n+1})) =\varphi_h^H(p(t_n),q(t_n)), 
-\end{align*} 
-eta Euler sinplektikoa $p=1$ ordenako metodoa denez,
-\begin{equation*}
-\phi_h^H(p_n,q_n)-\varphi_h^H(p(t_n),q(t_n))= \mathcal{O}(h^2).
-\end{equation*}    
+% Josebaren zuzenketa 06-05-2017: adibidea kendu
+%\paragraph{Adibidea.}
+%Demagun, askatasun maila bakarra duen sistema Hamiltondar banagarria $H=T(p)+V(q)$, Euler metodo sinplektikoaren (\ref{eq:eulersin}) bidez integratzen dugula.  $(p_n,q_n)$ zenbakizko soluzioak, integratu nahi dugun $S$ Hamiltondar sistemaren $(p(t_n),q(t_n))$ soluzio zehatza hurbiltzen du.  Modu honetan, benetako fluxua $\varphi_h^H$ eta zenbakizko integrazioa $\phi_h^H$ izendatzen baditugu,
+%\begin{align*}
+%&(p_{n+1},q_{n+1}) =\phi_h^H(p_n,q_n), \\
+%&(p(t_{n+1}),q(t_{n+1})) =\varphi_h^H(p(t_n),q(t_n)), 
+%\end{align*} 
+%eta Euler sinplektikoa $p=1$ ordenako metodoa denez,
+%\begin{equation*}
+%\phi_h^H(p_n,q_n)-\varphi_h^H(p(t_n),q(t_n))= \mathcal{O}(h^2).
+%\end{equation*}    
 
-Defini ahal daiteke beste $S_2$ Hamiltondar sistema bat, zeinekin Euler sinplektikoa bigarren ordenako den? Hau da, $(p_n,q_n)$ zenbakizko soluzioa, $S$ soluziotik baino gertuago dagoen $S_2$ sistema? 
-\begin{align*}
-\phi_h^{\widetilde{H}}(p_n,q_n)-\varphi_h^{\widetilde{H}}(p(t_n),q(t_n))= \mathcal{O}(h^3).
-\end{align*}
+%Defini ahal daiteke beste $S_2$ Hamiltondar sistema bat, zeinekin Euler sinplektikoa bigarren ordenako den? Hau da, $(p_n,q_n)$ zenbakizko soluzioa, $S$ soluziotik baino gertuago dagoen $S_2$ sistema? 
+%\begin{align*}
+%\phi_h^{\widetilde{H}}(p_n,q_n)-\varphi_h^{\widetilde{H}}(p(t_n),q(t_n))= \mathcal{O}(h^3).
+%\end{align*}
 
-Taylor seriea garatuz, lortuko dugu $S_2$ sistema  ($f=-\partial H/\partial q$, $g=\partial H/\partial p$),
-\begin{align*}
-\frac{d}{dt} p &= f(q)+ \frac{h}{2} g(p) f'(q),\\
-\frac{d}{dt} q &= g(p)- \frac{h}{2} g'(p) f(q),
-\end{align*} 
-non honako Hamiltondarrari dagokion,
-\begin{align*}
-\widetilde{H}_2=T(p)+V(q)+\frac{h}{2} T'(p) V'(q) = H+\mathcal{O}(h).
-\end{align*}
+%Taylor seriea garatuz, lortuko dugu $S_2$ sistema  ($f=-\partial H/\partial q$, $g=\partial H/\partial p$),
+%\begin{align*}
+%\frac{d}{dt} p &= f(q)+ \frac{h}{2} g(p) f'(q),\\
+%\frac{d}{dt} q &= g(p)- \frac{h}{2} g'(p) f(q),
+%\end{align*} 
+%non honako Hamiltondarrari dagokion,
+%\begin{align*}
+%\widetilde{H}_2=T(p)+V(q)+\frac{h}{2} T'(p) V'(q) = H+\mathcal{O}(h).
+%\end{align*}
 
-\ref{fig:MetSinplektikoa} irudian, (\ref{eq:pendulua})~pendulu problemaren  hasierako balio hauei ($p(0)=0, \ q(0)=2$) dagokien integrazioa erakutsi dugu. Izarren bidezko marrazkiak, $h=0.5$ urratsari dagokion zenbakizko soluzioa adierazten du. $H=K_1,  \in \mathbb{R}$~puntuko lerroak, penduluaren benetako soluzioa irudikatzen du.  $\widetilde{H}_2=K_2 \in \mathbb{R}$~marra lerroak, perturbatutako Hamiltondar sistemaren soluzioa irudikatzen du. Zenbakizko soluzioaren eta perturbatutako Hamiltondar sistemaren ibilbideak bat datozela ikusi daiteke. 
+%\ref{fig:MetSinplektikoa} irudian, (\ref{eq:pendulua})~pendulu problemaren  hasierako balio hauei ($p(0)=0, \ q(0)=2$) dagokien integrazioa erakutsi dugu. Izarren bidezko marrazkiak, $h=0.5$ urratsari dagokion zenbakizko soluzioa adierazten du. $H=K_1,  \in \mathbb{R}$~puntuko lerroak, penduluaren benetako soluzioa irudikatzen du.  $\widetilde{H}_2=K_2 \in \mathbb{R}$~marra lerroak, perturbatutako Hamiltondar sistemaren soluzioa irudikatzen du. Zenbakizko soluzioaren eta perturbatutako Hamiltondar sistemaren ibilbideak bat datozela ikusi daiteke. 
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=.40\textwidth]{MetSinplektikoa}
-\caption{ \small Penduluaren problema: zenbakizko soluzioa (izarrak), benetako soluzioa (puntu lerroak) and perturbatutako soluzioa (marra lerroak) \cite{SSerna2015b}}
-\label{fig:MetSinplektikoa}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=.40\textwidth]{MetSinplektikoa}
+%\caption{ \small Penduluaren problema: zenbakizko soluzioa (izarrak), benetako soluzioa (puntu lerroak) and perturbatutako soluzioa (marra lerroak) \cite{SSerna2015b}}
+%\label{fig:MetSinplektikoa}
+%\end{figure}
 
-Kasu orokorra, posible da $S_p$ Hamiltondar sistema perturbatua eraikitzea, zeinekin Euler sinplektikoa $p$ ordenakoa den. Beraz, konklusio gisa esango dugu, Hamiltondar sistema bati aplikatzen diogun metodo sinplektikoaren zenbakizko soluzioa, perturbatutako Hamiltondar sistema baten soluzio ia zehatza kontsideratu behar dugula. 
+%Kasu orokorra, posible da $S_p$ Hamiltondar sistema perturbatua eraikitzea, zeinekin Euler sinplektikoa $p$ ordenakoa den. Beraz, konklusio gisa esango dugu, Hamiltondar sistema bati aplikatzen diogun metodo sinplektikoaren zenbakizko soluzioa, perturbatutako Hamiltondar sistema baten soluzio ia zehatza kontsideratu behar dugula. 
 
-Sarrera hau bukatzeko, metodo sinplektikoen propietate nagusienak azpimarratuko ditugu \cite{Hairer2006,JMSanz-Serna1994}.
+Metodo sinplektikoen propietate nagusienak azpimarratuko ditugu \cite{Hairer2006,JMSanz-Serna1994}.
 \begin{enumerate}
 
 \item Metodo sinplektikoek, energia oso ondo kontserbatzen dute.
@@ -394,7 +395,7 @@ Izaera sinplektikoa mantendu beharrik ez dagoenean, erabiltzen diren metodoek er
 \section{Runge-Kutta metodo sinplektikoak.}
 
 
-1988. urtean, Sanz-Serna \cite{JMSanz-Serna1994} \emph{Gauss metodoa} sinplektikoa zela ohartu zen. Runge-Kutta metodo inplizitua da, ordena altueneko ($p=2s$) s-ataleko Runge-Kutta metodoa eta hainbat propietate interesgarri ditu. 
+1988. urtean, Sanz-Serna \cite{JMSanz-Serna1994} \emph{Gauss metodoa} sinplektikoa zela ohartu zen. Runge-Kutta metodo inplizitua da eta s-atalekin lor daitekeen ordena altuena du, alegia $p=2s$ ordenakoa da.  
 
 \subsection{Runge-Kutta metodoak.}
 
@@ -426,16 +427,17 @@ non $Y_{n,i}$ atalak era honetan definitzen diren,
 Y_{n,i}=y_n+\ h\ \sum^s_{j=1}{a_{ij}\ f(t_n+c_jh,Y_{n,j})}\ \ \ \ \ i=1 ,\dots, s.\
 \end{equation} 
 
-Bi idei dago, Runge-Kutta metodoaren oinarrian. Lehenik, integrala
+Runge-Kutta metodoak, honako integrala hurbiltzen du:
 \begin{equation*}
 y(t_0+h)=y(t_0)+h \int_{0}^{1} \dot{y}(t_0+\theta h) d\theta,
 \end{equation*} 
-non $\dot{y}(t)=f(t,y(t))$ den, $b_i$ pisuak eta $c_i$ nodoak dituen hurrengo koadratura formularekin hurbiltzen da,
+ hurrengo koadratura formularen bidez:
 \begin{equation*}
  y_{1}=y_0+h\sum^s_{i=1}{b_i \ f(t_0+c_ih,Y_{i})}.
 \end{equation*}
+non $\dot{y}(t)=f(t,y(t))$ den, $b_i$ pisuak eta $c_i$ nodoak diren.
 
-Bigarrenik, $Y_{i} \approx y(t_0+c_ih)$~atalen $0$ eta $c_i$ arteko integrala, beste koadratura formularekin hurbiltzen da,
+Era berean, $Y_{i} \approx y(t_0+c_ih)$ atal bakoitza ere, $0$ eta $c_i$ arteko integralaren hurbilketa da. Eta hauek ere, honako koadratura formularekin hurbiltzen dira:
 \begin{equation*}
 Y_{n,i}=y_0+h \sum_{j=1}^{s} a_{ij} \ f(t_0+c_jh,Y_{j}).
 \end{equation*}
@@ -484,6 +486,8 @@ Y_{n,1}=y_n+\ \frac{h}{2} \ f(t_n+\frac{h}{2},Y_{n,1}).
 
 \emph{ERK} lau-ataletako  metodo klasikoa, $p=4$ ordenakoa dugu. Ordena altuko \emph{ERK} metodoak aurkitzea konplexua da,  koefizienteek bete behar dituzten ordena baldintzen kopurua esponentzialki hazten baita. Esate baterako, ordena altuko \emph {ERK} metodo hauek aurkitu dira:  $s=11$ ataletako $p=8$ ordenako metodoa,  $s=17$ ataletako $p=10$ ordenako metodoa eta  $s=25$ ataletako $p=12$ ordenako metodoa.
 
+Ordena altuko \emph{IRK} metodoak, \emph{ERK} metodoak baino modu errazagoan eraiki daitezke. \emph{Butcher-en sinplifikazio baldintzen}  \cite{Butcher2008} arabera definitzen dira.
+
 % 04-05-2017 Josebaren zuzenketa 
 %Ordena altuko \emph{IRK} metodoak, \emph{ERK} metodoak baino modu errazagoan eraiki daitezke.  \emph{Butcher sinplifikazio baldintza} hauen %\cite{Butcher2008} arabera definitzen dira,
 %\begin{align}
@@ -530,9 +534,9 @@ Baldintza honen arabera, Runge-Kutta metodo esplizituak, sinplektikoak ezin dait
 
 \subsection{Gauss metodoa.}
 
-Gauss metodoa beste \emph{IRK} metodoekin alderatuta, bi ezaugarrik bereizten dute:  Runge-Kutta metodo sinplektiko bakarra eta $s$-ataletako ordena altueneko ($p=2s$) IRK metodoa da. 
+Gauss metodoak, bi ezaugarri nagusi dauzka: Runge-Kutta metodo sinplektikoa da eta bestetik, $s$-atalekin eduki daitekeen ordena altuena  dauka: $p=2s$. 
 
-Kolokazio metodoak, zenbakizko integrazio metodo garrantzitsuak dira. Gauss metodoa kolokazio metodoa da eta jarraian, ikuspegi honetatik definituko dugu. 
+Kolokazio metodoak, zenbakizko integrazio metodo garrantzitsuak dira. Gauss metodoa, kolokazio metodoa da eta jarraian, ikuspegi honetatik definituko dugu. 
 
 \subsubsection*{Kolokazio metodoak.}
 
@@ -546,7 +550,7 @@ eta soluzioa
 y_1=u(t_0+h)\approx y(t_0+h).
 \end{equation*} 
 
-Kolokazio metodoen zenbakizko soluzioa, diskretizazio puntuetan ez ezik, interpolazio polinomio batek modu jarraian emandako soluzioa adierazten du. 
+Kolokazio metodoen zenbakizko soluzioak, diskretizazio puntuetan ez ezik, interpolazio polinomio batek modu jarraian emandako soluzioa adierazten du. 
 
 Kolokazio metodoaren definizioa eta modu honetan kalkulatutako s-ataleko Runge-Kutta metodoa baliokideak dira \cite{Hairer2006}, 
 \begin{equation}
@@ -634,8 +638,8 @@ Ekuazio diferentzial garestiak ditugunean, $s$-ataletako funtzioen konputazioak 
 \item{Kolokazio metodoa da.}
 Zenbakizko soluzioak diskretizazio puntuetan ez ezik, urrats bakoitzaren integrazio tarte osoaren polinomio interpolatzaile batek modu jarraian emandako soluzioa adierazten du.
 
-\item{A-stability and B-stability.}
-A-stable methods have a central role in the numerical solution of stiff problems and Gauss methods are likely candidates.
+%\item{A-stability and B-stability.}
+%A-stable methods have a central role in the numerical solution of stiff problems and Gauss methods are likely candidates.
 
 \item{Birparametrizazioa.}
 Metodo sinplektiko inplizuetan, birparametrizazio teknika zuzenean aplika daiteke. Eguzki-sistemaren integrazioetarako tresna baliagarria dela frogatu da \cite{Fukushima2007}. 
@@ -924,7 +928,7 @@ Ez da tarteko baliorik eta datu-egitura berezirik memorian gorde behar.
 
 \item{Bigarren ordenako ekuazio diferentzialentzat egokiak dira.}
 
-Bigarren ordenako ekuazio diferentziala ($\ddot{q}=f(p)$), \emph{Störmer-Verlet} metodoan oinarritutako, 
+Bigarren ordenako ekuazio diferentziala ($\ddot{q}=f(p)$), \emph{Störmer-Verlet}(leapfrog izenarekin ere ezaguna) metodoan oinarritutako, 
 \begin{align}
 \begin{split}
 &q_{{n+1}/{2}}=q_n+\frac{h}{2} \ p_n,\\
@@ -1125,9 +1129,7 @@ Eguzki-sistemaren problema grabitazionalari egokitutako zenbakizko bi integratza
 
 \subsubsection*{$SABAC_4$ integratzailea.}
 
-Laskarrek ($2001$) $SABA_n$ eta $SBAB_n$ integratzaile sinplektikoak \cite{Laskar2001} proposatu zituen. Metodoen ordena $K_{SABA_n}=K_{SBAB_n}=\mathcal{O}(h^{2n} \epsilon+ h^2 \epsilon^2)$ da; urrats luzera handitarako eta $\epsilon$ balio txikitarako , gai nagusia ($h^{2n} \epsilon$) izango da.
-
-Bigarren integratzaile famili bat ere $CSABA_n$ eta $CSBAB_n$ (\emph{Corrected integrators}) definitu zituen. Urrats bat gehitutako integratzaileak dira eta ordena $K_{CSABA_n}=K_{CSBAB_n}=\mathcal{O}(h^{p} \epsilon+ h^{4} \epsilon^2)$, non $p=n+2$ edo $p=n+3$ den. Bigarren metodo hauek, urrats tamaina txikia beharrezkoa den  doitasun handiko integrazioetarako erabilgarriak dira.
+Laskarrek \cite[$2001$]{Laskar2001}, $CSABA_n$ eta $CSBAB_n$ integratzaile sinplektikoak proposatu zituen. Metodo hauek koefiziente positiboekin eraikitako metodo sinplektikoak dira eta $\mathcal{O}(h^{k} \epsilon+ h^{4} \epsilon^2)$ ordenakoak dira, $n$ bikoitia denean $k=n+2$ izanik eta $n$ bakoitia denean $k=n+3$ izanik. 
 
 Eguzki-sistemaren epe luzeko integrazioan \cite{Laskar2011} erabilitako $CSABA_4$ integratzailea deskribatuko dugu. Hamiltondarra $H=H_A+\epsilon H_B$ bada, era honetan definituko dugu metodoa,
 \begin{align*}

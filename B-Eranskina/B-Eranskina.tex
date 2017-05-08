@@ -1,100 +1,621 @@
-\chapter{Inplementazioak.}
+\chapter{Ekuazioen garapenak.}
+\label{eranskin:B}
 
-Lan honetan, ekarpen bakoitzari dagokion C lengoaiako inplementazio bat garatu dugu eta \href{https://github.com/mikelehu/}{kode bilgunean} eskuragarri jarri dugu. Kodea eskuragarri jartzeari, lehentasuna eman diogu \cite{Atmanspacher2016,Wilson2014}. Batetik, garapenak modu argian dokumentatzea behartu gaitu; bertan zehaztasun guztiak aztertu daitezke eta gure lanaren baliagarritasuna baieztatu daiteke. Bestetik, ikerlariei gure lana erabiltzeko eta hobetzeko aukera eskaintzen diegu.
+\section{Kepler hasierako baliodun problema.}
+\label{erans:B1}
 
-Konputazio zientzian, idatzitako kodearen $200$ lerro oro, errore bat izaten dela \cite{Frenkel2001} estimatzen da. Gure inplementazioak ondo frogatu baditugu ere, errorerik ez denik izango ezin dugu ziurtatu. Akatsen bat izatekotan, larria ez izatea espero dugu eta edozein kasutan  erabiltzaileak jakinaraztea eskertu genuke.   
+Keplerren ekuazioa, kokapen eta abiadura berriak kalkulatzeko oinarrizkoa da eta era honetan definitzen da,
+\begin{equation*}
+E-e \ \sin E = M,
+\end{equation*}
+non $M=n \ (t-T)$ (\emph{mean anomaly}), $n=k \ a^{-3/2}$ (\emph{mean motion}) eta $T$, $M=0$ deneko integrazio konstantea da. $E$ (\emph{eccentric anomaly}) eta $t$-ren arteko erlazio hau erabiliz kalkulatzen da mugimendua. Mugimendu eliptikoaren kasura mugatuko gara ($0\leq e < 1)$ eta Keplerren ekuazioa transendentala denez, zenbakizko metodo baten bidez ebatziko dugu.
 
-Inplementazioen kodea antolatzeko, irizpide berdinak erabili ditugu. Lehenengo, inplementazioen egitura orokorra azaldu dugu eta ondoren, garapen bakoitzaren argibideak emango ditugu.      
+\subsection*{Garapena.}
 
-\section{Egitura orokorra.}
+Gure abiapuntua, honakoa da,
+\begin{align*}
+E_0-e \ \sin E_0 & =n \ (t_0-t_p), \\
+E_1-e \ \sin E_1 & =n \ (t_1-t_p)
+\end{align*}
+non $n=2\pi/P$ eta $P$ periodoa diren.
 
-Inplementazioen edukia, direktorio hauetan banatu dugu:
+\paragraph*{} Bi ekuazioen arteko kendura eginez,
+\begin{equation*}
+E_1-E_0-e \ (\sin(E_1)-\sin(E_0))=n \triangle t \ \ \ \longrightarrow \ \triangle E - e \ (\sin(E_0+\triangle E)-\sin(E_0))=n \triangle t
+\end{equation*}
+non $E_1=E_0+\triangle E$ den.  
+
+\paragraph*{} Honako notazioa erabiliz adieraziko dugu,
+\begin{equation*}
+\triangle E - ce \ \sin(\triangle E)- se \ (\cos(\triangle E)-1)=n \triangle t,
+\end{equation*}
+non $ce=e \ \cos(E_0)$ eta $se=e \ \sin(E_0)$ den.
+
+\paragraph*{Newton metodoa.}Ekuazio ebazteko, Newton metodoa aplikatuko dugu,
+
 \begin{enumerate}
+\item $f(\triangle E)=\triangle E - ce \sin(\triangle E)- se (\cos(\triangle E)-1)-n \triangle t=0$.
 
-\item CoefficcientsData.
+\item $f'(\triangle E)=1-ce \cos(\triangle E)+ se \sin(\triangle E)$.
 
-Mathematican, IRK Gauss kolokazio metodoaren koefizienteak sortzeko aplikazio bat garatu dugu. Gure esperimentuetarako $s=6,s=8$ eta $s=16$ ataletako Gaussen metodoak aplikatu ditugu eta metodo bakoitzari dagokien doitasun bikoitzeko ($64$-bit) koefizienteak, azpidirektorio batean bildu ditugu.
-
-\item PerturbationsData.
-
-Errorearen azterketa estatistikoak egiteko, hasierako balio ezagun baten $P=1000$ hasierako balio perturbatuak sortu ditugu; hasierako balio originalaren osagai bakoitza ausaz perturbatu dugu ($\mathcal{O}(10^{-6})$ tamainako errore erlatiboarekin). Problema bakoitzari dagokion, $P=1000$ hasierako balio perturbatuak, fitxategi bitar batean idatzi dugu eta horrela, fitxategi hauetatik hasierako balioak  irakurrita, esperimentu bera errepikatu daiteke.
-
-\item Packages.
-
-Esperimentuak, Mathematica ingurunetik exekutatu ditugu eta direktorio honetan, soluzioen azterketak egiteko hainbat funtzio garatu ditugu. Batetik, problema bakoitzari dagokion ekuazio diferentzialak eta Hamiltondarra inplementatu ditugu. Bestetik, esperimentuen grafikoak irudikatzeko funtzioak garatu ditugu. 
-
-\item Examples.
-
-Mathematica erabiliz egindako zenbakizko integrazioen adibideak eman ditugu. Adibide bakoitza, azpidirektorio batean bildu dugu: zenbakizko integrazioa eta honen analisia, modu independentean exekutatu daitezke. Horretarako, integrazioaren soluzioak fitxategi bitarretan idazten dira eta analisiak, fitxategi hauek irakurriko ditu.       
-
-\item Code.
-
-C lengoaian garatutako gure inplementazioa. 
+\item $\triangle E^{[k+1]}=\triangle E^{[k]}- \frac{f(\triangle E^{[k]})}{f'(\triangle E^{[k]})}$.
 
 \end{enumerate}
 
-\subsection*{Exekuzioa.}
+\paragraph*{Hasierako balioa.} $\triangle E^{[0]}$ hasierako balioa, finkatzea da dugun zailtasun handiena. Horretarako honako garapena egingo dugu,
+\begin{align*}
+\triangle E - ce& \ \sin(\triangle E- se \ (\cos(\triangle E)-1)=n \triangle t, \\
+x= \triangle E &- n \triangle t,
+\end{align*}
 
-Code/Readme.txt fitxategian, inplementazioaren argibideak eman ditugu. Inplementazioa bi modutan exekutatu daiteke.
+eta beraz,
+\begin{equation*}
+x-ce \sin(n\triangle t+x)-se(cos(n \triangle t+x)-1)=0.
+\end{equation*}
 
+Honako baliokidetasun trigonometrikoak ordezkatuz,
+\begin{align*}
+& \cos(A+B) =\cos(A)\cos(B)-\sin(A)\cos(B),\\
+& \sin(A+b) =\cos(A)\sin(B)+\sin(A)\cos(B),
+\end{align*}
+berdintza hau lortzen dugu,
+\begin{multline*}
+x- (se \ \cos(n \triangle t)+ ce \ \sin(n \triangle t)) \cos(x) \\
+    + (se \ \sin(n \triangle t)-ce \ \cos(n \triangle t)) \sin(x)+se =0.
+\end{multline*}
+
+\paragraph*{}$x$ txikia dela suposatuz, honako hurbilpenak ordezkatuko dugu,
+\begin{equation*}
+x \approx \sin(x), \ \cos(x) \approx 1- \frac{x^2}{2}
+\end{equation*}
+
+eta honako berdintza lortuko dugu,
+\begin{multline*}
+(se \ \cos(n \triangle t)+ce \ \sin(n \triangle t)) \frac{x^2}{2} \\
++ (1+se \ \sin(n \triangle t)-ce \cos(n \triangle t))x-(se )=0.
+\end{multline*}
+
+\paragraph*{} Azkenik, goiko ekuazio hau askatuz ($Ax^2+Bx+C=0 \ \rightarrow x={-B\pm \sqrt{B^2-4AC}}/{2A}$) lortuko dugu,
+\begin{equation*}
+\triangle E^{[0]}=x+n\triangle t.
+\end{equation*}
+
+\paragraph*{Koordenatu kartesiarren} kalkulua ekuazio hauen bidez egingo dugu,
+
+\begin{equation*}
+(q_1,v_1)=(q_0,v_0)+ (q_0,v_0) \left(\begin{array}{cc}
+                                       b_{11} & b_{12} \\
+                                       b_{21} & b_{22} \\
+                                \end{array}\right)
+\end{equation*}
+
+\begin{align*}
+b_{11} &=(C-1) \frac{a}{\|q\|}, \\
+b_{21} &=\triangle t+(S-\triangle E) \frac{a^{\frac{3}{2}}}{\mu^{\frac{1}{2}}} \\
+b_{12} &=\frac{s}{\|q\| \sqrt{a} (1-ce \ C +se \ S)}, \\
+b_{22} &=\frac{C-1}{1-ce \ C+ se \ S}. 
+\end{align*}
+
+Non osagai bakoitzaren definizioa,
+\begin{align*}
+C &=\cos(\triangle E), \ S=\sin(\triangle E), \\
+ce &=e \ \cos(E_0) = \|q\| \|v\|^2-1, \\
+se &= e \ \sin(E_0)=\frac{(q \cdot v)}{\sqrt{\mu \ a}}, \\
+a &= \frac{\mu \|q\|}{2\mu-\|q\|\|v\|^2}, \\
+n &= \frac{\mu^{\frac{1}{2}}}{a^{\frac{3}{2}}}.
+\end{align*}
+
+\paragraph*{Ezabapen arazoa.} $\triangle E$ txikia denean, $\cos(\triangle E)-1$ espresioaren kalkuluaren ezabapen arazoak biribiltze errore handia eragin dezake. Hori konpontzeko baliokidetasun trigonometriko hau erabiliko dugu,
+\begin{equation*}
+\cos(\triangle E)-1=-\frac{\sin^2(\triangle E)}{1+\cos(\triangle E)}.
+\end{equation*}  
+
+Eta beraz, Keplerren ekuazioak hauek izango dira,
+\begin{equation*}
+f(\triangle E)=\triangle E - ce \sin(\triangle E)+ se \bigg(\frac{\sin^2(\triangle E)}{1+\cos(\triangle E)}\bigg)-n \triangle t=0
+\end{equation*}
+
+Eta $(q_1,v_1)$ balioak kalkulatzeko,
+\begin{equation*}
+b_{11}=(C-1) \frac{a}{\|q\|}, \longrightarrow b_{11}=-\frac{\sin^2(\triangle E)}{1+\cos(\triangle E)} \frac{a}{\|q\|}
+\end{equation*}
+
+\section{Koordenatu sistemak.}
+\label{erans:B2}
+
+Lehenik koordenatu barizentrikoei $q_i, p_i \in \mathbb{R}^3, \ i=0,\dots,N$ dagokien Hamiltondarra gogoratuko dugu,
+\begin{equation}
+H(q,p)=\frac{1}{2}\ \sum^N_{i=0}{\ \frac{{\|p_i\|}^2}{m_i}}-G\ \sum^N_{0\le i<j\le N}{\frac{m_im_j}{\|q_i-q_j\|}}.
+\end{equation}
+
+\subsection*{Koordenatu Heliozentrikoak.}
+
+Koordenatu barizentrikoetatik abiatuta eta aldagai aldaketa bat aplikatuz ekuazio koordenatu heliozentrikoen $Q_i,P_i \in \mathbb{R}^3, \ i=0,\dots,N$ 
+arabera berridatziko ditugu. 
+
+\subsubsection*{Aldagai aldaketa.}
+Lehenik honako aldagai aldaketa aplikatuko dugu,
+\begin{align*}
+Q_0 &=q_0, \ \ Q_i=q_i-q_0, \\ 
+P_0 &=\sum\limits_{i=0}^{N}p_i, \ \ P_i=p_i, \ \ i=1,\dots{,N}.
+\end{align*}
+
+Hamiltondarra era honetan deskonposatu daiteke,
+\begin{equation*}
+H=H_K+(T_1+U_1)
+\end{equation*}
+
+non
+\begin{align*}
+&H_K=\sum\limits_{i=1}^{N}\bigg(\frac{\|P_i\|^2}{2 \mu_i} -\frac{G m_0 m_i}{\|Q_i\|}\bigg), \ \ \mu_i=\frac{m_0m_i}{(m_0+m_i)}, \\
+&T_1=\frac{1}{m_0} \left(\sum\limits_{0<i<j\le N}^{N} P_i\ P_j \right),\\
+&U_1= -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
+\end{align*}
+
+\subsubsection*{Ekuazio diferentzialak.}
+
+Hamiltondar bakoitza independienteki kontsideratuta dagokio ekuazio diferentzialak lortzen ditugu:
 \begin{enumerate}
-\item Linux terminala.
+\item $H_K$.
+\begin{align*}
+&\dot{Q_i} = \triangledown_p H_k \ \ \Rightarrow \ \  \dot{Q_i}=P_i\left(\frac{m_0+m_i}{m_0m_i}\right), \\
+&\dot{P_i} = -\triangledown_q H_k \ \ \Rightarrow \ \  \dot{P_i}= - \frac{G m_0m_i}{\|Q_i\|^3 }\ Q_i, \ \ i=1,\dots, N.
+\end{align*}
 
-Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
+\item $T_1$.
+\begin{align*}
+&\dot{Q_i} = \triangledown_p T_1 \ \ \Rightarrow \ \  \dot{Q_i}=\sum\limits_{j\ne i,\ j=1}^{N} \frac{P_i}{m_0}, \\
+&\dot{P_i} = -\triangledown_q T_1 \ \ \Rightarrow \ \  \dot{P_i}= 0, \ \ i=1,\dots, N.
+\end{align*}
 
-\item Mathematica ingurunetik.
-
-Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu. Mathematicatik gure C inplementazioaren funtzio nagusia deitu ahal izateko, 'math-IRK.tm' eta 'math-IRK.c' fitxategiak definitu ditugu. Exekutagarria, Mathematicatik bateragarria izan dadin, konpilazio eta esteka egiteko moduak \emph{makefile} fitxategian kontsultatu daitezke.    
+\item $U_1$.
+\begin{align*}
+&\dot{Q_i} = \triangledown_p U_1 \ \ \Rightarrow \ \  \dot{Q_i}=0, \\
+&\dot{P_i} = -\triangledown_q U_1 \ \ \Rightarrow \ \ 
+ \dot{P_i}= \sum\limits_{j \ne i , \ j=1}^{N} \bigg(\frac{-Gm_im_j}{\|Q_i-Q_j\|^3} \ (Q_i-Q_j) \bigg), \ \ i=1,\dots, N.
+\end{align*}
 
 \end{enumerate}
 
-Erabiltzaileak, bere problemaren ekuazio diferentzialak eta integrazioen emaitzak definituko dituela espero da. 
+Azkenik, $V_i=P_i/\mu_i$ aplikatuta integrazioan erabiliko ditugun ekuazioak laburtuko ditugu.
+\begin{enumerate}
+\item $H_k$.
+\begin{align*}
+\dot{Q_i} &=V_i \\
+\dot{V_i} &= - \frac{G(m_0+m_i)}{\|Q_i\|^3 }\ Q_i,  \ \ i=1,\dots, N.
+\end{align*}
 
-\subsection*{Paralelizazioa.}
+\item $T_1$.
+\begin{align*}
+\dot{Q_i} &=\sum\limits_{j\ne i,\ j=1}^{N} \frac{V_j \ m_j}{(m_0+m_j)}, \\ 
+\dot{V_i} &= 0, \ \ i=1,\dots, N.
+\end{align*}
 
-IRK metodoen s-ataletako funtzioen konputazioak ($f(Y_i), \ i=1,\dots,s$), paraleloan exekutatu daitezke. Gure inplementazioan, OpenMP erabili dugu:  \emph{PARALLEL} konpilazio parametroarekin aktibatu daiteke eta orduan, prozesadore kopurua 'threadcount' aldagaian, zehaztu behar da. 
+\item $U_1$.
+\begin{align*}
+\dot{Q_i} &=0, \\ 
+\dot{V_i} &= - \frac{G(m_0+m_i)}{m_0}
+                    \sum\limits_{j \ne i , \ j=1}^{N} \bigg( \frac{m_j}{\|Q_i-Q_j\|^3} (Q_i-Q_j)     \bigg), \ \ i=1,\dots, N.
+\end{align*}
+
+\end{enumerate}
+
+\subsubsection*{Energia.}
+
+Koordenatu heliozentrikoetan integrazioak egiten ditugunean, sistemaren energia kalkulatzeko, soluzioa koordenatu sistema barizentrikoetara bihurtuko dugu. Hauek dira koordenatu heliozentrikoetatik abiatuta ($Q_i,V_i$) , koordenatu barizentrikoak ($q_i,v_i$) kalkulatzeko ekuazioak,
+
+\begin{enumerate}
+\item $q_i, \ \ i=0,\dots,N$. 
+\begin{align*}
+q_0 &=-\sum\limits_{i=1}^{M} \frac{m_i Q_i}{M}, \ \ M= \sum\limits_{i=0}^{N} m_i, \\
+q_i &=q_0+Q_i, \ \ i=1,\dots,N.
+\end{align*}
+
+\item $v_i, \ \ i=0,\dots,N$. 
+\begin{align*}
+v_i &=\frac{m_0}{m_0+m_i} \ V_i, \ \ i=1,\dots,N \\
+P_0 &=\sum\limits_{i=0}^{N} p_i=\sum\limits_{i=0}^{N} m_i v_i=0 \Rightarrow \ \  m_0v_0+ \sum\limits_{i=1}^{N} m_i v_i=0 \Rightarrow v_0=-\frac{1}{m_0} \sum\limits_{i=1}^{N} m_i v_i. 
+\end{align*}
+
+\end{enumerate}
 
 
-\section{IRK puntu-finkoa.}
+\subsection*{Koordenatu Jacobiarrak.}
 
-Puntu-finkoaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/IRK-FixedPoint}{kodea} helbidean eskuragarri dago. Bi modutara exekutatu daiteke: puntu-finkoaren iterazio estandarra edo puntu-finkoaren iterazio partizionatua. 
+Koordenatu barizentrikoetatik abiatuta eta aldagai aldaketa bat aplikatuz, ekuazioak koordenatu Jacobiarren  $Q_i,P_i \in \mathbb{R}^3, \ i=0,\dots,N$ arabera berridatziko ditugu. 
 
-Code/Readme.txt fitxategian, IRK puntu-finkoaren inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
-\begin{lstlisting}
-IRKFP (t0,t1,h,&method,&u,&system,&options,&thestat);
-\end{lstlisting}
+\subsubsection*{Aldagai aldaketa.}
+Lehenik honako aldagai aldaketa aplikatuko dugu,
+\begin{align*}
+Q_0 &=(m_0 q_0+\cdots+m_n q_n)/\eta_N,\ \ \ Q_i  =q_i-\left(\sum_{j=0}^{i-1}m_j q_j \right)/\eta_{i-1} \\
+P_0 &=\sum\limits_{i=0}^{N}p_i, \ \ \ P_i =\left(\eta_{i-1} \ p_i- m_i \sum_{j=0}^{i-1} p_j\right)/\eta_i, \ \ \ \ i=1,\dots{,N}.
+\end{align*}
+non $\eta_i=\sum_{j=0}^{i} m_j$ den.
 
-Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
-Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu.    
+\paragraph*{}Era berean, Jacobi masak $m'_i=(\eta_{i-1} m_i)/\eta_i$ eta $\mu'_i=m_i \eta_{i-1}$ ekuazioetan ordezkatuko ditugu. Hamiltondarra era honetan deskonposatu daiteke,
+\begin{equation*}
+H=H_K+H_I,
+\end{equation*} 
 
-Inplementazio honetan, ez dugu \emph{BLAS} liburutegia erabili. 
+non
+\begin{align*}
+\begin{split}
+&H_K=\sum\limits_{i=1}^{N}\bigg(\frac{\|P_i\|^2}{2 m'_i} -\frac{\mu'_i}{\|Q_i\|}\bigg), \\
+&H_I=\left(\frac{\mu'_i}{Q_i}-\frac{Gm_0m_i}{q_i} \right) -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
+\end{split}
+\end{align*}
 
-\section{IRK Newton.}
+\section{Newton eraginkorraren garapena.}
+\label{erans:B3}
 
-Newton sinplifikatuaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/IRK-Newton}{kodea} helbidean eskuragarri dago. Bi inplementazio exekutatu daitezke: Newton sinplifikatuaren inplementazio eraginkorra eta artikuluan, proposatutako Newton iterazioan oinarritutako IRK inplementazio berria.
+Formulazio estandarrean honako ekuazio sistema askatzeko metodoa proposatzen da,
+\begin{equation}
+\label{eqA3:1}
+(I_s \otimes I_d- h \ A \otimes J) \triangle Y =r.
+\end{equation}
 
-Code/Readme.txt fitxategian, IRK puntu-finkoaren inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
-\begin{lstlisting}
-IRKNEWTON (t0,t1,h,&method,&u,&system,&options,&thestat);
-\end{lstlisting}
+Lehenengo modu orokorrean eta ondoren, metodoa simetrikoa dela kontutan harturik garapenaren zehaztasunak emango ditugu.
 
-Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
-Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu. 
+\subsection*{Kasu orokorra}
+\label{serans:B31}
 
-Inplementazio honetan, \emph{BLAS} eta \emph{LAPACK} liburutegiak erabili ditugu.
+Honako ekuazio sistemari,
+\begin{align}
+\label{eqA3:2}
+(I_s \otimes I_d- h \ \bar{A} \otimes J) \ \Delta Y - \frac{1}{2}(e_s \otimes I_d) \ \Delta z =r,\\
+(-h e_s^T B \otimes J) \ \Delta Y+  \Delta z=0,
+\end{align}
 
-\section{IRK Eguzki-sistema.}
+aldagai aldaketa hau,  aplikatuko doigu.
+\begin{equation}
+\label{eqA3:3}
+ \triangle Y = (Q \otimes I_d) \ W.
+\end{equation}
 
-\section{Konposizio-Splitting metodoak.}
+\begin{enumerate}
 
-Newton sinplifikatuaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/Composition}{kodea} helbidean eskuragarri dago. Bi inplementazio exekutatu daitezke: konposizio metodoak (CO1035) eta splitting metodoak (ABAH1064).
+\item Lehen urratsa.
 
-Code/Readme.txt fitxategian, konposizio/Splitting inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
-\begin{lstlisting}
-Solve_Comp (t0,t1,h,&method,basic,&system,&options,&u,&thestat);
-\end{lstlisting}
+Ekuazioa sistemaren lehen ekuazioari (\ref{eqA3:2}), aldagai aldaketa (\ref{eqA3:3}) aplikatu eta $(Q^{-1} \otimes I_d)$ gaia ezkerretik biderkatuz,
+\begin{multline*}
+(Q^{-1} \otimes I_d) \ (I_s \otimes I_d- h \ \bar{A} \otimes J) \ (Q \otimes I_d) \ W \\
+  - (Q^{-1} \otimes I_d) \ (\frac{1}{2} \ e_s \otimes I_d) \Delta z = (Q^{-1} \otimes I_d) r.
+\end{multline*}
 
-Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
-Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu. 
+Eta garatuz,
+\begin{multline*}
+(I_s \otimes I_d- h Q^{-1} \bar{A} Q \otimes J) \ W 
+- \frac{1}{2}(Q^{-1}  e_s \otimes I_d) \Delta z = (Q^{-1} \otimes I_d) r.
+\end{multline*}
 
-Eguzki-sistemari egokitutako Splitting metodoak aplikatzeko, Kepler fluxuaren inplementazio berri bat garatu dugu. Inplementazio honen C kodean, 'Kepler.c' fitxategian aurkitzen da. 
+\item Bigarren urratsa.
+
+Metodoa simetrikoa bada,
+\begin{equation}
+\label{eq:DD}
+Q^{-1} \bar A  Q = 
+\left(
+\begin{matrix}
+0 & D \\
+-D^T & 0 
+\end{matrix}
+\right)
+\end{equation}
+
+eta beraz,
+\begin{multline*}
+(I_s \otimes I_d- h
+\left(
+\begin{matrix}
+0 & D \\
+-D^T & 0 
+\end{matrix}  
+\right) \otimes J) \ W 
+- \frac{1}{2}(Q^{-1}  e_s \otimes I_d) \Delta z = (Q^{-1} \otimes I_d) r.
+\end{multline*}
+
+Eta $I_s \otimes I_d$ bloke moduan idatzia,
+\begin{equation}
+\label{eq:xx}
+I_s \otimes I_d =
+\left(
+\begin{matrix}
+I_m \otimes I_d & 0 \\
+0  & I_{s-m} \otimes I_d 
+\end{matrix}
+\right)
+\end{equation}
+
+\begin{multline*}
+\left(
+\begin{matrix}
+I_m \otimes I_d & \ \ -h D \otimes J \\
+hD^T \otimes J &  \ \ I_{s-m} \otimes I_d 
+\end{matrix}
+\right)
+ W- \frac{1}{2}(Q^{-1}  e_s \otimes I_d) \Delta z = (Q^{-1} \otimes I_d) r.
+\end{multline*}
+
+\item Hirugarren urratsa.
+
+Bigarren ekuazioari (\ref{eqA3:2}) aldagai aldaketa (\ref{eqA3:3}) aplikatuz,
+\begin{equation*}
+(- h e_s^T B \otimes J) (Q \otimes I_d) W + \Delta z =0, 
+\end{equation*}
+
+eta garatuz,
+\begin{equation*}
+- h (e_s^T 
+B \ Q \otimes J) W +\Delta z =0.
+\end{equation*}
+
+\end{enumerate}
+
+\subsection*{Kasu simetrikoa}
+\label{serans:B32}
+
+Kasu orokorraren emaitzan, kasu simetrikoa ordezkatuz 
+\begin{align*}
+W=\left(
+\begin{matrix}
+W^{`} \\
+W^{``} 
+\end{matrix}
+\right), \ \ Q=(Q_1 \ \ Q_2)
+\end{align*}
+
+dagokion ekuazioak lortuko ditugu ekuazioak.
+
+Honako berdintza hauek kontutan hartuz, $Q^{-1}=Q^TB, \ \ es^TBQ_2=0, \ \ Q_2^TBes=0$ honako ekuazioak lortuko ditugu,
+\begin{align*}
+ W^{'}-h \ (D \otimes J) \ W^{''} -\frac{1}{2}\ (Q_1^T B \ e_s \otimes I_d) \ \Delta z &= (Q_1^T B \otimes I_d) \ r,\\
+ h \ (D^T \otimes J) \ W^{'}+W^{''} &= (Q_2^T B \otimes I_d) \ r, \\
+  - h \ (e_s^T B \ Q_1 \otimes J) \ W^{'} + \Delta z &=0. 
+\end{align*}
+
+\section{Kepler fluxuaren aldagai aldaketa.}
+\label{eransB4}
+
+
+\subsection*{Alde Kepleriar bakarra.}
+
+
+Satelite baten orbitaren ekuazio diferentzialak, era honetan idatz daiteke,
+\begin{equation*}
+\frac{d}{dt}\left(\begin{array}{c}
+                q  \\
+                v  \\
+\end{array}\right)
+= k(t,q,v)         
++ g(t,q,v), 
+\end{equation*}
+non,
+\begin{equation*}
+k(t,q,v)=\left(\begin{array}{c}
+                 v \\
+                -\frac{\mu}{\|q\|^3} \ q\\
+\end{array}\right).
+\end{equation*}
+
+\paragraph*{Aldagai aldaketa.} Honako aldagai aldaketa aplikatuko dugu,
+\begin{equation}
+\label{eq:aldfl1}
+\left(\begin{array}{c}
+                q  \\
+                v  \\
+\end{array}\right)= \varphi_t(Q,V)
+\end{equation}
+
+\paragraph*{Aldagai berriekiko ekuazio diferentzialak.}
+Aldagai berriarekiko ekuazio diferentzialak definituko ditugu. (\ref{eq:aldfl1}) ekuazioak deribatuko ditugu (katearen erregela),
+\begin{align*}
+&\frac{d}{dt}\left(\begin{array}{c}
+                q(t)  \\
+                v(t)  \\
+\end{array}\right)=
+ \frac{d}{dt} \left(\varphi_t(Q(t),V(t)) \right), \\
+&\frac{d}{dt}\left(\begin{array}{c}
+                q(t)  \\
+                v(t)  \\
+\end{array}\right)= 
+\dot{\varphi}_t (Q(t),V(t)) + \varphi'_t(Q(t),V(t)) 
+\frac{d}{dt}\left(\begin{array}{c}
+                Q(t)  \\
+                V(t)  \\
+\end{array}\right).
+\end{align*}
+
+Fluxuaren definizioaz,
+\begin{equation*}
+\dot{\varphi}_t (Q(t),V(t))=k(q(t),v(t)),
+\end{equation*}
+eta beraz,
+\begin{equation*}
+g(t,q,v)=g(t, \varphi_t(Q,V))=\varphi'_t(Q(t),V(t)) 
+\frac{d}{dt}\left(\begin{array}{c}
+                Q(t)  \\
+                V(t)  \\
+\end{array}\right).
+\end{equation*}
+
+Azkenik, $Q(t),V(t)$ aldagairekiko deribatu partzialen espresioak lortuko ditugu,
+\begin{align}
+\begin{split}
+\frac{d}{dt}\left(\begin{array}{c}
+                Q(t)  \\
+                V(t)  \\
+\end{array}\right)= \varphi'_t(Q(t),V(t))^{-1} \ g(t, \varphi_t(Q,V)), \\
+G(t,Q,V)=\varphi'_t(Q(t),V(t))^{-1} \ g(t, \varphi_t(Q,V)).
+\end{split}
+\end{align}
+
+\paragraph*{Perturbazio Hamiltondarra.}
+Lehenik, perturbazioa Hamiltondarra den kasua kontsideratuko dugu,
+\begin{equation*}
+g(t,q,v)=
+\left(\begin{array}{c}
+                \triangledown_p \ r(t,q,v)  \\
+                -\triangledown_q \ r(t,q,v)  \\
+\end{array}\right)
+=J^{-1} \triangledown r(t,q,v),
+\end{equation*}
+non, 
+\begin{equation*}
+ J=\left(\begin{array}{cc}
+   \ 0 & \ -I \\
+     I & \ 0  \\
+\end{array}\right), \ \ J^{-1}=-J.
+\end{equation*}
+
+Bestalde, fluxu Kepleriarra Hamiltondarra da eta sinplektikoa izateagatik honako propietatea betetzen du,
+\begin{equation}
+\label{eq:Ksymp}
+(\varphi'_t(Q,V))^{T} \ J \ \varphi'_t(Q,V)=J. 
+\end{equation}
+
+Eta goiko (\ref{eq:Ksymp}) garatuz, honakoa ere betetzen dela badakigu,
+\begin{equation*}
+J^{-1} (\varphi'_t(Q,V))^T=(\varphi'_t(Q,V))^{-1} \ J^{-1}.
+\end{equation*}
+
+Definizio hau emanik,
+\begin{equation*}
+R(t,Q,V)=r(t, \varphi_t(Q,V)),
+\end{equation*}
+berdintza hau betetzen dela erakutsi nahi dugu,
+\begin{equation*}
+J^{-1} (\varphi'_t(Q,V))^T \triangledown r=J^{-1} \triangledown \ R(t,Q,V).
+\end{equation*}
+$\triangledown \ R(t,Q,V)$ katearen erregela aplikatuz zuzenean baieztatzen da.
+
+\paragraph*{Perturbazio Ez-Hamiltondarra.}
+
+Kepler-en fluxua sinplektikoa da eta propietate horretan oinarritzen gara fluxuaren alderantzikoaren kalkulua saihesteko.
+\begin{align*}
+         \left\{ 
+            \begin{array}{l}
+            \frac{d}{dt}\left(\begin{array}{c}
+                            Q(t)  \\
+                            V(t)  \\
+            \end{array}\right)=(\varphi'_t(Q,V))^{-1} g(t, \varphi_t(Q,V)) 
+             \\
+            J^{-1} (\varphi'_t(Q,V))^T J=(\varphi'_t(Q,v))^{-1}   \\                          
+            \end{array} 
+         \right. \ \ \rightarrow
+ \end{align*}
+ 
+ \begin{align}
+ \label{eq: gEzH}
+\rightarrow \ \ \frac{d}{dt}\left(\begin{array}{c}
+                Q(t)  \\
+                V(t)  \\
+\end{array}\right) =J^{-1}(\varphi'_t(Q,V))^T \ J \ g.
+ \end{align}
+
+Deribazio automatiko prozedura aplikatuz (\ref{eq: gEzH}) kalkulatuko dugu.
+
+\paragraph*{Algoritmoa.}
+
+$(Q,V)$ aldagai berrien kalkulua hiru urratsetan egingo dugu,
+\begin{enumerate}
+\item KeplerFlowGen.
+\begin{align*}
+(q,v)= \varphi_t(Q,V). 
+\end{align*}
+(aux, gero erabiliko ditugun tarteko aldagaiak ere itzuliko ditu).
+\item GFcn.
+\begin{equation*}
+g=GFcn(t,q,v)
+\end{equation*}
+\item KeplerFlowGFcnaux.
+\begin{align*}
+J^{-1} ( \varphi'_t(Q,V))^T \ J \ g
+\end{align*}
+\end{enumerate} 
+
+\subsection*{Alde Kepleriar bat baino gehiago.}
+
+Alde Kepleriar bat baino gehiago den kasurako azterketa egingo dugu. $k$, alde Kepleriar kopurua esago diogu.
+\begin{equation*}
+\frac{d}{dt}\left(\begin{array}{c}
+                q  \\
+                v  \\
+\end{array}\right)=
+\left(\begin{array}{c}
+                q_1  \\
+                v_1  \\
+                q_2  \\
+                v_2  \\
+                \vdots \\
+                q_k    \\
+                v_k    \\
+                w      \\
+\end{array}\right)=
+\left(\begin{array}{c}
+                v_1  \\
+                -\mu_1 \ q_1/\|q_1\|^3  \\
+                v_2  \\
+                -\mu_2 \ q_2/\|q_2\|^3  \\
+                \vdots \\
+                v_k    \\
+                -\mu_k \ q_k/\|q_k\|^3  \\
+                0      \\
+\end{array}\right)+
+g(t,q_1,v_1,\dots, q_k,v_k,w).
+\end{equation*} 
+non 
+\begin{equation*}
+g(t,q_1,v_1,\dots, q_k,v_k,w)=
+\left(\begin{array}{c}
+                g_1(t,q_1,v_1,\dots, q_k,v_k,w)      \\
+                g_2 (t,q_1,v_1,\dots, q_k,v_k,w)     \\
+                \vdots   \\
+                g_k (t,q_1,v_1,\dots, q_k,v_k,w)      \\
+                g_{k+1}(t,q_1,v_1,\dots, q_k,v_k,w)    \\
+\end{array}\right)
+\end{equation*}
+
+Gorputz bakoitzari dagokion aldagai aldaketa lokala da,
+\begin{align}
+\label{eq:aldfl2}
+\begin{split}
+\left(\begin{array}{c}
+                q_j  \\
+                v_j  \\
+\end{array}\right)&= \varphi_t^{\mu_j}(Q_j,V_j), \ \ j=1,\dots,k, \\
+w&=W.
+\end{split}
+\end{align}
+
+Fluxuaren Jacobiarra diagonala da,
+\begin{equation*}
+\left(\begin{array}{c c c c}
+                \varphi_t^{\mu_1'}(Q_1,V_1) &  &                           &   \\
+                                            & \ddots  &                           &   \\
+                                            &         &\varphi_t^{\mu_k'}(Q_k,V_k) &   \\
+                                            &         &                           & I \\                      
+\end{array}\right).
+\end{equation*}
+
+(\ref{eq: gEzH}) aplikatzen badugu,
+\begin{equation*}
+\frac{d}{dt}\left(\begin{array}{c}
+                q  \\
+                v  \\
+\end{array}\right)=
+\left(\begin{array}{c}
+                q_1  \\
+                v_1  \\
+                \vdots \\
+                q_k    \\
+                v_k    \\
+                w      \\
+\end{array}\right)=
+\left(\begin{array}{c}
+               \varphi_t^{\mu_1'}(Q_1,V_1) \ g_1 \\ 
+               \varphi_t^{\mu_2'}(Q_2,V_2) \ g_2 \\
+               \vdots \\
+               \varphi_t^{\mu_k'}(Q_k,V_k) \ g_k \\
+               g_{k+1}
+\end{array}\right)
+\end{equation*}

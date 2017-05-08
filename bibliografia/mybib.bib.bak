@@ -68,7 +68,6 @@
   Publisher                = {John Wiley \& Sons},
   Year                     = {2016},
 
-  __markedentry            = {[joseba:]},
   Owner                    = {joseba},
   Timestamp                = {2017.05.01},
   Url                      = {http://eu.wiley.com/WileyCDA/WileyTitle/productCd-1118864972.html}
@@ -296,6 +295,22 @@
   Timestamp                = {2016.05.29}
 }
 
+@Article{Chartier2010,
+  Title                    = {Higher-order averaging, formal series and numerical integration I: B-series},
+  Author                   = {Chartier, Philippe and Murua, Ander and Sanz-Serna, Jesus Maria},
+  Journal                  = {Foundations of Computational Mathematics},
+  Year                     = {2010},
+  Number                   = {6},
+  Pages                    = {695--727},
+  Volume                   = {10},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1007/s10208-010-9074-0},
+  Owner                    = {joseba},
+  Publisher                = {Springer},
+  Timestamp                = {2017.05.03}
+}
+
 @Article{Corless2013,
   Title                    = {A graduate introduction to numerical methods},
   Author                   = {Corless, Robert M and Fillion, Nicolas},
@@ -460,8 +475,6 @@
   Publisher                = {Academic press},
   Year                     = {2001},
   Volume                   = {1},
-
-  __markedentry            = {[joseba:6]},
   Owner                    = {joseba},
   Timestamp                = {2017.05.01},
   Url                      = {http://www.sciencedirect.com/science/book/9780122673511}
@@ -818,6 +831,18 @@
   Owner                    = {joseba},
   Publisher                = {Addison-Wesley},
   Timestamp                = {2016.09.22}
+}
+
+@Book{Kopeikin2011,
+  Title                    = {Relativistic celestial mechanics of the solar system},
+  Author                   = {Kopeikin, Sergei and Efroimsky, Michael and Kaplan, George},
+  Publisher                = {John Wiley \& Sons},
+  Year                     = {2011},
+
+  __markedentry            = {[joseba:6]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.07},
+  Url                      = {http://eu.wiley.com/WileyCDA/WileyTitle/productCd-3527408568.html}
 }
 
 @Article{Krogh1997,

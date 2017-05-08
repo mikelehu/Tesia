@@ -17,13 +17,15 @@
                {3-MetodoSinplektikoak/figures/} 
                {4-Problemak/figures/}
                {5-KomaHigikorra/figures/} 
-               {6-ZientziaKonputazioa/figures/} 
+%               {6-ZientziaKonputazioa/figures/} 
                {7-IRKPuntuFinkoa/figures/}
                {9-IRKNewton/figures/}
                {10-IRKEguzkiSistema/figures/}
                {21-Eztabaida/figures/}
                {22-Konlusioak/figures/}
-               {B-Eranskina/figures/}}
+               {A-Eranskina/figures/}
+               {B-Eranskina/figures/}
+               {C-Eranskina/figures/}}
 \usepackage{listings}   % kodea azaltzeko
 %\usepackage[ruled]{algorithm2e}
 %\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
@@ -119,7 +121,7 @@
 
 %: ----------------------- contents ------------------------
 
-\setcounter{secnumdepth}{3} % organisational level that receives a numbers
+\setcounter{secnumdepth}{1} % organisational level that receives a numbers
 \setcounter{tocdepth}{0}    % print table of contents for level 3
 %\tableofcontents
 
@@ -129,7 +131,7 @@
 
 \renewcommand*\contentsname{Gaien Aurkibidea (detailed)}
 
-\setcounter{tocdepth}{3}    % print table of contents for level 3
+\setcounter{tocdepth}{1}    % print table of contents for level 3
 \tableofcontents
 
 
@@ -163,21 +165,21 @@
 {\textit {Vaclav Havel}}
 
 
-\part{Introduction}
+%\part{Introduction}
 \include{2-Sarrera/Sarrera}
 %\part{Background}
 \include{3-MetodoSinplektikoak/MetodoSinplektikoak} 
 \include{4-Problemak/Problemak}
 \include{5-KomaHigikorra/KomaHigikorra}
-\include{6-ZientziaKonputazioa/ZientziaKonputazioa}
+%\include{6-ZientziaKonputazioa/ZientziaKonputazioa}
 %\include{8-Review/Review}
 
-\part{Ekarpenak.}
+%\part{Ekarpenak.}
 \include{7-IRKPuntuFinkoa/IRKPuntuFinkoa}
 \include{9-IRKNewton/IRKNewton}
 \include{10-IRKEguzkiSistema/IRKEguzkiSistema}
 
-\part{Ondorioak.}
+%\part{Ondorioak.}
 \include{21-Eztabaida/Eztabaida}
 \include{22-Konklusioak/Konklusioak}
 
@@ -188,9 +190,9 @@
 
 \part{Eranskinak}
 \appendix
-\include{A-Eranskina/A-Eranskina}
+\include{A-Eranskina/ZientziaKonputazioa}
 \include{B-Eranskina/B-Eranskina}   
-%\include{C-Eranskina/C-Eranskina}  
+\include{C-Eranskina/C-Eranskina}  
 \include{Z-Argibideak/Argibideak}
 
 %\include{Appendix}
