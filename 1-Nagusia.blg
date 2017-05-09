@@ -25,11 +25,8 @@ Warning--entry type for "WolframResearch" isn't style-file defined
 --line 1331 of file ./bibliografia/mybib.bib
 Warning--entry type for "OpenMP" isn't style-file defined
 --line 1364 of file ./bibliografia/mybib.bib
-Warning--I didn't find a database entry for "Makazaga2015a"
-Warning--I didn't find a database entry for "Laskar2011a"
 Warning--I didn't find a database entry for "Gander2014"
 Warning--I didn't find a database entry for "Jimenez-Perez2011"
-Warning--I didn't find a database entry for "Fabrycky2010"
 Warning--to sort, need author or key in OpenMP
 Warning--to sort, need author, editor, or key in Intel2015
 Warning--empty author and editor in Intel2015
@@ -41,7 +38,7 @@ Warning--empty journal in IEEE2008
 Warning--empty journal in Krogh1997
 You've used 106 entries,
             2359 wiz_defined-function locations,
-            1312 strings with 23788 characters,
+            1306 strings with 23716 characters,
 and the built_in function-call counts, 34163 in all, are:
 = -- 3175
 > -- 1526
@@ -80,4 +77,4 @@ warning$ -- 9
 while$ -- 328
 width$ -- 109
 write$ -- 1124
-(There were 18 warnings)
+(There were 15 warnings)

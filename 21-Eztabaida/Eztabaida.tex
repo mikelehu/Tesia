@@ -203,109 +203,125 @@ Koordenatu cartesiarrak, ezin daitezke erabili.
 Muga hauek ez ditugu, IRK metodoak aplikatzeko. Ekuazio diferentzial orokorrei aplika daitekeenez, askatasun osoa dugu behar diren ekuazioak gehitzeko eta interesatzen zaigun koordenatu sistema aplikatzeko.  
  
 
-\section{Hasierako inplementazioa: ereduen deskonposaketa.}
+\section{Ereduen deskonposaketa.}
 
 
-Hasierako planteamendu honetan,  Newton sinplifikatua aplikatzen dugu eta  sistema lineala LU deskonposaketaren bidez askatu ordez, puntu-finkoaren bidez askatzen dugu.
+IRK metodoen inplementazio eraginkorren azterketaren hasierako fasean, problemaren deskonposaketan oinarritutako ideia ikertu dugu. Eguzki-sistemaren eredua, problema sinple (konputazionalki merkea) eta problema konplexu batean (konputazionalki garestia) bana daiteke.   
+Problemaren alde konplexuaren balioztapen kopuru txikituz, inplementazio eraginkorra lortzeko asmoarekin, Newton sinplifikatuaren iterazio berezi bat aplikatu dugu. Newton sinplifikatuaren iterazio berezi honetan, ekuazio-sistema lineala LU deskonposaketaren bidez askatu beharrean, puntu-finkoaren bidez ebatzi dugu.
 
-Ekuazio diferentzialak $\dot{y}=f(y)$ era honetan deskonposatzen ditugu,
+Atal honen bukaeran emango ditugun arrazoiengatik, beste bide batzuk ikertzea zuzenago dela ikusi dugu eta planteamendu hau alde batera utzi dugu. Dena den, planteamendu honen laburpen bat emango dugu eta inplementazio bide honetan sortutako hainbat ideia interesgarri jaso ditugu.
+
+\subsection*{Inplementazioa.}
+Eguzki-sistema, perturbatutako mugimendu Kepleriar gisa kontsidera daiteke,  
+\begin{align}
+\label{eq:fkg}
+ f(y)=  k(y) + \epsilon \ g (y), \ \ g\ll k,   
+\end{align}
+ 
+$k(y)$ sistema dinamikoaren alde sinplifikatua da eta ebaluatzeko kostua txikia du. $g(y)$, ordea, sistemaren alde konplexua da eta ebaluatzeko kostua handia du. Ekuazio diferentzialaren (\ref{eq:fkg}) deskonposaketa badugu, IRK metodoaren atalen ekuazio sistema ebazteko,
+\begin{equation*}
+Y_i=y_n+h\ \ \sum^s_{j=1}{a_{ij} \ f({Y_j}) },  
+\end{equation*} 
+era honetako iterazio proposatzen dugu,
 \begin{align*}
-&\dot{y}=\tilde{f}(y),\\
-&g(y)=f(y)-\tilde{f}(y).
+&k=1,2,\dots \\
+&Y_i^{[k]}=y_n+h\ \ \sum^s_{j=1}{a_{ij}(\ k({Y_j}^{[k]})+g({Y_j}^{[k-1]})) }
 \end{align*}
 
-Honako sistema lineala askatzeko,
-\begin{align*}
-Y_i^{[k+1,l]}=y_0+ h \sum a_{ij} \big( \tilde{f}(Y_i^{[k,l]})+g(Y_i^{[k,l-1]})),
-\end{align*}
-puntu-finkoaren iterazioa aplikatzen dugu.
-
-Planteamendu honetan, IRK-Newton inplementazioarekiko hiru desabantaila aurkitu ditugu: 
-\begin{enumerate}
-\item Barne kalkuluen doitasuna. 
-
-IRK-Newton sinplifikatuaren inplementazioan, eragiketa konplexuenak doitasun txikiagoan kalkula daitezke. Hasierako inplementazio honetan, barne iterazioak inplementazioaren doitasunean kalkulatu behar dira.
-
-\item Jacobiarra.
-
-IRK-Newton sinplifikatuan, Jacobiarra urrats bakoitzean behin kalkulatu behar da. Hasierako inplementazioan, Jacobiarra ()iterazio bakoitzean  aldatu egiten da (kostu handiagoa).
-\item Ereduen hiru maila erabiltzen da.\\
-$k+g$ deskonposaketan $g=f(u)-\tilde{f}(u)$ ez da hain sinplea. 
-\end{enumerate}
-
-\begin{align*}
-&M*\triangle L=R,
-&\triangle L=R-(M-I) \triangle L
-\end{align*}
-non $M-I=(h*BAB^{-1}\otimes J)$ den. Puntu finkoa aplikatzen genuen $M-I=0$ hartuz.
-
-\subsubsection*{ideiak1}
-Sistema dinamikoa, sistema sinplifikatuaren perturbazioa kontsideratuko dugu.  
- We consider the dynamical motion as a perturbation of a simplified dynamical system.  We will use a perturbed initial value problem (IVP) form,
- \begin{align*}
- \dot f(y)=  k(y) + \epsilon g (y), \ \ g\ll k.   
- \end{align*}
- where $k(y)$ is simplified dynamical system, and the evaluation cost is low and
-$g(y)$ is complex dynamical system  and  the evaluation cost is high. We propose an algorithm that reduces the number of evaluations of complex part  and so, reduce the cpu time. 
-
-
-We have presented a new iterative solution for a Hamiltonian system \cite{Makazaga2015a}. We have splitted the function in a expensive function ($g$) and a cheap function ($k$) evaluation. We will consider an initial value problem where $g()$ is the perturbing function with $\epsilon<<1$.
-\begin{equation} \label{eq:2}
-{\dot{u}}=f(u)= k(u)+g(u).  \ \ \ \ \ \ \ \ \ u(t_0)=u_0
-\end{equation}
-where $k,g: \ {{\Re}}^{6N} \ \longrightarrow {{\Re}}^{6N}.$
-
-\vspace{5mm}
-We have proposed the next iterative solution \cite{Makazaga2015a}.\newline
-
+Iterazio hau aplikatzea, Jacobiarraren hurbilpentzat, $J_i=\partial k/ \partial y (Y_i), \ i=1,\dots,s$ hartzen duen Newton sinplifikatua aplikatzearen baliokidea da. Hurrengo meta-algoritmoan, iterazio aplikatzeko zehaztasun gehiago ematen ditugu,
+ 
 \begin{algorithm}[H]
-\For{k=1,2,...}{
-\BlankLine
-${{Y_i}^{[k]}=y_n+h\ \ \sum^s_{j=1}{a_{ij}(\ k({Y_j}^{[k]})+g({Y_j}^{[k-1]})) }}$; 
-
-\BlankLine
-}
-\end{algorithm}
-
-We can interprete the new iteration method as a Simplified Newton method, when we use the Jacobian of the $k()$ function such as approximation.
-
-\subsubsection*{meta-algoritmoa}
-
-We propose the next algorithm for initial value problem of the form (~\ref{eq:2})
-
-\vspace{5mm} %5mm vertical space
-\begin{algorithm}[H]
-
  \For{$n\leftarrow 1$ \KwTo $endstep$}{
   \BlankLine
-  Initialization\ $Y^{[0]}_i, W^{[0]}_i\ i=1,\dots\,s$\;
+  \text{Hasieraketa}\ $Y^{[0]}_i, W^{[0]}_i$\;
   k=1\;
-  Solve \ ${Y_i}^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij}\ k({Y_j}^{[k]})+W^{[k-1]}_i\ \ \ }$\;
+  \text{Askatu} \ ${Y_i}^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij}\ k({Y_j}^{[k]})+W^{[k-1]}_i\ \ \ }$\;
   \BlankLine
-  \While{not coverge}{
+  \While{(\text{konbergentzia ez lortu})}{
      \BlankLine
      k++\;
      $W^{[k-1]}_i= h\ \sum^s_{j=1}{a_{ij}\ g({Y_j}^{[k-1]})}$\; 
-     Solve \ ${Y_i}^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij}\ k({Y_j}^{[k]})+W^{[k-1]}_i\ \ \ }$\;
+     \text{Askatu} \ ${Y_i}^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij}\ k({Y_j}^{[k]})+W^{[k-1]}_i\ \ \ }$\;
      \BlankLine
   }  
   $y_{n+1}=y_n+h\ \sum^s_{j=1}{b_{i}\ f({Y_j}^{[k]}) \ }$\;
   \BlankLine
  }
- \caption{Meta-Algorithm}
+ \caption{Meta-algoritmoa}
 \end{algorithm}
 
+Meta-algoritmoaren barne iterazioa askatzeko, metodo egokiena aplikatzeko askatasuna dugu. Pentsa liteke,  problema zurruna ez bada puntu- finkoaren bidez askatzea eta problema zurruna bada, berriz,  Newton sinplifikatuaren iterazioaren bidez. Adibidez, ekuazio-sistema askatzeko,
+\begin{equation*}
+ Y_i^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij}\ k({Y_j}^{[k]})+W^{[k-1]}_i},
+\end{equation*}
+puntu-finkoaren iterazioaren bidez askatzeko, \ref{alg:bpf} algoritmoko barne-iterazioa aplikatuko dugu. 
 
-\subsubsection*{Advantages.}
+\begin{algorithm}[H]
+ \BlankLine
+  $l=0$\;
+  $Y_{i}^{[k,0]}=Y_{i}^{[k-1]}$\;
+  \While{ (\text{konbergentzia ez lortu})}
+  {
+   \BlankLine
+   $l=l+1$\;  
+   \BlankLine
+   $K_{i}^{[k,l]}=k(Y_{i}^{[k,l-1]})$\;
+   $Y_{i}^{[k,l]}=y_{n} + h \sum\limits_{j=1}^{s} \ a_{ij} \ K_{j}^{[k,l]}  +  W_{i}^{[k-1]} $\;
+  }
+ \caption{Barne-iterazioa: puntu-finkoaren iterazioa}
+ \label{alg:bpf}
+\end{algorithm}
 
-The main advantage of the new algorithm  is its flexibility. We can solve problems in differents ways, and taking all good properties of the Runge-Kutta inplicit method. Next We will explain some:       
-\begin{itemize}
-  \item Iteration method.\\
-  Barne iterazioan, metodo egokiena aplikatu daiteke. Problema ez-stiffa bada, puntu finkoaren bidez askatu daiteke eta problema stiffa bada Newton sinplifikatuaren bidez.
- 
-  \item Problema independenteak.\\
+\subsection*{Orokorpena.}
+
+\subsubsection*{Eredu konplexuak.}
+Aurreko atalean, maila bakarreko ereduen deskonposaketa aztertu dugu. Ideia orokortuz, eredu deskonposaketa maila ezberdinetan egin daiteke.  $\dot{y} =f(y)$ problema emanik, 
+\begin{align*}
+&\mbox{1. maila} \ \
+\left \{ \begin{array}{c}
+  \mbox{Eredu osoa.   } f(y) \\[.25cm]
+  \mbox{Eredu sinplea.    } \tilde{f}(y)  \\
+\end{array} \right.
+\ \Rightarrow \ \
+f =\tilde{f}+(f-\tilde{f})  
+\end{align*}
+
+\begin{align*}
+&\mbox{2. maila} \ \
+\left \{ \begin{array}{c}
+  \mbox{Eredu osoa.   }\tilde{f}(y) \\[.25cm]
+  \mbox{Eredu sinplea.    }\tilde{\tilde{f}}(y)  \\
+\end{array} \right.
+\ \Rightarrow \ \
+\tilde{f} =\tilde{\tilde{f}}+({\tilde{f}}-\tilde{\tilde{f}})\\
+&\dots  
+\end{align*}
+
+\paragraph*{Adibidea.}
+Eguzki-sistemaren eredu konplexuago dugunean, maila ezberdineko eredu deskonposaketa izango dugu eta  meta-algoritmoa modu errekurtsiboan aplikatuko dugu. Adibide moduan, demagun eguzki-sistemaren problemaren ekuazio diferentzial hauek ditugula,
+\begin{equation*}
+\dot{y}=f(y), \ f(y)=k(y)+g(y)+r(y),
+\end{equation*}
+non
+\begin{align*}
+&k(y): \ \text{kepleriarra.}\\
+&g(y): \ \text{planeten arteko grabitazio interakzioak.}\\
+&r(y): \ \text{planeten eguzkiarekiko eralatibitate efektua.}
+\end{align*}
+
+Meta-algoritmoa modu honetan aplikatuko genuke,
+\begin{align*}
+&\mbox{1. maila}\\ 
+&Y_i=y_n+h \ \sum^s_{j=1}{a_{ij} \ f(Y_j)} \\
+&\mbox{2. maila}\\
+&Y_i^{[k]}=y_n+h\ \ \sum^s_{j=1}{a_{ij} \ k({Y_j}^{[k]})+ \left(g({Y_j}^{[k-1]})+r({Y_j}^{[k-1]})\right) }\\
+&\mbox{3. maila}\\
+&Y_i^{[k,l]}=y_n+h\ \ \sum^s_{j=1}{a_{ij} \left(k({Y_j}^{[k,l]})+g({Y_j}^{[k-1,l]})\right)+r({Y_j}^{[k-1],l-1]})}
+\end{align*}
+
+\subsubsection*{Problema independenteak.}
+
 Era honetako deskonposaketa bat dugunean,
-
 \begin{align*}
 f\left ( \begin{array}{c}
    y_1 \\
@@ -320,182 +336,44 @@ f\left ( \begin{array}{c}
    g_2(y_1,y_2) \\
 \end{array} \right),
 \end{align*}
+%
+eredu sinplifikatua problema independenteak osatzen dituzte eta barne iterazioak modu independentean kalkula daitezke. N-gorputzen eguzki-sistemaren adibidean, eredu sinplifikatua $k(y)$ (eguzkiarekiko interakzioa) planeta bakoitzarentzat problema independentea dugu. Kasu honetan urrats bat finkatuta, kanpo planetei dagokien $k(y)$ problemak, barruko planetei dagokien  $k(y)$ problemak baino azkarrago konbergituko du. 
 
-eredu sinplifikatua problema independenteak osatzen dituzte eta barne iterazioak modu independentean kalkula daitezke. N-gorputzen eguzki-sistemaren adibidean, eredu sinplifikatua $k(y)$ (eguzkiarekiko interakzioa) planeta bakoitzarentzat problema independentea dugu. Kasu honetan urrats bat finkatuta, kanpo planeten $k(y)$ problema barruko planeta baino azkarrago konbergituko du. 
-\end{itemize}  
+\subsubsection*{Tolerantzia aldakorra.}
 
-\subsubsection*{Inner iterations.}
-
-
-We know that we can use any method to solve inner nonlinear system. We implement the algorithm using the fixed-point iteration for the inner nonlinear system,
-
-\vspace{5mm} %5mm vertical space
- Solve \ ${Y_i}^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij}\ k\left({Y_j}^{[k]}\right)+W^{[k-1]}_i\ \ \ }$\;
+Kanpoko eta barruko iterazioen geratze irizpideak berdinak dira. Kanpoko iterazioan, tolerantzia finkoa erabili dugu eta barruko iterazioan, ordea, tolerantzia aldakorra. Tolerantzia aldakorra definituko dugu, kanpo-iterazio (konputazionalki garestia) bakoitzarentzat, barne-iterazio (konputazionalki merkea) kopuru nahikoak eta beharrezkoak emateko.     
  
-\begin{algorithm}[H]
- \BlankLine
-  $l=0$\;
-  $Y_{n,i}^{[k,0]}=Y_{n,i}^{[k-1]}$\;
-  \While{ (konbergentzia lortu)}
-  {
-   \BlankLine
-   $l=l+1$\;  
-   \BlankLine
-   $K_{n,i}^{[k,l]}=k(Y_{n,i}^{[k,l-1]})$\;
-   $Y_{n,i}^{[k,l]}=y_{n} + h \sum\limits_{j=1}^{s} \ a_{ij} \ K_{n,j}^{[k,l]}  +  W_{n,i}^{[k-1]} $\;
-  }
- \caption{Barne iterazioa: puntu-finkoa}
-\end{algorithm}
 
-\subsubsection*{Orokorpena.}
+\subsection*{Laburpena.}
+Planteamendu honetan,  Newton sinplifikatua aplikatzen dugu eta  sistema lineala LU deskonposaketaren bidez askatu ordez, puntu-finkoaren bidez askatzen dugu.
 
-Aurreko atalean, maila bakarreko ereduen deskonposaketa aztertu dugu. Ideia orokortuz, eredu deskonposaketa maila ezberdinetan egin daiteke. Problema bat emanda $\dot{y} =f(y)$, 
-
-\begin{align}
-\mbox{1. maila} \ \
-\left \{ \begin{array}{c}
-  \mbox{Eredu osoa.   } f(y) \\[.25cm]
-  \mbox{Eredu sinplea.    } \tilde{f}(y)  \\
-\end{array} \right.
-\ \Rightarrow \ \
-f =\tilde{f}+(f-\tilde{f})  
-\end{align}
-
-\begin{align}
-\mbox{2. maila} \ \
-\left \{ \begin{array}{c}
-  \mbox{Eredu osoa.   }\tilde{f}(y) \\[.25cm]
-  \mbox{Eredu sinplea.    }\tilde{\tilde{f}}(y)  \\
-\end{array} \right.
-\ \Rightarrow \ \
-\tilde{f} =\tilde{\tilde{f}}+({\tilde{f}}-\tilde{\tilde{f}})  
-\end{align}
-
-\paragraph*{Adibidea.}
-Eguzki-sistemaren eredu konplexuago ditugunean, meta-algoritmoa modu errekurtsiboan aplika daiteke. Adibide moduan, demagun eguzki-sistemaren problemaren ekuazio diferentzial hauek ditugula,
-\begin{equation*}
-\dot{y}=f(y), \ f(y)=k(y)+g(y)+r(y),
-\end{equation*}
-non
+Ekuazio diferentzialak $\dot{y}=f(y)$ era honetan deskonposatzen ditugu,
 \begin{align*}
-&k(y): \ \text{kepleriarra.}\\
-&g(y): \ \text{planeten arteko grabitazio interakzioak.}\\
-&r(y): \ \text{egukiarekiko eralatibitate efektua.}
+&\dot{y}=\tilde{f}(y),\\
+&g(y)=f(y)-\tilde{f}(y).
 \end{align*}
 
-Meta-algoritmoa errekurtsiboki modu honetan aplikatuko genuke,
+Honako sistema lineala askatzeko,
 \begin{align*}
-{{Y_i}^{[k]}=y_n+h\ \ \sum^s_{j=1}{a_{ij}(\ k({Y_j}^{[k]})+g({Y_j}^{[k-1]}))+r({Y_j}^{[k-1]}) }}\\
-{{Y_i}^{[k,l]}=y_n+h\ \ \sum^s_{j=1}{a_{ij}(\ k({Y_j}^{[k,l]})+g({Y_j}^{[k-1,l]})+r({Y_j}^{[k-1],l-1})) }}
+Y_i^{[k+1,l]}=y_0+ h \sum a_{ij} \big( \tilde{f}(Y_i^{[k,l]})+g(Y_i^{[k-1]})),
 \end{align*}
+puntu-finkoaren iterazioa aplikatzen dugu.
 
-\subsubsection*{Adierazpena.}
+Planteamendu honetan, IRK-Newton inplementazioarekiko hiru desabantaila aurkitu ditugu: 
+\begin{enumerate}
+\item Barne kalkuluen doitasuna. 
 
-Ekuazio diferentzialen deskonposaketak, zuhaitz moduan adieraz daitezke.
+IRK-Newton sinplifikatuaren inplementazioan, eragiketa konplexuenak doitasun txikiagoan kalkula daitezke. Hasierako inplementazio honetan, barne iterazioak inplementazioaren doitasunean kalkulatu behar dira.
 
-\begin{equation*}
-\dot{y}=f(y).
-\end{equation*}
+\item Jacobiarra.
 
-\begin{tikzpicture}[scale=.8]
-%\draw (-1,-2) grid (5,2);
-\filldraw[black] (0,0) circle (2pt);
-\end{tikzpicture}
+IRK-Newton sinplifikatuan, Jacobiarra urrats bakoitzean behin kalkulatu behar da. Hasierako inplementazioan, Jacobiarra iterazio bakoitzean  aldatu egiten da (kostu handiagoa).
+\item Ereduen hiru maila erabiltzen da.\\
+%S$k+g$ deskonposaketan $g=f(u)-\tilde{f}(u)$ ez da hain sinplea. 
+\end{enumerate}
 
-\begin{equation*}
-f\left ( \begin{array}{c}
-   y_1 \\
-   y_2 \\
-\end{array} \right)=
-\left ( \begin{array}{c}
-   f_1(y_1) \\
-   f_2(y_2) \\
-\end{array} \right)+
-\left ( \begin{array}{c}
-   g(y) \\
-\end{array} \right),
-\end{equation*}
+\section{IRK inplementazioaren oinarriak.}
 
-\begin{tikzpicture}[scale=.8]
-%\draw (-1,-2) grid (5,2);
-\filldraw[black] (0,0) circle (2pt);
-\filldraw[black] (1,2) circle (2pt);
-\filldraw[black] (-1,2) circle (2pt);
-\draw (0,0) -- (1,2);
-\draw (0,0) -- (-1,2);
-\end{tikzpicture}
-
-\begin{equation*}
-f_1\left ( \begin{array}{c}
-   y_1 \\
-\end{array} \right)=
-\left ( \begin{array}{c}
-   f_{11}(y_{11}) \\
-   f_{12}(y_{11},y_{12}) \\
-   f_{13}(y_{11},y_{12},y_{13}) \\
-\end{array} \right)+
-\left ( \begin{array}{c}
-   g_1(y_1) \\
-\end{array} \right),
-\end{equation*}
-
-
-\begin{tikzpicture}[scale=.8]
-%\draw (-1,-2) grid (5,2);
-\filldraw[black] (0,0) circle (2pt);
-\filldraw[black] (1,2) circle (2pt);
-\filldraw[black] (-1,2) circle (2pt);
-\filldraw[black] (-2,4) circle (2pt);
-\filldraw[black] (-1,4) circle (2pt);
-\filldraw[black] (0,4) circle (2pt);
-\draw (0,0) -- (1,2);
-\draw (0,0) -- (-1,2);
-\draw (-1,2) -- (-2,4);
-\draw (-1,2) -- (-1,4);
-\draw (-1,2) -- (0,4);
-\end{tikzpicture}
-
-\subsubsection*{Adaptative tol}
-We use outer's same stop criterion for the inner iteration except the tolerance. We use a fixed tolerance for outer iteration and adaptative tolerance for the inner ieration.
-
-We have splitted the function in a expensive function ($g$) and a cheap function ($k$) evaluation. Our goal is to get tolerance with the minimum CPU time. We want to run each step with the minimum outer iterations (expensive) and with the only necessary inner iterations (cheap). 
-
-So, we define a adaptative tol to execute only necesary and sufficient inner iterations for each outer iteration. We have to take into account that we need two inner iterations to determine the inner iteration tolerance.\\
-
-\subsubsection*{N-Body problem.}
-
-We will use Newtonian model of the Solar System for our test problems. The simplified part of the system is the keplerian and the perturbation, is the interactions between planets.
-
-\[H\left(q,p\right)=H_k+H_I,\ \ \ \ H_k\ll \ H_I\] 
-\begin{equation}
-H_k(q,p)=\frac{1}{2}\ \sum^N_{i=0}{\frac{{p_i}^2}{m_i}}-\ \ Gm_0\sum^N_{i=1}{\frac{m_i}{\left\|q_i-q_0\right\|}}\  
-\label{eq:h1}
-\end{equation}
-
-\begin{equation}
-H_I(q)=\sum^N_{1\le i<j\le N}{\ \frac{G\ m_im_j}{\left\|q_j-q_i\right\|}}\   
-\label{eq:h2}
-\end{equation}
-
-And the corresponding differential equations could be calculated
-\begin{equation}
-\dot{q}={\nabla }_pH(q,p)\ \ \, \ \ \dot{p}=-{\nabla }_qH(q,p)
-\end{equation}
-
-\subsubsection*{Strength and limitations.}
-\label{sec:43}
-
-\vspace{5mm}
-\textit{Close approaches.}\\
-Our new algorithm do not handle close approaches and collisions.  Reference to regularization ?
-Why is important? It could not be possible to calculate an accurate solution for the orbital motion of the Earth over more than 100 Myr because the Solar System is chaotic.  In recent article Laskar \cite{Laskar2011a} show that largest bodies in the asteroid belt, Ceres, Pallas and Vesta limited more the precise solution about 60 Myr. Among these asteroides happen close encounters and this strong interactions during close encounters also affect the planetary motions. 
-
-
-\vspace{5mm}
-\textit{Exoplanets.}\\
-These approximations are appropiate for applications in the Solar System, but more general methods are needed to describe a variety of explanetary systems.  They require dynamical theories that describe more extreme motions than those of the relatively placid planetary orbits of the Solar System. Fabrycky \cite{Fabrycky2010}
-
-\section{IRK puntu-finkoa: oinarriak.}
 
 \subsection*{Atalen hasieraketa.}
 
