@@ -212,7 +212,7 @@ Problemaren alde konplexuaren balioztapen kopuru txikituz, inplementazio eragink
 Atal honen bukaeran emango ditugun arrazoiengatik, beste bide batzuk ikertzea zuzenago dela ikusi dugu eta planteamendu hau alde batera utzi dugu. Dena den, planteamendu honen laburpen bat emango dugu eta inplementazio bide honetan sortutako hainbat ideia interesgarri jaso ditugu.
 
 \subsection*{Inplementazioa.}
-Eguzki-sistema, perturbatutako mugimendu Kepleriar gisa kontsidera daiteke,  
+Eguzki-sistema, perturbatutako mugimendu Kepleriar gisa har daiteke,  
 \begin{align}
 \label{eq:fkg}
  f(y)=  k(y) + \epsilon \ g (y), \ \ g\ll k,   
@@ -223,12 +223,14 @@ $k(y)$ sistema dinamikoaren alde sinplifikatua da eta ebaluatzeko kostua txikia 
 Y_i=y_n+h\ \ \sum^s_{j=1}{a_{ij} \ f({Y_j}) },  
 \end{equation*} 
 era honetako iterazio proposatzen dugu,
-\begin{align*}
+\begin{align}
+\begin{split}
 &k=1,2,\dots \\
 &Y_i^{[k]}=y_n+h\ \ \sum^s_{j=1}{a_{ij}(\ k({Y_j}^{[k]})+g({Y_j}^{[k-1]})) }
-\end{align*}
+\end{split}
+\end{align}
 
-Iterazio hau aplikatzea, Jacobiarraren hurbilpentzat, $J_i=\partial k/ \partial y (Y_i), \ i=1,\dots,s$ hartzen duen Newton sinplifikatua aplikatzearen baliokidea da. Hurrengo meta-algoritmoan, iterazio aplikatzeko zehaztasun gehiago ematen ditugu,
+Iterazio hau aplikatzea, Jacobiarraren hurbilpentzat, $J_i=\partial k/ \partial y (Y_i), \ i=1,\dots,s$ hartzen duen Newton sinplifikatua aplikatzearen baliokidea da. Hurrengo \ref{alg:metalg} meta-algoritmoan, iterazio aplikatzeko zehaztasun gehiago ematen ditugu,
  
 \begin{algorithm}[H]
  \For{$n\leftarrow 1$ \KwTo $endstep$}{
@@ -248,13 +250,16 @@ Iterazio hau aplikatzea, Jacobiarraren hurbilpentzat, $J_i=\partial k/ \partial 
   \BlankLine
  }
  \caption{Meta-algoritmoa}
+ \label{alg:metalg}
 \end{algorithm}
 
-Meta-algoritmoaren barne iterazioa askatzeko, metodo egokiena aplikatzeko askatasuna dugu. Pentsa liteke,  problema zurruna ez bada puntu- finkoaren bidez askatzea eta problema zurruna bada, berriz,  Newton sinplifikatuaren iterazioaren bidez. Adibidez, ekuazio-sistema askatzeko,
+Meta-algoritmoaren barne ekuazio-sistema askatzeko, metodo egokiena aplikatzeko askatasuna dugu. Pentsa liteke,  problema zurruna ez bada puntu-finkoaren bidez askatzea eta problema zurruna bada, berriz,  Newton sinplifikatuaren iterazioaren bidez.
+
+Barne ekuazio-sistema,
 \begin{equation*}
  Y_i^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij}\ k({Y_j}^{[k]})+W^{[k-1]}_i},
 \end{equation*}
-puntu-finkoaren iterazioaren bidez askatzeko, \ref{alg:bpf} algoritmoko barne-iterazioa aplikatuko dugu. 
+puntu-finkoaren iterazioaren bidez askatzeko, \ref{alg:bpf} barne-iterazioa aplikatuko dugu. 
 
 \begin{algorithm}[H]
  \BlankLine
@@ -275,7 +280,7 @@ puntu-finkoaren iterazioaren bidez askatzeko, \ref{alg:bpf} algoritmoko barne-it
 \subsection*{Orokorpena.}
 
 \subsubsection*{Eredu konplexuak.}
-Aurreko atalean, maila bakarreko ereduen deskonposaketa aztertu dugu. Ideia orokortuz, eredu deskonposaketa maila ezberdinetan egin daiteke.  $\dot{y} =f(y)$ problema emanik, 
+Aurreko atalean, maila bakarreko ereduen deskonposaketa aztertu dugu. Ideia orokortuz, eredu deskonposaketa maila ezberdinetan aplika daiteke.  $\dot{y} =f(y)$ problema emanik, 
 \begin{align*}
 &\mbox{1. maila} \ \
 \left \{ \begin{array}{c}
@@ -298,7 +303,7 @@ f =\tilde{f}+(f-\tilde{f})
 \end{align*}
 
 \paragraph*{Adibidea.}
-Eguzki-sistemaren eredu konplexuago dugunean, maila ezberdineko eredu deskonposaketa izango dugu eta  meta-algoritmoa modu errekurtsiboan aplikatuko dugu. Adibide moduan, demagun eguzki-sistemaren problemaren ekuazio diferentzial hauek ditugula,
+Eguzki-sistemaren eredu konplexuaren ekuazio-sisteman, alde Kepleriarra eta perturbazio maila ezberdinak bereiz daitezke. Meta-algoritmoa, deskonposaketaren maila bakoitzari modu errekurtsiboan aplika daiteke. Demagun, eguzki-sistemaren problemaren ekuazio diferentzial hauek ditugula,
 \begin{equation*}
 \dot{y}=f(y), \ f(y)=k(y)+g(y)+r(y),
 \end{equation*}
@@ -306,22 +311,25 @@ non
 \begin{align*}
 &k(y): \ \text{kepleriarra.}\\
 &g(y): \ \text{planeten arteko grabitazio interakzioak.}\\
-&r(y): \ \text{planeten eguzkiarekiko eralatibitate efektua.}
+&r(y): \ \text{planeten eguzkiarekiko erlatibitate efektua.}
 \end{align*}
 
-Meta-algoritmoa modu honetan aplikatuko genuke,
+Meta-algoritmoa modu honetan aplika daiteke,
 \begin{align*}
 &\mbox{1. maila}\\ 
-&Y_i=y_n+h \ \sum^s_{j=1}{a_{ij} \ f(Y_j)} \\
-&\mbox{2. maila}\\
-&Y_i^{[k]}=y_n+h\ \ \sum^s_{j=1}{a_{ij} \ k({Y_j}^{[k]})+ \left(g({Y_j}^{[k-1]})+r({Y_j}^{[k-1]})\right) }\\
-&\mbox{3. maila}\\
-&Y_i^{[k,l]}=y_n+h\ \ \sum^s_{j=1}{a_{ij} \left(k({Y_j}^{[k,l]})+g({Y_j}^{[k-1,l]})\right)+r({Y_j}^{[k-1],l-1]})}
+&Y_i=y_n+h \ \sum^s_{j=1}{a_{ij} \ f(Y_j)}.\\
+&\mbox{2. maila}, \ k=1,2,\dots\\
+&Y_i^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij} \ k({Y_j}^{[k]})}+ \delta_1^{[k-1]},\\
+& \text{non} \ \ \delta_1^{[k-1]}= h\  \sum^s_{j=1}{a_{ij} (g({Y_j}^{[k-1]})+r({Y_j}^{[k-1]}))}. \\
+&\mbox{3. maila}, , \ l=1,2,\dots\\
+&Y_i^{[k,l]}=y_n+h\ \ \sum^s_{j=1}{a_{ij} \left(k({Y_j}^{[k,l]})+g({Y_j}^{[k-1,l]})\right)}+\delta_2^{[l-1]}, \\
+& \text{non} \ \ \delta_2^{[l-1]}= h \ \sum^s_{j=1}{a_{ij} \ r({Y_j}^{[k-1,l-1]})}.
 \end{align*}
+
 
 \subsubsection*{Problema independenteak.}
 
-Era honetako deskonposaketa bat dugunean,
+Batzuetan, problemaren eredu sinplifikatua, azpiproblema independentetan bana daiteke,
 \begin{align*}
 f\left ( \begin{array}{c}
    y_1 \\
@@ -334,42 +342,31 @@ f\left ( \begin{array}{c}
 \left ( \begin{array}{c}
    g_1(y_1,y_2) \\
    g_2(y_1,y_2) \\
-\end{array} \right),
+\end{array} \right).
 \end{align*}
 %
-eredu sinplifikatua problema independenteak osatzen dituzte eta barne iterazioak modu independentean kalkula daitezke. N-gorputzen eguzki-sistemaren adibidean, eredu sinplifikatua $k(y)$ (eguzkiarekiko interakzioa) planeta bakoitzarentzat problema independentea dugu. Kasu honetan urrats bat finkatuta, kanpo planetei dagokien $k(y)$ problemak, barruko planetei dagokien  $k(y)$ problemak baino azkarrago konbergituko du. 
+Hortaz, azpiproblema bakoitzari dagokion barne-iterazioak independenteak dira eta paraleloan kalkula daitezke. Eguzki-sistema eredu grabitazionala, azaldutakoaren adibide argia da; planeta bakoitzarentzat, $k(y)$ eguzkiarekiko interakzioa azpiproblema independentea da. Dena den, zenbakizko esperimentuetarako aukera eraginkorrena, eredu sinplifikatua bi azpiproblemetan banatzea dela konprobatu dugu: alde batetik, barne-planeten eredu sinplifikatuak osatutako azpiproblema eta beste aldetik, kanpo-planeten eredu sinplifikatua osatutakoa.    
 
 \subsubsection*{Tolerantzia aldakorra.}
 
-Kanpoko eta barruko iterazioen geratze irizpideak berdinak dira. Kanpoko iterazioan, tolerantzia finkoa erabili dugu eta barruko iterazioan, ordea, tolerantzia aldakorra. Tolerantzia aldakorra definituko dugu, kanpo-iterazio (konputazionalki garestia) bakoitzarentzat, barne-iterazio (konputazionalki merkea) kopuru nahikoak eta beharrezkoak emateko.     
+Kanpo eta barne-iterazioetarako geratze irizpide berdinak definitu ditugu. Kanpo-iterazioetarako, tolerantzia finkoa erabili dugu eta barne-iterazioetarako, ordea, tolerantzia aldakorra. Tolerantzia aldakorra, kanpo-iterazio (konputazionalki garestia) bakoitzarentzat, barne-iterazio (konputazionalki merkea) kopuru nahikoak eta beharrezkoak eman dadin, definitu dugu.     
  
 
-\subsection*{Laburpena.}
-Planteamendu honetan,  Newton sinplifikatua aplikatzen dugu eta  sistema lineala LU deskonposaketaren bidez askatu ordez, puntu-finkoaren bidez askatzen dugu.
-
-Ekuazio diferentzialak $\dot{y}=f(y)$ era honetan deskonposatzen ditugu,
-\begin{align*}
-&\dot{y}=\tilde{f}(y),\\
-&g(y)=f(y)-\tilde{f}(y).
-\end{align*}
-
-Honako sistema lineala askatzeko,
-\begin{align*}
-Y_i^{[k+1,l]}=y_0+ h \sum a_{ij} \big( \tilde{f}(Y_i^{[k,l]})+g(Y_i^{[k-1]})),
-\end{align*}
-puntu-finkoaren iterazioa aplikatzen dugu.
-
-Planteamendu honetan, IRK-Newton inplementazioarekiko hiru desabantaila aurkitu ditugu: 
+\subsection*{Eragozpenak.}
+Esan dugunez, planteamendu honetan Newton sinplifikatua aplikatu dugu eta ekuazio-sistema lineala LU deskonposaketaren bidez askatu beharrean, puntu-finkoaren iterazioaren bidez askatu dugu. Planteamendu honi IRK-Newton sinplifikatuaren inplementazio estandarrarekiko, hiru desabantaila aurkitu dizkiogu: 
 \begin{enumerate}
 \item Barne kalkuluen doitasuna. 
 
-IRK-Newton sinplifikatuaren inplementazioan, eragiketa konplexuenak doitasun txikiagoan kalkula daitezke. Hasierako inplementazio honetan, barne iterazioak inplementazioaren doitasunean kalkulatu behar dira.
+Planteamendu honen barne-iterazioak konputazioak, inplementazioaren oinarrizko doitasunean kalkulatu behar dira.
+IRK-Newton sinplifikatuaren inplementazioaren eragiketa konplexuenak, doitasun txikiagoan kalkula daitezke \cite{Baboulin20092526}. 
 
-\item Jacobiarra.
+\item Jacobiarraren balioztapena.
 
-IRK-Newton sinplifikatuan, Jacobiarra urrats bakoitzean behin kalkulatu behar da. Hasierako inplementazioan, Jacobiarra iterazio bakoitzean  aldatu egiten da (kostu handiagoa).
-\item Ereduen hiru maila erabiltzen da.\\
-%S$k+g$ deskonposaketan $g=f(u)-\tilde{f}(u)$ ez da hain sinplea. 
+Aztertutako planteamendu honetan, Jacobiarra iterazio bakoitzean aldatzen denez, iterazio guztietan balioztatu behar da.
+IRK-Newton sinplifikatu estandarrean, Jacobiarra urrats bakoitzean behin bakarrik kalkulatu behar da. 
+
+\item Ereduen deskonposaketa.\\
+Ereduen deskonposaketak, nolabaiteko konplexutasuna gehitzen du. Hiru eredu ezberdin bereizi behar ditugu: eredu osoa $f(y)$, eredu sinplifikatua $\tilde{f}(y)$ eta perturbazioa  $g=f(y)-\tilde{f}(y)$. 
 \end{enumerate}
 
 \section{IRK inplementazioaren oinarriak.}
@@ -381,7 +378,7 @@ Puntu-finkoaren iterazioan, atalen hasieraketa teknika ezberdinak ikertu ditugu.
 \begin{enumerate}
 \item Metodo esplizituak.
 
-Euler-en eta Euler-hobetuaren metodoak aztertu ditugu.
+Euler ($\mathcal{O}(h)$) eta Euler hobetuaren ($\mathcal{O}(h^2)$) metodoak aztertu ditugu.
 
 \item Kepler fluxua.
 
@@ -395,8 +392,11 @@ Bide honetatik, teknika aurreratuagoak ere aztertu ditugu (maila txikiko polinom
 
 \end{enumerate}
 
+\subsection*{Metodoaren koefizienteak.}
+
 \subsection*{Geratze irizpidea.}
 
+Funtsezkoa iruditu zaigu geratze irizpide sendoa finkatzea. 
 
 \subsubsection*{Norma.}
 Lehengo, geratze irizpidea definitzeko norma zalantzan jarri dugu. Hairer-ek, geratze irizpidean aplikatzen duen norma hauxe da,
@@ -409,10 +409,10 @@ Aukera ezberdinak aztertu ditugu,
 \item Lehen bertsioa.
 
 \begin{align*}
-\Delta Y= \max_{1 \leqslant j \leqslant s} \frac{\max_{1 \leqslant j \leqslant s} |\Delta Y_i^j|}
-                                                {(\max_{1 \leqslant j \leqslant s}|Y_i^j|)+\delta},
+\Delta Y=\max_{1 \leqslant j \leqslant d} \frac{\max_{1 \leqslant i \leqslant s} |\Delta Y_i^j|}
+                                                {(\max_{1 \leqslant i \leqslant s}|Y_i^j|)+\delta},
 \end{align*}
-non $\delta \approx 10^{-20}$ zero den kasua ekiditeko balio txikia den eta $y=(y^1,\dots,y^d)$.
+non $\delta \approx 10^{-20}$ zero den kasua ekiditeko balio txikia  eta $y=(y^1,\dots,y^d)$ den.
 
 \item Bigarren bertsioa.
 
@@ -432,11 +432,10 @@ Q^{[1]}_s & \dots  & Q^{[n]}_s & V^{[1]}_s & \dots  & V^{[n]}_s \end{array}
 \tilde Q^{[1]}_s & \dots  & \tilde Q^{[n]}_s & \tilde V^{[1]}_s & \dots  & \tilde V^{[n]}_s \end{array}
 \right)\] 
 
-\begin{equation}
- \triangle^{[k]}=max\left({\  {{\max }_{1\le k\le n} \frac{{{\max }_{1\le i\le s} {\left\|Q^{[k]}_i-{\tilde{Q}}^{[k]}_i\right\|}^2_2\ }}{{{\max }_{1\le i\le s} {\left\|Q^{[k]}_i\right\|}^2_2\ }}\ }\ },\ {{\max }_{1\le k\le n} \frac{{{\max }_{1\le i\le s} {\left\|V^{[k]}_i-{\tilde{V}}^{[k]}_i\right\|}^2_2\ }}{{{\max }_{1\le i\le s} {\left\|V^{[k]}_i\right\|}^2_2\ }}\ }\right)
-\end{equation}
-
-Note that we avoided sqrt operation, so the stop condition would be $\triangle^{[k]} <tol^2$.
+\begin{align*}
+ & \Delta^{[k]}=\\
+ & max\left({\  {{\max }_{1\le k\le n} \frac{{{\max }_{1\le i\le s} {\left\|Q^{[k]}_i-{\tilde{Q}}^{[k]}_i\right\|}^2_2\ }}{{{\max }_{1\le i\le s} {\left\|Q^{[k]}_i\right\|}^2_2\ }}\ }\ },\ {{\max }_{1\le k\le n} \frac{{{\max }_{1\le i\le s} {\left\|V^{[k]}_i-{\tilde{V}}^{[k]}_i\right\|}^2_2\ }}{{{\max }_{1\le i\le s} {\left\|V^{[k]}_i\right\|}^2_2\ }}\ }\right)
+\end{align*}
 
 
 \end{enumerate} 
@@ -475,7 +474,7 @@ non $c\approx 10^{4}$ konbergentzi koefizientea den.
  
 \section{IRK Newton: konplexutasun analisia.}
 
-$(I_s \otimes I_d - h \ A \otimes J) \triangle Y = r$ ekuazio sistema modu eraginkorrean askatzeko, inplementazio estandarraren eta gure inplementazioen konplexutasunak konparatuko ditugu.
+$(I_s \otimes I_d - h \ A \otimes J) \Delta Y = r$ ekuazio sistema modu eraginkorrean askatzeko, inplementazio estandarraren eta gure inplementazioen konplexutasunak konparatuko ditugu.
 
 \subsection*{Inplementazio estandarra.}
 
@@ -580,6 +579,16 @@ Bi inplementazioen konplexutasunen laburpena,
  \end{tabular}}
 \end{table}
 
+\section{Doitasun altuko konputazioak.}
+
+\section{Paralelizazioa.}
+
+\vspace{5mm}
+\textit{Parareal Algorithms.}\\
+
+Using more number of nodes requires more computational cost to advance a step-size ($h$), and so, we have to known which scheme is most efficicent. We consider one scheme is more efficient than another, if this scheme achieves the same precision with the smaller value of $h/s$. It seems the integrator s=6 is the most efficient. 
+But since IRK is parallelizable at the node level, using more nodes ($s$) can improve the speed of the implementation if multiple processors are used. In this sense, Parareal algorithm has been proposed by several authors \cite{Gander2014}, \cite{Jimenez-Perez2011}. This is a subject to future work.
+
 \subsection*{Baztertu ditugun gaiak.}
 
 \begin{enumerate}
@@ -592,20 +601,22 @@ planteamenduari denboraren birparametrizazioa aplikatuta, F= K +g baliokidea del
 
 \end{enumerate}
 
-\section{Paralelizazioa.}
-
-\vspace{5mm}
-\textit{Parareal Algorithms.}\\
-
-Using more number of nodes requires more computational cost to advance a step-size ($h$), and so, we have to known which scheme is most efficicent. We consider one scheme is more efficient than another, if this scheme achieves the same precision with the smaller value of $h/s$. It seems the integrator s=6 is the most efficient. 
-But since IRK is parallelizable at the node level, using more nodes ($s$) can improve the speed of the implementation if multiple processors are used. In this sense, Parareal algorithm has been proposed by several authors \cite{Gander2014}, \cite{Jimenez-Perez2011}. This is a subject to future work.
-
 \section{Etorkizuneko lanak.}
 
-Tesiaren lanaren hastapenetan, jorratzeko gai hauek aipatu genituen:
-\begin{enumerate}
-\item Zenbakizko integrazio metodo inplizituak: Gauss, Chebichev, \dots 
-\item Paralelismo teknikak.
-\item Master tesian landutakoa: soluzio periodikoen jarraipena.
-\end{enumerate} 
+\subsection*{Kepler fluxuaren aldagai aldaketa.}
+
+Orain Fluxuaren aldagai aldaketa aplikatu dugunean, IRK puntu-finkoan oinarritu gara. Esperimentuetan, oso azkar konbergitzen duela ikusi dugu . Bestalde, guzki-sistemaren eredutan kepleriarrak ez diren hainbat perturbazio izan daitezkeeela; aldagai hauen (W), konbergentzia
+azkartzeko, Newton sinplifikatua erabiltzea komeniko zaigula uste dugu.
+
+\subsection*{Zenbakizko integrazio metodo inplizituak.}
+
+Gauss, Chebichev, \dots 
+
+\subsection*{Denbora birparametrizazioa.}
+
+Exzentrizitate handiko orbitadun sistementzako hainbat “erregularizazio simpletiko integratzaileak“ aztertu dira:
+Levison and Duncan (1994). “RMVS”: Regularized mixed variable sympletic integrator”, Mikkola (1997), Fukushima (2001), Beus(2003).
+
+Erregularizazioa aplikatzen dituzte metodo simpletiko ezbedinen “review” honakoa dugu: “Rauch
+and Holman (1999). Dynamical chaos in the Wisdom-Holman integrator”.
 

@@ -146,15 +146,26 @@ H=H_K+(T_1+U_1)
 \end{equation*}
 
 non
-\begin{align*}
+\begin{align}
+\begin{split}
 &H_K=\sum\limits_{i=1}^{N}\bigg(\frac{\|P_i\|^2}{2 \mu_i} -\frac{G m_0 m_i}{\|Q_i\|}\bigg), \ \ \mu_i=\frac{m_0m_i}{(m_0+m_i)}, \\
 &T_1=\frac{1}{m_0} \left(\sum\limits_{0<i<j\le N}^{N} P_i\ P_j \right),\\
 &U_1= -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
-\end{align*}
+\end{split}
+\end{align}
+
+Hamiltondarra abiaduraren arabera idazteko $V_i=P_i/\mu_i$ berdintza ordezkatuko dugu,
+\begin{align}
+\begin{split}
+&H_K=\sum\limits_{i=1}^{N}\bigg(\frac{\|V_i\|^2 \mu_i}{2} -\frac{G m_0 m_i}{\|Q_i\|}\bigg), \ \ \mu_i=\frac{m_0m_i}{(m_0+m_i)}, \\
+&T_1=\frac{1}{m_0} \left(\sum\limits_{0<i<j\le N}^{N} \frac{m_0 m_i m_j V_i\ V_j}{(m_0+m_i)(m_0+m_j)} \right),\\
+&U_1= -\sum\limits_{0< i<j\le N}^{N} \frac{G m_i m_j}{\|Q_i-Q_j\|}.
+\end{split}
+\end{align}
 
 \subsubsection*{Ekuazio diferentzialak.}
 
-Hamiltondar bakoitza independienteki kontsideratuta dagokio ekuazio diferentzialak lortzen ditugu:
+Hamiltondar bakoitza independenteki kontsideratuta dagokio ekuazio diferentzialak lortzen ditugu:
 \begin{enumerate}
 \item $H_K$.
 \begin{align*}

@@ -25,7 +25,12 @@ Pendulu bikoitzaren bi bertsio deskribatuko dugu: lehena, pendulu bikoitz arrunt
 \subsection{Pendulu bikoitz arrunta.}
 \label{ss:321}
 
-Planoan pendulu bikoitzaren problema (ikus \ref{fig:dp} irudia) era honetan definituko dugu: $m_1$ eta $m_2$ masadun bi penduluz eta elkar lotuta dauden $l_1$ eta $l_2$ luzerako makilez (masa gabekoak kontsideratuko ditugunak) osatuta sistema mekanikoa. Sistemaren egoera aldagaiak, bi angelu $q=(\phi,\theta)$ eta dagozkion momentuak $p=(p_{\phi},p_{\theta})$ dira. $\phi$ lehen penduluaren ardatz bertikalarekiko angelua da eta bigarren penduluaren angelua, era honetan definituko dugu $\psi=\phi+\theta$.
+%Joseba zuzenketa 09-05-2017
+%Planoan pendulu bikoitzaren problema (ikus \ref{fig:dp} irudia) era honetan definituko dugu: $m_1$ eta $m_2$ masadun bi penduluz eta elkar lotuta dauden $l_1$ eta $l_2$ luzerako makilez (masa gabekoak kontsideratuko ditugunak) osatuta sistema mekanikoa. Sistemaren egoera aldagaiak, bi angelu $q=(\phi,\theta)$ eta dagozkion momentuak $p=(p_{\phi},p_{\theta})$ dira. $\phi$ lehen penduluaren ardatz bertikalarekiko angelua da eta bigarren penduluaren angelua, era honetan definituko dugu $\psi=\phi+\theta$.
+
+Pendulu bikoitzaren problema (ikus \ref{fig:dp} irudia), planoan mugitzen diren eta elkarri lotuta dauden bi penduluk osatzen dute: penduluen masak $m_1$ eta $m_2$ dira, penduluetako bat puntu finko batetik zintzilik dago $l_1$ luzera duen eta okertzen ez den masarik gabeko lotura baten bidez. Beste pendulua, $m_1$ masa duen penduluaren pisuari lotuta dago, lotura honen luzera $l_2$ da eta hau ere, masarik gabekoa okertzen ez dena. 
+
+ Sistemaren egoera aldagaiak, bi angelu $q=(\phi,\theta)$ eta dagozkion momentuak $p=(p_{\phi},p_{\theta})$ dira. $\phi$ lehen penduluaren ardatz bertikalarekiko angelua da eta bigarren penduluaren angelua, era honetan definituko dugu $\psi=\phi+\theta$.
 
 \begin{figure} [h]
 \centerline{\includegraphics [width=10cm, height=8cm] {MyDoublePendulum}}
@@ -63,7 +68,7 @@ Urrats luzera, $h=2^{-7}$ aukeratu dugu, trunkatze errorea biribiltze errorea ba
 \subsection{Pendulu bikoitz zurruna.}
 \label{ss:322}
 
-Pendulu bikoitz arruntari malguki bat gehitutako sistema da (ikus \ref{fig:dp_zurruna}~irudia) : $l_1$ eta $l_2$ luzerako makilez elkar lotuta dauden  $m_1$ eta $m_2$ masadun bi penduluk eta hauen artean $k$ parametroaren araberako malgutasuna duen malgukiak osatzen duten sistema mekanikoa. $k=0$ balioarentzat, problema ez da zurruna (hau da, pendulu bikoitz arrunta) eta problemaren zurruntasuna, $k$ balioarekin batera handitzen da. 
+Pendulu bikoitz arruntari, malguki bat gehitutako sistema da (ikus \ref{fig:dp_zurruna}~irudia) :  $m_1$ eta $m_2$ masadun bi penduluk eta hauen artean $k$ parametroaren araberako malgutasuna duen malgukiak osatzen duten sistema mekanikoa. $k=0$ balioarentzat, problema ez da zurruna (hau da, pendulu bikoitz arrunta) eta problemaren zurruntasuna, $k$ balioarekin batera handitzen da. 
 
 \begin{figure} [h]
 \centerline{\includegraphics [width=10cm, height=8cm] {MyDoublePendulumSTIFF}}
@@ -166,7 +171,7 @@ non $M=\sum\limits_{i=0}^{N}Gm_i$ den.
 
 Momentu angeluarra $L\in \mathbb{R}^3$, problemaren beste hiru integralak dira, 
 \begin{equation*}
-L=\sum_{i=0}^{N} p_i \times q_i=\sum_{i=0}^{N} \dot{q}_i \times m_i q_i.
+L=\sum_{i=0}^{N} p_i \times q_i=\sum_{i=0}^{N} q_i \times m_i \dot{q}_i.
 \end{equation*}
 
 \item Energia.
@@ -178,11 +183,16 @@ E=H(q,p).
 
 \end{enumerate}
 
-Problemaren $10$ integral hauek, sistemaren ordena gutxitzeko edo zenbakizko integrazioaren doitasuna neurtzeko erabil daitezke. Guk koordenatu barizentrikoak (koordenatu sistemaren jatorria masa zentroaren kokapena) erabiliko ditugu eta koordenatu hauetan, $P=0$ eta $B=0$ dira. Beraz, gorputzen kokapenak eta abiadurak $\hat{Q}=0$ eta $\hat{V}=0$ izan daitezen, integratzeko erabiliko ditugun hasierako balioak ($\hat{q}_i,\hat{v}_i$) modu honetan finkatuko ditugu,
+Problemaren $10$ integral hauek, sistemaren ordena gutxitzeko edo zenbakizko integrazioaren doitasuna neurtzeko erabil daitezke. Guk koordenatu barizentrikoak (koordenatu sistemaren jatorria masa zentroaren kokapena) erabiliko ditugu eta koordenatu hauetan, $P=0$ eta $B=0$ dira. Beraz, integratzeko erabiliko ditugun hasierako balioak ($\hat{q}_i,\hat{v}_i$) modu honetan finkatuko ditugu,
 \begin{align*}
-&\hat{q}_i=q_i-R, \\
-&\hat{v}_i=v_i-V, \ \ i=0,\dots,N.
+&\hat{q}_i=q_i-Q, \\
+&\hat{v}_i=v_i-V, \ \ i=0,\dots,N,
 \end{align*}
+eta era honetan, masa zentroaren kokapen eta abiadurak,
+\begin{equation*}
+\hat{Q}=\frac{\left(\sum\limits_{i=0}^{N} m_i \ \hat{q}_i\right)}{M}=0, \ \hat{V}=\frac{\left(\sum\limits_{i=0}^{N} m_i \ \hat{v}_i\right)}{M}=0
+\end{equation*}
+izan daitezen,
 
 Momentu angeluarra eta energia, zenbakizko integrazioaren doitasuna neurtzeko erabili ohi dira. Energia zenbakizko integrazioen biribiltze errorea neurtzeko integral egokiena da.
 
