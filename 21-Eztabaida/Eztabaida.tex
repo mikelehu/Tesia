@@ -374,92 +374,138 @@ Ereduen deskonposaketak, nolabaiteko konplexutasuna gehitzen du. Hiru eredu ezbe
 
 \subsection*{Atalen hasieraketa.}
 
-Puntu-finkoaren iterazioan, atalen hasieraketa teknika ezberdinak ikertu ditugu. 
+Iterazio metodoetan aplika daitezkeen atalen hasieraketa teknika ezberdinak ikertu ditugu. 
 \begin{enumerate}
 \item Metodo esplizituak.
 
-Euler ($\mathcal{O}(h)$) eta Euler hobetuaren ($\mathcal{O}(h^2)$) metodoak aztertu ditugu.
+Atalen hasieraketa metodo esplizitu bat aplikatuz lor daiteke. Hurbilpen merkea lortze aldera, ordena txikiko metodoak aplikatu ditugu: 
+Euler  $\mathcal{O}(h)$ eta Euler hobetuaren $\mathcal{O}(h^2)$ metodoa. Atalen hasieraketa metodo hauek, ekuazio diferentzialaren balioztapena beharrezkoa da eta era honetan aplikatu ditugu:
+\begin{align*}
+&\text{Euler}:\\
+& \quad Y_i=Y_{i-1}+h (c_i-c_{i-1}) f(Y_{i-1}).\\
+&\text{Euler hobetua}: \\
+& \quad Y_i=Y_{i-1}+h (c_i-c_{i-1}) f(k_i),\\
+& \quad \text{non} \ k_i=Y_{i-1}+\frac{h}{2} (c_i-c_{i-1}) f(Y_{i-1}).
+\end{align*} 
+
 
 \item Kepler fluxua.
 
-Eguzki-sistema, perturbatutako sistema Kepleriarra dela jakinda, atalak Kepler fluxuaren bidez hasieratu daitezke.
+Eguzki-sistemaren, perturbatutako sistema Kepleriarra denez, atalak Kepler fluxuaren bidez hasieratu daitezke. Kepler fluxuaren funtzioak, $y(t_n)$ une bateko kokapen eta abiadurak emanik, $\Delta t_n$ denbora igarotakoan kokapen eta abiadura zehatzak itzultzen du,
+\begin{equation*}
+\text{Keplerflow}(\Delta t_n, y(t_n)) \rightarrow y(t_n+\Delta t_n).
+\end{equation*}
+
+Beraz, $y_n$ egoeratik abiatuta, atal bakoitzari dagokion hasieraketa,
+\begin{equation*}
+Y_{n,i}^{[0]}=y(t_n+hc_i), \ i=1,\dots,s,
+\end{equation*}
+Kepler fluxua $\Delta t_n=hc_i$ denbora aurrera eginez lortuko dugu.  
 
 \item Interpolazio polinomioak.
 
-Aurreko urratseko ataletako informazioa erabiliz, urrats berriaren atalen hasieraketa lortzen dugu. Problema zurruna ez denean interesgarria da. 
+Aurreko urratseko ataletako informazioa erabiliz, urrats berriaren atalen hasieraketa lortzen dugu. Problema zurruna ez denean interesgarria da. Era honetako hasieraketa merkea da, ez baita funtzio balioztapen berririk egiten. Era honetan aplikatzen da,
+\begin{equation*}
+Y_{n,i}^{[0]}=y_n+h \sum_{j=1}^{s} \lambda_{ij} \ f(Y_{n-1,j}),
+\end{equation*}
+non $\lambda_{ij}$ aurre-kalkulatutako interpolazio koefizienteak diren. 
+
 
 Bide honetatik, teknika aurreratuagoak ere aztertu ditugu (maila txikiko polinomioen bidezko hasieraketak). Era berean, B-Serieak \cite{Chartier2010} teknikan oinarrituz, interpolazio estandarra \cite{Laburta1998} hobetzeko saiakera egin dugu baina ez dugu hau hobetzea lortu. Metodo estandarrarekin, urrutien dagoen ataletarako hasieraketa txarra lortzen da eta atal askotako metodoentzat, arazo hau, eragozpen handia izan daiteke.  
 
 \end{enumerate}
 
-\subsection*{Metodoaren koefizienteak.}
+Problema ez-zurrunetarako, interpolazio polinomioen bidezko hasieraketa ona eta merkea lortzen da. Problema zurrunetarako, ordea, atalak aurreko urratseko soluzioarekin hasieratuko ditugu,
+\begin{align*}
+Y_{n,i}^{[0]}=y_n, \ i=1,\dots,s.  
+\end{align*}
+    
 
 \subsection*{Geratze irizpidea.}
 
-Funtsezkoa iruditu zaigu geratze irizpide sendoa finkatzea. 
+Iterazio metodo bat aplikatzeko, geratze irizpide sendoa finkatzea funtsezkoa da.  Iterazioak, biribiltze errorearen eragina azaltzen denean geratu behar dira. Batetik, iterazioak beranduegi geratzen baditugu, alferrikako iterazioak emango ditugu, eraginkortasunaren kalterako. Bestetik, iterazioak goizegi geratzen baditugu, biribiltze errorea handitu eta trunkatze errorea eragingo ditu.  
+
+Geratze irizpide estandarrak aplikatzerakoan, hainbat arazo aurkitu ditugu eta ondorioz, geratze irizpide berri bat definitzeko beharra ikusi dugu. Geratze irizpide berria definitzeko, aukera ezberdinak aztertu ditugu. Garapen honetako, geratze irizpide bertsio nagusienak azalduko ditugu.      
 
 \subsubsection*{Norma.}
-Lehengo, geratze irizpidea definitzeko norma zalantzan jarri dugu. Hairer-ek, geratze irizpidean aplikatzen duen norma hauxe da,
+Iterazio bakoitzaren hobekuntza ($\Delta^{[k]}$) neurtzeko, norma ezberdinak aplikatzen dira. Honakoa da, Hairer-ek puntu-finkoaren iterazioan oinarritutako IRK inplementazioaren geratze irizpidean aplikatzen duen norma,
 \begin{equation*}
-\Delta Y= \max_{i=1,\dots,s} \|Y_i^{[k]}-Y_i^{[k-1]}\|_{\infty}.
+\Delta^{[k]}= \max_{i=1,\dots,s} \|Y_i^{[k]}-Y_i^{[k-1]}\|_{\infty}.
 \end{equation*}
 
-Aukera ezberdinak aztertu ditugu,
+Norma hau zalantzan jarri dugu eta iterazioaren hobekuntza hobeto neurtzen duen norma finkatzen saiatu gara. Honako aukerak aztertu ditugu,
 \begin{enumerate}
 \item Lehen bertsioa.
 
+Diferentziak modu erlatiboan neurtzeko beharrak bultzatuta era honetan definitu dugu,
 \begin{align*}
-\Delta Y=\max_{1 \leqslant j \leqslant d} \frac{\max_{1 \leqslant i \leqslant s} |\Delta Y_i^j|}
+\Delta=\max_{1 \leqslant j \leqslant d} \frac{\max_{1 \leqslant i \leqslant s} |\Delta Y_i^j|}
                                                 {(\max_{1 \leqslant i \leqslant s}|Y_i^j|)+\delta},
 \end{align*}
-non $\delta \approx 10^{-20}$ zero den kasua ekiditeko balio txikia  eta $y=(y^1,\dots,y^d)$ den.
+non $\delta \approx 10^{-20}$, zatitzailea zero ez izateko finkatzen dugun balio txikia  eta $y=(y^1,\dots,y^d)$ den.
 
 \item Bigarren bertsioa.
 
-Each user can define her own norm. We define specific norm for the N-body problem.
-We define a set of internal stages $Y$ for the new approximation and $\tilde Y$ for the previous value.
-
-\[Y=\left( \begin{array}{cccccc}
-Q^{[1]}_1 & \dots  & Q^{[n]}_1 & V^{[1]}_1 & \dots  & V^{[n]}_1 \\ 
-Q^{[1]}_2 & \dots  & Q^{[n]}_2 & V^{[1]}_2 & \dots  & V^{[n]}_2 \\ 
-\dots  & \dots  & \dots  & \dots  & \dots  & \dots  \\ 
-Q^{[1]}_s & \dots  & Q^{[n]}_s & V^{[1]}_s & \dots  & V^{[n]}_s \end{array}
+Kokapenen ($Q_i \in \mathbb{R}^d$) eta abiaduren ($V_i \in \mathbb{R}^d$) izaera ezberdina dela jabetuta, norman bi kontzeptu hauek banatu ditugu, 
+\begin{align*}
+ & \Delta =\\
+ & max\left({\  {\max_{1\le j\le d} \frac{{\max_{1\le i\le s} {\left\|Q^{j}_i-{\tilde{Q}}^{j}_i\right\|}^2\ }}{{\max_{1\le i\le s} {\left\|Q^{j}_i\right\|}^2\ }}\ }\ },\ {\max_{1\le j\le d} \frac{{\max_{1\le i\le s} {\left\|V^{j}_i-{\tilde{V}}^{j}_i\right\|}^2\ }}{{\max_{1\le i\le s} {\left\|V^{j}_i\right\|}^2\ }}\ }\right),
+\end{align*}
+non,
+\begin{align*}
+Y=\left( \begin{array}{cccccc}
+Q^{1}_1 & \dots  & Q^{d}_1 & V^{1}_1 & \dots  & V^{d}_1 \\ 
+Q^{1}_2 & \dots  & Q^{d}_2 & V^{1}_2 & \dots  & V^{d}_2 \\ 
+\vdots  & \ddots  & \vdots  & \vdots  & \ddots  & \vdots  \\ 
+Q^{1}_s & \dots  & Q^{d}_s & V^{1}_s & \dots  & V^{d}_s \end{array}
 \right)\ \  
 \tilde Y=\left( \begin{array}{cccccc}
-\tilde Q^{[1]}_1 & \dots  & \tilde Q^{[n]}_1 & \tilde V^{[1]}_1 & \dots  & \tilde V^{[n]}_1 \\ 
-\tilde Q^{[1]}_2 & \dots  & \tilde Q^{[n]}_2 & \tilde V^{[1]}_2 & \dots  & \tilde V^{[n]}_2 \\ 
-\dots  & \dots  & \dots  & \dots  & \dots  & \dots  \\ 
-\tilde Q^{[1]}_s & \dots  & \tilde Q^{[n]}_s & \tilde V^{[1]}_s & \dots  & \tilde V^{[n]}_s \end{array}
-\right)\] 
-
-\begin{align*}
- & \Delta^{[k]}=\\
- & max\left({\  {{\max }_{1\le k\le n} \frac{{{\max }_{1\le i\le s} {\left\|Q^{[k]}_i-{\tilde{Q}}^{[k]}_i\right\|}^2_2\ }}{{{\max }_{1\le i\le s} {\left\|Q^{[k]}_i\right\|}^2_2\ }}\ }\ },\ {{\max }_{1\le k\le n} \frac{{{\max }_{1\le i\le s} {\left\|V^{[k]}_i-{\tilde{V}}^{[k]}_i\right\|}^2_2\ }}{{{\max }_{1\le i\le s} {\left\|V^{[k]}_i\right\|}^2_2\ }}\ }\right)
+\tilde Q^{1}_1 & \dots  & \tilde Q^{d}_1 & \tilde V^{1}_1 & \dots  & \tilde V^{d}_1 \\ 
+\tilde Q^{1}_2 & \dots  & \tilde Q^{d}_2 & \tilde V^{1}_2 & \dots  & \tilde V^{d}_2 \\ 
+\vdots  & \ddots  & \vdots  & \vdots  & \ddots  & \vdots  \\ 
+\tilde Q^{1}_s & \dots  & \tilde Q^{d}_s & \tilde V^{1}_s & \dots  & \tilde V^{d}_s \end{array}
+\right). 
 \end{align*}
 
+\item Hirugarren bertsioa.
+
+Iterazioaren hobekuntza, norma jakin bat aplikatuz zenbaki eskalar bakarrarekin neurtu beharrean,
+\begin{equation}
+\label{eq:DD3}
+\Delta^{[k]}=|Y^{[k]}-Y^{[k-1]}| \in \mathbb{R}^{sd}
+\end{equation}
+matrizea erabiliko dugu. Modu honetan, geratze irizpidea normaren independentea izango da eta gainera, geratze irizpide segurua eraikitzeko aukera emango digu.
 
 \end{enumerate} 
 
 
 \subsubsection*{Geratze irizpidea.}
 
-Geratze irizpidearen bertsioa ezberdinak aipatuko ditugu,
+Oraingoan ere, geratze irizpidearen abiapuntua Hairer-en geratze irizpidea izan da,
+\begin{equation*}
+\Delta ^{[k]}=0 \ \text{or} \ \Delta^{[k]} \geqslant \Delta^{[k-1]}.
+\end{equation*}
 
+Geratze irizpide hau hobetzeko proposamen batzuk garatu ditugu,
 \begin{enumerate}
 \item Lehen bertsioa.
+
+Abiapuntuko geratze irizpidea, batzuetan goizegi geratzen da eta ziurtasuna handitu beharra dago.  Horregatik, geratze irizpidean, $k-2.$ iterazioaren informazioa erabiltzea aztertu dugu, 
 \begin{align*}
-(\Delta^{[k]} \neq 0) \ \text{and} \ ( \Delta^{[k]}< \Delta^{[k-1]} \ \ \text{or} \ \ \Delta^{[k]}< 0.81*\Delta^{[k-2]}).
+(\Delta^{[k]} = 0) \ \text{or} \ ( \Delta^{[k]}\geqslant \Delta^{[k-1]} \ \ \text{and} \ \ \Delta^{[k]}\geqslant 0.81*\Delta^{[k-2]}).
 \end{align*}
 
 \item Bigarren bertsioa.
+
+Bertsio honetan, $k-3.$ iterazioaren informazioa erabiliz saiakera berri proposatu dugu,
 \begin{align*}
-\left(\Delta^{[k]} > tol \right) \ \text{and} \ \left( zat^{[k]}  < koef*\max(zat^{[k-1]},zat^{[k-2]}) \right),
+\left(\Delta^{[k]} \leqslant tol \right) \ \text{or} \ \left( zat^{[k]} \geqslant koef*\max(zat^{[k-1]},zat^{[k-2]}) \right),
 \end{align*}
-non $zat^{[k]}=\frac{\Delta^{[k]}}{\Delta^{[k-1]}}$ eta $koef=10$ den.
+non $zat^{[k]}={\Delta^{[k]}}/{\Delta^{[k-1]}}, \ tol\approx10^{-16}$ eta $koef=10$ den.
 
 \item Hirugarren bertsioa.
 \begin{align*}
-\left(\Delta^{[k]} > tol\right) \ \text{and} \ \left(\frac{zat^2}{(1-zat)} \Delta^{[k-1]}>tol\right) \ \text{and} \ \left(\frac{zat}{(1-zat)}\Delta^{[k-2]}>tol\right),
+\left(\Delta^{[k]} \leqslant tol\right) \ \text{or} \ \left(\frac{zat^2}{(1-zat)} \Delta^{[k-1]} \leqslant tol\right) \ \text{or} \ \left(\frac{zat}{(1-zat)}\Delta^{[k-2]} \leqslant tol\right),
 \end{align*}
 non $zat=\max(zat^{[k-1]},zat^{[k-2]})$, $tol\approx10^{-16}$ den.
 
@@ -469,6 +515,18 @@ Geratze irizpide honetan, iteraziotik irteten denean, $z\geqslant1$ betetzen bad
 &(2). \ \Delta {[k]} \leqslant c \ tol \rightarrow \text{birbiltze errorea (exekuzio jarraitu)},
 \end{align*}   
 non $c\approx 10^{4}$ konbergentzi koefizientea den. 
+
+\item Laugarren bertsioa.
+
+Azkenik, honakoa proposatu dugu: (\ref{eq:DD3}) $\Delta ^{[k]} \in \mathbb{R}^{sd}$ izanik, iterazioak  $k=1,2,\ldots$ jarraitzea , $ \Delta^{[k]} =0$ bete arte edo honako baldintza bi iterazio jarraietan betetzen den artean,
+\begin{equation*}
+\forall j \in \{1,\ldots,s d\},  \quad
+\min \left(\{|\Delta_j^{[1]}|,\cdots ,|\Delta_j^{[k-1]}|\} \ /\{0\} \right) \leqslant |\Delta_j^{[k]}|.
+\end{equation*}
+
+Geratze irizpide honetan, iterazioa gertatu bada $\exists j,  \ \Delta_{j}^{[K]} \neq 0$ delarik, orduan urratsa onargarria den ala ez erabaki behar dugu. 
+
+
 \end{enumerate}
 
  
@@ -580,6 +638,47 @@ Bi inplementazioen konplexutasunen laburpena,
 \end{table}
 
 \section{Doitasun altuko konputazioak.}
+
+
+\subsection*{Extended precision.}
+
+\begin{enumerate}
+\item JM Muller,
+
+The legacy x87 instructions of the IA-32 instruction set can operate on a double-extended precision format with 64 bits of significand and 15 bits of exponent. The corresponding floating-point operators can be instructed to round to single, to double, or to double-extended.
+
+The IA-64 instruction set also defines several double-extended formats, including one 80-bit format compatible with IA-32 and one 82-bit format with a 64-bit significand and a 17-bit exponent. The two additional exponent bits are designed to avoid intermediate overflows in certain computations on 80-bit operands.
+
+Rump's example(2.orrialdea).
+
+\end{enumerate}
+
+\begin{enumerate}
+
+\item INFLUENCE OF THE METHODS...
+
+In addition, in all ephemerides published by the present time the coefficients of the Chebyshev polynomials are given only with 16. decimal places, that is, in the form of 64-bit computer numbers with floating point (the so-called double-precision numbers). However, calculations with increased precision are more often used nowadays, for example, using 80-bit computer numbers with floating point which have 19 decimal places [10, 11] or 128-bit numbers with 34 decimal places (the so-called quadruple precision numbers).
+
+\item Laskar-ek \cite{Laskar2011}:
+
+The numerical integrator is the same symplectic integrator of that was used in the La2004 solution but it was entirely rewritten in C in order to access the extended precision of the Intel architecture.
+
+Here, we integrated the solutions in extended precision on Xeon Intel processors, which allows arithmetics in 80 bits instead of 64 bits in double precision.
+
+\item DE ephemerideak:
+
+QIVA doitasun laukoitzeko (128-bit) bertsioari deitzen zaio: mugimenduaren ekuazioen Newton zatia,
+
+\item INPOP ephemerideak.
+
+Hiru motako integrazioak aipatzen ditu: (a) double, (b) extended precision, (c) extended precision with corrector step (Nevertheless, it was possible to obtain an additional order of magnitude improvement by using a single addition in simulated quadruple precision in the corrector step with a very small overhead).
+
+\item EPM ephemerideak (2013).
+
+80-bites instead of 64-bites floating point calculation was realized in the numerical integration
+rewriting all ERA subroutines with the extended precision
+
+\end{enumerate}
 
 \section{Paralelizazioa.}
 
