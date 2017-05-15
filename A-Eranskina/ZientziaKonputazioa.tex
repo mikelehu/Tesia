@@ -1,4 +1,4 @@
-\chapter{Zientzia konputazioa.}
+\chapter{Zientzia-konputazioa.}
 
 %\epigraph{Optimizing a program can be a better solution than buying a faster computer!}
 %{\textit {Performance optimization of Numerically Intensive Codes(2001)}}
@@ -261,20 +261,21 @@ Txip prozesadore bakoitza, hardware berezi baten bidez zuzenean memoria bloke ba
 
 \subsubsection*{Bektorizazioa (SIMD).}
 
-Konputagailuek, \emph{Single Instruction Multiple Data} (SIMD) instrukzioetan oinarritutako paralelizazio eskaintzen dute \cite{Muller2009,Andrey2013}. CPU-ak eragiketa berdina aplikatzen du bektore erregistroan gorde diren zenbaki multzo bati. Bektore erregistro hauen tamaina $256$-biteko ingurukoa ($256/64=4$ doitasun bikoitzeko zenbakia) izan ohi da eta oro har, oinarrizko eragiketa aritmetikoak (batuketa, kenketa, biderketa eta zatiketa) aplika daitezke.    
+Prozesadore berriei hardware bektore unitateak gehitu zaizkie, eta  (AVX) bektore instrukzioetan oinarritutako paralelizazioa eskaintzen dute \cite{Muller2009,Andrey2013}. CPU-ak bektore erregistroan gorde diren zenbaki multzo bati, eragiketa berdina aplikatzen die (\emph{Single Instruction Multiple Data}, SIMD). Bektore erregistro hauek  $512$-biteko tamainakoak ($512/64=8$ doitasun bikoitzeko zenbaki) izan daitezke eta oro har, oinarrizko eragiketa aritmetikoak (batuketa, kenketa, biderketa eta zatiketa) aplika daitezke. Zentzu honetan ulertu behar da hardware bidezko bektorizazioak,  doitasun bikoitzeko konputazioen eraginkortasuna $x8$ hobetzen duela  eta doitasun arrunteko konputazioetan, berriz, $x16$.     
 
-Adibide moduan, hurrengo pseudokodearen bidez, iterazio bakoitzean 4 osagaien bektore baten batura erakutsiko nahi dugu,
+Adibide moduan, hurrengo pseudokodearen bidez, iterazio bakoitzean 8 osagaien bektore baten batura erakutsiko nahi dugu,
 
 \begin{algorithm}[H]
  \BlankLine
-  \For{$i=0$; $i<n$ ; $i+=4$}
+  \For{$i=0$; $i<n$ ; $i+=8$}
   {
    \BlankLine
-    $A[i:(i+4)]=A[i:(i+4)]+B[i:(i+4)]$\;
+    $A[i:(i+8)]=A[i:(i+8)]+B[i:(i+8)]$\;
    \BlankLine
   }
  \caption{SIMD (bektorizazioa).}
 \end{algorithm}
+
 
 \section{Programazio lengoaiak.}
 

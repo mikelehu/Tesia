@@ -238,6 +238,20 @@
   Timestamp                = {2016.10.27}
 }
 
+@Article{Burrage1993,
+  Title                    = {Parallel methods for initial value problems},
+  Author                   = {Burrage, Kevin},
+  Journal                  = {Applied Numerical Mathematics},
+  Year                     = {1993},
+  Number                   = {1-3},
+  Pages                    = {5--25},
+  Volume                   = {11},
+  Doi                      = {doi.org/10.1016/0168-9274(93)90037-R},
+  Owner                    = {joseba},
+  Publisher                = {Elsevier},
+  Timestamp                = {2017.05.13}
+}
+
 @Book{Butcher2008,
   Title                    = {Numerical Methods for Ordinary Differential Equations},
   Author                   = {Butcher, John Charles},
@@ -304,11 +318,20 @@
   Pages                    = {695--727},
   Volume                   = {10},
 
-  __markedentry            = {[joseba:]},
   Doi                      = {10.1007/s10208-010-9074-0},
   Owner                    = {joseba},
   Publisher                = {Springer},
   Timestamp                = {2017.05.03}
+}
+
+@Electronic{IntelXeon2013,
+  Title                    = {Differences in Floating-Point Arithmetic Between Intel® Xeon® Processors and the Intel® Xeon Phi™ Coprocessor x100 product family},
+  Author                   = {Martyn Corden},
+  Url                      = {https://software.intel.com/en-us/articles/differences-in-floating-point-arithmetic-between-intel-xeon-processors-and-the-intel-xeon},
+  Year                     = {2013},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.12}
 }
 
 @Article{Corless2013,
@@ -360,6 +383,36 @@
   Timestamp                = {2016.06.03}
 }
 
+@Article{Dongarra2017,
+  Title                    = {With Extreme Computing, the Rules Have Changed},
+  Author                   = {Dongarra, Jack and Tomov, Stanimire and Luszczek, Piotr and Kurzak, Jakub and Gates, Mark and Yamazaki, Ichitaro and Anzt, Hartwig and Haidar, Azzam and Abdelfattah, Ahmad},
+  Journal                  = {Computing in Science \& Engineering},
+  Year                     = {2017},
+  Number                   = {3},
+  Pages                    = {52--62},
+  Volume                   = {19},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1109/MCSE.2017.48},
+  Owner                    = {joseba},
+  Publisher                = {IEEE},
+  Timestamp                = {2017.05.13}
+}
+
+@InProceedings{Driscoll2013,
+  Title                    = {A communication-optimal n-body algorithm for direct interactions},
+  Author                   = {Driscoll, Michael and Georganas, Evangelos and Koanantakool, Penporn and Solomonik, Edgar and Yelick, Katherine},
+  Booktitle                = {Parallel \& Distributed Processing (IPDPS), 2013 IEEE 27th International Symposium on},
+  Year                     = {2013},
+  Organization             = {IEEE},
+  Pages                    = {1075--1084},
+
+  __markedentry            = {[joseba:]},
+  Doi                      = {10.1109/IPDPS.2013.108},
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.13}
+}
+
 @Article{Duncan1998,
   Title                    = {A multiple time step symplectic algorithm for integrating close encounters},
   Author                   = {Duncan, Martin J and Levison, Harold F and Lee, Man Hoi},
@@ -386,6 +439,18 @@
   Doi                      = {10.1007/978-3-642-04458-8_9},
   Owner                    = {joseba},
   Timestamp                = {2017.04.25}
+}
+
+@Article{Fabrycky2010,
+  Title                    = {Non-Keplerian Dynamics},
+  Author                   = {Fabrycky, Daniel C},
+  Journal                  = {arXiv preprint arXiv:1006.3834},
+  Year                     = {2010},
+
+  __markedentry            = {[joseba:6]},
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.14},
+  Url                      = {arXiv:1006.3834}
 }
 
 @Article{Farres2013,
@@ -475,6 +540,7 @@
   Publisher                = {Academic press},
   Year                     = {2001},
   Volume                   = {1},
+
   Owner                    = {joseba},
   Timestamp                = {2017.05.01},
   Url                      = {http://www.sciencedirect.com/science/book/9780122673511}
@@ -508,6 +574,19 @@
   Publisher                = {IOP Publishing},
   Timestamp                = {2016.06.12},
   Url                      = {http://iopscience.iop.org/article/10.1086/319385/meta}
+}
+
+@Article{Gander2014,
+  Title                    = {Analysis for parareal algorithms applied to Hamiltonian differential equations},
+  Author                   = {Gander, Martin J and Hairer, Ernst},
+  Journal                  = {Journal of Computational and Applied Mathematics},
+  Year                     = {2014},
+  Pages                    = {2--13},
+  Volume                   = {259},
+  Doi                      = {doi.org/10.1016/j.cam.2013.01.011},
+  Owner                    = {joseba},
+  Publisher                = {Elsevier},
+  Timestamp                = {2017.05.13}
 }
 
 @Electronic{libquad,
@@ -746,6 +825,16 @@
   Timestamp                = {2017.03.14}
 }
 
+@Article{Jimenez-Perez2011,
+  Title                    = {A time-parallel algorithm for almost integrable Hamiltonian systems},
+  Author                   = {Jim{\'e}nez-P{\'e}rez, Hugo and Laskar, Jacques},
+  Journal                  = {arXiv preprint arXiv:1106.3694},
+  Year                     = {2011},
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.13},
+  Url                      = {arXiv:1106.3694}
+}
+
 @Book{JMSanz-Serna1994,
   Title                    = {Numerical Hamiltonian problems},
   Author                   = {JM Sanz-Serna, MP Calvo},
@@ -839,7 +928,6 @@
   Publisher                = {John Wiley \& Sons},
   Year                     = {2011},
 
-  __markedentry            = {[joseba:6]},
   Owner                    = {joseba},
   Timestamp                = {2017.05.07},
   Url                      = {http://eu.wiley.com/WileyCDA/WileyTitle/productCd-3527408568.html}
@@ -1143,6 +1231,16 @@
   Doi                      = {dx.doi.org/10.1137/1.9780898718003.bm},
   Owner                    = {joseba},
   Timestamp                = {2017.03.18}
+}
+
+@Article{Saha1996,
+  Title                    = {A parallel integration method for solar system dynamics},
+  Author                   = {Saha, Prasenjit and Stadel, Joachim and Tremaine, Scott},
+  Journal                  = {arXiv preprint astro-ph/9605016},
+  Year                     = {1996},
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.13},
+  Url                      = {arXiv:astro-ph/9605016}
 }
 
 @Article{Saha1994,

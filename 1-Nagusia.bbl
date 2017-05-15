@@ -132,6 +132,14 @@ VA~Brumberg.
 \newblock {\em Solar System Research}, 47\penalty0 (5):\penalty0 347--358,
   2013.
 
+\bibitem{Burrage1993}
+Kevin Burrage.
+\newblock
+  \href{http://dx.doi.org/doi.org/10.1016/0168-9274(93)90037-R}{Parallel
+  methods for initial value problems}.
+\newblock {\em Applied Numerical Mathematics}, 11\penalty0 (1-3):\penalty0
+  5--25, 1993.
+
 \bibitem{Butcher1976}
 John~C Butcher.
 \newblock \href{http://dx.doi.org/10.1007/BF01932265}{On the implementation of
@@ -166,6 +174,13 @@ Philippe Chartier, Ander Murua, and Jesus~Maria Sanz-Serna.
 \newblock {\em Foundations of Computational Mathematics}, 10\penalty0
   (6):\penalty0 695--727, 2010.
 
+\bibitem{IntelXeon2013}
+Martyn Corden.
+\newblock
+  \href{https://software.intel.com/en-us/articles/differences-in-floating-point-arithmetic-between-intel-xeon-processors-and-the-intel-xeon}{Differences
+  in floating-point arithmetic between intel® xeon® processors and the
+  intel® xeon phi™ coprocessor x100 product family}, 2013.
+
 \bibitem{Corless2013}
 Robert~M Corless and Nicolas Fillion.
 \newblock \href{http://dx.doi.org/10.1007/978-1-4614-8453-0}{A graduate
@@ -190,6 +205,22 @@ Dumitru~N. Deleanu.
   chaotic or regular behavior of double pendulum system: application of the
   fast norm vector indicator method}.
 
+\bibitem{Dongarra2017}
+Jack Dongarra, Stanimire Tomov, Piotr Luszczek, Jakub Kurzak, Mark Gates,
+  Ichitaro Yamazaki, Hartwig Anzt, Azzam Haidar, and Ahmad Abdelfattah.
+\newblock \href{http://dx.doi.org/10.1109/MCSE.2017.48}{With extreme computing,
+  the rules have changed}.
+\newblock {\em Computing in Science \& Engineering}, 19\penalty0 (3):\penalty0
+  52--62, 2017.
+
+\bibitem{Driscoll2013}
+Michael Driscoll, Evangelos Georganas, Penporn Koanantakool, Edgar Solomonik,
+  and Katherine Yelick.
+\newblock \href{http://dx.doi.org/10.1109/IPDPS.2013.108}{A
+  communication-optimal n-body algorithm for direct interactions}.
+\newblock In {\em Parallel \& Distributed Processing (IPDPS), 2013 IEEE 27th
+  International Symposium on}, IEEE, 2013, pages 1075--1084.
+
 \bibitem{Duncan1998}
 Martin~J Duncan, Harold~F Levison, and Man~Hoi Lee.
 \newblock \href{http://stacks.iop.org/1538-3881/116/i=4/a=2067}{A multiple time
@@ -203,6 +234,11 @@ Siegfried Eggl and Rudolph Dvorak.
   to common numerical integration codes used in dynamical astronomy}.
 \newblock In {\em Dynamics of small solar system bodies and exoplanets},
   Springer, 2010, pages 431--480.
+
+\bibitem{Fabrycky2010}
+Daniel~C Fabrycky.
+\newblock \href{arXiv:1006.3834}{Non-keplerian dynamics}.
+\newblock {\em arXiv preprint arXiv:1006.3834}, 2010.
 
 \bibitem{Farres2013}
 Ariadna Farr{\'e}s, Jacques Laskar, Sergio Blanes, Fernando Casas, Joseba
@@ -269,6 +305,13 @@ Toshio Fukushima.
   comparison of two-body regularizations}.
 \newblock {\em The Astronomical Journal}, 133\penalty0 (6):\penalty0 2815,
   2007.
+
+\bibitem{Gander2014}
+Martin~J Gander and Ernst Hairer.
+\newblock \href{http://dx.doi.org/doi.org/10.1016/j.cam.2013.01.011}{Analysis
+  for parareal algorithms applied to hamiltonian differential equations}.
+\newblock {\em Journal of Computational and Applied Mathematics}, 259:\penalty0
+  2--13, 2014.
 
 \bibitem{libquad}
 GNU.
@@ -393,6 +436,12 @@ Laurent~O. Jay.
 \newblock Preconditioning of implicit runge-kutta methods.
 \newblock {\em Scalable Computing: Practice and Experience}, 10, 2009.
 
+\bibitem{Jimenez-Perez2011}
+Hugo Jim{\'e}nez-P{\'e}rez and Jacques Laskar.
+\newblock \href{arXiv:1106.3694}{A time-parallel algorithm for almost
+  integrable hamiltonian systems}.
+\newblock {\em arXiv preprint arXiv:1106.3694}, 2011.
+
 \bibitem{JMSanz-Serna1994}
 MP~Calvo JM~Sanz-Serna.
 \newblock {\em Numerical Hamiltonian problems}.
@@ -516,6 +565,11 @@ Werner Liniger and Ralph~A Willoughby.
 \newblock {\em SIAM Journal on Numerical Analysis}, 7\penalty0 (1):\penalty0
   47--66, 1970.
 
+\bibitem{sserna1996}
+Sanz Serna J.M. Diaz~J.C Lopez~Marcos, M.A.
+\newblock Are gauss-legendre methods useful in molecular dynamics ?
+\newblock {\em Journal of Computational and Applied Mathematics}, 1996.
+
 \bibitem{Luszczek2014}
 Piotr Luszczek, Jakub Kurzak, and Jack Dongarra.
 \newblock \href{http://dx.doi.org/10.1016/j.jpdc.2013.10.005}{Looking back at
@@ -591,6 +645,12 @@ Yousef Saad.
 \newblock \href{http://dx.doi.org/dx.doi.org/10.1137/1.9780898718003.bm}{{\em
   Iterative methods for sparse linear systems}}.
 \newblock SIAM, 2003.
+
+\bibitem{Saha1996}
+Prasenjit Saha, Joachim Stadel, and Scott Tremaine.
+\newblock \href{arXiv:astro-ph/9605016}{A parallel integration method for solar
+  system dynamics}.
+\newblock {\em arXiv preprint astro-ph/9605016}, 1996.
 
 \bibitem{Saha1992}
 Prasenjit Saha and Scott Tremaine.

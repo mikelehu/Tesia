@@ -1,11 +1,7 @@
-@book{kopeikin2011relativistic,
-  title={Relativistic celestial mechanics of the solar system},
-  author={Kopeikin, Sergei and Efroimsky, Michael and Kaplan, George},
-  year={2011},
-  publisher={John Wiley \& Sons}
+@article{fabrycky2010non,
+  title={Non-Keplerian Dynamics},
+  author={Fabrycky, Daniel C},
+  journal={arXiv preprint arXiv:1006.3834},
+  year={2010}
 }
-
-
-
-
 

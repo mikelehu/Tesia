@@ -17,16 +17,18 @@ A level-1 auxiliary file: C-Eranskina/C-Eranskina.aux
 A level-1 auxiliary file: Z-Argibideak/Argibideak.aux
 The style file: myplain2-doi.bst
 Database file #1: ./bibliografia/mybib.bib
+Warning--entry type for "IntelXeon2013" isn't style-file defined
+--line 328 of file ./bibliografia/mybib.bib
 Warning--entry type for "libquad" isn't style-file defined
---line 513 of file ./bibliografia/mybib.bib
+--line 594 of file ./bibliografia/mybib.bib
 Warning--entry type for "Karplus2014" isn't style-file defined
---line 1074 of file ./bibliografia/mybib.bib
+--line 1175 of file ./bibliografia/mybib.bib
 Warning--entry type for "WolframResearch" isn't style-file defined
---line 1331 of file ./bibliografia/mybib.bib
+--line 1443 of file ./bibliografia/mybib.bib
 Warning--entry type for "OpenMP" isn't style-file defined
---line 1364 of file ./bibliografia/mybib.bib
-Warning--I didn't find a database entry for "Gander2014"
-Warning--I didn't find a database entry for "Jimenez-Perez2011"
+--line 1476 of file ./bibliografia/mybib.bib
+Too many commas in name 1 of "Lopez Marcos, M.A., Sanz Serna J.M., Diaz J.C" for entry sserna1996
+while executing---line 2719 of file myplain2-doi.bst
 Warning--to sort, need author or key in OpenMP
 Warning--to sort, need author, editor, or key in Intel2015
 Warning--empty author and editor in Intel2015
@@ -36,45 +38,47 @@ Warning--empty publisher in Hairer1993
 Warning--empty journal in Higham2015
 Warning--empty journal in IEEE2008
 Warning--empty journal in Krogh1997
-You've used 106 entries,
+Too many commas in name 1 of "Lopez Marcos, M.A., Sanz Serna J.M., Diaz J.C" for entry sserna1996
+while executing---line 2827 of file myplain2-doi.bst
+You've used 115 entries,
             2359 wiz_defined-function locations,
-            1306 strings with 23716 characters,
-and the built_in function-call counts, 34163 in all, are:
-= -- 3175
-> -- 1526
-< -- 14
-+ -- 627
-- -- 499
-* -- 2633
-:= -- 5580
-add.period$ -- 311
-call.type$ -- 106
-change.case$ -- 539
+            1359 strings with 25525 characters,
+and the built_in function-call counts, 37050 in all, are:
+= -- 3447
+> -- 1674
+< -- 15
++ -- 689
+- -- 549
+* -- 2848
+:= -- 6062
+add.period$ -- 337
+call.type$ -- 115
+change.case$ -- 591
 chr.to.int$ -- 0
-cite$ -- 115
-duplicate$ -- 1329
-empty$ -- 2953
-format.name$ -- 499
-if$ -- 7099
+cite$ -- 124
+duplicate$ -- 1436
+empty$ -- 3176
+format.name$ -- 549
+if$ -- 7689
 int.to.chr$ -- 0
-int.to.str$ -- 106
-missing$ -- 122
-newline$ -- 526
-num.names$ -- 216
-pop$ -- 663
+int.to.str$ -- 115
+missing$ -- 130
+newline$ -- 570
+num.names$ -- 234
+pop$ -- 718
 preamble$ -- 1
-purify$ -- 454
+purify$ -- 497
 quote$ -- 0
-skip$ -- 856
+skip$ -- 937
 stack$ -- 0
-substring$ -- 1972
-swap$ -- 282
-text.length$ -- 14
+substring$ -- 2111
+swap$ -- 310
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 376
+type$ -- 412
 warning$ -- 9
-while$ -- 328
-width$ -- 109
-write$ -- 1124
-(There were 15 warnings)
+while$ -- 355
+width$ -- 118
+write$ -- 1217
+(There were 2 error messages)

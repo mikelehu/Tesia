@@ -203,7 +203,7 @@ Koordenatu cartesiarrak, ezin daitezke erabili.
 Muga hauek ez ditugu, IRK metodoak aplikatzeko. Ekuazio diferentzial orokorrei aplika daitekeenez, askatasun osoa dugu behar diren ekuazioak gehitzeko eta interesatzen zaigun koordenatu sistema aplikatzeko.  
  
 
-\section{Ereduen deskonposaketa.}
+\section{Eredu deskonposaketa.}
 
 
 IRK metodoen inplementazio eraginkorren azterketaren hasierako fasean, problemaren deskonposaketan oinarritutako ideia ikertu dugu. Eguzki-sistemaren eredua, problema sinple (konputazionalki merkea) eta problema konplexu batean (konputazionalki garestia) bana daiteke.   
@@ -530,192 +530,75 @@ Geratze irizpide honetan, iterazioa gertatu bada $\exists j,  \ \Delta_{j}^{[K]}
 \end{enumerate}
 
  
-\section{IRK Newton: konplexutasun analisia.}
-
-$(I_s \otimes I_d - h \ A \otimes J) \Delta Y = r$ ekuazio sistema modu eraginkorrean askatzeko, inplementazio estandarraren eta gure inplementazioen konplexutasunak konparatuko ditugu.
-
-\subsection*{Inplementazio estandarra.}
-
-Butcher edota Hairer-en inplementazio estandarraren konputazio bi modutan egin daiteke:
-
-\begin{enumerate}
-\item Zenbaki konplexuak.
-
-$A$ matrizearen diagonalizazioak balio propio konplexuak ditu, 
-\begin{equation*}
-P^{-1}AP=\begin{bmatrix}
-  \gamma_1 &                &          &                &           &                 \\
-           & \bar{\gamma_1} &          &                &           &                 \\
-           &                & \gamma_2 &                &           &                 \\
-           &                &          & \bar{\gamma_2} &           &                 \\ 
-           &                &          &                & \gamma_3   &                 \\
-           &                &          &                &            & \bar{\gamma_3} \\  
-\end{bmatrix},
-\end{equation*}
-
-eta ekuazio-sistema, zenbaki konplexuen aritmetika erabiliz ebatzi daiteke.
-\begin{align*}
-&(I-h \gamma_j J) \ X = b, \ \ j=1,\dots,3, \\
-&(I-h \bar{\gamma}_j J) \ X = \bar{b}. 
-\end{align*}
-
-\item Zenbaki errealak.
-
-Zenbaki konplexuekin ez bada lana egin nahi, zenbaki errealeko deskonposaketa baliokidea,
-\begin{align*}
-&\gamma_j=\alpha_j + i \ \beta_j,\\
-&P^{-1}AP=\begin{bmatrix}
-\alpha_{1} & -\beta_{1}   &  0            &  0            &  0           &    0       \\
-\beta_{1}  & \alpha_{1}   & 0             &  0            &  0           &    0       \\
- 0          & 0             & \alpha_{2}  & -\beta_{2}    &  0           &    0       \\
- 0          & 0             & \beta_{2}   & \alpha_{2}    &  0           &    0       \\
- 0          & 0             &  0          & 0             & \alpha_{3}  & -\beta_{3}  \\
- 0          & 0             &  0          & 0             & \beta_{3}   & \alpha_{3}  \\
-\end{bmatrix}
-\end{align*}
-
-\end{enumerate}
-
-Hairer-en inplementazioan,
-\begin{itemize}
-\item $s$ bikoitia bada $\rightarrow$ $(2d \times 2d)$ tamainako $[s/2]$  LU deskonposaketa.
-\item $s$ bakoitia bada $\rightarrow$ $(2d \times 2d)$ tamainako $(s+1)/2$  LU deskonposaketa.
-\end{itemize}
-
-\subsection*{Gure inplementazio berria.}
-
-$\bar{A}$ matrizearen, $\bar{A}=P^{-1}DP$ diagonalizatzen dugu eta $D$ matrizeak, irudikari puruak ditu,
-\begin{equation*}
-\bar{A}=Q^{-1}RQ, \ \,
-R=\begin{bmatrix}
-0           & -\gamma_{1}   &            &               &             &           \\
- \gamma_{1} & 0             &            &               &             &           \\
-            &               & 0           & -\gamma_{2}  &             &           \\
-            &               & \gamma_{2}  & 0              &           &           \\
-            &               &             &                & 0            & -\gamma_{3} \\
-            &               &             &                & \gamma_{3}   & 0            \\
-\end{bmatrix}
-\end{equation*}
-
-Gure inplementazioan,
-\begin{itemize}
-\item $s$ bikoitia bada $\rightarrow$ $(d \times d)$ tamainako $[s/2]+1$  LU deskonposaketa.
-\item $s$ bakoitia bada $\rightarrow$ $(d \times d)$ tamainako $(s+1)/2$  LU deskonposaketa.
-\end{itemize}
-
-\subsection*{Konplexutasun konparaketa}
-
-Lehenengo eragiketa aljebraikoen konplexutasunak gogoratuko ditugu,
-\begin{align*}
-&\text{LU deskonposaketa}:  \ \ 2s^3d^3/3+\mathcal{O}(d^2), \\
-&\text{Back substitution}:  \ \ 2s^2d^2+\mathcal{O}(d), \\
-&\text{inv}: \ \ 2s^3d^3
-\end{align*}
-
-Bi inplementazioen konplexutasunen laburpena,
-\begin{table}[h!]
-\caption[LU deskonposaketak] 
-{\small{}}
-\label{tab:Olu}       
-\centering
-{%
-\begin{tabular}{ l l l l l } 
- \hline
-\\
-                 &  \multicolumn{2}{c}{LU}  & \multicolumn{2}{c}{Back Substitution}  \\
- s               & Estandarra  & Berria     &  Estandarra  &              Berria     \\
-\\
- \hline
-\\
- $2m$            &   $\frac{8m}{3} d^3$                              &  $\frac{2}{3} (2m+1) d^3$ 
-                 &   $4m (2d^2)$      &     $(6m+4)d^2$                                             \\
- \\
- $2m+1$          &   $\left(\frac{8m}{3} + \frac{2}{3}\right) d^3$   &  $\left(\frac{4m}{3}+\frac{2}{3}\right) d^3$
-                 &   $(8m+2)d^2$      &     $(6m+4)d^2$\\  
- \\  
-   \hline
- \end{tabular}}
-\end{table}
-
 \section{Doitasun altuko konputazioak.}
 
 
-\subsection*{Extended precision.}
+Zientzia-konputazioan, nagusiki doitasun bikoitzeko aritmetika (64-bit) aplikatzen da baina eguzki-sistemaren epe luzeko integraziorako, doitasun bikoitza ez da nahikoa. Jarraian, zenbakizko integrazio hauetan \cite{Laskar2015}, doitasuna hobetzeko bi bide azalduko ditugu. 
 
-\begin{enumerate}
-\item JM Muller,
+\subsection*{Double-extended doitasuna ($80$-bit).}
 
-The legacy x87 instructions of the IA-32 instruction set can operate on a double-extended precision format with 64 bits of significand and 15 bits of exponent. The corresponding floating-point operators can be instructed to round to single, to double, or to double-extended.
+Egungo \emph{IEEE-754} estandarrak ($2008$), koma-higikorreko hiru formatu definitzen ditu: arrunta ($32$-bit), bikoitza ($64$-bit) eta laukoitza ($128$-bit).  \emph{IEEE-754} estandar zaharrak ($1985$), $80$-biteko formatuaren (double-extended) inplementazioa aholkatzen zuen \cite{Overton2001} baina egungo estandarretik kanpo utzi dute.  
 
-The IA-64 instruction set also defines several double-extended formats, including one 80-bit format compatible with IA-32 and one 82-bit format with a 64-bit significand and a 17-bit exponent. The two additional exponent bits are designed to avoid intermediate overflows in certain computations on 80-bit operands.
+C lengoaiaren \emph{long double} datu motak, $80$-biteko koma-higikorreko sustatzen du.  \emph{IA-32} koma-higikorreko eragiketa multzoak \cite{Muller2009}, $80$-biteko zenbaki formatua onartzen du; $64$-biteko mantisa eta $15$-biteko esponentea. \emph{IA-64} eragiketa multzoak, $82$-biteko formatu onartzen du; $64$-biteko mantisa eta $17$-biteko esponentea. $80$-biteko doitasuneko zenbakiak, $19$ zifra hamartarreko doitasuna dugu. 
 
-Rump's example(2.orrialdea).
+Intel $x86$  prozesadoreek, esaterako Intel Xeon Phi \cite{IntelXeon2013}, doitasun arrunta eta bikoitza hardwarez inplementatzen dute; laukoitza, softwarez; eta $80$-biteko doitasuna ere hardwarez.
 
-\end{enumerate}
+Laskar-ek \cite{Laskar2011,Laskar2015}, eguzki-sistemaren epe luzeko zenbakizko integratzeko, batura konpensatua eta $80$-biteko koma-higikorra erabili zituen. Integratzaile sinplektikoa C lengoaian berridatzi zuen, Intel-en $80$-biteko aritmetika erabili ahal izateko.
+Era berean, efemerideen kalkuluetarako antzekoa gertatu da: EPM \cite{Pitjeva2014} (aplikazioa berridatzi zuten) eta INPOP \cite{Fienga2008} efemerideen kalkulutarako, $80$-biteko aritmetika erabiltzen dute.
 
-\begin{enumerate}
+Honek, astronomoentzat doitasuna hobetzeko duen garrantzia erakusten du. $128$-biteko aritmetikaren inplementazioa software bidezkoa da eta erabiltzeko garestiegia. $80$-biteko aritmetikarekin eta batura konpensatuarekin, zifra hamartar gutxi batzuk irabazten dute baina inplementazioen eraginkortasunarekiko eragin txikiarekin.
+ 
+Gure IRK metodoen inplementazioak, doitasun bikoitzarekin garatu ditugu. Ez zaigu zuzena iruditu $80$-biteko aritmetika aplikatzea. \emph{IEEE-754} estandarretik kanpo dago eta hardwarearen menpekoa da. Gainera, Laskar-en \cite{Laskar2011} zenbakizko integrazioen arabera, konputazioak $x2$ garestitu ditu. 
 
-\item INFLUENCE OF THE METHODS...
 
-In addition, in all ephemerides published by the present time the coefficients of the Chebyshev polynomials are given only with 16. decimal places, that is, in the form of 64-bit computer numbers with floating point (the so-called double-precision numbers). However, calculations with increased precision are more often used nowadays, for example, using 80-bit computer numbers with floating point which have 19 decimal places [10, 11] or 128-bit numbers with 34 decimal places (the so-called quadruple precision numbers).
+\subsection*{Mixed-precision.}
 
-\item Laskar-ek \cite{Laskar2011}:
 
-The numerical integrator is the same symplectic integrator of that was used in the La2004 solution but it was entirely rewritten in C in order to access the extended precision of the Intel architecture.
+Azken urteetan, konputazio kostu txikiarekin beharrezko doitasuna lortzeko, koma-higikorreko doitasunak konbinatzeko joera dago.
 
-Here, we integrated the solutions in extended precision on Xeon Intel processors, which allows arithmetics in 80 bits instead of 64 bits in double precision.
+Doitasun arrunteko aritmetikak ($32$-bit), doitasun bikoitzarekiko $x2$ aldeko eraginkortasun erratio  du \cite{Dongarra2017}. Aplikazio batzuetarako, doitasun arrunteko doitasuna nahikoa da eta beste batzuetarako, konputazioaren funtsa doitasun arruntean egin daiteke eta galdutako digituak modu merkean berreskuratu.
 
-\item DE ephemerideak:
+Doitasun laukoitza ($128$-bit), software bidez modu errazean  inplementatu daiteke. Doitasun laukoitzeko zenbaki bat, doitasun bikoitzeko bi zenbakiren bidez adieraz daitezke eta eragiketek, doitasun bikoitzeko eragiketekiko $\mathcal{O}(10)$ ordenako kostua dute. Ideia da, konputazioa doitasun bikoitzean egitea eta doitasun laukoitzean integrazioaren kalkulu zehatz batzuk egitea. Zenbakizko integrazioetarako batura konpensatua era honetan interpretatu daiteke. 
 
-QIVA doitasun laukoitzeko (128-bit) bertsioari deitzen zaio: mugimenduaren ekuazioen Newton zatia,
-
-\item INPOP ephemerideak.
-
-Hiru motako integrazioak aipatzen ditu: (a) double, (b) extended precision, (c) extended precision with corrector step (Nevertheless, it was possible to obtain an additional order of magnitude improvement by using a single addition in simulated quadruple precision in the corrector step with a very small overhead).
-
-\item EPM ephemerideak (2013).
-
-80-bites instead of 64-bites floating point calculation was realized in the numerical integration
-rewriting all ERA subroutines with the extended precision
-
-\end{enumerate}
+Batura konpensatua merkea da. Eguzki-sistemaren gure inplementazioan batura konpensatua aplikatzeak abantaila berezia dakar: urrats bakoitzean gehitzen dugun balioa txikia denez, batura konpensatuarekin zifra hamartar asko mantentzen ditugu.            
 
 \section{Paralelizazioa.}
 
-\vspace{5mm}
-\textit{Parareal Algorithms.}\\
 
-Using more number of nodes requires more computational cost to advance a step-size ($h$), and so, we have to known which scheme is most efficicent. We consider one scheme is more efficient than another, if this scheme achieves the same precision with the smaller value of $h/s$. It seems the integrator s=6 is the most efficient. 
-But since IRK is parallelizable at the node level, using more nodes ($s$) can improve the speed of the implementation if multiple processors are used. In this sense, Parareal algorithm has been proposed by several authors \cite{Gander2014}, \cite{Jimenez-Perez2011}. This is a subject to future work.
+Hasierako baliodun problemen,
+\begin{equation}
+ \label{eq:eztivp}
+\dot{y}(t)=f(t,y(t)), \ f: \mathbb{R}^{d+1} \longrightarrow \mathbb{R}^d, \ \ y(t_0)=y_0,
+\end{equation} 
+integrazioetan, denboran zehar zenbakizko soluzioa sekuentzialki lortzen goaz eta beraz, ez dago zuzeneko paralelizazioa aplikatzerik. Hala ere, hainbat teknika proposatu dira \cite{Burrage1993}, eta etorkizunean, paralelizazio garapen berriak espero dira.   
 
-\subsection*{Baztertu ditugun gaiak.}
+Saha eta Tremainek \cite{Saha1996}, eguzki-sistemaren epe luzeko integratzeko, metodo paraleloa proposatu zuten. Konputazio paraleloa lortzeko, integrazio tarteen (1-astea, 2-astea,\dots) integrazioak prozesadoreen artean banatzen dituzte. Ondoren, teknika hau garatuz, Laskar-ek \cite{Jimenez-Perez2011} bere proposamena egin zuen. Hairer-ek \cite{Gander2014}, Hamiltondar sistemetan inplementazio hauen  aplikagarritasunaren analisia egin zuen eta hainbat eragozpen ondorioztatu zituen.
 
-\begin{enumerate}
-\item Molekulen simulazioa.
+Ebatzi nahi den problemaren ekuazio diferentzialen balioztapena konputazionalki garestia bada eta dimentsio handikoa, paralelizazioa beste maila batean aplikatu daiteke. Paralelizazioa aplikatzeko bide bat, dimentsio handiko ekuazio-sistemaren balioztapena, osagai independentetan banatzea eta hauen konputazioa, prozesadore batzuen artean modu paraleloan egitea da. Problema zurruna denean, metodo inplizituak aplikatzen direnez, urrats bakoitzean, dimentsio handiko ekuazio-sistemak ebatzi behar dira eta horretarako, paralelizazioan oinarritutako konputazio eraginkorrak ditugu. Era berean, N-gorputz kopuru handiko problemaren gorputzen arteko interakzioak ($\mathcal{O}(N^2)$) kalkulatzeko         
+paralelizazioan oinarritutako hainbat inplementazio \cite{Barnes1986,Carrier1988,Driscoll2013} aplika daiteke. 
 
-Molekula simulazioko problema bat aztertzea esfortzu handia izango dela iruditu zaigu. Understanding
-Molecule simulation liburuan agertzen den MTS metodoak aipatu ditugu: problema hauetan egiten den
-indarraren banaketa: F = Fslow + Ffast , gure planteamenduaren baliokidea dela ikusi daiteke (honako
-planteamenduari denboraren birparametrizazioa aplikatuta, F= K +g baliokidea dela pentsa daiteke.
+IRK metodoei dagokienez, $f(Y_i), \ i=1,\dots,s$ ataletako funtzio balioztapena paraleloan exekutatu daiteke. Eguzki-sistemaren eredu errealistetan, $f$ funtzioa konplexua izango da eta beraz, paralelizazioa aplikatzeak abantaila izango du. Bestalde, doitasun bikoitzeko integrazioetarako, Gauss metodoaren inplementazio estandar eraginkorrena, $s=6$ atalekoa kontsideratzen da \cite{Hairer2006}. Gure eguzki-sistemaren inplementazio berrian, ordea, $s=?$ ataletako metodoa da eraginkorrena eta honek, paralelizio maila handiago suposatzen du.
+      
 
-\end{enumerate}
+\section{Beste sistema dinamikoak.}
 
-\section{Etorkizuneko lanak.}
 
-\subsection*{Kepler fluxuaren aldagai aldaketa.}
+\subsection*{Exoplanetak.}
 
-Orain Fluxuaren aldagai aldaketa aplikatu dugunean, IRK puntu-finkoan oinarritu gara. Esperimentuetan, oso azkar konbergitzen duela ikusi dugu . Bestalde, guzki-sistemaren eredutan kepleriarrak ez diren hainbat perturbazio izan daitezkeeela; aldagai hauen (W), konbergentzia
-azkartzeko, Newton sinplifikatua erabiltzea komeniko zaigula uste dugu.
+Eguzki-sistemari egokitutako splitting metodo sinplektikoak \cite{Wisdom1991,Laskar2001}, eguzki-sistemaren problemaren bi ezaugarriei abantaila atereaz diseinatzen dira. Lehenik, planeten eguzkiarekiko orbitak ia Kepleriarrak dira. Bigarrenik, N-gorputzen problemaren formulazio Hamiltondarran oinarritzen dira eta Hamiltondarra zehazki mantentzen dute, sinplektikoak direlako. 
 
-\subsection*{Zenbakizko integrazio metodo inplizituak.}
+Exoplaneta sistemak integratzeko metodo berriak behar dira \cite{Fabrycky2010}. Exoplaneten planeta-sistemen mugimenduak ez dira eguzki-sistemarenak bezain egonkorrak. Exoplaneta sistemetan, eszentrikotasun handiko orbitak, periodo txikikoak, eta izar anitzeko planeta-sistemak aurkituko ditugu. Splitting metodo sinplektikoak, ez dira ondo egokitzen era honetako sistemak integratzeko. Gure eguzki-sistemaren inplementazioa, IRK Gauss kolokazio metodo orokorrean oinarritzen da eta ekuazio-sistemari Kepler fluxuaren aldagai aldaketa modu egokienean aplikatzen diogu. Problema hauetarako, gure inplementazioa baliagarria izan daitekeela pentsatzen dugu.         
+ 
 
-Gauss, Chebichev, \dots 
+\subsection*{Molekulen sistema dinamikoak.}
 
-\subsection*{Denbora birparametrizazioa.}
+Molekulen dinamikaren problema Hamiltondarra da eta ekuazio diferentzialak era honetako idatzi daitezke,
+\begin{align*}
+&\dot{q}_i=v_i, \\
+&\dot{v}_i=g(q_i), \ i=1,\dots,N,
+\end{align*}
+non $N$ partikulen kopurua eta $q_i,v_i \in \mathbb{R}^3$ diren.
 
-Exzentrizitate handiko orbitadun sistementzako hainbat “erregularizazio simpletiko integratzaileak“ aztertu dira:
-Levison and Duncan (1994). “RMVS”: Regularized mixed variable sympletic integrator”, Mikkola (1997), Fukushima (2001), Beus(2003).
-
-Erregularizazioa aplikatzen dituzte metodo simpletiko ezbedinen “review” honakoa dugu: “Rauch
-and Holman (1999). Dynamical chaos in the Wisdom-Holman integrator”.
+Molekulen sistema dinamikoen integrazioak konputazionalki garestiak dira, $N$ balioa handia delako, $g$ funtzioaren konplexutasunagatik eta integrazioa epea luzea delako. Molekulen sistema dinamikoen integrazioetarako, \emph{Störmer-Verlet} (\ref{eq:stverlet}) metodo nagusienetakoa da. Sanz Sernak \cite{sserna1996}, Gauss metodoa molekulen sistema dinamikoen integraziorako eraginkortasuna aztertu zuen, eta \emph{Störmer-Verlet} metodoa eraginkorragoa zela ondorioztatu zuen.
+Molekulen sistema dinamikoen integrazioetarako gure planteamenduak, ez duela interesik dirudi. 
 
