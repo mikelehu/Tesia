@@ -261,48 +261,11 @@ Hiru dira erabiltzen diren koordenatu sistema nagusienak:
 Ohikoa da ekuazio diferentzialak koordenatu heliozentrikoen (eguzkiaren zentroarekiko) arabera definitzea. 
 Ekuazioen garapen osoa eranskinean eman dugu.
 
-
 \subsection{Problemak.}
 \label{ss:342}
 
-Eguzki-sistemaren simulaziorako test problemak deskribatuko ditugu. Bi gorputzen problematik abiatuta, gero eta problema konplexuagoak azalduko ditugu. PW, Sharp-ek \cite{Sharp2001} eguzki-sistemaren problemen bilduma interesgarria egin zuen, eta bertan problema hauek guztiak  problema ez-zurrunak kontsideratzen dituela nabarmentzekoa da.      
+Eguzki-sistemaren simulaziorako test problemak deskribatuko ditugu. Kanpo-planeten problematik abiatuta, gero eta problema konplexuagoak azalduko ditugu. PW, Sharp-ek \cite{Sharp2001} eguzki-sistemaren problemen bilduma interesgarria egin zuen, eta bertan problema hauek guztiak  problema ez-zurrunak kontsideratzen dituela nabarmentzekoa da.
 
-\subsubsection*{Kepler problema.}
-\label{ss:keplerproblem}
-
-Kepler problema, bi gorputzen problemaren kasu partikularra da eta  honako Hamiltondarra dagokio,
-\begin{equation}
-H(p,q)=\frac{p^2}{2m}-\frac{\mu}{\|q\|},
-\end{equation}
-non $m$ eta $\mu$ konstanteen balioak, formulazioaren araberakoak diren.
-
-Koordenatu sistema $q=q_2-q_1$ duen formulazioa aukeratzen badugu, konstanteen balioak hauek dira,  
-\begin{equation*}
-m=(1/m_1+1/m_2)^{-1},\ \ \mu=Gm_1m_2,
-\end{equation*} 
-
-eta ekuazio diferentzialak era honetan definitzen dira,
-\begin{equation}
-\dot{q}=p, \ \ \dot{p}= - \frac{k \ q}{\|q\|^3} ,
-\end{equation}
-non $k= \mu / m$ eta  $q,p \in \mathbb{R}^3$.
-
-Kepler problemaren soluzio zehatza kalkula daiteke: une bateko kokapen eta abiadurak emanik, denbora tarte bat ($\Delta t$) igarotakoan (positiboa ala negatiboa), zehazki kokapen eta abiadura berriak ezagutu daitezke. Eguzki-sistemaren integrazio metodoentzat, Kepler problema doitasun handian eta era eraginkorrean konputatzea, funtsezkoa da. Kepler problemaren erreferentziazko inplementazioak, Danby \cite{Danby1992} eta J.Wisdom  \cite{Wisdom2015} ditugu. 
-
-Kepler problemaren inplementazioaren lan egiteko modua, honakoa da. Lehenik, koordenatu cartesiarretatik ($q,p\in \mathbb{R}^3$), koordenatu eliptikoetara $(a,e,i,\Omega,E)$, itzulpena egingo dugu. Koordenatu eliptikoetan, $E$ (\emph{eccentric anomaly}) aldagaia izan ezik, beste aldagaiak konstante mantentzen dira: beraz $E_0$ balioa emanda, $\Delta t$ denbora tartea aurrera egin eta $E_1$ balioa berria kalkulatuko dugu. Azkenik, koordenatu eliptikoetatik koordenatu cartesiarretara itzulpena eginez, kokapen eta abiadura berriak eskuratuko ditugu. 
-
-\begin{equation*}
-(q_0,v_0) \in \mathbb{R}^6 \ \ \ \longrightarrow \ \ \  (a,e,i,\Omega,E_0) \in \mathbb{R}^6 
-\end{equation*}
-\begin{equation*}
-\quad \quad \quad \quad \quad \quad \quad \quad \downarrow \Delta t
-\end{equation*}
-\begin{equation*}
-(q_1,v_1) \in \mathbb{R}^6 \ \ \ \longleftarrow \ \ \  (a,e,i,\Omega,E_1) \in \mathbb{R}^6 
-\end{equation*}
-
-Inplementazioaren garapenaren zehaztasun guztiak eranskinaren \ref{erans:B1} atalean eman ditugu.
- 
 
 \subsubsection*{Kanpo-planeten problema.}
 

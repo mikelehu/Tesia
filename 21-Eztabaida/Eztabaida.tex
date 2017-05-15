@@ -3,15 +3,15 @@
 \section{Eguzki-sistemaren integraziorako egungo metodoak.}
 
 
-Tesiaren sarreran azaldu genuenez, gure helburua eguzki-sistemaren epe luzeko eta doitasun handiko inplementazio eraginkorra proposatzea da. Atal honetan, egungo eguzki-sistemaren simulazioetan erabiltzen diren metodo eta inplementazioen laburpena egingo dugu. Bi eratako simulazioak aztertuko ditugu. Batetik, eguzki-sistemaren  efemerideak ditugu; eguzki-sistemaren eredu konplexuak eta epe tarte txikietarako (ehunka urtekoak) integrazioak konputatzen dituzte. Bestetik, astronomi arloaren inguruko ikerketetarako eguzki-sistemaren integrazio luzeak ditugu: eguzki-sistemaren eredu sinpleagoak eta milioika urteko integrazioak konputatzen dituzte. 
+Tesiaren sarreran azaldu genuenez, gure helburua eguzki-sistemaren epe luzeko eta doitasun handiko inplementazio eraginkorra proposatzea da. Atal honetan, egungo eguzki-sistemaren simulazioetan erabiltzen diren metodo eta inplementazioen laburpena egingo dugu. Bi eratako simulazioak aztertuko ditugu. Batetik, eguzki-sistemaren  efemerideak, eguzki-sistemaren eredu konplexuak eta epe tarte txikietarako (ehunka urtekoak) integrazioak konputatzen dituztenak. Bestetik, astronomi arloaren inguruko ikerketetarako eguzki-sistemaren integrazio luzeak, eguzki-sistemaren eredu sinpleagoak eta milioika urteko integrazioak konputatzen dituztenak. 
 
 \subsection*{Efemerideak.}
 
-Konputagailuen aurreko garaian, efemerideak teoria analitikoetan oinarritutako serie funtzioen bidez kalkulatzen ziren. Soluzio hauetan, Fourier-en serie trigonometriko luzeen ebaluazioa egin behar zen. $1960$ hamarkadan, eguzki-sistemaren ezagutza hobetu zenean (espazio bidaiak eta behatoki astronomikoen aurrerapenak medio), serie oso luzeak kalkulatu behar zituzten, eta orduan zenbakizko integrazioen bidezko soluzioak eraginkorragoak bilakatu ziren \cite{Kaplan2015}.   
+Konputagailuen aurreko garaian, efemerideak teoria analitikoetan oinarritutako serie funtzioen bidez kalkulatzen ziren. Soluzio hauetan, Fourier-en serie trigonometriko luzeen ebaluazioa egin behar zen. $1960$ hamarkadan, eguzki-sistemaren ezagutza hobetu zenean (espazio bidaiak eta behatoki astronomikoen aurrerapenak medio), serie oso luzeak kalkulatu behar zituzten, eta orduan zenbakizko integrazioen metodoak, eraginkorragoak bilakatu ziren \cite{Kaplan2015}.   
    
-Eguzki-sistemaren gorputzen efemeride modernoak, mugimenduaren ekuazio diferentzialen (\ref{eq:nbody}) zenbakizko integrazioaren bidez kalkulatzen dira. Integrazioaren hasierako balioak eta ereduaren parametroak, sateliteen bidez jasotako datuekin kontrastatu egiten dira.
+Eguzki-sistemaren gorputzen efemeride modernoak, (\ref{eq:nbody}) mugimenduaren ekuazio diferentzialen  zenbakizko integrazioaren bidez kalkulatzen dira. Integrazioaren hasierako balioak eta ereduaren parametroak, sateliteen bidez jasotako datuekin kontrastatu egiten dira.
 
-Efemerideak, \emph{Chebyshev} polinomio moduan adierazten dira. Integrazio tarteak, $2.000.$ urte inguruko ehunka urtekoak izaten dira. Zenbakizko integrazio hauetan, biribiltze errorea gai garrantzitsua da. $128$-biteko aritmetikaren aukera baztertzen da, konputazioa oso garestia delako eta $64$-biteko doitasuneko aritmetika hobetzen dituzten teknika konputazionalki merkeagoak, aplikatzen dira. 
+Efemerideak, \emph{Chebyshev} polinomio moduan adierazten dira. Integrazio tarteak,  ehunka urtekoak izaten dira. Zenbakizko integrazio hauetan, biribiltze errorea gai garrantzitsua da. $128$-biteko aritmetikaren aukera baztertzen da, konputazioa oso garestia delako eta $64$-biteko doitasuneko aritmetika hobetzen dituzten teknika konputazionalki merkeagoak, aplikatzen dira. 
 
 Efemerideetarako, eguzki-sistemaren eredu konplexua aplikatzen da. Gorputz nagusien arteko indar grabitazionalez gain, erlatibitate efektua, asteroideek eragindako grabitazio indarrak, gorputzen formen eragina eta beste hainbat indar ez grabitazionalak kontutan hartzen dituzte. Mugimenduaren ekuazio diferentzialak, era honetakoak izaten dira \cite{Feinga2015},      
       \begin{equation*}
@@ -23,7 +23,7 @@ Hauek dira, ekuazio hauen konplexutasuna erakusten duten ezaugarri batzuk:
       \item Gorputz kopurua: $8$ planetak, ilargia, Pluton eta 300 asteroide.
       \item Erlatibitate efektua (GR): Einstein-Imfeld-Hoffmann, $c^{-4}$ PPN hurbilketa.
       \item $J_2$: eguzkia esferikoa ez izatearen eragina. 
-      \item Urrats luzera, $h=0.055$ egunekoa da.
+      \item Integrazioaren urrats luzera, $h=0.055$ egunekoa da.
       \end{itemize}   
 
 \subsubsection*{Erlatibitate efektua.}
@@ -62,7 +62,7 @@ $\gamma$         & $1.0$                       & PPN parametroa     \\
 \end{table}
 
 \subsubsection*{Asteriodeak.}
-Asteroideek, bereziki Marte planetaren mugimenduarengan eragina dute (\ref{fig:asteroideak} irudia) eta kontutan hartzekoak, barne-planeten mugimenduaren doitasun handiko emaitzak behar ditugunean . Bost asteroide nagusiren masak (Ceres, Pallas, Vesta, Iris eta Bamberga) Merkurio eta Pluton planeten mailakoak direnez, integrazioetan gehitzen dira. Asteroide txikien talde handia, estimazioen bidez simulatzen dira.
+Asteroideek, bereziki Marte planetaren mugimenduarengan eragina dute (\ref{fig:asteroideak} irudia) eta kontutan hartzekoak, barne-planeten mugimenduaren doitasun handiko emaitzak behar ditugunean . Bost asteroide nagusiren masak (Ceres, Pallas, Vesta, Iris eta Bamberga) Merkurio eta Pluton planeten mailakoak direnez, integrazioetan gehitzen dira. Gainontzeko asteroide txikien talde handia, estimazioen bidez simulatzen dira.
 
 \begin{figure} [h]
 \centerline{\includegraphics [width=6cm, height=4cm] {Asteroideak}}
@@ -75,39 +75,30 @@ Asteroideek, bereziki Marte planetaren mugimenduarengan eragina dute (\ref{fig:a
 
 Gaur-egun, eguzki-sistemaren planeten hiru efemeride kalkulatzen dira.
 \begin{enumerate}
-\item Jet Propulsion Laboratory (\emph{EEBB}) \emph{NASA}-ko erakundeak DE (Development Ephemerides) izeneko efemerideak konputatzen dituzte.
+\item Jet Propulsion Laboratory (\emph{EEBB}) \emph{NASA}-ko erakundeak DE (Development Ephemerides) izeneko efemerideak konputatzen ditu.
 
-      $1984$. urtean kalkulatu zen lehen efemeridea (DE-200) eta $2.014$. urteko \emph{DE-430} \cite{Folkner2014} efemeridea da, publikatutako azken efemeridea. Azken efemeride honen integrazio tartea, $1550-2650$ urtetakoa izan da.
+      $1984$.urtean kalkulatu zen lehen efemeridea (DE-200) eta $2.014$.urteko \emph{DE-430} \cite{Folkner2014} efemeridea publikatutako azkena da. Azken efemeride honen integrazio tartea, $1550-2650$ artekoa izan da.
 
       Zenbakizko integrazio metodoa, urrats luzera eta  ordena aldakorreko \emph{Multistep Adams} metodoa \cite{Krogh1997} (\emph{DIVA}/\emph{QIVA}) da. \emph{QIVA} doitasun laukoitzeko ($128$-bit) bertsioari deitzen zaio: mugimenduaren ekuazioen Newton zatia, doitasun laukoitzean kalkulatzen da eta ekuazioaren gainontzeko zatia, doitasun bikoitzean.
 
 \item Institut de Méchanique Céleste et de Calcul des Ephémérides (IMCCE,Paris Observatory) INPOP (Intégrateur Númerique Planétaire de l'Observatoire de Paris) izeneko efemerideak.
       
-      $2.000$. urte arte, efemerideak kalkulatzeko teori analitikoetan oinarritu ziren. $2.003$. urtean, zenbakizko integrazioaren bidezko lehen efemeridea kalkulatu zuten eta \emph{INPOP13c}  \cite[$2.014$]{Fienga2008} publikatutako azkena da.
+      $2.000$.urteraino, efemerideen kalkulua teori analitikoetan oinarritzen zituzten. $2.003$.urtean, zenbakizko integrazioaren bidezko lehen efemeridea kalkulatu zuten eta \emph{INPOP13c} efemeridea \cite[$2.014$]{Fienga2008} publikatutako azkena da.
            
-	  Zenbakizko integrazio metodoa: $12$ ordeneko \emph{Adams-Cowell} metodoa da eta urrats finkoa aplikatzen dute.
+	  Zenbakizko integrazio metodoa: $12$ ordenako \emph{Adams-Cowell} metodoa da eta urrats finkoa aplikatzen dute.
 	  
-	  Doitasuna: C lengoaian inplementatuta dago eta \emph{Intel} makinetako $80$-biteko doitasuna erabiltzen du. Era berean, modu merkean  doitasun laukoitza simulatuz, urrats zuzentzaile (corrector step) bat aplikatzen dute \cite{Fienga2008}.  
+	  Doitasuna: C lengoaian inplementatuta dago eta \emph{Intel} makinetako $80$-biteko doitasuna erabiltzen du \cite{Fienga2008}.  
 	  
   
 \item Institute of Applied Astronomy (\emph{IAA}, St. Petersburg), EPM (Ephemerides Planets-Moon) izeneko efemerideak.
       
-      $1.980$. urtetik aurrera, zenbakizko integrazioen bidezko efemerideak kalkulatu dituzte eta  \emph{EPM2.013}  \cite[2.014]{Pitjeva2014} publikatutako azken efemeridea da.
+      $1.980$.urtetik aurrera, zenbakizko integrazioen bidezko efemerideak kalkulatu dituzte eta  \emph{EPM2013} efemeridea \cite[2.014]{Pitjeva2014} publikatutako azkena  da.
       
-      Zenbakizko integrazio metodoa, \emph{Everhart} izeneko \emph{IRK} metodoa (Gauss-Radau) da. $23$ ordeneko metodoa eta urrats luzera finkoa aplikatzen dute.
+      Zenbakizko integrazio metodoa, \emph{Everhart} izeneko \emph{IRK} metodoa (Gauss-Radau) da. $23$ ordenako metodoa eta urrats luzera finkoa aplikatzen dute.
             
-      Doitasuna. Inplementazioak (software package ERA), \emph{Intel} makinetako $80$-biteko doitasuna erabiltzen dute.
+      Doitasuna. Inplementazioak (ERA izeneko softwarea), \emph{Intel} makinetako $80$-biteko doitasuna erabiltzen dute.
       
 \end{enumerate}
-
-
-%\ref{fig:668} taulan, planeten efemerideen doitasunaren eboluzioa ikus daiteke. Hiru efemerideak antzeko doitasuna azaltzen dutela gehitu beharra dago. 
-%\begin{figure} [h]
-%\centerline{\includegraphics [width=10cm, height=6cm] {Efemerideak}}
-%\caption{Efemerideen doitasunaren eboluzioa.}
-%\label{fig:668}
-%\end{figure} 
-%
 
 \subsection*{Eguzki-sistemaren integrazio luzeak.} 
 
@@ -117,7 +108,7 @@ A.Morbidellik \cite{Morbidelli2002} eguzki-sistemaren zenbakizko integrazioen al
 
 \item Garai klasikoa.
 
-$90$. hamarkada hasiera arte, urrats luzera aldakorreko integratzaileak erabiltzen dira: Runge-Kutta (Dormand et al. $1987$), Bulirsch and Stoer ($1966$), Radau (Everharht, $1985$), eta Störmer ($1990$). Garai honetan integrazio tarteak, $10^4-10^6$ urte artekoak dira.  
+$90$. hamarkada hasiera arte, urrats luzera aldakorreko integratzaileak erabiltzen dira: Runge-Kutta (Dormand et al. $1987$), Bulirsch and Stoer ($1966$), Radau (Everharht, $1985$), eta Störmer ($1990$). Garai honetan integrazio tarteak, ($10^4-10^6$) urte artekoak dira.  
 
 \item Garai sinplektikoa.
 
@@ -129,16 +120,16 @@ Planeten eta gorputz txikien (asteroide, meteoritoak) arteko kolisio gertuko ego
 
 \item Planeten sorrera garaiko azterketak.
 
-Eguzki-sistemaren sorrerari buruzko simulazioak nagusituko dira; masa handiko gorputzen arteko kolisio gertuko egoerak gertatzen diren integrazioak konputatzen dira. 
+Garai honetan, eguzki-sistemaren sorrerari buruzko simulazioak nagusi dira; masa handiko gorputzen arteko kolisio gertuko egoerak gertatzen diren integrazioak konputatzen dira. 
  
 \end{enumerate}
 
-Eguzki-sistemaren integrazioetarako nagusiki, bi integratzaile famili aplikatzen dira: 
+Astronomi arloko eguzki-sistemaren integrazioetarako, nagusiki bi integratzaile famili aplikatzen dira \cite{Ito2007}: 
 \begin{enumerate}
 \item Integratzaile simetrikoak.
 
 Metodo simetrikoen artean nagusiena, 4 ordenako \emph{Hermite} \cite{Aarseth2008} integratzailea da.
-Urrats luzera tamaina aldakorreko integratzaile da, modu errazean inplementatu daiteke.  Hermite integratzailea konputazionalki garestia da eta bereziki, gorputz kopuru handia dituzten eta kolisio gertuko egoerak maiz gertatzen diren problemetan (eguzki-sistemaren sorrera, \dots) aplikatzen da.  
+Urrats luzera tamaina aldakorreko integratzaile da, eta modu errazean inplementatu daiteke.  \emph{Hermite} integratzailea konputazionalki garestia da eta gorputz kopuru handia dituzten eta kolisio gertuko egoerak maiz gertatzen diren problemetan (eguzki-sistemaren sorrera, \dots) aplikatzen da.  
 
 \item Sinplektikoak.
 
@@ -153,9 +144,9 @@ Wisdom-ek eta Holman-ek \cite[1991]{Sussman1992}, eguzki-sistemaren epe luzeko s
 \begin{equation*}
 H(q,p)=H_K(p)+H_I(q) \ \ \ , \ \ H_K\gg H_I,
 \end{equation*}
-non $H_K$, Hamiltondar Kepleriarra (planeten eguzkiarekiko mugimendu kleperiarra) eta $H_I$, interakzioen Hamiltondarra (planeten arteko grabitazio interakzioak) diren. Integrazioaren urrats bakoitzean , Hamiltondar bakoitzaren soluzioa tartekatuz, problema osoaren ebazpena kalkulatzen da.  
+non $H_K$, Hamiltondar Kepleriarra (planeten eguzkiarekiko mugimendu Kleperiarra) eta $H_I$, interakzioen Hamiltondarra (planeten arteko grabitazio interakzioak) diren. Integrazioaren urrats bakoitzean , Hamiltondar bakoitzaren soluzioa tartekatuz, problema osoaren soluzioa lortzen da.  
 
-\emph{WH} integratzailea, ondorengo metodo askoren aurrekaria kontsideratu bada ere, bere aplikagarritasuna mugatua da. Batetik, izar anitzeko planeten sistemak edo planeta-ilargiak sistemak integratzeko ez da egokia. Bestetik, \emph{WH} metodo sinplektikoa denez, urrats luzera finkoa aplikatu behar da eta hau, gorputzen arteko kolisiotik gertuko egoerak dituzten problemak modu eraginkorrean integratzeko eragozpen bat da. Arazo hauek gainditzeko, urteetan zehar algoritmo honen aldaerak proposatu dira eta jarraian, nagusienak aipatuko ditugu. 
+\emph{WH} integratzailea, ondorengo metodo askoren aurrekaria kontsideratu bada ere, bere aplikagarritasuna mugatua da. Batetik, izar anitzeko planeten sistemak edo planeta-ilargiak sistemak integratzeko ez da egokia. Bestetik, \emph{WH} metodo sinplektikoa denez, urrats luzera finkoa aplikatu behar da eta hau, gorputzen arteko kolisiotik gertuko egoerak dituzten problemak modu eraginkorrean integratzeko eragozpen bat da. Arazo hauek gainditzeko, urteetan zehar algoritmo honen aldaerak proposatu dira. 
 
 Levinson eta Duncan-ek \cite[1994]{Levison1994}, \emph{WH} inplementazioa, integratzaile ez sinplektiko batekin konbinatu zuten, kolisiotik gertuko egoeren kalkulua hobetzeko. \emph{SWIFT} paketean, \emph{RMVS3} izeneko integratzailea inplementatu zuten. Duncan, Levinson eta Lee-k \cite[1998]{Duncan1998}, koordenatu heliozentrikoak erabiliz, Hamiltondarra beste modu honetan banatu zuten,  
 \begin{equation*}
@@ -164,27 +155,12 @@ H(q,p)=H_K(p)+(H_C(p)+H_I(q))
 eta kolisiotik gertuko egoerei, urratsa luzera txikituz aurre egin zioten. Inplementazio honek, \emph{SYMBA} izena du. Chambers-ek \cite{Chambers1999} koordenatu heliozentrikoetan oinarritu zen eta kolisiotik gertuko egoerak gertatzen diren uneetan, beste integratzaile  (Bulirsch-Stoer metodoa) batekin konbinatuz integratzen du. Inplementazio honek, \emph{MERCURY} izena du. Levinson eta Duncan-ek ($2000$), aurreko inplementazioaren arazo batzuk konponduz, \emph{Modified SYMBA} izeneko garapen berria burutu zuten.
 Kvaerno eta Leimkuhler \cite{Kvaerno2000} eta beste autore batzuk ere, antzeko ideiak landu dituzte.
 
-Wisdom eta Holmanek proposatutko Hamiltondarraren banaketa, (\ref{eq:stverlet})~\emph{Leapfrog} metodoaren bidez integratzen da eta beraz, 2 ordeneko da. Orden altuagoko ($p>2$) metodoak definitzeko, koefiziente negatiboak erabili behar zela uste zen \cite{Yoshida1993,Laskar2001} eta orduan ez dira interesgarriak, \emph{Leapfrog} metodoak eraginkorragoak baitira. 
-
-%\paragraph*{Adibidea.}
-%Yoshidaren $p=4$ ordenako metodoa. $\phi_h$ oinarrizko metodoa \emph{Leapfrog} izanik, metodoaren konposaketari dagokion 4 ordeneko konposizio metodoa, era honetan definitzen da,
-%\begin{equation*}
-%\Psi_h=\phi_{\gamma_1 h} \circ \phi_{\gamma_0 h} \circ \phi_{\gamma_{1 h}},
-%\end{equation*}  
-%non  $\gamma_0=-2^{1/3}/(2-2^{1/3})$ eta $\gamma_1=1/(2-2^{1/3})$.
+Wisdom eta Holmanek proposatutako Hamiltondarraren banaketa, (\ref{eq:stverlet})~\emph{Leapfrog} metodoaren bidez integratzen da eta beraz, 2 ordenako da. Ordena altuagoko ($p>2$) metodoak definitzeko, koefiziente negatiboak erabili behar zela uste zen \cite{Yoshida1993,Laskar2001} baina modu honetan, ez dira \emph{Leapfrog} metodoa baino eraginkorragoak.
 
 Beranduago, McLachlan-ek \cite[1995]{McLachlan1995} eta Laskar-ek  \cite[2001]{Laskar2001} koefiziente negatiboen arazoa gainditu zuten eta koefiziente positiboekin definitutako ordena altuko Splitting eskemak aurkitu zituzten. Berriki, Blanes-ek \cite[2012]{Blanes2013} ordena altuko Splitting eskema berriak eta eraginkorrak aurkitu ditu. 
 
-Hernandez eta Bertschinger-ek \cite[2015]{Hernandez2015} N-gorputzen problema grabitazional eta kolisiodunetarako $2$ ordenako integratzaile sinplektiko berri bat proposatu dute. Hernandez eta Bertschinger-ek \cite{Hernandez2015} koordenatu kartesiarretan oinarrituz, N-gorputzen problema, 2-gorputzen azpiproblemetan banatzen dute.
+Hernandez eta Bertschinger-ek \cite[2015]{Hernandez2015} N-gorputzen problema grabitazional eta kolisiodunetarako $2$ ordenako integratzaile sinplektiko berri bat proposatu dute. Hernandez eta Bertschinger-ek \cite{Hernandez2015} koordenatu cartesiarretan oinarrituz, N-gorputzen problema, 2-gorputzen azpiproblemetan banatzen dute.
 
-% eta honako Hamiltondarraren banaketa proposatzen dute,
-%\begin{align}
-%\begin{split}
-%&H=T+V, \\
-%&H=T+ \sum_{i} \sum_{i>j} V_{ij}, \\
-%&H=T+ \sum_{i} \sum_{i>j} (K_{ij}-T{ij})
-%\end{split}
-%\end{align}
 
 \subsection*{Splitting metodoak.}
 
@@ -193,20 +169,38 @@ Splitting metodoak, era honetako perturbatutako Hamiltondar sistemak,
 \label{eq:Hban}
 H=H_A+\epsilon H_B,
 \end{equation}
-integratzeko aplika daitezke, non $H_A$ eta $H_B$ independenteki integragarriak diren. Pentsatzeko da, eguzki-sistemaren eredu errealistetan hainbat indar ez grabitazionalak modu honetan gehitzeko, zailtasunak izan ditzakegula.  
+integratzeko aplika daitezke, non $H_A$ eta $H_B$ independenteki integratu daitezkeen. Pentsatzeko da, eguzki-sistemaren eredu errealistetan hainbat indar ez grabitazionalak modu honetan gehitzeko, zailtasunak izan ditzakegula.  
 
-Laskar-ek \cite[2011]{Laskar2011}, epe luzeko zenbakizko integraziorako  $1/c^2$ ordenako eguzkiaren erlatibitate efektua   kontsideratu zuen. Horretarako, Saha eta Tremain-ek \cite{Saha1994} finkatutako teknikan oinarritzen da. Teknika honetan, (\ref{eq:Hban}) Hamiltondar banagarriei egokitzen zaien erlatibitate efektuaren espresioa lortu zuten eta gainera modu eraginkorrean kalkulatu daiteke. Kontutan hartuko bagenitu, bi planeta handienen (Jupiter eta Saturno) erlatibitate efektua, ekuazioak ez dira gehiegi konplikatzen eta errorea txikiagoa lortuko genuke. Splitting metodoetan ez da posible erlatibitate efektu hauek gehitzea eta horregatik, ez direla kontutan hartzen. 
+Laskar-ek \cite[2011]{Laskar2011}, epe luzeko zenbakizko integraziorako  $1/c^2$ ordenako eguzkiaren erlatibitate efektua   kontsideratu zuen. Horretarako, Saha eta Tremain-ek \cite{Saha1994} finkatutako teknikan oinarritzen da. Teknika honetan, (\ref{eq:Hban}) Hamiltondar banagarriei egokitzen zaien erlatibitate efektuaren espresioa lortu zuten eta gainera modu eraginkorrean kalkulatu daitekeena. Kontutan hartuko bagenitu, bi planeta handienen (Jupiter eta Saturno) erlatibitate efektua, ekuazioak ez dira gehiegi konplikatzen eta errorea txikiagoa lortuko genuke. Baina, splitting metodoetan ez da posible erlatibitate efektu hauek gehitzea.
  
 Eguzki-sistemaren integrazioetarako, (\ref{eq:Hban}) Hamitondarraren banaketa, Jacobi koordenatuak edo heliozentrikoak aplikatuz lortzen da.
 Koordenatu cartesiarrak, ezin daitezke erabili.
 
 Muga hauek ez ditugu, IRK metodoak aplikatzeko. Ekuazio diferentzial orokorrei aplika daitekeenez, askatasun osoa dugu behar diren ekuazioak gehitzeko eta interesatzen zaigun koordenatu sistema aplikatzeko.  
+
+\subsection*{Exoplanetak.}
+
+Eguzki-sistemari egokitutako splitting metodo sinplektikoak \cite{Wisdom1991,Laskar2001}, eguzki-sistemaren problemaren bi ezaugarriei abantaila atereaz diseinatzen dira. Lehenik, planeten eguzkiarekiko orbitak ia Kepleriarrak dira. Bigarrenik, N-gorputzen problemaren formulazio Hamiltondarran oinarritzen dira eta sinplektikoak direnez, Hamiltondarra zehazki mantentzen dute. 
+
+Exoplaneta sistemak integratzeko metodo berriak behar dira \cite{Fabrycky2010}. Exoplaneten planeta-sistemen mugimenduak ez dira eguzki-sistemarenak bezain egonkorrak. Exoplaneta sistemetan, eszentrikotasun handiko orbitak, periodo txikikoak, eta izar anitzeko planeta-sistemak aurkituko ditugu. Splitting metodo sinplektikoak, ez dira ondo egokitzen era honetako sistemak integratzeko. Gure eguzki-sistemaren inplementazioa, IRK Gauss kolokazio metodo orokorrean oinarritzen da eta ekuazio-sistemari Kepler fluxuaren aldagai aldaketa modu egokienean aplikatzen daiteke. Problema hauetarako, gure inplementazioa baliagarria izan daitekeela pentsatzen dugu.         
+ 
+\subsection*{Molekulen sistema dinamikoak.}
+
+Molekulen dinamikaren problema, Hamiltondarra da eta ekuazio diferentzialak era honetan idatzi daitezke,
+\begin{align*}
+&\dot{q}_i=v_i, \\
+&\dot{v}_i=g(q_i), \ i=1,\dots,N,
+\end{align*}
+non $N$ partikulen kopurua eta $q_i,v_i \in \mathbb{R}^3$ diren.
+
+Molekulen sistema dinamikoen integrazioak konputazionalki garestiak dira, $N$ balioa handia delako, $g$ funtzioaren konplexutasunagatik eta integrazioa epea luzea izaten delako. Molekulen sistema dinamikoen integrazioetarako, \emph{Störmer-Verlet} (\ref{eq:stverlet}) metodo nagusienetakoa da. Sanz Sernak \cite{sserna1996}, molekulen sistema dinamikoen integraziorako Gauss metodoaren eraginkortasuna aztertu zuen, eta \emph{Störmer-Verlet} metodoa eraginkorragoa zela ondorioztatu zuen.
+Molekulen sistema dinamikoen integrazioetarako gure planteamenduak, ez duela ekarpenik egiten dirudi. 
  
 
 \section{Eredu deskonposaketa.}
 
 
-IRK metodoen inplementazio eraginkorren azterketaren hasierako fasean, problemaren deskonposaketan oinarritutako ideia ikertu dugu. Eguzki-sistemaren eredua, problema sinple (konputazionalki merkea) eta problema konplexu batean (konputazionalki garestia) bana daiteke.   
+IRK metodoen inplementazio eraginkorraren azterketaren hasierako fasean, eredu deskonposaketan oinarritutako ideia ikertu dugu. Eguzki-sistemaren eredua, problema sinple (konputazionalki merkea) eta problema konplexu batean (konputazionalki garestia) bana daiteke.   
 Problemaren alde konplexuaren balioztapen kopuru txikituz, inplementazio eraginkorra lortzeko asmoarekin, Newton sinplifikatuaren iterazio berezi bat aplikatu dugu. Newton sinplifikatuaren iterazio berezi honetan, ekuazio-sistema lineala LU deskonposaketaren bidez askatu beharrean, puntu-finkoaren bidez ebatzi dugu.
 
 Atal honen bukaeran emango ditugun arrazoiengatik, beste bide batzuk ikertzea zuzenago dela ikusi dugu eta planteamendu hau alde batera utzi dugu. Dena den, planteamendu honen laburpen bat emango dugu eta inplementazio bide honetan sortutako hainbat ideia interesgarri jaso ditugu.
@@ -215,10 +209,10 @@ Atal honen bukaeran emango ditugun arrazoiengatik, beste bide batzuk ikertzea zu
 Eguzki-sistema, perturbatutako mugimendu Kepleriar gisa har daiteke,  
 \begin{align}
 \label{eq:fkg}
- f(y)=  k(y) + \epsilon \ g (y), \ \ g\ll k,   
+ f(y)=  k(y) + \epsilon \ g (y), \ \ g\ll k.   
 \end{align}
  
-$k(y)$ sistema dinamikoaren alde sinplifikatua da eta ebaluatzeko kostua txikia du. $g(y)$, ordea, sistemaren alde konplexua da eta ebaluatzeko kostua handia du. Ekuazio diferentzialaren (\ref{eq:fkg}) deskonposaketa badugu, IRK metodoaren atalen ekuazio sistema ebazteko,
+$k(y)$ sistema dinamikoaren alde sinplifikatua da eta konputazio kostu txikia du. $g(y)$, ordea, sistemaren alde konplexua da eta konputazio kostu handia du. (\ref{eq:fkg}) ekuazio diferentzialaren  deskonposaketa badugu, IRK metodoaren atalen ekuazio sistema ebazteko,
 \begin{equation*}
 Y_i=y_n+h\ \ \sum^s_{j=1}{a_{ij} \ f({Y_j}) },  
 \end{equation*} 
@@ -259,7 +253,7 @@ Barne ekuazio-sistema,
 \begin{equation*}
  Y_i^{[k]}=y_n+h\  \sum^s_{j=1}{a_{ij}\ k({Y_j}^{[k]})+W^{[k-1]}_i},
 \end{equation*}
-puntu-finkoaren iterazioaren bidez askatzeko, \ref{alg:bpf} barne-iterazioa aplikatuko dugu. 
+puntu-finkoaren iterazioaren bidez askatzeko, \ref{alg:bpf} barne-iterazioa era honetan aplikatuko dugu: 
 
 \begin{algorithm}[H]
  \BlankLine
@@ -357,7 +351,7 @@ Esan dugunez, planteamendu honetan Newton sinplifikatua aplikatu dugu eta ekuazi
 \begin{enumerate}
 \item Barne kalkuluen doitasuna. 
 
-Planteamendu honen barne-iterazioak konputazioak, inplementazioaren oinarrizko doitasunean kalkulatu behar dira.
+Planteamendu honen barne-iterazioen konputazioak, inplementazioaren oinarrizko doitasunean kalkulatu behar dira.
 IRK-Newton sinplifikatuaren inplementazioaren eragiketa konplexuenak, doitasun txikiagoan kalkula daitezke \cite{Baboulin20092526}. 
 
 \item Jacobiarraren balioztapena.
@@ -374,7 +368,7 @@ Ereduen deskonposaketak, nolabaiteko konplexutasuna gehitzen du. Hiru eredu ezbe
 
 \subsection*{Atalen hasieraketa.}
 
-Iterazio metodoetan aplika daitezkeen atalen hasieraketa teknika ezberdinak ikertu ditugu. 
+Iterazio metodoetan  atalen hasieraketa kalkulatzeko teknika ezberdinak ikertu ditugu. 
 \begin{enumerate}
 \item Metodo esplizituak.
 
@@ -391,7 +385,7 @@ Euler  $\mathcal{O}(h)$ eta Euler hobetuaren $\mathcal{O}(h^2)$ metodoa. Atalen 
 
 \item Kepler fluxua.
 
-Eguzki-sistemaren, perturbatutako sistema Kepleriarra denez, atalak Kepler fluxuaren bidez hasieratu daitezke. Kepler fluxuaren funtzioak, $y(t_n)$ une bateko kokapen eta abiadurak emanik, $\Delta t_n$ denbora igarotakoan kokapen eta abiadura zehatzak itzultzen du,
+Eguzki-sistemaren, perturbatutako sistema Kepleriarra denez, atalak Kepler fluxuaren bidez hasieratu daitezke. Kepler fluxuaren funtzioak, $y(t_n)$ une bateko kokapen eta abiadurak emanik, $\Delta t_n$ denbora igarotakoan kokapen eta abiadura zehatzak itzultzen ditu,
 \begin{equation*}
 \text{Keplerflow}(\Delta t_n, y(t_n)) \rightarrow y(t_n+\Delta t_n).
 \end{equation*}
@@ -404,14 +398,14 @@ Kepler fluxua $\Delta t_n=hc_i$ denbora aurrera eginez lortuko dugu.
 
 \item Interpolazio polinomioak.
 
-Aurreko urratseko ataletako informazioa erabiliz, urrats berriaren atalen hasieraketa lortzen dugu. Problema zurruna ez denean interesgarria da. Era honetako hasieraketa merkea da, ez baita funtzio balioztapen berririk egiten. Era honetan aplikatzen da,
+Aurreko urratseko ataletako informazioa erabiliz, urrats berriaren atalen hasieraketa lortzen dugu. Problema ez-zurrunetarako interesgarria da. Era honetako hasieraketa merkea da, ez baita funtzio balioztapen berririk egiten. Era honetan aplikatzen da,
 \begin{equation*}
 Y_{n,i}^{[0]}=y_n+h \sum_{j=1}^{s} \lambda_{ij} \ f(Y_{n-1,j}),
 \end{equation*}
 non $\lambda_{ij}$ aurre-kalkulatutako interpolazio koefizienteak diren. 
 
 
-Bide honetatik, teknika aurreratuagoak ere aztertu ditugu (maila txikiko polinomioen bidezko hasieraketak). Era berean, B-Serieak \cite{Chartier2010} teknikan oinarrituz, interpolazio estandarra \cite{Laburta1998} hobetzeko saiakera egin dugu baina ez dugu hau hobetzea lortu. Metodo estandarrarekin, urrutien dagoen ataletarako hasieraketa txarra lortzen da eta atal askotako metodoentzat, arazo hau, eragozpen handia izan daiteke.  
+Bide honetatik, teknika aurreratuagoak ere aztertu ditugu (maila txikiko polinomioen bidezko hasieraketak). Era berean, B-Serieak \cite{Chartier2010} teknikan oinarrituz, interpolazio estandarra \cite{Laburta1998} hobetzeko saiakera egin dugu baina ez dugu arrakastarik izan. Interpolazio metodo estandarrarekin, urrutien dagoen ataletarako hasieraketa txarra lortzen da eta atal askotako metodoentzat, arazo hau, eragozpen handia izan daiteke.  
 
 \end{enumerate}
 
@@ -423,7 +417,7 @@ Y_{n,i}^{[0]}=y_n, \ i=1,\dots,s.
 
 \subsection*{Geratze irizpidea.}
 
-Iterazio metodo bat aplikatzeko, geratze irizpide sendoa finkatzea funtsezkoa da.  Iterazioak, biribiltze errorearen eragina azaltzen denean geratu behar dira. Batetik, iterazioak beranduegi geratzen baditugu, alferrikako iterazioak emango ditugu, eraginkortasunaren kalterako. Bestetik, iterazioak goizegi geratzen baditugu, biribiltze errorea handitu eta trunkatze errorea eragingo ditu.  
+Iterazio metodo bat aplikatzeko, geratze irizpide sendoa finkatzea funtsezkoa da.  Iterazioak, biribiltze errorearen eragina azaltzen denean geratu behar dira. Batetik, iterazioak beranduegi geratzen baditugu, alferrikako iterazioak emango ditugu, eraginkortasunaren kalterako. Bestetik, iterazioak goizegi geratzen baditugu, biribiltze errorea handitu edota trunkatze errorea eragingo ditu.  
 
 Geratze irizpide estandarrak aplikatzerakoan, hainbat arazo aurkitu ditugu eta ondorioz, geratze irizpide berri bat definitzeko beharra ikusi dugu. Geratze irizpide berria definitzeko, aukera ezberdinak aztertu ditugu. Garapen honetako, geratze irizpide bertsio nagusienak azalduko ditugu.      
 
@@ -433,11 +427,11 @@ Iterazio bakoitzaren hobekuntza ($\Delta^{[k]}$) neurtzeko, norma ezberdinak apl
 \Delta^{[k]}= \max_{i=1,\dots,s} \|Y_i^{[k]}-Y_i^{[k-1]}\|_{\infty}.
 \end{equation*}
 
-Norma hau zalantzan jarri dugu eta iterazioaren hobekuntza hobeto neurtzen duen norma finkatzen saiatu gara. Honako aukerak aztertu ditugu,
+Norma hau zalantzan jarri dugu eta iterazioaren hobekuntza hobeto neurtzen duen norma finkatzen saiatu gara. Honako aukerak aztertu ditugu:
 \begin{enumerate}
 \item Lehen bertsioa.
 
-Diferentziak modu erlatiboan neurtzeko beharrak bultzatuta era honetan definitu dugu,
+Diferentziak, modu erlatiboan neurtzeko beharrak bultzatuta, norma era honetan definitu dugu,
 \begin{align*}
 \Delta=\max_{1 \leqslant j \leqslant d} \frac{\max_{1 \leqslant i \leqslant s} |\Delta Y_i^j|}
                                                 {(\max_{1 \leqslant i \leqslant s}|Y_i^j|)+\delta},
@@ -483,7 +477,7 @@ matrizea erabiliko dugu. Modu honetan, geratze irizpidea normaren independentea 
 
 Oraingoan ere, geratze irizpidearen abiapuntua Hairer-en geratze irizpidea izan da,
 \begin{equation*}
-\Delta ^{[k]}=0 \ \text{or} \ \Delta^{[k]} \geqslant \Delta^{[k-1]}.
+\Delta ^{[k]}=0 \ \text{edo} \ \Delta^{[k]} \geqslant \Delta^{[k-1]}.
 \end{equation*}
 
 Geratze irizpide hau hobetzeko proposamen batzuk garatu ditugu,
@@ -492,20 +486,20 @@ Geratze irizpide hau hobetzeko proposamen batzuk garatu ditugu,
 
 Abiapuntuko geratze irizpidea, batzuetan goizegi geratzen da eta ziurtasuna handitu beharra dago.  Horregatik, geratze irizpidean, $k-2.$ iterazioaren informazioa erabiltzea aztertu dugu, 
 \begin{align*}
-(\Delta^{[k]} = 0) \ \text{or} \ ( \Delta^{[k]}\geqslant \Delta^{[k-1]} \ \ \text{and} \ \ \Delta^{[k]}\geqslant 0.81*\Delta^{[k-2]}).
+(\Delta^{[k]} = 0) \ \text{edo} \ ( \Delta^{[k]}\geqslant \Delta^{[k-1]} \ \ \text{eta} \ \ \Delta^{[k]}\geqslant 0.81*\Delta^{[k-2]}).
 \end{align*}
 
 \item Bigarren bertsioa.
 
-Bertsio honetan, $k-3.$ iterazioaren informazioa erabiliz saiakera berri proposatu dugu,
+Bertsio honetan, $k-3.$ iterazioaren informazioa erabiliz saiakera berri proposatu dugu:
 \begin{align*}
-\left(\Delta^{[k]} \leqslant tol \right) \ \text{or} \ \left( zat^{[k]} \geqslant koef*\max(zat^{[k-1]},zat^{[k-2]}) \right),
+\left(\Delta^{[k]} \leqslant tol \right) \ \text{edo} \ \left( zat^{[k]} \geqslant koef*\max(zat^{[k-1]},zat^{[k-2]}) \right),
 \end{align*}
 non $zat^{[k]}={\Delta^{[k]}}/{\Delta^{[k-1]}}, \ tol\approx10^{-16}$ eta $koef=10$ den.
 
 \item Hirugarren bertsioa.
 \begin{align*}
-\left(\Delta^{[k]} \leqslant tol\right) \ \text{or} \ \left(\frac{zat^2}{(1-zat)} \Delta^{[k-1]} \leqslant tol\right) \ \text{or} \ \left(\frac{zat}{(1-zat)}\Delta^{[k-2]} \leqslant tol\right),
+\left(\Delta^{[k]} \leqslant tol\right) \ \text{edo} \ \left(\frac{zat^2}{(1-zat)} \Delta^{[k-1]} \leqslant tol\right) \ \text{edo} \ \left(\frac{zat}{(1-zat)}\Delta^{[k-2]} \leqslant tol\right),
 \end{align*}
 non $zat=\max(zat^{[k-1]},zat^{[k-2]})$, $tol\approx10^{-16}$ den.
 
@@ -539,16 +533,17 @@ Zientzia-konputazioan, nagusiki doitasun bikoitzeko aritmetika (64-bit) aplikatz
 
 Egungo \emph{IEEE-754} estandarrak ($2008$), koma-higikorreko hiru formatu definitzen ditu: arrunta ($32$-bit), bikoitza ($64$-bit) eta laukoitza ($128$-bit).  \emph{IEEE-754} estandar zaharrak ($1985$), $80$-biteko formatuaren (double-extended) inplementazioa aholkatzen zuen \cite{Overton2001} baina egungo estandarretik kanpo utzi dute.  
 
-C lengoaiaren \emph{long double} datu motak, $80$-biteko koma-higikorreko sustatzen du.  \emph{IA-32} koma-higikorreko eragiketa multzoak \cite{Muller2009}, $80$-biteko zenbaki formatua onartzen du; $64$-biteko mantisa eta $15$-biteko esponentea. \emph{IA-64} eragiketa multzoak, $82$-biteko formatu onartzen du; $64$-biteko mantisa eta $17$-biteko esponentea. $80$-biteko doitasuneko zenbakiak, $19$ zifra hamartarreko doitasuna dugu. 
+C lengoaiaren \emph{long double} datu motak, $80$-biteko koma-higikorreko sustatzen du.  \emph{IA-32} koma-higikorreko eragiketa multzoak \cite{Muller2009}, $80$-biteko zenbaki formatua onartzen du; $64$-biteko mantisa eta $15$-biteko esponentearekin. \emph{IA-64} eragiketa multzoak, $82$-biteko formatu onartzen du; $64$-biteko mantisa eta $17$-biteko esponentearekin. $80$-biteko doitasuneko zenbakietan, $19$ zifra hamartarreko doitasuna dugu. 
 
 Intel $x86$  prozesadoreek, esaterako Intel Xeon Phi \cite{IntelXeon2013}, doitasun arrunta eta bikoitza hardwarez inplementatzen dute; laukoitza, softwarez; eta $80$-biteko doitasuna ere hardwarez.
 
 Laskar-ek \cite{Laskar2011,Laskar2015}, eguzki-sistemaren epe luzeko zenbakizko integratzeko, batura konpensatua eta $80$-biteko koma-higikorra erabili zituen. Integratzaile sinplektikoa C lengoaian berridatzi zuen, Intel-en $80$-biteko aritmetika erabili ahal izateko.
 Era berean, efemerideen kalkuluetarako antzekoa gertatu da: EPM \cite{Pitjeva2014} (aplikazioa berridatzi zuten) eta INPOP \cite{Fienga2008} efemerideen kalkulutarako, $80$-biteko aritmetika erabiltzen dute.
 
-Honek, astronomoentzat doitasuna hobetzeko duen garrantzia erakusten du. $128$-biteko aritmetikaren inplementazioa software bidezkoa da eta erabiltzeko garestiegia. $80$-biteko aritmetikarekin eta batura konpensatuarekin, zifra hamartar gutxi batzuk irabazten dute baina inplementazioen eraginkortasunarekiko eragin txikiarekin.
+Honek, astronomoentzat, soluzioen doitasuna hobetzeak duen garrantzia erakusten digu. $128$-biteko aritmetikaren inplementazioa software bidezkoa da eta erabiltzeko garestiegia. $80$-biteko aritmetikarekin eta batura konpensatuarekin, zifra hamartar gutxi batzuk irabazten dute. 
+%baina inplementazioen eraginkortasunarekiko eragin txikiarekin.
  
-Gure IRK metodoen inplementazioak, doitasun bikoitzarekin garatu ditugu. Ez zaigu zuzena iruditu $80$-biteko aritmetika aplikatzea. \emph{IEEE-754} estandarretik kanpo dago eta hardwarearen menpekoa da. Gainera, Laskar-en \cite{Laskar2011} zenbakizko integrazioen arabera, konputazioak $x2$ garestitu ditu. 
+Gure IRK metodoen inplementazioak, doitasun bikoitzarekin garatu ditugu. Ez zaigu zuzena iruditu $80$-biteko aritmetika aplikatzea. \emph{IEEE-754} estandarretik kanpo dago eta hardwarearen menpekoa da. Gainera, Laskar-en \cite{Laskar2011} zenbakizko integrazioen arabera, konputazioak $x2$ garestitu zaizkio. 
 
 
 \subsection*{Mixed-precision.}
