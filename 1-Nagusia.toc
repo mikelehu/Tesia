@@ -60,16 +60,16 @@
 \contentsline {subsection}{Ekuazio-sistema.}{91}{section*.138}
 \contentsline {subsection}{IRK metodo sinplektikoen garapena.}{94}{section*.139}
 \contentsline {subsection}{IRK metodo simetriko sinplektikoen garapena.}{94}{section*.140}
-\contentsline {subsection}{IRK Newton: konplexutasun analisia.}{98}{section*.146}
+\contentsline {subsection}{IRK Newton: konplexutasun analisia.}{98}{section*.147}
 \contentsline {section}{\numberline {6.4.}IRK-Newton estandarra (formulazio berria).}{99}{section.6.4}
 \contentsline {section}{\numberline {6.5.}IRK-Newton eraginkorra (formulazio berria).}{104}{section.6.5}
 \contentsline {section}{\numberline {6.6.}IRK Newtonen iterazio Mixtoa.}{108}{section.6.6}
-\contentsline {subsection}{Sasi-Newton iterazioa.}{108}{section*.159}
-\contentsline {subsection}{IRK-Newton Mixtoa}{108}{section*.160}
+\contentsline {subsection}{Sasi-Newton iterazioa.}{108}{section*.160}
+\contentsline {subsection}{IRK-Newton Mixtoa}{108}{section*.161}
 \contentsline {section}{\numberline {6.7.}Zenbakizko esperimentuak.}{112}{section.6.7}
-\contentsline {subsection}{Problemak}{112}{section*.161}
-\contentsline {subsection}{Biribiltze errorearen azterketa.}{112}{section*.163}
-\contentsline {subsection}{Puntu-finkoa versus Newton iterazioa}{113}{section*.165}
+\contentsline {subsection}{Problemak}{112}{section*.162}
+\contentsline {subsection}{Biribiltze errorearen azterketa.}{112}{section*.164}
+\contentsline {subsection}{Puntu-finkoa versus Newton iterazioa}{113}{section*.166}
 \contentsline {section}{\numberline {6.8.}Laburpena.}{115}{section.6.8}
 \contentsline {chapter}{\numberline {7.}IRK: Eguzki-sistema.}{117}{chapter.7}
 \contentsline {section}{\numberline {7.1.}Sarrera.}{117}{section.7.1}
@@ -93,11 +93,11 @@
 \contentsline {section}{\numberline {A.3.}Hardwarea.}{149}{section.A.3}
 \contentsline {section}{\numberline {A.4.}Programazio lengoaiak.}{154}{section.A.4}
 \contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{157}{section.A.5}
-\contentsline {paragraph}{Adibidea.}{158}{section*.219}
+\contentsline {paragraph}{Adibidea.}{158}{section*.220}
 \contentsline {section}{\numberline {A.6.}Konpiladorea.}{161}{section.A.6}
-\contentsline {paragraph}{Konpiladoreak.}{161}{section*.224}
-\contentsline {paragraph}{Optimizazioak.}{161}{section*.225}
-\contentsline {paragraph}{Konpilazio aginduak}{162}{section*.226}
+\contentsline {paragraph}{Konpiladoreak.}{161}{section*.225}
+\contentsline {paragraph}{Optimizazioak.}{161}{section*.226}
+\contentsline {paragraph}{Konpilazio aginduak}{162}{section*.227}
 \contentsline {section}{\numberline {A.7.}Laburpena.}{162}{section.A.7}
 \contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{163}{appendix.B}
 \contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{163}{section.B.1}
@@ -114,4 +114,4 @@
 \contentsline {section}{\numberline {D.1.}IRK-Newton.}{179}{section.D.1}
 \contentsline {section}{\numberline {D.2.}FMA.}{180}{section.D.2}
 \contentsline {section}{\numberline {D.3.}Hitz-zerrenda.}{180}{section.D.3}
-\contentsline {chapter}{Bibliografia}{183}{table.caption.257}
+\contentsline {chapter}{Bibliografia}{183}{table.caption.256}
