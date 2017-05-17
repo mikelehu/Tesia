@@ -28,7 +28,7 @@ $\mathbb{F}$ zenbaki multzoa, \ref{fig:FloatNumberLine}irudian laburtu dugu. Bai
 IEEE-754 estandarraren arabera, $n$-biteko koma-higikorreko adierazpenak bi zati ditu (ikus \ref{fig:32bitKomaHigikorra} irudiko adibidea),
 \begin{enumerate}
 \item $m$ bitez osatutako zatia, mantisa ($M$) izenekoa. Horietako bit batek ($S$) zeinua adierazten du. Bestalde $M$ mantisa modu normalizatu honetan emana da, $\pm 1.F$ eta zati erreala ($F$) bakarrik gorde behar da.   
-\item Esponentea ($E$), $(n-m)$ bitez adierazitako zenbaki osoa. Zeinuarentzat ez da bit zehatzik, baizik \emph{bias} izeneko balio bat gehituz adierazten dira zenbaki positiboak eta negatiboak.  
+\item Esponentea ($E$), $(n-m)$ bitez adierazitako zenbaki osoa. Zeinuarentzat ez da bit zehatzik, baizik \emph{bias} izeneko balio bat kenduz adierazten dira zenbaki positiboak eta negatiboak.  
 \end{enumerate}
 
 Beraz, oinarri bitarrean koma-higikorreko zenbaki hauek adierazten dira,
@@ -66,25 +66,25 @@ IEEE-$754$ estandarrean, oinarri bitarreko koma-higikorreko hiru formatu definit
 \end{table}
 
 
-Doitasun bikoitzeko oinarrizko eragiketak (batuketa, kenketa, biderketa, zatiketa, eta erro karratua) hardware bidez exekutatzen dira \cite{Muller2009} eta azkarrak dira. Makina ziklo bakoitzeko, $2$ eta $4$ batuketa, kenketa edo biderketa egin ohi dira; zatiketa eta erro karratua aldiz, eragiketa motelagoak dira. Bestalde, doitasun arruntaren  aritmetika, doitasun bikoitza baino azkarragoa da: garraiatu behar den bit kopuru erdia delako eta gainera, hardware bereziei (adibidez \emph{Intel} makinetan \emph{SSE} moduluak) esker,  eragiketa aritmetikoak azkarragoak direlako. 2008. urtean, IEEE-$754$ estandarrak, $128$-biteko koma-higikorreko aritmetika onartu zuen, baina  inplementazioa  softwarez bidezkoa da eta exekuzioa gutxi gorabehera doitasun bikoitzeko aritmetika baino 10-15 aldiz motelagoa da.
+Doitasun bikoitzeko oinarrizko eragiketak (batuketa, kenketa, biderketa, zatiketa, eta erro karratua) hardware bidez exekutatzen dira \cite{Muller2009} eta azkarrak dira. Makina ziklo bakoitzeko, $2$ eta $4$ batuketa, kenketa edo biderketa egin ohi dira; zatiketa eta erro karratua aldiz, eragiketa motelagoak dira. Bestalde, doitasun arruntaren  aritmetika, doitasun bikoitza baino azkarragoa da: garraiatu behar den bit kopuru erdia delako eta gainera, hardware bereziei esker (adibidez \emph{Intel} makinetan \emph{SSE} moduluak), eragiketa aritmetikoak azkarragoak direlako. 2008. urtean, IEEE-$754$ estandarrak, $128$-biteko koma-higikorreko aritmetika onartu zuen, baina  inplementazioa  softwarez bidezkoa da eta exekuzioa, gutxi gorabehera, doitasun bikoitzeko aritmetika baino 10-15 aldiz motelagoa da.
 
-Problema batzuk, doitasun bikoitza baino doitasun handiagoa behar dute \cite{Joldes2016}. Doitasun laukoitza edo altuagoa, software liburutegien bidez emulatzen ohi dira. Doitasun altuko zenbakiak adierazteko nagusiki bi modu bereizten dira:   
+Problema batzuk, doitasun bikoitza baino doitasun handiagoa behar dute \cite{Joldes2016}. Doitasun laukoitza edo altuagoa, software liburutegien bidez emulatu ohi dira. Doitasun altuko zenbakiak adierazteko nagusiki bi modu bereizten dira:   
 
 \begin{enumerate}
 \item \emph{Digitu-anitzeko adierazpena}. Zenbakiak esponente bakarra eta mantisa bat baino gehiagorekin adierazten dira (adb. \emph{GNU MPFR liburutegia} \cite{Fousse2007}).
 \item \emph{Termino-anitzeko adierazpena}. Zenbakiak  ebaluatu gabeko hainbat koma-higikorreko makina zenbaki estandarren batura gisa adierazten dira (adb. Bailey QD liburutegia) \cite{Hida2001} eta exekuzioaren ikuspegitik, hardware bidezko inplementazioaren abantaila dute.    
 \end{enumerate}
 
-Doitasun laukoitzeko gure esperimentuetarako, \emph{GCC libquadmath} liburutegia \cite{libquad} erabili dugu . Doitasun laukoitzean exekutatutako integrazioen zenbakizko soluzioak, soluzio zehatzak kontsideratu ditugu eta  doitasun bikoitzeko inplementazioaren errorea, soluzio zehatzaren diferentzia gisa kalkulatu dugu. 
+Doitasun laukoitzeko gure esperimentuetarako, \emph{GCC libquadmath} liburutegia \cite{libquad} erabili dugu. Doitasun laukoitzean exekutatutako integrazioen zenbakizko soluzioak, soluzio zehatzak kontsideratu ditugu eta  doitasun bikoitzeko inplementazioaren errorea, soluzio zehatzarekiko diferentzia gisa kalkulatu dugu. 
 
 Laskar-ek epe luzeko eguzki-sistemaren simulazioaren ($-250$ eta $+250$ milioitako integrazio tartea) konputaziorako kalkuluak \cite{Laskar2011}, kontu handiz eta doitasun handian egin behar ditu. Dena den, era honetako problemak salbuespenak dira eta ez da ohikoa izaten doitasun handian lan egin beharra. Egia da ere, neurri fisiko oso gutxi ezagutzen direla  hain doitasun handian (adibidez $50$-bitekin, lurra eta ilargiaren arteko distantzia, milimetroko errorearekin adieraz daiteke).  
 
 
 \section{Biribiltze errorea.}
 
-Zenbakizko integrazioen errorea, trunkatze eta biribiltze errorez osatuta dago. Urrats luzera adina txikia aukeratuz, trunkatze errorea biribiltze errorea baino txikiago izango da eta beraz, zenbakizko integrazio hauetan errorean biribiltze errorea nagusitzen da. Epe luzeko eta doitasun handiko integrazioetan, urrats luzera txikia erabiltzen denez, biribiltze errorea gutxitzea funtsezkoa izango da.     
+Zenbakizko integrazioen errorea, trunkatze eta biribiltze errorez osatuta dago. Urrats luzera nahi bezain txikia aukeratuz, trunkatze errorea biribiltze errorea baino txikiago izango da eta beraz, zenbakizko integrazio hauetan errorean biribiltze errorea nagusitzen da. Epe luzeko eta doitasun handiko integrazioetan, urrats luzera txikia erabiltzen denez, biribiltze errorea gutxitzea funtsezkoa izango da.     
 
-Bi biribiltze mota bereiziko ditugu, bata adierazpenaren errorea eta bestea, aritmetikaren errorea.  
+Bi biribiltze errore mota bereiziko ditugu, bata adierazpenaren errorea eta bestea, aritmetikaren errorea.  
 
 \subsection*{Adierazpenaren errorea.} 
 
@@ -175,7 +175,7 @@ Modu honetako batura batean , non $n>2$ eta $\tilde x_1,\dots,\tilde x_n \in \ma
 \begin{equation*}
 \bigoplus_{i=1}^{n}(\tilde x_i)=(\sum\limits_{i=1}^{n} \tilde x_i)(1+\delta),
 \end{equation*}
-$|\delta|<u$ beteko denik, ezin daiteke bermatu. 
+$|\delta|<u \ \text{non} \  u=2^{-m}$ beteko denik, ezin daiteke bermatu. 
 
 \paragraph*{}Analisi zehatza egiten badugu $n=3$ adibiderako, honako espresioa lortzen dugu,
 \begin{equation*}
@@ -186,7 +186,7 @@ $|\delta|<u$ beteko denik, ezin daiteke bermatu.
 
 \subsection*{Ezabapen arazoa.}
 
-Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbaki arteko kendura egiten dugunean gerta daitekeena. 
+Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbakiren arteko kendura egiten dugunean gerta daitekeena. 
 
 \paragraph*{Adibidea.} Mathematican kalkulatutako adibide honetan, ezabapen errorea nola gertatzen den erakutsi dugu. 
 \begin{lstlisting} [language=Mathematica]
@@ -207,16 +207,17 @@ Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea
 \end{lstlisting}
 
 
-\section{Biribiltze errorearen gutxitzeko teknikak.}
+\section{Biribiltze errore gutxitzeko teknikak.}
 \label{sec:4.4}
 
-Batuketa eta biderketa eragiketen biribiltze errorea kalkulatzeko algoritmoak ezagunak dira \cite{Dekker1971}\cite{Higham2002}. Algoritmo hauek, \emph{termino-anitzeko adierazpen} inplementazioetan erabiltzen dira eta baturaren kasuan, batura konpensatu izeneko algoritmoaren oinarria da. Ikusiko dugun bezala, algoritmo sinpleak dira eta konputazio kostu txikia dute.  
+Batuketa eta biderketa eragiketen biribiltze errorea kalkulatzeko algoritmoak ezagunak dira \cite{Dekker1971,Higham2002}. Algoritmo hauek, \emph{termino-gaitzeko adierazpenetan} oinarritzen dira eta baturaren kasuan, batura konpensatu izeneko algoritmoaren oinarria da. Ikusiko dugun bezala, algoritmo sinpleak dira eta konputazio kostu txikia dute.  
 
 Teknika hauek, zenbakizko integrazioaren inplementazioaren kalkulu "kritikoetan" erabiliko ditugu, soluzioaren doitasuna handitzeko asmoarekin.
 
 \subsection*{Batura: Fast2Sum.}
 
-\emph{Fast2Sum} algorithmoa, 1971.an Dekker-ek \cite{Dekker1971} asmatu zuen. Koma-higikorreko $\tilde x,\tilde y \in \mathbb{F} \ \text{bi zenbakien non} \ |\tilde x| \geq |\tilde y|$, arteko batuketari  $\tilde z= \tilde x \oplus \tilde y$ dagokion biribiltze errorea $e , \ \text{non} \ \tilde z+ e=\tilde x+\tilde{y}$ den, era honetan kalkulatu daiteke,
+\emph{Fast2Sum} algorithmoa, 1971.an Dekker-ek \cite{Dekker1971} asmatu zuen. Koma-higikorreko $\tilde x,\tilde y \in \mathbb{F} \ \text{non} \ |\tilde x| \geq |\tilde y| \ \text{bi zenbakien}$ arteko batuketari  $\tilde z= \tilde x \oplus \tilde y$ dagokion biribiltze errorea $e$,  era honetan kalkulatu daiteke,
+%\ \text{non} \ \tilde z+ e=\tilde x+\tilde{y}$ den
 
 \begin{algorithm}[H]
  \BlankLine
@@ -238,12 +239,12 @@ Teknika hauek, zenbakizko integrazioaren inplementazioaren kalkulu "kritikoetan"
 
 \subsubsection*{Batura konpensatua.}
 
-Era honetako batura errekurtsiboetan,
+Era honetako osagaia askoko baturetan,
 \begin{equation*}
 z_{n+1}= z_0+\sum\limits_{i=0}^{n} x_i,
 \end{equation*}
 biribiltze errorea gutxitzeko teknika ezaguna da \cite{Higham2002,Muller2009,Hairer2006}.
-Ideia da, bi zenbakien baturan egindako biribiltze errorea lortu, eta errore hau hurrengo baturan erabiltzea. Jarraian azaltzen den moduan, urrats bakoitzaren amaieran errore estimazioa ($e_{i}$) kalkulatuko dugu eta hurrengo urratsean, batugaiari gehituko diogu.
+Ideia da, bi zenbakien baturan egindako biribiltze errorea lortu, eta errore hau hurrengo baturan erabiltzea. Jarraian azaltzen den moduan, urrats bakoitzaren amaieran $e_{i}$ errore estimazioa  kalkulatuko dugu eta hurrengo urratsean, batugaiari gehituko diogu.
 
 \begin{algorithm}[H]
  \BlankLine
@@ -261,28 +262,30 @@ Ideia da, bi zenbakien baturan egindako biribiltze errorea lortu, eta errore hau
    \label{alg:KahanBK}
 \end{algorithm}
 
-Knuth-ek eta Kahan-ek \cite{Muller2009},  batura konpensatuko algoritmoaren bidez kalkulatutako $z_{n+1}$ batura honakoa betetzen duela, 
+Knuth-ek eta Kahan-ek \cite{Muller2009} frogatu zuten,  batura konpensatuko algoritmoaren bidez kalkulatutako $z_{n+1}$ baturak honakoa betetzen duela, 
 \begin{equation*}
-\left | z_{n+1} - (z_0+\sum_{i=0}^{n} x_i) \right | \leq (2u+ \mathcal{O}(nu^2)) \left(|z_0|+\sum_{i=1}^{n} |x_0|\right),
+\left | z_{n+1} - (z_0+\sum_{i=0}^{n} x_i) \right | \leq (2u+ \mathcal{O}(nu^2)) \left(|z_0|+\sum_{i=1}^{n} |x_0|\right).
 \end{equation*}
-frogatu zuten.
 
-Jakina da, algoritmoaren gaiak bektoreak, $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$ diren kasurako orokortu daitekeela. Beraz, \ref{alg:KahanBK} algoritmoa $n$ eta $d$ parametroak dituen funtzio familia gisa interpretatu daiteke,
+Jakina da, batugaiak bektoreak diren kasurako, hau da, $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$, ~algoritmoa orokor daitekeela. Beraz, \ref{alg:KahanBK} algoritmoa $n$ eta $d$ parametroak dituen funtzio familia gisa interpretatu daiteke,
 \begin{equation}
 \label{eq:batsd}
 S_{n,d} : \mathbb{F}^{(n+3)d} \rightarrow \mathbb{F}^{2d},
 \end{equation}
-zein $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$ argumentuak emanik, $\tilde z_{n+1}, e_{n+1} \in \mathbb{F}^d$ balioak itzultzen dituen, eta ($\tilde z_{n+1}+e_{n+1}) \approx \tilde (z_0+e_0+x_0+x_1+ \dots+x_n$) adierazi nahi duen.
+zeinek $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$ argumentuak emanik, $\tilde z_{n+1}, e_{n+1} \in \mathbb{F}^d$ balioak itzultzen dituen, eta ($\tilde z_{n+1}+e_{n+1}) \approx \tilde (z_0+e_0+x_0+x_1+ \dots+x_n$) adierazi nahi duen.
 
 \subsubsection*{Zenbakizko integrazioak.}
  
-Zenbakizko integrazioetan, era honetako batura errekurtsiboa kalkulatu behar ditugu \cite{Hairer2006},
+Zenbakizko integrazioetan, $n=1,2,\dots$ balioentzat era honetako baturak kalkulatu behar ditugu \cite{Hairer2006},
 \begin{equation*}
 y_{n+1}=y_n+\delta_n,
 \end{equation*}  
-non $|\delta_n|<|y_n|$ izan ohi da. Beraz, integrazioaren batura honen birbiltze errorea gutxitzeko, batura konpensatua erabiliko dugu.  
+non $|\delta_n|<|y_n|$ izan ohi den. Beraz, integrazioaren batura honen birbiltze errorea gutxitzeko, batura konpensatua erabiliko dugu.  
 
-$y_{n+1} \in \mathbb{R}^{d},\quad y_{n+1}=\tilde y_{n}+\tilde \delta_n$ batura zehatza izanik eta $\tilde y_{n+1} \in \mathbb{F}^{d}, \quad \tilde y_{n+1}=\tilde y_{n} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, batura konpensatuaren bidez lortutako errorearen estimazioa $e_{n+1}$ ,
+$y_{n+1} \in \mathbb{R}^{d},\quad y_{n+1}=\tilde y_{n}+\tilde \delta_n$ batura zehatza izanik eta $\tilde y_{n+1} \in \mathbb{F}^{d}, \quad \tilde y_{n+1}=\tilde y_{n} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, batura konpensatuaren bidez lortutako errorearen estimazioa $e_{n+1}$, \ref{alg:batkp}.algoritmoa jarraituz lor daiteke eta baturan egindako biribiltze errore zehatza da, 
+\begin{equation}
+y_{n+1}=\tilde {y}_{n+1}+e_{n+1}. 
+\end{equation}
 
 \begin{algorithm}[H]
  \BlankLine
@@ -300,10 +303,6 @@ $y_{n+1} \in \mathbb{R}^{d},\quad y_{n+1}=\tilde y_{n}+\tilde \delta_n$ batura z
  \label{alg:batkp}
 \end{algorithm}
 
-\paragraph*{}baturan egindako  biribiltze errore zehatza da,
-\begin{equation}
-y_{n+1}=\tilde {y}_{n+1}+e_{n+1}. 
-\end{equation}
 
 Goian aipatutako ideia,  beste ikuspegi batetik ere uler daiteke. Zenbakizko soluzioa, doitasun bikoitzeko bi balioen batura gisa $y_n=\tilde{y}_n+e_n$ (ia doitasun laukoitza), adierazten ari gara  eta beraz, interpretazio honen arabera, konputazio eragiketa batzuk ia doitasun laukoitzean egiten ariko ginateke. Zentzu honetan gure inplementazioan, hasierako balio zehatza $y_0=y(t_0)$, bi balioen batura gisa $y_0=\tilde{y}_0+e_0$ ulertu behar da eta era honetan hasieratuko dugu,
 \begin{align*}
@@ -313,7 +312,7 @@ e_0 &=fl(y_0-\tilde{y}_0).
 
 \subsection*{Bidekerta: 2MultFMA.}
 
-\emph{IEEE 754-2008} estandarrean, \emph{FMA} \cite{Muller2009} (\emph{fused multiply-add}) instrukzioa gehitu zen eta hurrengo urteetan, ordenagailu arruntetan zabaltzea espero da. Instrukzio honen garrantzia handia da: orokorrean konputazioak azkartzen ditu eta biderketa eskalarren, matrize biderkaduren eta polinomio ebaluazioen biribiltze errore txikitzen du. \emph{FMA} instrukzioa, zatiketa eta erro karratuaren algoritmo azkarren diseinuan ere erabiltzen da.
+\emph{IEEE 754-2008} estandarrean, \emph{FMA} \cite{Muller2009} (\emph{fused multiply-add}) instrukzioa gehitu zen eta hurrengo urteetan, ordenagailu arruntetan zabaltzea espero da. Instrukzio honen garrantzia handia da: orokorrean konputazioak azkartzen ditu eta biderketa eskalarren, matrize biderkaduren eta polinomio ebaluazioen biribiltze errorea txikitzen du. \emph{FMA} instrukzioa, zatiketa eta erro karratuaren algoritmo azkarren diseinuan ere erabiltzen da.
 
 \emph{FMA} instrukzioak, era honetako konputazioetan biribiltze errore bakarra bermatzen du,
 \begin{equation*}
