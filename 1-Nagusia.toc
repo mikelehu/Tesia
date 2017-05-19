@@ -78,26 +78,26 @@
 \contentsline {section}{\numberline {7.4.}Zenbakizko esperimentuak.}{119}{section.7.4}
 \contentsline {section}{\numberline {7.5.}Laburpena.}{119}{section.7.5}
 \contentsline {chapter}{\numberline {8.}Eztabaida.}{121}{chapter.8}
-\contentsline {section}{\numberline {8.1.}Eguzki-sistemaren integraziorako egungo metodoak.}{121}{section.8.1}
-\contentsline {section}{\numberline {8.2.}Eredu deskonposaketa.}{128}{section.8.2}
-\contentsline {section}{\numberline {8.3.}IRK inplementazioaren oinarriak.}{132}{section.8.3}
-\contentsline {section}{\numberline {8.4.}Doitasun altuko konputazioak.}{136}{section.8.4}
-\contentsline {section}{\numberline {8.5.}Paralelizazioa.}{137}{section.8.5}
-\contentsline {section}{\numberline {8.6.}Beste sistema dinamikoak.}{138}{section.8.6}
-\contentsline {chapter}{\numberline {9.}Ondorioak.}{141}{chapter.9}
-\contentsline {section}{\numberline {9.1.}Etorkizuneko lanak.}{142}{section.9.1}
+\contentsline {section}{\numberline {8.1.}Eguzki-sistemaren integrazio luzeak.}{121}{section.8.1}
+\contentsline {section}{\numberline {8.2.}Eredu deskonposaketa.}{124}{section.8.2}
+\contentsline {section}{\numberline {8.3.}IRK inplementazioaren oinarriak.}{128}{section.8.3}
+\contentsline {section}{\numberline {8.4.}Doitasun altuko konputazioak.}{132}{section.8.4}
+\contentsline {section}{\numberline {8.5.}Paralelizazioa.}{133}{section.8.5}
+\contentsline {section}{\numberline {8.6.}Inplementazioaren aplikagarritasuna.}{134}{section.8.6}
+\contentsline {chapter}{\numberline {9.}Ondorioak.}{139}{chapter.9}
+\contentsline {section}{\numberline {9.1.}Etorkizuneko lanak.}{140}{section.9.1}
 \contentsline {part}{I.\hspace {1em}Eranskinak}{143}{part.1}
-\contentsline {chapter}{\numberline {A.}Zientzia-konputazioa.}{145}{appendix.A}
+\contentsline {chapter}{\numberline {A.}Konputazio zientzia.}{145}{appendix.A}
 \contentsline {section}{\numberline {A.1.}Sarrera.}{145}{section.A.1}
 \contentsline {section}{\numberline {A.2.}Eraginkortasuna}{146}{section.A.2}
 \contentsline {section}{\numberline {A.3.}Hardwarea.}{149}{section.A.3}
 \contentsline {section}{\numberline {A.4.}Programazio lengoaiak.}{154}{section.A.4}
 \contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{157}{section.A.5}
-\contentsline {paragraph}{Adibidea.}{158}{section*.219}
+\contentsline {paragraph}{Adibidea.}{158}{section*.215}
 \contentsline {section}{\numberline {A.6.}Konpiladorea.}{161}{section.A.6}
-\contentsline {paragraph}{Konpiladoreak.}{161}{section*.224}
-\contentsline {paragraph}{Optimizazioak.}{161}{section*.225}
-\contentsline {paragraph}{Konpilazio aginduak}{162}{section*.226}
+\contentsline {paragraph}{Konpiladoreak.}{161}{section*.220}
+\contentsline {paragraph}{Optimizazioak.}{161}{section*.221}
+\contentsline {paragraph}{Konpilazio aginduak}{162}{section*.222}
 \contentsline {section}{\numberline {A.7.}Laburpena.}{162}{section.A.7}
 \contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{163}{appendix.B}
 \contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{163}{section.B.1}
@@ -114,4 +114,4 @@
 \contentsline {section}{\numberline {D.1.}IRK-Newton.}{179}{section.D.1}
 \contentsline {section}{\numberline {D.2.}FMA.}{180}{section.D.2}
 \contentsline {section}{\numberline {D.3.}Hitz-zerrenda.}{180}{section.D.3}
-\contentsline {chapter}{Bibliografia}{183}{table.caption.255}
+\contentsline {chapter}{Bibliografia}{183}{table.caption.251}

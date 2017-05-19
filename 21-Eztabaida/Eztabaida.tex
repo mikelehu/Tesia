@@ -1,109 +1,13 @@
 \chapter{Eztabaida.}
 
-\section{Eguzki-sistemaren integraziorako egungo metodoak.}
+\section{Eguzki-sistemaren integrazio luzeak.}
 
 
-Tesiaren sarreran azaldu genuenez, gure helburua eguzki-sistemaren epe luzeko eta doitasun handiko inplementazio eraginkorra proposatzea da. Atal honetan, egungo eguzki-sistemaren simulazioetan erabiltzen diren metodo eta inplementazioen laburpena egingo dugu. Bi eratako simulazioak aztertuko ditugu. Batetik, eguzki-sistemaren  efemerideak, eguzki-sistemaren eredu konplexuak eta epe tarte txikietarako (ehunka urtekoak) integrazioak konputatzen dituztenak. Bestetik, astronomi arloaren inguruko ikerketetarako eguzki-sistemaren integrazio luzeak, eguzki-sistemaren eredu sinpleagoak eta milioika urteko integrazioak konputatzen dituztenak. 
+Tesiaren sarreran azaldu genuenez, gure helburua eguzki-sistemaren epe luzeko eta doitasun handiko inplementazio eraginkorra proposatzea da. Atal honetan, egungo eguzki-sistemaren simulazioetarako erabiltzen diren metodo eta inplementazioen laburpena egingo dugu. 
 
-\subsection*{Efemerideak.}
+\subsection*{Inplementazioen garapena.} 
 
-Konputagailuen aurreko garaian, efemerideak teoria analitikoetan oinarritutako serie funtzioen bidez kalkulatzen ziren. Soluzio hauetan, Fourier-en serie trigonometriko luzeen ebaluazioa egin behar zen. $1960$ hamarkadan, eguzki-sistemaren ezagutza hobetu zenean (espazio bidaiak eta behatoki astronomikoen aurrerapenak medio), serie oso luzeak kalkulatu behar zituzten, eta orduan zenbakizko integrazioen metodoak, eraginkorragoak bilakatu ziren \cite{Kaplan2015}.   
-   
-Eguzki-sistemaren gorputzen efemeride modernoak, aldaketa adierazten duten (\ref{eq:nbody})  ekuazio diferentzialen  zenbakizko integrazioaren bidez kalkulatzen dira. Integrazioaren hasierako balioak eta ereduaren parametroak, sateliteen bidez jasotako datuekin kontrastatu egiten dira.
-
-Efemerideak, \emph{Chebyshev} polinomio moduan adierazten dira. Zenbakizko integrazio hauetan, biribiltze errorea gai garrantzitsua da. $128$-biteko aritmetikaren aukera baztertzen da, konputazioa oso garestia delako eta $64$-biteko doitasuneko aritmetika hobetzen dituzten teknika konputazionalki merkeagoak, aplikatzen dira. 
-
-Efemerideetarako, eguzki-sistemaren eredu konplexua aplikatzen da. Gorputz nagusien arteko indar grabitazionalez gain, erlatibitate efektua, asteroideek eragindako grabitazio indarrak, gorputzen formen eragina eta beste hainbat indar ez grabitazionalak kontutan hartzen dituzte. Mugimenduaren ekuazio diferentzialak, era honetakoak izaten dira \cite{Feinga2015},      
-      \begin{equation*}
-      \ddot{x}_{Planet}= \sum_{A \neq B} \mu_B \frac{r_{AB}}{\|r_{AB}\|^3}+\ddot{x}_{GR} (\beta,\gamma,c^{-4})+ \ddot{x}_{AST,300}+ \ddot{x}_{J_2}.
-      \end{equation*}
-
-Hauek dira, ekuazio hauen konplexutasuna erakusten duten ezaugarri batzuk:      
-      \begin{itemize}
-      \item Gorputz kopurua: $8$ planetak, ilargia, Pluton eta 300 asteroide.
-      \item Erlatibitate efektua (GR): Einstein-Imfeld-Hoffmann, $c^{-4}$ PPN hurbilketa.
-      \item $J_2$: eguzkia esferikoa ez izatearen eragina. 
-      \item Integrazioaren urrats luzera, $h=0.055$ egunekoa da.
-      \end{itemize}   
-
-\subsubsection*{Erlatibitate efektua.}
-Eguzkiaren erlatibitate efektua kontutan hartzen duten ekuazio diferentzialak azalduko ditugu \cite{Kopeikin2011}.
-\begin{equation}
-\dot{q_i}=v_i, \  i=0,1,\dots N
-\end{equation}
-\begin{multline} 
-\dot{v_i}= \sum_{j=0,j \neq i}^{N} \frac{Gm_j}{\|q_j-q_i\|^3} (q_j-q_i)
-           \bigg(1- \frac{2(\beta+\gamma)}{c^2} \sum\limits_{k=0, k \neq i}^{N} \frac{Gm_k}{\|q_k-q_i\|} 
-                  - \frac{2\beta-1}{c^2}        \sum\limits_{k=0, k \neq j}^{N} \frac{Gm_k}{\|q_k-q_j\|} \\
-                  + \gamma \big(\frac{v_i}{c}\big)^2 + (1+\gamma) \big(\frac{v_j}{c} \big)^2 
-                  - \frac{2(1+\gamma)}{c^2} v_i \ v_j \\
-                  - \frac{3}{2c^2} \big(\frac{(q_i-q_j) v_j}{\|q_j-q_i\|} \big)^2+                  
-                  \frac{1}{2c^2}(q_j-q_i) \dot{v_i} \bigg) \\
-           + \frac{1}{c^2} \sum_{j=0,j \neq i}^{N} \frac{Gm_j}{\|q_j-q_i\|^3} 
-             ((q_i-q_l) ((2+2\gamma)v_i-(1+2\gamma)v_j)) (v_i-v_j) \\
-           + \frac{3+4\gamma}{2c^2} \sum_{j=0,j \neq i}^{N} \frac{Gm_j \dot{v_j}}{\|q_j-q_i\|}                                      
-\end{multline}
-
-\begin{table}[h]
-\caption{Konstanteak}
-\label{tab:1}       % Give a unique label
-\centering
-\begin{tabular}{l l l }
-\hline
-  c             &  $299792.458$ km/s           & Argiaren abiadura  \\
-%\hline
-  au            &  $149597870.700$ km          & Unitate Astronomikoa  \\
-%\hline 	       
-$\beta$          & $1.0$                       & PPN parametroa     \\
-%\hline 
-$\gamma$         & $1.0$                       & PPN parametroa     \\
-\hline
-\end{tabular}
-\end{table}
-
-\subsubsection*{Asteriodeak.}
-Asteroideek, bereziki Marte planetaren mugimenduarengan dute eragina (\ref{fig:asteroideak} irudia) eta kontutan hartzekoak dira, barne-planeten mugimenduaren doitasun handiko emaitzak behar ditugunean . Bost asteroide nagusiren masak (Ceres, Pallas, Vesta, Iris eta Bamberga) Merkurio eta Pluton planeten mailakoak direnez, integrazioetan gehitzen dira. Gainontzeko asteroide txikien talde handiak, estimazioen bidez simulatzen dira.
-
-\begin{figure} [h]
-\centerline{\includegraphics [width=6cm, height=4cm] {Asteroideak}}
-\caption{Asteroideak.}
-\label{fig:asteroideak}
-\end{figure} 
-
-  
-\subsubsection*{Hiru efemerideak.}
-
-Gaur-egun, eguzki-sistemaren planeten hiru efemeride kalkulatzen dira.
-\begin{enumerate}
-\item Jet Propulsion Laboratory (\emph{EEBB}) \emph{NASA}-ko erakundeak DE (Development Ephemerides) izeneko efemerideak konputatzen ditu.
-
-      $1984$.urtean kalkulatu zen lehen efemeridea (DE-200) eta $2.014$.urteko \emph{DE-430} \cite{Folkner2014} efemeridea publikatutako azkena da. Azken efemeride honen integrazio tartea, $1550-2650$ artekoa izan da.
-
-      Zenbakizko integrazio metodoa, urrats luzera eta  ordena aldakorreko \emph{Multistep Adams} metodoa \cite{Krogh1997} (\emph{DIVA}/\emph{QIVA}) da. \emph{QIVA} doitasun laukoitzeko ($128$-bit) bertsioari deitzen zaio: mugimenduaren ekuazioen Newton zatia, doitasun laukoitzean kalkulatzen da eta ekuazioaren gainontzeko zatia, doitasun bikoitzean.
-
-\item Institut de Méchanique Céleste et de Calcul des Ephémérides (IMCCE, Paris Observatory) INPOP (Intégrateur Númerique Planétaire de l'Observatoire de Paris) izeneko efemerideak.
-      
-      $2.000$.urteraino, efemerideen kalkulua teori analitikoetan oinarritzen zituzten. $2.003$.urtean, zenbakizko integrazioaren bidezko lehen efemeridea kalkulatu zuten eta \emph{INPOP13c} efemeridea \cite[$2.014$]{Fienga2008} publikatutako azkena da.
-           
-	  Zenbakizko integrazio metodoa: $12$ ordenako \emph{Adams-Cowell} metodoa da eta urrats finkoa aplikatzen dute.
-	  
-	  Doitasuna: C lengoaian inplementatuta dago eta \emph{Intel} makinetako $80$-biteko doitasuna erabiltzen du \cite{Fienga2008}.  
-	  
-  
-\item Institute of Applied Astronomy (\emph{IAA}, St. Petersburg), EPM (Ephemerides Planets-Moon) izeneko efemerideak.
-      
-      $1.980$.urtetik aurrera, zenbakizko integrazioen bidezko efemerideak kalkulatu dituzte eta  \emph{EPM2013} efemeridea \cite[2.014]{Pitjeva2014} publikatutako azkena  da.
-      
-      Zenbakizko integrazio metodoa, \emph{Everhart} izeneko \emph{IRK} metodoa (Gauss-Radau) da. $23$ ordenako metodoa eta urrats luzera finkoa aplikatzen dute.
-            
-      Doitasuna. Inplementazioak (ERA izeneko softwarea), \emph{Intel} makinetako $80$-biteko doitasuna erabiltzen du.
-      
-\end{enumerate}
-
-\subsection*{Eguzki-sistemaren integrazio luzeak.} 
-
-
-A. Morbidellik \cite{Morbidelli2002} eguzki-sistemaren zenbakizko integrazioen algoritmoen garapenaren azterketan, garai hauek bereizten ditu:
+Astronomi arloaren inguruko ikerketetarako, eguzki-sistemaren eredu errealistak eta eguzki-sistemaren integrazio luzeak konputatzen dituzte. A. Morbidellik \cite{Morbidelli2002} eguzki-sistemaren zenbakizko integrazioen inplementazioen azterketan, garai hauek bereizten ditu:
 \begin{enumerate}
 
 \item Garai klasikoa.
@@ -138,7 +42,7 @@ Gaur-egun, eguzki-sistemaren epe luzeko integrazioetarako, integratzaile sinplek
 \end{enumerate}
 
 
-\subsubsection*{Eguzki-sistemari egokitutako integratzaile sinplektikoak.}
+\subsection*{Integratzaile sinplektikoak.}
 
 Wisdom-ek eta Holman-ek \cite[1991]{Sussman1992}, eguzki-sistemaren epe luzeko simulazioetarako integratzaile  sinplektikoak (\emph{WH}) arrakasta izan zuen. Eguzki-sistema, mugimendu perturbatua duen sistema dinamikoa da eta ezaugarri honi egokitutako integratzaile eraginkorra garatu zuten. Jacobi koordenatuak  aplikatuz, N-gorputzen problemaren Hamiltondarra, bi zatitan banatu zuten,
 \begin{equation*}
@@ -178,26 +82,6 @@ Koordenatu cartesiarrak, ezin daitezke erabili.
 
 IRK metodoekin lan egiteko ordea, ez daukagu halako mugarik. Ekuazio diferentzial orokorrei aplika dakizkienez, askatasun osoa dugu behar diren ekuazioak gehitzeko eta interesatzen zaigun koordenatu sistema aplikatzeko.  
 
-\subsection*{Exoplanetak.}
-
-Eguzki-sistemari egokitutako splitting metodo sinplektikoak \cite{Wisdom1991,Laskar2001}, eguzki-sistemaren problemaren bi ezaugarriei abantaila atereaz diseinatzen dira. Lehenik, planeten eguzkiarekiko orbitak ia Kepleriarrak dira. Bigarrenik, N-gorputzen problemaren formulazio Hamiltondarrean oinarritzen dira eta sinplektikoak direnez, Hamiltondarra zehazki mantentzen dute. 
-
-Exoplaneta sistemak integratzeko metodo berriak behar dira \cite{Fabrycky2010}. Exoplaneten planeta-sistemen mugimenduak ez dira eguzki-sistemarenak bezain egonkorrak. Exoplaneta sistemetan, eszentrikotasun handiko orbitak, periodo txikikoak, eta izar anitzeko planeta-sistemak aurkituko ditugu. Splitting metodo sinplektikoak, ez dira ondo egokitzen era honetako sistemak integratzeko.
-IRK Gauss kolokazio metodo orokorrean oinarritutako gure inplementazioa, edozein sistemarako egokia da. Eguzki-sistemaren ekuazioei aldagai aldaketa modu egokian aplikatuz metodoa lehiakorra da gurea eta exoplaneta-sistemak integratzeko ere,  baliagarria izan daitekeela pentsatzen dugu.
-         
- 
-\subsection*{Molekulen sistema dinamikoak.}
-
-Molekulen dinamikaren problema, Hamiltondarra da eta ekuazio diferentzialak era honetan idatzi daitezke,
-\begin{align*}
-&\dot{q}_i=v_i, \\
-&\dot{v}_i=g(q_i), \ i=1,\dots,N,
-\end{align*}
-non $N$ partikulen kopurua eta $q_i,v_i \in \mathbb{R}^3$ diren.
-
-Molekulen sistema dinamikoen integrazioak konputazionalki garestiak dira, $N$ balioa handia delako, $g$ funtzioaren konplexutasunagatik eta integrazioa epea luzea izaten delako. Molekulen sistema dinamikoen integrazioetarako, \emph{Störmer-Verlet} (\ref{eq:stverlet}) da metodo nagusienetakoa. Sanz Sernak \cite{sserna1996}, molekulen sistema dinamikoen integraziorako Gauss metodoen eraginkortasuna aztertu zuen, eta \emph{Störmer-Verlet} metodoa eraginkorragoa zela ondorioztatu zuen.
-Molekulen sistema dinamikoen integrazioetarako gure planteamenduak, ez duela ekarpenik egiten dirudi. 
- 
 
 \section{Eredu deskonposaketa.}
 
@@ -275,6 +159,7 @@ puntu-finkoaren iterazioaren bidez askatzeko, \ref{alg:bpf} barne-iterazioa era 
  \caption{Barne-iterazioa: puntu-finkoaren iterazioa}
  \label{alg:bpf}
 \end{algorithm}
+
 
 \subsection*{Orokorpena.}
 
@@ -577,28 +462,94 @@ Saha eta Tremainek \cite{Saha1996}, eguzki-sistemaren epe luzeko integrazioetara
 Ebatzi nahi den problemaren ekuazio diferentzialen balioztapena konputazionalki garestia bada eta dimentsio handikoa, paralelizazioa beste maila batean aplikatu daiteke. Paralelizazioa aplikatzeko bide bat, dimentsio handiko ekuazio-sistemaren balioztapena, osagai independentetan banatzea eta hauen konputazioa, prozesadore batzuen artean modu paraleloan egitea da. Problema zurruna denean, metodo inplizituak aplikatzen direnez, urrats bakoitzean, dimentsio handiko ekuazio-sistemak ebatzi behar dira eta horretarako, paralelizazioan oinarritutako konputazio eraginkorrak ditugu. Era berean, N-gorputzeko problemetan, $N$ handia denean, gorputzen arteko interakzioak ($\mathcal{O}(N^2)$) kalkulatzeko         
 paralelizazioan oinarritutako hainbat inplementazio \cite{Barnes1986,Carrier1988,Driscoll2013} aplika daiteke. 
 
-IRK metodoei dagokienez, $f(Y_i), \ i=1,\dots,s$ ataletako funtzio balioztapena paraleloan exekutatu daiteke. Eguzki-sistemaren eredu errealistetan, $f$ funtzioa konplexua izango da eta beraz, paralelizazioa aplikatzeak abantaila izango du. Bestalde, doitasun bikoitzeko integrazioetarako, Gauss metodoaren inplementazio estandar eraginkorrena, $s=6$ atalekoa kontsideratzen da \cite{Hairer2006}. Gure inplementazio berrian, ordea, $s=?$ ataletako metodoa da eraginkorrena eta honek, paralelizio maila handiago suposatzen du.
+IRK metodoei dagokienez, $f(Y_i), \ i=1,\dots,s$ ataletako funtzio balioztapena paraleloan exekutatu daiteke. Eguzki-sistemaren eredu errealistetan, $f$ funtzioa konplexua izango da eta beraz, paralelizazioa aplikatzeak abantaila izango du. Bestalde, doitasun bikoitzeko integrazioetarako, Gauss metodoaren inplementazio estandar eraginkorrena, $s=6$ atalekoa kontsideratzen da \cite{Hairer2006}. Gure inplementazio berrian, ordea, $s=?$ ataletako metodoa da eraginkorrena eta honek, paralelizio maila handiago suposatzen du.    
+
+
+\section{Inplementazioaren aplikagarritasuna.}
+
+
+Inplementazioa, eguzki-sistemaren doitasun altuko epe luzeko integrazioetan aplikatzeaz gain, beste N-gorputzeko problema batzuetan aplikatzeko eraginkorra izan daitekeen hausnartuko dugu. 
+
+\subsection*{Efemerideak.}
+
+Eguzki-sistemaren  efemerideak, eguzki-sistemaren eredu konplexuak eta epe tarte txikietarako (ehunka urtekoak) integrazioak konputatzen dituzte. Konputagailuen aurreko garaian, efemerideak teoria analitikoetan oinarritutako serie funtzioen bidez kalkulatzen ziren. Soluzio hauetan, Fourier-en serie trigonometriko luzeen ebaluazioa egin behar zen. $1960$ hamarkadan, eguzki-sistemaren ezagutza hobetu zenean (espazio bidaiak eta behatoki astronomikoen aurrerapenak medio), serie oso luzeak kalkulatu behar zituzten, eta orduan zenbakizko integrazioen metodoak, eraginkorragoak bilakatu ziren \cite{Kaplan2015}.   
+   
+Eguzki-sistemaren gorputzen efemeride modernoak, aldaketa adierazten duten (\ref{eq:nbody})  ekuazio diferentzialen  zenbakizko integrazioaren bidez kalkulatzen dira. Integrazioaren hasierako balioak eta ereduaren parametroak, sateliteen bidez jasotako datuekin kontrastatu egiten dira.
+
+Efemerideak, \emph{Chebyshev} polinomio moduan adierazten dira. Zenbakizko integrazio hauetan, biribiltze errorea gai garrantzitsua da. $128$-biteko aritmetikaren aukera baztertzen da, konputazioa oso garestia delako eta $64$-biteko doitasuneko aritmetika hobetzen dituzten teknika konputazionalki merkeagoak, aplikatzen dira. 
+
+Efemerideetarako, eguzki-sistemaren eredu konplexua aplikatzen da. Gorputz nagusien arteko indar grabitazionalez gain, erlatibitate efektua, asteroideek eragindako grabitazio indarrak, gorputzen formen eragina eta beste hainbat indar ez grabitazionalak kontutan hartzen dituzte. Mugimenduaren ekuazio diferentzialak, era honetakoak izaten dira \cite{Feinga2015},      
+      \begin{equation*}
+      \ddot{x}_{Planet}= \sum_{A \neq B} \mu_B \frac{r_{AB}}{\|r_{AB}\|^3}+\ddot{x}_{GR} (\beta,\gamma,c^{-4})+ \ddot{x}_{AST,300}+ \ddot{x}_{J_2}.
+      \end{equation*}
+
+Hauek dira, ekuazio hauen konplexutasuna erakusten duten ezaugarri batzuk:      
+      \begin{itemize}
+      \item Gorputz kopurua: $8$ planetak, ilargia, Pluton eta 300 asteroide. Asteroideek, bereziki Marte planetaren mugimenduarengan dute eragina (\ref{fig:asteroideak} irudia) eta kontutan hartzekoak dira, barne-planeten mugimenduaren doitasun handiko emaitzak behar ditugunean . Bost asteroide nagusiren masak (Ceres, Pallas, Vesta, Iris eta Bamberga) Merkurio eta Pluton planeten mailakoak direnez, integrazioetan gehitzen dira. Gainontzeko asteroide txikien talde handiak, estimazioen bidez simulatzen dira.
+      \item Erlatibitate efektua (GR): Einstein-Imfeld-Hoffmann, $c^{-4}$ PPN hurbilketa.
+      \item $J_2$: eguzkia esferikoa ez izatearen eragina. 
+      \item Integrazioaren urrats luzera, $h=0.055$ egunekoa da.
+      \end{itemize}   
+
+
+\begin{figure} [h]
+\centerline{\includegraphics [width=6cm, height=4cm] {Asteroideak}}
+\caption{Asteroideak.}
+\label{fig:asteroideak}
+\end{figure} 
+
+  
+\subsubsection*{Hiru efemerideak.}
+
+Gaur-egun, eguzki-sistemaren planeten hiru efemeride kalkulatzen dira.
+\begin{enumerate}
+\item Jet Propulsion Laboratory (\emph{EEBB}) \emph{NASA}-ko erakundeak DE (Development Ephemerides) izeneko efemerideak konputatzen ditu.
+
+      $1984$.urtean kalkulatu zen lehen efemeridea (DE-200) eta $2.014$.urteko \emph{DE-430} \cite{Folkner2014} efemeridea publikatutako azkena da. Azken efemeride honen integrazio tartea, $1550-2650$ artekoa izan da.
+
+      Zenbakizko integrazio metodoa, urrats luzera eta  ordena aldakorreko \emph{Multistep Adams} metodoa \cite{Krogh1997} (\emph{DIVA}/\emph{QIVA}) da. \emph{QIVA} doitasun laukoitzeko ($128$-bit) bertsioari deitzen zaio: mugimenduaren ekuazioen Newton zatia, doitasun laukoitzean kalkulatzen da eta ekuazioaren gainontzeko zatia, doitasun bikoitzean.
+
+\item Institut de Méchanique Céleste et de Calcul des Ephémérides (IMCCE, Paris Observatory) INPOP (Intégrateur Númerique Planétaire de l'Observatoire de Paris) izeneko efemerideak.
       
+      $2.000$.urteraino, efemerideen kalkulua teori analitikoetan oinarritzen zituzten. $2.003$.urtean, zenbakizko integrazioaren bidezko lehen efemeridea kalkulatu zuten eta \emph{INPOP13c} efemeridea \cite[$2.014$]{Fienga2008} publikatutako azkena da.
+           
+	  Zenbakizko integrazio metodoa: $12$ ordenako \emph{Adams-Cowell} metodoa da eta urrats finkoa aplikatzen dute.
+	  
+	  Doitasuna: C lengoaian inplementatuta dago eta \emph{Intel} makinetako $80$-biteko doitasuna erabiltzen du \cite{Fienga2008}.  
+	  
+  
+\item Institute of Applied Astronomy (\emph{IAA}, St. Petersburg), EPM (Ephemerides Planets-Moon) izeneko efemerideak.
+      
+      $1.980$.urtetik aurrera, zenbakizko integrazioen bidezko efemerideak kalkulatu dituzte eta  \emph{EPM2013} efemeridea \cite[2.014]{Pitjeva2014} publikatutako azkena  da.
+      
+      Zenbakizko integrazio metodoa, \emph{Everhart} izeneko \emph{IRK} metodoa (Gauss-Radau) da. $23$ ordenako metodoa eta urrats luzera finkoa aplikatzen dute.
+            
+      Doitasuna. Inplementazioak (ERA izeneko softwarea), \emph{Intel} makinetako $80$-biteko doitasuna erabiltzen du.
+      
+\end{enumerate}
 
-\section{Beste sistema dinamikoak.}
-
+\subsection*{Satelite artifizialen problemak.}
+    
+Satelite artifizialen problemak,  gure inplementazioaren aplikagarritasunaren adibide argia dira. Problema hauetan, eredu matematiko konplexuak erabiltzen dira, konputazionalki garestiak, eta sateliteen kokapenaren eboluzioa zehaztasun handiarekin ezagutu behar da. Ondorioz, integrazio metodo eraginkorrak eta  ordena altuko metodoak aplikatu behar dira \cite{Beylkin2014}.    
 
 \subsection*{Exoplanetak.}
 
-Eguzki-sistemari egokitutako splitting metodo sinplektikoak \cite{Wisdom1991,Laskar2001}, eguzki-sistemaren problemaren bi ezaugarriei abantaila atereaz diseinatzen dira. Lehenik, planeten eguzkiarekiko orbitak ia Kepleriarrak dira. Bigarrenik, N-gorputzen problemaren formulazio Hamiltondarran oinarritzen dira eta Hamiltondarra zehazki mantentzen dute, sinplektikoak direlako. 
+Eguzki-sistemari egokitutako splitting metodo sinplektikoak \cite{Wisdom1991,Laskar2001}, eguzki-sistemaren problemaren bi ezaugarriei abantaila atereaz diseinatzen dira. Lehenik, planeten eguzkiarekiko orbitak ia Kepleriarrak dira. Bigarrenik, N-gorputzen problemaren formulazio Hamiltondarrean oinarritzen dira eta sinplektikoak direnez, Hamiltondarra zehazki mantentzen dute. 
 
-Exoplaneta sistemak integratzeko metodo berriak behar dira \cite{Fabrycky2010}. Exoplaneten planeta-sistemen mugimenduak ez dira eguzki-sistemarenak bezain egonkorrak. Exoplaneta sistemetan, eszentrikotasun handiko orbitak, periodo txikikoak, eta izar anitzeko planeta-sistemak aurkituko ditugu. Splitting metodo sinplektikoak, ez dira ondo egokitzen era honetako sistemak integratzeko. Gure eguzki-sistemaren inplementazioa, IRK Gauss kolokazio metodo orokorrean oinarritzen da eta ekuazio-sistemari Kepler fluxuaren aldagai aldaketa modu egokienean aplikatzen diogu. Problema hauetarako, gure inplementazioa baliagarria izan daitekeela pentsatzen dugu.         
+Exoplaneta sistemak integratzeko metodo berriak behar dira \cite{Fabrycky2010}. Exoplaneten planeta-sistemen mugimenduak ez dira eguzki-sistemarenak bezain egonkorrak. Exoplaneta sistemetan, eszentrikotasun handiko orbitak, periodo txikikoak, eta izar anitzeko planeta-sistemak aurkituko ditugu. Splitting metodo sinplektikoak, ez dira ondo egokitzen era honetako sistemak integratzeko.
+IRK Gauss kolokazio metodo orokorrean oinarritutako gure inplementazioa, edozein sistemarako egokia da. Eguzki-sistemaren ekuazioei aldagai aldaketa modu egokian aplikatuz metodoa lehiakorra da gurea eta exoplaneta-sistemak integratzeko ere,  baliagarria izan daitekeela pentsatzen dugu. Dena den, exoplaneta sistemen datuen doitasuna txikia da  eta beraz, ez du zentzu handirik doitasun handiko integrazioak egitea.         
  
-
 \subsection*{Molekulen sistema dinamikoak.}
 
-Molekulen dinamikaren problema Hamiltondarra da eta ekuazio diferentzialak era honetako idatzi daitezke,
+Molekulen dinamikaren problema, Hamiltondarra da eta ekuazio diferentzialak era honetan idatzi daitezke,
 \begin{align*}
 &\dot{q}_i=v_i, \\
 &\dot{v}_i=g(q_i), \ i=1,\dots,N,
 \end{align*}
 non $N$ partikulen kopurua eta $q_i,v_i \in \mathbb{R}^3$ diren.
 
-Molekulen sistema dinamikoen integrazioak konputazionalki garestiak dira, $N$ balioa handia delako, $g$ funtzioaren konplexutasunagatik eta integrazioa epea luzea delako. Molekulen sistema dinamikoen integrazioetarako, \emph{Störmer-Verlet} (\ref{eq:stverlet}) metodo nagusienetakoa da. Sanz Sernak \cite{sserna1996}, Gauss metodoa molekulen sistema dinamikoen integraziorako eraginkortasuna aztertu zuen, eta \emph{Störmer-Verlet} metodoa eraginkorragoa zela ondorioztatu zuen.
-Molekulen sistema dinamikoen integrazioetarako gure planteamenduak, ez duela interesik dirudi. 
+Molekulen sistema dinamikoen integrazioak konputazionalki garestiak dira, $N$ balioa handia delako, $g$ funtzioaren konplexutasunagatik eta integrazioa epea luzea izaten delako. Molekulen sistema dinamikoen integrazioetarako, \emph{Störmer-Verlet} (\ref{eq:stverlet}) da metodo nagusienetakoa. Sanz Sernak \cite{sserna1996}, molekulen sistema dinamikoen integraziorako Gauss metodoen eraginkortasuna aztertu zuen, eta \emph{Störmer-Verlet} metodoa eraginkorragoa zela ondorioztatu zuen.
+Molekulen sistema dinamikoen integrazioetarako gure planteamenduak, ez duela ekarpenik egiten dirudi. 
+
+
 

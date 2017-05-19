@@ -1,11 +1,11 @@
-\chapter{Zientzia-konputazioa.}
+\chapter{Konputazio zientzia.}
 
 %\epigraph{Optimizing a program can be a better solution than buying a faster computer!}
 %{\textit {Performance optimization of Numerically Intensive Codes(2001)}}
 
 \section{Sarrera.}
 
-Azken hamarkadetan, zientzia konputazioaren hazkundea oso handia izan da eta bere erabilera ia zientzia arlo guztietara zabaldu da \cite{Goedecker2001}. Zientzialariek ahalmen handiko tresna berria (zenbakizko simulazioa) eskuragarri dute, neurri handi batean konputagailuen teknologiaren garapen handiari esker. Egungo oinarrizko konputagailuek, orain urte gutxitako superordenagailuen ahalmen berdina dute eta superordenagailuen konputazio gaitasuna ere, maila berdinean hazi da. Zenbakizko algoritmoek ere, garapen handia izan dute; algoritmo eraginkorragoak, idei berriak sortuz eta konputagailuen gaitasunei egokituz, garatu dira.
+Azken hamarkadetan,  konputazio zientziaren hazkundea oso handia izan da eta bere erabilera ia zientzia arlo guztietara zabaldu da \cite{Goedecker2001}. Zientzialariek ahalmen handiko tresna berria (zenbakizko simulazioa) eskuragarri dute, neurri handi batean konputagailuen teknologiaren garapen handiari esker. Egungo oinarrizko konputagailuek, orain urte gutxitako superordenagailuen ahalmen berdina dute eta superordenagailuen konputazio gaitasuna ere, maila berdinean hazi da. Zenbakizko algoritmoek ere, garapen handia izan dute; algoritmo eraginkorragoak, idei berriak sortuz eta konputagailuen gaitasunei egokituz, garatu dira.
 
 Konputazioaren alde garestiena, memoria eta prozesadorearen arteko datu mugimendua da. Prozesadoreak gero eta azkarragoak dira, baina memori atzipenaren abiaduraren hobekuntza mugatuagoa dago. Horregatik algoritmo eraginkorrak, prozesadorearen konputazio arik eta handiena,  memoria komunikazio arik eta txikienarekin, diseinatu behar dira.      
  
@@ -16,11 +16,11 @@ Inplementazio baten eraginkortasuna ez da exekuzio denboraren arabera bakarrik n
 \item Etorkizunean erraz aldatu daitekeen kodea.
 \end{enumerate}
 
-Atal honetan, zientzia konputazioaren funtsezko osagaiak azalduko ditugu. Lehenengo, konputazioaren eraginkortasuna aztertzeko eta exekuzioak neurtzeko tresnen zehaztapenak emango ditugu. Ondoren, konputagailu hardware berriak eta paralelizaio gaitasunak laburtu dugu. Jarraian software ikuspegitik, programazio lengoaiak eta aljebra linealerako (LAPACK) liburutegia landu dugu. Azkenik, konpiladoreari buruzko argibide batzuk eman ditugu.
+Atal honetan,  konputazio zientziaren funtsezko osagaiak azalduko ditugu. Lehenengo, konputazioaren eraginkortasuna aztertzeko eta exekuzioak neurtzeko tresnen zehaztapenak emango ditugu. Ondoren, konputagailu hardware berriak eta paralelizaio gaitasunak laburtu dugu. Jarraian software ikuspegitik, programazio lengoaiak eta aljebra linealerako (LAPACK) liburutegia landu dugu. Azkenik, konpiladoreari buruzko argibide batzuk eman ditugu.
 
 \section{Eraginkortasuna}
 
-Zientzia konputazioaren inplementazio berri baten eraginkortasuna neurtzeko, koma-higikorreko eragiketa kopurua (\emph{flops}) erabili ohi da. Problema handia denean, datuen mugimendua koma-higikorreko eragiketak baino garestiagoa da eta eraginkortasuna, eragiketa kopuruaren arabera neurtzea okerra izan daiteke. 
+Konputazio zientziaren inplementazio berri baten eraginkortasuna neurtzeko, koma-higikorreko eragiketa kopurua (\emph{flops}) erabili ohi da. Problema handia denean, datuen mugimendua koma-higikorreko eragiketak baino garestiagoa da eta eraginkortasuna, eragiketa kopuruaren arabera neurtzea okerra izan daiteke. 
 
 Prozesadoreen maiztasun-abiadura hertzetan neurtzen da, hau da,  \emph{makina ziklo segundoko} kopuruaren arabera. Une honetako prozesadoreak gigahertz (Giga = $10^9$) mailakoak dira. Koma-higikorreko oinarrizko eragiketa bat ($\oplus,\ominus,\otimes,\oslash$) exekutatzeko  ziklo gutxi batzuk behar dira eta beraz, $1$ GHz-ko prozesadore batek
 $>10^8$ koma-higikorreko eragiketa segundoko exekutatzen ditu ($>100$ megaflops) \cite{Pacheco2011}.
@@ -219,7 +219,7 @@ Prozesadore anitzeko konputagailu hardware berriak, konplexuak eta heterogeneoak
 Lehen hurbilpen modura bi sistema nagusi bereiziko ditugu:  memoria konpartitutako eta memoria banatutako sistemak. Memoria konpartitutako sistemetan, prozesadore guztiek memoria osoa konpartitzen dute eta inplizituki konpartitutako datuen atzipenaren bidez komunikatzen dira (\ref{fig:mks} irudia). Memoria banatutakotako sistemetan aldiz, prozesadore bakoitzak bere memoria pribatua du eta esplizituki bidalitako mezuen bidez komunikatzen dira (\ref{fig:mbs} irudia). Aipatzekoa da, sistema handietan bi memoria motak nahasten direla, hau da, batetik goiko mailan memoria banatuta alde bat eta bestetik, konputazio unitate bakoitzak memoria konpartitutako aldea.    
 
 Hirugarren sistema osagarria ere aipatuko dugu, GPU (Graphical Processor Unit) unitateetan oinarritutako konputazioa.
-Jokoen eta animazio industrian, grafiko oso azkarrak beharrak bultzatuta  sortutako teknologia da. Oinarrian, imajinak pantailaratzeko prozesagailu asko paraleloan lan egiten dute eta azken hamarkadan, \emph{GPU} unitate hauek zientzia konputaziora zabaldu dira.  
+Jokoen eta animazio industrian, grafiko oso azkarrak beharrak bultzatuta  sortutako teknologia da. Oinarrian, imajinak pantailaratzeko prozesagailu asko paraleloan lan egiten dute eta azken hamarkadan, \emph{GPU} unitate hauek  konputazio zientziara zabaldu dira.  
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=12cm, height=6cm] {Arkitektura1}}
@@ -295,7 +295,7 @@ Erabiltzeko errazagoa eta memoria konpartitutako sistemetan bakarrik aplika dait
 
 Eraginkortasun altuko konputazioaren (\emph{high performance computing}) programazioa konplexua da: espezializazio handikoa  eta konputagailuen hardware jakin baterako egokitutakoa. Zaitasun hauek, proiektu zientifikoak aurrera ateratzeko eta mantentzeko arazo asko eragiten ditu. Azken urteotan, eragozpen hau gainditzeko, programazio lengoaia interesgarriak sortu dira (adibidez, Julia \cite{Bezanson2014} edo Chapel \cite{Balaji2015}) baina oraindik, hauen arrakasta ikustekoa da.
 
-Azkenik, zientzia konputazioan \emph{problemak ebazteko inguruneak} (Problem Solving Enviroments) deituriko softwareak aipatuko ditugu. Ingurune hauek, programazio leiho interaktibo batean, goi-mailako lengoai batean inplementazioen garapena eta emaitzen azterketa egiteko aukera eskaintzen dute. Matlab eta Mathematica \cite{WolframResearch} programazio ingurune nagusienak dira. Guk Mathematica bi modutara erabili dugu. Lehenik, prototipoak garatzeko tresna gisa: idei berriak garatu eta probatu, inplementazioa C lengoaian egin aurretik. Bigarrenik, gure C inplementazioen esperimentuak Mathematica ingurunetik exekutatu eta emaitzak grafikoki aztertu ditugu. Era honetan, irakurleari Mathematicako dokumentuetan esperimentuen zehaztasun guztiak eta esperimentu berdina errepikatzeko aukera ematen diogu.       
+Azkenik,  konputazio zientzian \emph{problemak ebazteko inguruneak} (Problem Solving Enviroments) deituriko softwareak aipatuko ditugu. Ingurune hauek, programazio leiho interaktibo batean, goi-mailako lengoai batean inplementazioen garapena eta emaitzen azterketa egiteko aukera eskaintzen dute. Matlab eta Mathematica \cite{WolframResearch} programazio ingurune nagusienak dira. Guk Mathematica bi modutara erabili dugu. Lehenik, prototipoak garatzeko tresna gisa: idei berriak garatu eta probatu, inplementazioa C lengoaian egin aurretik. Bigarrenik, gure C inplementazioen esperimentuak Mathematica ingurunetik exekutatu eta emaitzak grafikoki aztertu ditugu. Era honetan, irakurleari Mathematicako dokumentuetan esperimentuen zehaztasun guztiak eta esperimentu berdina errepikatzeko aukera ematen diogu.       
 
 \subsection*{OpenMP}   
 

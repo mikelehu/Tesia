@@ -3,10 +3,47 @@
 
 \section*{Ideiak}
 
+\begin{enumerate}
+\item 1-ideia.
 
 Lehenengo puntu-finkoaren iterazioan oinarritutako eta Newton sinplifikatuaren iterazioan oinarritutako IRK inplementazioak jorratu dugu. Bi inplementazio hauetan, biribiltze errorearen ikuspegitik optimoa izatea lehenetsi dugu. Newton sinplifikatuaren IRK inplementazio estandarra konplexua eta konputazionalki garestia denez, modu eraginkorrean kalkulatzeko proposamen egin dugu.
 
 Eguzki-sistema integratzeko, IRK metodo partizionatuak Newton sinplifikatuaren IRK metodoak baino egokiagoak direla baieztatu dugu. Dena den, puntu-finkoaren inplementazioak energia drift-a azaltzen du eta hau garrantzitsua balitz, Newton-en inplementazioa aplikatu beharko litzateke.        
+
+\item 2-ideia.
+
+Splitting metodo oinarrizkoan (verlet), zera egiten dugu: $h/2$ fluxua aplikatu , perturbazioak kalkulatu eta gero berriz  $h/2$ fluxua aplikatu. Fluxuaren aldagai aldaketarekin, gauza bera egiten ari gara: $h/2$ fluxua aurreratu, perturbazioak kalkulatu (aldagai berrietan eta hobeto kalkulatzen dugu), $h/2$ fluxua aurreratu.
+
+Paralelizazioaz, IRK metodoak errazten du: funtzio ebaluaztapenean bektorizazioa aplikatzea eta ataletan paralelizazioa aplikatzea.
+
+\item 3-ideia.
+
+Gauss metodoak hiru abantaila azaltzen dituzte:
+
+\begin{enumerate}
+\item Paraleligarritasuna.
+
+\item Iterazioak.
+
+Iterazio gehienak eredu sinple batekin kalkula daitezke \cite{Beylkin2014} eta eta bukaeran iterazio pare bat eredu osoarekin. 
+
+\item Sinplektikoa.
+
+Metodo sinplektikoa denez, edozein problema Hmiltondarrari aplika daiteke. 
+
+\item Birparametrizazioa.
+
+Integratzaile sinplektikoak luzera finkoko urratsa eduki behar du eta zentzu honetan, birparametrizazioa eraginkortasuna hobetzeko beste bide bat da. Arazorik gabe aplikatu daiteke.
+
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+
 
 \section*{Laburpena}
 
