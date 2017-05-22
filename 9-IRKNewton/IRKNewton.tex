@@ -1,5 +1,5 @@
 \chapter{IRK: Newtonen Iterazioa.}
-
+\label{chap:IRK-NEW}
 %\epigraph{The top 10 algorithms in Applied Mathematics: 1.Newton and quasi-Newton methods.}
 %{\textit {Nick Higham (2016)}}
 
@@ -1122,7 +1122,7 @@ IRK Newton sinlifikatuaren inplementazioa, \ref{alg:IRK-Newton-Li}~algoritmoan l
 \clearpage
 
 
-\section{IRK Newtonen iterazio Mixtoa.}
+\section{IRK Newtonen iterazio mistoa.}
 \label{sec:7.6}
 
 \subsection{Sasi-Newton iterazioa.}
@@ -1177,7 +1177,7 @@ non $fl_{32}(x), \ x \in \mathbb{R}$ zenbakiaren gertuen dagoen $32$-biteko IEEE
 
 IRK inplementazio berri honen \ref{alg:IRKstep}~algoritmoan, (\ref{eq:linsysZ})~ekuazio-sistema linealaren  $J_i$ Jacobiar matrizeen ebaluazioak, doitasun arrunta duten $Y_i$ atalekin kalkulatuko ditugu. Beraz, \ref{alg:InexactNw}~algoritmoaren barne iterazioen geratze irizpidea, $fl_{32}(\Delta L^{[k,l]})=fl_{32}(\Delta L^{[k,l-1]})$ doitasun arruntean betetzen dela aztertzea nahikoa izango dugu.  
 
-\subsection{IRK-Newton Mixtoa}
+\subsection{IRK Newton Mistoa}
 \label{ss:ss762}
 
 Zenbakizko soluzioa $y_n \approx y(t_n) \in \R^{d}, \ n=1,2,\dots$, bi bektoreen batura gisa, $ \ \tilde{y}_n+e_n \in \F^{d}$ lortuko dugu. Hasierako balioa $y_0 \in \R^{d}$, \ $\tilde{y}_0+e_0$ batura moduan adieraziko dugu, non $\tilde{y}_0=fl(y_0)$~ eta $e_0=fl(y_n-\tilde{y}_0)$ diren. 
@@ -1316,7 +1316,7 @@ Jarraian, inplementazioaren inplementazioaren \ref{alg:IRKstep}~algoritmoa labur
      $\delta = e + \sum_{i=1}^{s} \Delta L_i^{[k,\ell]}$\;
      $(\tilde y^*,e^*) = S_{s,d}(\tilde y, \delta, L_1^{[k-1]}, \ldots, L_s^{[k-1]})$\;
     \BlankLine
-  \caption{IRK inplementazio Mixtoa}
+  \caption{IRK  Newtonen iterazio mistoa}
   \label{alg:IRKstep}
  \end{algorithm}
 

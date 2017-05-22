@@ -4,53 +4,53 @@
 \BOOKMARK [1][-]{section.1.3}{Helburua eta esparrua.}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.4}{Ekarpenak.}{chapter.1}% 5
 \BOOKMARK [1][-]{section.1.5}{Tesiaren egitura.}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.6}{Laburpena}{chapter.1}% 7
-\BOOKMARK [0][-]{chapter.2}{Zenbakizko integratzaile sinplektikoak.}{}% 8
-\BOOKMARK [1][-]{section.2.1}{Sarrera.}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{Zenbakizko integrazio metodoak}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.3}{Runge-Kutta metodo sinplektikoak.}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.4}{Konposizio eta Splitting metodoak.}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.5}{Laburpena.}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{Problemak.}{}% 14
-\BOOKMARK [1][-]{section.3.1}{Sarrera.}{chapter.3}% 15
-\BOOKMARK [1][-]{section.3.2}{Pendulu bikoitza.}{chapter.3}% 16
-\BOOKMARK [1][-]{section.3.3}{N-Gorputzen problema.}{chapter.3}% 17
-\BOOKMARK [1][-]{section.3.4}{Eguzki-sistema.}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.5}{Laburpena.}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{Koma higikorreko aritmetika.}{}% 20
-\BOOKMARK [1][-]{section.4.1}{Sarrera.}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{IEEE-754 estandarra.}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.3}{Biribiltze errorea.}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.4}{Biribiltze errore gutxitzeko teknikak.}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.5}{Laburpena.}{chapter.4}% 25
-\BOOKMARK [0][-]{chapter.5}{IRK: Puntu-finkoaren iterazioa.}{}% 26
-\BOOKMARK [1][-]{section.5.1}{Sarrera.}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.2}{Hairer-en inplementazioa.}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.3}{Gure inplementazioa.}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.4}{Zenbakizko esperimentuak.}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.5}{Laburpena.}{chapter.5}% 31
-\BOOKMARK [0][-]{chapter.6}{IRK: Newtonen Iterazioa.}{}% 32
-\BOOKMARK [1][-]{section.6.1}{Sarrera.}{chapter.6}% 33
-\BOOKMARK [1][-]{section.6.2}{IRK-Newton estandarra.}{chapter.6}% 34
-\BOOKMARK [1][-]{section.6.3}{IRK-Newton eraginkorra.}{chapter.6}% 35
-\BOOKMARK [1][-]{section.6.4}{IRK-Newton estandarra \(formulazio berria\).}{chapter.6}% 36
-\BOOKMARK [1][-]{section.6.5}{IRK-Newton eraginkorra \(formulazio berria\).}{chapter.6}% 37
-\BOOKMARK [1][-]{section.6.6}{IRK Newtonen iterazio Mixtoa.}{chapter.6}% 38
-\BOOKMARK [1][-]{section.6.7}{Zenbakizko esperimentuak.}{chapter.6}% 39
-\BOOKMARK [1][-]{section.6.8}{Laburpena.}{chapter.6}% 40
-\BOOKMARK [0][-]{chapter.7}{IRK: Eguzki-sistema.}{}% 41
-\BOOKMARK [1][-]{section.7.1}{Sarrera.}{chapter.7}% 42
-\BOOKMARK [1][-]{section.7.2}{Kepler-en fluxua.}{chapter.7}% 43
-\BOOKMARK [1][-]{section.7.3}{Inplementazio berria.}{chapter.7}% 44
-\BOOKMARK [1][-]{section.7.4}{Zenbakizko esperimentuak.}{chapter.7}% 45
-\BOOKMARK [1][-]{section.7.5}{Laburpena.}{chapter.7}% 46
-\BOOKMARK [0][-]{chapter.8}{Eztabaida.}{}% 47
-\BOOKMARK [1][-]{section.8.1}{Eguzki-sistemaren integrazio luzeak.}{chapter.8}% 48
-\BOOKMARK [1][-]{section.8.2}{Eredu deskonposaketa.}{chapter.8}% 49
-\BOOKMARK [1][-]{section.8.3}{IRK inplementazioaren oinarriak.}{chapter.8}% 50
-\BOOKMARK [1][-]{section.8.4}{Doitasun altuko konputazioak.}{chapter.8}% 51
-\BOOKMARK [1][-]{section.8.5}{Paralelizazioa.}{chapter.8}% 52
-\BOOKMARK [1][-]{section.8.6}{Inplementazioaren aplikagarritasuna.}{chapter.8}% 53
+\BOOKMARK [0][-]{chapter.2}{Zenbakizko integratzaile sinplektikoak.}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Sarrera.}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Zenbakizko integrazio metodoak}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Runge-Kutta metodo sinplektikoak.}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{Konposizio eta Splitting metodoak.}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.5}{Laburpena.}{chapter.2}% 12
+\BOOKMARK [0][-]{chapter.3}{Problemak.}{}% 13
+\BOOKMARK [1][-]{section.3.1}{Sarrera.}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{Pendulu bikoitza.}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.3}{N-Gorputzen problema.}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.4}{Eguzki-sistema.}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.5}{Laburpena.}{chapter.3}% 18
+\BOOKMARK [0][-]{chapter.4}{Koma higikorreko aritmetika.}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Sarrera.}{chapter.4}% 20
+\BOOKMARK [1][-]{section.4.2}{IEEE-754 estandarra.}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.3}{Biribiltze errorea.}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.4}{Biribiltze errore gutxitzeko teknikak.}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.5}{Laburpena.}{chapter.4}% 24
+\BOOKMARK [0][-]{chapter.5}{IRK: Puntu-finkoaren iterazioa.}{}% 25
+\BOOKMARK [1][-]{section.5.1}{Sarrera.}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.2}{Hairer-en inplementazioa.}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.3}{Gure inplementazioa.}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.4}{Zenbakizko esperimentuak.}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.5}{Laburpena.}{chapter.5}% 30
+\BOOKMARK [0][-]{chapter.6}{IRK: Newtonen Iterazioa.}{}% 31
+\BOOKMARK [1][-]{section.6.1}{Sarrera.}{chapter.6}% 32
+\BOOKMARK [1][-]{section.6.2}{IRK-Newton estandarra.}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.3}{IRK-Newton eraginkorra.}{chapter.6}% 34
+\BOOKMARK [1][-]{section.6.4}{IRK-Newton estandarra \(formulazio berria\).}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.5}{IRK-Newton eraginkorra \(formulazio berria\).}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.6}{IRK Newtonen iterazio mistoa.}{chapter.6}% 37
+\BOOKMARK [1][-]{section.6.7}{Zenbakizko esperimentuak.}{chapter.6}% 38
+\BOOKMARK [1][-]{section.6.8}{Laburpena.}{chapter.6}% 39
+\BOOKMARK [0][-]{chapter.7}{IRK: Eguzki-sistema.}{}% 40
+\BOOKMARK [1][-]{section.7.1}{Sarrera.}{chapter.7}% 41
+\BOOKMARK [1][-]{section.7.2}{Kepler-en fluxua.}{chapter.7}% 42
+\BOOKMARK [1][-]{section.7.3}{Inplementazioa.}{chapter.7}% 43
+\BOOKMARK [1][-]{section.7.4}{Zenbakizko esperimentuak.}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.5}{Laburpena.}{chapter.7}% 45
+\BOOKMARK [0][-]{chapter.8}{Eztabaida.}{}% 46
+\BOOKMARK [1][-]{section.8.1}{Eguzki-sistemaren integrazio luzeak.}{chapter.8}% 47
+\BOOKMARK [1][-]{section.8.2}{Eredu deskonposaketa.}{chapter.8}% 48
+\BOOKMARK [1][-]{section.8.3}{IRK inplementazioaren oinarriak.}{chapter.8}% 49
+\BOOKMARK [1][-]{section.8.4}{Doitasun altuko konputazioak.}{chapter.8}% 50
+\BOOKMARK [1][-]{section.8.5}{Aldagai aldaketa.}{chapter.8}% 51
+\BOOKMARK [1][-]{section.8.6}{Paralelizazioa.}{chapter.8}% 52
+\BOOKMARK [1][-]{section.8.7}{Inplementazioaren aplikagarritasuna.}{chapter.8}% 53
 \BOOKMARK [0][-]{chapter.9}{Ondorioak.}{}% 54
 \BOOKMARK [1][-]{section.9.1}{Etorkizuneko lanak.}{chapter.9}% 55
 \BOOKMARK [-1][-]{part.1}{I. Eranskinak}{}% 56
@@ -73,8 +73,5 @@
 \BOOKMARK [1][-]{section.C.3}{IRK Newton.}{appendix.C}% 73
 \BOOKMARK [1][-]{section.C.4}{IRK Eguzki-sistema.}{appendix.C}% 74
 \BOOKMARK [1][-]{section.C.5}{Konposizio-Splitting metodoak.}{appendix.C}% 75
-\BOOKMARK [0][-]{appendix.D}{Nire-Argibideak}{part.1}% 76
-\BOOKMARK [1][-]{section.D.1}{IRK-Newton.}{appendix.D}% 77
-\BOOKMARK [1][-]{section.D.2}{FMA.}{appendix.D}% 78
-\BOOKMARK [1][-]{section.D.3}{Hitz-zerrenda.}{appendix.D}% 79
-\BOOKMARK [0][-]{table.caption.251}{Bibliografia}{part.1}% 80
+\BOOKMARK [0][-]{appendix.D}{Zerrendak}{part.1}% 76
+\BOOKMARK [0][-]{table.caption.272}{Bibliografia}{part.1}% 77

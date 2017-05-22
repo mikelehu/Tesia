@@ -1,52 +1,12 @@
-\chapter{Nire-Argibideak}.
+\chapter{Zerrendak}.
 
-Niretzako dokumentatutako argibide batzuk. Ez ditut tesian sartu behar.
 
-\section{IRK-Newton.}
-
-\subsection*{Newton sinplifikatuaren iterazioa.}
-Newton sinplifikatuaren iterazioan formulazio berrian ekuazio honen jatorria:
-
-\begin{align*}
-\mbox{Askatu} \ \ & \triangle L_i^{[k]} \\
-\ \ &\triangle L_i^{[k]} - h b_i \ J_i \sum_{j=1}^{s} \mu_{ij}  \ \triangle L_j^{[k]} = g_i^{[k]}  , \ \ i=1,\dots,s.
-\end{align*}
-
-\subsubsection*{Frogapena.}
-
-Abiapuntua.
-\begin{align*}
-& \triangle L_i=L_i-L_i^{[k]},\\
-& L_i-h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij}L_j)=0
-\end{align*}
-
-Honako garapena egingo dugu.
-\begin{align*}
-L_i-h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij}L_j)= L_i^{[k]}+\triangle L_i-h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij} (L_j^{[k]}+\triangle L_j)).
-\end{align*}
-Eta $f(y_n+\sum_{j=1}^{s} \mu_{ij} (L_j^{[k]}+\triangle L_j))$ linealizatuz,
-\begin{align*}
-& \approxeq L_i^{[k]}+\triangle L_i-h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij}L_j^{[k]})-h b_i f'(y_n+\sum_{j=1}^{s} \mu_{ij} L_j^{[k]}) (\sum_{j=1}^{s} \mu_{ij} \triangle L_j))= \\
-& \triangle L_i- hb_i J_i \ (\sum_{j=1}^{s} \mu_{ij} \triangle L_j))= -L_i^{[k]}+h b_i f(y_n+\sum_{j=1}^{s} \mu_{ij}L_j)
-\end{align*}
-non $J_i=f'(y_n+\sum_{j=1}^{s} \mu_{ij} L_j^{[k]})=f'(Y_i)$.
-
-\section{FMA.}
-
-Nola jakin gure \emph{linux} konputagailu batek \emph{FMA} instrukzioak dituen ala ez ? Honako agindua exekutatu eta \emph{fma} flaga azaltzen den ala ez begiratu behar dugu.
-\begin{lstlisting}
-$ grep fma < /proc/cpuinfo
-\end{lstlisting}
-eta konpilatzeko \emph{-mfma} flag-a zehaztu behar da,
-\begin{lstlisting}
-$ gcc -O2 -Wall -std=c99 -fno-common -mfma adibidea.c
-\end{lstlisting}
-
-\section{Hitz-zerrenda.}
+\section*{Hitz-zerrenda.}
 
 \begin{table}
 \caption{Hitz-zerrenda.}
 \label{tab:21}       % Give a unique label
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{ l l c c c } 
  \hline
  Euskaraz                                &  Ingelesez                           & Laburdura    & Adibidea \\
@@ -55,16 +15,13 @@ $ gcc -O2 -Wall -std=c99 -fno-common -mfma adibidea.c
  Hasierako baliodun problema             &  Initial value problem               & \emph{IVP}   &                  \\
  Zurruna								 &  Stiff                               &              &                  \\
  Sinplektikoa                            &  Symplectic                          &              &                  \\
- Desplazamendu                           &  Drift                               &              &                  \\
-                                         &  Splitting methods                   &              &                  \\
-                                         &  Conposition methods                 &              &                  \\
+ Drift                                   &  Drift                               &              &                  \\
+ Splitting metodoak                      &  Splitting methods                   &              &                  \\
+ Konposizio metodoak                     &  Conposition methods                 &              &                  \\
  Runge-Kutta Esplizitua                  &  Explicit Runge-Kutta                &  \emph{ERK}  &                  \\
  Runge-Kutta Inplizitua                  &  Inplicit Runge-Kutta                &  \emph{IRK}  &                  \\
-                                         &  A-stability, B-stability            &              &                  \\
-                                         &  Implicit Midpoint method            &              &                  \\
-                                         &  Adjoint                             &              &                  \\
-                                         &  bias                                &              &                  \\
-                                         &  compensated summation               &              &                  \\
+                                         &  Bias                                &              &                  \\
+ Batura konpensatua                      &  compensated summation               &              &                  \\
  Biribiltzea                             &  roundoff                            &              &                  \\
  Portabilitate                           &  portable                            &              &                  \\
  Doitasun arrunta                        &  Single precision                    &              &                  \\
@@ -74,32 +31,42 @@ $ gcc -O2 -Wall -std=c99 -fno-common -mfma adibidea.c
  Multiple-term representation            &  Termino-anitzeko adierazpena        &              &                  \\  
  Haria                                   &  Thread                              &              &                  \\
                                          &  Graphical Processor Unit            &  \emph{GPU}  &                  \\
-                                         &  Least Square                        &              &                  \\
                                          &  Least Eigenvalues problems          &              &                  \\
+                                         &  Linear least square problems        &              &                  \\
+                                         &  Eigenvalues problems                &              &                  \\
  Balio singularren deskonposaketa        &  Singular values descomposition      & \emph{SVD}   &                  \\
- Ezentrizidadea                          &  Eccentricity                        &              &                  \\
+ Eszentrikotasuna                        &  Eccentricity                        &              &                  \\
                                          &  Eccentric anomaly                   &              &                  \\
- Astronomical unit (AU)                  &  Unitate astronomikoa                &              &                  \\
- Julian date                             &  Data juliotar                       &              &                  \\
- LU Decomposition  (low, up)             &  LU-deskonposaketa                   &              &                  \\ 
- Flops                                   &  Koma-higikorreko eragiketa segunduko &             &                  \\   
+ Unitate astronomikoa                    &  Astronomical unit                   &  \emph{AU}   &                  \\
+ LU deskonposaketa                       &  LU Decomposition                    &              &                  \\
+                                         &  Backward substitution               &              &                  \\
+ Koma-higikorreko eragiketa segunduko    &  Float operations per second         &  \emph{flops}&                  \\   
  Peak                                    &  Exekuzio gaitasuna                   &             &                  \\
- Wall-time, elapsed-time                 &                                       &             &                  \\
- CPU-time                                &                                       &             &                  \\
- Cache memoria                           &                                       &             &                  \\ 
- spatial/data locality                   &                                       &             &                  \\
- Single Instruction Multiple Data        &                                       & SIMD        &                  \\
- Fork-join                               &                                       &             &                  \\
- Application programming interface       & Interfaze aplikazio programa          & API         &                  \\
- Eraginkortasun altuko konputazioa       & High performance computing            & HPC         &                  \\
- Problem solving enviroments             & Problemak ebazteko inguruneak         & PSE         &                  \\
- Portable                                &                                       &             &                  \\
- Linear least square problems            &                                       &             &                  \\
- Eigenvalues problems                    &                                       &             &                  \\
- Sparse matrices                         & Matrize bakanak                       &             &                  \\
+                                         &  Wall-time, elapsed-time              &             &                  \\
+ CPU denbora                             &  CPU-time                             &             &                  \\
+ Cache memoria                           &  Cache memory                         &             &                  \\ 
+                                         &  Spatial/data locality                &             &                  \\
+ Single Instruction Multiple Data        &  Single Instruction Multiple Data     & \emph{SIMD} &                  \\
+                                         &  Fork-join                            &             &                  \\
+ Interfaze aplikazio programa            &  Application programming interface    & \emph{API}  &                  \\
+ Erredimendu altuko konputazioa          &  High performance computing           & \emph{HPC}  &                  \\
+ Problemak ebazteko inguruneak           &  Problem solving enviroments          & \emph{PSE}  & Mathematica      \\
+ Matrize bakanak                         &  Sparse matrices                      &             &                  \\
                                                             
  
                                 
  \hline
- \end{tabular}
+ \end{tabular}}
 \end{table}
+
+
+%\newpage
+%\section*{Irudien zerrenda.}
+
+%\listoffigures
+
+%\newpage
+%\section*{Taulen zerrenda.}
+
+%\listoftables
+%\newpage

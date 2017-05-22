@@ -447,6 +447,62 @@ Doitasun laukoitza ($128$-bit), software bidez modu errazean  inplementatu daite
 
 Batura konpensatua merkea da. Eguzki-sistemaren gure inplementazioan batura konpensatua aplikatzeak abantaila berezia dakar: urrats bakoitzean gehitzen dugun balioa txikia denez, batura konpensatuarekin zifra hamartar asko mantentzen ditugu.            
 
+
+\section{Aldagai aldaketa.}
+
+
+Kepler-en fluxuaren aldagai aldaketa aplikatu dugunean, puntu-finkoaren iterazioaren IRK inplementazioan oinarritu gara eta zenbakizko esperimentuetan, iterazioak oso azkar konbergitzen dutela ikusi dugu. Bestalde, eguzki-sistemaren eredu konplexuagoetan, Kepleriarrak ez diren hainbat indar izan daitezke. Aldagai hauen, konbergentzia azkartzeko, Newton sinplifikatuaren IRK inplementazioa aplikatze komeniko zaigula uste dugu (etorkizuneko lanak?).
+
+Etorkizunerako, hobekuntza aukera asko izan ditzake:
+\begin{enumerate}
+\item Eredu deskonposaketan aplikatutako teknikak.
+\item Oszilazio teknikak errorea txikitzeko \dots
+\end{enumerate}
+
+
+\subsection*{Atalen hasieraketa.}
+Kepler fluxuaren aldagai aldaketa atalen hasieraketa ona lortzeko aplika daiteke.
+Eguzki sistemarako idei berri bat azalduko dugu. Honako ekuazio diferentziala dugularik,
+\begin{equation*}
+\dot{y}=k(y)+\epsilon \ g(y)
+\end{equation*}
+
+Alde kepleriarraren fluxua ezaguna dugu,
+\begin{align*}
+\varphi_{\Delta t}^k:&  \ \mathbb{R}^d \ \longrightarrow \mathbb{R}^d  \\
+&  y_0 \longrightarrow y_1. 
+\end{align*}
+
+Aldagai aldaketa bat egin daiteke,
+\begin{align*}
+y(t_0+\Delta t) &= \varphi _{\Delta t}^k(z(t_0+\Delta t)), \ \ y(t_0)=z(t_0), \\
+z(t_0+\Delta t) &= \varphi _{-\Delta t}^k(y(t_0+\Delta t)).
+\end{align*}
+
+Aldagai berriarekiko ekuazio diferentziala mantso aldatzen den funtzioa da,
+\begin{align*}
+\dot{z}=\epsilon \ r(z,t).
+\end{align*} 
+
+
+Orokorrean, interpolazio bidezko hasieraketa ona izateko,  urratsa txikia izan behar du (periodo bat baino txikiagoa izan behar du). Teknika hau erabiliz, interpolazioaren errorea $\mathcal{O}(\epsilon)$ mailakoa izango da.
+
+Proposamen honetan hasieraketa $z$ aldagai berria erabiliz era honetan egingo dugu:
+\begin{itemize}
+\item $Y_{n-1}$ atalei kepler \textbf{denboran atzeratuz}, $Z_{n-1}$ aldagai berriarekiko atalak lortuko ditugu.
+\item $Z_{n-1}$ alatak interpolauz, $Z_{n}^{[0]}$ hasieraketak lortuko ditugu.
+\item $Z_{n}^{[0]}$ atalei kepler \textbf{denboran aurreratuz}, $Y_{n}^{[0]}$ hasieraketak lortuko ditugu.
+\end{itemize}
+
+
+
+\begin{figure}[h]
+\centerline{\includegraphics[width=12cm, height=6cm] {AtalenHasieraketa3}}
+\caption{Atalen hasieraketa3.}
+\label{fig:lau}
+\end{figure} 
+
+
 \section{Paralelizazioa.}
 
 
