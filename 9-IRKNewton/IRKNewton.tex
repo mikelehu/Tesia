@@ -14,14 +14,14 @@ Ikusiko dugunez, $d$-dimentsioko ekuazio diferentzialen sistema, Newtonen iteraz
 \label{eq:syslin}
 (I_d \otimes I_s- h \ A \otimes J) \in \mathbb{R}^{sd \times sd},
 \end{equation} 
-non $A \in \mathbb{R}^{s \times s}$ Runge-Kutta metodoaren koefizienteen den eta $J$ matrizea, ataletan ebaluatutako Jacobiar matrizearen hurbilpen komuna den. Integrazioaren urrats bakoitzean, $sd \times sd$ tamainako ekuazio-sistema lineala askatu behar da.
+non $A \in \mathbb{R}^{s \times s}$ Runge-Kutta metodoaren koefizienteen den eta $J$ matrizea, ataletan ebaluatutako matrize Jacobiarraren  hurbilpen komuna den. Integrazioaren urrats bakoitzean, $sd \times sd$ tamainako ekuazio-sistema lineala askatu behar da.
 
-Hainbat lanetan \cite{Butcher1976,Liniger1970,Bickart1977}, (\ref{eq:syslin}) matrizearen egitura berezia aprobetxatuz, ekuazio-sistema linealak modu eraginkorrean ebazteko proposamena egin zuten. Zehazki, ia blokeka diagonala den (\ref{eq:syslin})~matrizearen antzekoa da;  era honetako $I_d-h \lambda_j J \in \mathbb{R}^{d \times d} \ (j=1,\dots,s)$ $s$-bloke duen matrizea, bloke bat $A$ matrizearen $\lambda_j$ balio propio  bakoitzeko. Normalean, ordena altuko IRK metodoaren koefizienteen $A$ matrizeak, $[s/2]$ balio propio konplexu pare ditu ($s$ bakoitia denean, balio propio erreal bat gehituta).
+Hainbat lanetan \cite{Butcher1976,Liniger1970,Bickart1977}, (\ref{eq:syslin}) matrizearen egitura berezia aprobetxatuz, ekuazio-sistema linealak modu eraginkorrean ebazteko proposamena egin zuten. Zehazki, ia blokeka diagonala den (\ref{eq:syslin})~matrizearen antzekoa era honetako $I_d-h \lambda_j J \in \mathbb{R}^{d \times d} \ (j=1,\dots,s)$ $s$-bloke duen matrizea, bloke bat $A$ matrizearen $\lambda_j$ balio propio  bakoitzeko. Normalean, ordena altuko IRK metodoaren koefizienteen $A$ matrizeak, $[s/2]$ balio propio konplexu pare ditu ($s$ bakoitia denean, balio propio erreal bat gehituta).
 
 Gure ekarpenean, $sd$-dimentsioko (\ref{eq:syslin}) ekuazio-sistema, $(s+1)d$~dimentsioko sistema gisa 
-berridatziko dugu, eta $d \times d$ tamainako $[s/2]+1$ matrizeen LU deskonposaketa (eta tamaina bereko matrize batzuen biderketa) kalkulatuz, askatuko dugu. Tamaina txikiko matrizeen LU deskonposaketa azkarra denez, konputazionalki eraginkorra izatea espero dugu. Inplementazioa, IRK metodoa simetriko eta sinplektikoetarako garatu dugu. Dena den, bai IRK metodo ez-simetriko sinplektikoetarako, bai IRK metodo simetriko ez-sinplektikoetarako garatu daiteke.
+berridatziko dugu, eta $d \times d$ tamainako $[s/2]+1$ matrizeren LU deskonposaketa (eta tamaina bereko matrize batzuen biderketa) kalkulatuz, askatuko dugu. Tamaina txikiko matrizeen LU deskonposaketa azkarra denez, konputazionalki eraginkorra izatea espero dugu. Inplementazioa, IRK metodo simetriko eta sinplektikoetarako garatu dugu. Dena den, bai IRK metodo ez-simetriko sinplektikoetarako, bai IRK metodo simetriko ez-sinplektikoetarako garatu daiteke.
  
-Newtonen iterazio metodoaren bidez, $u\in \mathbb{R}^{n}$ eta $F: \mathbb{R}^n \ \longrightarrow {\mathbb{R}}^n$ emanik, $F(u)=0$ betetzen duen $u^{[*]}$ soluzioa aurkitu nahi dugu. Hasierako soluzioaren $u^{[0]}$ estimazioa  emanik,  Newtonen iterazio sinplifikatua definizioa \ref{alg:nssg}~algoritmoan ikus daiteke.
+Newtonen iterazio metodoaren bidez, $u\in \mathbb{R}^{n}$ eta $F: \mathbb{R}^n \ \longrightarrow {\mathbb{R}}^n$ emanik, $F(u)=0$ betetzen duen $u^{[*]}$ soluzioa aurkitu nahi dugu. Hasierako soluzioaren $u^{[0]}$ estimazioa  emanik,  Newtonen iterazio sinplifikatuaren definizioa \ref{alg:nssg}~algoritmoan ikus daiteke.
 
 \begin{algorithm}[H]
   \BlankLine
@@ -71,7 +71,7 @@ S-ataletako IRK metodoaren kasuan,  $a_{ij}, b_i, \ \text{eta} \ c_i \ (1\leqsla
 \Phi(y,t,h)=y+h\sum^s_{i=1}{b_i \ f(t+c_ih,Y_{i})\ \ },\
 \end{equation} 
 %
-non $c_i=\sum_{j=1}^{s} a_{ij}$ izan ohi da eta $Y_{i}$ atalak era honetan inplizituki  definitzen diren,
+non $c_i=\sum_{j=1}^{s} a_{ij}$ izan ohi den eta $Y_{i}$ atalak era honetan inplizituki  definitzen diren,
 \begin{equation}
 \label{eq:irkyi}
 Y_{i}=y+\ h\ \sum^s_{j=1}{a_{ij}\ f(t+c_jh,Y_{j})}\ \ \ \ \ i=1 ,\dots, s.\
@@ -86,7 +86,7 @@ Edozein kasutan, Newtonen iterazio bakoitzean, Jacobiarraren $s$ balioztapen eta
 
 \subsection*{Newton iterazioa.}
 
-Newtonen iterazioa, (\ref{eq:irkyi}) ekuazio inplizituko $Y_i \ (i=1,\dots,s)$ atalentzako  $Y_i^{[k]}$ $k=1,2,\dots$ hurbilpenak kalkulatzeko algoritmoa, modu honetan defini daiteke,
+Newtonen iterazioan, (\ref{eq:irkyi}) ekuazio inplizituko $Y_i \ (i=1,\dots,s)$ atalentzako  $Y_i^{[k]}$ $k=1,2,\dots$ hurbilpenak kalkulatzeko algoritmoa, modu honetan defini daiteke,
 \begin{align}
 \label{eq:(1)Newton_iteration}
 1) & \quad r_i^{[k]} := -Y_{i}^{[k-1]} + y + h \sum_{j=1}^{s}\, a_{ij}\, f(t + c_j h,Y_{j}^{[k-1]}), \quad  i=1 ,\ldots, s, \\
@@ -119,10 +119,10 @@ Problema zurruna denean, atalen hasieraketa $Y i = y_n \ , \ i = 1, . . . , s$ e
 \label{eq:irksys}
 (I_s \otimes I_d - h \ A \otimes J)
 \end{equation}
-alderantzizkoarekin aurre-baldintzatuta, iterazio metodo \cite{Saad2003} baten bidez ebaztea. Praktikan, (\ref{eq:(2)Newton_iteration}) ekuazio-sistemaren soluzioaren hurbilpen bat lortuko dugu, eta metodo hauek, Sasi-Newton (inexact Newton) izenarekin ezagutzen dira.    
+alderantzizkoarekin aurre-baldintzatuta, \cite{Saad2003} iterazio metodo  baten bidez ebaztea. Praktikan, (\ref{eq:(2)Newton_iteration}) ekuazio-sistemaren soluzioaren hurbilpen bat lortuko dugu, eta metodo hauek, Sasi-Newton (inexact Newton) izenarekin ezagutzen dira.    
 \end{enumerate}
 
-Goiko bi aukeretan, era honetako ekuazio-sistemak askatu behar ditugu,
+Aurreko bi aukeretan, era honetako ekuazio-sistemak askatu behar ditugu,
 \begin{equation}
 (I_d \otimes I_d - h \ A \otimes J) \ \Delta Y = r )
 \end{equation} 
@@ -189,7 +189,7 @@ r_s^{[k]}
 
 \subsection*{Newton super-sinplifikatuaren iterazioa.}
 
-Bigarren sinplifikazioa bat aplika daiteke, $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}), \ \  i=1,\dots,s \ $ matrizeak,  $J_i^{[0]} \approx J$ hurbilpen bakarrarekin ordezkatuz. Era honetako ekuazio-sistema lortuko dugu, 
+Bigarren sinplifikazio bat aplika daiteke, $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}), \ \  i=1,\dots,s \ $ matrizeak,  $J_i^{[0]} \approx J$ hurbilpen bakarrarekin ordezkatuz. Era honetako ekuazio-sistema lortuko dugu, 
 \begin{equation}
 \label{eq:irkss}
 (I_s \otimes I_d - h \ A \otimes J) \Delta Y^{[k]} = r^{[k]}.
@@ -254,7 +254,7 @@ Atal honetan, honako ekuazio-sistema lineala modu eraginkorrean askatzeko inplem
 \label{eq:linsys}
 (I_s \otimes I_d - h \ A \otimes J) \ \Delta Y = r,
 \end{equation}
-non $J \in \mathbb{R}^{d \times d}$  eta $r \in \mathbb{R}^{s \times d}$ diren.
+non $J \in \mathbb{R}^{d \times d}$  eta $r \in \mathbb{R}^{sd}$ diren.
 
 $S$-ataletako IRK metodoa, Newton iterazioaren bidez $d$-dimentsioko ekuazio diferentzialen sistemari aplikatzeko, urrats bakoitzean $sd \times sd$ tamainako hainbat ekuazio-sistema (iterazio bakoitzeko bat) askatu behar dira. Atal honetan, jatorrizko $sd$-dimentsioko ekuazio-sistema, $(s+1)d$ dimentsioko ekuazio-sistema baliokide moduan berridatziko dugu. Ekuazio-sistema baliokide hau,  $d \times d$ tamainako $[s/2]+1$ matrize errealen LU deskonposaketa bidez askatuko dugu. Tamaina txikiko matrizeen LU deskonposaketa azkarra denez, konputazionalki eraginkorragoa izatea espero dugu.      
 
@@ -415,7 +415,7 @@ non $\sigma_1,\ldots,\sigma_{[s/2]} \geq 0 , \ D$ matrizearen diagonaleko balioa
 \subsection{IRK metodo simetriko sinplektikoen garapena.}
 \label{ss:734}
 
-Atal honetan, (\ref{eq:sympl}) propietate sinplektikoaz gain, (\ref{eq:simm}) simetria propietatea  ere betetzen dituzten IRK metodoak kontsideratuko ditugu. Lehenengo, garapenean erabiliko ditugun matrize laguntzaileak definituko ditugu.
+Atal honetan, (\ref{eq:sympl}) propietate sinplektikoaz gain, (\ref{eq:simm}) simetria propietatea  ere betetzen duten IRK metodoak kontsideratuko ditugu. Lehenengo, garapenean erabiliko ditugun matrize laguntzaileak definituko ditugu.
 
 \begin{enumerate}
 \item P matrizea.
@@ -466,7 +466,7 @@ D=
 \end{matrix}
 \right).
 \end{align}
-s bikoitia bada, $D$ matrizea ezkerrean eta s bakoitia bada, $D$ matrizea eskubian ($\sigma_m=0$) irudikatu dugu. 
+s bikoitia bada, $D$ matrizea ezkerrekoa eta s bakoitia bada, $D$ matrizea eskuinekoa ($\sigma_m=0$) da. 
 
 \item Q matrizea.
 
@@ -655,7 +655,7 @@ $(I_s \otimes I_d - h \ A \otimes J) \Delta Y = r$ ekuazio sistema modu eraginko
 
 \subsubsection*{Inplementazio estandarra.}
 
-Butcher edota Hairer-en inplementazio estandarraren konputazio bi modutan egin daiteke:
+Butcher edota Hairer-en inplementazio estandarraren konputazioa bi modutan egin daiteke:
 
 \begin{enumerate}
 \item Zenbaki konplexuak.
@@ -703,7 +703,7 @@ Hairer-en inplementazioan,
 
 \subsubsection*{Gure inplementazio berria.}
 
-$\bar{A}$ matrizearen, $\bar{A}=P^{-1}DP$ diagonalizatzen dugu eta $D$ matrizeak, irudikari puruak ditu,
+$\bar{A}$ matrizea, $\bar{A}=P^{-1}DP$ diagonalizatzen dugu eta $D$ matrizeak, irudikari puruak ditu,
 \begin{equation*}
 \bar{A}=Q^{-1}RQ, \ \,
 R=\begin{bmatrix}
@@ -731,7 +731,7 @@ Lehenengo eragiketa aljebraikoen konplexutasunak gogoratuko ditugu,
 &\text{inv}: \ \ 2s^3d^3
 \end{align*}
 
-Bi inplementazioen konplexutasunen laburpena,
+Bi inplementazioen konplexutasunen laburpena \ref{tab:Olu}~taulan ikus daiteke.
 \begin{table}[h!]
 \caption[LU deskonposaketak] 
 {\small{}}
@@ -759,7 +759,7 @@ Bi inplementazioen konplexutasunen laburpena,
 \section{IRK-Newton estandarra (formulazio berria).}
 \label{sec:7.4}
 
-IRK puntu-finkoaren inplementazioan erabilitako (\ref{chap:IRK-PF}atala) birformulazioa, IRK-Newton inplementazioan ere aplikatuko dugu. Horrela, IRK metodoa sinplektikoa izatea ziurtatzen dugu. IRK Newtonen iterazio inplementazioan ordea, $L_i$ ($i=1,\dots,s$) aldagai ezezagunak eta $Y_i$ ($i=1,\dots,s$) aldagai laguntzaileak kontsideratuko ditugu, biribiltze errorea gutxitzeko helburuarekin \cite{Olsson2000}.
+\ref{chap:IRK-PF}~atalean IRK puntu-finkoaren inplementazioan erabilitako  birformulazioa, IRK-Newton inplementazioan ere aplikatuko dugu. Horrela, IRK metodoa sinplektikoa izatea ziurtatzen dugu. IRK Newtonen iterazioaren inplementazioan ordea, $L_i$ ($i=1,\dots,s$) aldagai ezezagunak eta $Y_i$ ($i=1,\dots,s$) aldagai laguntzaileak kontsideratuko ditugu, biribiltze errorea gutxitzeko helburuarekin \cite{Olsson2000}.
 
 IRK metodoaren formulazio estandarra (\ref{eq:irkn1}), era honetan berridatziko dugu,
 \begin{equation}
@@ -782,16 +782,16 @@ eta
 %
 \subsection*{Newton sinplifikatuaren iterazioa.}
 
-Newton iterazioa formulazio berriarekin honakoa izango da; $L_i^{[0]}$ hasieratu eta  $k=1,2,\dots$ iterazioetarako, $L_i^{[k]}$ hurbilpenak era honetan kalkulatuko ditugu,
+Newtonen iterazioa formulazio berriarekin honakoa izango da; $L_i^{[0]}$ hasieratu eta  $k=1,2,\dots$ iterazioetarako, $L_i^{[k]}$ hurbilpenak era honetan kalkulatuko ditugu,
 \begin{equation}
 \label{eq:Newton_iteration2}
 \begin{split}
 1) 
    & \quad Y_i^{[k]} := y+\sum_{j=1}^{s}\, \mu_{ij}\, L_{j}^{[k-1]}, \quad  i=1 ,\ldots, s. \\
    & \quad g_i^{[k]} := -L_{i}^{[k-1]}  + h \, b_i\, f(t+c_i h,  Y_i^{[k]}), \quad  i=1 ,\ldots, s, \\   
-2) & \quad \mathrm{Askatu \ } \Delta L_{i}^{[k]} \mbox{\  from \ } \\
+2) & \quad \mathrm{Askatu \ } \Delta L_{i}^{[k]}  \\
    & \quad \Delta L_{i}^{[k]}  - h b_i J_i^{[k]} \sum_{j=1}^{s}\, \mu_{ij} \, \Delta L_{j}^{[k]}=g_i^{[k]}, \quad  i=1 ,\ldots, s,  \\
-& \mbox{non} \quad  J_i^{[k]}=\frac{\partial f}{\partial y}(t + c_i h,Y_{i}^{[k-1]}) \quad	\mbox{for} \quad  i=1,\ldots, s,  \\
+& \mbox{non} \quad  J_i^{[k]}=\frac{\partial f}{\partial y}(t + c_i h,Y_{i}^{[k-1]}),\quad \quad  i=1,\ldots, s,  \\
 3) 
    & \quad   L^{[k]} := L^{[k-1]}  + \Delta L^{[k]}.
    \end{split}
@@ -839,7 +839,7 @@ g_s^{[k]}
 
 \subsection*{Newton super-sinplifikatuaren iterazioa.}
 
-Honako bigarren sinplifikazioarekin, $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}), \ \  i=1,\dots,s$ matrizeak,  $J_i^{[0]} \approx J, \ i=0,\cdots,s$ hurbilpena ordezkatuz, ekuazio-sistema lineal hau lortuko dugu,
+Honako bigarren sinplifikazioarekin, $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}), \ \  i=1,\dots,s$ matrizeak,  $J_i^{[0]} \approx J, \ i=0,\cdots,s$ hurbilpenaz ordezkatuz, ekuazio-sistema lineal hau lortuko dugu,
 \begin{equation}
 \label{eq:nsseq2}
 (I_s \otimes I_d - h \ BAB^{-1} \otimes J) \ \Delta L = g. 
@@ -887,7 +887,7 @@ Formulazio berriari dagokion Newton super-sinplifikatuaren inplementazioa, (\ref
 \end{algorithm}
 
 
-\paragraph*{Interpolazio koefizienteak.} $L_{n,i}^{[0]}$ atalen hasieraketarentzat dagokien koefizienteak era honetan definituko ditugu. IRK puntu-finkoaren inplementazioan finkatu genituen (\ref{eq: interpLi}) interpolazio koefizienteetatik abiatuta  modu errazean definituko ditugu formulazio honi dagozkion interpolazio koefizienteak.
+\paragraph*{Interpolazio koefizienteak.} $L_{n,i}^{[0]}$ atalen hasieraketarentzat dagokien koefizienteak era honetan definituko ditugu: IRK puntu-finkoaren inplementazioan finkatu genituen (\ref{eq: interpLi}) interpolazio koefizienteetatik abiatuta  modu errazean definituko ditugu formulazio honi dagozkion interpolazio koefizienteak.
 \begin{align}
 \begin{split}
 &\left \{ \begin{array}{c}
@@ -909,7 +909,7 @@ Honako notazioa finkatuko dugu,
 \begin{equation*}
 \Delta_j^{[k]}, \ \text{non} \ \Delta^{[k]} \in \mathbb{F}^{sd}  \ (1\leqslant j \leqslant sd).
 \end{equation*}
- Iterazioak  $k=1,2,\ldots$ jarraitzea , $ \Delta^{[k]} =0$ bete arte edo honako baldintza bi iterazio jarraietan betetzen den artean,
+ Iterazioak  $k=1,2,\ldots$ jarraitzea , $ \Delta^{[k]} =0$ bete arte edo honako baldintza bi iterazio jarraietan bete arte,
 \begin{equation}
 \label{eq:not_stoppingLi}
 \forall j \in \{1,\ldots,s d\},  \quad
@@ -969,7 +969,7 @@ Formulazio berrian, modu eraginkorrean askatu behar dugun ekuazio-lineala honako
 \end{equation}
 $J \in \mathbb{R}^{d \times d}$  eta ~$g \in \mathbb{R}^{s \times d}$ matrizeak izanik. 
 
-(\ref{eq:linsysZG}) ekuazio-lineala  ebazteko, aurreko (\ref{ss:733}~atala eta \ref{ss:734}~atala) ataletan (\ref{eq:linsys}) moduko sistemak askatzeko deskribatutako teknika egokituko dugu. Jarraian, IRK metodo simetriko sinplektikoetarako (\ref{ss:734}~atala) garatutako teknika, formulazio berriko (\ref{eq:linsysZG}) sistema ebazteko nola aplikatu daitekeen deskribatuko dugu.
+(\ref{eq:linsysZG}) ekuazio-lineala  ebazteko, aurreko  \ref{ss:733}~atalean (\ref{eq:linsys}) moduko sistemak askatzeko deskribatutako teknika egokituko dugu. Jarraian, IRK metodo simetriko sinplektikoetarako (\ref{ss:734}~atala) garatutako teknika, formulazio berriko (\ref{eq:linsysZG}) sistema ebazteko nola aplikatu daitekeen deskribatuko dugu.
 
 \subsection*{Formulazio estandarretik formulazio berrirako urratsa.}
 
@@ -987,13 +987,13 @@ formulazio berrirako  ekuazio baliokideak lortuko ditugu.
 \begin{enumerate}
 
 \item Aldagai aldaketa.
-Formulazio estandarraren (\ref{eq:DeltaYChVar}) aldagai aldaketari, (\ref{eq:er1}) ekuazio ordezkatuz,
+Formulazio estandarraren (\ref{eq:DeltaYChVar}) aldagai aldaketari, (\ref{eq:er1}) ekuazioa ordezkatuz,
 \begin{align}
 \Delta L &=(B Q_1 \otimes I_d) \ W^{'}+(B Q_2 \otimes I_d) \ W^{''}.
 \end{align}
 
 \item $R\in \mathbb{R}^{md}$ matrizea.
-Formulazio estandarreko $R$ matrizearen (\ref{eq:R}) ekuazioan, (\ref{eq:er2}) ekuazio ordezkatuz,
+Formulazio estandarreko $R$ matrizearen (\ref{eq:R}) ekuazioan, (\ref{eq:er2}) ekuazioa ordezkatuz,
 \begin{align}
 \begin{split}
 R=&(Q_1^T \otimes I_d) \ g + h \ (D Q_2^T \otimes J) \ g,  \\
@@ -1002,7 +1002,7 @@ R=& Q_1^T \ g  + h D Q_2^T \ g \ J^T.
 \end{align}
 
 \item $W^{''}\in \mathbb{R}^{(s-m)d}$ matrizea.
-Formulazio estandarraren $W^{''}$ matrizearen (\ref{eq:W''}) ekuazioan, (\ref{eq:er2}) ekuazio ordezkatuz,
+Formulazio estandarraren $W^{''}$ matrizearen (\ref{eq:W''}) ekuazioan, (\ref{eq:er2}) ekuazioa ordezkatuz,
 \begin{align}
 W^{''}&= -h \ (D^T \otimes J) \ W^{'}+ (Q_2^T \otimes I_d) \ g.
 \end{align}
@@ -1127,8 +1127,10 @@ IRK Newton sinlifikatuaren inplementazioa, \ref{alg:IRK-Newton-Li}~algoritmoan l
 
 \subsection{Sasi-Newton iterazioa.}
 
+%Josebaren zuzenketa 22-05-2017
+%Hurrengo  \ref{ss:ss762}~ataleko IRK metodoaren inplementazio berrirako, Newton iterazio metodoaren (\ref{eq:Newton_iteration2}) aldaera bat kontsideratuko dugu. Newtonen iterazio bakoitzaren ekuazio-sistema hau, 
 
-Hurrengo  \ref{ss:ss762}~ataleko IRK metodoaren inplementazio berrirako, Newton iterazio metodoaren (\ref{eq:Newton_iteration2}) aldaera bat kontsideratuko dugu. Newtonen iterazio bakoitzaren ekuazio-sistema hau, 
+Newton iterazio bakoitza, (\ref{eq:Newton_iteration2}) eskema jarraituz konputatzea da, eta egin beharretako bat ekuazio-sistema askatzea da. IRK metodoaren inplementazio berria ekuazio-sistema hori askatzeko metodoa aldatuko dugu, hau da, honako sistema,
 \begin{equation}
 \label{eq:linsysZ}
  \Delta L_{i}^{[k]}  - h b_i \ J_i \sum_{j=1}^{s}\, \mu_{ij} \, \Delta L_{j}^{[k]} = g_i^{[k]}, \quad  i=1 ,\ldots, s, 
@@ -1173,9 +1175,9 @@ zehazki askatu beharrean, modu iteratiboan askatuko dugu. Horretarako,  \ref{alg
  \label{alg:InexactNw}
 \end{algorithm}
 
-non $fl_{32}(x), \ x \in \mathbb{R}$ zenbakiaren gertuen dagoen $32$-biteko IEEE doitasun arrunteko balioa adierazten duen.
+non $fl_{32}(x), \ x \in \mathbb{R}$ zenbakitik gertuen dagoen $32$-biteko IEEE doitasun arrunteko balioa den.
 
-IRK inplementazio berri honen \ref{alg:IRKstep}~algoritmoan, (\ref{eq:linsysZ})~ekuazio-sistema linealaren  $J_i$ Jacobiar matrizeen ebaluazioak, doitasun arrunta duten $Y_i$ atalekin kalkulatuko ditugu. Beraz, \ref{alg:InexactNw}~algoritmoaren barne iterazioen geratze irizpidea, $fl_{32}(\Delta L^{[k,l]})=fl_{32}(\Delta L^{[k,l-1]})$ doitasun arruntean betetzen dela aztertzea nahikoa izango dugu.  
+IRK inplementazio berri honen \ref{alg:IRKstep}~algoritmoan, (\ref{eq:linsysZ})~ekuazio-sistema linealaren  $J_i$ Jacobiar matrizeen ebaluazioak, doitasun arrunta duten $Y_i$ atalekin kalkulatuko ditugu. Beraz, \ref{alg:InexactNw}~algoritmoaren iterazioen geratze irizpidea, $fl_{32}(\Delta L^{[k,l]})=fl_{32}(\Delta L^{[k,l-1]})$ doitasun arruntean betetzen dela aztertzea nahikoa izango dugu.  
 
 \subsection{IRK Newton Mistoa}
 \label{ss:ss762}
@@ -1199,10 +1201,10 @@ J_i= \frac{\partial f}{\partial y}\left(t +c_i\,  h,  \ \tilde y+  \sum_{j=1}^{s
 %
 \item
 Lehen fasean lortutako $\Delta L^{[k]} \in \R^{s\dim}$ balioa,~(\ref{eq:linsysZ}) ekuazio-sistema linealaren $\Delta L^{[k]}$ soluzio zehatzaren $\Delta L^{[k,0]}$ hurbilpena kontsideratu eta 
-barne iterazioak  (\ref{alg:InexactNw}~algoritmoa) aplikatu, $\Delta L^{[k]}$ soluzioaren $\Delta L^{[k,\ell]}$ hurbilpena (gutxienez doitasun arruntarekin) lortzeko.
+\ref{alg:InexactNw}~algoritmoa aplikatu, $\Delta L^{[k]}$ soluzioaren $\Delta L^{[k,\ell]}$ hurbilpena (gutxienez doitasun arruntarekin) lortzeko.
 
 \item 
-$L^{[k]} = L^{[k-1]} + \Delta L^{[k,\ell]}$, eta $k=k+1$ eguneratu ondoren, Sasi-Newton iterazio bat aplikatuko dugu bigarren urratsean kalkulatutako $J_i$ Jacobiarraren balioak erabiliz. Ekuazio-sistema linealaren (\ref{eq:linsysZ})-(\ref{eq:gk}), $ \ \Delta L^{[k]}$ soluzioaren  $\Delta L^{[k,\ell]}$ hurbilpenak (berriz ere doitasun arruntean)  \ref{alg:InexactNw}~algoritmoa aplikatuz kalkulatuko ditugu.
+$L^{[k]} = L^{[k-1]} + \Delta L^{[k,\ell]}$, eta $k=k+1$ eguneratu ondoren, Sasi-Newton iterazio bat aplikatuko dugu bigarren urratsean kalkulatutako $J_i$ Jacobiarren balioak erabiliz. Ekuazio-sistema linealaren (\ref{eq:linsysZ})-(\ref{eq:gk}), $ \ \Delta L^{[k]}$ soluzioaren  $\Delta L^{[k,\ell]}$ hurbilpenak (berriz ere doitasun arruntean)  \ref{alg:InexactNw}~algoritmoa aplikatuz kalkulatuko ditugu.
 
 \item 
 Azkenik, $(\tilde{y}_{n+1}, e_{n+1})=\tilde \Phi(\tilde{y}_n, e_n, t_n, h)$  urrats berriaren zenbakizko soluzioa kalkulatuko dugu,
@@ -1234,7 +1236,8 @@ Inplementazio honen hainbat zehaztasun azpimarratuko ditugu:
 
 \item $\mu_{i j} \in \F$ koefizienteek, zehazki (\ref{eq:simplektik2}) propietate sinplektikoa  eta simetria propietatea $\mu_{j, i} = \mu_{s+1-i,s+1-j}$  betetzen dituzte.
 
-\item (\ref{eq:gk}) ekuazioaren $g_i^{[k]}$  ($i=1,\dots,s$) hondarren  konputaziorako, $y\in \R^\dim$~balioaren ordez, $\tilde y + e$ ($\tilde y, e \in \F^\dim$) espresioa erabili beharko litzateke. Hala ere, hori horrela egitearen eragina, oso txikia izango litzateke, eta azken Sasi-Newton iterazioan (4.fasea) bakarrik kontutan hartzea erabaki dugu. Gainera, azken Sasi-Newton iterazioan $\tilde y + e$ zuzenean balioa erabili beharrean, $J_i$ Jacobiarra erabili dugu honako hurbilpenarekin,
+\item (\ref{eq:gk}) ekuazioaren $g_i^{[k]}$  ($i=1,\dots,s$) hondarren  konputaziorako, $y\in \R^\dim$~balioaren ordez, $\tilde y + e$ ($\tilde y, e \in \F^\dim$) espresioa erabili beharko litzateke. Hala ere, hori horrela egitearen eragina, oso txikia izango litzateke, eta azken Sasi-Newton iterazioan  bakarrik (4.fasea) kontutan hartzea erabaki dugu.  Gainera, azken Sasi-Newtonen iterazioan, (\ref{eq:gk}) ekuazioan $y$-ren ordez $\tilde{y}+e$ erabili beharrean, $J_i$ Jacobiarrak erabili ditugu honako hurbilketa egiteko:
+
 \begin{gather*}
  h \, b_i\, f\left(t+c_i h, \ \tilde y + e +\sum_{j=1}^{s}\, \mu_{ij}\, L_{j}^{[k-1]}\right)  -L_{i}^{[k-1]} \approx \\
 \left(h \, b_i\, f_i^{[k]} -L_{i}^{[k-1]} \right) + h\, b_i \, J_i \, e,
@@ -1244,7 +1247,7 @@ non $f_i^{[k]}=f\left(t+c_i h,  \tilde y +\sum_{j=1}^{s}\, \mu_{ij}\, L_{j}^{[k-
 
 \end{itemize}
 
-Jarraian, inplementazioaren inplementazioaren \ref{alg:IRKstep}~algoritmoa laburtu dugu.
+Inplementazioaren algoritmo osoa, \ref{alg:IRKstep}~algoritmoan laburtu dugu. 
 
  \begin{algorithm}[H]
   \BlankLine
@@ -1333,7 +1336,7 @@ Newton iterazioan oinarritutako $6$-ataletako Gauss kolokazio metodoaren inpleme
 
 \subsubsection*{Pendulu bikiotz zurruna}
 
-Pendulu bikoitz zurrunaren problemaren Hamiltondarra eta parametroak, \ref{ss:322}~atalean definitu dugu. $k$ parametroak malgukiaren zurruntasun maila finkatzen du: $k=0$ balioarentzat, problema ez da zurruna eta problemaren zurruntasuna, $k$ balioarekin batera handitzen da. 
+Pendulu bikoitz zurrunaren problemaren Hamiltondarra eta parametroak, \ref{ss:322}~atalean definitu ditugu. $k$ parametroak malgukiaren zurruntasun maila finkatzen du: $k=0$ balioarentzat, problema ez da zurruna eta problemaren zurruntasuna, $k$ balioarekin batera handitzen da. 
 
 Hasierako balioak, era honetan aukeratu ditugu: $k=0$ problema ez zurrunarentzat, \cite{Dumitru} artikulutik izaera ez-kaotikoa duen hasierako balioa hartu dugu: $q(0)=(1.1, -1.1)$ eta $p(0)=(2.7746,2.7746)$. $k\neq 0$ problemen hasierako balioak,
 \begin{equation*}
@@ -1350,7 +1353,7 @@ Lehenengo, Newtonen iterazioan oinarritutako IRK inplementazio berriaren biribil
 
 Pendulu bikoitzaren $k$ parametroaren hiru balioetarako, energia errorearen azterketa zehatza egin dugu: $k=0$ , non biribiltze errorea trunkatze erroreari nagusitzen zaion; $k=2^{10}$, non bi erroreak tamaina berekoak diren; eta $k=2^{12}$, non trunkatze errorea birbiltze erroreari nagusitzen zaion. Biribiltze errorearen konparaketa sendoago izan dadin (\cite{Hairer2008}~lanean bezala), azterketa estatistikoa egin dugu. Problema bakoitzarentzat, hasierako balioak $\mathcal{O}(10^{-6})$ errore tamainako ausaz perturbatutako $P=1000$ integrazio konputatu ditugu. 
 
-\ref{fig:plot3}~irudian, zenbakizko integrazioen gure inplementazio berriaren biribiltze errorearen propagazio ona erakusten dute. Alde batetik, $k=0$ eta $k=2^{10}$ balioetarako, puntu-finkoaren iterazioan oinarritutako inplementazioak energiaren grapenaren batezbestekoak, drift lineala agertzen du eta Newton iterazioan oinarritutako inplementazioak, ordea ez du energia driftarik agertzen. Beste alde batetik, bi inplementazioetan, energiaren desbideratze estandarrak antzekoak dira eta $t^{1/2}$ espresioaren proportzionalak dira.   
+\ref{fig:plot3}~irudian, zenbakizko integrazioek gure inplementazio berriaren biribiltze errorearen propagazio ona erakusten dute. Alde batetik, $k=0$ eta $k=2^{10}$ balioetarako, puntu-finkoaren iterazioan oinarritutako inplementazioak energiaren grapenaren batezbestekoak, drift lineala agertzen du eta Newton iterazioan oinarritutako inplementazioak, ordea ez du energia driftarik agertzen. Beste alde batetik, bi inplementazioetan, energiaren desbideratze estandarrak antzekoak dira eta $t^{1/2}$ espresioaren proportzionalak dira.   
 
 \begin{figure}[h!]
 \centering
@@ -1373,7 +1376,7 @@ Pendulu bikoitzaren $k$ parametroaren hiru balioetarako, energia errorearen azte
 \subfloat[$k=2^{12}$ energia errorearen desbideratze estandarra]
 {\includegraphics[width=.4\textwidth]{Fig7N}}
 \end{tabular}
-\caption{\small Energia errore batezbestekoaren (ezkerrean) eta desbideratze estandarraren  eboluzioa (eskubian), puntu-finkoaren inplementazioa (urdinez), eta  Newton inplementazioa (laranjaz). $k=0$ problema ez-zurruna (a,b), $k=2^{10}$ lehen problema zurruna (c,d) eta $k=2^{12}$ bigarren problema zurruna (e,f)}
+\caption{\small Energia errorearen batezbestekoaren (ezkerrean) eta desbideratze estandarraren  eboluzioa (eskubian), puntu-finkoaren inplementazioa (urdinez), eta  Newton inplementazioa (laranjaz). $k=0$ problema ez-zurruna (a,b), $k=2^{10}$ lehen problema zurruna (c,d) eta $k=2^{12}$ bigarren problema zurruna (e,f)}
 \label{fig:plot3}
 \end{figure}
 
@@ -1415,7 +1418,7 @@ Pendulu bikoitzaren $k$ parametroaren hiru balioetarako, energia errorearen azte
  \end{tabular}}
 \end{table}
 
-Eraginkortasuna neurtzeko, bi inplementazioen exekuzio sekuentzialen cpu-denborak  konparatu ditugu. Hortaz gain, bi inplementazioen urratseko iterazioen batezbestekoak (It. per step) alderatu ditugu eta Newton inplementazioan, urratseko sistema linealen ebazpenen batezbestekoa (L.solves per step) eman dugu. Zenbakizko soluzioaren doitasuna neurtzeko, energiaren errore erlatiboaren maximoa eman dugu,
+Eraginkortasuna neurtzeko, bi inplementazioen exekuzio sekuentzialen cpu-denborak  konparatu ditugu. Horrez gain, bi inplementazioen urratseko iterazioen batezbestekoak (It. per step) alderatu ditugu eta Newton inplementazioan, urratseko sistema linealen ebazpenen batezbestekoa (L.solves per step) eman dugu. Zenbakizko soluzioaren doitasuna neurtzeko, energiaren errore erlatiboaren maximoa eman dugu,
 \begin{equation*}
 \max | \frac{E(t_n)-E(t_0)}{E(t_0)}|, \ \  t_n=t_0+nh, \ \ n=1,2,\dots
 \end{equation*} 

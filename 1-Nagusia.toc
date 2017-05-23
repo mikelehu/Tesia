@@ -35,7 +35,7 @@
 \contentsline {section}{\numberline {4.1.}Sarrera.}{51}{section.4.1}
 \contentsline {section}{\numberline {4.2.}\emph {IEEE-754} estandarra.}{51}{section.4.2}
 \contentsline {section}{\numberline {4.3.}Biribiltze errorea.}{54}{section.4.3}
-\contentsline {section}{\numberline {4.4.}Biribiltze errore gutxitzeko teknikak.}{57}{section.4.4}
+\contentsline {section}{\numberline {4.4.}Biribiltze errorea gutxitzeko teknikak.}{57}{section.4.4}
 \contentsline {section}{\numberline {4.5.}Laburpena.}{60}{section.4.5}
 \contentsline {chapter}{\numberline {5.}IRK: Puntu-finkoaren iterazioa.}{61}{chapter.5}
 \contentsline {section}{\numberline {5.1.}Sarrera.}{61}{section.5.1}

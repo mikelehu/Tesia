@@ -17,7 +17,7 @@ Koma-higikorreko zenbaki multzoa finitua da eta ${\mathbb{F}}$ izendatuko dugu. 
 \mathbb{F}\subset \mathbb{R}.
 \end{equation*}
 
-$\mathbb{F}$ zenbaki multzoa, \ref{fig:FloatNumberLine}irudian laburtu dugu. Bai zenbaki positiboentzat, bai negatiboentzat, adierazi daitekeen zenbaki handienaren eta txikienaren arteko balio bakanez osatuta dago. Multzoaren kanpoaldean zenbaki hauek guztiak ditugu: batetik overflow tartean $(-\infty,\max_{x \in \mathbb{F_{-}}}|x|)$  eta $(\max_{x \in \mathbb{F_{+}}}|x|,\infty+)$ daudenak; bestetik underflow tartean  $(\min_{x \in \mathbb{F_{-}}}|x|,0)$ eta $(0,\min_{x \in \mathbb{F_{+}}}|x|)$ daudenak. 
+$\mathbb{F}$ zenbaki multzoa, \ref{fig:FloatNumberLine}irudian laburtu dugu. Bai zenbaki positiboentzat, bai negatiboentzat, adieraz daitekeen zenbaki handienaren eta txikienaren arteko balio bakanez osatuta dago. Multzoaren kanpoaldean zenbaki hauek guztiak ditugu: batetik overflow tartean $(-\infty,\max_{x \in \mathbb{F_{-}}}|x|)$  eta $(\max_{x \in \mathbb{F_{+}}}|x|,\infty+)$ daudenak; bestetik underflow tartean  $(\min_{x \in \mathbb{F_{-}}}|x|,0)$ eta $(0,\min_{x \in \mathbb{F_{+}}}|x|)$ daudenak. 
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=14cm, height=3cm] {ZenbakiErrealak}}
@@ -88,7 +88,7 @@ Bi biribiltze errore mota bereiziko ditugu, bata adierazpenaren errorea eta best
 
 \subsection*{Adierazpenaren errorea.} 
 
-Zenbaki erreal batzuk, $\mathbb{F}$ koma-higikorreko multzoan zehazki adieraz daitezke eta beste batzuk ordea, hurbilpen batez adierazi behar dira. $x \in \mathbb{R}$ izanik, $fl: \mathbb{R} \rightarrow \mathbb{F}$ koma-higikorreko zenbakia esleitzen dion funtzioari deituko diogu:  $x \in \mathbb{R}$ balioaren gertuen dagoen  $fl(x) \in \mathbb{F}$, itzultzen duen funtzioa bezala definitzen da. Hau da, $f_1,f_2 \in \mathbb{F}$ jarraian dauden koma-higikorreko zenbakiak  badira eta $x \in \mathbb{R}, \ f_1\leqslant x \leqslant f_2$ bada,
+Zenbaki erreal batzuk, $\mathbb{F}$ koma-higikorreko multzoan zehazki adieraz daitezke eta beste batzuk ordea, hurbilpen batez adierazi behar dira. $x \in \mathbb{R}$ izanik, $fl: \mathbb{R} \rightarrow \mathbb{F}$ koma-higikorreko zenbakia esleitzen dion funtzioari deituko diogu:  $x \in \mathbb{R}$ balioaren gertuen dagoen  $fl(x) \in \mathbb{F}$ itzultzen duen funtzioa bezala definitzen da. Hau da, $f_1,f_2 \in \mathbb{F}$ jarraian dauden koma-higikorreko zenbakiak  badira eta $x \in \mathbb{R}, \ f_1\leqslant x \leqslant f_2$ bada,
 \begin{equation*}
 fl(x)=
 \left\{
@@ -123,9 +123,9 @@ bermatuta dagoela froga daiteke \cite{Corless2013}.
 
 \subsection*{Aritmetikaren errorea.} 
 
-Koma-higikorreko zenbakien arteko eragiketa baten emaitzak, ez du zertan $\mathbb{F}$ multzoan adierazpen zehatza izan behar eta orduan, emaitza biribildu egingo  da. Adibidez, $m$ digituzko bi zenbakien biderketaren emaitza zehatza adierazteko, $2m$ digituzko mantisa behar dugu ($m$ digituzko galera) \cite{Fukushima2001}. Salbuespena, biderkagaietako bat $2$-ren berretura denean gertatzen da, orduan biderketa zehatza baita.
+Koma-higikorreko zenbakien arteko eragiketa baten emaitzak, ez du zertan $\mathbb{F}$ multzoan adierazpen zehatza izan  eta orduan, emaitza biribildu egingo  da. Adibidez, $m$ digituzko bi zenbakien biderketaren emaitza zehatza adierazteko, $2m$ digituzko mantisa behar dugu ($m$ digituzko galera) \cite{Fukushima2001}. Salbuespena, biderkagaietako bat $2$-ren berretura denean gertatzen da, orduan biderketa zehatza baita.
 
-\paragraph*{Adibidea.} Demagun hiru digitu hamartar errealeko aritmetikarekin ari garela lanean.
+\paragraph*{Adibidea.} Demagun lau digitu hamartar errealeko aritmetikarekin ari garela lanean.
 
 Emaitza zehatza, $1,343 \times 2,103 = 2,824229$. 
 
@@ -186,7 +186,7 @@ $|\delta|<u \ \text{non} \  u=2^{-m}$ beteko denik, ezin daiteke bermatu.
 
 \subsection*{Ezabapen arazoa.}
 
-Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbakiren arteko kendura egiten dugunean gerta daitekeena. 
+Algoritmoen kalkuluetan, doitasun galera azkarra gerta daiteke. Horren adibidea ezabapen arazoa dugu: oso antzekoak diren bi zenbakiren arteko kendura egiten dugunean gerta daitekeena. 
 
 \paragraph*{Adibidea.} Mathematican kalkulatutako adibide honetan, ezabapen errorea nola gertatzen den erakutsi dugu. 
 \begin{lstlisting} [language=Mathematica]
@@ -207,7 +207,7 @@ Algoritmoen kalkuluetan, doitasuna galera azkarra gerta daiteke. Horren adibidea
 \end{lstlisting}
 
 
-\section{Biribiltze errore gutxitzeko teknikak.}
+\section{Biribiltze errorea gutxitzeko teknikak.}
 \label{sec:4.4}
 
 Batuketa eta biderketa eragiketen biribiltze errorea kalkulatzeko algoritmoak ezagunak dira \cite{Dekker1971,Higham2002}. Algoritmo hauek, \emph{termino-gaitzeko adierazpenetan} oinarritzen dira eta baturaren kasuan, batura konpensatu izeneko algoritmoaren oinarria da. Ikusiko dugun bezala, algoritmo sinpleak dira eta konputazio kostu txikia dute.  
@@ -216,7 +216,7 @@ Teknika hauek, zenbakizko integrazioaren inplementazioaren kalkulu "kritikoetan"
 
 \subsection*{Batura: Fast2Sum.}
 
-\emph{Fast2Sum} algorithmoa, 1971.an Dekker-ek \cite{Dekker1971} asmatu zuen. Koma-higikorreko $\tilde x,\tilde y \in \mathbb{F} \ \text{non} \ |\tilde x| \geq |\tilde y| \ \text{bi zenbakien}$ arteko batuketari  $\tilde z= \tilde x \oplus \tilde y$ dagokion biribiltze errorea $e$,  era honetan kalkulatu daiteke,
+\emph{Fast2Sum} algorithmoa, 1971.ean Dekker-ek  asmatu zuen \cite{Dekker1971}. Koma-higikorreko $\tilde x,\tilde y \in \mathbb{F} \ \text{non} \ |\tilde x| \geq |\tilde y| \ \text{bi zenbakien}$ arteko $\tilde z= \tilde x \oplus \tilde y$ batuketari dagokion $e$ biribiltze errorea  era honetan kalkulatu daiteke,
 %\ \text{non} \ \tilde z+ e=\tilde x+\tilde{y}$ den
 
 \begin{algorithm}[H]
@@ -239,7 +239,7 @@ Teknika hauek, zenbakizko integrazioaren inplementazioaren kalkulu "kritikoetan"
 
 \subsubsection*{Batura konpensatua.}
 
-Era honetako osagaia askoko baturetan,
+Era honetako batugai askoren arteko batuketan,
 \begin{equation*}
 z_{n+1}= z_0+\sum\limits_{i=0}^{n} x_i,
 \end{equation*}
@@ -262,17 +262,17 @@ Ideia da, bi zenbakien baturan egindako biribiltze errorea lortu, eta errore hau
    \label{alg:KahanBK}
 \end{algorithm}
 
-Knuth-ek eta Kahan-ek \cite{Muller2009} frogatu zuten,  batura konpensatuko algoritmoaren bidez kalkulatutako $z_{n+1}$ baturak honakoa betetzen duela, 
+Knuth-ek eta Kahan-ek \cite{Muller2009} frogatu zuten,  batura konpensatuko algoritmoaren bidez kalkulatutako $z_{n+1}$ baturak honakoa betetzen duela:
 \begin{equation*}
 \left | z_{n+1} - (z_0+\sum_{i=0}^{n} x_i) \right | \leq (2u+ \mathcal{O}(nu^2)) \left(|z_0|+\sum_{i=1}^{n} |x_0|\right).
 \end{equation*}
 
-Jakina da, batugaiak bektoreak diren kasurako, hau da, $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$, ~algoritmoa orokor daitekeela. Beraz, \ref{alg:KahanBK} algoritmoa $n$ eta $d$ parametroak dituen funtzio familia gisa interpretatu daiteke,
+Jakina da, batugaiak bektoreak diren kasurako, hau da, $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$, ~algoritmoa orokor daitekeela. Beraz, \ref{alg:KahanBK} algoritmoa $n$ eta $d$ parametroak dituen funtzio familia gisa interpreta daiteke,
 \begin{equation}
 \label{eq:batsd}
 S_{n,d} : \mathbb{F}^{(n+3)d} \rightarrow \mathbb{F}^{2d},
 \end{equation}
-zeinek $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$ argumentuak emanik, $\tilde z_{n+1}, e_{n+1} \in \mathbb{F}^d$ balioak itzultzen dituen, eta ($\tilde z_{n+1}+e_{n+1}) \approx \tilde (z_0+e_0+x_0+x_1+ \dots+x_n$) adierazi nahi duen.
+zeinek $\tilde z_0, e_0, x_0, x_1, \dots, x_n \in \mathbb{F}^d$ argumentuak emanik, $\tilde z_{n+1}, e_{n+1} \in \mathbb{F}^d$ balioak itzultzen dituen, eta ($\tilde z_{n+1}+e_{n+1}) \approx \tilde (z_0+e_0+x_0+x_1+ \dots+x_n$) hurbilketa den.
 
 \subsubsection*{Zenbakizko integrazioak.}
  
@@ -282,7 +282,7 @@ y_{n+1}=y_n+\delta_n,
 \end{equation*}  
 non $|\delta_n|<|y_n|$ izan ohi den. Beraz, integrazioaren batura honen birbiltze errorea gutxitzeko, batura konpensatua erabiliko dugu.  
 
-$y_{n+1} \in \mathbb{R}^{d},\quad y_{n+1}=\tilde y_{n}+\tilde \delta_n$ batura zehatza izanik eta $\tilde y_{n+1} \in \mathbb{F}^{d}, \quad \tilde y_{n+1}=\tilde y_{n} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, batura konpensatuaren bidez lortutako errorearen estimazioa $e_{n+1}$, \ref{alg:batkp}.algoritmoa jarraituz lor daiteke eta baturan egindako biribiltze errore zehatza da, 
+$y_{n+1} \in \mathbb{R}^{d},\quad y_{n+1}=\tilde y_{n}+\tilde \delta_n$ batura zehatza izanik eta $\tilde y_{n+1} \in \mathbb{F}^{d}, \quad \tilde y_{n+1}=\tilde y_{n} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, batura konpensatuaren bidez lortutako errorearen estimazioa $e_{n+1}$, \ref{alg:batkp}~algoritmoa jarraituz lor daiteke eta baturan egindako biribiltze errore zehatza da, 
 \begin{equation}
 y_{n+1}=\tilde {y}_{n+1}+e_{n+1}. 
 \end{equation}
