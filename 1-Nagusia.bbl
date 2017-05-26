@@ -6,7 +6,7 @@
 \newblock Intel, 2015.
 
 \bibitem{OpenMP}
-\href{http://www.openmp.org/}{he openmp api specification for parallel
+\href{http://www.openmp.org/}{The openmp api specification for parallel
   programming}, 2017.
 
 \bibitem{Aarseth2008}
@@ -58,8 +58,6 @@ Marc Baboulin, Alfredo Buttari, Jack Dongarra, Jakub Kurzak, Julie Langou,
   scientific computations with mixed precision algorithms}.
 \newblock {\em Computer Physics Communications}, 180\penalty0 (12):\penalty0
   2526 -- 2533, 2009.
-\newblock 40 \{YEARS\} \{OF\} CPC: A celebratory issue focused on quality
-  software for high performance, grid and novel computing architectures.
 
 \bibitem{Balaji2015}
 Pavan Balaji.
@@ -86,9 +84,9 @@ Gregory Beylkin and Kristian Sandberg.
 
 \bibitem{Bezanson2014}
 Jeff Bezanson, Alan Edelman, Stefan Karpinski, and Viral~B Shah.
-\newblock \href{arXiv:1411.1607}{Julia: A fresh approach to numerical
-  computing}.
-\newblock {\em arXiv preprint arXiv:1411.1607}, 2014.
+\newblock \href{http://dx.doi.org/10.1137/141000671}{Julia: A fresh approach to
+  numerical computing}.
+\newblock {\em Siam}, 2014.
 
 \bibitem{Bickart1977}
 Theodore~A Bickart.

@@ -78,7 +78,6 @@
   Author                   = {Marc Baboulin and Alfredo Buttari and Jack Dongarra and Jakub Kurzak and Julie Langou and Julien Langou and Piotr Luszczek and Stanimire Tomov},
   Journal                  = {Computer Physics Communications },
   Year                     = {2009},
-  Note                     = {40 \{YEARS\} \{OF\} CPC: A celebratory issue focused on quality software for high performance, grid and novel computing architectures },
   Number                   = {12},
   Pages                    = {2526 - 2533},
   Volume                   = {180},
@@ -143,12 +142,12 @@
 @Article{Bezanson2014,
   Title                    = {Julia: A fresh approach to numerical computing},
   Author                   = {Bezanson, Jeff and Edelman, Alan and Karpinski, Stefan and Shah, Viral B},
-  Journal                  = {arXiv preprint arXiv:1411.1607},
+  Journal                  = {Siam},
   Year                     = {2014},
 
+  Doi                      = {10.1137/141000671},
   Owner                    = {joseba},
-  Timestamp                = {2017.02.18},
-  Url                      = {arXiv:1411.1607}
+  Timestamp                = {2017.02.18}
 }
 
 @Article{Bickart1977,
@@ -246,6 +245,7 @@
   Number                   = {1-3},
   Pages                    = {5--25},
   Volume                   = {11},
+
   Doi                      = {doi.org/10.1016/0168-9274(93)90037-R},
   Owner                    = {joseba},
   Publisher                = {Elsevier},
@@ -583,6 +583,7 @@
   Year                     = {2014},
   Pages                    = {2--13},
   Volume                   = {259},
+
   Doi                      = {doi.org/10.1016/j.cam.2013.01.011},
   Owner                    = {joseba},
   Publisher                = {Elsevier},
@@ -830,6 +831,7 @@
   Author                   = {Jim{\'e}nez-P{\'e}rez, Hugo and Laskar, Jacques},
   Journal                  = {arXiv preprint arXiv:1106.3694},
   Year                     = {2011},
+
   Owner                    = {joseba},
   Timestamp                = {2017.05.13},
   Url                      = {arXiv:1106.3694}
@@ -1088,6 +1090,16 @@
   Timestamp                = {2017.03.18}
 }
 
+@Article{sserna1996,
+  Title                    = {Are Gauss-Legendre methods useful in molecular dynamics ?},
+  Author                   = {Lopez Marcos, M.A., Sanz Serna J.M., Diaz J.C},
+  Journal                  = {Journal of Computational and Applied Mathematics},
+  Year                     = {1996},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.14}
+}
+
 @Article{Luszczek2014,
   Title                    = {Looking back at dense linear algebra software},
   Author                   = {Luszczek, Piotr and Kurzak, Jakub and Dongarra, Jack},
@@ -1238,6 +1250,7 @@
   Author                   = {Saha, Prasenjit and Stadel, Joachim and Tremaine, Scott},
   Journal                  = {arXiv preprint astro-ph/9605016},
   Year                     = {1996},
+
   Owner                    = {joseba},
   Timestamp                = {2017.05.13},
   Url                      = {arXiv:astro-ph/9605016}
@@ -1460,7 +1473,7 @@
 }
 
 @Electronic{OpenMP,
-  Title                    = {he OpenMP API specification for parallel programming},
+  Title                    = {The OpenMP API specification for parallel programming},
   Url                      = {http://www.openmp.org/},
   Year                     = {2017},
 

@@ -4,17 +4,18 @@
 \section{Sarrera.}
   
 
-Atal honetan, eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. Aurreko ataletan, (\ref{chap:IRK-PF}~atala) puntu-finkoaren iterazioan  eta (\ref{chap:IRK-NEW}~atala) Newton sinplifikatuaren iterazioan oinarritutako IRK  inplementazioak garatu ditugu; eguzki-sistemaren problemaren integraziorako, bi inplementazioen artean,  puntu-finkoarena eraginkorragoa dela baieztatu dugu. Hortaz, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta  ekuazio diferentzialei aplikatutako aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu.  
+Kapitulu honetan, eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. \ref{chap:IRK-PF}. kapituluan puntu-finkoaren iterazioan oinarrituz eta \ref{chap:IRK-NEW}. kapituluan Newton sinplifikatuaren iterazioan oinarrituz IRK inplementazioak garatu ditugu; eguzki-sistemaren problemaren integraziorako, bi inplementazioen artean, puntu-finkoarena eraginkorragoa dela baieztatu dugu. Hortaz, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta  ekuazio diferentzialetako aldagaiei eragingo diegun aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu.  
 
-Aldagai aldaketaren bidez aplikatzen dugun integrazio metodoa, sinplektikoa eta simetrikoa da: neurri batean, Splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urratsa luzera handiak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Jacobiarraren balioa txikia denez, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
+Aplikatzen dugun integrazio metodoa sinplektikoa eta simetrikoa da: neurri batean, Splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Jacobiarraren balioa txikia denez, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
 
-Lehenengo, Kepler-en fluxuaren inplementazioa azalduko dugu. Bigarrenik, aldagai aldaketa definitu eta metodoa integratzeko zehaztapenak emango ditugu. Hirugarrenik, eguzki-sistemaren problemaren zenbakizko integrazioak egingo ditugu: inplementazio honen eta doitasun altuko beste metodo sinplektikoen eraginkortasunak, alderatuko ditugu.         
+Lehenengo, Kepler-en fluxuaren inplementazioa azalduko dugu. Bigarrenik, aldagai aldaketa definitu eta metodoa integratzeko zehaztapenak emango ditugu. Hirugarrenik, eguzki-sistemaren problemaren zenbakizko integrazioak egingo ditugu: inplementazio honen eta doitasun altuko beste metodo sinplektikoen eraginkortasunak, alderatuko ditugu.     
 
  
 
 \section{Kepler-en fluxua.}
    
-Kepler problema, bi gorputzen problemaren kasu partikularra da eta  honako Hamiltondarra dagokio,
+   
+Kepler problema bi gorputzen problemaren kasu partikularra da eta  honako Hamiltondarra dagokio,
 \begin{equation}
 H(q,p)=\frac{p^2}{2m}-\frac{\mu}{\|q\|},
 \end{equation}
@@ -24,7 +25,7 @@ Koordenatu sistema $q=q_2-q_1$ duen formulazioa aukeratzen badugu, konstanteen b
 \begin{equation*}
 m=(1/m_1+1/m_2)^{-1},\ \ \mu=Gm_1m_2,
 \end{equation*} 
-
+%
 eta ekuazio diferentzialak era honetan definitzen dira,
 \begin{equation}
 \label{eq:kode}
@@ -32,9 +33,9 @@ eta ekuazio diferentzialak era honetan definitzen dira,
 \end{equation}
 non $k= \mu / m$ eta  $q,p \in \mathbb{R}^3$.
 
-Kepler problemaren soluzio zehatza kalkula daiteke: une bateko kokapen eta abiadurak emanik, denbora tarte bat ($\Delta t$) igarotakoan (positiboa ala negatiboa), kokapen eta abiadura zehatzak konputatu daitezke. Eguzki-sistemaren integrazio metodoentzat, Kepler problema doitasun handian eta era eraginkorrean kalkulatzea, funtsezkoa da. Kepler problemaren erreferentziazko inplementazioak, Danby \cite{Danby1992} eta J.Wisdom-renak  \cite{Wisdom2015} ditugu. 
+Kepler problemaren soluzio zehatza kalkula daiteke: une bateko kokapen eta abiadurak emanik, $\Delta t$ denbora tarte bat igarotakoan (positiboa ala negatiboa), kokapen eta abiadura zehatzak konputatu daitezke. Eguzki-sistemaren integrazio metodoentzat, Kepler problema doitasun handian eta era eraginkorrean kalkulatzea, funtsezkoa da. Kepler problemaren erreferentziazko inplementazioak, Danby \cite{Danby1992} eta J.Wisdom-enak  \cite{Wisdom2015} ditugu. 
 
-Kepler-en fluxua, era honetan kalkulatzen da. Lehenik, koordenatu cartesiarretatik ($q,p\in \mathbb{R}^3$), koordenatu eliptikoetara $(a,e,i,\Omega,E)$, itzulpena egingo dugu. Koordenatu eliptikoetan, $E$ (\emph{eccentric anomaly}) aldagaia izan ezik, beste aldagaiak konstante mantentzen dira: beraz $E_0$ balioa emanda, $\Delta t$ denbora tartea aurrera egin eta $E_1$ balioa berria kalkulatuko dugu. Azkenik, koordenatu eliptikoetatik koordenatu cartesiarretara itzulpena eginez, kokapen eta abiadura berriak eskuratuko ditugu. 
+Kepler-en fluxua, era honetan kalkulatzen da. Lehenik, koordenatu cartesiarretatik ($q,p\in \mathbb{R}^3$), koordenatu eliptikoetara $(a,e,i,\Omega,E)$ itzulpena egingo dugu. Koordenatu eliptikoetan, $E$ (\emph{eccentric anomaly}) aldagaia izan ezik, beste aldagaiak konstante mantentzen dira: beraz $E_0$ balioa emanda, $\Delta t$ denbora tartea aurrera egin eta $E_1$ balio berria kalkulatuko dugu. Azkenik, koordenatu eliptikoetatik koordenatu cartesiarretara itzulpena eginez, kokapen eta abiadura berriak eskuratuko ditugu. 
 
 \begin{equation*}
 (q_0,v_0) \in \mathbb{R}^6 \ \ \ \longrightarrow \ \ \  (a,e,i,\Omega,E_0) \in \mathbb{R}^6 
@@ -46,128 +47,138 @@ Kepler-en fluxua, era honetan kalkulatzen da. Lehenik, koordenatu cartesiarretat
 (q_1,v_1) \in \mathbb{R}^6 \ \ \ \longleftarrow \ \ \  (a,e,i,\Omega,E_1) \in \mathbb{R}^6 
 \end{equation*}
 
-Gorputz baten orbita Kepleriarra hiru motakoa izan daiteke: $H(q_0,p_0)<0$ denean orbita eliptikoa da, $H(q_0,p_0)>0$ orbita hiperbolikoa eta $H(q_0,p_0)=0$ orbita  paraboliko. Kepler fluxuaren C inplementazioa, orbita eliptikoetarako garatu dugu eta zehaztasunak, \ref{erans:B1} eranskinean eman ditugu. (\ref{eq:kode}) problemari dagokion fluxua, era honetan defini daiteke,
+Gorputz baten orbita Kepleriarra hiru motakoa izan daiteke: $H(q_0,p_0)<0$ denean orbita eliptikoa da, $H(q_0,p_0)>0$ orbita hiperbolikoa eta $H(q_0,p_0)=0$ orbita  parabolikoa. Kepler fluxuaren C inplementazioa, orbita eliptikoetarako garatu dugu eta zehaztasunak, \ref{erans:B1} eranskinean eman ditugu. (\ref{eq:kode}) problemari dagokion fluxua, era honetan defini daiteke,
 \begin{align*}
 \varphi_{\Delta t}^k:&  \quad \mathbb{R}^{6} \quad  \longrightarrow \quad \mathbb{R}^6,  \\
-&  \quad y_0 \ \  \rightsquigarrow \ \ y_1. 
+&  \quad u_0 \ \  \rightsquigarrow \ \ u_1. 
 \end{align*} 
-non $y=(q,v) \in \mathbb{R}^6$  den.
-
+non $u=(q,v) \in \mathbb{R}^6$  den.
 
 \section{Inplementazioa.}
 
-
 \subsection*{Aldagai aldaketa.}
-Era honetako Hamiltondar sistemak $H: \mathbb{R} \times \mathbb{R}^{2d} \longrightarrow \mathbb{R}$, 
+
+Kontutan hartuko ditugun sistemak Hamiltondarrak dira, $H: \mathbb{R} \times \mathbb{R}^{2d} \longrightarrow \mathbb{R}$, gainera, Hamiltondarra bi zatitan bana dakieken sistemak hartuko ditugu kontuan:
 \begin{align}
 \begin{split}
 &H(q,p,t)=H_K(q,p)+H_I(q,p,t)
 \end{split}
 \end{align} 
-hartuko ditugu kontutan: $H_K$  Kepleriarrari dagokion Hamiltondarraren  eta $H_I$ perturbazioei dagokion Hamiltondarraren aldeak dira.  
+non $H_K$ mugimendu Kepleriarrari dagokion Hamiltondarraren aldea den eta $H_I$ perturbazioei dagokien Hamiltondarraren aldea den.
 
-Notazio hau finkatuko dugu: $(q,p) \in \mathbb{R}^{2d}$ jatorrizko aldagaientzako eta $(Q,P) \in \mathbb{R}^{2d}$ aldagai berrientzako.
-Kepler fluxua kalkulatzen duen funtzioa $\varphi_{\Delta t}^K(q,p) \in \mathbb{R}^{2d}$ bada, era honetan definituko dugu aldagaia aldaketa,
-\begin{align}
-\label{eq:aldak}
-&(q,p)=\varphi_{\Delta t}^K(Q,P) \quad \text{edo} \quad \ (Q,P)=\varphi_{-\Delta t}^K(q,p).
-\end{align}
+Problema horri dagozkion ekuazioetan Keplerren fluxuan oinarritutako aldagai aldaketa bat egingo dugu, baina horretarako notazioa finkatuko dugu: jatorrizko aldagaiak $u=(q,p) \in \mathbb{R}^{2d}$ izango dira eta aldagai berriak $U=(Q,P) \in \mathbb{R}^{2d}$ letra larriz adieraziko ditugu. Jatorrizko aldagaien bidez adierazitako problema, alegia, ebatzi beharreko hasierako baliodun problema, honakoa da:
 
-Aldaketa honekin lortutako $(Q,P)$ aldagai berriekiko ekuazio diferentzialak, oso mantso aldatuko dira. Hurrengo \ref{fig:Aldg}~irudiaren laguntzarekin, aldagai aldaketa modu argian uler daiteke. Ezkerreko irudian, $(q,p)$ jatorrizko aldagaien eta $(Q,P)$ aldagaia berrien arteko erlazioa irudikatu dugu: $(t_0,q_0,p_0)$ hasierako balioa izanik, $\Delta t=t-t_0$ urratsa integratuz  $(t,q,p)$ lortzen bada, dagokien $(t,Q,P)$ aldagai berrietako balioa, fluxua alderantziz ($(Q,P)=\varphi_{-\Delta t}^K(q,p)$) konputatzen lortzen da. Eskuineko irudian, $(Q,P)$ aldagaiek, perturbatutako gorputza baten orbitaren integrazioak izango lituzkeen aldaketa txikiak irudikatu ditugu. 
-
-% Era berean, integrazio batean $(Q,P)$ aldagaiek aldaketa txikiak dituztla erakutsi dugu. 
- %Aldaketa honekin lortutako $(Q,P)$ aldagai berriekiko ekuazio diferentzialak, oso mantso aldatuko dira.
-
-\begin{figure}[h!]
-\centering
-\subfloat[Aldagai aldaketa.]{
-\includegraphics[width=.400\textwidth]{Aldagaialdaketa1}
-}
-\subfloat[Aldagai berrien integrazioa.]{
-\includegraphics[width=.400\textwidth]{Aldagaialdaketa2}
-}
-\caption[Atalen hasieraketa.]
-        {\small (a)irudian, aldagai aldaketa irudikatu dugu eta (b) irudian, perturbatutako gorputza baten orbitaren integrazioak erakutsi ditugu. Bi irudietan, $(Q,P)$ balioen aldaketa txikiak gorriz nabarmendu ditugu          
-        }
-\label{fig:Aldg}
-\end{figure}   
-
-\subsection*{Integrazioa.}
-Aldagai berrien araberako Hamiltondarra honakoa da,
 \begin{align}
 \begin{split}
-&\mathcal{H}(Q,P,t)=H_I (\varphi_{t-t_0}^K(Q,P),t):=G (Q,P,t).
+\label{eq: HamEDA}
+&\frac{du}{dt} = k(u) + g(u,t),\ \ \ u(0) = u_0
 \end{split}
-\end{align}
-eta hauek dira ekuazio diferentzialak,
+\end{align} 
+non $k(u)$ alde kepleriarrari dagokion eta $g(u,t)$ perturbazioari. 
+Problema horretan honako aldagai aldaketa egingo dugu, kontuan izan urrats bakoitzean egingo dugula aldagai aldaketa, hau da $j=0, 1, 2 \ldots$ indizeak $j$. urratsean aplikatu beharreko aldaketa adierazten du:
+
 \begin{align}
 \begin{split}
-&\frac{d Q_i}{dt}= +\frac{\partial G}{\partial P_i} (Q,P,t),\\
-&\frac{d P_i}{dt}= -\frac{\partial G}{\partial Q_i} (Q,P,t), \ i=1,\dots,d.\\
+\label{eq: uUaldaketa}
+&u(t) = \varphi_{t-(j+\frac{1}{2})h}^k\left(U_j^{j+\frac{1}{2}}(t)\right)
 \end{split}
-\end{align}
-
-
-Hurrengo ataletan, ekuazio diferentzialen konputazioaren zehaztapenak emango ditugu. Lehenik, gorputz bakarraren problema, hau da, alde Kepleriar bakarra duen kasu partikularra aztertuko dugu. Bigarrenik, $N>1$ gorputzen problemarekin, alde kepleriar bat baino gehiago duen kasu orokorra aztertuko dugu. 
-
-\subsubsection{Alde Kepleriar bakarra.}
-
-Satelite baten orbitaren ekuazio diferentzialak, era honetan idatz daitezke,
+\end{align} 
+$\varphi_{\Delta t}^k$ fluxua $\Delta t>0$ eta $\Delta t <0$ balioentzat definitzen da, eta  $u= \varphi_{-t}(\varphi_{t}(u))$ betetzen dela kontutan hartuz honako alderantzizko aldaketa ere egin dezakegu:
 \begin{align}
 \begin{split}
-&\frac{d}{dt}\left(\begin{array}{c}
-                q  \\
-                v  \\
-\end{array}\right)
-= k(t,q,v)         
-+ g(t,q,v), \\
-&k(t,q,v)=\left(\begin{array}{c}
-                 v \\
-                -\frac{\mu}{\|q\|^3} \ q\\
-\end{array}\right),
+\label{eq: Uualdaketa}
+U^{j+\frac{1}{2}}(t) = \varphi^k_{-t+(j+\frac{1}{2})h} \left( u(t) \right)
+\end{split}
+\end{align} 
+
+Aldaketa hauekin asmoa da $i+1$ urratsa emateko $u_i \approx u(hi)$ zenbakizko soluzioan oinarrituz, aldagai aldaketaren bidez $U_i^{i+\frac{1}{2}}=\varphi^k_{\frac{h}{2}}(u_i)$ lortu, hau da, fluxuan $\frac{h}{2}$ aurrera egin aldagai berriak lortzeko, aldagai berri hauetan ebatzi jatorrizko problemaren urrats bati dagokion zenbakizko soluzioa (ikusiko dugun bezala, aldagai berrietan alde kepleriarrari dagokion espresioak ez du eraginik eta, azken finean perturbazioari dgokion aldaketa da hemen kalkulatuko dena) eta azkenik, aldagai berri hauen balio berriak jatorrizko aldagaietara itzuli behar dira, baina $i+1$ urratsari dagozkion unera pasa behar dira aldagaiak, hau da, fluxuan aurrera $\frac{h}{2}$ egin behar da. Atzera egingo bagenu urratsaren hasierako balioei perturbazioak zein aldaketa eragiten dien kalkulatuko baikenuke, baina guk urratsaren bukaerako balioak nahi ditugu. Laburbilduz:
+
+
+\begin{align*}
+   &   \quad U_0^{\frac{1}{2}} \quad \quad \quad \quad \Longrightarrow  & U_1^{\frac{1}{2}}&  &\\
+  & \nearrow \varphi_{\frac{h}{2}}(u_0) &            & \searrow \varphi_{\frac{h}{2}}(U_1)& \\
+u_0 &                  &    &\quad \quad \quad  u_1
+\end{align*}
+
+Aldagai aldaketak fluxuan aurrera egiten du urratsaren luzeraren erdia. Hori horrela egiteak badu arrazoi bat: urratsa bere osotasunean simetrikoa da. Aurrera $h$ luzerako urratsa ematea $-h$ luzerako urratsa ematearekin desegiten baita. 
+
+%\begin{figure}[h!]
+%\centering
+%\subfloat[Aldagai aldaketa.]{
+%\includegraphics[width=.400\textwidth]{Aldagaialdaketa1}
+%}
+%\subfloat[Aldagai berrien integrazioa.]{
+%\includegraphics[width=.400\textwidth]{Aldagaialdaketa2}
+%}
+%\caption[Atalen hasieraketa.]
+%        {\small (a)irudian, aldagai aldaketa irudikatu dugu eta (b) irudian, perturbatutako gorputza baten orbitaren integrazioak erakutsi ditugu. Bi irudietan, $(Q,P)$ balioen aldaketa txikiak gorriz nabarmendu ditugu          
+%        }
+%\label{fig:Aldg}
+%\end{figure}   
+
+\subsection*{Aldagai berrietan ekuazio diferentzialak.}
+
+(\ref{eq: uUaldaketa}) aldagai aldaketa kontuan hartuz, bi aldeak denborarekiko deribatuz, 
+\begin{align}
+\begin{split}
+&\frac{d}{dt}u = \frac{d}{dt}\left(\varphi(U)\right),
 \end{split}
 \end{align}
-non $q,v \in \mathbb{R}^3$ diren. Azpimarratu nahi dugu, $g(t,q,v)$ perturbazioa ez duela zertan Hamiltondarra izan behar.
+($\varphi(U)$ irakur erraztasunagatik indizerik gabe idatzi dugu)
 
-Fluxuan oinarritutako aldagai aldaketa aplikatzen badugu,
-\begin{equation}
-\left(\begin{array}{c}
-                q  \\
-                v  \\
-\end{array}\right)= \varphi_t(Q,V),
-\end{equation}
-
-aldagai berriei dagozkien ekuazio diferentzialak era honetan definitzen dira (ikus \ref{erans:B4} eranskinean garapen osoa),
+ Eskuin aldeari katearen erregla aplikatuz, lortuko dugu
 \begin{align}
-\label{eq: gEAld}
-\frac{d}{dt}\left(\begin{array}{c}
-                Q(t)  \\
-                V(t)  \\
-\end{array}\right) =(\varphi'_t(Q,V))^{-1} \ g.
- \end{align}
+\begin{split}
+&\dot{u} = \dot{\varphi}(U) + \varphi'(U) 
+\frac{d}{dt}U.
+\end{split}
+\end{align}
+$\varphi$ fluxua $\dot{u} = k(u)$ problemaren fluxua da eta fluxuaren definizioz $\dot{\varphi}(U) = k(\varphi(U))$ da, eta (\ref{eq: uUaldaketa}) ekuazioa kontuan hartuz, lortuko dugu
+\begin{align}
+\begin{split}
+&k(u) + g(u,t) = k(u) + \varphi'(U) \dot{U}.
+\end{split}
+\end{align}
+Bi aldeetan $k(u)$  kenduz, $U$ aldagaiekiko ebatzi beharreko ekuazio diferentziala lortuko dugu:
+\begin{align}
+\begin{split}
+\label{eq:hamEDAU}
+&\dot{U} = \left(\varphi'(U)\right)^{-1} g(u,t).
+\end{split}
+\end{align}
+Alderantzizko matrizeak kalkulatu beharrik gabe idatz ditzakegu (\ref{eq:hamEDAU}) ekuazioak. Horretarako $\varphi$ fluxuaren izaera sinplektikoa erabiliko dugu, hau da, $(\varphi')^tJ\varphi'= J$ propietatea betetzen du fluxuak, ondorioz,
+%
+\begin{align}
+\begin{split}
+\label{eq:hamEDAU2}
+&\dot{U} = J^{-1}(\varphi')^{t}(U)J g(u,t).
+\end{split}
+\end{align}
+(\ref{eq:hamEDAU2}) ekuazioak $\varphi'(U)$ kalkulatzea eskatzen du, eta horretarako deribazio automatikoko teknikak erabil ditzakegu
 
 
 \paragraph*{Algoritmoa.}
-$(Q,V)$ aldagaien integrazioa, hiru urratsetan egingo dugu:
+$U$ aldagaietan oinarritutako ekuazio diferentzialenn integrazioa, hiru urratsetan egingo dugu:
 \begin{enumerate}
-\item $\{q,v,aux\} \leftarrow KeplerFlowGen (t,Q,V,mu)$.
+\item $\{u,aux\} \leftarrow KeplerFlowGen (t,U,mu)$.
 
-Kepler-en fluxua $(q,v)= \varphi_t(Q,V)$ aplikatuko dugu eta fluxuaren kalkulutarako erabilitako tarteko balioak, ~$aux\in \mathbb{R}^{16}$ aldagaian itzuliko ditugu. 
+Kepler-en fluxua $(q,v)= \varphi_t(U)$ aplikatuko dugu eta fluxuaren kalkulutarako erabilitako tarteko balioak, ~$aux\in \mathbb{R}^{16}$ aldagaian itzuliko ditugu. 
 
-\item $g \leftarrow g(t,q,v)$.
+\item $g \leftarrow g(u,t)$.
 
-Perturbazioei dagokien ekuazio diferentziala aplikatuko dugu.
+Jatorrizko problemako ekuazio diferentzialetan perturbazioei dagokien espresiioa kalkulatuko dugu.
 
-\item $KeplerFlowGFcnaux(aux,Q,V,t,g)$.
+\item $KeplerFlowGFcnaux(aux,U,t,g)$.
 
-Lehenik, $\varphi'_t(Q,V))$ modu eraginkorrean kalkulatu behar da. Deribazio automatikoaren teknikaren bidez, Kepler fluxuaren deribatuaren konputazio eraginkorra definitu dugu. 
+Lehenik, $\varphi'_t())$ modu eraginkorrean kalkulatu behar da. Deribazio automatikoaren teknikaren bidez, Kepler fluxuaren $U$ aldagaiekiko deribatuaren konputazio eraginkorra definitu dugu. 
 
-Ekuazio diferentzialen (\ref{eq: gEAld}) espresioaren konputazioa egingo dugu,   
+Ekuazio diferentzialen (\ref{eq:hamEDAU}) espresioaren konputazioa egingo dugu,   
 \begin{align*}
-&KeplerFlowGFcnaux(aux,Q,V,t,g)= ( \varphi'_t(Q,V))^{-1} \ g.
+&KeplerFlowGFcnaux(aux,U,t,g)= ( \varphi'_t(U))^{-1} \ g.
 \end{align*}
 
 \end{enumerate} 
+
 
 
 \subsubsection*{Alde Kepleriar bat baino gehiago.}
@@ -253,49 +264,58 @@ Lehenik, azpimarratu behar dugu aldagai aldaketa lokala izan behar duela eta hor
 (U,\tau).
 \end{equation}
 
-Metodoa simetriko izateko integrazio eskema orokorra, \ref{fig:proiekzioa1} eta \ref{fig:proiekzioa2} irudietan laburtu dugu. $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak adierazten duten notazioa erabiliko dugu. Hauek dira, integratzeko emango ditugun urratsak:
+Metodoa simetriko izateko, integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu,
+\begin{figure} [h!]
+\centerline{\includegraphics [width=16cm, height=4cm] {proiekzioa11}}
+\caption{}
+\label{fig:proiekzioa0}
+\end{figure} 
+
+Integrazioaren urrats guztietan ez baditugu emaitzak itzuli behar, bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu. Horretarako, proiekzio kontzeptua sortuko dugu (\ref{fig:proiekzioa2}~irudia).
+
+\begin{figure} [h!]
+\centerline{\includegraphics [width=14cm, height=4cm] {proiekzioa12}}
+\caption{\small Proiekzioa: bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu}
+\label{fig:proiekzioa2}
+\end{figure} 
+
+
+ Azkenik, emaitzak behar ditugun urratsetarako fluxua $\varphi_{-h/2}$ aplikatuko dugu (\ref{fig:proiekzioa1}~irudia). 
+
+\begin{figure} [h!]
+\centerline{\includegraphics [width=14cm, height=4cm] {proiekzioa1}}
+\caption{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak adierazten dute. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion hasierako balioa finkatuko dugu $(U_0,-h/2)$. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da eta \ref{fig:proiekzioa2} irudian zehaztu dugu. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietann zenbakizko soluzioa itzuliko dugu}
+\label{fig:proiekzioa1}
+\end{figure} 
+
+
+$u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak adierazten duten notazioa erabiliko dugu. Hauek dira, integratzeko emango ditugun urratsak:
 \begin{enumerate}
 \item \emph{Startfun} funtzioa.
 
-Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion hasierako balioa finkatuko dugu.
+Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, $\varphi_{h/2}$ fluxuaren konputazioaren bidez, aldagai berrietan dagokion hasierako balioa lortuko dugu.
 \begin{align*}
 u_0 \ \rightarrow \ (U_0,-h/2).
 \end{align*}
 
-
 \item \emph{Urratsa}.
 
-Urratsa integrazio eta proiekzioaren konposaketa da; \ref{fig:proiekzioa2} irudian zehaztapenak eman ditugu. Aldagai aldaketa urrats bakoitzean aplikatzen dugu eta horregatik, integratu ondoren, zenbakizko soluzioaren jatorrizko aldagaietara proiekzioa egiten dugu.  
+Urratsa integrazio eta proiekzioaren konposaketa da; \ref{fig:proiekzioa2} irudian zehaztapenak eman ditugu. Aldagai aldaketa urrats bakoitzean aplikatzen dugu.  
 \begin{align*}
 (U_0,-h/2) \ \rightarrow \ (U_1,-h/2).
 \end{align*}
 
-Biribiltze errorea txikitzeko, proiekzioa doitasun altuan konputatzea garrantzitsua da. Era honetan, batura konpensatua aplikatzerakoan zifra batzuk irabaziko ditugu. 
-
+Biribiltze errorea txikitzeko, proiekzioa doitasun altuan konputatzea garrantzitsua da. Modu honetan, batura konpensatua aplikatzerakoan zifra batzuk irabaziko ditugu. 
 
 \item \emph{Outputfun} funtzioa.
 
-Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietan zenbakizko soluzioa itzuliko dugu.
+Erabiltzaileak definitutako urratsetarako, $\varphi_{-h/2}$ fluxuaren konputazioaren bidez, $u_n$ zenbakizko soluzioa jatorrizko aldagaietan  itzuliko dugu.
 \begin{align*}
 (U_n,-h/2) \ \rightarrow \ u_n.
 \end{align*}
 
 
 \end{enumerate}
-
-
-
-\begin{figure} [h!]
-\centerline{\includegraphics [width=12cm, height=4cm] {proiekzioa1}}
-\caption{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak adierazten dute. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion hasierako balioa finkatuko dugu $(U_0,-h/2)$. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da eta \ref{fig:proiekzioa2} irudian zehaztu dugu. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietann zenbakizko soluzioa itzuliko dugu}
-\label{fig:proiekzioa1}
-\end{figure} 
-
-\begin{figure} [h!]
-\centerline{\includegraphics [width=10cm, height=3cm] {proiekzioa2}}
-\caption{\small \ref{fig:proiekzioa2} irudiko urrats bakoitzaren zehaztapenak: lehenengo integratzen dugu eta ondoren proiekzioa aplikatzen dugu}
-\label{fig:proiekzioa2}
-\end{figure} 
 
 
 Gauss metodoa, neurri batean  Splitting eta konposizio metodoen baliokideak dira. 
@@ -316,61 +336,50 @@ Atal honetan, puntu-finkoaren iterazioan oinarritutako Gauss metodoaren inplemen
 \subsection{Problemak.}
 
 
-9-planeten problema erabili dugu integrazioetarako. Hasierako balioak \emph{DE-430} efemerideen artikulutik hartu ditugu: planeten masak  (\ref{tab:9bodymas}) taulan laburtu ditugu; hasierako kokapen eta abiadurak (\ref{tab:9bodyhas}) aurki daitezke. Integratzeko, koordenatu heliozentrikoei dagozkien Hamiltondarrean (\ref{eq:nbodyHel}) oinarrituko gara. 
+9-planeten problema (\ref{sss:9body}~atala) erabili dugu integrazioetarako. Hasierako balioak \emph{DE-430} efemerideen artikulutik hartu ditugu: planeten masak  \ref{tab:9bodymas}~taulan laburtu ditugu; hasierako kokapen eta abiadurak \ref{tab:9bodyhas}~taulan aurki daitezke. Integratzeko, koordenatu heliozentrikoei dagokien (\ref{eq:nbodyHel}) Hamiltondarrean  oinarrituko gara. 
 
-Integrazioaren tartea $(0,10^5)$ egunetakoa izan da. Metodoak integratzeko urrats luzerak $s$-ren proportzionalak aukeratu ditugu:
+Integrazioaren tartea, $t_{end}=10^6$ egunetakoa izan da eta zenbakizko integrazioetan, $h$-ren balio ezberdinak erabili ditugu. $s=6$ metodoarentzat urrats luzerak aukeratu ditugu eta gainontzeko metodoentzat, $s$-atalen araberako urrats luzera proportzionalak finkatu ditugu:
 \begin{align*}
-&s=6: \ h=2^{k/4}, \ k=4,\dots,28, \\
-&s=8: \ (8/6)h \\
-&s=9: \ (9/6)h \\
-&s=16: \ (16/6)h \\
+&s=6: \quad  \ \ h=2^{k/4}, \ k=4,\dots,28, \\
+&s=8: \quad  \ \ (8/6)h, \\
+&s=9: \quad  \ \ (9/6)h, \\
+&s=16: \quad (16/6)h. \\
 \end{align*} 
 
-Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabaki dugu. $9$-planeten probleman, gorputz kopurua txikia denez,  Kepler fluxuaren gainkarga garrantzitsua da eta  barne-planetei bakarrik aplikatzea, eraginkorragoa izan daiteke. Baina, gorputz gehiago kontsideratzen baditugu (esaterako ilargia eta asteroide nagusienak) edo eguzki-sistemaren eredu konplexuagoetan (esaterako erlatibitate efektua gehitzerakoan), perturbazio aldearen konputazioa nagusituko da eta Kepler fluxuaren kalkuluak pisua galduko du. 
+Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabaki dugu. $9$-planeten probleman, gorputz kopurua txikia denez,  Kepler fluxuaren gainkarga esanguratsua da eta  barne-planetei bakarrik aplikatzea, eraginkorragoa izan daiteke. Baina, gorputz gehiago kontsideratzen baditugu (esaterako ilargia eta asteroide nagusienak) edo eguzki-sistemaren eredu konplexuagoetan (esaterako erlatibitate efektua gehitzerakoan), perturbazio aldearen konputazioa nagusituko da eta Kepler fluxuaren kalkuluak pisua galduko du. 
 
 
 \subsection*{Lehen esperimentua.}
 
 
-Esperimentu honetan, $s=6,8,9,16$ ataletako metodoen eraginkortasun grafikoak irudikatu ditugu. Eraginkortasuna-fcn grafikoak, metodoak problema erreal batean nola jokatuko luke erakusten digu. Eraginkortasun-denborak, ordea, adibide zehatzean zer gertatzen den.
+\ref{fig:esp81s}~irudian, $s=6,8,9,16$ ataletako metodoen, bi eraginkortasun grafiko irudikatu ditugu. Eraginkortasuna, energia errore erlatibo maximoaren arabera neurtu dugu: lehen kasuan, \emph{CPU}-denborarekiko eta bigarren kasuan, ekuazio diferentzialen ebaluazio kopuruarekiko (\emph{FCN}). Eraginkortasuna \emph{CPU}-rekiko, problema zehatz honetarako gertatzen dena azaltzen digu eta eraginkortasuna \emph{FCN}-rekiko, metodoak problema erreal batean nola jokatuko luke erakusten digu.
+
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[Eraginkortasun grafikoa: errorea CPU denborarekiko]
-{\includegraphics[width=.4\textwidth]{esperimentua811}}
+\subfloat[ Exekuzioa serian. $\max (|\Delta E|)$-CPU.]
+{\includegraphics[width=.5\textwidth]{esperimentua811}}
 &
-\subfloat[Eraginkortasun grafikoa: errorea FCN kopuruarekiko]
-{\includegraphics[width=.4\textwidth]{esperimentua812}}
+\subfloat[ Exekuzioa serian. $\max (|\Delta E|)$-FCN.]
+{\includegraphics[width=.5\textwidth]{esperimentua812}}\\
+\subfloat[Exekuzio paraleloa. $\max (|\Delta E|)$-CPU.]
+{\includegraphics[width=.5\textwidth]{esperimentua813}}
+&
+\subfloat[Exekuzio paraleloa. $\max (|\Delta E|)$-FCN.]
+{\includegraphics[width=.5\textwidth]{esperimentua814}}
 \end{tabular}
 \caption{\small 
-Eraginkortasun grafikoak irudikatu ditugu: ezkerrean energiaren errore maximoa, CPU denborarekiko; eskuinean ekuazio diferentzialen ebaluazio kopuruarekiko (FCN). Gauss metodoaren lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
-\label{fig:esp81}
+Eraginkortasun grafikoak eskala logaritmiko bikoitza erabiliz irudikatu ditugu. Batetik ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. Bestetik, ardatz horizontalean, ezkerreko grafikoan CPU denbora eta eskuineko grafikoan, ekuazio diferentzialen ebaluazio kopurua (FCN) erakutsi dugu. Irudi bakoitzean, Gauss metodoaren lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. (a) eta (b) konputazioak modu sekuentzialean egin ditugu; (c) eta (d) modu paraleloan, lehenak hari kopurua $2$ eta bigarrenak hari kopurua $4$}
+\label{fig:esp81s}
 \end{figure}
+
+Gure helburua, bai exekuzio sekuentzialak bai exekuzio paraleloak aztertuz, doitasun altuko integrazioetarako Gauss metodo eraginkorrena aukeratzea da. Horretarako, biribiltze errorea nagusitzen hasten den inguruko unean gertatutakoa aztertu dugu: $s=8,9,16$ metodoak, $s=6$ metodoa baino eraginkorragoak azaldu zaizkigu eta hirurak oso antzekoak dira. 
 
 \subsection*{Bigarren esperimentua.}
 
 
-Beste metodo sinplektikoekiko konparaketa.
-
-\begin{figure}[h!]
-\centering
-\begin{tabular}{c c}
-\subfloat[Eraginkortasun grafikoa: errorea CPU denborarekiko]
-{\includegraphics[width=.4\textwidth]{esperimentua821}}
-&
-\subfloat[Eraginkortasun grafikoa: errorea FCN kopuruarekiko]
-{\includegraphics[width=.4\textwidth]{esperimentua822}}
-\end{tabular}
-\caption{\small 
-Eraginkortasun grafikoak irudikatu ditugu: ezkerrean energiaren errore maximoa, CPU denborarekiko; eskuinean ekuazio diferentzialen ebaluazio kopuruarekiko (FCN). Lau integrazio metodo konparatu ditugu: $ABAH1064$  urdinez, $CO1035$ gorriz, $IRK12$ berdez, eta \emph{IRKFLUXU} grisez}
-\label{fig:esp82}
-\end{figure}
-
-\subsection*{Hirugarren esperimentua.}
-
-
-Oraingoz era honetan exekutatu ditut esperimentuak. $s=2$ metodoaren bi integrazio: lehena $h=8$ eta bigarrena $h=4$ urratsa luzerarekin. Integrazio tartea $t_{end}=2^{12} h=0, \ h_0=2^4$.
+$s=8$ metodoarentzat, birbiltze errorea hasten den uneko urrats luzera hartu dut: $k=12, \ h=10,667$. Kokapen errore erlatiboaren estimazioa, $h/2$ integrazioarekiko diferentzia gisa kalkulatu ditugu.
 
 
 \subsubsection*{Energiaren eboluzioa}
@@ -378,51 +387,95 @@ Oraingoz era honetan exekutatu ditut esperimentuak. $s=2$ metodoaren bi integraz
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[Energy errorearen $h=8$.]
-{\includegraphics[width=.4\textwidth]{esperimentua831}}
+\subfloat[Energia errorea: $h=10,667$.]
+{\includegraphics[width=.5\textwidth]{esperimentua831}}
 &
-\subfloat[Energy errorearen $h=4$.]
-{\includegraphics[width=.4\textwidth]{esperimentua832}}
+\subfloat[Energia errore: $h=10,667/2$.]
+{\includegraphics[width=.5\textwidth]{esperimentua832}}
 \end{tabular}
-\caption{\small }
+\caption{\small Energia errorearen eboluzioa. }
 \label{fig:esp83}
 \end{figure}
 
 
-\subsubsection*{Kokapen errorea}
+\subsubsection*{Errore globalak}
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
 \subfloat[Kokapen errorea.]
-{\includegraphics[width=.4\textwidth]{esperimentua841}}
+{\includegraphics[width=.5\textwidth]{esperimentua841}}
 &
 \subfloat[Abiadura errorea.]
-{\includegraphics[width=.4\textwidth]{esperimentua842}}
+{\includegraphics[width=.5\textwidth]{esperimentua842}}
 \end{tabular}
 \caption{\small }
-\label{fig:esp83}
+\label{fig:esp84}
+\end{figure}
+ 
+
+\subsection*{Hirugarren esperimentua.}
+
+
+Biribiltze errorearen azterketa (momentu angeluarra). $s=8$ metodoa eta urrats luzera handiak ($h=42.667$ eta $h=42.667/2$) erabiliz egindako integrazioak. Momentu angeluarraren trunkatze errorea beti zero da, metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte.
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[Momentu angeluarra $h=42.667$.]
+{\includegraphics[width=.5\textwidth]{esperimentua851}}
+&
+\subfloat[Momentu angeluarra $h=42.667/2$]
+{\includegraphics[width=.5\textwidth]{esperimentua852}}
+\end{tabular}
+\caption{\small }
+\label{fig:esp85}
 \end{figure}
 
-
-\subsubsection*{Eszentrikotasun errorea}
-
-Arazoak
-
-\subsubsection*{Semi axis errorea}
-
-Arazoak.
 
 
 \subsection*{Laugarren esperimentua.}
 
 
-Biribiltze errorearen azterketa (momentu angeluarra).
+Beste metodo sinplektikoekiko konparaketa. Gauss metodoa modu paraleloan exekutatu dugu: $s=16$ eta $s=8$ metodoak, splitting/konposizio metodoekin konparatu ditugu.
 
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[$s=16$ Exekuzio sekuentziala: CPU-denbora.]
+{\includegraphics[width=.4\textwidth]{esperimentua821}}
+&
+\subfloat[$s=16$ Exekuzio sekuentziala:: FCN.]
+{\includegraphics[width=.4\textwidth]{esperimentua822}}\\
+\subfloat[$s=16$ Exekuzio paraleloa: hariak=$2$.]
+{\includegraphics[width=.4\textwidth]{esperimentua823}}
+&
+\subfloat[$s=16$ Exekuzio paraleloa: hariak=$4$.]
+{\includegraphics[width=.4\textwidth]{esperimentua824}}
+\end{tabular}
+\caption{\small 
+Eraginkortasun grafikoak irudikatu ditugu: ezkerrean energiaren errore maximoa, CPU denborarekiko; eskuinean ekuazio diferentzialen ebaluazio kopuruarekiko (FCN). Lau integrazio metodo konparatu ditugu: $ABAH1064$  urdinez, $CO1035$ gorriz,  eta \emph{IRKFLUXU} grisez}
+\label{fig:esp82}
+\end{figure}
 
-\subsection*{Bostgarren esperimentua.}
-
-Paralelizazioa.
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[$s=16$ Exekuzio sekuentziala: CPU-denbora.]
+{\includegraphics[width=.5\textwidth]{esperimentua821}}
+&
+\subfloat[$s=16$ Exekuzio sekuentziala:: FCN.]
+{\includegraphics[width=.5\textwidth]{esperimentua822}}\\
+\subfloat[$s=16$ Exekuzio paraleloa: hariak=$2$.]
+{\includegraphics[width=.5\textwidth]{esperimentua823}}
+&
+\subfloat[$s=16$ Exekuzio paraleloa: hariak=$4$.]
+{\includegraphics[width=.5\textwidth]{esperimentua824}}
+\end{tabular}
+\caption{\small 
+Eraginkortasun grafikoak irudikatu ditugu: ezkerrean energiaren errore maximoa, CPU denborarekiko; eskuinean ekuazio diferentzialen ebaluazio kopuruarekiko (FCN). Lau integrazio metodo konparatu ditugu: $ABAH1064$  urdinez, $CO1035$ gorriz,  eta \emph{IRKFLUXU} grisez}
+\label{fig:esp82}
+\end{figure}
 
 
 \section{Laburpena.}

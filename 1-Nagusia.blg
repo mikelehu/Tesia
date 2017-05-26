@@ -18,15 +18,15 @@ A level-1 auxiliary file: Z-Argibideak/Argibideak.aux
 The style file: myplain2-doi.bst
 Database file #1: ./bibliografia/mybib.bib
 Warning--entry type for "IntelXeon2013" isn't style-file defined
---line 328 of file ./bibliografia/mybib.bib
+--line 327 of file ./bibliografia/mybib.bib
 Warning--entry type for "libquad" isn't style-file defined
---line 594 of file ./bibliografia/mybib.bib
+--line 593 of file ./bibliografia/mybib.bib
 Warning--entry type for "Karplus2014" isn't style-file defined
---line 1175 of file ./bibliografia/mybib.bib
+--line 1174 of file ./bibliografia/mybib.bib
 Warning--entry type for "WolframResearch" isn't style-file defined
---line 1443 of file ./bibliografia/mybib.bib
+--line 1442 of file ./bibliografia/mybib.bib
 Warning--entry type for "OpenMP" isn't style-file defined
---line 1476 of file ./bibliografia/mybib.bib
+--line 1475 of file ./bibliografia/mybib.bib
 Too many commas in name 1 of "Lopez Marcos, M.A., Sanz Serna J.M., Diaz J.C" for entry sserna1996
 while executing---line 2719 of file myplain2-doi.bst
 Warning--to sort, need author or key in OpenMP
@@ -42,36 +42,36 @@ Too many commas in name 1 of "Lopez Marcos, M.A., Sanz Serna J.M., Diaz J.C" for
 while executing---line 2827 of file myplain2-doi.bst
 You've used 115 entries,
             2359 wiz_defined-function locations,
-            1359 strings with 25525 characters,
-and the built_in function-call counts, 37050 in all, are:
-= -- 3447
+            1357 strings with 25365 characters,
+and the built_in function-call counts, 37045 in all, are:
+= -- 3445
 > -- 1674
 < -- 15
-+ -- 689
++ -- 690
 - -- 549
 * -- 2848
-:= -- 6062
-add.period$ -- 337
+:= -- 6060
+add.period$ -- 336
 call.type$ -- 115
 change.case$ -- 591
 chr.to.int$ -- 0
 cite$ -- 124
 duplicate$ -- 1436
-empty$ -- 3176
+empty$ -- 3177
 format.name$ -- 549
-if$ -- 7689
+if$ -- 7688
 int.to.chr$ -- 0
 int.to.str$ -- 115
 missing$ -- 130
-newline$ -- 570
+newline$ -- 569
 num.names$ -- 234
-pop$ -- 718
+pop$ -- 719
 preamble$ -- 1
 purify$ -- 497
 quote$ -- 0
 skip$ -- 937
 stack$ -- 0
-substring$ -- 2111
+substring$ -- 2112
 swap$ -- 310
 text.length$ -- 15
 text.prefix$ -- 0
@@ -80,5 +80,5 @@ type$ -- 412
 warning$ -- 9
 while$ -- 355
 width$ -- 118
-write$ -- 1217
+write$ -- 1215
 (There were 2 error messages)
