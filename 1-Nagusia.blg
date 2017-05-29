@@ -24,9 +24,9 @@ Warning--entry type for "libquad" isn't style-file defined
 Warning--entry type for "Karplus2014" isn't style-file defined
 --line 1174 of file ./bibliografia/mybib.bib
 Warning--entry type for "WolframResearch" isn't style-file defined
---line 1442 of file ./bibliografia/mybib.bib
+--line 1452 of file ./bibliografia/mybib.bib
 Warning--entry type for "OpenMP" isn't style-file defined
---line 1475 of file ./bibliografia/mybib.bib
+--line 1485 of file ./bibliografia/mybib.bib
 Too many commas in name 1 of "Lopez Marcos, M.A., Sanz Serna J.M., Diaz J.C" for entry sserna1996
 while executing---line 2719 of file myplain2-doi.bst
 Warning--to sort, need author or key in OpenMP
@@ -40,45 +40,46 @@ Warning--empty journal in IEEE2008
 Warning--empty journal in Krogh1997
 Too many commas in name 1 of "Lopez Marcos, M.A., Sanz Serna J.M., Diaz J.C" for entry sserna1996
 while executing---line 2827 of file myplain2-doi.bst
-You've used 115 entries,
+Warning--empty journal in Rauch1998
+You've used 116 entries,
             2359 wiz_defined-function locations,
-            1357 strings with 25365 characters,
-and the built_in function-call counts, 37045 in all, are:
-= -- 3445
-> -- 1674
+            1362 strings with 25521 characters,
+and the built_in function-call counts, 37291 in all, are:
+= -- 3467
+> -- 1687
 < -- 15
-+ -- 690
-- -- 549
-* -- 2848
-:= -- 6060
-add.period$ -- 336
-call.type$ -- 115
-change.case$ -- 591
++ -- 695
+- -- 553
+* -- 2864
+:= -- 6104
+add.period$ -- 339
+call.type$ -- 116
+change.case$ -- 596
 chr.to.int$ -- 0
-cite$ -- 124
-duplicate$ -- 1436
-empty$ -- 3177
-format.name$ -- 549
-if$ -- 7688
+cite$ -- 126
+duplicate$ -- 1446
+empty$ -- 3195
+format.name$ -- 553
+if$ -- 7736
 int.to.chr$ -- 0
-int.to.str$ -- 115
-missing$ -- 130
-newline$ -- 569
-num.names$ -- 234
-pop$ -- 719
+int.to.str$ -- 116
+missing$ -- 131
+newline$ -- 574
+num.names$ -- 236
+pop$ -- 726
 preamble$ -- 1
-purify$ -- 497
+purify$ -- 501
 quote$ -- 0
-skip$ -- 937
+skip$ -- 945
 stack$ -- 0
-substring$ -- 2112
-swap$ -- 310
+substring$ -- 2117
+swap$ -- 311
 text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 412
-warning$ -- 9
-while$ -- 355
-width$ -- 118
-write$ -- 1215
+type$ -- 416
+warning$ -- 10
+while$ -- 357
+width$ -- 119
+write$ -- 1224
 (There were 2 error messages)

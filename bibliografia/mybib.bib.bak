@@ -142,7 +142,7 @@
 @Article{Bezanson2014,
   Title                    = {Julia: A fresh approach to numerical computing},
   Author                   = {Bezanson, Jeff and Edelman, Alan and Karpinski, Stefan and Shah, Viral B},
-  Journal                  = {Siam},
+  Journal                  = {SIAM},
   Year                     = {2014},
 
   Doi                      = {10.1137/141000671},
@@ -885,6 +885,16 @@
   Owner                    = {joseba},
   Timestamp                = {2016.10.27},
   Url                      = {https://arxiv.org/abs/1511.01546}
+}
+
+@Article{Rauch1998,
+  Title                    = {Dynamical Chaos in the Wisdom-Holman integrator: origins and solutions},
+  Author                   = {Kevin P. Rauch, M. Holman},
+  Year                     = {1998},
+
+  Owner                    = {joseba},
+  Timestamp                = {2017.05.27},
+  Url                      = {https://arxiv.org/abs/astro-ph/9803340v1}
 }
 
 @Article{Kholshevnikov2007,

@@ -86,7 +86,7 @@ Gregory Beylkin and Kristian Sandberg.
 Jeff Bezanson, Alan Edelman, Stefan Karpinski, and Viral~B Shah.
 \newblock \href{http://dx.doi.org/10.1137/141000671}{Julia: A fresh approach to
   numerical computing}.
-\newblock {\em Siam}, 2014.
+\newblock {\em SIAM}, 2014.
 
 \bibitem{Bickart1977}
 Theodore~A Bickart.
@@ -637,6 +637,12 @@ EV~Pitjeva and NP~Pitjev.
   planetary ephemerides epm and their applications}.
 \newblock {\em Celestial Mechanics and Dynamical Astronomy}, 119\penalty0
   (3-4):\penalty0 237--256, 2014.
+
+\bibitem{Rauch1998}
+Kevin~P. Rauch and M.~Holman.
+\newblock \href{https://arxiv.org/abs/astro-ph/9803340v1}{Dynamical chaos in
+  the wisdom-holman integrator: origins and solutions}.
+\newblock 1998.
 
 \bibitem{Saad2003}
 Yousef Saad.

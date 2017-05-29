@@ -32,7 +32,7 @@ Azken urteotako konputagailu berrien arkitekturaren bilakaerak, algoritmo azkarr
 
 Integrazio metodo sinplektikoen artean erabilienak, izaera esplizituko algoritmoak dira. Oro har problema zurruna ez bada, metodo esplizituak  metodo inplizituak baino eraginkorragoak dira. Metodo inplizituetan ekuazio sistema ez-lineala askatu behar da (eragiketa garestia) eta honek, metodo esplizituekiko CPU denboran gainkarga suposatzen du. Hala ere, ebatzi beharreko problema zurruna bada, metodo esplizituak urrats oso txikiak eman behar izaten ditu integrazio fidagarriak lortu ahal izateko. Horrek ere, integrazioa garestitzen du. Metodo inplizituetan ez da halakorik gertatzen, urrats luzeagoak eman ditzakete nahiz eta problema zurruna izan. 
 
-Azken aldian, ordea, ezbaian jarri da problemaren zurruntasunaren araberako metodoen aukeraketarako joera hori. Lan honetan, zenbakizko integraziorako Gaussen metodo inplizitu sinplektikoaren azterketa egingo dugu. Hainbat autorek (Hairer \cite{Hairer2006,Hairer2008} eta Sanz Serna\cite{JMSanz-Serna1994}) metodo honen potentziala nabarmendu dute. Azken urteetan, espazioko satelite artifizialen arloan ere, Gaussen integrazio metodoarekiko interesa azaldu dute \cite{Bradley2014,Beylkin2014}. 
+Azken aldian, ordea, ezbaian jarri da problemaren zurruntasunaren araberako metodoen aukeraketarako joera hori. Lan honetan, zenbakizko integraziorako Gaussen metodo inplizitu sinplektikoaren azterketa egingo dugu. Hainbat autorek (Hairer \cite{Hairer2006,Hairer2008} eta Sanz Serna\cite{JMSanz-Serna1994}), doitasun altuko integrazioetarako metodo honen potentziala nabarmendu dute. Azken urteetan, espazioko satelite artifizialen arloan ere, Gaussen integrazio metodoarekiko interesa azaldu dute \cite{Bradley2014,Beylkin2014}. 
 
 Gaussen integrazio metodo inplizituen abantaila nagusienetakoa malgutasuna da. Ekuazio inplizituak ebazteko, teknika ezberdinak konbina daitezke eta ondorioz, integratu nahi dugun problemari egokitzeko eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu.
 
@@ -68,7 +68,7 @@ Sarrera honetan paralelizazioari buruzko ohar batzuk ematea komeni da. Algoritmo
 \section{Ekarpenak.}
 
 
-Tesiaren lana hiru urratsetan banatu dugu. Lehen urratsean, puntu-finkoaren iterazioan oinarritutako Gauss metodoaren inplementazio estandarra aztertu dugu. Inplementazio berriak, biribiltze errorearen garapen optimoa izatea lehenetsi dugu eta zentzu honetan, inplementazio estandarraren hobekuntzak proposatu ditugu. Azterketa honen ondorioz, Gauss metodoaren inplementazioen oinarriak finkatu ditugu: IRK metodoen formulazio eta geratze irizpidea berriak.
+Tesiaren lana, hiru urratsetan banatu dugu. Lehen urratsean, puntu-finkoaren iterazioan oinarritutako Gauss metodoaren inplementazio estandarra aztertu dugu. Inplementazio berriak, biribiltze errorearen garapen optimoa izatea lehenetsi dugu eta zentzu honetan, inplementazio estandarraren hobekuntzak proposatu ditugu. Azterketa honen ondorioz, Gauss metodoaren inplementazioen oinarriak finkatu ditugu: IRK metodoen formulazio eta geratze irizpidea berriak.
 
 Bigarren urratsean, Newtonen iterazioan oinarritutako Gauss metodoaren inplementazioa jorratu dugu. Problema zurruna denean, puntu-finkoaren iterazioa ez da eraginkorra eta Newtonen iterazioa aplikatu behar da. Newtonen iterazioa konputazionalki garestia da eta ekuazio-sistema modu eraginkorrean askatzeko teknika berri bat garatu dugu. Era berean, Newton sinplifikatuaren iterazioaren aldaera bat proposatu dugu. 
 
@@ -76,14 +76,14 @@ Bigarren urratsean, Newtonen iterazioan oinarritutako Gauss metodoaren inplement
 %Problema zurruna denean, puntu-finkoaren iterazioa ez da eraginkorra eta Newtonen iterazioa aplikatu behar da. Gainera problema ez-zurruna izanik ere, Newton iterazioak interesgarriak izan daitezke; bereziki doitasun altuko (doitasun laukoitza) konputazioetan, metodoaren konbergentzia ezaugarri onak direla-eta.  Aurreko bi faseetan ikasi eta hobetutakoa, eguzki-sistemaren problemari aplikatuko diogu. Horrez gain, eguzki-sistemaren ezaugarrietan oinarrituz ebatzi beharreko problema, ahalik eta eraginkorrena ebazteko bideak aztertuko ditugu.
 
 Hirugarren urratsean, eguzki-sistemaren epe luzeko integrazioak aztertuko ditugu.
-Eguzki-sistemaren problemaren integraziorako, aurreko bi inplementazioen artean, puntu-finkoarena eraginkorragoa dela baieztatu dugu. Hori dela-eta, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta eguzki-sistemaren problemarako pentsatutako aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu. Aldagai berriekiko ekuazio diferentzialak, mantso aldatzen dira eta honek, integratzeko hainbat abantaila ekarriko ditu. 
+Eguzki-sistemaren problemaren integraziorako, aurreko bi inplementazioen artean, puntu-finkoarena eraginkorragoa dela baieztatu dugu. Hori dela-eta, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta eguzki-sistemaren problemarako pentsatutako aldagai aldaketaren bidez, integrazio eraginkorra lortu dugu. 
 
 Jarraian, atal bakoitzean egindako ekarpen nagusienak laburtuko ditugu:
 
 \begin{enumerate}
 \item IRK puntu-finkoaren iterazioa.
 
-Gauss metodoaren puntu-finkoaren inplementazioaren azterketa sakon bat egin dugu eta horretarako, Hairer-en inplementazioa \cite{Hairer2008} hartu dugu gure lanaren abiapuntutzat. Inplementazio hau hobetzeko aukerak ikusi ditugu eta inplementazioa hobetzeko ekarpenak hauek izan dira:  
+Gauss metodoaren puntu-finkoaren inplementazioaren azterketa sakon bat egin dugu eta horretarako, Hairer-en inplementazioa \cite{Hairer2008} hartu dugu gure lanaren abiapuntutzat. Inplementazio hau hobetzeko aukerak ikusi ditugu eta inplementazioa hobetzeko ekarpenak, hauek izan dira:  
 
 \begin{enumerate}
 \item Metodoaren birformulazioa.
@@ -115,12 +115,12 @@ Erabiltzaileari zenbakizko soluzioaren estimazioa ezagutzeko, exekuzio bakarrean
 \begin{enumerate}
 \item Ekarpen nagusia.
 
-$S$-ataletako IRK metodoa,  Newton sinplifikatuaren iterazioaren bidez $d$-dimentsioko ekuazio diferentzial  sistemari aplikatzeko, urrats bakoitzean $sd \times sd$ tamainako era honetako ekuazio-sistemak (iterazio bakoitzeko bat) askatu behar dira.
+$S$-ataletako IRK metodoa,  Newton sinplifikatuaren iterazioaren bidez $d$-dimentsioko ekuazio diferentzial  sistemari aplikatzeko, urrats bakoitzean $sd \times sd$ tamainako era honetako ekuazio-sistemak (iterazio bakoitzeko bat) askatu behar dira,
 \begin{equation*}
 (I_d \otimes I_s- h \ A \otimes J) \in \mathbb{R}^{sd \times sd}.
 \end{equation*} 
 
-Atal honetan, jatorrizko $sd$-dimentsioko ekuazio sistema, $(s+1)d$ dimentsioko ekuazio-sistema baliokide moduan berridatzi dugu. Ekuazio-sistema baliokidea,  $d \times d$ tamainako $[s/2]+1$ matrize errealen \emph{LU} deskonposaketa bidez askatuko dugu. Modu honetan, konputazioa eraginkorragoa da.
+Kapitulu honetan, jatorrizko $sd$-dimentsioko ekuazio sistema, $(s+1)d$ dimentsioko ekuazio-sistema baliokide moduan berridatzi dugu. Ekuazio-sistema baliokidea,  $d \times d$ tamainako $[s/2]+1$ matrize errealen \emph{LU} deskonposaketa bidez askatuko dugu. Modu honetan, konputazioa eraginkorragoa da.
 
 %\item Doitasun laukoitzeko inplementazioa.
 
@@ -128,7 +128,7 @@ Atal honetan, jatorrizko $sd$-dimentsioko ekuazio sistema, $(s+1)d$ dimentsioko 
 
 \item Newtonen iterazio mistoa.
 
-Newton sinplifikatuaren iterazioaren aldaera bat proposatu dugu. Inplementazio honekin, energia errorearen eboluzioan ez da drift-ari agertzen. 
+Newton sinplifikatuaren iterazioaren aldaera bat proposatu dugu. Inplementazio honekin, energia errorearen eboluzioan ez da drift-arik agertzen. 
 
 
 
@@ -138,7 +138,23 @@ Newton sinplifikatuaren iterazioaren aldaera bat proposatu dugu. Inplementazio h
 
 \item IRK eguzki-sistema.
 
-Puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. Aldagai aldaketaren bidez aplikatzen dugun integrazio metodoa, sinplektikoa eta simetrikoa da: neurri batean, Splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, abantaila hauek ekarriko ditu: integrazioetan urratsa handiak erabil daitezke eta puntu-finkoaren iterazioek konbergetzia azkarra dute.    
+\begin{enumerate}
+\item Aldagai aldaketa.
+
+Puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa, aplikatuko dugu: era honetan, alde Kepleriarra ekuazioetatik desagerrarazten dugu.
+Aldagai aldaketaren bidez aplikatzen dugun integrazio metodoa, sinplektikoa eta simetrikoa da: neurri batean, Splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, abantaila hauek ekarriko ditu: integrazioetan urratsa handiak erabiltzea eta puntu-finkoaren iterazioek konbergentzia azkarra izatea.
+
+\item Doitasun nahasia.
+
+Doitasun nahasia erabiliko dugu: konputazioaren zati batzuk doitasun altuagoan kalkulatuz, soluzioaren doitasuna hobetzea lortuko dugu.    
+
+\item Kepler-en fluxua.
+
+Aldagai aldaketa, Kepler-en fluxuan oinarritzen da eta beraz, Kepler-en fluxuaren inplementazio eraginkorra garatu dugu. Danby \cite{Danby1992} eta J.Wisdom-en \cite{Wisdom2015} inplementazioen ezaugarrietan oinarritutako garapenean, hobekuntza bat egin dugu.  
+\end{enumerate}
+
+
+
 
 
 %Hirugarren urratsean, eguzki-sistemaren epe luzeko integrazioan arituko gara. Ekarpen handiena, atalen hasieraketa berri bat aplikatzea da alde Kepleriarraren fluxuan oinarrituz. IRK metodoak eskaintzen digun malgutasunari esker eta N gorputzetako problema grabitazionalaren ezaugarriez baliatuz inplementazio ezberdinak egin ditugu. Inplementazio hauen eraginkortasuna, egungo integratzaile sinplektiko esplizituekin konparatu dugu.
@@ -149,13 +165,13 @@ Puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta e
 
 \section{Tesiaren egitura.}
 
-Tesiaren lehenengo $(2-4)$ kapituluetan, zenbakizko integrazio sinplektikoak eta koma higikorreko aritmetikaren oinarriak azaldu ditugu. Bigarren kapituluaren lehen zatian, \emph{zenbakizko integratzaile sinplektikoen} inguruko oinarrizko kontzeptuak azaldu ditugu. Kapitulu honen bigarren zatian, Gauss metodo estandarra deskribatu eta bere propietate nagusienak eman ditugu. Kapitulu honen azken zatian, eguzki-sistemaren integraziorako metodo sinplektiko eta esplizitu nagusienak laburtu ditugu. Hirugarren kapituluan, lan honetan zenbakizko esperimentuetan erabili ditugun hasierako baliodun problemen zehaztasunak eman ditugu. Laugarren kapituluan koma-higikorreko aritmetikan murgildu gara eta biribiltze errorearen inguruko gaiak argitu nahi izan ditugu.
+Tesiaren lehenengo $(2-4)$ kapituluetan, zenbakizko integrazio sinplektikoak eta koma higikorreko aritmetikaren oinarriak azaldu ditugu. Bigarren kapituluaren lehen zatian, \emph{zenbakizko integratzaile sinplektikoen} inguruko oinarrizko kontzeptuak azaldu ditugu. Kapitulu honen bigarren zatian, Gauss metodo estandarra deskribatu eta bere propietate nagusienak eman ditugu. Kapitulu honen azken zatian, eguzki-sistemaren integraziorako metodo sinplektiko eta esplizitu nagusienak laburtu ditugu. Hirugarren kapituluan, lan honetan zenbakizko esperimentuetan erabili ditugun hasierako baliodun problemen zehaztasunak eman ditugu. Laugarren kapituluan, koma-higikorreko aritmetikan murgildu gara eta biribiltze errorearen inguruko gaiak argitu nahi izan ditugu.
 
-Tesiaren $(6-8)$ kapituluetan, gure inplementazio berriak garatu ditugu eta zenbakizko esperimentuen bidez, hauen eraginkortasuna erakutsi dugu. Lehenik, $6$.~kapituluan, puntu-finkoaren iterazioaren oinarritutako Gauss metodoaren inplementazioa aztertu dugu. Ondoren, $7$.~kapituluan, Newtonen iterazioan oinarritutako Gauss metodoa jorratu dugu. $8$.~kapituluan, epe luzeko eguzki-sistemaren integrazioez aritu gara.  
+Tesiaren $(6-8)$ kapituluetan, gure inplementazio berriak garatu ditugu eta zenbakizko esperimentuen bidez, hauen eraginkortasuna erakutsi dugu. Lehenik, $6$.~kapituluan, puntu-finkoaren iterazioaren oinarritutako Gauss metodoaren inplementazioa aztertu dugu. Ondoren, $7$.~kapituluan, Newtonen iterazioan oinarritutako Gauss metodoa jorratu dugu. $8$.~kapituluan, epe luzeko eguzki-sistemaren integraziorako, inplementazio berri bat proposatu dugu.  
 
-Tesiaren $(9-10)$ kapituluetan, gure hipotesiaren eztabaida eta lanaren konklusioak idatzi ditugu.
+Tesiaren $(9-10)$ kapituluetan, eztabaida eta tesiaren ondorioak idatzi ditugu. Eztabaidaren kapituluan, ikerketaren kontzeptu nagusienak aztertu ditugu. Ondorioen kapituluan, gure helburuak zein neurritan bete ditugun eta etorkizunerako lanen laburpena egin dugu. 
 
-Tesiaren bukaeran, hiru eranskinetan lanaren informazio osagarria bildu dugu. A.~eranskinean, egungo konputazio zientziaren hardware eta software kontzeptu nagusienak ezagutarazi nahi izan ditugu. B.~eranskinean, tesian zehar erabilitako hainbat frogen zehaztapenak eman dira. C.~eranskinean, garatutako kodeak bildu eta erabiltzaileari erabilgarri izan dakiokeen informazioa laburtu dugu. Azkenik D.~eranskinean, erabilitako notazioaren inguruko argibideak eman ditugu.
+Tesiaren bukaerako hiru eranskinetan, lanaren informazio osagarria bildu dugu. A.~eranskinean, egungo konputazio zientziaren hardware eta software kontzeptu nagusienak ezagutarazi nahi izan ditugu. B.~eranskinean, tesian zehar erabilitako hainbat garapen matematikoen zehaztapenak eman ditugu. C.~eranskinean, inplementazioen kodeak azaldu eta erabiltzaileari erabilgarri izan dakiokeen informazioa laburtu dugu. Azkenik D.~eranskinean, erabilitako notazioaren inguruko argibideak eman ditugu.
 
       
       
