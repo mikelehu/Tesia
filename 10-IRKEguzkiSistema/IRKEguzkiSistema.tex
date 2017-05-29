@@ -4,11 +4,11 @@
 \section{Sarrera.}
   
 
-Kapitulu honetan, eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. \ref{chap:IRK-PF}. kapituluan puntu-finkoaren iterazioan oinarrituz eta \ref{chap:IRK-NEW}. kapituluan Newton sinplifikatuaren iterazioan oinarrituz IRK inplementazioak garatu ditugu; eguzki-sistemaren problemaren integraziorako, bi inplementazioen artean, puntu-finkoarena eraginkorragoa dela baieztatu dugu. Hortaz, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta  ekuazio diferentzialetako aldagaiei eragingo diegun aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu.  
+Kapitulu honetan, eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. \ref{chap:IRK-PF}~kapituluan puntu-finkoaren iterazioan oinarrituz eta \ref{chap:IRK-NEW}~kapituluan Newton sinplifikatuaren iterazioan oinarrituz, IRK inplementazioak garatu ditugu; eguzki-sistemaren problemaren integraziorako, bi inplementazioen artean, puntu-finkoarena eraginkorragoa dela baieztatu dugu. Ondorioz, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta  ekuazio diferentzialetako aldagaiei eragingo diegun aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu.  
 
-Aplikatzen dugun integrazio metodoa sinplektikoa eta simetrikoa da: neurri batean, Splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Jacobiarraren balioa txikia denez, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
+Aplikatzen dugun integrazio metodoa sinplektikoa eta simetrikoa da: neurri batean, Splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Hirugarrenik, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
 
-Lehenengo, Kepler-en fluxuaren inplementazioa azalduko dugu. Bigarrenik, aldagai aldaketa definitu eta metodoa integratzeko zehaztapenak emango ditugu. Hirugarrenik, eguzki-sistemaren problemaren zenbakizko integrazioak egingo ditugu: inplementazio honen eta doitasun altuko beste metodo sinplektikoen eraginkortasunak, alderatuko ditugu.     
+Lehenengo, Kepler-en fluxuaren inplementazioa azalduko dugu. Bigarrenik, aldagai aldaketa definitu eta metodoa integratzeko zehaztapenak emango ditugu. Hirugarrenik, eguzki-sistemaren problemaren zenbakizko integrazioak egingo ditugu: inplementazio honen eta doitasun altuko beste metodo sinplektikoen (konposizio eta Splitting metodoak) eraginkortasunak, alderatuko ditugu.     
 
  
 
@@ -32,11 +32,11 @@ eta ekuazio diferentzialak era honetan definitzen dira,
 \label{eq:kode}
 \dot{q}=p, \ \ \dot{p}= - \frac{k \ q}{\|q\|^3} ,
 \end{equation}
-non $k= \mu / m$ eta  $q,p \in \mathbb{R}^3$.
+non $k= \mu / m$ eta  $q,p \in \mathbb{R}^3$ diren.
 
-Kepler problemaren soluzio zehatza kalkula daiteke: une bateko kokapen eta abiadurak emanik, $\Delta t$ denbora tarte bat igarotakoan (positiboa ala negatiboa), kokapen eta abiadura zehatzak konputatu daitezke. Eguzki-sistemaren integrazio metodoentzat, Kepler problema doitasun handian eta era eraginkorrean kalkulatzea, funtsezkoa da. Kepler problemaren erreferentziazko inplementazioak, Danby \cite{Danby1992} eta J.Wisdom-enak  \cite{Wisdom2015} ditugu. 
+Kepler problemaren soluzio zehatza kalkula daiteke: une bateko kokapen eta abiadurak emanik, $\Delta t$ denbora tarte bat igarotakoan (positiboa ala negatiboa), kokapen eta abiadura zehatzak konputatu daitezke. Eguzki-sistemaren integrazioetarako, Kepler problema doitasun handian eta era eraginkorrean kalkulatzea, funtsezkoa da. Kepler problemaren erreferentziazko inplementazioak, Danby \cite{Danby1992} eta J.Wisdom-enak  \cite{Wisdom2015} ditugu. 
 
-Kepler-en fluxua, era honetan kalkulatzen da. Lehenik, koordenatu cartesiarretatik ($q,p\in \mathbb{R}^3$), koordenatu eliptikoetara $(a,e,i,\Omega,E)$ itzulpena egingo dugu. Koordenatu eliptikoetan, $E$ (\emph{eccentric anomaly}) aldagaia izan ezik, beste aldagaiak konstante mantentzen dira: beraz $E_0$ balioa emanda, $\Delta t$ denbora tartea aurrera egin eta $E_1$ balio berria kalkulatuko dugu. Azkenik, koordenatu eliptikoetatik koordenatu cartesiarretara itzulpena eginez, kokapen eta abiadura berriak eskuratuko ditugu. 
+Kepler-en fluxua, era honetan kalkulatzen da. Lehenik, koordenatu cartesiarretatik ($q,p\in \mathbb{R}^3$), koordenatu eliptikoetara $(a,e,i,\Omega,E)$ itzulpena egingo dugu. Koordenatu eliptikoetan, $E$ (\emph{eccentric anomaly}) aldagaia izan ezik, beste aldagaiak konstante mantentzen dira: beraz, $E_0$ balioa emanda, $\Delta t$ denbora tartea aurrera egin eta $E_1$ balio berria kalkulatuko dugu. Azkenik, koordenatu eliptikoetatik koordenatu cartesiarretara itzulpena eginez, kokapen eta abiadura berriak eskuratuko ditugu. 
 
 \begin{equation*}
 (q_0,v_0) \in \mathbb{R}^6 \ \ \ \longrightarrow \ \ \  (a,e,i,\Omega,E_0) \in \mathbb{R}^6 
@@ -57,7 +57,7 @@ non $u=(q,v) \in \mathbb{R}^6$  den.
 
 \section{Kepler Perturbatuaren problema.}
 
-Kepler problemaren Hamiltondarra perturbatzen badugu ezingo dugu aurreko atalean erabili dugun fluxua erabili problema ebazteko. Kasu honetan Hamiltondarra  bi zatitan banatuta egongo da;
+Kepler problemaren Hamiltondarra perturbatzen badugu, ezingo dugu aurreko atalean erabili dugun fluxua erabili problema ebazteko. Kasu honetan Hamiltondarra  bi zatitan banatuta egongo da;
 \begin{align}
 \begin{split}
 \label{eq: hamkeplerpert}
@@ -66,14 +66,13 @@ Kepler problemaren Hamiltondarra perturbatzen badugu ezingo dugu aurreko atalean
 \end{align} 
 non $H_K$ mugimendu Kepleriarrari dagokion Hamiltondarraren aldea den, hau da, (\ref{eq: hamkepler}) ekuazioko eskuin aldea, eta $H_I$ perturbazioei dagokien Hamiltondarraren aldea den.
 
-Problema berri honetan aldagai aldaketa bat egingo dugu, aldaketaren helburua da keplerren fluxua eabili ahal izatea problemaren ebazpenean. 
+Problema berri honetan aldagai aldaketa bat egingo dugu, aldaketaren helburua da keplerren fluxua erabili ahal izatea problemaren ebazpenean. 
 
 \subsection*{Aldagai aldaketa.}
 
 %Kontutan hartuko ditugun sistemak Hamiltondarrak dira, $H: \mathbb{R} \times \mathbb{R}^{2d} \longrightarrow \mathbb{R}$, gainera, Hamiltondarra bi zatitan bana dakieken sistemak hartuko ditugu kontuan:
 
-
-(\ref{eq: hamkeplerpert}) problemari dagozkion ekuazioetan Keplerren fluxuan oinarritutako aldagai aldaketa bat egingo dugu, baina horretarako notazioa finkatuko dugu: jatorrizko aldagaiak $u=(q,p) \in \mathbb{R}^{2d}$ izango dira eta aldagai berriak $U=(Q,P) \in \mathbb{R}^{2d}$ letra larriz adieraziko ditugu. Jatorrizko aldagaien bidez adierazitako problema, alegia, ebatzi beharreko hasierako baliodun problema, honakoa da:
+(\ref{eq: hamkeplerpert}) problemari dagozkion ekuazioetan, Keplerren fluxuan oinarritutako aldagai aldaketa bat egingo dugu, baina horretarako notazioa finkatuko dugu: jatorrizko aldagaiak $u=(q,p) \in \mathbb{R}^{2d}$ izango dira eta aldagai berriak $U=(Q,P) \in \mathbb{R}^{2d}$ letra larriz adieraziko ditugu. Jatorrizko aldagaien bidez adierazitako problema, alegia, ebatzi beharreko hasierako baliodun problema, honakoa da:
 
 \begin{align}
 \begin{split}
@@ -408,7 +407,7 @@ Koordenatu heliozentrikoei dagokien  Hamiltondar sistema (\ref{eq:nbodyHel}),
 integratu dugu. $H_K(q,p)$ mugimendu Kepleriarrari dagokion Hamiltondarraren aldea da  eta $H_I(q,p)$, perturbazioei dagokien Hamiltondarraren aldea da. 
 %Kepler-en fluxuan oinarritutako aldagai aldaketaren bidez, alde Kepleriarra ekuazioetatik desagerrarazten dugu.    
 
-Integrazioaren tartea, $t_{end}=10^6$ egunetakoa da eta zenbakizko integrazioetan, $h$-ren balio ezberdinak erabili ditugu. $s=6$ metodoarentzat urrats luzerak aukeratu ditugu eta gainontzeko metodoentzat, $s$-atalen araberako urrats luzera proportzionalak finkatu ditugu:
+Integrazioen tartea, $t_{end}=10^6$ egunetakoa da eta zenbakizko integrazioetan, $h$-ren balio ezberdinak erabili ditugu. $s=6$ metodoarentzat urrats luzerak aukeratu ditugu eta gainontzeko metodoentzat, $s$-atalen araberako urrats luzera proportzionalak finkatu ditugu:
 \begin{align*}
 &s=6: \quad  \ \ h=2^{k/4}, \ k=4,\dots,28, \\
 &s=8: \quad  \ \ (8/6)h, \\
@@ -422,7 +421,7 @@ Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabak
 \subsection*{Lehen esperimentua.}
 
 
-\ref{fig:esp81s}~irudian, $s=6,8,9,16$ ataletako metodoen eraginkortasun grafikoak irudikatu ditugu. Eraginkortasuna, energia errore erlatibo maximoaren arabera neurtu dugu: lehen kasuan, \emph{CPU}-denborarekiko (exekuzio paralelotan \emph{Wall time}) eta bigarren kasuan, ekuazio diferentzialen ebaluazio kopuruarekiko (\emph{FCN}). Eraginkortasuna \emph{CPU}-rekiko, problema zehatz honetarako gertatzen dena azaltzen digu eta eraginkortasuna \emph{FCN}-rekiko, metodoak problema erreal batean nola jokatuko luke erakusten digu. 
+\ref{fig:esp81s}~irudian, $s=6,8,9,16$ ataletako metodoen eraginkortasun grafikoak irudikatu ditugu. Eraginkortasuna, energia errore erlatibo maximoaren arabera neurtu dugu: lehen kasuan, \emph{CPU}-denborarekiko (exekuzio paraleloetan \emph{Wall time}) eta bigarren kasuan, ekuazio diferentzialen ebaluazio kopuruarekiko (\emph{FCN}). Eraginkortasuna \emph{CPU}-rekiko, problema zehatz honetarako gertatzen dena azaltzen digu eta eraginkortasuna \emph{FCN}-rekiko, metodoak problema erreal batean nola jokatuko luke erakusten digu. 
 
 
 \begin{figure}[h!]
@@ -440,11 +439,11 @@ Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabak
 {\includegraphics[width=.5\textwidth]{esperimentua814}}
 \end{tabular}
 \caption{\small 
-Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Batetik, ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. Bestetik, ardatz horizontalean, (a),(c),(d) irudietan CPU denbora (exekuzio paralelotan Wall-Time) eta (b) irudian, ekuazio diferentzialen ebaluazio kopurua (FCN) erakutsi dugu. (a) eta (b) konputazioak modu sekuentzialean egin ditugu. (c) eta (d) modu paraleloan:  (c) kasuaren exekuzioa hari kopurua $2$ da eta (d) kasuan hari kopurua $4$. Irudi bakoitzean, Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. }
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Batetik, ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. Bestetik, ardatz horizontalean, (a),(c),(d) irudietan CPU denbora (exekuzio paralelotan Wall-Time) eta (b) irudian, ekuazio diferentzialen ebaluazio kopurua (FCN) erakutsi dugu. (a)  konputazioa modu sekuentzialean egin dugu. (c) eta (d) modu paraleloan:  (c) kasuaren exekuzioa hari kopurua $2$ da eta (d) kasuan hari kopurua $4$ izan dira. Irudi bakoitzean, Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. }
 \label{fig:esp81s}
 \end{figure}
 
-Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkorrena aukeratu nahi dugu. Horretarako, biribiltze errorea nagusitzen hasten den inguruko unean gertatutakoa aztertu dugu: $s=8,9,16$ metodoak, $s=6$ metodoa baino eraginkorragoak azaldu zaizkigu. $s=6,8,9$ metodoak oso antzekoak izanik, $s=8$ ataleko Gauss metodoa aukeratu dugu. Bestalde, exekuzio paraleloa, sekuentziala baino eraginkorragoa da eta $4$ hari erabili dugun integrazioa, eraginkorrena azaldu zaigu.  
+Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkorrena aukeratu nahi dugu. Horretarako, biribiltze errorea nagusitzen hasten den inguruko unean gertatutakoa aztertu dugu: $s=8,9,16$ metodoak, $s=6$ metodoa baino eraginkorragoak azaldu zaizkigu. $s=8,9,16$ metodoak beraien artean oso antzekoak izanik, $s=8$ ataleko Gauss metodoa aukeratu dugu. Bestalde, exekuzio paraleloa, sekuentziala baino eraginkorragoa da eta $4$ hari erabili dugun integrazioa, eraginkorrena azaldu zaigu.  
 
 \subsection*{Bigarren esperimentua.}
 
@@ -477,10 +476,11 @@ Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkor
 \end{figure}
 
 
-\subsubsection*{Errore globalak}
+\subsubsection*{Kokapen eta abiadura errore estimazioak}
 
 
-\ref{fig:esp84}~irudian, Gauss ($s=8$) eta \emph{ABAH1064} metodoentzako, kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. Erroreak estimatzeko, urrats txikiago batekin integrazioaren soluzioarekiko diferentzia gisa kalkulatu dugu. 
+\ref{fig:esp84}~irudian, Gauss ($s=8$) eta \emph{ABAH1064} metodoentzako, kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. Erroreak estimatzeko, urrats txikiagoako integrazioaren soluzioarekiko diferentzia gisa kalkulatu dugu. 
+Gauss metodoaren integrazioan, urrats luzera handiago erabili arren, barne-planeten kokapen eta abiaduren errore estimazioak txikiagoak izan dira. 
 
 \begin{figure}[h!]
 \centering
@@ -497,26 +497,29 @@ Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkor
 \subfloat[ABAH1064 (Abiadura errorea)]
 {\includegraphics[width=.5\textwidth]{esperimentua844}}
 \end{tabular}
-\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoa, $h=10,667$ urrats luzerarekin integrazioaren errore estimazioak erakutsi ditugu. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoa, $h=4.76$ urrats luzerarekin integrazioaren errore estimazioak erakutsi ditugu}
+\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
 \label{fig:esp84}
 \end{figure}
+
+
 
 
 \subsection*{Hirugarren esperimentua.}
 
 
-Biribiltze errorearen azterketa (momentu angeluarra). $s=8$ metodoa eta urrats luzera handiak ($h=42.667$ eta $h=42.667/2$) erabiliz egindako integrazioak. Momentu angeluarraren trunkatze errorea beti zero da, metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte.
+Hirugarren esperimentu honetan, biribiltze errorearen azterketa egin dugu eta horretarako, momentu angeluarraren errore erlatiboaren eboluzioa eman dugu. Momentu angeluarraren trunkatze errorea beti zero da, metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte. \ref{fig:esp85}~irudian, Gaussen $s=8$ ataletako metodoarekin, $h=9.0$ eta $h=10.63$ urrats luzerarekin integrazioen soluzioen momentu angeluarraren errorea erakutsi dugu.  
+
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[Momentu angeluarra $h=42.667$.]
+\subfloat[Momentu angeluarra $h=9.0$.]
 {\includegraphics[width=.5\textwidth]{esperimentua851}}
 &
-\subfloat[Momentu angeluarra $h=42.667/2$]
+\subfloat[Momentu angeluarra $h=10.63$]
 {\includegraphics[width=.5\textwidth]{esperimentua852}}
 \end{tabular}
-\caption{\small }
+\caption{\small Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. Gaussen $s=8$ ataletako metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin. }
 \label{fig:esp85}
 \end{figure}
 
@@ -525,45 +528,46 @@ Biribiltze errorearen azterketa (momentu angeluarra). $s=8$ metodoa eta urrats l
 \subsection*{Laugarren esperimentua.}
 
 
-Beste metodo sinplektikoekiko konparaketa. Gauss metodoa modu paraleloan exekutatu dugu: $s=16$ eta $s=8$ metodoak, splitting/konposizio metodoekin konparatu ditugu.
+Laugarren esperimentu honetan, Gauss metodoa eta konposizio/Splitting metodoen arteko eraginkortasunaren konparaketa egin dugu. $s=8$ ataletako Gauss metodoa, modu sekuentzialean eta modu paraleloan exekutatu dugu.
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[$s=8$ Exekuzio sekuentziala: CPU-denbora.]
-{\includegraphics[width=.4\textwidth]{esperimentua821}}
+\subfloat[Exekuzio sekuentziala: CPU Time.]
+{\includegraphics[width=.5\textwidth]{esperimentua821}}
 &
-\subfloat[$s=8$ Exekuzio sekuentziala:: FCN.]
-{\includegraphics[width=.4\textwidth]{esperimentua822}}\\
-\subfloat[$s=8$ Exekuzio paraleloa: hariak=$2$.]
-{\includegraphics[width=.4\textwidth]{esperimentua823}}
+\subfloat[Exekuzio sekuentziala: FCN.]
+{\includegraphics[width=.5\textwidth]{esperimentua822}}\\
+\subfloat[Exekuzio paraleloa (hariak=$2$) Wall Time.]
+{\includegraphics[width=.5\textwidth]{esperimentua823}}
 &
-\subfloat[$s=8$ Exekuzio paraleloa: hariak=$4$.]
-{\includegraphics[width=.4\textwidth]{esperimentua824}}
+\subfloat[Exekuzio paraleloa (hariak=$4$) Wall Time.]
+{\includegraphics[width=.5\textwidth]{esperimentua824}}
 \end{tabular}
 \caption{\small 
-Eraginkortasun grafikoak irudikatu ditugu: ezkerrean energiaren errore maximoa, CPU denborarekiko; eskuinean ekuazio diferentzialen ebaluazio kopuruarekiko (FCN). Lau integrazio metodo konparatu ditugu: $ABAH1064$  urdinez, $CO1035$ gorriz,  eta \emph{IRKFLUXU} grisez}
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Batetik, ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. Bestetik, ardatz horizontalean, (a),(c),(d) irudietan CPU denbora (exekuzio paralelotan Wall-Time) eta (b) irudian, ekuazio diferentzialen ebaluazio kopurua (FCN) erakutsi dugu. (a) konputazioa modu sekuentzialean egin dugu. (c) eta (d) modu paraleloan:  (c) kasuaren exekuzioa hari kopurua $2$ da eta (d) kasuan hari kopurua $4$ izan dira. Irudi bakoitzean,  hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz
+}
 \label{fig:esp82}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\begin{tabular}{c c}
-\subfloat[$s=16$ Exekuzio sekuentziala: CPU-denbora.]
-{\includegraphics[width=.5\textwidth]{esperimentua861}}
-&
-\subfloat[$s=16$ Exekuzio sekuentziala:: FCN.]
-{\includegraphics[width=.5\textwidth]{esperimentua862}}\\
-\subfloat[$s=16$ Exekuzio paraleloa: hariak=$2$.]
-{\includegraphics[width=.5\textwidth]{esperimentua863}}
-&
-\subfloat[$s=16$ Exekuzio paraleloa: hariak=$4$.]
-{\includegraphics[width=.5\textwidth]{esperimentua864}}
-\end{tabular}
-\caption{\small 
-Eraginkortasun grafikoak irudikatu ditugu: ezkerrean energiaren errore maximoa, CPU denborarekiko; eskuinean ekuazio diferentzialen ebaluazio kopuruarekiko (FCN). Lau integrazio metodo konparatu ditugu: $ABAH1064$  urdinez, $CO1035$ gorriz,  eta \emph{IRKFLUXU} grisez}
-\label{fig:esp82}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\begin{tabular}{c c}
+%\subfloat[$s=16$ Exekuzio sekuentziala: CPU-denbora.]
+%{\includegraphics[width=.5\textwidth]{esperimentua861}}
+%&
+%\subfloat[$s=16$ Exekuzio sekuentziala:: FCN.]
+%{\includegraphics[width=.5\textwidth]{esperimentua862}}\\
+%\subfloat[$s=16$ Exekuzio paraleloa: hariak=$2$.]
+%{\includegraphics[width=.5\textwidth]{esperimentua863}}
+%&
+%\subfloat[$s=16$ Exekuzio paraleloa: hariak=$4$.]
+%{\includegraphics[width=.5\textwidth]{esperimentua864}}
+%\end{tabular}
+%\caption{\small 
+%Eraginkortasun grafikoak irudikatu ditugu: ezkerrean energiaren errore maximoa, CPU denborarekiko; eskuinean ekuazio diferentzialen ebaluazio kopuruarekiko (FCN). Lau integrazio metodo konparatu ditugu: $ABAH1064$  urdinez, $CO1035$ gorriz,  eta \emph{IRKFLUXU} grisez}
+%\label{fig:esp82}
+%\end{figure}
 
 
 \section{Laburpena.}

@@ -94,11 +94,11 @@
 \contentsline {section}{\numberline {A.3.}Hardwarea.}{163}{section.A.3}
 \contentsline {section}{\numberline {A.4.}Programazio lengoaiak.}{168}{section.A.4}
 \contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{171}{section.A.5}
-\contentsline {paragraph}{Adibidea.}{172}{section*.232}
+\contentsline {paragraph}{Adibidea.}{172}{section*.231}
 \contentsline {section}{\numberline {A.6.}Konpiladorea.}{175}{section.A.6}
-\contentsline {paragraph}{Konpiladoreak.}{175}{section*.237}
-\contentsline {paragraph}{Optimizazioak.}{175}{section*.238}
-\contentsline {paragraph}{Konpilazio aginduak}{176}{section*.239}
+\contentsline {paragraph}{Konpiladoreak.}{175}{section*.236}
+\contentsline {paragraph}{Optimizazioak.}{175}{section*.237}
+\contentsline {paragraph}{Konpilazio aginduak}{176}{section*.238}
 \contentsline {section}{\numberline {A.7.}Laburpena.}{176}{section.A.7}
 \contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{177}{appendix.B}
 \contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{177}{section.B.1}
@@ -112,4 +112,4 @@
 \contentsline {section}{\numberline {C.4.}IRK Eguzki-sistema.}{192}{section.C.4}
 \contentsline {section}{\numberline {C.5.}Konposizio-Splitting metodoak.}{192}{section.C.5}
 \contentsline {chapter}{\numberline {D.}Zerrendak}{193}{appendix.D}
-\contentsline {chapter}{Bibliografia}{195}{table.caption.267}
+\contentsline {chapter}{Bibliografia}{195}{table.caption.266}
