@@ -241,10 +241,10 @@ Bi aldeak $t$ aldagaiarekiko deribatuz eta katearen erregla aplikatuz,
                 0      \\
 \end{array}\right)+
 \left(\begin{array}{c}
-      \varphi'^1(U_1) \frac{d}{dt}U_1 \\
-      \varphi'^2(U_2) \frac{d}{dt}U_2 \\
+      (\varphi^1)'(U_1) \frac{d}{dt}U_1 \\
+      (\varphi^2)'(U_2) \frac{d}{dt}U_2 \\
                 \vdots \\
-     \varphi'^k(U_k) \frac{d}{dt}U_k\\
+      (\varphi^k)'(U_k) \frac{d}{dt}U_k\\
       g_{k+1}(u_1, u_2\dots, u_k,w,t)
 \end{array}\right),
 \end{equation*}
@@ -265,10 +265,10 @@ ekuazioetan fluxuen propietate eta definizioak erabiliz,
                 0      \\
 \end{array}\right)+
 \left(\begin{array}{c}
-      \varphi'^1(U_1) \dot{U}_1 \\
-      \varphi'^2(U_2) \dot{U}_2 \\
+      (\varphi^1)'(U_1) \dot{U}_1 \\
+      (\varphi^2)'(U_2) \dot{U}_2 \\
                 \vdots \\
-     \varphi'^k(U_k) \dot{U}_k\\
+      (\varphi^k)'(U_k) \dot{U}_k\\
       g_{k+1}(u_1, u_2\dots, u_k,w,t)
 \end{array}\right),
 \end{equation*}
@@ -282,15 +282,15 @@ eta, azkenik, (\ref{eq: n-pertEDA}) ekuazioarekin berdinduz eta sinplifikatuz,
                 \dot{w}      \\
 \end{array}\right)=
 \left(\begin{array}{c}
-      \left((\varphi'^1(U_1)\right)^{-1} g_1 \\
-      \left(\varphi'^2(U_2)\right)^{-1} g_2 \\
+      \left((\varphi^1)'(U_1)\right)^{-1} g_1 \\
+      \left((\varphi^2)'(U_2)\right)^{-1} g_2 \\
                 \vdots \\
-     \left(\varphi'^k(U_k)\right)^{-1} g_k\\
+     \left((\varphi^k)'(U_k)\right)^{-1} g_k\\
       g_{k+1}
 \end{array}\right),
 \end{equation*}
 
-Aldagai berriekiko ekuazio diferentzialak balioztatzeko, fluxuen propietateei esker,$(\varphi')^{-1}=J^{-1}(\varphi')^tJ$ kalkula dezakegu eta, Kepler perturbatuan bezalaxe, alderantzizko matrizerik kalkulatu beharrik ez dugu izango. Deribazio automatikoko teknikei esker, kalkulatu ahal izango ditugu. Bestalde, $\dot{w}$ aldagaien ekuazioak balioztatzeko $u_i$ aldagaiak behar ditugu, baina $U_i$ aldagaietatik lor ditzakegu, gainra, $g_i$ funtzioetarako ere behar ditugu. Ondorioz, Kepler perturbatuaren probleman bezala hiru urratsetan balioztatu ahal izango ditugu ekuazioak.
+Aldagai berriekiko ekuazio diferentzialak balioztatzeko, fluxuen propietateei esker,$(\varphi')^{-1}=J^{-1}(\varphi')^tJ$ kalkula dezakegu eta, Kepler perturbatuan bezalaxe, alderantzizko matrizerik kalkulatu beharrik ez dugu izango. Deribazio automatikoko teknikei esker, kalkulatu ahal izango ditugu. Bestalde, $\dot{w}$ aldagaien ekuazioak balioztatzeko $u_i$ aldagaiak behar ditugu, baina $U_i$ aldagaietatik lor ditzakegu, gainera, $g_i$ funtzioetarako ere behar ditugu. Ondorioz, Kepler perturbatuaren probleman bezala hiru urratsetan balioztatu ahal izango ditugu ekuazioak.
 
 
 
@@ -454,38 +454,50 @@ Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkor
 
 \subsubsection*{Energiaren eboluzioa}
 
+
+\ref{fig:esp83}~irudian energiaren errore erlatiboaren eboluzioa erakutsi dugu lau integrazio metodo hauetarako:
+\begin{enumerate}
+\item Gauss metodoa $s=8$ (proiekzioa \emph{long double} doitasunarekin). Integraziorako $h=10.63$ urrats luzera erabili dugu.
+\item Gauss metodoa $s=8$ (proiekzioa \emph{double} doitasunarekin). Integraziorako $h=10.63$ urrats luzera erabili dugu.
+\item \emph{ABAH1064} Splitting metodoa. Integraziorako $h=4.76$ urrats luzera erabili dugu.
+\item \epmh(CO1035) Konposizio metodoa. Integraziorako $h=4.76$ urrats luzera erabili dugu.
+\end{enumerate}
+
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[$s=8$ Gauss metodoa,  $h=10,667$. Double-Double (urdinez) eta Double-Long Double (laranjaz)]
+\subfloat[Gauss metodoa ($s=8$).]
 {\includegraphics[width=.5\textwidth]{esperimentua831}}
 &
-\subfloat[$h=4.7$ . ABAH1064 (laranjaz) eta CO1035(urdinez).]
+\subfloat[ABAH1064 eta CO1035]
 {\includegraphics[width=.5\textwidth]{esperimentua832}}
 \end{tabular}
-\caption{\small Energia errorearen eboluzioa. }
+\caption{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako Gauss metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: proiekzioa \emph{long double} doitasunarekin (laranjaz) eta proiekzioa \emph{double} doitasunarekin (urdinez). Eskuineko irudian, Splitting/Konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
 \label{fig:esp83}
 \end{figure}
 
 
 \subsubsection*{Errore globalak}
 
+
+\ref{fig:esp84}~irudian, Gauss ($s=8$) eta \emph{ABAH1064} metodoentzako, kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. Erroreak estimatzeko, urrats txikiago batekin integrazioaren soluzioarekiko diferentzia gisa kalkulatu dugu. 
+
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[Kokapen errorea $s=8$ eta $h=10.667$.]
+\subfloat[Gauss metodoa (kokapen errorea)]
 {\includegraphics[width=.5\textwidth]{esperimentua841}}
 &
-\subfloat[Abiadura errorea $s=8$ eta $h=10.667$..]
+\subfloat[Gauss metodoa (abiadura errorea)]
 {\includegraphics[width=.5\textwidth]{esperimentua842}}
 \\
-\subfloat[Kokapen errorea.ABAH1064 $h=4.7$]
+\subfloat[ABAH1064 (Kokapen errorea)]
 {\includegraphics[width=.5\textwidth]{esperimentua843}}
 &
-\subfloat[Abiadura errorea.ABAH1064 $h=4.7$]
+\subfloat[ABAH1064 (Abiadura errorea)]
 {\includegraphics[width=.5\textwidth]{esperimentua844}}
 \end{tabular}
-\caption{\small Gauss metodoa $s=8$ eta urratsa $h=10.667$}
+\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoa, $h=10,667$ urrats luzerarekin integrazioaren errore estimazioak erakutsi ditugu. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoa, $h=4.76$ urrats luzerarekin integrazioaren errore estimazioak erakutsi ditugu}
 \label{fig:esp84}
 \end{figure}
 

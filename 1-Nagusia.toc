@@ -77,7 +77,7 @@
 \contentsline {section}{\numberline {7.4.}Alde Kepleriar bat baino gehiagoko sistemak.}{122}{section.7.4}
 \contentsline {section}{\numberline {7.5.}Zenbakizko esperimentuak.}{126}{section.7.5}
 \contentsline {subsection}{Problemak.}{127}{section*.173}
-\contentsline {section}{\numberline {7.6.}Laburpena.}{129}{section.7.6}
+\contentsline {section}{\numberline {7.6.}Laburpena.}{131}{section.7.6}
 \contentsline {chapter}{\numberline {8.}Eztabaida.}{133}{chapter.8}
 \contentsline {section}{\numberline {8.1.}Eguzki-sistemaren integrazio luzeak.}{133}{section.8.1}
 \contentsline {section}{\numberline {8.2.}Eredu deskonposaketa.}{136}{section.8.2}
