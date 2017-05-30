@@ -66,7 +66,7 @@ Kepler problemaren Hamiltondarra perturbatzen badugu, ezingo dugu aurreko atalea
 \end{align} 
 non $H_K$ mugimendu Kepleriarrari dagokion Hamiltondarraren aldea den, hau da, (\ref{eq: hamkepler}) ekuazioko eskuin aldea, eta $H_I$ perturbazioei dagokien Hamiltondarraren aldea den.
 
-Problema berri honetan aldagai aldaketa bat egingo dugu, aldaketaren helburua da keplerren fluxua erabili ahal izatea problemaren ebazpenean. 
+Problema berri honetan aldagai aldaketa bat egingo dugu, aldaketaren helburua da Keplerren fluxua erabili ahal izatea problemaren ebazpenean. 
 
 \subsection*{Aldagai aldaketa.}
 
@@ -80,7 +80,7 @@ Problema berri honetan aldagai aldaketa bat egingo dugu, aldaketaren helburua da
 &\frac{du}{dt} = k(u) + g(u,t),\ \ \ u(0) = u_0
 \end{split}
 \end{align} 
-non $k(u)$ alde kepleriarrari dagokion eta $g(u,t)$ perturbazioari. 
+non $k(u)$ alde Kepleriarrari dagokion eta $g(u,t)$ perturbazioari. 
 Problema horretan honako aldagai aldaketa egingo dugu, kontuan izan urrats bakoitzean egingo dugula aldagai aldaketa, hau da $j=0, 1, 2 \ldots$ indizeak $j$. urratsean aplikatu beharreko aldaketa adierazten du:
 
 \begin{align}
@@ -97,7 +97,7 @@ U^{j+\frac{1}{2}}(t) = \varphi^k_{-t+(j+\frac{1}{2})h} \left( u(t) \right)
 \end{split}
 \end{align} 
 
-Aldaketa hauekin asmoa da $i+1$ urratsa emateko $u_i \approx u(hi)$ zenbakizko soluzioan oinarrituz, aldagai aldaketaren bidez $U_i^{i+\frac{1}{2}}=\varphi^k_{\frac{h}{2}}(u_i)$ lortu, hau da, fluxuan $\frac{h}{2}$ aurrera egin aldagai berriak lortzeko, aldagai berri hauetan ebatzi jatorrizko problemaren urrats bati dagokion zenbakizko soluzioa (ikusiko dugun bezala, aldagai berrietan alde kepleriarrari dagokion espresioak ez du eraginik eta, azken finean perturbazioari dgokion aldaketa da hemen kalkulatuko dena) eta azkenik, aldagai berri hauen balio berriak jatorrizko aldagaietara itzuli behar dira, baina $i+1$ urratsari dagozkion unera pasa behar dira aldagaiak, hau da, fluxuan aurrera $\frac{h}{2}$ egin behar da. Atzera egingo bagenu urratsaren hasierako balioei perturbazioak zein aldaketa eragiten dien kalkulatuko baikenuke, baina guk urratsaren bukaerako balioak nahi ditugu. Laburbilduz:
+Aldaketa hauekin asmoa da $i+1$ urratsa emateko $u_i \approx u(hi)$ zenbakizko soluzioan oinarrituz, aldagai aldaketaren bidez $U_i^{i+\frac{1}{2}}=\varphi^k_{\frac{h}{2}}(u_i)$ lortu, hau da, fluxuan $\frac{h}{2}$ aurrera egin aldagai berriak lortzeko, aldagai berri hauetan ebatzi jatorrizko problemaren urrats bati dagokion zenbakizko soluzioa (ikusiko dugun bezala, aldagai berrietan alde Kepleriarrari dagokion espresioak ez du eraginik eta, azken finean perturbazioari dagokion aldaketa da hemen kalkulatuko dena) eta azkenik, aldagai berri hauen balio berriak jatorrizko aldagaietara itzuli behar dira, baina $i+1$ urratsari dagozkion unera pasa behar dira aldagaiak, hau da, fluxuan aurrera $\frac{h}{2}$ egin behar da. Atzera egingo bagenu urratsaren hasierako balioei perturbazioak zein aldaketa eragiten dien kalkulatuko baikenuke, baina guk urratsaren bukaerako balioak nahi ditugu. Laburbilduz:
 
 
 \begin{align*}
@@ -124,7 +124,7 @@ Aldagai aldaketak fluxuan aurrera egiten du urratsaren luzeraren erdia. Hori hor
 
 \subsection*{Aldagai berrietan ekuazio diferentzialak.}
 
-(\ref{eq: uUaldaketa}) aldagai aldaketa abiapuntutzat hartuz, aldagai berriei dagozkien ekuazio diferentzialak lortu behar ditugu. Horrela, problemaren integrazioa aldagai berrien arabera egin ahal iango dugu. Irakur erraztasunagatik (\ref{eq: uUaldaketa}) ekuazioko $\varphi(U)$ indizerik gabe idatziko dugu, eta $\dot{U}$ri dagozkion ekuazioak lortze aldera bi aldeak $t$ aldagaiarekiko deribatuko ditugu:  
+(\ref{eq: uUaldaketa}) aldagai aldaketa abiapuntutzat hartuz, aldagai berriei dagozkien ekuazio diferentzialak lortu behar ditugu. Horrela, problemaren integrazioa aldagai berrien arabera egin ahal izango dugu. Irakur erraztasunagatik (\ref{eq: uUaldaketa}) ekuazioko $\varphi(U)$ indizerik gabe idatziko dugu, eta $\dot{U}$ri dagozkion ekuazioak lortze aldera bi aldeak $t$ aldagaiarekiko deribatuko ditugu:  
 \begin{align}
 \begin{split}
 &\frac{d}{dt}u = \frac{d}{dt}\left(\varphi(U)\right),
@@ -157,7 +157,7 @@ Alderantzizko matrizeak kalkulatu beharrik gabe idatz ditzakegu (\ref{eq:hamEDAU
 &\dot{U} = J^{-1}(\varphi')^{t}(U)J g(u,t).
 \end{split}
 \end{align}
-(\ref{eq:hamEDAU2}) ekuazioak $\varphi'(U)$ kalkulatzea eskatzen du, eta horretarako deribazio automatikoko teknikak erabil ditzakegu
+(\ref{eq:hamEDAU2}) ekuazioak $\varphi'(U)$ kalkulatzea eskatzen du, eta horretarako deribazio automatikoko teknikak erabil ditzakegu.
 
 
 \paragraph*{Algoritmoa.}
@@ -165,7 +165,7 @@ $U$ aldagaietan oinarritutako ekuazio diferentzialen integraziorako (\ref{eq:ham
 \begin{enumerate}
 \item $\{u,aux\} \leftarrow KeplerFlowGen (t,U,mu)$.
 
-Kepler-en fluxua $(q,v)= \varphi_t(U)$ aplikatuko dugu eta fluxuaren kalkulutarako erabilitako tarteko balioak, ~$aux\in \mathbb{R}^{16}$ aldagaian itzuliko ditugu. 
+Kepler-en fluxua $u= \varphi_t(U)$ aplikatuko dugu eta fluxuaren kalkulutarako erabilitako tarteko balioak, ~$aux\in \mathbb{R}^{16}$ aldagaian itzuliko ditugu. 
 
 \item $g \leftarrow g(u,t)$.
 
@@ -173,11 +173,11 @@ Jatorrizko problemako ekuazio diferentzialetan perturbazioei dagokien espresioa 
 
 \item $KeplerFlowGFcnaux(aux,U,t,g)$.
 
-Urrats honetan $\varphi'_t())$ kalkulatu behar da. Deribazio automatikoaren tekniken bidez, Kepler fluxuaren $U$ aldagaiekiko deribatuaren konputazio eraginkorra definitu dugu. 
+Urrats honetan $\varphi'_t()$ kalkulatu behar da. Deribazio automatikoaren tekniken bidez, Kepler fluxuaren $U$ aldagaiekiko deribatuaren konputazio eraginkorra definitu dugu. 
 
-Hirugarren urratsak (\ref{eq:hamEDAU2}) espresioa konputatzeko behar dugun azken zatia kalkultzen du, beraz, bere emaitza $\dot{U}$ren konputazioa izango da: 
+Hirugarren urratsak (\ref{eq:hamEDAU2}) espresioa konputatzeko behar dugun azken zatia kalkulatzen du, beraz, bere emaitza $\dot{U}$ren konputazioa izango da: 
 \begin{align*}
-\dot{U}&\leftarrow KeplerFlowGFcnaux(aux,U,t,g) \left(= ( \varphi'(U))^{-1} \ g\right).
+\dot{U}&\leftarrow KeplerFlowGFcnaux(aux,U,t,g) = ( \varphi'(U))^{-1} \ g.
 \end{align*}
 
 \end{enumerate} 
@@ -186,7 +186,7 @@ Hirugarren urratsak (\ref{eq:hamEDAU2}) espresioa konputatzeko behar dugun azken
 
 \section{Alde Kepleriar bat baino gehiagoko sistemak.}
 
-Alde Kepleriar bat baino gehiago dituzten problemetan ere Kepler perturbatuan egindako aldagai aldaketa egin dezakegu. Hainbat gorputzeko sisteman gorputz bakoitzari eragingo diogu aldagai aldaketa, bakoitzak bere fluxu kepleriar perturbatua izango du, eta horretan oinarrituz egingo diogu aldaketa. Problemaren alde Kepleriarren kopurua $k$ bada, era honetako ekuazio diferentzialak ditugu,
+Alde Kepleriar bat baino gehiago dituzten problemetan ere Kepler perturbatuan egindako aldagai aldaketa egin dezakegu. Hainbat gorputzeko sisteman gorputz bakoitzari eragingo diogu aldagai aldaketa, bakoitzak bere fluxu Kepleriar perturbatua izango du, eta horretan oinarrituz egingo diogu aldaketa. Problemaren alde Kepleriarren kopurua $k$ bada, era honetako ekuazio diferentzialak ditugu,
 \begin{equation}
 \label{eq: n-pertEDA}
 \frac{d}{dt}\left(\begin{array}{c}
@@ -216,14 +216,14 @@ Alde Kepleriar bat baino gehiago dituzten problemetan ere Kepler perturbatuan eg
 \end{array}\right)
 \end{equation} 
 
-Gorputz bakoitzari dagokion aldagai aldaketa bere fluxu kepleriarraren arabaerakoa da,
+Gorputz bakoitzari dagokion aldagai aldaketa bere fluxu Kepleriarraren araberakoa da,
 \begin{align}
 \label{eq:aldfl2}
 \begin{split}
-u_j&= \varphi_t^{k_j}(U_j), \ \ \ j=1,\dots,k.
+u_j&= \varphi_t^{\mu_j}(U_j), \ \ \ j=1,\dots,k.
 \end{split}
 \end{align}
-Bi aldeak $t$ aldagaiarekiko deribatuz eta katearen erregla aplikatuz,
+Bi aldeak $t$ aldagaiarekiko deribatuz eta katearen erregela aplikatuz,
 \begin{equation*}
 \left(\begin{array}{c}
                 \dot{u}_1  \\
@@ -233,17 +233,17 @@ Bi aldeak $t$ aldagaiarekiko deribatuz eta katearen erregla aplikatuz,
                 \dot{w}      \\
 \end{array}\right)=
 \left(\begin{array}{c}
-                \dot{\varphi}^1(U_1)  \\
-                \dot{\varphi}^2(U_2)   \\
+                \dot{\varphi}^{\mu_1}(U_1)  \\
+                \dot{\varphi}^{\mu_2}(U_2)   \\
                 \vdots \\
-                \dot{\varphi}^k(U_k)   \\
+                \dot{\varphi}^{\mu_k}(U_k)   \\
                 0      \\
 \end{array}\right)+
 \left(\begin{array}{c}
-      (\varphi^1)'(U_1) \frac{d}{dt}U_1 \\
-      (\varphi^2)'(U_2) \frac{d}{dt}U_2 \\
+      (\varphi^{\mu_1})'(U_1) \frac{d}{dt}U_1 \\
+      (\varphi^{\mu_2})'(U_2) \frac{d}{dt}U_2 \\
                 \vdots \\
-      (\varphi^k)'(U_k) \frac{d}{dt}U_k\\
+      (\varphi^{\mu_k})'(U_k) \frac{d}{dt}U_k\\
       g_{k+1}(u_1, u_2\dots, u_k,w,t)
 \end{array}\right),
 \end{equation*}
@@ -264,10 +264,10 @@ ekuazioetan fluxuen propietate eta definizioak erabiliz,
                 0      \\
 \end{array}\right)+
 \left(\begin{array}{c}
-      (\varphi^1)'(U_1) \dot{U}_1 \\
-      (\varphi^2)'(U_2) \dot{U}_2 \\
+      (\varphi^{\mu_1})'(U_1) \dot{U}_1 \\
+      (\varphi^{\mu_2})'(U_2) \dot{U}_2 \\
                 \vdots \\
-      (\varphi^k)'(U_k) \dot{U}_k\\
+      (\varphi^{\mu_k})'(U_k) \dot{U}_k\\
       g_{k+1}(u_1, u_2\dots, u_k,w,t)
 \end{array}\right),
 \end{equation*}
@@ -281,15 +281,15 @@ eta, azkenik, (\ref{eq: n-pertEDA}) ekuazioarekin berdinduz eta sinplifikatuz,
                 \dot{w}      \\
 \end{array}\right)=
 \left(\begin{array}{c}
-      \left((\varphi^1)'(U_1)\right)^{-1} g_1 \\
-      \left((\varphi^2)'(U_2)\right)^{-1} g_2 \\
+      \left((\varphi^{\mu_1})'(U_1)\right)^{-1} g_1 \\
+      \left((\varphi^{\mu_2})'(U_2)\right)^{-1} g_2 \\
                 \vdots \\
-     \left((\varphi^k)'(U_k)\right)^{-1} g_k\\
+     \left((\varphi^{\mu_k})'(U_k)\right)^{-1} g_k\\
       g_{k+1}
 \end{array}\right),
 \end{equation*}
 
-Aldagai berriekiko ekuazio diferentzialak balioztatzeko, fluxuen propietateei esker,$(\varphi')^{-1}=J^{-1}(\varphi')^tJ$ kalkula dezakegu eta, Kepler perturbatuan bezalaxe, alderantzizko matrizerik kalkulatu beharrik ez dugu izango. Deribazio automatikoko teknikei esker, kalkulatu ahal izango ditugu. Bestalde, $\dot{w}$ aldagaien ekuazioak balioztatzeko $u_i$ aldagaiak behar ditugu, baina $U_i$ aldagaietatik lor ditzakegu, gainera, $g_i$ funtzioetarako ere behar ditugu. Ondorioz, Kepler perturbatuaren probleman bezala hiru urratsetan balioztatu ahal izango ditugu ekuazioak.
+Aldagai berriekiko ekuazio diferentzialak balioztatzeko, fluxuen propietateei esker, $(\varphi')^{-1}=J^{-1}(\varphi')^tJ$ kalkula dezakegu eta, Kepler perturbatuan bezalaxe, alderantzizko matrizerik kalkulatu beharrik ez dugu izango. Deribazio automatikoko teknikei esker, kalkulatu ahal izango ditugu. Bestalde, $\dot{w}$ aldagaien ekuazioak balioztatzeko $u_i$ aldagaiak behar ditugu, baina $U_i$ aldagaietatik lor ditzakegu, gainera, $g_i$ funtzioetarako ere behar ditugu. Ondorioz, Kepler perturbatuaren probleman bezala hiru urratsetan balioztatu ahal izango ditugu ekuazioak.
 
 
 
@@ -297,7 +297,7 @@ Aldagai berriekiko ekuazio diferentzialak balioztatzeko, fluxuen propietateei es
 
 Azpimarratu behar dugu aldagai aldaketa urratsero egiten dugula, eta ekuazio diferentziala aldagai berriekiko ebazten dugula. Aldagai berriak eta jatorrizko aldagaiak fluxuak erlazionatzen ditu: jatorrizko aldagaiak fluxuan $\frac{h}{2}$ aurrera eginez aldagai berriak lor ditzakegu. Ebatzi beharreko problema aldagai berrietan ebatziko dugu, eta $h$ luzerako urratsa emanez aldagai berriak aldatuko ditugu. Jatorrizko aldagaietara igarotzeko fluxuaren bidez mugitu behar ditugu balio horiek: $\frac{h}{2}$ atzera egiten badugu jatorrizko aldagaiak urratsaren hasieran kokatuko ditugu, baina perturbazioari dagokion aldaketa bere baitan daramate, izan ere, aldagai berriei metodoaren urratsa kalkulatu diegu, hau da, perturbazioari dagokion $h$ luzerako urratsa eman dugu. Bestalde, fluxuan $\frac{h}{2}$ aurrera egiten badugu hurrengo urratsaren hasierako egoerara eramango ditugu balioak.
 
-Ondorioz integrazioko urrats bat hiru azpiurratsen konbinazioa da:
+Ondorioz integrazioko urrats bat hiru azpi-urratsen konbinazioa da:
 \begin{enumerate}
 \item $U_i^{i+\frac{1}{2}}=\varphi_{\frac{h}{2}}(u_i)$: fluxuaren arabera $\frac{h}{2}$ aurreratu.
 \item Gauss metodoaren $h$ luzerako urratsa: $U_i^{i+\frac{1}{2}}$ aldagaietatik  $U_{i+1}^{i+\frac{1}{2}}$ balioetara pasako gara.
@@ -314,14 +314,14 @@ U_{i+1}^{i+1+\frac{1}{2}}=\varphi_{\frac{-h}{2}}(u_{i+1})=\varphi_{\frac{-h}{2}}
 \item Gauss metodoaren $-h$ luzerako urratsa: Gaussen metodoa simetrikoa denez, aurreko urratsean bukaerako egoera zenari $-h$ luzerako urratsa eragiteak hasierako egoera itzultzen du, beraz, $(U_{i+1}^{i+\frac{1}{2}}$ balioetatik abiatuz $U_i^{i+\frac{1}{2}}$ balioetara itzuliko gara.
 \item Fluxuan urrats luzeraren erdia egin behar da: lehenengo azpiurratsean bezala, fluxuan $\frac{-h}{2}$ mugitu behar gara, baina fluxuan $\frac{h}{2}$ mugitutako balioekin egin behar dugu, hau da:
 \[
-\varphi_{\frac{-h}{2}}(U_i^{i+\frac{1}{2}}) = \varphi_{\frac{-h}{2}}\left(\varphi_{\frac{h}{2}}{u_i}) \right) = u_i
+\varphi_{\frac{-h}{2}}(U_i^{i+\frac{1}{2}}) = \varphi_{\frac{-h}{2}}\left(\varphi_{\frac{h}{2}}({u_i}) \right) = u_i
 \]
 \end{enumerate}
 
-Metodoa integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu, bere simetria ere bertan ikus daiteke,
+Metodoaren integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu, bere simetria ere bertan ikus daiteke,
 \begin{figure} [h!]
 \centerline{\includegraphics [width=16cm, height=4cm] {proiekzioa11}}
-\caption{}
+\caption{\small Metodoaren integrazio eskema orokorra. Metodoa simetrikoa eta sinplektikoa da.}
 \label{fig:proiekzioa0}
 \end{figure} 
 
@@ -337,8 +337,8 @@ Integrazioaren urrats guztietan ez baditugu emaitzak itzuli behar, bi urratsen a
  Azkenik, emaitzak behar ditugun urratsetarako fluxua $\varphi_{-h/2}$ aplikatuko dugu (\ref{fig:proiekzioa1}~irudia). 
 
 \begin{figure} [h!]
-\centerline{\includegraphics [width=14cm, height=4cm] {proiekzioa1}}
-\caption{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak adierazten dute. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion hasierako balioa finkatuko dugu $(U_0,-h/2)$. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da eta \ref{fig:proiekzioa2} irudian zehaztu dugu. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietann zenbakizko soluzioa itzuliko dugu}
+\centerline{\includegraphics [width=14cm, height=5cm] {proiekzioa1}}
+\caption{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak adierazten dute. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion $U_0^{1/2}$ hasierako balioa finkatuko dugu. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da, \ref{fig:proiekzioa2}~irudian zehaztu dugun bezala. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietan zenbakizko soluzioa itzuliko dugu}
 \label{fig:proiekzioa1}
 \end{figure} 
 
@@ -354,7 +354,7 @@ u_0 \ \rightarrow \ U_0^{\frac{1}{2}}.
 
 \item \emph{Urratsa}.
 
-Urratsa bi azpiurratxen konbinazio bezala ikusiko dugu: aldagai berriei Gaussen metodoaren bidezko integrazioaren urrats bat eta lortutemaitzei $\varphi_{h}$ bidez fluxuan $h$ aurrera egitea. Bigarren azpiurratsa fluxuaren bidez proiektatzea da. \ref{fig:proiekzioa2} irudian zehaztapenak eman ditugu. 
+Urratsa bi azpiurratsen konbinazio bezala ikusiko dugu: aldagai berriei Gaussen metodoaren bidezko integrazioaren urrats bat eta lortutako maitzei $\varphi_{h}$ bidez fluxuan $h$ aurrera egitea. Bigarren azpiurratsa fluxuaren bidez proiektatzea da. \ref{fig:proiekzioa2} irudian zehaztapenak eman ditugu. 
 \begin{align*}
  U_0^{\frac{1}{2}} \ \rightarrow \ U_1^{\frac{1}{2}} \rightarrow \ U_1^{1+\frac{1}{2}}.
 \end{align*}
@@ -363,7 +363,7 @@ Biribiltze errorea txikitzeko, proiekzioa doitasun altuan konputatzea garrantzit
 
 \item \emph{Outputfun} funtzioa.
 
-Erabiltzaileak $t$ren balio jakin batzuetan $u(t)$ balioen zenbakizko soluzioak nahiko ditu, kasu horietan $\varphi_{-h/2}$ fluxuaren konputazioaren bidez, $U_i^{i+\frac{1}{2}}$ balioetatik $u_i$ jatorrizko aldagaien balioak lortu beharko dira:
+Erabiltzaileak, $t$-ren balio jakin batzuetan $u(t)$ balioen zenbakizko soluzioak nahiko ditu, kasu horietan $\varphi_{-h/2}$ fluxuaren konputazioaren bidez, $U_i^{i+\frac{1}{2}}$ balioetatik $u_i$ jatorrizko aldagaien balioak lortuko dira:
 \begin{align*}
 U_n^{n+\frac{1}{2}} \ \rightarrow \ u_n.
 \end{align*}
@@ -374,8 +374,8 @@ U_n^{n+\frac{1}{2}} \ \rightarrow \ u_n.
 
 Gauss metodoa, neurri batean  Splitting eta konposizio metodoen baliokideak dira. 
 \begin{align*}
-&\text{Konposizio metodoa} \ \ \Leftrightarrow \ \ \text{Gauss metodoa aldagai aldaketa gabe}.\\
-&\text{Splitting metodoa}  \ \ \Leftrightarrow \ \  \text{Gauss metodoa aldagai aldaketarekin}.
+\text{Konposizio metodoa} \ \ &\equiv \ \ \text{Gauss metodoa aldagai aldaketa gabe}.\\
+\text{Splitting metodoa} \ \ &\equiv \ \  \text{Gauss metodoa aldagai aldaketarekin}.
 \end{align*}
 
 Splitting metodoekiko antzekotasuna azaltzeko, (\ref{eq:stverlet})~\emph{Störmer-Verlet} Splitting metodoarekin konparatuko dugu. \emph{Störmer-Verlet} metodoa, era honetan aplikatzen da: $h/2$ fluxua aplikatu, perturbazioak kalkulatu eta berriz  $h/2$ fluxua aplikatu. Fluxuaren aldagai aldaketarekin, gauza bera egiten ari gara: $h/2$ fluxua aurreratu, perturbazioak kalkulatu (aldagai berrietan eta beraz, hobeto kalkulatzen dugu), $h/2$ fluxua aurreratu. 
@@ -501,6 +501,25 @@ Gauss metodoaren integrazioan, urrats luzera handiago erabili arren, barne-plane
 \label{fig:esp84}
 \end{figure}
 
+\textcolor{red}{irudi berriak !!!!!}
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[Gauss metodoa (kokapen errorea)]
+{\includegraphics[width=.5\textwidth]{esperimentua8410}}
+&
+\subfloat[Gauss metodoa (abiadura errorea)]
+{\includegraphics[width=.5\textwidth]{esperimentua8420}}
+\\
+\subfloat[ABAH1064 (Kokapen errorea)]
+{\includegraphics[width=.5\textwidth]{esperimentua8430}}
+&
+\subfloat[ABAH1064 (Abiadura errorea)]
+{\includegraphics[width=.5\textwidth]{esperimentua8440}}
+\end{tabular}
+\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=4,48$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=2.38$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
+\label{fig:esp84B}
+\end{figure}
 
 
 
@@ -528,7 +547,9 @@ Hirugarren esperimentu honetan, biribiltze errorearen azterketa egin dugu eta ho
 \subsection*{Laugarren esperimentua.}
 
 
-Laugarren esperimentu honetan, Gauss metodoa eta konposizio/Splitting metodoen arteko eraginkortasunaren konparaketa egin dugu. $s=8$ ataletako Gauss metodoa, modu sekuentzialean eta modu paraleloan exekutatu dugu.
+\ref{fig:esp82}~irudian, Gauss metodoa eta konposizio/Splitting metodoen arteko eraginkortasunaren konparaketa egin dugu. $s=8$ ataletako Gauss metodoa, modu sekuentzialean eta modu paraleloan exekutatu dugu. Esperimentu hauetan, eguzki-sistemaren eredu sinplearen integraziorako, Splitting metodoak oso eraginkorrak azaldu zaizkigu. Gauss metodoaren exekuzioa paralelizatzeak abantaila erakusten du baina hala ere, Splitting metodoak eraginkorragoak dira.
+
+Dena den, eredu errealistagoak (gorputz kopurua handitzen delako edota erlatibitate efektua kontutan hartzen delako) integratzeko, Gauss metodoak eraginkorragoak bilakatzea espero da. Splitting metodoen konputazioak, modu trinkoan kalkulatu behar dira, hau da, atalen konputazioak sekuentzialki exekutatzen dira eta  ez ditu aldaerak onartzen. Gauss metodoaren ekuazio inplizituak ebazteko, ordea, teknika ezberdinak konbina daitezke eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu. Adibidez, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke  \cite{Beylkin2014} eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan. Gauss metodoaren $s$-ataletako funtzioen ebaluazioak  modu paraleloan exekutatu daitezke eta eguzki-sistemaren eredu konplexuagoa kontutan hartzen den neurrian, paralelizazioak abantaila handiagoa suposatuko du.
 
 \begin{figure}[h!]
 \centering
