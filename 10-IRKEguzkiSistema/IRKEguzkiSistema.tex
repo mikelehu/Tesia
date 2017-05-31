@@ -4,11 +4,11 @@
 \section{Sarrera.}
   
 
-Kapitulu honetan, eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. \ref{chap:IRK-PF}~kapituluan puntu-finkoaren iterazioan oinarrituz eta \ref{chap:IRK-NEW}~kapituluan Newton sinplifikatuaren iterazioan oinarrituz, IRK inplementazioak garatu ditugu; eguzki-sistemaren problemaren integraziorako, bi inplementazioen artean, puntu-finkoarena eraginkorragoa dela baieztatu dugu. Ondorioz, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta  ekuazio diferentzialetako aldagaiei eragingo diegun aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu.  
+Kapitulu honetan, eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. \ref{chap:IRK-PF}~kapituluan puntu-finkoaren iterazioan oinarrituz eta \ref{chap:IRK-NEW}~kapituluan Newton sinplifikatuaren iterazioan oinarrituz, IRK inplementazioak garatu ditugu; eguzki-sistemaren problemaren integraziorako, bi inplementazioen artean, puntu-finkoarena nabarmen eraginkorragoa dela baieztatu dugu eta Newton sinplifikatuarena, erabat baztertu dugu. Ondorioz, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta  ekuazio diferentzialetako aldagaiei eragingo diegun aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu.  
 
-Aplikatzen dugun integrazio metodoa sinplektikoa eta simetrikoa da: neurri batean, Splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Hirugarrenik, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
+Aplikatzen dugun integrazio metodoa sinplektikoa eta simetrikoa da: neurri batean, splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Hirugarrenik, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
 
-Lehenengo, Kepler-en fluxuaren inplementazioa azalduko dugu. Bigarrenik, aldagai aldaketa definitu eta metodoa integratzeko zehaztapenak emango ditugu. Hirugarrenik, eguzki-sistemaren problemaren zenbakizko integrazioak egingo ditugu: inplementazio honen eta doitasun altuko beste metodo sinplektikoen (konposizio eta Splitting metodoak) eraginkortasunak, alderatuko ditugu.     
+Lehenengo, Kepler-en fluxuaren inplementazioa azalduko dugu. Bigarrenik, aldagai aldaketa definitu eta metodoa integratzeko zehaztapenak emango ditugu. Hirugarrenik, eguzki-sistemaren problemaren zenbakizko integrazioak egingo ditugu: inplementazio honen eta doitasun altuko beste metodo sinplektikoen (konposizio eta splitting metodoak) eraginkortasunak, alderatuko ditugu.     
 
  
 
@@ -372,27 +372,29 @@ U_n^{n+\frac{1}{2}} \ \rightarrow \ u_n.
 \end{enumerate}
 
 
-Gauss metodoa, neurri batean  Splitting eta konposizio metodoen baliokideak dira. 
+Gauss metodoa, neurri batean  splitting eta konposizio metodoen baliokideak dira. 
 \begin{align*}
 \text{Konposizio metodoa} \ \ &\equiv \ \ \text{Gauss metodoa aldagai aldaketa gabe}.\\
 \text{Splitting metodoa} \ \ &\equiv \ \  \text{Gauss metodoa aldagai aldaketarekin}.
 \end{align*}
 
-Splitting metodoekiko antzekotasuna azaltzeko, (\ref{eq:stverlet})~\emph{Störmer-Verlet} Splitting metodoarekin konparatuko dugu. \emph{Störmer-Verlet} metodoa, era honetan aplikatzen da: $h/2$ fluxua aplikatu, perturbazioak kalkulatu eta berriz  $h/2$ fluxua aplikatu. Fluxuaren aldagai aldaketarekin, gauza bera egiten ari gara: $h/2$ fluxua aurreratu, perturbazioak kalkulatu (aldagai berrietan eta beraz, hobeto kalkulatzen dugu), $h/2$ fluxua aurreratu. 
+Splitting metodoekiko antzekotasuna azaltzeko, (\ref{eq:stverlet})~\emph{Störmer-Verlet} splitting metodoarekin konparatuko dugu. \emph{Störmer-Verlet} metodoa, era honetan aplikatzen da: $h/2$ fluxua aplikatu, perturbazioak kalkulatu eta berriz  $h/2$ fluxua aplikatu. Fluxuaren aldagai aldaketarekin, gauza bera egiten ari gara: $h/2$ fluxua aurreratu, perturbazioak kalkulatu (aldagai berrietan eta beraz, hobeto kalkulatzen dugu), $h/2$ fluxua aurreratu. 
 
 
 \section{Zenbakizko esperimentuak.}
 \label{s:7espmt}
 
-Zenbakizko esperimentuetarako, puntu-finkoaren iterazioan oinarritutako Gauss metodoaren inplementazioa (\ref{chap:IRK-PF}~kapitulua) erabili dugu eta eguzki-sistemaren ekuazio diferentzialei, Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatu diegu. $s=6,8,9,16$ ataletako Gauss metodoak exekutatu ditugu eta metodo eraginkorrena aukeratu dugu, \emph{CO1035} konposizio eta \emph{ABAH1064} Splitting  metodoekin konparatzeko.
+Zenbakizko esperimentuetarako, puntu-finkoaren iterazioan oinarritutako Gauss metodoaren inplementazioa (\ref{chap:IRK-PF}~kapitulua) erabili dugu. Lehenengo, Gauss metodoaren bi bertsio konparatu ditugu: aldagai aldaketarik gabeko integrazioa eta aldagai aldaketa aplikatutako integrazioa. Kepler fluxuan oinarritutako aldagai aldaketarekin integrazioaren abantaila argia denez, hurrengo esperimentuetarako aldagai aldaketa aplikatutako integrazioa bakarrik hartu dugu kontutan.  
+ 
+$s=6,8,9,16$ ataletako Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatutako Gauss metodoen arteko metodo eraginkorrena aukeratu dugu, \emph{CO1035} konposizio eta \emph{ABAH1064} splitting  metodoekin konparatzeko.
 
-Esperimentu hauen konputaziorako, $64$-biteko (bikoitza) eta $80$-biteko (\emph{long double}) doitasunak nahasi ditugu. Konputazioaren zati nagusiena, $64$-biteko doitasunean egin dugu eta proiekzioa kalkulatzeko, $80$-biteko doitasuna aplikatu dugu. Era honetan, modu merkean soluzioaren doitasuna hobetzea lortu dugu.
+Gauss metodoen konputaziorako, $64$-biteko (\emph{double}) eta $80$-biteko (\emph{long double}) doitasunak nahasi ditugu. Konputazioaren zati nagusiena, $64$-biteko doitasunean egin dugu eta proiekzioa kalkulatzeko, $80$-biteko doitasuna aplikatu dugu. Era honetan, modu merkean soluzioaren doitasuna hobetzea lortu dugu.
 
 Gauss metodoaren exekuzio sekuentziala eta paraleloak egin ditugu. $s$ atalen funtzioen balioztapena, 
 \begin{align*}
 F_{n,i}=f(Y_{n,i}), \ i=1,\dots,s,
 \end{align*}      
-independenteak dira eta paraleloan kalkula daitezke. Exekuzio paraleloak $s=8$ metodoarentzat egin ditugu, eta bi kasu aztertu ditugu: hari kopuruak $2$ eta $4$. 
+independenteak dira eta paraleloan kalkula daitezke. $s=8$ metodoaren integrazio paraleloak egin ditugu eta hari kopurua $2$ aplikatu dugu. 
 
 \subsection{Problemak.}
 
@@ -418,125 +420,149 @@ Integrazioen tartea, $t_{end}=10^6$ egunetakoa da eta zenbakizko integrazioetan,
 Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabaki dugu. $9$-planeten probleman, gorputz kopurua txikia denez,  Kepler fluxuaren gainkarga esanguratsua da eta  barne-planetei bakarrik aplikatzea, eraginkorragoa izan daiteke. Baina, gorputz gehiago kontsideratzen baditugu (esaterako ilargia eta asteroide nagusienak) edo eguzki-sistemaren eredu konplexuagoetan (esaterako erlatibitate efektua gehitzerakoan), perturbazio aldearen konputazioa nagusituko da eta Kepler fluxuaren kalkuluak pisua galduko luke. 
 
 
-\subsection*{Lehen esperimentua.}
+\subsection*{Gauss metodoen eraginkortasuna.}
 
 
-\ref{fig:esp81s}~irudian, $s=6,8,9,16$ ataletako metodoen eraginkortasun grafikoak irudikatu ditugu. Eraginkortasuna, energia errore erlatibo maximoaren arabera neurtu dugu: lehen kasuan, \emph{CPU}-denborarekiko (exekuzio paraleloetan \emph{Wall time}) eta bigarren kasuan, ekuazio diferentzialen ebaluazio kopuruarekiko (\emph{FCN}). Eraginkortasuna \emph{CPU}-rekiko, problema zehatz honetarako gertatzen dena azaltzen digu eta eraginkortasuna \emph{FCN}-rekiko, metodoak problema erreal batean nola jokatuko luke erakusten digu. 
+\ref{fig:esp81a}~irudian, $s=6$ ataletako Gauss metodoaren bi bertsioen eraginkortasunak konparatu ditugu: aldagai aldaketarik gabeko integrazioa eta aldagai aldaketa aplikatutako integrazioa. Aldagai aldaketarik gabeko integraziorako, puntu-finkoaren iterazio partizionatua eta interpolazio bidezko hasieraketa aplikatu dugu. Ekuazio diferentzialen ebaluazioen konparaketan, aldagai aldaketa aplikatutako integrazioa, nabarmen eraginkorragoa da. Eredu sinplearen integrazioen exekuzio denboren konparaketan, aldea txikiago da, baina orduan eta eredu konplexuagoa izan abantaila handituz joango da.   
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[ Gauss metodoak (FCN).]
+{\includegraphics[width=.45\textwidth]{esperimentua801}}
+&
+\subfloat[ Gauss metodoak (CPU).]
+{\includegraphics[width=.45\textwidth]{esperimentua802}}
+\end{tabular}
+\caption{\small 
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. (a) irudian, ekuazio diferentzialen ebaluazio kopuruarekiko (FCN) eraginkortasuna neurtu dugu. (b) irudian, CPU denborarekiko eraginkortasuna neurtu dugu. Irudi bakoitzean, Gauss metodoaren $s=6$ ataletako bi bertsio konparatu ditugu: aldagai aldaketa gabe berdez eta aldagai aldaketa aplikatuta grisez. }
+\label{fig:esp81s}
+\end{figure}
+
+Jarraian, $s=6,8,9,16$ ataletako metodoen eraginkortasuna aztertu dugu. \ref{fig:esp81a}~irudian, diferentzialen ebaluazio kopuruarekiko (\emph{FCN}) eta \ref{fig:esp81s}~irudian, \emph{CPU}-denborarekiko (exekuzio paraleloetan \emph{Wall time}) erakutsi dugu. \emph{FCN}-rekiko eraginkortasuna, metodoak problema erreal batean nola jokatuko luke erakusten digu eta \emph{CPU}-rekiko  eraginkortasuna, problema zehatz honetarako gertatzen dena azaltzen digu.
+
+
+\begin{figure} [h!]
+\centerline{\includegraphics [width=8cm, height=6cm] {esperimentua812}}
+\caption{\small Eraginkortasun grafikoa eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
+\label{fig:esp81a}
+\end{figure} 
 
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[ Exekuzioa sekuentziala: CPU Time.]
-{\includegraphics[width=.5\textwidth]{esperimentua811}}
+\subfloat[ Exekuzioa sekuentziala.]
+{\includegraphics[width=.45\textwidth]{esperimentua811}}
 &
-\subfloat[ Exekuzioa sekuentziala: FCN.]
-{\includegraphics[width=.5\textwidth]{esperimentua812}}\\
-\subfloat[Exekuzio paraleloa (hariak=$2$):Wall Time.]
-{\includegraphics[width=.5\textwidth]{esperimentua813}}
-&
-\subfloat[Exekuzio paraleloa (hariak=$4$): Wall Time.]
-{\includegraphics[width=.5\textwidth]{esperimentua814}}
+\subfloat[ Exekuzio paraleloa.]
+{\includegraphics[width=.45\textwidth]{esperimentua813}}
+%\subfloat[Exekuzio paraleloa (hariak=$2$):Wall Time.]
+%{\includegraphics[width=.5\textwidth]{esperimentua813}}
+%&
+%\subfloat[Exekuzio paraleloa (hariak=$4$): Wall Time.]
+%{\includegraphics[width=.5\textwidth]{esperimentua814}}
 \end{tabular}
 \caption{\small 
-Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Batetik, ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. Bestetik, ardatz horizontalean, (a),(c),(d) irudietan CPU denbora (exekuzio paralelotan Wall-Time) eta (b) irudian, ekuazio diferentzialen ebaluazio kopurua (FCN) erakutsi dugu. (a)  konputazioa modu sekuentzialean egin dugu. (c) eta (d) modu paraleloan:  (c) kasuaren exekuzioa hari kopurua $2$ da eta (d) kasuan hari kopurua $4$ izan dira. Irudi bakoitzean, Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. }
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paraleloan Wall-Time). (a)  konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan hari kopurua $2$ izanik. Irudi bakoitzean, Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. }
 \label{fig:esp81s}
 \end{figure}
 
-Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkorrena aukeratu nahi dugu. Horretarako, biribiltze errorea nagusitzen hasten den inguruko unean gertatutakoa aztertu dugu: $s=8,9,16$ metodoak, $s=6$ metodoa baino eraginkorragoak azaldu zaizkigu. $s=8,9,16$ metodoak beraien artean oso antzekoak izanik, $s=8$ ataleko Gauss metodoa aukeratu dugu. Bestalde, exekuzio paraleloa, sekuentziala baino eraginkorragoa da eta $4$ hari erabili dugun integrazioa, eraginkorrena azaldu zaigu.  
+Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkorrena aukeratu nahi dugu. Horretarako, biribiltze errorea nagusitzen hasten den inguruko unean gertatutakoa aztertu dugu: $s=8,9,16$ metodoak, $s=6$ metodoa baino eraginkorragoak azaldu zaizkigu. $s=8,9,16$ metodoak beraien artean oso antzekoak izanik, $s=8$ ataleko Gauss metodoa aukeratu dugu. Bestalde, exekuzio paraleloa, sekuentziala baino eraginkorragoa da.
 
-\subsection*{Bigarren esperimentua.}
-
+\subsection*{Energia errorea eta errore globalak.}
 
 %$s=8$ metodoarentzat, birbiltze errorea hasten den uneko urrats luzera hartu dut: $k=12, \ h=10,667$. Kokapen errore erlatiboaren estimazioa, $h/2$ integrazioarekiko diferentzia gisa kalkulatu ditugu.
-
+Atal honetan, $s=8$ ataleko Gauss metodoaren, \emph{CO1035} konposizio metodoaren eta \emph{ABAH1064} splitting metodoaren erroreak konparatu ditugu.  Hiru errore mota ezberdin aztertu ditugu: energia errorea; kokapen eta abiaduren erroreen estimazioak; orbita eliptikoaren sasi-ardatzaren eta eszentrikotasunaren erroreen estimazioak. Gauss metodoa $h=10.63$ urrats luzerarekin integratu dugu eta  \emph{CO1035}, \emph{ABAH1064} metodoak $h=4.76$ urrats luzerarekin.
 
 \subsubsection*{Energiaren eboluzioa}
 
 
-\ref{fig:esp83}~irudian energiaren errore erlatiboaren eboluzioa erakutsi dugu lau integrazio metodo hauetarako:
-\begin{enumerate}
-\item Gauss metodoa $s=8$ (proiekzioa \emph{long double} doitasunarekin). Integraziorako $h=10.63$ urrats luzera erabili dugu.
-\item Gauss metodoa $s=8$ (proiekzioa \emph{double} doitasunarekin). Integraziorako $h=10.63$ urrats luzera erabili dugu.
-\item \emph{ABAH1064} Splitting metodoa. Integraziorako $h=4.76$ urrats luzera erabili dugu.
-\item \epmh(CO1035) Konposizio metodoa. Integraziorako $h=4.76$ urrats luzera erabili dugu.
-\end{enumerate}
+\ref{fig:esp83}~irudian, lau integrazioen energiaren errore erlatiboaren eboluzioa erakutsi ditugu. Batetik, Gauss metodoa $64$-biteko (\emph{double}) proiekzioarekin eta $80$-biteko (\emph{double}) proiekzioarekin konputatutako integrazioak. Bestetik, \emph{CO1035} konposizio eta \emph{ABAH1064} splitting metodoen integrazioak. Proiekzioa $80$-biteko doitasunarekin kalkulatzerakoan, energiaren errorea modu esanguratsuan txikitzea lortu dugu. Aipagarria da ere, Gauss metodoa $80$-biteko proiekzioaren integrazioa, \emph{ABAH1064} splitting metodoarekin alderatuz, energia errorea txikiagoa dela.
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
 \subfloat[Gauss metodoa ($s=8$).]
-{\includegraphics[width=.5\textwidth]{esperimentua831}}
+{\includegraphics[width=.45\textwidth]{esperimentua831}}
 &
 \subfloat[ABAH1064 eta CO1035]
-{\includegraphics[width=.5\textwidth]{esperimentua832}}
+{\includegraphics[width=.45\textwidth]{esperimentua832}}
 \end{tabular}
-\caption{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako Gauss metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: proiekzioa \emph{long double} doitasunarekin (laranjaz) eta proiekzioa \emph{double} doitasunarekin (urdinez). Eskuineko irudian, Splitting/Konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
+\caption{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako Gauss metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: proiekzioa $80$-biteko \emph{long double} doitasunarekin (laranjaz) eta proiekzioa $64$-biteko \emph{double} doitasunarekin (urdinez). Eskuineko irudian, splitting/konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
 \label{fig:esp83}
 \end{figure}
 
 
-\subsubsection*{Kokapen eta abiadura errore estimazioak}
+\subsubsection*{Kokapen eta abiadura erroreen estimazioak}
 
 
 \ref{fig:esp84}~irudian, Gauss ($s=8$) eta \emph{ABAH1064} metodoentzako, kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. Erroreak estimatzeko, urrats txikiagoako integrazioaren soluzioarekiko diferentzia gisa kalkulatu dugu. 
-Gauss metodoaren integrazioan, urrats luzera handiago erabili arren, barne-planeten kokapen eta abiaduren errore estimazioak txikiagoak izan dira. 
+Gauss metodoaren integrazioan, urrats luzera handiago erabili arren, barne-planeten kokapen eta abiaduren errore estimazioak, \emph{ABAH1064} splitting metodoaren integrazioan baino txikiagoak izan dira. 
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
 \subfloat[Gauss metodoa (kokapen errorea)]
-{\includegraphics[width=.5\textwidth]{esperimentua841}}
+{\includegraphics[width=.45\textwidth]{esperimentua841}}
 &
 \subfloat[Gauss metodoa (abiadura errorea)]
-{\includegraphics[width=.5\textwidth]{esperimentua842}}
+{\includegraphics[width=.45\textwidth]{esperimentua842}}
 \\
-\subfloat[ABAH1064 (Kokapen errorea)]
-{\includegraphics[width=.5\textwidth]{esperimentua843}}
+\subfloat[ABAH1064 (kokapen errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua843}}
 &
-\subfloat[ABAH1064 (Abiadura errorea)]
-{\includegraphics[width=.5\textwidth]{esperimentua844}}
+\subfloat[ABAH1064 (abiadura errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua844}}
 \end{tabular}
-\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
+\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzera aplikatutako integrazioarentzat. (c) eta (d) irudietan, \emph{ABAH1064} splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzera aplikatutako integraziorentzat. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
 \label{fig:esp84}
 \end{figure}
 
-\textcolor{red}{irudi berriak !!!!!}
+
+\subsubsection*{Eszentrikotasun eta sasi-ardatzaren errore estimazioak}
+
+
+Planeten mugimendu orbitala, eliptikoa da. Orbitaren propietateak finkatzen dituzten bi konstante hauen erroreen estimazioa kalkulatuko dugu: 
+\begin{enumerate}
+\item $a$ sasi-ardatza (semi-axis) izeneko konstantea, orbita eliptikoaren tamaina definitzen duena.
+\item $e$ eszentrikotasuna konstantea, orbita eliptikoaren forma finkatzen duena. 
+\end{enumerate} 
+
+\ref{fig:esp87}~irudian, bai Gauss metodoarentzat, bai \emph{ABAH1064} splitting metodoarentzat, $a$ sasi-ardatzaren eta $e$ eszentrikotasun erroreak, kokapen eta abiaduren erroreak baino txikiagoak dira. Honek esan nahi du, integrazioaren orbitaren forma mantentzen dela eta errorea, orbitaren fasean nagusitzen dela. Esperimentu honetan ere, Gauss metodoaren erroreak, \emph{ABAH1064} spliting metodoarenak baina txikiagoak dira.   
+
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[Gauss metodoa (kokapen errorea)]
-{\includegraphics[width=.5\textwidth]{esperimentua8410}}
+\subfloat[Gauss maetodoa (sasi-ardatzaren errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua871}}
 &
-\subfloat[Gauss metodoa (abiadura errorea)]
-{\includegraphics[width=.5\textwidth]{esperimentua8420}}
-\\
-\subfloat[ABAH1064 (Kokapen errorea)]
-{\includegraphics[width=.5\textwidth]{esperimentua8430}}
+\subfloat[Gauss maetodoa (eszentrikotasunaren errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua872}}\\
+\subfloat[ABAH1064 (sasi-ardatzaren errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua873}}
 &
-\subfloat[ABAH1064 (Abiadura errorea)]
-{\includegraphics[width=.5\textwidth]{esperimentua8440}}
+\subfloat[ABAH1064 (eszentrikotasunaren errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua874}}
 \end{tabular}
-\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=4,48$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=2.38$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
-\label{fig:esp84B}
+\caption{\small \small Orbita eliptikoaren $a$ sasi-ardatzaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
+\label{fig:esp87}
 \end{figure}
 
+\subsection*{Biribiltze errorea.}
 
 
-\subsection*{Hirugarren esperimentua.}
-
-
-Hirugarren esperimentu honetan, biribiltze errorearen azterketa egin dugu eta horretarako, momentu angeluarraren errore erlatiboaren eboluzioa eman dugu. Momentu angeluarraren trunkatze errorea beti zero da, metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte. \ref{fig:esp85}~irudian, Gaussen $s=8$ ataletako metodoarekin, $h=9.0$ eta $h=10.63$ urrats luzerarekin integrazioen soluzioen momentu angeluarraren errorea erakutsi dugu.  
+Hirugarren esperimentu honetan, biribiltze errorearen azterketa egin dugu eta horretarako, momentu angeluarraren errore erlatiboaren eboluzioan oinarritu gara. Momentu angeluarraren trunkatze errorea beti zero da eta metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte. \ref{fig:esp85}~irudian, Gaussen $s=8$ ataletako metodoarekin, $h=9.0$ eta $h=10.63$ urrats luzerarekin integrazioen soluzioen momentu angeluarraren errorea erakutsi dugu.  
 
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
 \subfloat[Momentu angeluarra $h=9.0$.]
-{\includegraphics[width=.5\textwidth]{esperimentua851}}
+{\includegraphics[width=.45\textwidth]{esperimentua851}}
 &
 \subfloat[Momentu angeluarra $h=10.63$]
-{\includegraphics[width=.5\textwidth]{esperimentua852}}
+{\includegraphics[width=.45\textwidth]{esperimentua852}}
 \end{tabular}
 \caption{\small Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. Gaussen $s=8$ ataletako metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin. }
 \label{fig:esp85}
@@ -544,29 +570,40 @@ Hirugarren esperimentu honetan, biribiltze errorearen azterketa egin dugu eta ho
 
 
 
-\subsection*{Laugarren esperimentua.}
+\subsection*{Eraginkortasun konparaketa.}
 
 
-\ref{fig:esp82}~irudian, Gauss metodoa eta konposizio/Splitting metodoen arteko eraginkortasunaren konparaketa egin dugu. $s=8$ ataletako Gauss metodoa, modu sekuentzialean eta modu paraleloan exekutatu dugu. Esperimentu hauetan, eguzki-sistemaren eredu sinplearen integraziorako, Splitting metodoak oso eraginkorrak azaldu zaizkigu. Gauss metodoaren exekuzioa paralelizatzeak abantaila erakusten du baina hala ere, Splitting metodoak eraginkorragoak dira.
+Atal honetan, Gauss metodoa eta konposizio/splitting metodoen arteko eraginkortasunaren konparaketa egin dugu. \ref{fig:esp82a}~irudian, eraginkortasuna, ekuazio diferentzialaren ebaluazio kopuruaren arabera neurtu dugu. Gure inplementazio berriak, \emph{ABAH1064} splitting metodoak baino doitasun txikiagoa lortzen du. Etorkizuneko inplementazioaren konputazioa, $80$-biteko doitasunean eta proiekzioa, $128$-biteko doitasunean egin daiteke: era honetan, bien arteko koxka handiago izango da.
+   
 
-Dena den, eredu errealistagoak (gorputz kopurua handitzen delako edota erlatibitate efektua kontutan hartzen delako) integratzeko, Gauss metodoak eraginkorragoak bilakatzea espero da. Splitting metodoen konputazioak, modu trinkoan kalkulatu behar dira, hau da, atalen konputazioak sekuentzialki exekutatzen dira eta  ez ditu aldaerak onartzen. Gauss metodoaren ekuazio inplizituak ebazteko, ordea, teknika ezberdinak konbina daitezke eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu. Adibidez, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke  \cite{Beylkin2014} eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan. Gauss metodoaren $s$-ataletako funtzioen ebaluazioak  modu paraleloan exekutatu daitezke eta eguzki-sistemaren eredu konplexuagoa kontutan hartzen den neurrian, paralelizazioak abantaila handiagoa suposatuko du.
+\begin{figure} [h!]
+\centerline{\includegraphics [width=8cm, height=6cm] {esperimentua822}}
+\caption{\small Eraginkortasun grafikoa, eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN).  Hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz}
+\label{fig:esp82a}
+\end{figure} 
+
+\ref{fig:esp82}~irudian, $s=8$ ataletako Gauss metodoa, modu sekuentzialean eta modu paraleloan exekutatu dugu. Eguzki-sistemaren eredu sinplearen integraziorako, splitting metodoak oso eraginkorrak azaldu zaizkigu. Gauss metodoaren exekuzioa paralelizatzeak abantaila erakusten du baina hala ere, splitting metodoak eraginkorragoak dira.
+
+Dena den, eredu errealistagoak (gorputz kopurua handitzen delako edota erlatibitate efektua kontutan hartzen delako) integratzeko, Gauss metodoak eraginkorragoak bilakatzea espero da. Splitting metodoen konputazioak, modu trinkoan kalkulatu behar dira, hau da, atalen konputazioak sekuentzialki exekutatzen dira eta  ez ditu konputazio aldaerarik onartzen. Gauss metodoaren ekuazio inplizituak ebazteko, ordea, teknika ezberdinak konbina daitezke eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu. Adibidez, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke  \cite{Beylkin2014} eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan. Gauss metodoaren $s$-ataletako funtzioen ebaluazioak  modu paraleloan exekutatu daitezke eta eguzki-sistemaren eredu konplexuagoa aplikatzen den neurrian, paralelizazioak abantaila handiagoa suposatuko du.
+
+
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[Exekuzio sekuentziala: CPU Time.]
-{\includegraphics[width=.5\textwidth]{esperimentua821}}
+\subfloat[Exekuzio sekuentziala.]
+{\includegraphics[width=.45\textwidth]{esperimentua821}}
 &
-\subfloat[Exekuzio sekuentziala: FCN.]
-{\includegraphics[width=.5\textwidth]{esperimentua822}}\\
-\subfloat[Exekuzio paraleloa (hariak=$2$) Wall Time.]
-{\includegraphics[width=.5\textwidth]{esperimentua823}}
-&
-\subfloat[Exekuzio paraleloa (hariak=$4$) Wall Time.]
-{\includegraphics[width=.5\textwidth]{esperimentua824}}
+\subfloat[Exekuzio paraleloa.]
+{\includegraphics[width=.45\textwidth]{esperimentua823}}
+%\subfloat[Exekuzio paraleloa (hariak=$2$) Wall Time.]
+%{\includegraphics[width=.5\textwidth]{esperimentua823}}
+%&
+%\subfloat[Exekuzio paraleloa (hariak=$4$) Wall Time.]
+%{\includegraphics[width=.5\textwidth]{esperimentua824}}
 \end{tabular}
 \caption{\small 
-Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Batetik, ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. Bestetik, ardatz horizontalean, (a),(c),(d) irudietan CPU denbora (exekuzio paralelotan Wall-Time) eta (b) irudian, ekuazio diferentzialen ebaluazio kopurua (FCN) erakutsi dugu. (a) konputazioa modu sekuentzialean egin dugu. (c) eta (d) modu paraleloan:  (c) kasuaren exekuzioa hari kopurua $2$ da eta (d) kasuan hari kopurua $4$ izan dira. Irudi bakoitzean,  hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paralelotan Wall-Time) erakutsi dugu. (a) konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan, hari kopurua $2$ izanik. Irudi bakoitzean,  hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz
 }
 \label{fig:esp82}
 \end{figure}
@@ -592,3 +629,14 @@ Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Batetik
 
 
 \section{Laburpena.}
+
+
+Kapitulu honetan, eguzki-sistemaren integraziorako inplementazio berri bat aurkeztu dugu. Inplementazio berria, egungo metodo sinplektiko eraginkorrenekin alderatu dugu eta emaitzak, baikorrak izateko modukoak iruditu zaizkigu. Oinarrizko azterketa egin badugu ere, agerian geratu da, metodoak etorkizunean izan ditzakeen potentziala. Dudarik gabe, etorkizun hurbilean azterketa sakonagoa egin beharko litzateke, metodoaren propietate onak baieztatzeko. Horien artean, honako ideia aipatuko ditugu:
+\begin{enumerate}
+\item Biribiltze erroreen hedapenaren azterketa estatistikoa, puntu-finkoaren eta Newton sinplifikatuaren inplementazioetan egin genuen moduan.
+\item $80$-biteko doitasuneko (\emph{long double}) integrazioaren konputazioa: kasu honetan, proiekzioa $128$-biteko doitasunean egitea komeniko litzateke. 
+\item Kepler fluxuaren inplementazioaren hobekuntzak: oraingo inplementazioaren iterazio guztietan, ez dugu aurreko iterazioen informazio erabiltzen. Iterazio berri baten kalkuluan, aurreko iterazioren egoeretatik abiatuta, nahikoa izango litzateke fluxuaren iterazio bakarra egitea.  
+\item Eguzki sistemaren eredu konplexuago batekin (ilargia eta zenbait asteroide, erlatibitate efektua, eguzkiaren atxatamendua), Gauss metodoa eraginkorragoa bilakatzea espero da. Eguzki-sistemaren eredu konplexuago, aplikatzen den neurrian paralelizazioak abantaila handiagoa suposatuko du. Era berean, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan.
+\item Eraginkortasuna hobetzeko, Jacobiarraren hurbillpen sinple baten erabilera (puntu finkoaren eta Newton-en arteko algoritmo eraginkorra).  
+\end{enumerate}    
+
