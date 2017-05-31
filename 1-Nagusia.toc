@@ -91,29 +91,29 @@
 \contentsline {section}{\numberline {8.6.}Paralelizazioa.}{159}{section.8.6}
 \contentsline {section}{\numberline {8.7.}Inplementazioaren aplikagarritasuna.}{161}{section.8.7}
 \contentsline {chapter}{\numberline {9.}Ondorioak.}{165}{chapter.9}
-\contentsline {part}{V.\hspace {1em}Eranskinak}{169}{part.5}
-\contentsline {chapter}{\numberline {A.}Konputazio zientzia.}{171}{appendix.A}
-\contentsline {section}{\numberline {A.1.}Sarrera.}{171}{section.A.1}
-\contentsline {section}{\numberline {A.2.}Eraginkortasuna}{172}{section.A.2}
-\contentsline {section}{\numberline {A.3.}Hardwarea.}{175}{section.A.3}
-\contentsline {section}{\numberline {A.4.}Programazio lengoaiak.}{180}{section.A.4}
-\contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{183}{section.A.5}
-\contentsline {paragraph}{Adibidea.}{184}{section*.236}
-\contentsline {section}{\numberline {A.6.}Konpiladorea.}{187}{section.A.6}
-\contentsline {paragraph}{Konpiladoreak.}{187}{section*.241}
-\contentsline {paragraph}{Optimizazioak.}{187}{section*.242}
-\contentsline {paragraph}{Konpilazio aginduak}{188}{section*.243}
-\contentsline {section}{\numberline {A.7.}Laburpena.}{188}{section.A.7}
-\contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{189}{appendix.B}
-\contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{189}{section.B.1}
-\contentsline {section}{\numberline {B.2.}Koordenatu sistemak.}{192}{section.B.2}
-\contentsline {section}{\numberline {B.3.}Newton eraginkorraren garapena.}{195}{section.B.3}
-\contentsline {section}{\numberline {B.4.}Kepler fluxuaren aldagai aldaketa.}{197}{section.B.4}
-\contentsline {chapter}{\numberline {C.}Inplementazioak.}{201}{appendix.C}
-\contentsline {section}{\numberline {C.1.}Egitura orokorra.}{201}{section.C.1}
-\contentsline {section}{\numberline {C.2.}IRK puntu-finkoa.}{203}{section.C.2}
-\contentsline {section}{\numberline {C.3.}IRK Newton.}{203}{section.C.3}
-\contentsline {section}{\numberline {C.4.}IRK Eguzki-sistema.}{204}{section.C.4}
-\contentsline {section}{\numberline {C.5.}Konposizio-Splitting metodoak.}{204}{section.C.5}
-\contentsline {chapter}{\numberline {D.}Zerrendak}{205}{appendix.D}
-\contentsline {chapter}{Bibliografia}{207}{table.caption.271}
+\contentsline {part}{V.\hspace {1em}Eranskinak}{171}{part.5}
+\contentsline {chapter}{\numberline {A.}Konputazio zientzia.}{173}{appendix.A}
+\contentsline {section}{\numberline {A.1.}Sarrera.}{173}{section.A.1}
+\contentsline {section}{\numberline {A.2.}Eraginkortasuna}{174}{section.A.2}
+\contentsline {section}{\numberline {A.3.}Hardwarea.}{177}{section.A.3}
+\contentsline {section}{\numberline {A.4.}Programazio lengoaiak.}{182}{section.A.4}
+\contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{185}{section.A.5}
+\contentsline {paragraph}{Adibidea.}{186}{section*.237}
+\contentsline {section}{\numberline {A.6.}Konpiladorea.}{189}{section.A.6}
+\contentsline {paragraph}{Konpiladoreak.}{189}{section*.242}
+\contentsline {paragraph}{Optimizazioak.}{189}{section*.243}
+\contentsline {paragraph}{Konpilazio aginduak}{190}{section*.244}
+\contentsline {section}{\numberline {A.7.}Laburpena.}{190}{section.A.7}
+\contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{191}{appendix.B}
+\contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{191}{section.B.1}
+\contentsline {section}{\numberline {B.2.}Koordenatu sistemak.}{194}{section.B.2}
+\contentsline {section}{\numberline {B.3.}Newton eraginkorraren garapena.}{197}{section.B.3}
+\contentsline {section}{\numberline {B.4.}Kepler fluxuaren aldagai aldaketa.}{199}{section.B.4}
+\contentsline {chapter}{\numberline {C.}Inplementazioak.}{203}{appendix.C}
+\contentsline {section}{\numberline {C.1.}Egitura orokorra.}{203}{section.C.1}
+\contentsline {section}{\numberline {C.2.}IRK puntu-finkoa.}{205}{section.C.2}
+\contentsline {section}{\numberline {C.3.}IRK Newton.}{205}{section.C.3}
+\contentsline {section}{\numberline {C.4.}IRK Eguzki-sistema.}{206}{section.C.4}
+\contentsline {section}{\numberline {C.5.}Konposizio-Splitting metodoak.}{206}{section.C.5}
+\contentsline {chapter}{\numberline {D.}Zerrendak}{207}{appendix.D}
+\contentsline {chapter}{Bibliografia}{209}{table.caption.272}

@@ -6,7 +6,7 @@
 
 Kapitulu honetan, eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. \ref{chap:IRK-PF}~kapituluan puntu-finkoaren iterazioan oinarrituz eta \ref{chap:IRK-NEW}~kapituluan Newton sinplifikatuaren iterazioan oinarrituz, IRK inplementazioak garatu ditugu; eguzki-sistemaren problemaren integraziorako, bi inplementazioen artean, puntu-finkoarena nabarmen eraginkorragoa dela baieztatu dugu eta Newton sinplifikatuarena, erabat baztertu dugu. Ondorioz, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta  ekuazio diferentzialetako aldagaiei eragingo diegun aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu.  
 
-Aplikatzen dugun integrazio metodoa sinplektikoa eta simetrikoa da: neurri batean, splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Hirugarrenik, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
+Aplikatzen dugun integrazio metodoa sinplektikoa eta simetrikoa da: neurri batean, splitting metodoen antzekoa. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Hirugarrenik, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
 
 Lehenengo, Kepler-en fluxuaren inplementazioa azalduko dugu. Bigarrenik, aldagai aldaketa definitu eta metodoa integratzeko zehaztapenak emango ditugu. Hirugarrenik, eguzki-sistemaren problemaren zenbakizko integrazioak egingo ditugu: inplementazio honen eta doitasun altuko beste metodo sinplektikoen (konposizio eta splitting metodoak) eraginkortasunak, alderatuko ditugu.     
 
@@ -20,7 +20,7 @@ Kepler problema bi gorputzen problemaren kasu partikularra da eta  honako Hamilt
 \label{eq: hamkepler}
 H(q,p)=\frac{p^2}{2m}-\frac{\mu}{\|q\|},
 \end{equation}
-non $m$ eta $\mu$ konstanteen balioak, formulazioaren araberakoak diren.
+non $m$ eta $\mu$ konstanteen balioak  formulazioaren araberakoak diren.
 
 Koordenatu sistema $q=q_2-q_1$ duen formulazioa aukeratzen badugu, konstanteen balioak hauek dira,  
 \begin{equation*}
@@ -80,11 +80,10 @@ Problema berri honetan aldagai aldaketa bat egingo dugu, aldaketaren helburua da
 &\frac{du}{dt} = k(u) + g(u,t),\ \ \ u(0) = u_0
 \end{split}
 \end{align} 
-non $k(u)$ alde Kepleriarrari dagokion eta $g(u,t)$ perturbazioari. 
+non $k(u)$ (\ref{eq:kode}) ekuazioan adierazitako alde Kepleriarrari dagokion  eta $g(u,t)$ perturbazioari. 
 Problema horretan honako aldagai aldaketa egingo dugu, kontuan izan urrats bakoitzean egingo dugula aldagai aldaketa, hau da $j=0, 1, 2 \ldots$ indizeak $j$. urratsean aplikatu beharreko aldaketa adierazten du:
 
-\begin{align}
-\begin{split}
+\begin{align}\begin{split}
 \label{eq: uUaldaketa}
 &u(t) = \varphi_{t-(j+\frac{1}{2})h}^k\left(U_j^{j+\frac{1}{2}}(t)\right)
 \end{split}
@@ -149,7 +148,15 @@ Bi aldeetan $k(u)$  kenduz, $U$ aldagaiekiko ebatzi beharreko ekuazio diferentzi
 &\dot{U} = \left(\varphi'(U)\right)^{-1} g(u,t).
 \end{split}
 \end{align}
-Alderantzizko matrizeak kalkulatu beharrik gabe idatz ditzakegu (\ref{eq:hamEDAU}) ekuazioak. Horretarako $\varphi$ fluxuaren izaera sinplektikoa erabiliko dugu, hau da, $(\varphi')^tJ\varphi'= J$ propietatea betetzen du fluxuak, ondorioz,
+Alderantzizko matrizeak kalkulatu beharrik gabe idatz ditzakegu (\ref{eq:hamEDAU}) ekuazioak. Horretarako $\varphi$ fluxuaren izaera sinplektikoa erabiliko dugu, hau da, $(\varphi')^tJ\varphi'= J$ propietatea betetzen du fluxuak,
+non, 
+\begin{equation*}
+ J=\left(\begin{array}{cc}
+   \ 0 & \ -I \\
+     I & \ 0  \\
+\end{array}\right),
+\end{equation*}
+ondorioz,
 %
 \begin{align}
 \begin{split}
@@ -177,7 +184,7 @@ Urrats honetan $\varphi'_t()$ kalkulatu behar da. Deribazio automatikoaren tekni
 
 Hirugarren urratsak (\ref{eq:hamEDAU2}) espresioa konputatzeko behar dugun azken zatia kalkulatzen du, beraz, bere emaitza $\dot{U}$ren konputazioa izango da: 
 \begin{align*}
-\dot{U}&\leftarrow KeplerFlowGFcnaux(aux,U,t,g) = ( \varphi'(U))^{-1} \ g.
+\dot{U}&\leftarrow KeplerFlowGFcnaux(aux,U,t,g).
 \end{align*}
 
 \end{enumerate} 
@@ -201,10 +208,10 @@ Alde Kepleriar bat baino gehiago dituzten problemetan ere Kepler perturbatuan eg
                 \dot{w}      \\
 \end{array}\right)=
 \left(\begin{array}{c}
-                k(u_1)  \\
-                k(u_2)  \\
+                k^{\mu_1}(u_1)  \\
+                k^{\mu_2}(u_2)  \\
                 \vdots \\
-                k(u_k)  \\
+                k^{\mu_k}(u_k)  \\
                 0      \\
 \end{array}\right)+
 \left(\begin{array}{c}
@@ -215,8 +222,8 @@ Alde Kepleriar bat baino gehiago dituzten problemetan ere Kepler perturbatuan eg
       g_{k+1}(u_1, u_2\dots, u_k,w,t)
 \end{array}\right)
 \end{equation} 
-
-Gorputz bakoitzari dagokion aldagai aldaketa bere fluxu Kepleriarraren araberakoa da,
+ 
+Gorputz bakoitzari dagokion aldagai aldaketa, bere $k^{\mu_j}(u_j)$ fluxu Kepleriarraren araberakoa da,
 \begin{align}
 \label{eq:aldfl2}
 \begin{split}
@@ -257,10 +264,10 @@ ekuazioetan fluxuen propietate eta definizioak erabiliz,
                 \dot{w}      \\
 \end{array}\right)=
 \left(\begin{array}{c}
-                k(u_1)  \\
-                k(u_2)   \\
+                k^{\mu_1}(u_1)  \\
+                k^{\mu_2}(u_2)  \\
                 \vdots \\
-                k(u_k))   \\
+                k^{\mu_k}(u_k)  \\
                 0      \\
 \end{array}\right)+
 \left(\begin{array}{c}
@@ -311,7 +318,7 @@ Hiru azpiurratsak simetrikoak dira, eta ondorioz, $u_{i+1}$ abiapuntutzat hartuz
 U_{i+1}^{i+1+\frac{1}{2}}=\varphi_{\frac{-h}{2}}(u_{i+1})=\varphi_{\frac{-h}{2}}\left(\varphi_{\frac{h}{2}}(U_{i+1}^{i+\frac{1}{2}}) \right)
 = U_{i+1}^{i+\frac{1}{2}}
 \] 
-\item Gauss metodoaren $-h$ luzerako urratsa: Gaussen metodoa simetrikoa denez, aurreko urratsean bukaerako egoera zenari $-h$ luzerako urratsa eragiteak hasierako egoera itzultzen du, beraz, $(U_{i+1}^{i+\frac{1}{2}}$ balioetatik abiatuz $U_i^{i+\frac{1}{2}}$ balioetara itzuliko gara.
+\item Gauss metodoaren $-h$ luzerako urratsa: Gaussen metodoa simetrikoa denez, aurreko urratsean bukaerako egoera zenari $-h$ luzerako urratsa eragiteak hasierako egoerara itzultzen du, beraz, $U_{i+1}^{i+\frac{1}{2}}$ balioetatik abiatuz $U_i^{i+\frac{1}{2}}$ balioetara itzuliko gara.
 \item Fluxuan urrats luzeraren erdia egin behar da: lehenengo azpiurratsean bezala, fluxuan $\frac{-h}{2}$ mugitu behar gara, baina fluxuan $\frac{h}{2}$ mugitutako balioekin egin behar dugu, hau da:
 \[
 \varphi_{\frac{-h}{2}}(U_i^{i+\frac{1}{2}}) = \varphi_{\frac{-h}{2}}\left(\varphi_{\frac{h}{2}}({u_i}) \right) = u_i
@@ -320,7 +327,7 @@ U_{i+1}^{i+1+\frac{1}{2}}=\varphi_{\frac{-h}{2}}(u_{i+1})=\varphi_{\frac{-h}{2}}
 
 Metodoaren integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu, bere simetria ere bertan ikus daiteke,
 \begin{figure} [h!]
-\centerline{\includegraphics [width=16cm, height=4cm] {proiekzioa11}}
+{\includegraphics [width=16cm, height=4cm] {proiekzioa11}}
 \caption{\small Metodoaren integrazio eskema orokorra. Metodoa simetrikoa eta sinplektikoa da.}
 \label{fig:proiekzioa0}
 \end{figure} 
@@ -328,7 +335,7 @@ Metodoaren integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu
 Integrazioaren urrats guztietan ez baditugu emaitzak itzuli behar, bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu. Horretarako, proiekzio kontzeptua sortuko dugu (\ref{fig:proiekzioa2}~irudia).
 
 \begin{figure} [h!]
-\centerline{\includegraphics [width=14cm, height=4cm] {proiekzioa12}}
+{\includegraphics [width=14cm, height=4cm] {proiekzioa12}}
 \caption{\small Proiekzioa: bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu}
 \label{fig:proiekzioa2}
 \end{figure} 
@@ -337,8 +344,8 @@ Integrazioaren urrats guztietan ez baditugu emaitzak itzuli behar, bi urratsen a
  Azkenik, emaitzak behar ditugun urratsetarako fluxua $\varphi_{-h/2}$ aplikatuko dugu (\ref{fig:proiekzioa1}~irudia). 
 
 \begin{figure} [h!]
-\centerline{\includegraphics [width=14cm, height=5cm] {proiekzioa1}}
-\caption{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak adierazten dute. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion $U_0^{1/2}$ hasierako balioa finkatuko dugu. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da, \ref{fig:proiekzioa2}~irudian zehaztu dugun bezala. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietan zenbakizko soluzioa itzuliko dugu}
+{\includegraphics [width=14cm, height=5cm] {proiekzioa1}}
+\caption{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak dira. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion $U_0^{1/2}$ hasierako balioa finkatuko dugu. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da, \ref{fig:proiekzioa2}~irudian zehaztu dugun bezala. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietan zenbakizko soluzioa itzuliko dugu}
 \label{fig:proiekzioa1}
 \end{figure} 
 
@@ -372,7 +379,7 @@ U_n^{n+\frac{1}{2}} \ \rightarrow \ u_n.
 \end{enumerate}
 
 
-Gauss metodoa, neurri batean  splitting eta konposizio metodoen baliokideak dira. 
+Gauss metodoa, neurri batean  splitting eta konposizio metodoen antzekoak dira. 
 \begin{align*}
 \text{Konposizio metodoa} \ \ &\equiv \ \ \text{Gauss metodoa aldagai aldaketa gabe}.\\
 \text{Splitting metodoa} \ \ &\equiv \ \  \text{Gauss metodoa aldagai aldaketarekin}.
@@ -473,7 +480,7 @@ Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkor
 \subsection*{Energia errorea eta errore globalak.}
 
 %$s=8$ metodoarentzat, birbiltze errorea hasten den uneko urrats luzera hartu dut: $k=12, \ h=10,667$. Kokapen errore erlatiboaren estimazioa, $h/2$ integrazioarekiko diferentzia gisa kalkulatu ditugu.
-Atal honetan, $s=8$ ataleko Gauss metodoaren, \emph{CO1035} konposizio metodoaren eta \emph{ABAH1064} splitting metodoaren erroreak konparatu ditugu.  Hiru errore mota ezberdin aztertu ditugu: energia errorea; kokapen eta abiaduren erroreen estimazioak; orbita eliptikoaren sasi-ardatzaren eta eszentrikotasunaren erroreen estimazioak. Gauss metodoa $h=10.63$ urrats luzerarekin integratu dugu eta  \emph{CO1035}, \emph{ABAH1064} metodoak $h=4.76$ urrats luzerarekin.
+Atal honetan, $s=8$ ataleko Gauss metodoaren, \emph{CO1035} konposizio metodoaren eta \emph{ABAH1064} splitting metodoaren erroreak konparatu ditugu.  Hiru errore mota ezberdin aztertu ditugu: energia errorea; kokapen eta abiaduren erroreen estimazioak; orbita eliptikoaren erdi-ardatz nagusiaren (\emph{semi-axis}) eta eszentrikotasunaren erroreen estimazioak. Gauss metodoa $h=10.63$ urrats luzerarekin integratu dugu eta  \emph{CO1035}, \emph{ABAH1064} metodoak $h=4.76$ urrats luzerarekin.
 
 \subsubsection*{Energiaren eboluzioa}
 
@@ -520,39 +527,42 @@ Gauss metodoaren integrazioan, urrats luzera handiago erabili arren, barne-plane
 \end{figure}
 
 
-\subsubsection*{Eszentrikotasun eta sasi-ardatzaren errore estimazioak}
+\subsubsection*{Eszentrikotasun eta erdi-ardatza nagusiaren erroreen estimazioak}
 
 
 Planeten mugimendu orbitala, eliptikoa da. Orbitaren propietateak finkatzen dituzten bi konstante hauen erroreen estimazioa kalkulatuko dugu: 
 \begin{enumerate}
-\item $a$ sasi-ardatza (semi-axis) izeneko konstantea, orbita eliptikoaren tamaina definitzen duena.
+\item $a$ erdi-ardatz nagusia (\emph{semi-axis}) izeneko konstantea, orbita eliptikoaren tamaina definitzen duena.
 \item $e$ eszentrikotasuna konstantea, orbita eliptikoaren forma finkatzen duena. 
 \end{enumerate} 
 
-\ref{fig:esp87}~irudian, bai Gauss metodoarentzat, bai \emph{ABAH1064} splitting metodoarentzat, $a$ sasi-ardatzaren eta $e$ eszentrikotasun erroreak, kokapen eta abiaduren erroreak baino txikiagoak dira. Honek esan nahi du, integrazioaren orbitaren forma mantentzen dela eta errorea, orbitaren fasean nagusitzen dela. Esperimentu honetan ere, Gauss metodoaren erroreak, \emph{ABAH1064} spliting metodoarenak baina txikiagoak dira.   
+\ref{fig:esp87}~irudian, bai Gauss metodoarentzat, bai \emph{ABAH1064} splitting metodoarentzat, $a$ erdi-ardatz nagusiaren eta $e$ eszentrikotasun erroreak, kokapen eta abiaduren erroreak baino txikiagoak dira. Honek esan nahi du, integrazioaren orbitaren forma mantentzen dela eta errorea, orbitaren fasean nagusitzen dela. Esperimentu honetan ere, Gauss metodoaren erroreak, \emph{ABAH1064} spliting metodoarenak baina txikiagoak dira.   
 
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[Gauss maetodoa (sasi-ardatzaren errorea)]
+\subfloat[Gauss maetodoa (erdi-ardatz nagusiaren errorea)]
 {\includegraphics[width=.45\textwidth]{esperimentua871}}
 &
 \subfloat[Gauss maetodoa (eszentrikotasunaren errorea)]
 {\includegraphics[width=.45\textwidth]{esperimentua872}}\\
-\subfloat[ABAH1064 (sasi-ardatzaren errorea)]
+\subfloat[ABAH1064 (erdi-ardatz nagusiaren errorea)]
 {\includegraphics[width=.45\textwidth]{esperimentua873}}
 &
 \subfloat[ABAH1064 (eszentrikotasunaren errorea)]
 {\includegraphics[width=.45\textwidth]{esperimentua874}}
 \end{tabular}
-\caption{\small \small Orbita eliptikoaren $a$ sasi-ardatzaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
+\caption{\small \small Orbita eliptikoaren $a$ erdi-ardatz nagusiaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
 \label{fig:esp87}
 \end{figure}
 
 \subsection*{Biribiltze errorea.}
 
 
-Hirugarren esperimentu honetan, biribiltze errorearen azterketa egin dugu eta horretarako, momentu angeluarraren errore erlatiboaren eboluzioan oinarritu gara. Momentu angeluarraren trunkatze errorea beti zero da eta metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte. \ref{fig:esp85}~irudian, Gaussen $s=8$ ataletako metodoarekin, $h=9.0$ eta $h=10.63$ urrats luzerarekin integrazioen soluzioen momentu angeluarraren errorea erakutsi dugu.  
+Hirugarren esperimentu honetan, biribiltze errorea ilustratzeko esperimentua egin dugu eta horretarako, momentu angeluarraren errore erlatiboaren eboluzioan oinarritu gara. % Momentu angeluarraren trunkatze errorea beti zero da eta metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte. 
+Lau faktore hartu behar dira kontutan. Kepler-en fluxuak, momentu angeluarra zehazki mantentzen du eta jatorrizko ekuazio diferentzialen inbariante koadratikoa da. Hori dela-eta, Kepler-en fluxuan oinarritutako aldagai aldaketarekin lortutako ekuazio diferentzialen inbariante koadratikoa da. Integratzeko Runge-Kutta metodo sinplektikoa aplikatu dugunez, inbariante koadratikoak zehazki mantentzen ditu eta beraz,  ikusten duguna biribiltze errorea da.
+
+\ref{fig:esp85}~irudian, Gaussen $s=8$ ataletako metodoarekin, $h=9.0$ eta $h=10.63$ urrats luzerarekin integrazioen soluzioen momentu angeluarraren errorea erakutsi dugu eta espero bezala, biribiltze errorea zein den erakusten dute.
 
 
 \begin{figure}[h!]
@@ -636,7 +646,9 @@ Kapitulu honetan, eguzki-sistemaren integraziorako inplementazio berri bat aurke
 \item Biribiltze erroreen hedapenaren azterketa estatistikoa, puntu-finkoaren eta Newton sinplifikatuaren inplementazioetan egin genuen moduan.
 \item $80$-biteko doitasuneko (\emph{long double}) integrazioaren konputazioa: kasu honetan, proiekzioa $128$-biteko doitasunean egitea komeniko litzateke. 
 \item Kepler fluxuaren inplementazioaren hobekuntzak: oraingo inplementazioaren iterazio guztietan, ez dugu aurreko iterazioen informazio erabiltzen. Iterazio berri baten kalkuluan, aurreko iterazioren egoeretatik abiatuta, nahikoa izango litzateke fluxuaren iterazio bakarra egitea.  
-\item Eguzki sistemaren eredu konplexuago batekin (ilargia eta zenbait asteroide, erlatibitate efektua, eguzkiaren atxatamendua), Gauss metodoa eraginkorragoa bilakatzea espero da. Eguzki-sistemaren eredu konplexuago, aplikatzen den neurrian paralelizazioak abantaila handiagoa suposatuko du. Era berean, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan.
-\item Eraginkortasuna hobetzeko, Jacobiarraren hurbillpen sinple baten erabilera (puntu finkoaren eta Newton-en arteko algoritmo eraginkorra).  
+\item Eguzki sistemaren eredu konplexuago batekin (ilargia eta zenbait asteroide, erlatibitate efektua, eguzkiaren atxatamendua,\dots), Gauss metodoa eraginkorragoa bilakatzea espero da. Eguzki-sistemaren eredu konplexuago, aplikatzen den neurrian paralelizazioak abantaila handiagoa suposatuko du. Era berean, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan.
+\item Eraginkortasuna hobetzeko, Jacobiarraren hurbilpen sinple baten erabilera (puntu finkoaren eta Newton-en arteko algoritmo eraginkorra).  
 \end{enumerate}    
+
+Eguzki-sistema eredu konplexuetan, Kleperiarrak ez diren indarrak aplika daitezke. Aldagai hauen konbergentzia azkartzeko, Newton sinplifikatuaren iterazioan oinarritutako inplementazioa aplikatzea komeniko da.  
 
