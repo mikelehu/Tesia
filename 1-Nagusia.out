@@ -1,10 +1,10 @@
 \BOOKMARK [-1][-]{part.1}{I. Sarrera}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Sarrera.}{part.1}% 2
-\BOOKMARK [1][-]{section.1.1}{Ikerketaren testuingurua.}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Motibazioa.}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Helburua eta esparrua.}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.4}{Ekarpenak.}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.5}{Tesiaren egitura.}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.1}{Sarrera}{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Ikerketaren testuingurua}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Motibazioa}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Helburua eta esparrua}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Ekarpenak}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{Tesiaren egitura}{chapter.1}% 7
 \BOOKMARK [-1][-]{part.2}{II. Oinarriak}{}% 8
 \BOOKMARK [0][-]{chapter.2}{Zenbakizko integratzaile sinplektikoak.}{part.2}% 9
 \BOOKMARK [1][-]{section.2.1}{Sarrera.}{chapter.2}% 10
@@ -48,14 +48,14 @@
 \BOOKMARK [1][-]{section.7.5}{Zenbakizko esperimentuak.}{chapter.7}% 48
 \BOOKMARK [1][-]{section.7.6}{Laburpena.}{chapter.7}% 49
 \BOOKMARK [-1][-]{part.4}{IV. Eztabaida eta ondorioak.}{}% 50
-\BOOKMARK [0][-]{chapter.8}{Eztabaida.}{part.4}% 51
-\BOOKMARK [1][-]{section.8.1}{Eguzki-sistemaren integrazio luzeak.}{chapter.8}% 52
-\BOOKMARK [1][-]{section.8.2}{Eredu deskonposaketa.}{chapter.8}% 53
-\BOOKMARK [1][-]{section.8.3}{IRK inplementazioaren oinarriak.}{chapter.8}% 54
-\BOOKMARK [1][-]{section.8.4}{Doitasun altuko konputazioak.}{chapter.8}% 55
-\BOOKMARK [1][-]{section.8.5}{Aldagai aldaketa.}{chapter.8}% 56
-\BOOKMARK [1][-]{section.8.6}{Paralelizazioa.}{chapter.8}% 57
-\BOOKMARK [1][-]{section.8.7}{Inplementazioaren erabilgarritasuna.}{chapter.8}% 58
+\BOOKMARK [0][-]{chapter.8}{Eztabaida}{part.4}% 51
+\BOOKMARK [1][-]{section.8.1}{Eguzki-sistemaren integrazio luzeak}{chapter.8}% 52
+\BOOKMARK [1][-]{section.8.2}{Eredu deskonposaketa}{chapter.8}% 53
+\BOOKMARK [1][-]{section.8.3}{IRK inplementazioaren oinarriak}{chapter.8}% 54
+\BOOKMARK [1][-]{section.8.4}{Doitasun altuko konputazioak}{chapter.8}% 55
+\BOOKMARK [1][-]{section.8.5}{Aldagai aldaketa}{chapter.8}% 56
+\BOOKMARK [1][-]{section.8.6}{Paralelizazioa}{chapter.8}% 57
+\BOOKMARK [1][-]{section.8.7}{Inplementazioaren erabilgarritasuna}{chapter.8}% 58
 \BOOKMARK [0][-]{chapter.9}{Ondorioak.}{part.4}% 59
 \BOOKMARK [-1][-]{part.5}{V. Eranskinak}{}% 60
 \BOOKMARK [0][-]{appendix.A}{Konputazio zientzia.}{part.5}% 61
@@ -77,4 +77,4 @@
 \BOOKMARK [1][-]{section.C.4}{IRK Eguzki-sistema.}{appendix.C}% 77
 \BOOKMARK [1][-]{section.C.5}{Konposizio-Splitting metodoak.}{appendix.C}% 78
 \BOOKMARK [0][-]{appendix.D}{Zerrendak}{part.5}% 79
-\BOOKMARK [0][-]{appendix*.269}{Bibliografia}{part.5}% 80
+\BOOKMARK [0][-]{appendix*.271}{Bibliografia}{part.5}% 80

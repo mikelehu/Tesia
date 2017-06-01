@@ -1,12 +1,12 @@
 \select@language {basque}
 \select@language {basque}
 \contentsline {part}{I.\hspace {1em}Sarrera}{3}{part.1}
-\contentsline {chapter}{\numberline {1.}Sarrera.}{5}{chapter.1}
-\contentsline {section}{\numberline {1.1.}Ikerketaren testuingurua.}{5}{section.1.1}
-\contentsline {section}{\numberline {1.2.}Motibazioa.}{6}{section.1.2}
-\contentsline {section}{\numberline {1.3.}Helburua eta esparrua.}{7}{section.1.3}
-\contentsline {section}{\numberline {1.4.}Ekarpenak.}{9}{section.1.4}
-\contentsline {section}{\numberline {1.5.}Tesiaren egitura.}{12}{section.1.5}
+\contentsline {chapter}{\numberline {1.}Sarrera}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1.}Ikerketaren testuingurua}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2.}Motibazioa}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3.}Helburua eta esparrua}{7}{section.1.3}
+\contentsline {section}{\numberline {1.4.}Ekarpenak}{9}{section.1.4}
+\contentsline {section}{\numberline {1.5.}Tesiaren egitura}{12}{section.1.5}
 \contentsline {part}{II.\hspace {1em}Oinarriak}{13}{part.2}
 \contentsline {chapter}{\numberline {2.}Zenbakizko integratzaile sinplektikoak.}{15}{chapter.2}
 \contentsline {section}{\numberline {2.1.}Sarrera.}{15}{section.2.1}
@@ -82,14 +82,14 @@
 \contentsline {subsection}{Problemak.}{133}{section*.173}
 \contentsline {section}{\numberline {7.6.}Laburpena.}{140}{section.7.6}
 \contentsline {part}{IV.\hspace {1em}Eztabaida eta ondorioak.}{143}{part.4}
-\contentsline {chapter}{\numberline {8.}Eztabaida.}{145}{chapter.8}
-\contentsline {section}{\numberline {8.1.}Eguzki-sistemaren integrazio luzeak.}{145}{section.8.1}
-\contentsline {section}{\numberline {8.2.}Eredu deskonposaketa.}{149}{section.8.2}
-\contentsline {section}{\numberline {8.3.}IRK inplementazioaren oinarriak.}{153}{section.8.3}
-\contentsline {section}{\numberline {8.4.}Doitasun altuko konputazioak.}{157}{section.8.4}
-\contentsline {section}{\numberline {8.5.}Aldagai aldaketa.}{158}{section.8.5}
-\contentsline {section}{\numberline {8.6.}Paralelizazioa.}{159}{section.8.6}
-\contentsline {section}{\numberline {8.7.}Inplementazioaren erabilgarritasuna.}{161}{section.8.7}
+\contentsline {chapter}{\numberline {8.}Eztabaida}{145}{chapter.8}
+\contentsline {section}{\numberline {8.1.}Eguzki-sistemaren integrazio luzeak}{145}{section.8.1}
+\contentsline {section}{\numberline {8.2.}Eredu deskonposaketa}{149}{section.8.2}
+\contentsline {section}{\numberline {8.3.}IRK inplementazioaren oinarriak}{153}{section.8.3}
+\contentsline {section}{\numberline {8.4.}Doitasun altuko konputazioak}{157}{section.8.4}
+\contentsline {section}{\numberline {8.5.}Aldagai aldaketa}{158}{section.8.5}
+\contentsline {section}{\numberline {8.6.}Paralelizazioa}{159}{section.8.6}
+\contentsline {section}{\numberline {8.7.}Inplementazioaren erabilgarritasuna}{161}{section.8.7}
 \contentsline {chapter}{\numberline {9.}Ondorioak.}{165}{chapter.9}
 \contentsline {part}{V.\hspace {1em}Eranskinak}{171}{part.5}
 \contentsline {chapter}{\numberline {A.}Konputazio zientzia.}{173}{appendix.A}
@@ -98,11 +98,11 @@
 \contentsline {section}{\numberline {A.3.}Hardwarea.}{177}{section.A.3}
 \contentsline {section}{\numberline {A.4.}Programazio lengoaiak (Paralelizazioa).}{182}{section.A.4}
 \contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{185}{section.A.5}
-\contentsline {paragraph}{Adibidea.}{187}{section*.237}
+\contentsline {paragraph}{Adibidea.}{187}{section*.239}
 \contentsline {section}{\numberline {A.6.}Konpiladorea.}{189}{section.A.6}
-\contentsline {paragraph}{Konpiladoreak.}{190}{section*.242}
-\contentsline {paragraph}{Optimizazioak.}{190}{section*.243}
-\contentsline {paragraph}{Konpilazio aginduak}{190}{section*.244}
+\contentsline {paragraph}{Konpiladoreak.}{190}{section*.244}
+\contentsline {paragraph}{Optimizazioak.}{190}{section*.245}
+\contentsline {paragraph}{Konpilazio aginduak}{190}{section*.246}
 \contentsline {section}{\numberline {A.7.}Laburpena.}{191}{section.A.7}
 \contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{193}{appendix.B}
 \contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{193}{section.B.1}
@@ -115,4 +115,4 @@
 \contentsline {section}{\numberline {C.4.}IRK Eguzki-sistema.}{206}{section.C.4}
 \contentsline {section}{\numberline {C.5.}Konposizio-Splitting metodoak.}{206}{section.C.5}
 \contentsline {chapter}{\numberline {D.}Zerrendak}{207}{appendix.D}
-\contentsline {chapter}{Bibliografia}{217}{appendix*.269}
+\contentsline {chapter}{Bibliografia}{217}{appendix*.271}

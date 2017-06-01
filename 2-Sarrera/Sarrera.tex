@@ -1,7 +1,7 @@
-\chapter{Sarrera.}
+\chapter{Sarrera}
 
 
-\section{Ikerketaren testuingurua.}
+\section{Ikerketaren testuingurua}
 
 Urte luzez, zientziaren arlo ezberdinek N-gorputzeko problema ikertu dute. Astronomoek eguzki-sistemaren planeten mugimendua ulertu nahian egindako lanak edo kimikariek erreakzio kimikoekin esperimentatzeko molekulen dinamikaren azterketak aipa daitezke. Gainera,  N-gorputzen problemaren azterketak garrantzi berezia izan du matematikako eremu ezberdinen garapenean,  dinamika ez-lineal eta kaos teorian esaterako. 
 
@@ -26,17 +26,17 @@ Epe luzeko integrazio hauetarako zenbakizko hainbat metodo erabiltzen dira, bere
 Konputazio-teknologiaren aurrerapenak handiak izan arren, eguzki-sistemaren simulazio hauek konputazionalki oso garestiak dira eta exekuzio denbora luzeak behar dituzte; adibidez, Laskar-ek \ycite[2010]{Laskar2011} bere azken integrazioa burutzeko 18 hilabete behar izan zituen.
 Azken urteotako konputagailu berrien arkitekturaren bilakaerak, algoritmo azkarren diseinua aldatu du: simulazioak azkartzeko algoritmoak, paralelizazioan oinarritu behar dira. Integrazio luze hauen erronka handienetako bat, biribiltze errorearen garapena zaintzea da. Biribiltze errore sistematikoaren hedapenak, errore globalean eragindako joerak ekidin behar dira \cite{Laskar2015}.
  
-\section{Motibazioa.}
+\section{Motibazioa}
 \label{intro}
 
 
-Integrazio metodo sinplektikoen artean erabilienak, izaera esplizituko algoritmoak dira. Oro har problema zurruna ez bada, metodo esplizituak  metodo inplizituak baino eraginkorragoak dira. Metodo inplizituetan ekuazio sistema ez-lineala askatu behar da (eragiketa garestia) eta honek, metodo esplizituekiko CPU denboran gainkarga suposatzen du. Hala ere, ebatzi beharreko problema zurruna bada, metodo esplizituak urrats oso txikiak eman behar izaten ditu integrazio fidagarriak lortu ahal izateko. Horrek ere, integrazioa garestitzen du. Metodo inplizituetan ez da halakorik gertatzen, urrats luzeagoak eman ditzakete nahiz eta problema zurruna izan. 
+Integrazio metodo sinplektikoen artean erabilienak, izaera esplizituko algoritmoak dira. Oro har problema zurruna ez bada, metodo esplizituak  metodo inplizituak baino eraginkorragoak dira. Metodo inplizituetan ekuazio sistema ez-lineala askatu behar da (eragiketa garestia) eta honek, metodo esplizituekiko, CPU denboran gainkarga suposatzen du. Hala ere, ebatzi beharreko problema zurruna bada, metodo esplizituak urrats oso txikiak eman behar izaten ditu integrazio fidagarriak lortu ahal izateko. Horrek ere, integrazioa garestitzen du. Metodo inplizituetan ez da halakorik gertatzen, urrats luzeagoak eman ditzakete nahiz eta problema zurruna izan. 
 
 Azken aldian, ordea, ezbaian jarri da problemaren zurruntasunaren araberako metodoen aukeraketarako joera hori. Lan honetan, zenbakizko integraziorako Gaussen metodo inplizitu sinplektikoaren azterketa egingo dugu. Hainbat autorek (Hairer \cite{Hairer2006,Hairer2008} eta Sanz Serna\cite{JMSanz-Serna1994}), doitasun altuko integrazioetarako metodo honen potentziala nabarmendu dute. Azken urteetan, espazioko satelite artifizialen arloan ere, Gaussen integrazio metodoarekiko interesa azaldu dute \cite{Bradley2014,Beylkin2014}. 
 
-Gaussen integrazio metodo inplizituen abantaila nagusienetakoa malgutasuna da. Ekuazio inplizituak ebazteko, teknika ezberdinak konbina daitezke eta ondorioz, integratu nahi dugun problemari egokitzeko eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu.
+Gaussen integrazio metodo inplizituen abantaila nagusienetakoa malgutasuna da. Ekuazio inplizituen ebazpenean, teknika ezberdinak konbina daitezke eta, ondorioz, integratu nahi dugun problemari egokitzeko eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu.
 
-Sinplektikoak diren metodo esplizituak oso eraginkorrak direla ezin da ukatu, baina metodo hauen erabilera ez da beti posible: sistema Hamiltondar banagarrietan bakarrik erabil daitezke. Sistema Hamiltondar orokorrak edota lehen ordenako ekuazio diferentzialeko sistemak integratzeko metodo sinplektikoak, inplizituak izan behar dira. Bestalde, Gauss metodoak paralelizagarriak dira, hau da, $s$-ataletako funtzioen konputazioak paraleloan exekuta daitezke. Azkenik ez dugu ahaztu behar, ordena altuko Gauss metodoak existitzen direla  eta hauek beharrezkoak ditugula doitasun handiko integrazioetarako.     
+Sinplektikoak diren metodo esplizituak oso eraginkorrak direla ezin da ukatu, baina metodo hauen erabilera ez da beti posible: sistema Hamiltondar banagarrietan bakarrik erabil daitezke. Sistema Hamiltondar orokorrak edota lehen ordenako ekuazio diferentzialeko sistemak integratzeko metodo sinplektikoek, inplizituak izan behar dute. Bestalde, Gauss metodoak paralelizagarriak dira, hau da, $s$-ataletako funtzioen konputazioak paraleloan exekuta daitezke. Azkenik, ez dugu ahaztu behar ordena altuko Gauss metodoak existitzen direla  eta hauek beharrezkoak ditugula doitasun handiko integrazioetarako.     
 
 %\paragraph*{}Atal hau bukatzeko, Sanz Sernaren  \cite[1992]{Sanz-Serna1992} hitzak berreskuratuko ditugu. 
 %\begin{displayquote}
@@ -48,27 +48,27 @@ Sinplektikoak diren metodo esplizituak oso eraginkorrak direla ezin da ukatu, ba
 Numerical integration of the equations of motion of celestial bodies over a long interval of time is also not a trivial problem. Analytical and numerical techniques of celestial mechanics have been permanently improved over the history of celestial mechanics. In its turn, it was a stimulatory for many branches of mathematics (the theory of special functions, linear algebra, differential equations, theory of approximation, etc.).
 \end{displayquote}  
 
-\section{Helburua eta esparrua.}
+\section{Helburua eta esparrua}
 
-Gure helburua, eguzki-sistemaren epe luzeko integraziorako Gaussen metodo inplizituaren inplementazio eraginkorra proposatzea edota, bide horretan aurrerapausoak ematea da. Helburu hau lortzeko, honako aspektu hauek bereziki zainduko ditugu: eguzki-sistemaren problemaren ezaugarriak, biribiltze erroreen garapena eta egungo konputagailuen gaitasunari egokitutako algoritmo azkarren diseinua.  
+Gure helburua, eguzki-sistemaren epe luzeko integraziorako Gaussen metodo inplizituaren inplementazio eraginkorra proposatzea edota, bide horretan aurrerapausoak ematea da. Helburu hau lortzeko honako aspektu hauek bereziki zainduko ditugu: eguzki-sistemaren problemaren ezaugarriak, biribiltze erroreen garapena eta egungo konputagailuen gaitasunari egokitutako algoritmo azkarren diseinua.  
 
 N-gorputzeko problema grabitazionalari dagokionez, eguzki-sistemaren eredu sinplea integratuko dugu. Eguzki-sistemaren gorputzak masa puntualak kontsideratuko ditugu eta gure ekuazio diferentzialek, gorputz hauen arteko erakarpen grabitazionalak bakarrik kontutan hartuko dituzte. Beraz, eguzki-sistemaren eredu konplexuagoetako erlatibitate efektua, gorputzen formaren eragina, eta beste zenbait indar ez-grabitazional ez ditugu kontutan hartu.
 
-Zeintzuk dira eguzki-sistemaren problemaren ezaugarri bereziak? Batetik, planeten mugimendu orbitala, perturbazio txikiak dituen mugimendu Kepleriarra da. Mugimendu Kepleriarra  zehazki kalkula daiteke eta eguzki-sistemaren planeten orbiten konputazioaren oinarria da. Bestetik,  badugu gorputz nagusi bat (eguzkia) eta honen inguruan mugimenduan dauden planetak, bi multzotan bana ditzakegu: barne-planetak, masa txikikoak eta eguzkitik gertu daudenak eta kanpo-planetak, masa handikoak eta eguzkitik urrun daudenak. Kanpo-planeten eboluzioan, barne-planetak eragin oso txikia daukate, eragina, masaren eta distantziaren alderantzizkoaren proportzionala baita.  Eguzki-sistema egonkorra kontsideratzen da, hau da, hurrengo bilioi urteetan planeten arteko talkarik ez da espero gertatzea. Orbiten denbora eskalak anitzak dira; Lurraren inguruko Ilargiaren orbitaren periodoa $27.32$ egunetakoa, eguzkiaren inguruko Lurrarena urtebetekoa eta Neptunorena $163$ urtekoa.  Eguzki-sistemaren egitura aberats honi, abantaila gehien ateratzen dion planteamendua bilatuko dugu.
+Zeintzuk dira eguzki-sistemaren problemaren ezaugarri bereziak? Batetik, planeten mugimendu orbitala perturbazio txikiak dituen mugimendu Kepleriarra da. Mugimendu Kepleriarra  zehazki kalkula daiteke eta eguzki-sistemaren planeten orbiten konputazioaren oinarria da. Bestetik,  badugu gorputz nagusi bat (eguzkia) eta honen inguruan mugimenduan dauden planetak; bi multzotan bana ditzakegu: barne-planetak, masa txikikoak eta eguzkitik gertu daudenak eta kanpo-planetak, masa handikoak eta eguzkitik urrun daudenak. Kanpo-planeten eboluzioan, barne-planetek eragin oso txikia daukate, eragina masaren eta distantziaren alderantzizkoaren proportzionala baita.  Eguzki-sistema egonkorra kontsideratzen da, hau da, hurrengo hainbat bilioi urtetan planeten arteko talkarik ez da espero gertatzea. Orbiten denbora eskalak anitzak dira; Lurraren inguruko Ilargiaren orbitaren periodoa $27.32$ egunetakoa, eguzkiaren inguruko Lurrarena urtebetekoa eta Neptunorena $163$ urtekoa.  Eguzki-sistemaren egitura aberats honi, abantaila gehien ateratzen dion planteamendua bilatuko dugu.
   
 Konputagailuen koma-higikorreko aritmetika ondo ulertzea garrantzitsua da. Zenbaki errealen adierazpen finitua erabiltzen denez, bai zenbakiak memorian gordetzerakoan, bai hauen arteko kalkulu aritmetikoak egiterakoan, biribiltze errorea sortzen da. Integrazio luzeetan, biribiltze errorea hedatu egiten da eta une batetik aurrera, soluzioen zuzentasuna ezereztatzen da. Zentzu honetan, doitasuna hobetzeko biribiltze errorea gutxitzen duten teknika bereziak aplikatzea ezinbestekoa izaten da. Integrazio luzeetan, maiz doitasun handian lan egiteko aukera aipatzen da, baina doitasun altuko aritmetikaren ($128$-bit) inplementazioa software bidezkoa denez, oso motela da eta ez da erabilgarria. Exekuzio denbora onargarriak lortzeko tarteko irtenbideak landu behar dira, esate baterako, doitasun ezberdinak nahasten dituzten inplementazioak.       
 
-Gauss metodoen $s$-ataletako funtzioen konputazioak, paraleloan exekuta daitezke. $s$-atal askotako metodoak aplikatu nahi ditugu, era honetan paralelizazio gaitasuna honek, abantaila handiagoa suposatuko baitu.
+Gauss metodoen $s$-ataletako funtzioen konputazioak, paraleloan exekuta daitezke. atal askotako metodoak aplikatu nahi ditugu, era honetan paralelizazio gaitasun honek, abantaila handiagoa suposatuko baitu.
 
 Konputazioko teknologiaren garapenean, algoritmo azkarren diseinua baldintzatzen duten bi ezaugarri azpimarratu behar dira. Batetik, egungo konputagailuak paraleloak dira eta algoritmo azkarrak garatzeko, kodearen paralelizazio gaitasunari heldu behar zaio. Bestetik, konputazioaren alde garestiena, memoria eta prozesadorearen arteko datu mugimendua denez, prozesadorearen konputazio handiena komunikazio txikienarekin lortu behar da.  
 
-Sarrera honetan paralelizazioari buruzko ohar batzuk ematea komeni da. Algoritmo baten kode unitateak paraleloan exekutatzeak badu gainkarga bat eta beraz,  algoritmoaren exekuzioa paralelizazioaz azkartzea lortzeko,  unitate bakoitzaren tamainak esanguratsua izan behar du. Gure eguzki-sistemaren eredua sinplea da eta logikoa da pentsatzea eredu konplexuagoetan, paralelizazioak abantaila handiagoa erakutsiko duela. Bestalde, gorputzen kopurua handia den problemetan, hauen arteko interakzio kopuru  handia ($\mathcal{O}(N^2)$) kalkulatu behar da  eta indar hauen hurbilpena modu eraginkorrean kalkulatzeko metodo ezagunak daude: \textit {tree code}\cite{Barnes1986} eta \textit {fast multipole method}\cite{Carrier1988} izeneko metodoak. Baina aplikatuko dugu eguzki-sistemaren eredu sinplea  gorputz kopurua txikia denez, teknika hauek gure eremutik kanpo utzi ditugu. 
+Sarrera honetan paralelizazioari buruzko ohar batzuk ematea komeni da. Algoritmo baten kode unitateak paraleloan exekutatzeak badu gainkarga bat eta beraz,  algoritmoaren exekuzioa paralelizazioaz azkartzea lortzeko,  unitate bakoitzaren tamainak esanguratsua izan behar du. Gure eguzki-sistemaren eredua sinplea da eta logikoa da pentsatzea eredu konplexuagoetan, paralelizazioak abantaila handiagoa erakutsiko duela. Bestalde, gorputzen kopurua handia den problemetan, hauen arteko interakzio kopuru  handia ($\mathcal{O}(N^2)$) kalkulatu behar da  eta indar hauen hurbilpena modu eraginkorrean kalkulatzeko metodo ezagunak daude: \textit {tree code}\cite{Barnes1986} eta \textit {fast multipole method}\cite{Carrier1988} izeneko metodoak. Baina aplikatuko dugun eguzki-sistemaren eredua sinplea denez, teknika hauek gure eremutik kanpo utzi ditugu. 
 
 
-\section{Ekarpenak.}
+\section{Ekarpenak}
 
 
-Tesiaren lana, hiru urratsetan banatu dugu. Lehen urratsean, puntu-finkoaren iterazioan oinarritutako Gauss metodoaren inplementazio estandarra aztertu dugu. Inplementazio berriak, biribiltze errorearen garapen optimoa izatea lehenetsi dugu eta zentzu honetan, inplementazio estandarraren hobekuntzak proposatu ditugu. Azterketa honen ondorioz, Gauss metodoaren inplementazioen oinarriak finkatu ditugu: IRK metodoen formulazio eta geratze irizpidea berriak.
+Tesiaren lana, hiru urratsetan banatu dugu. Lehengo urratsean, puntu-finkoaren iterazioan oinarritutako Gauss metodoaren inplementazio estandarra aztertu dugu. Inplementazio berriak, biribiltze errorearen garapen optimoa izatea lehenetsi dugu eta zentzu honetan, inplementazio estandarraren hobekuntzak proposatu ditugu. Azterketa honen ondorioz, Gauss metodoaren inplementazioen oinarriak finkatu ditugu: IRK metodoen formulazio eta geratze irizpidea berriak.
 
 Bigarren urratsean, Newtonen iterazioan oinarritutako Gauss metodoaren inplementazioa jorratu dugu. Problema zurruna denean, puntu-finkoaren iterazioa ez da eraginkorra eta Newtonen iterazioa aplikatu behar da. Newtonen iterazioa konputazionalki garestia da eta ekuazio-sistema modu eraginkorrean askatzeko teknika berri bat garatu dugu. Era berean, Newton sinplifikatuaren iterazioaren aldaera bat proposatu dugu. 
 
@@ -81,20 +81,20 @@ Eguzki-sistemaren problemaren integraziorako, aurreko bi inplementazioen artean,
 Jarraian, atal bakoitzean egindako ekarpen nagusienak laburtuko ditugu:
 
 \begin{enumerate}
-\item IRK puntu-finkoaren iterazioa.
+\item IRK puntu-finkoaren iterazioa
 
-Gauss metodoaren puntu-finkoaren inplementazioaren azterketa sakon bat egin dugu eta horretarako, Hairer-en inplementazioa \cite{Hairer2008} hartu dugu gure lanaren abiapuntutzat. Inplementazio hau hobetzeko aukerak ikusi ditugu eta inplementazioa hobetzeko ekarpenak, hauek izan dira:  
+Gauss metodoaren puntu-finkoaren inplementazioaren azterketa sakon bat egin dugu eta horretarako, Hairer-en inplementazioa \cite{Hairer2008} hartu dugu gure lanaren abiapuntutzat. Inplementazio hau hobetzeko aukerak ikusi ditugu eta inplementazioa hobetzeko ekarpenak hauek izan dira:  
 
 \begin{enumerate}
-\item Metodoaren birformulazioa.
+\item Metodoaren birformulazioa
 
 Gauss metodoa aplikatzen dugunean, metodoa definitzen duten biribildutako koefiziente errealak ($\tilde{a}_{ij}, \tilde{b}_i \in \mathbb{F}$) erabiltzen dira. Formulazio estandarra erabiliz, koefiziente hauek ez dute metodoa sinplektikoa izateko baldintza zehazki betetzen eta beraz, izaera sinplektikoaren propietate onak galtzen dira. Metodoaren birformulazio baliokide bat proposatu dugu, horrela sinplektikotasun baldintza zehazki betetzen duten koefizienteak modu errazean finkatu daitezke. Hori dela-eta, Gauss metodoak integral koadratikoak kontserbatuko ditu.
 
-\item Geratze irizpide berria.
+\item Geratze irizpide berria
 
-Orokorrean, Hairer-en inplementazioaren puntu-finkoaren iterazioaren geratze irizpidea zuzena dela ikusi dugu baina kasu batzuetan goizegi geratzen dela baieztatu dugu. Geratze irizpidea bi zentzutan garatu/zorroztu dugu. Hairer-en inplementazioan suposatzen da, iterazio guztietan konbergentzia hobekuntza egon behar dela eta hobekuntzaren tamaina, norma batean oinarritzen da. Normarekiko independentea den geratze irizpidea aplikatzea zuzenagoa da, eta horregatik, ataletako edozein osagaiaren diferentzia txikitzen den bitartean iterazioak egiten jarraitzea finkatu dugu. Bigarrenik, iterazioetan osagai guztien hobekuntza ez du zertan beherakorra izan, eta okertzen diren tarteko iterazioak gerta daitezke. Arazo hau gainditzeko, iterazioren batean osagai guztien diferentzia handitzea gertatzen denean, seguritateko iterazio gehigarriak emango ditugu, iteraziotik irten aurretik.   
+Orokorrean, Hairer-en inplementazioaren puntu-finkoaren iterazioaren geratze irizpidea zuzena dela ikusi dugu baina kasu batzuetan goizegi geratzen dela baieztatu dugu. Geratze irizpidea bi zentzutan garatu/zorroztu dugu. Hairer-en inplementazioan suposatzen da iterazio guztietan konbergentzia hobekuntza egon behar dela eta hobekuntzaren tamaina norma batean oinarritzen da. Normarekiko independentea den geratze irizpidea aplikatzea zuzenagoa da, eta horregatik, ataletako edozein osagaiaren diferentzia txikitzen den bitartean iterazioak egiten jarraitzea finkatu dugu. Bigarrenik, iterazioetan osagai guztien hobekuntza ez du zertan beherakorra izan, eta okertzen diren tarteko iterazioak gerta daitezke. Arazo hau gainditzeko, iterazioren batean osagai guztien diferentzia handitzea gertatzen denean, seguritateko iterazio gehigarriak emango ditugu, iteraziotik irten aurretik.   
 
-\item Atalen espresioaren aldaketa.
+\item Atalen espresioaren aldaketa
 
 Integrazioan batura konpentsatu estandarra aplikatzen dugunean, $\tilde{y}_n, e_n \in \mathbb{F}^d$ zenbakizko soluzioa  lortzen dugu non $\tilde{y}_n+e_n \approx y(t_n)$ den. Hori dela-eta, IRK metodoaren atalak askatzeko ekuazio-sisteman,
 \begin{equation*}
@@ -102,7 +102,7 @@ Y_{n,i}=\tilde{y}_n + \left(e_n+ h \ \sum_{j=1}^{s} a_{ij} f(Y_{n,j}) \right),
 \end{equation*}
 $\tilde{y}_n$-ren ordez, $\tilde{y}_n+e_n$ erabiltzea proposatu dugu. Aldaketa honekin, zenbakizko soluzioaren doitasuna zerbait hobetuko dela espero da.
  
-\item Biribiltze errorearen estimazioa.
+\item Biribiltze errorearen estimazioa
 
 $\tilde{y}_n+e_n \approx y(t_n), \ n=1,2,\dots$ zenbakizko soluzioaren  biribiltze errorearen estimazioa, doitasun txikiagoko $\hat{y}_n+\hat{e}_n \approx y(t_n), \ n=1,2,\dots$ bigarren zenbakizko soluzioarekiko  diferentzia gisa kalkulatuko dugu.
 Erabiltzaileari zenbakizko soluzioaren estimazioa ezagutzeko, exekuzio bakarrean  eta \emph{CPU} gainkarga txikiarekin, bi integrazioak sekuentzialki kalkulatzeko aukera eskainiko zaio. 
@@ -110,10 +110,10 @@ Erabiltzaileari zenbakizko soluzioaren estimazioa ezagutzeko, exekuzio bakarrean
 \end{enumerate}
 
 
-\item IRK Newtonen iterazioa.
+\item IRK Newtonen iterazioa
 
 \begin{enumerate}
-\item Ekarpen nagusia.
+\item Ekarpen nagusia
 
 $S$-ataletako IRK metodoa,  Newton sinplifikatuaren iterazioaren bidez $d$-dimentsioko ekuazio diferentzial  sistemari aplikatzeko, urrats bakoitzean $sd \times sd$ tamainako era honetako ekuazio-sistemak (iterazio bakoitzeko bat) askatu behar dira,
 \begin{equation*}
@@ -126,7 +126,7 @@ Kapitulu honetan, jatorrizko $sd$-dimentsioko ekuazio sistema, $(s+1)d$ dimentsi
 
 %Doitasun laukoitzeko exekuzioetan, funtzio balioztapena oso garestia da eta funtzio balioztapenen kopurua gutxitzea bilatuko dugu. Newton osoa aplikatzen dugunean mereziko du, Gaussen Newton iterazioko inplementazioaren ekuazio lineala askatzeko metodo iteratiboa aplikatzea. 
 
-\item Newtonen iterazio mistoa.
+\item Newtonen iterazio mistoa
 
 Newton sinplifikatuaren iterazioaren aldaera bat proposatu dugu. Inplementazio honekin, energia errorearen eboluzioan ez da drift-arik agertzen. 
 
@@ -135,19 +135,19 @@ Newton sinplifikatuaren iterazioaren aldaera bat proposatu dugu. Inplementazio h
 \end{enumerate}
   
 
-\item IRK eguzki-sistema.
+\item IRK eguzki-sistema
 
 \begin{enumerate}
-\item Aldagai aldaketa.
+\item Aldagai aldaketa
 
-Puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta eguzki-sistemaren ekuazio diferentzialei, Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatuko dugu: era honetan, alde Kepleriarra ekuazioetatik desagerrarazten dugu.
-Aldagai aldaketaren bidez aplikatzen dugun integrazio metodoa, sinplektikoa eta simetrikoa da: neurri batean, splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, abantaila hauek ekarriko ditu: integrazioetan urratsa handiak erabiltzea eta puntu-finkoaren iterazioek konbergentzia azkarra izatea.
+Puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatuko diegu: era honetan, alde Kepleriarra ekuazioetatik desagerrarazten dugu.
+Aldagai aldaketaren bidez aplikatzen dugun integrazio metodoa, sinplektikoa eta simetrikoa da: neurri batean, splitting metodoen baliokidea. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, abantaila hauek ekarriko ditu: integrazioetan urrats handiagoak erabiltzeko aukera eta puntu-finkoaren iterazioek konbergentzia azkarra izatea.
 
-\item Doitasun nahasia.
+\item Doitasun nahasia
 
-Doitasun nahasia erabiliko dugu: konputazioaren zati batzuk doitasun altuagoan kalkulatuz, soluzioaren doitasuna hobetzea lortuko dugu.    
+Doitasun nahasia erabiliko dugu: konputazioaren zati batzuk doitasun altuagoan kalkulatuz soluzioaren doitasuna hobetzea lortuko dugu.    
 
-\item Kepler-en fluxua.
+\item Kepler-en fluxua
 
 Aldagai aldaketa, Kepler-en fluxuan oinarritzen da eta beraz, Kepler-en fluxuaren inplementazio eraginkorra garatu dugu. Danby \cite{Danby1992} eta J.Wisdom-en \cite{Wisdom2015} inplementazioen ezaugarrietan oinarritutako garapenean, hobekuntza bat egin dugu.  
 \end{enumerate}
@@ -162,15 +162,15 @@ Aldagai aldaketa, Kepler-en fluxuan oinarritzen da eta beraz, Kepler-en fluxuare
 \end{enumerate}        
 
 
-\section{Tesiaren egitura.}
+\section{Tesiaren egitura}
 
-Tesiaren lehenengo $(2-4)$ kapituluetan, zenbakizko integrazio sinplektikoak eta koma higikorreko aritmetikaren oinarriak azaldu ditugu. Bigarren kapituluaren lehen zatian, \emph{zenbakizko integratzaile sinplektikoen} inguruko oinarrizko kontzeptuak azaldu ditugu. Kapitulu honen bigarren zatian, Gauss metodo estandarra deskribatu eta bere propietate nagusienak eman ditugu. Kapitulu honen azken zatian, eguzki-sistemaren integraziorako metodo sinplektiko eta esplizitu nagusienak laburtu ditugu. Hirugarren kapituluan, lan honetan zenbakizko esperimentuetan erabili ditugun hasierako baliodun problemen zehaztasunak eman ditugu. Laugarren kapituluan, koma-higikorreko aritmetikan murgildu gara eta biribiltze errorearen inguruko gaiak argitu nahi izan ditugu.
+Tesiaren lehenengo  kapituluetan, zenbakizko integrazio sinplektikoak eta koma higikorreko aritmetikaren oinarriak azaldu ditugu. Bigarren kapituluaren lehen zatian, \emph{zenbakizko integratzaile sinplektikoen} inguruko oinarrizko kontzeptuak azaldu ditugu. Kapitulu honen bigarren zatian, Gauss metodo estandarra deskribatu eta bere propietate nagusienak eman ditugu. Kapitulu honen azken zatian, eguzki-sistemaren integraziorako metodo sinplektiko eta esplizitu nagusienak laburtu ditugu. Hirugarren kapituluan, lan honetan zenbakizko esperimentuetan erabili ditugun hasierako baliodun problemen zehaztasunak eman ditugu. Laugarren kapituluan, koma-higikorreko aritmetikan murgildu gara eta biribiltze errorearen inguruko gaiak argitu nahi izan ditugu.
 
-Tesiaren $(6-8)$ kapituluetan, gure inplementazio berriak garatu ditugu eta zenbakizko esperimentuen bidez, hauen eraginkortasuna erakutsi dugu. Lehenik, $6$.~kapituluan, puntu-finkoaren iterazioaren oinarritutako Gauss metodoaren inplementazioa aztertu dugu. Ondoren, $7$.~kapituluan, Newtonen iterazioan oinarritutako Gauss metodoa jorratu dugu. $8$.~kapituluan, epe luzeko eguzki-sistemaren integraziorako, inplementazio berri bat proposatu dugu.  
+Tesiaren $(5-7)$ kapituluetan, gure inplementazio berriak garatu ditugu eta zenbakizko esperimentuen bidez hauen eraginkortasuna erakutsi dugu. Lehenik, $6$.~kapituluan, puntu-finkoaren iterazioaren oinarritutako Gauss metodoaren inplementazioa aztertu dugu. Ondoren, $7$.~kapituluan, Newtonen iterazioan oinarritutako Gauss metodoa jorratu dugu. $8$.~kapituluan, epe luzeko eguzki-sistemaren integraziorako, inplementazio berri bat proposatu dugu.  
 
-Tesiaren $(9-10)$ kapituluetan, eztabaida eta tesiaren ondorioak idatzi ditugu. Eztabaidaren kapituluan, ikerketaren kontzeptu nagusienak aztertu ditugu. Ondorioen kapituluan, gure helburuak zein neurritan bete ditugun eta etorkizunerako lanen laburpena egin dugu. 
+Tesiaren $(8-9)$ kapituluetan, eztabaida eta tesiaren ondorioak idatzi ditugu. Eztabaidaren kapituluan, ikerketaren kontzeptu nagusienak aztertu ditugu. Ondorioen kapituluan, gure helburuak zein neurritan bete ditugun eta etorkizunerako lanen laburpena egin dugu. 
 
-Tesiaren bukaerako hiru eranskinetan, lanaren informazio osagarria bildu dugu. A.~eranskinean, egungo konputazio zientziaren hardware eta software kontzeptu nagusienak ezagutarazi nahi izan ditugu. B.~eranskinean, tesian zehar erabilitako hainbat garapen matematikoen zehaztapenak eman ditugu. C.~eranskinean, inplementazioen kodeak azaldu eta erabiltzaileari erabilgarri izan dakiokeen informazioa laburtu dugu. Azkenik D.~eranskinean, erabilitako notazioaren inguruko argibideak eman ditugu.
+Tesiaren bukaerako hiru eranskinetan, lanaren informazio osagarria bildu dugu. A.~eranskinean, egungo konputazio zientziaren hardware eta software kontzeptu nagusienak ezagutarazi nahi izan ditugu. B.~eranskinean, tesian zehar erabilitako hainbat garapen matematikoren zehaztapenak eman ditugu. C.~eranskinean, inplementazioen kodeak azaldu eta erabiltzaileari erabilgarri izan dakiokeen informazioa laburtu dugu. Azkenik D.~eranskinean, erabilitako notazioaren inguruko argibideak eman ditugu.
 
       
       
