@@ -1,420 +1,280 @@
-\chapter{IRK: Eguzki-sistema.}
+\chapter{IRK metodo sinplektikoen bidezko eguzki-sistemaren  integrazioa}
 
 
 \section{Sarrera.}
-  
 
-Kapitulu honetan, eguzki-sistemaren ekuazio diferentzialei Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzea proposatuko dugu. \ref{chap:IRK-PF}~kapituluan puntu-finkoaren iterazioan oinarrituz eta \ref{chap:IRK-NEW}~kapituluan Newton sinplifikatuaren iterazioan oinarrituz, IRK inplementazioak garatu ditugu; eguzki-sistemaren problemaren integraziorako, bi inplementazioen artean, puntu-finkoarena nabarmen eraginkorragoa dela baieztatu dugu eta Newton sinplifikatuarena, erabat baztertu dugu. Ondorioz, puntu-finkoaren iterazioan oinarritutako IRK inplementazioa erabiliko dugu eta  ekuazio diferentzialetako aldagaiei eragingo diegun aldagai aldaketaren bidez, integrazio eraginkorra lortzea espero dugu.  
+Kapitulu honen jatorrizko helburua, aurreko  bi kapituluetan landutako IRK metodo sinplektikoen inplementazioak (\ref{chap:IRK-PF}~kapituluan puntu-finkoaren iterazioan oinarritutakoa eta \ref{chap:IRK-NEW}~kapituluan Newton sinplifikatuaren iterazioan oinarritutakoa) eguzki sistemaren zenbakizko integraziorako aplikatzea da.  Zenbait proba egin ondoren, ondorioztatu dugu Newton-en iterazio sinplifikatuan oinarritutako inplementazioa baino eraginkorragoa dela kasu  honetan puntu finko partizionatuan oinarritutako inplementazioa. Bestalde, eguzki-sistemaren simulaziorako ekuazio diferentzialen sistemak ekuazio Kepleriarren perturbazio gisa har daitezkeenez, honetaz baliatzen saiatzea erabaki dugu IRK metodo sinplektikoen bidezko zenbakizko integrazio eraginkorrak lortze aldera.
 
-Aplikatzen dugun integrazio metodoa sinplektikoa eta simetrikoa da: neurri batean, splitting metodoen antzekoa. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hiru abantaila eragingo ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, batura konpensatuaren konputazioan, informazio gutxiago galduko dugu. Hirugarrenik, puntu-finkoaren iterazioek konbergentzia azkarra izango dute. 
+Helburu horrekin,  kapitulu honetan ekuazio diferentzial Kepleriarren perturbazio gisa har daitezkeen ekuazio diferentzialen sistemen zenbakizko integraziorako metodo berri bat proposatuko dugu. Gure metodo berria ondorengo ideian  oinarritzen da: fluxu Kepleriarrean oinarritutako aldagai aldaketa bat aplikatuz, aldagai berrietan idatzitako ekuazio diferentzialetatik alde Kepleriarra desagerrarazi, eta dagokien ekuazio sistemari IRK metodo sinplektiko bat aplikatzea.
 
-Lehenengo, Kepler-en fluxuaren inplementazioa azalduko dugu. Bigarrenik, aldagai aldaketa definitu eta metodoa integratzeko zehaztapenak emango ditugu. Hirugarrenik, eguzki-sistemaren problemaren zenbakizko integrazioak egingo ditugu: inplementazio honen eta doitasun altuko beste metodo sinplektikoen (konposizio eta splitting metodoak) eraginkortasunak, alderatuko ditugu.     
 
- 
 
-\section{Kepler-en fluxua.}
-   
-   
-Kepler problema bi gorputzen problemaren kasu partikularra da eta  honako Hamiltondarra dagokio,
+Proposatuko dugun metodoa, Runge-Kutta inplizitu konposatua (RKIK),  sinplektikoa eta denborarekiko simetrikoa da, neurri batean, splitting metodoen antzekoa. Aldagai berriekiko ekuazio diferentzialak, magnitude txikiko balioak hartzen dituzte eta honek, hainbat abantaila izango ditu. Lehenik, eguzki-sistemaren problemaren trunkatze errore nagusiena ezabatzen dugunez, urrats luzera handiagoak erabili ahal izango ditugu. Bigarrenik, aldagai berriekiko ekuazio diferentzialen zenbakizko ebazpenean, biribiltze erroreen eragina txikiagoa izango da (batura konpentsatuaren algoritmoan bit gutxiago galduko ditugu). Hirugarrenik, puntu-finkoaren iterazioek konbergentzia azkarragoa izango dute (aldagai berrietako ekuazioen espresioen deribatu partzialak tamaina txikikoak direlako).
+
+
+ Lehenengo, problema perturbatuetarako oinarrizko metodoa azalduko dugu,  perturbatu gabeko zatiaren fluxuaren bidezko aldagai aldaketan oinarritutako   integrazio metodoaren zehaztapenak emango ditugularik.
+Ondoren, aipatutako integrazio eskema orokorra  hainbat ekuazio Kepleriarren perturbazio gisa har daitezkeen sistemetarako aplikatzeko zenbait xehetasun emango ditugu.  Azkenik,  metodo berri hau eguzki-sistemaren eredu sinplifikatu baterako aplikatuko dugu, eta ezagutzen diren hainbat metodo esplizitu sinplektikorekin (doitasun altutarako splitting eta konposizio metodoekin) konparatuko dugu.
+Aipatutako eguzki-sistemaren eredu sinplifikatua, eguzkia, zortzi planetak, eta Pluton hartzen dituen 10 gorputzeko eredu Newtoniarra da, koordenatu Heliozentriko kanonikotan adierazia  (ikus ~\ref{erans:B2}~eranskina).
+
+
+\section{Sistema perturbatuetarako integrazio metodo simetriko mota orokor bat: Runge-Kutta inplizitu konposatua (RKIK)}
+ \label{s:RKIK}
+
+
+ Demagun honako ekuazio diferentzialen sistema dugula,
+\begin{align}
+\begin{split}
+\label{eq:pertEDA}
+&\frac{du}{dt} = k(u) + g(u,t), \quad  u(t_0) = u_0 \in \mathbb{R}^D
+\end{split}
+\end{align}
+non $g(u,t)$ perturbazio gisa hartzen dugun. Demagun gainera pertubatu gabeko zatia,
+\begin{equation}
+\label{eq:unpert}
+\frac{du}{dt} u = k(u),
+\end{equation}
+%
+edozein hasierako baliotarako zehazki ebazteko gai garela, alegia, bere $t$-fluxua $\varphi_{t}: \mathbb{R}^{D} \to \mathbb{R}^{D}$
+ zehazki ebazteko gai garela. Gogora dezagun fluxuaren definizioz,
+ \begin{equation}
+ \label{eq:fluxudef}
+\frac{\partial}{\partial t} \varphi_{t}(u) \equiv k(\varphi_{t}(u))
+\end{equation}
+%
+identitatea daukagula.
+
+Esate baterako,   (\ref{eq:unpert}) sistema Kepleriarra izan liteke, hau da,
 \begin{equation}
 \label{eq: hamkepler}
 H(q,p)=\frac{p^2}{2m}-\frac{\mu}{\|q\|},
 \end{equation}
-non $m$ eta $\mu$ konstanteen balioak  formulazioaren araberakoak diren.
+funtzio Hamiltondarrari dagokion EDA sistema, non $u=(q,p) \in \mathbb{R}^{6}$, eta
+$m$ eta $\mu$ parametro konstanteak diren. (Ikus xehetasun gehiagorako  \ref{erans:B1}~eranskina.)
+Eguzki-sistemaren simulaziorako aplikatzerakoan, perturbatu gabeko (\ref{eq:unpert}) sistema hainbat ekuazio Kepleriar independentez osatuta egongo da, eta $g(u,t)$ perturbazioan, ekuazio Kepleriar horien arteko interakzioa biltzen dituen gaiak izango ditugu. (Xehetasun gehiagorekin azalduko dugu kasu hau \ref{s:Keplerrak}~atalean).
 
-Koordenatu sistema $q=q_2-q_1$ duen formulazioa aukeratzen badugu, konstanteen balioak hauek dira,  
+
+ Runge-Kutta inplizitu konposatuaren $h$ luzerako urrats bat definitzeko,  $u_0$ hasierako balioa ezaguturik (\ref{eq:pertEDA}) problemaren $u(t)$ soluzioaren $t=t_0+h$ uneko balioa hurbiltzeko prozedura zehaztu behar dugu. Horretarako,  (\ref{eq:pertEDA})  sistemari aldagai aldaketa bat aplikatuko diogu, eta aldagai berrietan idatzitako problema ebatziko dugu IRK metodo sinplektiko baten bidez. Aplikatuko dugun aldagai aldaketa honakoa da
 \begin{equation*}
-m=(1/m_1+1/m_2)^{-1},\ \ \mu=Gm_1m_2,
-\end{equation*} 
+u = \varphi_{t-t_0-h/2}(U) \quad \to \quad U = \varphi_{-t+t_0+h/2}(u).
+\end{equation*}
 %
-eta ekuazio diferentzialak era honetan definitzen dira,
-\begin{equation}
-\label{eq:kode}
-\dot{q}=p, \ \ \dot{p}= - \frac{k \ q}{\|q\|^3} ,
-\end{equation}
-non $k= \mu / m$ eta  $q,p \in \mathbb{R}^3$ diren.
-
-Kepler problemaren soluzio zehatza kalkula daiteke: une bateko kokapen eta abiadurak emanik, $\Delta t$ denbora tarte bat igarotakoan (positiboa ala negatiboa), kokapen eta abiadura zehatzak konputatu daitezke. Eguzki-sistemaren integrazioetarako, Kepler problema doitasun handian eta era eraginkorrean kalkulatzea, funtsezkoa da. Kepler problemaren erreferentziazko inplementazioak, Danby \cite{Danby1992} eta J.Wisdom-enak  \cite{Wisdom2015} ditugu. 
-
-Kepler-en fluxua, era honetan kalkulatzen da. Lehenik, koordenatu cartesiarretatik ($q,p\in \mathbb{R}^3$), koordenatu eliptikoetara $(a,e,i,\Omega,E)$ itzulpena egingo dugu. Koordenatu eliptikoetan, $E$ (\emph{eccentric anomaly}) aldagaia izan ezik, beste aldagaiak konstante mantentzen dira: beraz, $E_0$ balioa emanda, $\Delta t$ denbora tartea aurrera egin eta $E_1$ balio berria kalkulatuko dugu. Azkenik, koordenatu eliptikoetatik koordenatu cartesiarretara itzulpena eginez, kokapen eta abiadura berriak eskuratuko ditugu. 
-
+Aldagai berrietan idatzitako ekuazio diferentzialen sistema lortzeko, honakoa egingo dugu,
+\begin{align}
+\begin{split}
+&\frac{d}{dt}u(t) = \frac{d}{dt}\left(\varphi_{t-\tau}(U(t))\right),
+\end{split}
+\end{align}
+%
+non $\tau = t_0+h/2$ den.
+Eskuin aldeari katearen erregela aplikatuz, eta ezker alderako (\ref{eq:pertEDA}) eta aldagai aldaketa kontutan hartuz, eta $U(t)$ idatzi ordez $U$ jarriz,
+\begin{align}
+\begin{split}
+&k\left(\varphi_{t-\tau}(U)\right) + g\left(\varphi_{t-\tau}(U),t \right) = \frac{\partial}{\partial t} \varphi_{t-\tau}(U) + \varphi'_{t-\tau}(U) \frac{d}{dt}U,
+\end{split}
+\end{align}
+non $\varphi'_{t-\tau}(U)$ espresioak fluxuaren $U$ aldagaiekiko matrize Jacobiarra adierazten duen. Ondoren, (\ref{eq:fluxudef}) identitatea aplikatuz, honakoa lortzen dugu
+\begin{align}
+\begin{split}
+&g\left(\varphi_{t-\tau}(U),t \right) =   \varphi'_{t-\tau}(U) \frac{d}{dt}U,
+\end{split}
+\end{align}
+%
+eta beraz, jatorrizko (\ref{eq:pertEDA}) ekuazio diferentzialen problema $U$ aldagai berritan idaztea lortu dugu, hau da,
+\begin{align}
+\begin{split}
+\label{eq:pertEDAU}
+&\frac{d}{dt} U = \left(\varphi'_{t-\tau}(U)\right)^{-1} g\left(\varphi_{t-\tau}(U),t \right), \quad U(t_0) = U_0,
+\end{split}
+\end{align}
+%
+non
 \begin{equation*}
-(q_0,v_0) \in \mathbb{R}^6 \ \ \ \longrightarrow \ \ \  (a,e,i,\Omega,E_0) \in \mathbb{R}^6 
+U_0 = \varphi_{h/2}(u_0)
 \end{equation*}
+%
+den.  Hortaz, (\ref{eq:pertEDAU}) problemarako $t=t_0$ unetik $t=t_1:=t_0 + h$ unera IRK metodoarekin integratuz, $U_1 \approx U(t_1)$ lortuko dugu, eta
+aldagai aldaketari buelta emanez $u(t_1) = \varphi_{h/2}(U(t_1))$ lortzen dugunez, $u_1 \approx u(t_1)$ kalkulatzeko,
 \begin{equation*}
-\quad \quad \quad \quad \quad \quad \quad \quad \downarrow \Delta t
+u_1 = \varphi_{h/2}(U_1)
 \end{equation*}
-\begin{equation*}
-(q_1,v_1) \in \mathbb{R}^6 \ \ \ \longleftarrow \ \ \  (a,e,i,\Omega,E_1) \in \mathbb{R}^6 
-\end{equation*}
+%
+egingo dugu.
 
-Gorputz baten orbita Kepleriarra hiru motakoa izan daiteke: $H(q_0,p_0)<0$ denean orbita eliptikoa da, $H(q_0,p_0)>0$ orbita hiperbolikoa eta $H(q_0,p_0)=0$ orbita  parabolikoa. Kepler fluxuaren C inplementazioa, orbita eliptikoetarako garatu dugu eta zehaztasunak, \ref{erans:B1} eranskinean eman ditugu. (\ref{eq:kode}) problemari dagokion fluxua, era honetan defini daiteke,
+Orain arte, RKIK metodoaren lehen urratsa nola eman deskribatu dugu, baina $t=t_0$ uneko $u(t_0)$ egoeratik $t=t_1$ uneko $u(t_1)$ egoeraren $u_1$ hurbilpena lortzeko prozedura berbera erabil dezakegu, $j=1,2,3,\ldots$ indizetarako, $t=t_{j}$ uneko $u(t_j)$ egoeraren $u_j$ hurbilpenetik $t=t_{j+1}:= t_{j}+h$ uneko $u(t_{j+1})$ egoeraren $u_{j+1}$ hurbilpena lortzeko. Kontutan hartu behar da urrats bakoitzean aplikatu beharreko aldagai aldaketa  desberdina dela, alegia, $(j+1)$. urratsean, $U$ aldagai berriak jatorrizko $u$ aldagaiekin $u = \varphi_{t-\tau_j}(U)$ moduan erlazionaturik izango ditugula, non $\tau_j = t_j + \frac{h}{2}$ den. Urrats bakoitzean aplikatutako aldagai aldaketa bereizteko, $(j+1)$. urratseko aldagai berria $U^{j+1/2}$ gisa adieraziko dugu.
+
+ Horrela, $(j+1)$. urratsean, $u_j \approx u(t_j)$ emanik, lehenik dagokion aldagai berriaren balioa kalkulatuko dugu,
+\begin{equation*}
+U^{j+1/2}_j = \varphi_{h/2}(u_j)
+\end{equation*}
+%
+ondoren, aukeratu dugun IRK metodoaren $h$ luzerako urrats bat aplikatuko dugu ondorengo problemarako,
+\begin{align}
+\begin{split}
+\label{eq:pertEDAUj}
+&\frac{d}{dt} U^{j+1/2} = \left(\varphi'_{t-\tau_j}(U^{j+1/2})\right)^{-1} g\left(\varphi_{t-\tau_j}(U^{j+1/2}),t \right), \quad U^{j+1/2}(t_j) = U^{j+1/2}_j,
+\end{split}
+\end{align}
+%
+$U^{j+1/2}_{j+1} \approx U^{j+1/2}(t_{j+1})$ hurbilpena lortuz, eta azkenik, RKIK metodoaren urratsa bukatzeko,
+%
+\begin{equation*}
+u_{j+1} = \varphi_{h/2}(U^{j+1/2}_{j+1})
+\end{equation*}
+%
+kalkulatuko dugu.  Laburbilduz:
+%
 \begin{align*}
-\varphi_{\Delta t}^k:&  \quad \mathbb{R}^{6} \quad  \longrightarrow \quad \mathbb{R}^6,  \\
-&  \quad u_0 \ \  \rightsquigarrow \ \ u_1. 
-\end{align*} 
-non $u=(q,v) \in \mathbb{R}^6$  den.
-
-\section{Kepler Perturbatuaren problema.}
-
-Kepler problemaren Hamiltondarra perturbatzen badugu, ezingo dugu aurreko atalean erabili dugun fluxua erabili problema ebazteko. Kasu honetan Hamiltondarra  bi zatitan banatuta egongo da;
-\begin{align}
-\begin{split}
-\label{eq: hamkeplerpert}
-&H(q,p,t)=H_K(q,p)+H_I(q,p,t)
-\end{split}
-\end{align} 
-non $H_K$ mugimendu Kepleriarrari dagokion Hamiltondarraren aldea den, hau da, (\ref{eq: hamkepler}) ekuazioko eskuin aldea, eta $H_I$ perturbazioei dagokien Hamiltondarraren aldea den.
-
-Problema berri honetan aldagai aldaketa bat egingo dugu, aldaketaren helburua da Keplerren fluxua erabili ahal izatea problemaren ebazpenean. 
-
-\subsection*{Aldagai aldaketa.}
-
-%Kontutan hartuko ditugun sistemak Hamiltondarrak dira, $H: \mathbb{R} \times \mathbb{R}^{2d} \longrightarrow \mathbb{R}$, gainera, Hamiltondarra bi zatitan bana dakieken sistemak hartuko ditugu kontuan:
-
-(\ref{eq: hamkeplerpert}) problemari dagozkion ekuazioetan, Keplerren fluxuan oinarritutako aldagai aldaketa bat egingo dugu, baina horretarako notazioa finkatuko dugu: jatorrizko aldagaiak $u=(q,p) \in \mathbb{R}^{2d}$ izango dira eta aldagai berriak $U=(Q,P) \in \mathbb{R}^{2d}$ letra larriz adieraziko ditugu. Jatorrizko aldagaien bidez adierazitako problema, alegia, ebatzi beharreko hasierako baliodun problema, honakoa da:
-
-\begin{align}
-\begin{split}
-\label{eq: HamEDA}
-&\frac{du}{dt} = k(u) + g(u,t),\ \ \ u(0) = u_0
-\end{split}
-\end{align} 
-non $k(u)$ (\ref{eq:kode}) ekuazioan adierazitako alde Kepleriarrari dagokion  eta $g(u,t)$ perturbazioari. 
-Problema horretan honako aldagai aldaketa egingo dugu, kontuan izan urrats bakoitzean egingo dugula aldagai aldaketa, hau da $j=0, 1, 2 \ldots$ indizeak $j$. urratsean aplikatu beharreko aldaketa adierazten du:
-
-\begin{align}\begin{split}
-\label{eq: uUaldaketa}
-&u(t) = \varphi_{t-(j+\frac{1}{2})h}^k\left(U_j^{j+\frac{1}{2}}(t)\right)
-\end{split}
-\end{align} 
-$\varphi_{\Delta t}^k$ fluxua $\Delta t>0$ eta $\Delta t <0$ balioentzat definitzen da, eta  $u= \varphi_{-t}(\varphi_{t}(u))$ betetzen dela kontutan hartuz honako alderantzizko aldaketa ere egin dezakegu:
-\begin{align}
-\begin{split}
-\label{eq: Uualdaketa}
-U^{j+\frac{1}{2}}(t) = \varphi^k_{-t+(j+\frac{1}{2})h} \left( u(t) \right)
-\end{split}
-\end{align} 
-
-Aldaketa hauekin asmoa da $i+1$ urratsa emateko $u_i \approx u(hi)$ zenbakizko soluzioan oinarrituz, aldagai aldaketaren bidez $U_i^{i+\frac{1}{2}}=\varphi^k_{\frac{h}{2}}(u_i)$ lortu, hau da, fluxuan $\frac{h}{2}$ aurrera egin aldagai berriak lortzeko, aldagai berri hauetan ebatzi jatorrizko problemaren urrats bati dagokion zenbakizko soluzioa (ikusiko dugun bezala, aldagai berrietan alde Kepleriarrari dagokion espresioak ez du eraginik eta, azken finean perturbazioari dagokion aldaketa da hemen kalkulatuko dena) eta azkenik, aldagai berri hauen balio berriak jatorrizko aldagaietara itzuli behar dira, baina $i+1$ urratsari dagozkion unera pasa behar dira aldagaiak, hau da, fluxuan aurrera $\frac{h}{2}$ egin behar da. Atzera egingo bagenu urratsaren hasierako balioei perturbazioak zein aldaketa eragiten dien kalkulatuko baikenuke, baina guk urratsaren bukaerako balioak nahi ditugu. Laburbilduz:
-
-
-\begin{align*}
-   &   \quad U_0^{\frac{1}{2}} \quad \quad \quad \quad \Longrightarrow  & U_1^{\frac{1}{2}}&  &\\
-  & \nearrow \varphi_{\frac{h}{2}}(u_0) &            & \searrow \varphi_{\frac{h}{2}}(U_1)& \\
-u_0 &                  &    &\quad \quad \quad  u_1
+   &   \quad U^{j+1/2}_j \quad \quad \quad \quad \stackrel{\Longrightarrow}{IRK(\ref{eq:pertEDAUj})}  & U^{j+1/2}_{j+1}&  &\\
+  & \nearrow \varphi_{\frac{h}{2}}(u_j) &            & \searrow \varphi_{\frac{h}{2}}(U^{j+1/2}_{j+1})& \\
+u_j &                  &    &\quad \quad \quad  u_{j+1}
 \end{align*}
+%
+Urrats bakoitzerako aldagai aldaketa definitzeko erabiltzen dugun erreferentziazko $\tau_j=t_j+h/2$ unea $t_j$ eta $t_{j+1}$ balioen erdigunea aukeratu dugu. Hori horrela egiteak badu arrazoi bat: urratsa bere osotasunean denborarekiko simetrikoa da, aplikatutako IRK metodoa ere denborarekiko simetrikoa da: Kasu horretan, ikus daiteke aurrera $h$ luzerako urratsa ematea $-h$ luzerako urratsa ematearekin desegiten dela.
 
-Aldagai aldaketak fluxuan aurrera egiten du urratsaren luzeraren erdia. Hori horrela egiteak badu arrazoi bat: urratsa bere osotasunean simetrikoa da. Aurrera $h$ luzerako urratsa ematea $-h$ luzerako urratsa ematearekin desegiten baita. 
 
-%\begin{figure}[h!]
-%\centering
-%\subfloat[Aldagai aldaketa.]{
-%\includegraphics[width=.400\textwidth]{Aldagaialdaketa1}
-%}
-%\subfloat[Aldagai berrien integrazioa.]{
-%\includegraphics[width=.400\textwidth]{Aldagaialdaketa2}
-%}
-%\caption[Atalen hasieraketa.]
-%        {\small (a)irudian, aldagai aldaketa irudikatu dugu eta (b) irudian, perturbatutako gorputza baten orbitaren integrazioak erakutsi ditugu. Bi irudietan, $(Q,P)$ balioen aldaketa txikiak gorriz nabarmendu ditugu          
-%        }
-%\label{fig:Aldg}
-%\end{figure}   
 
-\subsection*{Aldagai berrietan ekuazio diferentzialak.}
 
-(\ref{eq: uUaldaketa}) aldagai aldaketa abiapuntutzat hartuz, aldagai berriei dagozkien ekuazio diferentzialak lortu behar ditugu. Horrela, problemaren integrazioa aldagai berrien arabera egin ahal izango dugu. Irakur erraztasunagatik (\ref{eq: uUaldaketa}) ekuazioko $\varphi(U)$ indizerik gabe idatziko dugu, eta $\dot{U}$ri dagozkion ekuazioak lortze aldera bi aldeak $t$ aldagaiarekiko deribatuko ditugu:  
-\begin{align}
-\begin{split}
-&\frac{d}{dt}u = \frac{d}{dt}\left(\varphi(U)\right),
-\end{split}
-\end{align}
-Eskuin aldeari katearen erregla aplikatuz, 
-\begin{align}
-\begin{split}
-&\dot{u} = \dot{\varphi}(U) + \varphi'(U) \frac{d}{dt}U.
-\end{split}
-\end{align}
-$\varphi$ Kepler problemaren fluxua da, hau da, $\dot{u} = k(u)$ problemaren fluxua da, eta fluxuaren definizioz $\dot{\varphi}(U) = k(\varphi(U))$ da. Aldaketa horrekin,  eta (\ref{eq: HamEDA}) ekuazioarekin berdinduz,
-\begin{align}
-\begin{split}
-&k(u) + g(u,t) = k(u) + \varphi'(U) \dot{U}.
-\end{split}
-\end{align}
-Bi aldeetan $k(u)$  kenduz, $U$ aldagaiekiko ebatzi beharreko ekuazio diferentziala lortuko dugu:
-\begin{align}
-\begin{split}
-\label{eq:hamEDAU}
-&\dot{U} = \left(\varphi'(U)\right)^{-1} g(u,t).
-\end{split}
-\end{align}
-Alderantzizko matrizeak kalkulatu beharrik gabe idatz ditzakegu (\ref{eq:hamEDAU}) ekuazioak. Horretarako $\varphi$ fluxuaren izaera sinplektikoa erabiliko dugu, hau da, $(\varphi')^tJ\varphi'= J$ propietatea betetzen du fluxuak,
-non, 
+
+RKIK metodoaren integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu.
+\begin{figure} [h!]
+{\includegraphics [width=16cm, height=4cm] {proiekzioa11}}
+\caption{\small RKIK metodoaren integrazio eskema orokorra}
+\label{fig:proiekzioa0}
+\end{figure}
+%
+
+
+
+Nolabait, proposatutako RKIK metodoa splitting metodoen antzekoa da, bereziki, bigarren ordenako (\ref{eq:stverlet}) Strang-en splitting metodoaren antzekoa. Gogora dezagun Strang-en metodoa era honetan aplikatzen dela: $\varphi_{h/2}$ fluxua aplikatu, perturbazioari soilik dagokion ekuazioaren soluzioa kalkulatu $h$ urrats luzerarako, eta berriz   $\varphi_{h/2}$  fluxua aplikatu. Fluxuaren aldagai aldaketarekin, gauza bera egiten ari gara, baina  $\varphi_{h/2}$ fluxuaren bi aplikazioen artean egiten duguna konplexuagoa izatearen truke,  bigarren ordenako metodoa lortu beharrean, aldagai berrietarako aplikatzen dugun IRK metodoaren ordena bereko metodoa lortzen dugu.
+
+
+Inplementazioaren eraginkortasunaren aldetik, integrazioaren urrats guztietan ez baditugu emaitzak itzuli behar, bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu. Esate baterako, \ref{fig:proiekzioa0} irudian, $u_1$ behar ez bada, zuzenean kalkula daiteke $U^{3/2}_1 = \varphi_{h}(U^{1/2}_1)$, fluxua kalkulatzen duen funtzioari dei bakarra eginez, bi dei egin beharrean.
+
+
+
+
+
+Azpimarratu beharra dago RKIK metodoaren urrats bakoitza sinplektikoa dela (\ref{eq:pertEDA}) sistema perturbatua eta perturbatu gabeko (\ref{eq:unpert}) sistema biak Hamiltondarrak baldin badira, eta aldi berean, (\ref{eq:pertEDAUj}) problemaren zenbakizko ebazpenerako  IRK sinplektikoa erabiltzen bada. Hain zuzen, kasu horretan $\varphi_{h/2}$ sinplektikoa da, eta horren ondorioz (\ref{eq:pertEDAUj}) problema Hamiltondarra denez, IRK sinplektikoaren urrats bakoitza sinplektikoa izango da, eta beraz, RKIK metodoaren $u_j \to u_{j+1}$ urrats bakoitza ere sinplektikoa izango da.
+
+Azkenik,  bai (\ref{eq:pertEDA}) sistema perturbatuak eta bai perturbatu gabeko (\ref{eq:unpert}) sistemak $I(u)$ inbariante bera onartzen badute, antzera ondoriozta daiteke   (\ref{eq:pertEDAU}) problemarako ere $I(U)$ inbariantea dela, eta beraz inbariante hori koadratikoa baldin bada, eta IRK metodoa sinplektikoa baldin bada, RKIK metodoak inbariante hori konstante mantenduko duela.
+
+Urrats bakoitzari dagokion aldagai berrietan idatzitako (\ref{eq:pertEDAU}) sistemaren eskuinaldea balioztatzeari dagokionean, sistema perturbatu gabea Hamiltondarra baldin bada, Jacobiarraren alderantzizkoa kalkulatzea ekidin daiteke.  Hain zuzen, bere $t$-fluxua sinplektikoa denez,  $(\varphi'_{t}(U))^tJ\varphi'_{t}(U)= J$ propietatea betetzen du fluxuak $\forall(t,U) \in \mathbb{R}^{D+1}$, non
 \begin{equation*}
  J=\left(\begin{array}{cc}
    \ 0 & \ -I \\
      I & \ 0  \\
-\end{array}\right),
+\end{array}\right)
 \end{equation*}
-ondorioz,
+den, eta  ondorioz, $G \in \mathbb{R}^D$ emanik
 %
 \begin{align}
 \begin{split}
 \label{eq:hamEDAU2}
-&\dot{U} = J^{-1}(\varphi')^{t}(U)J g(u,t).
+& (\varphi'_{t-\tau}(U) )^{-1} G = J^{-1}(\varphi'_{t-\tau}(U))^{T} J G.
 \end{split}
 \end{align}
-(\ref{eq:hamEDAU2}) ekuazioak $\varphi'(U)$ kalkulatzea eskatzen du, eta horretarako deribazio automatikoko teknikak erabil ditzakegu.
+%
+Beraz,  (\ref{eq:pertEDAU})  sistemaren eskuinaldeko $F$ espresioa balioztatzeko, hurrengo moduan egin daiteke:
+\begin{itemize}
+\item $u=\varphi_{t-\tau}(U)$,
+\item $G=g(u,t)$ balioztatu, eta ondoren $\widehat G=J G$,
+\item $\widehat F = \varphi'_{t-\tau}(U)^{T} \widehat G$,
+\item $F = J^{-1} \widehat F$.
+\end{itemize}
+%
+Goiko algoritmo horretan, hirugarren atala modu eraginkorrean egin daiteke deribazio automatikoko teknikak erabiliz, lehen ataleko kalkuluan erabilitako zenbait tarteko aldagai berrerabiliz gero.
 
 
-\paragraph*{Algoritmoa.}
-$U$ aldagaietan oinarritutako ekuazio diferentzialen integraziorako (\ref{eq:hamEDAU2}) espresioaren konputazioa hiru urratsetan egingo dugu:
-\begin{enumerate}
-\item $\{u,aux\} \leftarrow KeplerFlowGen (t,U,mu)$.
-
-Kepler-en fluxua $u= \varphi_t(U)$ aplikatuko dugu eta fluxuaren kalkulutarako erabilitako tarteko balioak, ~$aux\in \mathbb{R}^{16}$ aldagaian itzuliko ditugu. 
-
-\item $g \leftarrow g(u,t)$.
-
-Jatorrizko problemako ekuazio diferentzialetan perturbazioei dagokien espresioa kalkulatuko dugu.
-
-\item $KeplerFlowGFcnaux(aux,U,t,g)$.
-
-Urrats honetan $\varphi'_t()$ kalkulatu behar da. Deribazio automatikoaren tekniken bidez, Kepler fluxuaren $U$ aldagaiekiko deribatuaren konputazio eraginkorra definitu dugu. 
-
-Hirugarren urratsak (\ref{eq:hamEDAU2}) espresioa konputatzeko behar dugun azken zatia kalkulatzen du, beraz, bere emaitza $\dot{U}$ren konputazioa izango da: 
-\begin{align*}
-\dot{U}&\leftarrow KeplerFlowGFcnaux(aux,U,t,g).
-\end{align*}
-
-\end{enumerate} 
+Azkenik, aplikazioetan ohikoa izango da perturbazioari dagokion espresioak balio txikiak hartzea. Kasu horretan biribiltze erroreen eragina txikitzeko komenigarria da, doitasun mistoa erabiltzea: Oinarrizko doitasunean aplikatzea (batura konpentsatuarekin) IRK metodoa (\ref{eq:pertEDAUj}) problemari, baina doitasun altuagoan aplikatzea  \ref{fig:proiekzioa0}~irudian azaltzen diren $\varphi_{h/2}$ fluxuak (edo $\varphi_{h}$ fluxua, irteerarik behar ez den kasuan).
 
 
 
-\section{Alde Kepleriar bat baino gehiagoko sistemak.}
 
-Alde Kepleriar bat baino gehiago dituzten problemetan ere Kepler perturbatuan egindako aldagai aldaketa egin dezakegu. Hainbat gorputzeko sisteman gorputz bakoitzari eragingo diogu aldagai aldaketa, bakoitzak bere fluxu Kepleriar perturbatua izango du, eta horretan oinarrituz egingo diogu aldaketa. Problemaren alde Kepleriarren kopurua $k$ bada, era honetako ekuazio diferentzialak ditugu,
+\section{Sistema Kepleriarren perturbaziotarako aplikazioa}
+\label{s:Keplerrak}
+
+Goian aipatu bezala, eguzki-sistemaren simulaziorako aplikatzerakoan,  mugimenduaren ekuazioak hainbat ekuazio Kepleriar independenteren
+perturbazio gisa har daitezke.  Horretan oinarritzen dira hain zuzen, eguzki-sistemaren simulaziorako aplikatzen diren splitting metodoak ((\ref{s:KonSpl}~atala).
+Era berean, \ref{s:RKIK}~atalean garatutako RKIK metodoak aplika daitezke kasu horretan.
+
+Demagun problemaren alde Kepleriarren kopurua $n$ dela, eta
+\begin{equation*}
+u=(q_1,v_1,\ldots,q_n,v_n,w) \in \mathbb{R}^{D},
+\end{equation*}
+ non $w \in \mathbb{R}^{D-6 n}$, eta (\ref{eq:pertEDA}) moduko sistemaren zenbakizko integrazioa burutu nahi dugula RKIK metodoarekin, perturbatu gabeko (\ref{eq:unpert}) sistema $(q_i,v_i) \in \mathbb{R}^{6}$ aldagaietarako sistema Kepleriar independentez osatuta dagoelarik. Zehazkiago, demagun
+%
 \begin{equation}
 \label{eq: n-pertEDA}
-\frac{d}{dt}\left(\begin{array}{c}
-                u  \\
-                w  \\
-\end{array}\right)=
+k(u) =
 \left(\begin{array}{c}
-                \dot{u}_1  \\
-                \dot{u}_2  \\
+               v_1 \\
+             \displaystyle  - \frac{\mu_1 \ q_1}{\|q_1\|^3}\\
+               v_2 \\
+                \displaystyle  - \frac{\mu_2 \ q_2}{\|q_2\|^3}\\
                 \vdots \\
-                \dot{u}_k    \\
-                \dot{w}      \\
-\end{array}\right)=
-\left(\begin{array}{c}
-                k^{\mu_1}(u_1)  \\
-                k^{\mu_2}(u_2)  \\
-                \vdots \\
-                k^{\mu_k}(u_k)  \\
-                0      \\
-\end{array}\right)+
-\left(\begin{array}{c}
-      g_1(u_1, u_2\dots, u_k,w,t) \\
-      g_2(u_1, u_2\dots, u_k,w,t) \\
-                \vdots \\
-      g_k(u_1, u_2\dots, u_k,w,t)\\
-      g_{k+1}(u_1, u_2\dots, u_k,w,t)
-\end{array}\right)
-\end{equation} 
- 
-Gorputz bakoitzari dagokion aldagai aldaketa, bere $k^{\mu_j}(u_j)$ fluxu Kepleriarraren araberakoa da,
+                v_n\\
+                \displaystyle  - \frac{\mu_n \ q_n}{\|q_n\|^3}\\
+                               0
+\end{array}\right),
+\end{equation}
+%
+non $\mu_j>0$ ($j=1,\ldots,n$) diren.
+
+Kasu horretan, (\ref{eq:unpert}) sistemaren $t$-fluxua $u=(q_1,v_1,\ldots,q_n,v_n,w)$ punturako aplikatzeko, $(q_j,v_j)$ bakoitzerako dagokion fluxu Kepleriarra
+aplikatu beharko dugu, eta $w$ bere horretan utzi. Zehazkiago,
+ $u = \varphi_{t-\tau}(U)$ moduko aldagai aldaketa, $U=(Q_1,V_1,\ldots,Q_n,V_n,W)$ izanik, horrela definiturik egongo da,
+%
 \begin{align}
 \label{eq:aldfl2}
 \begin{split}
-u_j&= \varphi_t^{\mu_j}(U_j), \ \ \ j=1,\dots,k.
+u_j&= \varphi_{t-\tau}^{[\mu_j]}(U_j), \quad  j=1,\dots,n, \quad w = W,
 \end{split}
 \end{align}
-Bi aldeak $t$ aldagaiarekiko deribatuz eta katearen erregela aplikatuz,
+%
+non, $j \in \{1,\ldots,n\}$ bakoitzerako, $\varphi_{t-\tau}^{[\mu_j]}:\mathbb{R}^6 \to \mathbb{R}^6$ dagokion sistema Kepleriarraren $(t-\tau)$-fluxua den. (Ikus ?~eranskina hau praktikan kalkulatzearen inguruko xehetasunetarako.)
+
+
+Bestalde,  aldagai berrietan idatzitako (\ref{eq:pertEDAU}) ekuazio diferentzialen sistemaren eskuin aldeko espresioa balioztatzeko, \ref{s:RKIK}~atalaren amaieran azaltzen den algoritmoa aplikatzeko, $\widehat G \in \mathbb{R}^D$ emanik,  $\widehat F = \varphi'_{t-\tau}(U)^{T} \widehat G$ kalkulatu behar dugu.
+Hori egiteko, demagun $\widehat G = (\widehat G_1,\ldots,\widehat G_n,\widehat G_{n+1})$ eta  $\widehat F = (\widehat F_1,\ldots,\widehat F_n,\widehat F_{n+1})$ direla. Notazio horrekin,
 \begin{equation*}
-\left(\begin{array}{c}
-                \dot{u}_1  \\
-                \dot{u}_2  \\
-                \vdots \\
-                \dot{u}_k    \\
-                \dot{w}      \\
-\end{array}\right)=
-\left(\begin{array}{c}
-                \dot{\varphi}^{\mu_1}(U_1)  \\
-                \dot{\varphi}^{\mu_2}(U_2)   \\
-                \vdots \\
-                \dot{\varphi}^{\mu_k}(U_k)   \\
-                0      \\
-\end{array}\right)+
-\left(\begin{array}{c}
-      (\varphi^{\mu_1})'(U_1) \frac{d}{dt}U_1 \\
-      (\varphi^{\mu_2})'(U_2) \frac{d}{dt}U_2 \\
-                \vdots \\
-      (\varphi^{\mu_k})'(U_k) \frac{d}{dt}U_k\\
-      g_{k+1}(u_1, u_2\dots, u_k,w,t)
-\end{array}\right),
+\widehat F = \varphi'_{t-\tau}(U)^{T} \widehat G
 \end{equation*}
-ekuazioetan fluxuen propietate eta definizioak erabiliz,
+ kalkulatzeko, nahikoa izango da honakoa egitea,
 \begin{equation*}
-\left(\begin{array}{c}
-                \dot{u}_1  \\
-                \dot{u}_2  \\
-                \vdots \\
-                \dot{u}_k    \\
-                \dot{w}      \\
-\end{array}\right)=
-\left(\begin{array}{c}
-                k^{\mu_1}(u_1)  \\
-                k^{\mu_2}(u_2)  \\
-                \vdots \\
-                k^{\mu_k}(u_k)  \\
-                0      \\
-\end{array}\right)+
-\left(\begin{array}{c}
-      (\varphi^{\mu_1})'(U_1) \dot{U}_1 \\
-      (\varphi^{\mu_2})'(U_2) \dot{U}_2 \\
-                \vdots \\
-      (\varphi^{\mu_k})'(U_k) \dot{U}_k\\
-      g_{k+1}(u_1, u_2\dots, u_k,w,t)
-\end{array}\right),
-\end{equation*}
-eta, azkenik, (\ref{eq: n-pertEDA}) ekuazioarekin berdinduz eta sinplifikatuz,
-\begin{equation*}
-\left(\begin{array}{c}
-                \dot{U}_1  \\
-                \dot{U}_2  \\
-                \vdots \\
-                \dot{U}_k    \\
-                \dot{w}      \\
-\end{array}\right)=
-\left(\begin{array}{c}
-      \left((\varphi^{\mu_1})'(U_1)\right)^{-1} g_1 \\
-      \left((\varphi^{\mu_2})'(U_2)\right)^{-1} g_2 \\
-                \vdots \\
-     \left((\varphi^{\mu_k})'(U_k)\right)^{-1} g_k\\
-      g_{k+1}
-\end{array}\right),
+\widehat F_j =  \varphi^{[\mu_{j}]'}_{t-\tau}(U_j)^{T} \widehat G_j, \quad j=1,\ldots,n, \quad \widehat F_{n+1} = \widehat G_{n+1}.
 \end{equation*}
 
-Aldagai berriekiko ekuazio diferentzialak balioztatzeko, fluxuen propietateei esker, $(\varphi')^{-1}=J^{-1}(\varphi')^tJ$ kalkula dezakegu eta, Kepler perturbatuan bezalaxe, alderantzizko matrizerik kalkulatu beharrik ez dugu izango. Deribazio automatikoko teknikei esker, kalkulatu ahal izango ditugu. Bestalde, $\dot{w}$ aldagaien ekuazioak balioztatzeko $u_i$ aldagaiak behar ditugu, baina $U_i$ aldagaietatik lor ditzakegu, gainera, $g_i$ funtzioetarako ere behar ditugu. Ondorioz, Kepler perturbatuaren probleman bezala hiru urratsetan balioztatu ahal izango ditugu ekuazioak.
 
 
 
-\subsection*{Metodo simetrikoa.}
-
-Azpimarratu behar dugu aldagai aldaketa urratsero egiten dugula, eta ekuazio diferentziala aldagai berriekiko ebazten dugula. Aldagai berriak eta jatorrizko aldagaiak fluxuak erlazionatzen ditu: jatorrizko aldagaiak fluxuan $\frac{h}{2}$ aurrera eginez aldagai berriak lor ditzakegu. Ebatzi beharreko problema aldagai berrietan ebatziko dugu, eta $h$ luzerako urratsa emanez aldagai berriak aldatuko ditugu. Jatorrizko aldagaietara igarotzeko fluxuaren bidez mugitu behar ditugu balio horiek: $\frac{h}{2}$ atzera egiten badugu jatorrizko aldagaiak urratsaren hasieran kokatuko ditugu, baina perturbazioari dagokion aldaketa bere baitan daramate, izan ere, aldagai berriei metodoaren urratsa kalkulatu diegu, hau da, perturbazioari dagokion $h$ luzerako urratsa eman dugu. Bestalde, fluxuan $\frac{h}{2}$ aurrera egiten badugu hurrengo urratsaren hasierako egoerara eramango ditugu balioak.
-
-Ondorioz integrazioko urrats bat hiru azpi-urratsen konbinazioa da:
-\begin{enumerate}
-\item $U_i^{i+\frac{1}{2}}=\varphi_{\frac{h}{2}}(u_i)$: fluxuaren arabera $\frac{h}{2}$ aurreratu.
-\item Gauss metodoaren $h$ luzerako urratsa: $U_i^{i+\frac{1}{2}}$ aldagaietatik  $U_{i+1}^{i+\frac{1}{2}}$ balioetara pasako gara.
-\item $u_{i+1}=\varphi_{\frac{h}{2}}(U_{i+1}^{i+\frac{1}{2}})$ fluxuaren araberako $\frac{h}{2}$ aurreratu.
-\end{enumerate}
-
-Hiru azpiurratsak simetrikoak dira, eta ondorioz, $u_{i+1}$ abiapuntutzat hartuz, $-h$ luzerako urratsa ematen badugu $u_i$ lortuko dugu:
-\begin{enumerate}
-\item $\varphi_{\frac{-h}{2}}(u_{i+1})$ kalkulatu behar da, baina $u_{i+1}$ hirugarren azpiurratsaren emaitza denez, bere espresioa jarriko dugu, eta ikusiko dugu $U_{i+1}^{i+\frac{1}{2}}$ aldagaietatik hasi eta fluxuan aurrera eta atzera egitearen parekoa dela, alegia, ez aldatzearen parekoa:
-\[
-U_{i+1}^{i+1+\frac{1}{2}}=\varphi_{\frac{-h}{2}}(u_{i+1})=\varphi_{\frac{-h}{2}}\left(\varphi_{\frac{h}{2}}(U_{i+1}^{i+\frac{1}{2}}) \right)
-= U_{i+1}^{i+\frac{1}{2}}
-\] 
-\item Gauss metodoaren $-h$ luzerako urratsa: Gaussen metodoa simetrikoa denez, aurreko urratsean bukaerako egoera zenari $-h$ luzerako urratsa eragiteak hasierako egoerara itzultzen du, beraz, $U_{i+1}^{i+\frac{1}{2}}$ balioetatik abiatuz $U_i^{i+\frac{1}{2}}$ balioetara itzuliko gara.
-\item Fluxuan urrats luzeraren erdia egin behar da: lehenengo azpiurratsean bezala, fluxuan $\frac{-h}{2}$ mugitu behar gara, baina fluxuan $\frac{h}{2}$ mugitutako balioekin egin behar dugu, hau da:
-\[
-\varphi_{\frac{-h}{2}}(U_i^{i+\frac{1}{2}}) = \varphi_{\frac{-h}{2}}\left(\varphi_{\frac{h}{2}}({u_i}) \right) = u_i
-\]
-\end{enumerate}
-
-Metodoaren integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu, bere simetria ere bertan ikus daiteke,
-\begin{figure} [h!]
-{\includegraphics [width=16cm, height=4cm] {proiekzioa11}}
-\caption[Aldagai aldaketa: metodo simetrikoa eta sinplektikoa]{\small Metodoaren integrazio eskema orokorra. Metodoa simetrikoa eta sinplektikoa da.}
-\label{fig:proiekzioa0}
-\end{figure} 
-
-Integrazioaren urrats guztietan ez baditugu emaitzak itzuli behar, bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu. Horretarako, proiekzio kontzeptua sortuko dugu (\ref{fig:proiekzioa2}~irudia).
-
-\begin{figure} [h!]
-{\includegraphics [width=14cm, height=4cm] {proiekzioa12}}
-\caption[Aldagai aldaketa: proiekzioa]{\small Proiekzioa: bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu}
-\label{fig:proiekzioa2}
-\end{figure} 
-
-
- Azkenik, emaitzak behar ditugun urratsetarako fluxua $\varphi_{-h/2}$ aplikatuko dugu (\ref{fig:proiekzioa1}~irudia). 
-
-\begin{figure} [h!]
-{\includegraphics [width=14cm, height=5cm] {proiekzioa1}}
-\caption[Aldagai aldaketa: urratsak]{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak dira. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion $U_0^{1/2}$ hasierako balioa finkatuko dugu. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da, \ref{fig:proiekzioa2}~irudian zehaztu dugun bezala. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietan zenbakizko soluzioa itzuliko dugu}
-\label{fig:proiekzioa1}
-\end{figure} 
-
-
-$u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak adierazten duten notazioa erabiliko dugu. Hauek dira, integratzeko emango ditugun urratsak:
-\begin{enumerate}
-\item \emph{Startfun} funtzioa.
-
-Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, $\varphi_{h/2}$ fluxuaren konputazioaren bidez, aldagai berrietan dagokion hasierako balioa lortuko dugu.
-\begin{align*}
-u_0 \ \rightarrow \ U_0^{\frac{1}{2}}.
-\end{align*}
-
-\item \emph{Urratsa}.
-
-Urratsa bi azpiurratsen konbinazio bezala ikusiko dugu: aldagai berriei Gaussen metodoaren bidezko integrazioaren urrats bat eta lortutako maitzei $\varphi_{h}$ bidez fluxuan $h$ aurrera egitea. Bigarren azpiurratsa fluxuaren bidez proiektatzea da. \ref{fig:proiekzioa2} irudian zehaztapenak eman ditugu. 
-\begin{align*}
- U_0^{\frac{1}{2}} \ \rightarrow \ U_1^{\frac{1}{2}} \rightarrow \ U_1^{1+\frac{1}{2}}.
-\end{align*}
-
-Biribiltze errorea txikitzeko, proiekzioa doitasun altuan konputatzea garrantzitsua da. Modu honetan, batura konpensatua aplikatzerakoan zifra batzuk irabaziko ditugu. 
-
-\item \emph{Outputfun} funtzioa.
-
-Erabiltzaileak, $t$-ren balio jakin batzuetan $u(t)$ balioen zenbakizko soluzioak nahiko ditu, kasu horietan $\varphi_{-h/2}$ fluxuaren konputazioaren bidez, $U_i^{i+\frac{1}{2}}$ balioetatik $u_i$ jatorrizko aldagaien balioak lortuko dira:
-\begin{align*}
-U_n^{n+\frac{1}{2}} \ \rightarrow \ u_n.
-\end{align*}
-
-
-\end{enumerate}
-
-
-Gauss metodoa, neurri batean  splitting eta konposizio metodoen antzekoak dira. 
-\begin{align*}
-\text{Konposizio metodoa} \ \ &\equiv \ \ \text{Gauss metodoa aldagai aldaketa gabe}.\\
-\text{Splitting metodoa} \ \ &\equiv \ \  \text{Gauss metodoa aldagai aldaketarekin}.
-\end{align*}
-
-Splitting metodoekiko antzekotasuna azaltzeko, (\ref{eq:stverlet})~\emph{Störmer-Verlet} splitting metodoarekin konparatuko dugu. \emph{Störmer-Verlet} metodoa, era honetan aplikatzen da: $h/2$ fluxua aplikatu, perturbazioak kalkulatu eta berriz  $h/2$ fluxua aplikatu. Fluxuaren aldagai aldaketarekin, gauza bera egiten ari gara: $h/2$ fluxua aurreratu, perturbazioak kalkulatu (aldagai berrietan eta beraz, hobeto kalkulatzen dugu), $h/2$ fluxua aurreratu. 
-
-
-\section{Zenbakizko esperimentuak.}
+\section{Zenbakizko esperimentuak}
 \label{s:7espmt}
 
-Zenbakizko esperimentuetarako, puntu-finkoaren iterazioan oinarritutako Gauss metodoaren inplementazioa (\ref{chap:IRK-PF}~kapitulua) erabili dugu. Lehenengo, Gauss metodoaren bi bertsio konparatu ditugu: aldagai aldaketarik gabeko integrazioa eta aldagai aldaketa aplikatutako integrazioa. Kepler fluxuan oinarritutako aldagai aldaketarekin integrazioaren abantaila argia denez, hurrengo esperimentuetarako aldagai aldaketa aplikatutako integrazioa bakarrik hartu dugu kontutan.  
- 
-$s=6,8,9,16$ ataletako Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatutako Gauss metodoen arteko metodo eraginkorrena aukeratu dugu, \emph{CO1035} konposizio eta \emph{ABAH1064} splitting  metodoekin konparatzeko.
+Zenbakizko esperimentuetarako, puntu-finkoaren iterazioan oinarritutako IRK metodo sinplektikoen inplementazioa (\ref{chap:IRK-PF}~kapitulua) erabili dugu. Lehenengo, IRK metodo inplizituetan oinarritutako  bi metodo konparatu ditugu: aldagai aldaketarik gabeko IRK sinplektiko arrunta eta RKIK metodoa. Kepler-en fluxuan oinarritutako aldagai aldaketan oinarritutako RKIK metodoaren abantaila argia denez, hurrengo esperimentuetarako aldagai aldaketa aplikatutako integrazioa bakarrik hartu dugu kontutan.
 
-Gauss metodoen konputaziorako, $64$-biteko (\emph{double}) eta $80$-biteko (\emph{long double}) doitasunak nahasi ditugu. Konputazioaren zati nagusiena, $64$-biteko doitasunean egin dugu eta proiekzioa kalkulatzeko, $80$-biteko doitasuna aplikatu dugu. Era honetan, modu merkean soluzioaren doitasuna hobetzea lortu dugu.
+Hasteko, $s=6,8,9,16$ ataletako RKIK arteko metodo eraginkorrena aukeratu dugu, \emph{CO1035} konposizio eta \emph{ABAH1064} splitting  metodoekin konparatzeko.
 
-Gauss metodoaren exekuzio sekuentziala eta paraleloak egin ditugu. $s$ atalen funtzioen balioztapena, 
+RKIK konputaziorako, $64$-biteko (\emph{double}) eta $80$-biteko (\emph{long double}) doitasunak nahasi ditugu. Konputazioaren zati nagusiena, $64$-biteko doitasunean egin dugu eta $u_{j} = \varphi_{h/2}(U_{j}^{j-1/2})$ eta
+$U_j^{j+1/2} = \varphi_{h/2}(u_j)$ eta fluxuak kalkulatzeko $80$-biteko doitasuna aplikatu dugu. Era honetan, modu merkean soluzioaren doitasuna hobetzea lortu dugu.
+
+RKIK metodoaren exekuzio sekuentziala eta paraleloak egin ditugu. $s$ atalen funtzioen balioztapenak,
 \begin{align*}
 F_{n,i}=f(Y_{n,i}), \ i=1,\dots,s,
-\end{align*}      
-independenteak dira eta paraleloan kalkula daitezke. $s=8$ metodoaren integrazio paraleloak egin ditugu eta hari kopurua $2$ aplikatu dugu. 
+\end{align*}
+independenteak dira eta paraleloan kalkula daitezke. $s=8$ metodoaren integrazio paraleloak egin ditugu eta hari kopurua $2$ aplikatu dugu.
 
-\subsection{Problemak.}
+\subsection{Test problema}
 
 
-9-planeten problema (\ref{sss:9body}~atala) erabili dugu integrazioetarako. Hasierako balioak \emph{DE-430} efemerideen artikulutik hartu ditugu: planeten masak  \ref{tab:9bodymas}~taulan laburtu ditugu; eta hasierako kokapen eta abiadurak \ref{tab:9bodyhas}~taulan aurki daitezke.
+Test problema gisa 9-planeten problema (\ref{sss:9body}~atala) erabili dugu integrazioetarako. Hasierako balioak \emph{DE-430} efemerideen artikulutik hartu ditugu: planeten masak  \ref{tab:9bodymas}~taulan laburtu ditugu; eta hasierako kokapen eta abiadurak \ref{tab:9bodyhas}~taulan aurki daitezke.
 
 Koordenatu heliozentrikoei dagokien  Hamiltondar sistema (\ref{eq:nbodyHel}),
 \begin{align*}
 &H(q,p)=H_K(q,p)+H_I(q,p),
 %&H(q,p)=\sum\limits_{i=1}^{N}\bigg(\frac{\|P_i\|^2}{2 \mu_i} -\frac{G m_0 m_i}{\|Q_i\|}\bigg)+H_I(q,p)
 \end{align*}
-integratu dugu. $H_K(q,p)$ mugimendu Kepleriarrari dagokion Hamiltondarraren aldea da  eta $H_I(q,p)$, perturbazioei dagokien Hamiltondarraren aldea da. 
-%Kepler-en fluxuan oinarritutako aldagai aldaketaren bidez, alde Kepleriarra ekuazioetatik desagerrarazten dugu.    
+integratu dugu. $H_K(q,p)$ mugimendu Kepleriarrari dagokion Hamiltondarraren aldea da  eta $H_I(q,p)$, perturbazioei dagokien Hamiltondarraren aldea da.
+%Kepler-en fluxuan oinarritutako aldagai aldaketaren bidez, alde Kepleriarra ekuazioetatik desagerrarazten dugu.
 
 Integrazioen tartea, $t_{end}=10^6$ egunetakoa da eta zenbakizko integrazioetan, $h$-ren balio ezberdinak erabili ditugu. $s=6$ metodoarentzat urrats luzerak aukeratu ditugu eta gainontzeko metodoentzat, $s$-atalen araberako urrats luzera proportzionalak finkatu ditugu:
 \begin{align*}
@@ -422,38 +282,39 @@ Integrazioen tartea, $t_{end}=10^6$ egunetakoa da eta zenbakizko integrazioetan,
 &s=8: \quad  \ \ (8/6)h, \\
 &s=9: \quad  \ \ (9/6)h, \\
 &s=16: \quad (16/6)h. \\
-\end{align*} 
+\end{align*}
 
-Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabaki dugu. $9$-planeten probleman, gorputz kopurua txikia denez,  Kepler fluxuaren gainkarga esanguratsua da eta  barne-planetei bakarrik aplikatzea, eraginkorragoa izan daiteke. Baina, gorputz gehiago kontsideratzen baditugu (esaterako Ilargia eta asteroide nagusienak) edo eguzki-sistemaren eredu konplexuagoetan (esaterako erlatibitate efektua gehitzerakoan), perturbazio aldearen konputazioa nagusituko da eta Kepler fluxuaren kalkuluak pisua galduko luke. 
-
-
-\subsection*{Gauss metodoen eraginkortasuna.}
+Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabaki dugu. $9$-planeten probleman, gorputz kopurua txikia denez,  Kepler fluxuaren gainkarga esanguratsua da eta  barne-planetei bakarrik aplikatzea, eraginkorragoa izan daiteke. Baina, gorputz gehiago kontsideratzen baditugu (esaterako ilargia eta asteroide nagusienak) edo eguzki-sistemaren eredu konplexuagoetan (esaterako erlatibitate efektua gehitzerakoan), perturbazio aldearen konputazioa nagusituko da eta Kepler fluxuaren kalkuluak pisua galduko luke.
 
 
-\ref{fig:esp81a}~irudian, $s=6$ ataletako Gauss metodoaren bi bertsioen eraginkortasunak konparatu ditugu: aldagai aldaketarik gabeko integrazioa eta aldagai aldaketa aplikatutako integrazioa. Aldagai aldaketarik gabeko integraziorako, puntu-finkoaren iterazio partizionatua eta interpolazio bidezko hasieraketa aplikatu dugu. Ekuazio diferentzialen ebaluazioen konparaketan, aldagai aldaketa aplikatutako integrazioa, nabarmen eraginkorragoa da. Eredu sinplearen integrazioen exekuzio denboren konparaketan, aldea txikiago da, baina orduan eta eredu konplexuagoa izan abantaila handituz joango da.   
+\subsection*{IRK eta RKIK metodoen arteko eraginkortasun konparazioak}
 
+Hasteko, RKIK integrazio metodo berriak, aldagai aldaketarik aplikatu gabeko IRK metodo sinplektiko arruntekiko suposatzen duen hobekuntza nabarmentzeko, $s=6$ ataleko (12 ordenako) Gauss-en nodoetan oinarritutako kolokazio metodoa hartuko dugu. Alde batetik, aldagai aldaketarik gabeko inplementazioaren, eta bestetik, IRK metodo berean oinarritutako RKIK metodo berriaren eraginkortasuna konparatuko ditugu. Aldagai aldaketarik gabeko inplementazioari dagokionean,  eraginkorrena puntu finko partizionatuaren inplementazioa dela ikusi dugu, hasieraketetarako aurreko ataleko datuekiko interpolazioa erabiltzen duena. Beraz, inplementazio hori erabili dugu \ref{fig:esp81a}~irudian azaldutako eraginkortasun konparazioa egiteko.
+Ekuazio diferentzialen balioztapen kopuruarekiko konparaketan, RKIK metodoa nabarmen eraginkorragoa da. Exekuzio denboren konparaketan aldea txikiagoa da, baina zenbat eta eredu konplexuagoa izan abantaila handituz joatea espero liteke.
+%
 \begin{figure}[h!]
 \centering
 \begin{tabular}{c c}
-\subfloat[ Gauss metodoak (FCN).]
+\subfloat[Gauss-en $s=6$ nodoetan oinarritutako metodo inplizituak (FCN).]
 {\includegraphics[width=.45\textwidth]{esperimentua801}}
 &
-\subfloat[ Gauss metodoak (CPU).]
+\subfloat[ Gauss-en $s=6$ nodoetan oinarritutako metodo inplizituak (CPU).]
 {\includegraphics[width=.45\textwidth]{esperimentua802}}
 \end{tabular}
-\caption[Puntu-finkoaren eraginkortasun grafikoak]{\small 
-Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. (a) irudian, ekuazio diferentzialen ebaluazio kopuruarekiko (FCN) eraginkortasuna neurtu dugu. (b) irudian, CPU denborarekiko eraginkortasuna neurtu dugu. Irudi bakoitzean, Gauss metodoaren $s=6$ ataletako bi bertsio konparatu ditugu: aldagai aldaketa gabe berdez eta aldagai aldaketa aplikatuta grisez. }
+\caption{\small
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. (a) irudian, ekuazio diferentzialen ebaluazio kopuruarekiko (FCN) eraginkortasuna neurtu dugu. (b) irudian, CPU denborarekiko eraginkortasuna neurtu dugu. Irudi bakoitzean, Gauss-en nodoetan oinarritutako $s=6$ ataletako bi bertsio konparatu ditugu: IRK berdez eta RKIK grisez. }
 \label{fig:esp81s}
 \end{figure}
 
-Jarraian, $s=6,8,9,16$ ataletako metodoen eraginkortasuna aztertu dugu. \ref{fig:esp81a}~irudian, diferentzialen ebaluazio kopuruarekiko (\emph{FCN}) eta \ref{fig:esp81s}~irudian, \emph{CPU}-denborarekiko (exekuzio paraleloetan \emph{Wall time}) erakutsi dugu. \emph{FCN}-rekiko eraginkortasuna, metodoak problema erreal batean nola jokatuko luke erakusten digu eta \emph{CPU}-rekiko  eraginkortasuna, problema zehatz honetarako gertatzen dena azaltzen digu.
+
+Jarraian, $s=6,8,9,16$ ataletako RKIK metodoen eraginkortasuna konparatuko dugu. \ref{fig:esp81a}~irudian, ekuazio diferentzialen sistema zehazten duen funtzioaren balioztapen kopuruarekiko (\emph{FCN}) eta \ref{fig:esp81s}~irudian, \emph{CPU}-denborarekiko (exekuzio paraleloetan \emph{Wall time}) erakutsi dugu. Funtzio balioztapen kopuruarekiko eraginkortasunak, metodoak problemaren eredu konplexuagoan nola jokatuko lukeen erakusten digu eta \emph{CPU}-rekiko  eraginkortasunak, eredu sinple honetarako gertatzen dena azaltzen digu.
 
 
 \begin{figure} [h!]
 \centerline{\includegraphics [width=8cm, height=6cm] {esperimentua812}}
-\caption[Gauss metodoen eraginkortasun konparaketa (FCN)]{\small Eraginkortasun grafikoa eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
+\caption{\small Eraginkortasun grafikoa eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Gaussen nodoetan oinarritutako $s$ ataletako RKIK metodo sinplektikoen lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
 \label{fig:esp81a}
-\end{figure} 
+\end{figure}
 
 
 \begin{figure}[h!]
@@ -470,132 +331,31 @@ Jarraian, $s=6,8,9,16$ ataletako metodoen eraginkortasuna aztertu dugu. \ref{fig
 %\subfloat[Exekuzio paraleloa (hariak=$4$): Wall Time.]
 %{\includegraphics[width=.5\textwidth]{esperimentua814}}
 \end{tabular}
-\caption[Gauss metodoen eraginkortasun konparaketa (CPU Time)]{\small 
-Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paraleloan Wall-Time). (a)  konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan hari kopurua $2$ izanik. Irudi bakoitzean, Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. }
+\caption{\small
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paraleloan Wall-Time). (a)  konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan hari kopurua $2$ izanik. Irudi bakoitzean,  Gaussen nodoetan oinarritutako $s$ ataletako RKIK metodo sinplektikoen lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. }
 \label{fig:esp81s}
 \end{figure}
 
-Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  Gauss metodo eraginkorrena aukeratu nahi dugu. Horretarako, biribiltze errorea nagusitzen hasten den inguruko unean gertatutakoa aztertu dugu: $s=8,9,16$ metodoak, $s=6$ metodoa baino eraginkorragoak azaldu zaizkigu. $s=8,9,16$ metodoak beraien artean oso antzekoak izanik, $s=8$ ataleko Gauss metodoa aukeratu dugu. Bestalde, exekuzio paraleloa, sekuentziala baino eraginkorragoa da.
-
-\subsection*{Energia errorea eta errore globalak.}
-
-%$s=8$ metodoarentzat, birbiltze errorea hasten den uneko urrats luzera hartu dut: $k=12, \ h=10,667$. Kokapen errore erlatiboaren estimazioa, $h/2$ integrazioarekiko diferentzia gisa kalkulatu ditugu.
-Atal honetan, $s=8$ ataleko Gauss metodoaren, \emph{CO1035} konposizio metodoaren eta \emph{ABAH1064} splitting metodoaren erroreak konparatu ditugu.  Hiru errore mota ezberdin aztertu ditugu: energia errorea; kokapen eta abiaduren erroreen estimazioak; orbita eliptikoaren erdi-ardatz nagusiaren (\emph{semi-axis}) eta eszentrikotasunaren erroreen estimazioak. Gauss metodoa $h=10.63$ urrats luzerarekin integratu dugu eta  \emph{CO1035}, \emph{ABAH1064} metodoak $h=4.76$ urrats luzerarekin.
-
-\subsubsection*{Energiaren eboluzioa}
+Exekuzio sekuentzialak eta exekuzio paraleloak aztertuz,  RKIK metodo eraginkorrena aukeratu nahi dugu. Horretarako, biribiltze errorea nagusitzen hasten den inguruko unean gertatutakoa aztertu dugu: $s=8,9,16$ atal kopuruei dagozkien metodoak, $s=6$ metodoa baino eraginkorragoak azaldu zaizkigu. Bestalde, $s=8,9,16$  atal kopuruei dagozkien metodoak beraien artean oso antzekoak izanik, $s=8$ ataleko RKIK aukeratu dugu. Bestalde, exekuzio paraleloa, sekuentziala baino eraginkorragoa da. Aipatzekoa da eguzki-sistemaren eredu oso sinplearekin ari garela lan egiten. Eredu konplexuagotarako, paralelizazioaren gainkarga erlatiboa nabarmen txikitzea espero liteke.
 
 
-\ref{fig:esp83}~irudian, lau integrazioen energiaren errore erlatiboaren eboluzioa erakutsi ditugu. Batetik, Gauss metodoa $64$-biteko (\emph{double}) proiekzioarekin eta $80$-biteko (\emph{double}) proiekzioarekin konputatutako integrazioak. Bestetik, \emph{CO1035} konposizio eta \emph{ABAH1064} splitting metodoen integrazioak. Proiekzioa $80$-biteko doitasunarekin kalkulatzerakoan, energiaren errorea modu esanguratsuan txikitzea lortu dugu. Aipagarria da ere, Gauss metodoa $80$-biteko proiekzioaren integrazioa, \emph{ABAH1064} splitting metodoarekin alderatuz, energia errorea txikiagoa dela.
-
-\begin{figure}[h!]
-\centering
-\begin{tabular}{c c}
-\subfloat[Gauss metodoa ($s=8$).]
-{\includegraphics[width=.45\textwidth]{esperimentua831}}
-&
-\subfloat[ABAH1064 eta CO1035]
-{\includegraphics[width=.45\textwidth]{esperimentua832}}
-\end{tabular}
-\caption[Energia errorea]{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako Gauss metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: proiekzioa $80$-biteko \emph{long double} doitasunarekin (laranjaz) eta proiekzioa $64$-biteko \emph{double} doitasunarekin (urdinez). Eskuineko irudian, splitting/konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
-\label{fig:esp83}
-\end{figure}
+Azkenik,  $s=8$ ataletako RKIK metodoak aipatutako eguzki-sistemaren eredu sinplifikaturako aplika daitezkeen bi metodo esplizitu eraginkorrekin konparatuko dugu (biak sinplektikoak eta denborarekiko simetrikoak):
+\begin{itemize}
+\item  CO1035 gisa adieraziko duguna: Sofroniu eta Spalettaren 10 ordenako eta 35 ataleko konposizio metodoa da, oinarrizko integratzaile gisa St\"ormer-Verlet integratzailea hartuta (ikus \ref{ss:Konp}~azpiatala).
+\item ABAH1064 gisa adieraziko duguna, koordenatu Heliozentrikoetarako egokitutako splitting metodoa da, ekuazio diferentzialen sistema hiru zatitan banatuta hartzen dituena: alde Kepleriarra, kokapenen araberako perturbazioa, eta momentuen araberako perturbazioa. Perturbazioa nahikoa txikia denean, 10 ordenako metodo gisa har daiteke   (ikus \ref{ss:Splt}~azpiatala).
+\end{itemize}
 
 
-\subsubsection*{Kokapen eta abiadura erroreen estimazioak}
+Ekuazio diferentzialen sistema zehazten duen funtzioaren balioztapen kopuruaren araberako eraginkortasun konparazioa \ref{fig:esp82a}~irudian ikus daiteke. Ikusten denez, RKIK metodoak doitasun hobea lor dezake urrats luzera txikietarako, biribiltze erroreen eragina txikiago baita. Dena den, urrats luzeagotarako \emph{ABAH1064} splitting metodoa eraginkorragoa da.
 
-
-\ref{fig:esp84}~irudian, Gauss ($s=8$) eta \emph{ABAH1064} metodoentzako, kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. Erroreak estimatzeko, urrats txikiagoako integrazioaren soluzioarekiko diferentzia gisa kalkulatu dugu. 
-Gauss metodoaren integrazioan, urrats luzera handiago erabili arren, barne-planeten kokapen eta abiaduren errore estimazioak, \emph{ABAH1064} splitting metodoaren integrazioan baino txikiagoak izan dira. 
-
-\begin{figure}[h!]
-\centering
-\begin{tabular}{c c}
-\subfloat[Gauss metodoa (kokapen errorea)]
-{\includegraphics[width=.45\textwidth]{esperimentua841}}
-&
-\subfloat[Gauss metodoa (abiadura errorea)]
-{\includegraphics[width=.45\textwidth]{esperimentua842}}
-\\
-\subfloat[ABAH1064 (kokapen errorea)]
-{\includegraphics[width=.45\textwidth]{esperimentua843}}
-&
-\subfloat[ABAH1064 (abiadura errorea)]
-{\includegraphics[width=.45\textwidth]{esperimentua844}}
-\end{tabular}
-\caption[Kokapen eta abiadura erroreak]{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzera aplikatutako integrazioarentzat. (c) eta (d) irudietan, \emph{ABAH1064} splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzera aplikatutako integraziorentzat. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
-\label{fig:esp84}
-\end{figure}
-
-
-\subsubsection*{Eszentrikotasun eta erdi-ardatza nagusiaren erroreen estimazioak}
-
-
-Planeten mugimendu orbitala, eliptikoa da. Orbitaren propietateak finkatzen dituzten bi konstante hauen erroreen estimazioa kalkulatuko dugu: 
-\begin{enumerate}
-\item $a$ erdi-ardatz nagusia (\emph{semi-axis}) izeneko konstantea, orbita eliptikoaren tamaina definitzen duena.
-\item $e$ eszentrikotasuna konstantea, orbita eliptikoaren forma finkatzen duena. 
-\end{enumerate} 
-
-\ref{fig:esp87}~irudian, bai Gauss metodoarentzat, bai \emph{ABAH1064} splitting metodoarentzat, $a$ erdi-ardatz nagusiaren eta $e$ eszentrikotasun erroreak, kokapen eta abiaduren erroreak baino txikiagoak dira. Honek esan nahi du, integrazioaren orbitaren forma mantentzen dela eta errorea, orbitaren fasean nagusitzen dela. Esperimentu honetan ere, Gauss metodoaren erroreak, \emph{ABAH1064} spliting metodoarenak baina txikiagoak dira.   
-
-\begin{figure}[h!]
-\centering
-\begin{tabular}{c c}
-\subfloat[Gauss maetodoa (erdi-ardatz nagusiaren errorea)]
-{\includegraphics[width=.45\textwidth]{esperimentua871}}
-&
-\subfloat[Gauss maetodoa (eszentrikotasunaren errorea)]
-{\includegraphics[width=.45\textwidth]{esperimentua872}}\\
-\subfloat[ABAH1064 (erdi-ardatz nagusiaren errorea)]
-{\includegraphics[width=.45\textwidth]{esperimentua873}}
-&
-\subfloat[ABAH1064 (eszentrikotasunaren errorea)]
-{\includegraphics[width=.45\textwidth]{esperimentua874}}
-\end{tabular}
-\caption[Erdi-ardatz nagusiaren eta eszentrikotasunaren errorea]{\small \small Orbita eliptikoaren $a$ erdi-ardatz nagusiaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
-\label{fig:esp87}
-\end{figure}
-
-\subsection*{Biribiltze errorea.}
-
-
-Hirugarren esperimentu honetan, biribiltze errorea ilustratzeko esperimentua egin dugu eta horretarako, momentu angeluarraren errore erlatiboaren eboluzioan oinarritu gara. % Momentu angeluarraren trunkatze errorea beti zero da eta metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte. 
-Lau faktore hartu behar dira kontutan. Kepler-en fluxuak, momentu angeluarra zehazki mantentzen du eta jatorrizko ekuazio diferentzialen inbariante koadratikoa da. Hori dela-eta, Kepler-en fluxuan oinarritutako aldagai aldaketarekin lortutako ekuazio diferentzialen inbariante koadratikoa da. Integratzeko Runge-Kutta metodo sinplektikoa aplikatu dugunez, inbariante koadratikoak zehazki mantentzen ditu eta beraz,  ikusten duguna biribiltze errorea da.
-
-\ref{fig:esp85}~irudian, Gaussen $s=8$ ataletako metodoarekin, $h=9.0$ eta $h=10.63$ urrats luzerarekin integrazioen soluzioen momentu angeluarraren errorea erakutsi dugu eta espero bezala, biribiltze errorea zein den erakusten dute.
-
-
-\begin{figure}[h!]
-\centering
-\begin{tabular}{c c}
-\subfloat[Momentu angeluarra $h=9.0$.]
-{\includegraphics[width=.45\textwidth]{esperimentua851}}
-&
-\subfloat[Momentu angeluarra $h=10.63$]
-{\includegraphics[width=.45\textwidth]{esperimentua852}}
-\end{tabular}
-\caption[Momentu angeluarra]{\small Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. Gaussen $s=8$ ataletako metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin. }
-\label{fig:esp85}
-\end{figure}
-
-
-
-\subsection*{Eraginkortasun konparaketa.}
-
-
-Atal honetan, Gauss metodoa eta konposizio/splitting metodoen arteko eraginkortasunaren konparaketa egin dugu. \ref{fig:esp82a}~irudian, eraginkortasuna, ekuazio diferentzialaren ebaluazio kopuruaren arabera neurtu dugu. Gure inplementazio berriak, \emph{ABAH1064} splitting metodoak baino doitasun txikiagoa lortzen du. Etorkizuneko inplementazioaren konputazioa, $80$-biteko doitasunean eta proiekzioa, $128$-biteko doitasunean egin daiteke: era honetan, bien arteko koxka handiago izango da.
-   
 
 \begin{figure} [h!]
 \centerline{\includegraphics [width=8cm, height=6cm] {esperimentua822}}
-\caption[Metodo sinplektikoen eraginkortasun grafikoa (FCN)]{\small Eraginkortasun grafikoa, eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN).  Hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz}
+\caption{\small Eraginkortasun grafikoa, eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN).  Hiru integrazio metodo konparatu ditugu: $s=8$ ataleko RKIK metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz}
 \label{fig:esp82a}
-\end{figure} 
+\end{figure}
 
-\ref{fig:esp82}~irudian, $s=8$ ataletako Gauss metodoa, modu sekuentzialean eta modu paraleloan exekutatu dugu. Eguzki-sistemaren eredu sinplearen integraziorako, splitting metodoak oso eraginkorrak azaldu zaizkigu. Gauss metodoaren exekuzioa paralelizatzeak abantaila erakusten du baina hala ere, splitting metodoak eraginkorragoak dira.
-
-Dena den, eredu errealistagoak (gorputz kopurua handitzen delako edota erlatibitate efektua kontutan hartzen delako) integratzeko, Gauss metodoak eraginkorragoak bilakatzea espero da. Splitting metodoen konputazioak, modu trinkoan kalkulatu behar dira, hau da, atalen konputazioak sekuentzialki exekutatzen dira eta  ez ditu konputazio aldaerarik onartzen. Gauss metodoaren ekuazio inplizituak ebazteko, ordea, teknika ezberdinak konbina daitezke eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu. Adibidez, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke  \cite{Beylkin2014} eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan. Gauss metodoaren $s$-ataletako funtzioen ebaluazioak  modu paraleloan exekutatu daitezke eta eguzki-sistemaren eredu konplexuagoa aplikatzen den neurrian, paralelizazioak abantaila handiagoa suposatuko du.
-
+Bestalde, exekuzio denboraren araberako eraginkortasun konparazioa \ref{fig:esp82}~irudian ikus daiteke. RKIK metodoari dagokionez, $s=8$ ataleko metodoa modu sekuentzialean eta modu paraleloan konparatu dugu beste metodoekin. Eguzki-sistemaren eredu sinplearen integraziorako, splitting metodoak oso eraginkorrak azaldu zaizkigu. RKIK metodoaren exekuzioa paralelizatzeak abantaila erakusten du baina hala ere, splitting metodoak eraginkorragoa izaten jarraitzen du gure test problema sinplerako.
 
 
 \begin{figure}[h!]
@@ -612,8 +372,8 @@ Dena den, eredu errealistagoak (gorputz kopurua handitzen delako edota erlatibit
 %\subfloat[Exekuzio paraleloa (hariak=$4$) Wall Time.]
 %{\includegraphics[width=.5\textwidth]{esperimentua824}}
 \end{tabular}
-\caption[Metodo sinplektikoen eraginkortasun grafikoa (CPU Time)]{\small 
-Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paralelotan Wall-Time) erakutsi dugu. (a) konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan, hari kopurua $2$ izanik. Irudi bakoitzean,  hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz
+\caption{\small
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paralelotan Wall-Time) erakutsi dugu. (a) konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan, hari kopurua $2$ izanik. Irudi bakoitzean,  hiru integrazio metodo konparatu ditugu: $s=8$ RKIK grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz
 }
 \label{fig:esp82}
 \end{figure}
@@ -632,24 +392,131 @@ Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz 
 %\subfloat[$s=16$ Exekuzio paraleloa: hariak=$4$.]
 %{\includegraphics[width=.5\textwidth]{esperimentua864}}
 %\end{tabular}
-%\caption{\small 
+%\caption{\small
 %Eraginkortasun grafikoak irudikatu ditugu: ezkerrean energiaren errore maximoa, CPU denborarekiko; eskuinean ekuazio diferentzialen ebaluazio kopuruarekiko (FCN). Lau integrazio metodo konparatu ditugu: $ABAH1064$  urdinez, $CO1035$ gorriz,  eta \emph{IRKFLUXU} grisez}
 %\label{fig:esp82}
 %\end{figure}
 
 
-\section{Laburpena.}
+Dena den, eredu errealistagoak (gorputz kopurua handitzen delako,  erlatibitate efektua kontutan hartzen delako \dots) integratzeko, RKIK metodoak eraginkorragoak bilakatzea espero liteke. Splitting metodoen konputazioak, modu trinkoan kalkulatu behar dira, hau da, atalen konputazioak sekuentzialki exekutatzen dira eta  ez du konputazio aldaerarik onartzen. IRK ekuazio inplizituak ebazteko, ordea, teknika ezberdinak konbina daitezke eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu. Adibidez \cite{Beylkin2014}, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke  eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan. IRK metodoaren $s$-ataletako funtzioen balioztapenak  modu paraleloan exekutatu daitezke eta eguzki-sistemaren eredu konplexuagoa aplikatzen den neurrian, paralelizazioak abantaila handiagoa izatea espero da.
 
 
-Kapitulu honetan, eguzki-sistemaren integraziorako inplementazio berri bat aurkeztu dugu. Inplementazio berria, egungo metodo sinplektiko eraginkorrenekin alderatu dugu eta emaitzak, baikorrak izateko modukoak iruditu zaizkigu. Oinarrizko azterketa egin badugu ere, agerian geratu da, metodoak etorkizunean izan ditzakeen potentziala. Dudarik gabe, etorkizun hurbilean azterketa sakonagoa egin beharko litzateke, metodoaren propietate onak baieztatzeko. Horien artean, honako ideia aipatuko ditugu:
+\subsection*{Energia errorea eta errore globalak.}
+
+Hiru errore mota ezberdin aztertu ditugu: energia errorea; kokapen eta abiaduren erroreen estimazioak; orbita eliptikoaren erdi-ardatz nagusiaren (\emph{semi-major axis}) eta eszentrikotasunaren erroreen estimazioak. RKIK metodoa $h=10.63$ urrats luzerarekin integratu dugu eta  \emph{CO1035}, \emph{ABAH1064} metodoak $h=4.76$ urrats luzerarekin.
+
+
+%$s=8$ metodoarentzat, birbiltze errorea hasten den uneko urrats luzera hartu dut: $k=12, \ h=10,667$. Kokapen errore erlatiboaren estimazioa, $h/2$ integrazioarekiko diferentzia gisa kalkulatu ditugu.
+
+\subsubsection*{Energiaren eboluzioa}
+
+
+Lau integrazioen energiaren errore erlatiboaren eboluzioak \ref{fig:esp83}~irudian erakutsi ditugu. Batetik, RKIK metodoaren doitasun mistoko inplementazioaren abantaila erakusteko,  bi inplementazioen erroreen eboluzioak konparatu ditugu: alde batetik kalkulu guztietarako $64$-biteko (\emph{double}) doitasuna erabiltzen duen inplementazioa, eta bestetetik $64$-biteko eta $80$-biteko (\emph{long double})  inplementazio mistoa erabiltzen duena. Horrez gain, \emph{CO1035} konposizio eta \emph{ABAH1064} splitting metodoen energia erroreen eboluzioak konpara daitezke aurrekoekin, eskala berean bait daude bi azpi-irudiak. Aipagarria da RKIK metodoaren inplementazio mistoak \emph{ABAH1064} splitting metodoarekin alderatuz, energia errore txikiagoak lortzen dituela.
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[Gauss metodoa ($s=8$).]
+{\includegraphics[width=.45\textwidth]{esperimentua831}}
+&
+\subfloat[ABAH1064 eta CO1035]
+{\includegraphics[width=.45\textwidth]{esperimentua832}}
+\end{tabular}
+\caption{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako RKIK metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: kalkulu guztietarako $64$-biteko (\emph{double}) doitasunarekin (urdinez) eta bestetik, $64$-biteko eta $80$-biteko (\emph{long double})  inplementazio mistoa erabiltzen duena (laranjaz). Eskuineko irudian, splitting/konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
+\label{fig:esp83}
+\end{figure}
+
+
+\subsubsection*{Kokapen eta abiadura erroreen estimazioak}
+
+
+RKIK ($s=8$) eta \emph{ABAH1064} metodoen  kokapen eta abiaduraren erroreen estimazioak ikus daitezke \ref{fig:esp84}~irudian. Erroreen estimazioa, urrats txikiagoko integrazioaren soluzioarekiko diferentzia gisa kalkulatu dugu.
+RKIK metodoaren integrazioan, urrats luzera handiagoa erabili arren, barne-planeten kokapen eta abiaduren errore estimazioak, \emph{ABAH1064} splitting metodoaren integrazioan baino txikiagoak izan dira.
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[RKIK metodoa (kokapen errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua841}}
+&
+\subfloat[RKIK metodoa (abiadura errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua842}}
+\\
+\subfloat[ABAH1064 (kokapen errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua843}}
+&
+\subfloat[ABAH1064 (abiadura errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua844}}
+\end{tabular}
+\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataleko RKIK metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzera aplikatutako integrazioarentzat. (c) eta (d) irudietan, \emph{ABAH1064} splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerako integrazioarentzat. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
+\label{fig:esp84}
+\end{figure}
+
+
+\subsubsection*{Eszentrikotasun eta erdi-ardatz nagusiaren erroreen estimazioak}
+
+
+Planeten mugimendu orbitala eliptikoa da. Orbitaren propietateak finkatzen dituzten orbita Kepleriarraren bi inbariante hauen erroreen estimazioa kalkulatuko dugu:
 \begin{enumerate}
-\item $80$-biteko doitasuneko (\emph{long double}) integrazioaren konputazioa: kasu honetan, proiekzioa $128$-biteko doitasunean egitea komeniko litzateke. 
-\item Kepler fluxuaren inplementazioaren hobekuntzak: oraingo inplementazioaren iterazio guztietan, ez dugu aurreko iterazioen informazio erabiltzen. Iterazio berri baten kalkuluan, aurreko iterazioren egoeretatik abiatuta, nahikoa izango litzateke fluxuaren iterazio bakarra egitea.  
-\item Eguzki sistemaren eredu konplexuago batekin (Ilargia eta zenbait asteroide, erlatibitate efektua, eguzkiaren atxatamendua,\dots), Gauss metodoa eraginkorragoa bilakatzea espero da. Eguzki-sistemaren eredu konplexuago, aplikatzen den neurrian paralelizazioak abantaila handiagoa suposatuko du. Era berean, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan.
-\item Eraginkortasuna hobetzeko, Jacobiarraren hurbilpen sinple baten erabilera (puntu finkoaren eta Newton-en arteko algoritmo eraginkorra).  
-\end{enumerate}    
+\item $a$ erdi-ardatz nagusia (\emph{semi-major axis}) izeneko inbariantea, orbita eliptikoaren tamaina definitzen duena.
+\item $e$ eszentrikotasuna, orbita eliptikoaren forma finkatzen duena.
+\end{enumerate}
+%
+Bi inbarianteen erroreen eboluzioak \ref{fig:esp87}~irudian ikus daitezke. Bai RKIK metodorako, eta bai \emph{ABAH1064} splitting metodorako,  $a$ erdi-ardatz nagusiaren eta $e$ eszentrikotasunaren erroreak, kokapen eta abiaduren erroreak baino txikiagoak dira. Honek esan nahi du, integrazioaren orbitaren tamaina eta forma hobeto mantentzen direla eta errorea, orbitaren fasean nagusitzen dela.
+%Esperimentu honetan ere, RKIK metodoaren erroreak, \emph{ABAH1064} spliting metodoarenak baina txikiagoak dira.
 
-Eguzki-sistema eredu konplexuetan, Kleperiarrak ez diren indarrak aplika daitezke. Aldagai hauen konbergentzia azkartzeko, Newton sinplifikatuaren iterazioan oinarritutako inplementazioa aplikatzea komeniko da.  
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[RKIK metodoa (erdi-ardatz nagusiaren errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua871}}
+&
+\subfloat[RKIK metodoa (eszentrikotasunaren errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua872}}\\
+\subfloat[ABAH1064 (erdi-ardatz nagusiaren errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua873}}
+&
+\subfloat[ABAH1064 (eszentrikotasunaren errorea)]
+{\includegraphics[width=.45\textwidth]{esperimentua874}}
+\end{tabular}
+\caption{\small \small Orbita eliptikoaren $a$ erdi-ardatz nagusiaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako RKIK metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluton (morez)}
+\label{fig:esp87}
+\end{figure}
 
-Azkenik, aipatu nahi dugu, inplementazioaren kodea, helbide honetan \url{https://github.com/mikelehu/IRK-SolarSystem} eskuragarri jarri dugula. 
+\subsection*{Biribiltze errorea.}
 
+
+Hirugarren esperimentu honetan, biribiltze errorea ilustratzeko esperimentua egin dugu eta horretarako, momentu angeluarraren errore erlatiboaren eboluzioan oinarritu gara. % Momentu angeluarraren trunkatze errorea beti zero da eta metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte.
+Lau faktore hartu behar dira kontutan. Kepler-en fluxuak momentu angeluarra zehazki mantentzen du eta jatorrizko ekuazio diferentzialen inbariante koadratikoa da. Hori dela-eta, Kepler-en fluxuan oinarritutako aldagai aldaketarekin lortutako ekuazio diferentzialen inbariante koadratikoa ere bada. Integratzeko Runge-Kutta metodo sinplektikoa aplikatu dugunez, inbariante koadratikoak zehazki mantentzen ditu eta beraz,  ikusten duguna biribiltze errorea da.
+
+\ref{fig:esp85}~irudian,  $s=8$ ataleko RKIK metodoarekin, $h=9.0$ eta $h=10.63$ urrats luzerarekin integrazioen soluzioen momentu angeluarraren errorea erakutsi dugu eta espero bezala, biribiltze errorea zein den erakusten dute.
+
+
+\begin{figure}[h!]
+\centering
+\begin{tabular}{c c}
+\subfloat[Momentu angeluarra $h=9.0$.]
+{\includegraphics[width=.45\textwidth]{esperimentua851}}
+&
+\subfloat[Momentu angeluarra $h=10.63$]
+{\includegraphics[width=.45\textwidth]{esperimentua852}}
+\end{tabular}
+\caption{\small Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. RKIK ($s=8$) metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin. }
+\label{fig:esp85}
+\end{figure}
+
+
+
+\section{Laburpena}
+
+
+Kapitulu honetan, eguzki-sistemaren integraziorako inplementazio berri bat aurkeztu dugu. Inplementazio berria, egungo metodo sinplektiko eraginkorrenekin alderatu dugu eta emaitzak, baikorrak izateko modukoak iruditu zaizkigu. Oinarrizko azterketa egin badugu ere, agerian geratu da, metodoak etorkizunean izan dezakeen potentziala. Dudarik gabe, etorkizun hurbilean azterketa sakonagoa egin beharko litzateke, metodoaren propietate onak baieztatzeko. Horien artean, honako ideiak aipatuko ditugu:
+\begin{enumerate}
+%\item Biribiltze erroreen hedapenaren azterketa estatistikoa, puntu-finkoaren eta Newton sinplifikatuaren inplementazioetan egin genuen moduan.
+\item $80$-biteko doitasuneko (\emph{long double}) integrazioaren konputazioa: kasu honetan, $\varphi_{h/2}$ fluxuaren aplikazioa $128$-biteko doitasunean egitea komeniko litzateke.
+\item Kepler-en fluxuaren inplementazioaren hobekuntzak: oraingo inplementazioaren iterazio guztietan ez dugu aurreko iterazioen informazio erabiltzen. Iterazio berri baten kalkuluan, aurreko iterazioren egoeretatik abiatuta, nahikoa izango litzateke Newton-en iterazio bakarra egitea.
+\item Eguzki sistemaren eredu konplexuagoarekin (ilargia eta zenbait asteroide, erlatibitate efektua, eguzkiaren atxatamendua,\dots), RKIK metodoak eraginkorragoak bilakatzea espero da. Eguzki-sistemaren eredu konplexuagoa aplikatzen den neurrian paralelizazioak abantaila handiagoa suposatuko du. Era berean, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan.
+\item Eraginkortasuna hobetzeko, Jacobiarraren hurbilpen sinple baten erabilera (puntu finkoaren eta Newton-en arteko algoritmo eraginkorra).
+\end{enumerate}
+
+%Eguzki-sistema eredu konplexuetan, Kleperiarrak ez diren indarrak aplika daitezke. Aldagai hauen konbergentzia azkartzeko, Newton sinplifikatuaren iterazioan oinarritutako inplementazioa aplikatzea komeniko da.

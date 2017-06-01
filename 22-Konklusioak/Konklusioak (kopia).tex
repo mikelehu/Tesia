@@ -1,0 +1,120 @@
+\chapter{Ondorioak.}
+
+
+\section*{Sarrera}
+
+Gure helburua, eguzki-sistemaren doitasun altuko eta epe luzeko integraziorako, Gaussen metodo inplizituen inplementazio eraginkorra lortzea da. Helburua lortu ote den ala ez galderari erantzuteko, balorazioa bi ikuspegietatik egin behar dela iruditzen zaigu. Batetik, lortutako inplementazioaren aldeko argumentuak azalduz, eraginkorra dela defenditu daiteke. Bestetik, ikerketan egindako lana puntu bateraino iritsi da, hortik aurrera, bide berriak urratu daitezke eraginkortasuna hobetzeko.
+
+Gakoetako bat, integratu nahi den eguzki-sistemaren ereduaren konplexutasuna da. Eguzki-sistemaren ezagutza gero eta zehatzagoa denez \cite{Kaplan2015}, eredu gero eta konplexuagoak integratu nahi izango direla suposatu daiteke. Zentzu honetan, integrazio metodoak problema konplexuen integraziorako eraginkorra izan beharko luke. Edozein kasutan, argi dago, integrazio metodoak  ez duela mugatu behar aplikatu nahi den problemaren formulazio matematikoa  eta askatasun osoa eduki behar dela ekuazioetan nahi diren efektuak gehitzeko.   
+
+Algoritmo baten eraginkortasuna, konputagailu hardware ingurune bati lotuta dago eta urteekin alda daiteke. Hau da,   hardware jakin batean eraginkorra den algoritmoa, hardware berriagotan zaharkituta gera daiteke.  Ezaguna da, egungo konputagailuen ahalmena konputazio paraleloan oinarritzen dela eta horregatik, ideia berritzaileak aplikatu behar direla algoritmo eraginkorrak garatzeko. Gauss metodo inplizituak, inplementazio aukera asko eskaintzen dituenez, zenbakizko integrazioen arloan ideia berriak garatzeko metodo egokiak direla \cite{Dongarra2017} esaten ausartuko gara.   
+
+
+\section*{Eguzki-sistemaren integraziorako inplementazioa}
+
+
+Eguzki-sistemaren integraziorako, Runge-Kutta metodo inplizitu orokorra (IRK) aplikatu dugula azpimarratu behar dugu. Hori dela-eta, inplementazioa sinplea da eta inplementazioak, metodoaren ezaugarri on guztiak heredatzen ditu. Azken finean, puntu-finkoaren iterazioan oinarritutako IRK inplementazio estandarra aplikatu dugu, formulazio eta geratze irizpide bereziekin. Epe luzeko integrazioetarako, metodoa sinplektikoa izatea garrantzitsua da. Baina, IRK metodoaren formulazio estandarrak  sinplektikotasuna ez duenez ziurtatzen, IRK metodoa aplikatzeko formulazio berria proposatu dugu. Bestalde, inplementazio estandarraren geratze irizpidea hobetu dugu. Laburtuz, IRK inplementazio estandarrean oinarritzerakoan, inplementazio berri batek izan ditzakeen konplexutasunak ekidin ditugu. 
+
+Kepler-en fluxuan oinarritutako aldagai aldaketa, ebatzi nahi dugun problemari lotuta dago. Aldagai aldaketa hau, teknika orokor baten aplikazioa da; hau da, ekuazio diferentzialetatik zati bat desagerrarazteko helburuarekin definitutako aldagai aldaketa aplikatzearena. Aldagai aldaketa honekin, ekuazio diferentzialetatik zehazki kalkula daitekeen zatia (alde Kepleriarra)  desagertzen da eta mantso aldatzen diren ekuazio diferentzialak lortzen ditugu.  Aldagai berriekiko ekuazio diferentzialek, hiru abantaila dituzte. Lehenik, eguzki-sistemaren trunkatze errore nagusiena ezabatu dugunez, integrazioan urrats luzera handiagoak erabil daitezke. Bigarrenik, integrazioaren urratsaren konputazioaren baturan,
+\begin{equation*}
+% (\tilde{y}_{n+1}, e_{n+1}) \leftarrow \text{batura konpensatua}(\tilde{y}_n, e_n,\delta_n),
+ y_{n+1}=y_{n}+\delta_n, \ \ n=1,2,\dots
+\end{equation*}
+$\delta_n$ gehikuntzak magnitude txikia du eta beraz, batura konpentsatuagatik informazio gutxiago galduko da. Gainera, $\delta_n$ doitasun altuan kalkulatzeak, abantaila areagotu egingo du. Hirugarrenik, puntu-finkoaren konbergentzia azkarra izango da.
+
+Eguzki-sistemaren eredu konplexuetan, Kepleriarrak ez diren indarrak aplika daitezke. Aldagai hauen konbergentzia azkartzeko, Newton sinplifikatuaren iterazioan oinarritutako inplementazioa aplikatzea komeniko da.                  
+
+Gauss metodoak, neurri batean  splitting eta konposizio metodoen antzekoak dira. 
+\begin{align*}
+\text{Konposizio metodoa} \ \ &\equiv \ \ \text{Gauss metodoa, aldagai aldaketa gabe}.\\
+\text{Splitting metodoa}  \ \ &\equiv \ \  \text{Gauss metodoa, aldagai aldaketarekin}.
+\end{align*}
+
+Splitting metodoekiko antzekotasuna azaltzeko, (\ref{eq:stverlet})~\emph{Störmer-Verlet} splitting metodoarekin konparatuko dugu. \emph{Störmer-Verlet} metodoa, era honetan aplikatzen da:  fluxua $h/2$ aurreratu, perturbazioak kalkulatu eta berriz,  fluxua $h/2$ aurreratu. Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzen dugunean, gauza bera egiten ari gara:  fluxua $h/2$ aurreratu, perturbazioak kalkulatu (aldagai berrietan eta beraz, hobeto kalkulatzen dugu),  fluxua $h/2$ aurreratu.
+
+%\begin{figure} [h!]
+%{\includegraphics [width=16cm, height=4cm] {urratsBat}}
+%\caption{\small Gauss metodoan, Kepler-en fluxuan oinarritutako aldagai aldaketa aplikatzen dugunean, urratsaren konputazioa}
+%\label{fig:urratsBat}
+%\end{figure} 
+
+Splitting metodoak oso eraginkorrak dira eta eguzki-sistemaren eredu sinplearen integrazioen  esperimentuek, hori erakutsi digute. Baina eredu errealistagoak (gorputz kopurua handitzen delako edota erlatibitate efektua kontutan hartzen delako) integratzeko, Kepler fluxuan oinarritutako Gauss metodoak, splitting metodoekiko abantaila hauek izango dituela azpimarratuko dugu:  
+
+\begin{enumerate}
+
+\item Ordena altuko metodoak
+
+Konposizio eta  splitting metodo optimoenak, $p=10$ ordenakoak dira. Gauss metodoei dagokienez, edozein ordenako metodoak eraiki daitezke. Doitasun bikoitzeko konputazioetarako, $s=6$ ataletako metodoa eraginkorrena kontsideratzen da \cite{Hairer2008} baina doitasun altuagoko konputazioetarako, ordena altuagoko metodoak aplikatzea gomendagarria da.
+
+\item Paralelizagarria
+
+Gauss metodoaren $s$-ataletako funtzioen ebaluazioak independenteak dira eta modu paraleloan exekutatu daitezke. Eguzki-sistemaren eredu konplexuagoa kontutan hartzen den neurrian, paralelizazioak abantaila handiagoa suposatuko du. Gauss metodoaren paralelizazio gaitasun hau azpimarratzekoa da, egungo algoritmo azkarren diseinua kodearen paralelizazioan oinarritzen baita.
+
+\item Hamiltondar orokorrak
+
+Gauss metodoa, edozein sistema Hamiltondarri aplika dakioke. Splitting metodoak, ordea, sistema Hamiltondar banagarrietan bakarrik aplika daitezke; eguzki-sistemaren eredu errealistak integratzeko, Hamiltondarraren egitura mantendu behar da eta hainbat indar ez grabitazional  gehitzeko, zailtasunak izan ditzakegu. 
+
+\item Malgutasuna
+
+Splitting metodoen konputazioak modu trinkoan kalkulatu behar dira, hau da, atalen konputazioak sekuentzialki exekutatzen dira eta konputazioak ez ditu aldaerak onartzen. Gauss metodoaren ekuazio inplizituak ebazteko, ordea, teknika ezberdinak konbina daitezke eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu. Adibidez, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke  \cite{Beylkin2014} eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan. 
+
+\item Birparametrizazioa
+
+Birparametrizazioa, eguzki-sistemaren integrazioetarako tresna baliagarria dela frogatu da \cite{Fukushima2007,Rauch1998} eta Gauss metodoan teknika hau zuzenean aplika daiteke. Splitting metodoetan, ordea, birparametrizazioa ezin daiteke erabili eta integrazioetan zailtasunak agertzen direnean (esaterako, planeta baten eszentrikotasuna handitzen denean), orduan integrazioaren tarte batean urratsaren luzera txikitu behar da soluzioaren doitasuna mantentzeko \cite{Laskar2009}.
+
+\end{enumerate}
+
+
+\section*{Etorkizuneko lanak}
+
+Eguzki-sistemaren integraziorako inplementazioa garatzeko aukerak zehaztuko ditugu. Lehengo eginbeharra, eguzki-sistemaren eredu konplexuagoak integratzea da eta, zehazki, arlo honetan  aplikatzen den eguzki-sistemaren ereduekin \cite{Laskar2011} gure inplementazioaren jokabidea aztertzea. Eredu sinplearekin lortutako emaitzekin baikorrak izateko arrazoiak baditugu eta eredu konplexuagoekin gure inplementazioaren abantaila areagotu daitekeela pentsatzen dugu. Inplementazioaren eraginkortasuna hobetzeko lanak bi taldeetan banatu ditugu: etorkizun hurbileko lanak eta aurreragoko lanak.
+
+\subsection*{Etorkizun hurbileko lanak}
+
+\begin{enumerate}
+\item Biribiltze erroreen hedapenaren azterketa estatistikoa, puntu-finkoaren eta Newton sinplifikatuaren inplementazioetan egin genuen moduan.
+
+
+\item Aurreko azterketan, ikusten bada errore hedapenean gehikuntza sistematiko bat dagoela, hori ekiditeko aztertu beharko litzateke puntu-finkoaren eta Newton sinplifikatuaren iterazioen arteko algoritmo eraginkorra. Horretarako,  Jacobiarraren hurbilpen sinple bat erabili ahal izango litzateke. Ez balego errore hedapenik ere, bide hau jorratzea interesgarria izan daitekeela iruditzen zaigu.
+
+\item Doitasun nahasia.
+
+Eguzki-sistemaren integrazioetan, soluzioaren doitasuna hobetzeko ahalegin berezia egiten da \cite{Laskar2015}: $80$-biteko doitasuneko aritmetika eta batura konpentsatua erabiltzen dira. Gure inplementazioarekin, $80$-biteko doitasuneko integrazioa, $128$-biteko doitasuneko konputazio batzuekin konbinatuz, emaitza onak lortuko ditugulakoan gaude. 
+
+\item Eredu deskonposaketan oinarritutako teknikak.
+
+Inplementazioa eraginkorragoa egiteko lehenengo iterazioak eredu sinpleagoarekin kalkula daitezke eta bukaerako iterazioak, eredu konplexuagoarekin. 
+
+\end{enumerate}
+
+
+\subsection*{Aurreragoko lanak}
+
+
+\begin{enumerate}
+
+
+\item Denbora birparametrizazioak.
+
+Gorputzen gerturatzeen tratamendurako, denbora birparametrizazio teknikak aplikatu daitezke. 
+
+\item Problema oszilakorren teknikak.
+
+Problema oszilakorren tratamendu aljebraikoan oinarritutako hobekuntza teknikak (metodo prozesatuak, promediatuen teknikak) aplika daitezke.
+Wisdom-ek \cite{Wisdom2006} bere integrazio metodoen doitasuna hobetzeko teknikekin (\emph{symplectic correctors}) erlazionatutakoak dira hauek.
+
+ 
+\item Paralelizazio eta bektorizazio teknika aurreratuak.
+
+Kodeen eraginkortasuna hobetzeko, konputagailuen paralelizazio eta bektorizazio gaitasunak ondo erabili behar dira. Gauss metodoa azkartzeko, oinarrizko paralelizazioa aplikatu dugu eta honek, abantaila erakutsi du. Teknikak hauek modu aurreratuagoan aplikatzeko,  paralelizazio eta bektorizazio gaietan sakondu beharra ikusten dugu. 
+
+
+\end{enumerate} 
+
+
+
+
+
+
+
+

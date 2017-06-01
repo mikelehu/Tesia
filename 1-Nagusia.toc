@@ -8,37 +8,37 @@
 \contentsline {section}{\numberline {1.4.}Ekarpenak}{9}{section.1.4}
 \contentsline {section}{\numberline {1.5.}Tesiaren egitura}{12}{section.1.5}
 \contentsline {part}{II.\hspace {1em}Oinarriak}{13}{part.2}
-\contentsline {chapter}{\numberline {2.}Zenbakizko integratzaile sinplektikoak.}{15}{chapter.2}
-\contentsline {section}{\numberline {2.1.}Sarrera.}{15}{section.2.1}
+\contentsline {chapter}{\numberline {2.}Zenbakizko integratzaile sinplektikoak}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1.}Sarrera}{15}{section.2.1}
 \contentsline {section}{\numberline {2.2.}Zenbakizko integrazio metodoak}{15}{section.2.2}
-\contentsline {subsection}{Oinarrizko kontzeptuak.}{15}{section*.5}
-\contentsline {subsection}{Sistema-Hamiltondarrak.}{20}{section*.11}
-\contentsline {subsection}{Metodo sinplektikoak.}{22}{section*.16}
-\contentsline {section}{\numberline {2.3.}Runge-Kutta metodo sinplektikoak.}{24}{section.2.3}
-\contentsline {subsection}{Runge-Kutta metodoak.}{24}{section*.20}
-\contentsline {subsection}{Gauss metodoa.}{26}{section*.23}
-\contentsline {subsection}{IRK inplementazioa.}{29}{section*.28}
-\contentsline {section}{\numberline {2.4.}Konposizio eta Splitting metodoak.}{33}{section.2.4}
-\contentsline {subsection}{Konposizio metodoak.}{33}{section*.36}
-\contentsline {subsection}{Splitting metodoak.}{36}{section*.42}
-\contentsline {subsection}{Eguzki-sistemari egokitutako splitting metodoak.}{38}{section*.49}
-\contentsline {section}{\numberline {2.5.}Laburpena.}{40}{section.2.5}
-\contentsline {chapter}{\numberline {3.}Problemak.}{41}{chapter.3}
-\contentsline {section}{\numberline {3.1.}Sarrera.}{41}{section.3.1}
-\contentsline {section}{\numberline {3.2.}Pendulu bikoitza.}{42}{section.3.2}
-\contentsline {subsection}{Pendulu bikoitz arrunta.}{42}{section*.55}
-\contentsline {subsection}{Pendulu bikoitz zurruna.}{43}{section*.60}
-\contentsline {section}{\numberline {3.3.}N-Gorputzen problema.}{45}{section.3.3}
-\contentsline {section}{\numberline {3.4.}Eguzki-sistema.}{47}{section.3.4}
-\contentsline {subsection}{Sarrera.}{47}{section*.68}
-\contentsline {subsection}{Problemak.}{49}{section*.71}
-\contentsline {section}{\numberline {3.5.}Laburpena.}{51}{section.3.5}
-\contentsline {chapter}{\numberline {4.}Koma higikorreko aritmetika.}{55}{chapter.4}
-\contentsline {section}{\numberline {4.1.}Sarrera.}{55}{section.4.1}
-\contentsline {section}{\numberline {4.2.}\emph {IEEE-754} estandarra.}{55}{section.4.2}
-\contentsline {section}{\numberline {4.3.}Biribiltze errorea.}{58}{section.4.3}
-\contentsline {section}{\numberline {4.4.}Biribiltze errorea gutxitzeko teknikak.}{61}{section.4.4}
-\contentsline {section}{\numberline {4.5.}Laburpena.}{64}{section.4.5}
+\contentsline {subsection}{Oinarrizko kontzeptuak}{15}{section*.5}
+\contentsline {subsection}{Sistema-Hamiltondarrak}{20}{section*.11}
+\contentsline {subsection}{Metodo sinplektikoak}{22}{section*.16}
+\contentsline {section}{\numberline {2.3.}Runge-Kutta metodo sinplektikoak}{24}{section.2.3}
+\contentsline {subsection}{Runge-Kutta metodoak}{24}{section*.20}
+\contentsline {subsection}{Gauss metodoa}{26}{section*.23}
+\contentsline {subsection}{IRK inplementazioa}{29}{section*.28}
+\contentsline {section}{\numberline {2.4.}Konposizio eta splitting metodoak}{33}{section.2.4}
+\contentsline {subsection}{Konposizio metodoak}{33}{section*.36}
+\contentsline {subsection}{Splitting metodoak}{36}{section*.42}
+\contentsline {subsection}{Eguzki-sistemari egokitutako splitting metodoak}{38}{section*.49}
+\contentsline {section}{\numberline {2.5.}Laburpena}{40}{section.2.5}
+\contentsline {chapter}{\numberline {3.}Problemak}{41}{chapter.3}
+\contentsline {section}{\numberline {3.1.}Sarrera}{41}{section.3.1}
+\contentsline {section}{\numberline {3.2.}Pendulu bikoitza}{42}{section.3.2}
+\contentsline {subsection}{Pendulu bikoitz arrunta}{42}{section*.55}
+\contentsline {subsection}{Pendulu bikoitz zurruna}{43}{section*.60}
+\contentsline {section}{\numberline {3.3.}N-Gorputzen problema}{45}{section.3.3}
+\contentsline {section}{\numberline {3.4.}Eguzki-sistema}{47}{section.3.4}
+\contentsline {subsection}{Sarrera}{47}{section*.68}
+\contentsline {subsection}{Problemak}{49}{section*.71}
+\contentsline {section}{\numberline {3.5.}Laburpena}{51}{section.3.5}
+\contentsline {chapter}{\numberline {4.}Koma higikorreko aritmetika}{55}{chapter.4}
+\contentsline {section}{\numberline {4.1.}Sarrera}{55}{section.4.1}
+\contentsline {section}{\numberline {4.2.}\emph {IEEE-754} estandarra}{55}{section.4.2}
+\contentsline {section}{\numberline {4.3.}Biribiltze errorea}{58}{section.4.3}
+\contentsline {section}{\numberline {4.4.}Biribiltze errorea gutxitzeko teknikak}{61}{section.4.4}
+\contentsline {section}{\numberline {4.5.}Laburpena}{64}{section.4.5}
 \contentsline {part}{III.\hspace {1em}Ekarpenak.}{65}{part.3}
 \contentsline {chapter}{\numberline {5.}IRK: Puntu-finkoaren iterazioa.}{67}{chapter.5}
 \contentsline {section}{\numberline {5.1.}Sarrera.}{67}{section.5.1}
@@ -73,46 +73,46 @@
 \contentsline {subsection}{Biribiltze errorearen azterketa.}{118}{section*.162}
 \contentsline {subsection}{Puntu-finkoa versus Newton iterazioa}{119}{section*.164}
 \contentsline {section}{\numberline {6.8.}Laburpena.}{121}{section.6.8}
-\contentsline {chapter}{\numberline {7.}IRK: Eguzki-sistema.}{123}{chapter.7}
+\contentsline {chapter}{\numberline {7.}IRK metodo sinplektikoen bidezko eguzki-sistemaren integrazioa}{123}{chapter.7}
 \contentsline {section}{\numberline {7.1.}Sarrera.}{123}{section.7.1}
-\contentsline {section}{\numberline {7.2.}Kepler-en fluxua.}{124}{section.7.2}
-\contentsline {section}{\numberline {7.3.}Kepler Perturbatuaren problema.}{125}{section.7.3}
-\contentsline {section}{\numberline {7.4.}Alde Kepleriar bat baino gehiagoko sistemak.}{128}{section.7.4}
-\contentsline {section}{\numberline {7.5.}Zenbakizko esperimentuak.}{132}{section.7.5}
-\contentsline {subsection}{Problemak.}{133}{section*.173}
-\contentsline {section}{\numberline {7.6.}Laburpena.}{140}{section.7.6}
-\contentsline {part}{IV.\hspace {1em}Eztabaida eta ondorioak.}{143}{part.4}
-\contentsline {chapter}{\numberline {8.}Eztabaida}{145}{chapter.8}
-\contentsline {section}{\numberline {8.1.}Eguzki-sistemaren integrazio luzeak}{145}{section.8.1}
-\contentsline {section}{\numberline {8.2.}Eredu deskonposaketa}{149}{section.8.2}
-\contentsline {section}{\numberline {8.3.}IRK inplementazioaren oinarriak}{153}{section.8.3}
-\contentsline {section}{\numberline {8.4.}Doitasun altuko konputazioak}{157}{section.8.4}
-\contentsline {section}{\numberline {8.5.}Aldagai aldaketa}{158}{section.8.5}
-\contentsline {section}{\numberline {8.6.}Paralelizazioa}{159}{section.8.6}
-\contentsline {section}{\numberline {8.7.}Inplementazioaren erabilgarritasuna}{161}{section.8.7}
-\contentsline {chapter}{\numberline {9.}Ondorioak.}{165}{chapter.9}
-\contentsline {part}{V.\hspace {1em}Eranskinak}{171}{part.5}
-\contentsline {chapter}{\numberline {A.}Konputazio zientzia.}{173}{appendix.A}
-\contentsline {section}{\numberline {A.1.}Sarrera.}{173}{section.A.1}
-\contentsline {section}{\numberline {A.2.}Eraginkortasuna}{174}{section.A.2}
-\contentsline {section}{\numberline {A.3.}Hardwarea.}{177}{section.A.3}
-\contentsline {section}{\numberline {A.4.}Programazio lengoaiak (Paralelizazioa).}{182}{section.A.4}
-\contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{185}{section.A.5}
-\contentsline {paragraph}{Adibidea.}{187}{section*.239}
-\contentsline {section}{\numberline {A.6.}Konpiladorea.}{189}{section.A.6}
-\contentsline {paragraph}{Konpiladoreak.}{190}{section*.244}
-\contentsline {paragraph}{Optimizazioak.}{190}{section*.245}
-\contentsline {paragraph}{Konpilazio aginduak}{190}{section*.246}
-\contentsline {section}{\numberline {A.7.}Laburpena.}{191}{section.A.7}
-\contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{193}{appendix.B}
-\contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{193}{section.B.1}
-\contentsline {section}{\numberline {B.2.}Koordenatu sistemak.}{196}{section.B.2}
+\contentsline {section}{\numberline {7.2.}Sistema perturbatuetarako integrazio metodo simetriko mota orokor bat: Runge-Kutta inplizitu konposatua (RKIK)}{124}{section.7.2}
+\contentsline {section}{\numberline {7.3.}Sistema Kepleriarren perturbaziotarako aplikazioa}{128}{section.7.3}
+\contentsline {section}{\numberline {7.4.}Zenbakizko esperimentuak}{129}{section.7.4}
+\contentsline {subsection}{Test problema}{130}{section*.167}
+\contentsline {section}{\numberline {7.5.}Laburpena}{137}{section.7.5}
+\contentsline {part}{IV.\hspace {1em}Eztabaida eta ondorioak.}{141}{part.4}
+\contentsline {chapter}{\numberline {8.}Eztabaida}{143}{chapter.8}
+\contentsline {section}{\numberline {8.1.}Eguzki-sistemaren integrazio luzeak}{143}{section.8.1}
+\contentsline {section}{\numberline {8.2.}Eredu deskonposaketa}{147}{section.8.2}
+\contentsline {section}{\numberline {8.3.}IRK inplementazioaren oinarriak}{151}{section.8.3}
+\contentsline {section}{\numberline {8.4.}Doitasun altuko konputazioak}{155}{section.8.4}
+\contentsline {section}{\numberline {8.5.}Aldagai aldaketa}{156}{section.8.5}
+\contentsline {section}{\numberline {8.6.}Paralelizazioa}{157}{section.8.6}
+\contentsline {section}{\numberline {8.7.}Inplementazioaren erabilgarritasuna}{159}{section.8.7}
+\contentsline {chapter}{\numberline {9.}Ondorioak.}{163}{chapter.9}
+\contentsline {part}{V.\hspace {1em}Eranskinak}{169}{part.5}
+\contentsline {chapter}{\numberline {A.}Konputazio zientzia.}{171}{appendix.A}
+\contentsline {section}{\numberline {A.1.}Sarrera.}{171}{section.A.1}
+\contentsline {section}{\numberline {A.2.}Eraginkortasuna}{172}{section.A.2}
+\contentsline {section}{\numberline {A.3.}Hardwarea.}{175}{section.A.3}
+\contentsline {section}{\numberline {A.4.}Programazio lengoaiak (Paralelizazioa).}{180}{section.A.4}
+\contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{183}{section.A.5}
+\contentsline {paragraph}{Adibidea.}{185}{section*.232}
+\contentsline {section}{\numberline {A.6.}Konpiladorea.}{187}{section.A.6}
+\contentsline {paragraph}{Konpiladoreak.}{188}{section*.237}
+\contentsline {paragraph}{Optimizazioak.}{188}{section*.238}
+\contentsline {paragraph}{Konpilazio aginduak}{188}{section*.239}
+\contentsline {section}{\numberline {A.7.}Laburpena.}{189}{section.A.7}
+\contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{191}{appendix.B}
+\contentsline {section}{\numberline {B.1.}Kepler-en fluxua.}{191}{section.B.1}
+\contentsline {subsection}{Kepler fluxuaren inplementazioa.}{192}{section*.241}
+\contentsline {section}{\numberline {B.2.}Koordenatu sistemak.}{195}{section.B.2}
 \contentsline {section}{\numberline {B.3.}Newton eraginkorraren garapena.}{199}{section.B.3}
-\contentsline {chapter}{\numberline {C.}Inplementazioak.}{203}{appendix.C}
-\contentsline {section}{\numberline {C.1.}Egitura orokorra.}{203}{section.C.1}
-\contentsline {section}{\numberline {C.2.}IRK puntu-finkoa.}{205}{section.C.2}
-\contentsline {section}{\numberline {C.3.}IRK Newton.}{205}{section.C.3}
-\contentsline {section}{\numberline {C.4.}IRK Eguzki-sistema.}{206}{section.C.4}
-\contentsline {section}{\numberline {C.5.}Konposizio-Splitting metodoak.}{206}{section.C.5}
-\contentsline {chapter}{\numberline {D.}Zerrendak}{207}{appendix.D}
-\contentsline {chapter}{Bibliografia}{217}{appendix*.271}
+\contentsline {chapter}{\numberline {C.}Inplementazioak.}{201}{appendix.C}
+\contentsline {section}{\numberline {C.1.}Egitura orokorra.}{201}{section.C.1}
+\contentsline {section}{\numberline {C.2.}IRK puntu-finkoa.}{203}{section.C.2}
+\contentsline {section}{\numberline {C.3.}IRK Newton.}{203}{section.C.3}
+\contentsline {section}{\numberline {C.4.}IRK Eguzki-sistema.}{204}{section.C.4}
+\contentsline {section}{\numberline {C.5.}Konposizio-Splitting metodoak.}{204}{section.C.5}
+\contentsline {chapter}{\numberline {D.}Zerrendak}{205}{appendix.D}
+\contentsline {chapter}{Bibliografia}{215}{appendix*.265}

@@ -1,8 +1,61 @@
 \chapter{Ekuazioen garapenak.}
 \label{eranskin:B}
 
-\section{Kepler hasierako baliodun problema.}
-\label{erans:B1}
+
+\section{Kepler-en fluxua.}
+\label{erans:B1}   
+   
+Kepler problema bi gorputzen problemaren kasu partikularra da eta  honako Hamiltondarra dagokio,
+\begin{equation}
+\label{eq: hamkepler}
+H(q,p)=\frac{p^2}{2m}-\frac{\mu}{\|q\|},
+\end{equation}
+non $m$ eta $\mu$ konstanteen balioak  formulazioaren araberakoak diren.
+
+Koordenatu sistema $q=q_2-q_1$ duen formulazioa aukeratzen badugu, konstanteen balioak hauek dira,  
+\begin{equation*}
+m=(1/m_1+1/m_2)^{-1},\ \ \mu=Gm_1m_2,
+\end{equation*} 
+%
+eta ekuazio diferentzialak era honetan definitzen dira,
+\begin{equation}
+\label{eq:kode}
+\dot{q}=p, \ \ \dot{p}= - \frac{k \ q}{\|q\|^3} ,
+\end{equation}
+non $k= \mu / m$ eta  $q,p \in \mathbb{R}^3$ diren.
+
+Kepler problemaren soluzio zehatza kalkula daiteke: une bateko kokapen eta abiadurak emanik, $\Delta t$ denbora tarte bat igarotakoan (positiboa ala negatiboa), kokapen eta abiadura zehatzak konputatu daitezke. Eguzki-sistemaren integrazioetarako, Kepler problema doitasun handian eta era eraginkorrean kalkulatzea, funtsezkoa da. Kepler problemaren erreferentziazko inplementazioak, Danby \cite{Danby1992} eta J.Wisdom-enak  \cite{Wisdom2015} ditugu. 
+
+Kepler-en fluxua, era honetan kalkulatzen da. Lehenik, koordenatu cartesiarretatik ($q,p\in \mathbb{R}^3$), koordenatu eliptikoetara $(a,e,i,\Omega,E)$ itzulpena egingo dugu. Koordenatu eliptikoetan, $E$ (\emph{eccentric anomaly}) aldagaia izan ezik, beste aldagaiak konstante mantentzen dira: beraz, $E_0$ balioa emanda, $\Delta t$ denbora tartea aurrera egin eta $E_1$ balio berria kalkulatuko dugu. Horretarako, Kepler-en izeneneko ekuazioetan oinarrituko gara,
+\begin{align}
+\begin{split}
+&t_0=e \ \sin (E_0),\\
+&t_1=e \ \sin (E_1).
+\end{split}
+\end{align}
+
+
+Azkenik, koordenatu eliptikoetatik koordenatu cartesiarretara itzulpena eginez, kokapen eta abiadura berriak eskuratuko ditugu. 
+
+\begin{equation*}
+(t_0,q_0,v_0) \in \mathbb{R}^6 \ \ \ \longrightarrow \ \ \  (t_0,a,e,i,\Omega,E_0) \in \mathbb{R}^6 
+\end{equation*}
+\begin{equation*}
+\quad \quad \quad \quad \quad \quad \quad \quad \downarrow \Delta t
+\end{equation*}
+\begin{equation*}
+(t_1,q_1,v_1) \in \mathbb{R}^6 \ \ \ \longleftarrow \ \ \  (t_1,a,e,i,\Omega,E_1) \in \mathbb{R}^6 
+\end{equation*}
+
+Gorputz baten orbita Kepleriarra hiru motakoa izan daiteke: $H(q_0,p_0)<0$ denean orbita eliptikoa da, $H(q_0,p_0)>0$ orbita hiperbolikoa eta $H(q_0,p_0)=0$ orbita  parabolikoa. Kepler fluxuaren C inplementazioa, orbita eliptikoetarako garatu dugu eta zehaztasunak, \ref{erans:B1} eranskinean eman ditugu. (\ref{eq:kode}) problemari dagokion fluxua, era honetan defini daiteke,
+\begin{align*}
+\varphi_{\Delta t}^k:&  \quad \mathbb{R}^{6} \quad  \longrightarrow \quad \mathbb{R}^6,  \\
+&  \quad u_0 \ \  \rightsquigarrow \ \ u_1. 
+\end{align*} 
+non $u=(q,v) \in \mathbb{R}^6$  den.
+
+
+\subsection{Kepler fluxuaren inplementazioa.}
 
 Keplerren ekuazioa, kokapen eta abiadura berriak kalkulatzeko oinarrizkoa da eta era honetan definitzen da,
 \begin{equation*}
@@ -10,7 +63,7 @@ E-e \ \sin E = M,
 \end{equation*}
 non $M=n \ (t-T)$ (\emph{mean anomaly}), $n=k \ a^{-3/2}$ (\emph{mean motion}) eta $T$, $M=0$ deneko integrazio konstantea da. $E$ (\emph{eccentric anomaly}) eta $t$-ren arteko erlazio hau erabiliz kalkulatzen da mugimendua. Mugimendu eliptikoaren kasura mugatuko gara ($0\leq e < 1)$ eta Keplerren ekuazioa transzendentala denez, zenbakizko metodo baten bidez ebatziko dugu.
 
-\subsection*{Garapena.}
+\subsubsection*{Garapena.}
 
 Gure abiapuntua, honakoa da,
 \begin{align*}
@@ -80,7 +133,7 @@ eta honako berdintza lortuko dugu,
 \Delta E^{[0]}=x+n\Delta t.
 \end{equation*}
 
-\paragraph*{Koordenatu kartesiarren} kalkulua ekuazio hauen bidez egingo dugu,
+\paragraph*{Koordenatu barizentrikoen} kalkulua ekuazio hauen bidez egingo dugu,
 
 \begin{equation*}
 (q_1,v_1)=(q_0,v_0)+ (q_0,v_0) \left(\begin{array}{cc}
