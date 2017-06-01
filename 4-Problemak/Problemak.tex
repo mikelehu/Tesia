@@ -34,7 +34,7 @@ Pendulu bikoitzaren problema (ikus \ref{fig:dp} irudia), planoan mugitzen diren 
 
 \begin{figure} [h]
 \centerline{\includegraphics [width=10cm, height=8cm] {MyDoublePendulum}}
-\caption{Pendulu bikoitz arrunta.}
+\caption[Pendulu bikoitz arrunta]{Pendulu bikoitz arrunta}
 \label{fig:dp}
 \end{figure} 
 
@@ -49,7 +49,7 @@ Pendulu bikoitzaren problema (ikus \ref{fig:dp} irudia), planoan mugitzen diren 
 \paragraph*{Sistemaren parametroak.} 
 Gure esperimentuetarako honako parametroak kontsideratuko ditugu,
 \begin{equation*}
- \label{eq:17}
+ \label{eq:DPpar1}
 g=9.8 \ {m}/{s^2}\ ,\ \ l_1=1.0 \ m \ , \ l_2=1.0 \ m\ , \ m_1=1.0 \ kg\ , \ m_2=1.0 \ kg.
 \end{equation*} 
 
@@ -72,7 +72,7 @@ Pendulu bikoitz arruntari, malguki bat gehitutako sistema da (ikus \ref{fig:dp_z
 
 \begin{figure} [h]
 \centerline{\includegraphics [width=10cm, height=8cm] {MyDoublePendulumSTIFF}}
-\caption{Pendulu bikoitza (zurruna).}
+\caption[Pendulu bikoitz zurruna]{Pendulu bikoitza (zurruna)}
 \label{fig:dp_zurruna}
 \end{figure} 
 
@@ -88,7 +88,7 @@ Formulazio Lagrangiarrean ($L=T-V$), energia potentzialari $1/2 \ k \ \theta^2$ 
 
 \paragraph*{Sistemaren parametroak.} 
 Honako parametroak kontsideratu ditugu,
-\begin{equation*} \label{eq:17}
+\begin{equation*} \label{eq:DPpar2}
 g=9.8 \ {m}/{s^2}\ ,\ \ l_1=1.0 \ m \ , \ l_2=1.0 \ m\ , \ m_1=1.0 \ kg\ , \ m_2=1.0 \ kg,
 \end{equation*} 
 eta $k$ malgutasun parametroaren balio batzuk finkatu ditugu, zurruntasun maila ezberdineko pendulu bikoitzaren dinamikak aztertzeko 
@@ -220,17 +220,17 @@ Eguzkiak, planetak baino $1.000$ aldiz masa handiago du eta hauxe da, eguzki-sis
 
 Eguzki-sistemaren jatorria, orain $5  \times 10^9$ urtetan finkatzen da eta beraz, eguzki-sistemaren eboluzioa integratzeko, urrats kopuru oso handia beharrezkoa da. Eguzki-sistemaren eredu osoaren (9-planeten problema) integrazioetako ohiko urratsa  $h=0.0025$ urtekoa bada (orbita txikieneko periodoaren $ \%1$), eman beharreko urrats kopurua $2 \times 10^{12}$ izango da. Era berean, eguzki-sistemaren eredu sinpleagoaren (kanpo-planeten problema) integrazioetako urrats tamaina handiagoa bada ere, urrats kopurua $5 \times 10^{10}$ ingurukoa da.   
 
-Eguzki-sistemaren problemaren eskalak, anitzak dira. \ref{fig:lbes}~irudian, planeta nagusien tamainak irudikatu ditugu eta \ref{tab:eguz-sist}~taulan, eguzki-sistemaren planeten ezaugarri nagusienak eman ditugu. Aniztasunaren adierazgarri, ilargiaren, lurraren eta Neptunoren orbitak konpara ditzakegu: ilargiak $27.32$ eguneko periodoa duen orbita dauka, lurrak urtebetekoa eta Neptunok $163$ urtekoa.
+Eguzki-sistemaren problemaren eskalak, anitzak dira. \ref{fig:lbes}~irudian, planeta nagusien tamainak irudikatu ditugu eta \ref{tab:eguz-sist}~taulan, eguzki-sistemaren planeten ezaugarri nagusienak eman ditugu. Aniztasunaren adierazgarri, Ilargiaren, Lurraren eta Neptunoren orbitak konpara ditzakegu: Ilargiak $27.32$ eguneko periodoa duen orbita dauka, Lurrak urtebetekoa eta Neptunok $163$ urtekoa.
 
 \begin{figure} [h!]
 \centerline{\includegraphics [width=8cm, height=3cm] {PanetenMasak}}
-\caption{\small  Irudian, planeten arteko tamainen proportzioak irudikatu ditugu. Ezkerretik eskuinera: Merkurio, Artizarra, Lurra, Marte, Jupiter, Saturno, Urano eta Neptuno}
+\caption[Planeten tamainen proportzioak]{\small  Irudian, planeten arteko tamainen proportzioak irudikatu ditugu. Ezkerretik eskuinera: Merkurio, Artizarra, Lurra, Marte, Jupiter, Saturno, Urano eta Neptuno}
 \label{fig:lbes}
 \end{figure} 
 
 
 \begin{table} [h!]
-\caption{Eguzki-sistemaren planeta nagusien masak, eguzkiarekiko distantziak, orbitaren periodoa eta eszentrikotasuna.}
+\caption[Eguzki-sistemaren parametro nagusienak]{Eguzki-sistemaren planeta nagusien masak, eguzkiarekiko distantziak, orbitaren periodoa eta eszentrikotasuna.}
 \label{tab:eguz-sist}       % Give a unique label
 \begin{tabular}{l l l l l} 
 \hline
@@ -275,7 +275,7 @@ Kanpo-planeten problemaren ereduan, eguzkia, lau planeta nagusiak (Jupiter, Satu
 Hasierako balioak \cite{Hairer2006} liburutik hartu ditugu. Planetei dagokien masak \ref{tab:ossm0} taulan eta kokapenak/abiadurak \ref{tab:oss0} taulan laburtu ditugu. planeten masak eguzkiarekiko erlatiboak dira, hau da, eguzkiaren masa $1$ da eta grabitazio konstantea $G=2.95912208286 \ 10^{-4}$. Barne-planeten masak eguzkiaren masari gehitu zaizkio eta horregatik, eguzkiaren masak, $m_0=1.00000597682$ balioa hartzen du.
 
 \begin{table}[h]
-\caption{Kanpo-planeten masak.}
+\caption[Kanpo-planeten masak]{Kanpo-planeten masak}
 \label{tab:ossm0}       % Give a unique label
 \centering
 \begin{tabular}{ l r }
@@ -293,7 +293,7 @@ Hasierako balioak \cite{Hairer2006} liburutik hartu ditugu. Planetei dagokien ma
 \end{table}
 
 \begin{table}[h]
-\caption[Kanpoko planeten problema.]{Kanpo-planeten problemaren hasierako balioak, kokapenak ($x,y,z$) eta abiadurak ($v_x,v_y,v_z$).}
+\caption[Kanpoko planeten problemaren hasierako balioak]{Kanpo-planeten problemaren hasierako balioak, kokapenak ($x,y,z$) eta abiadurak ($v_x,v_y,v_z$).}
 \label{tab:oss0}       % Give a unique label
 \centering
 \resizebox{\textwidth}{!}{%
@@ -323,12 +323,12 @@ Hasierako balioak \cite{Hairer2006} liburutik hartu ditugu. Planetei dagokien ma
 
 Eguzki-sistemaren 9-planeten zenbakizko integrazioak, kanpo-planeten problemak baino konplexutasun handiago du. Planeten eta eguzkiaren arteko interakzio kopurua $45$ (kanpo-planeten probleman $15$) da. Planeten orbiten periodoen arteko aldea askoz handiago da. Merkurioren orbitaren eszentrikotasuna $e=0.206$ (Jupiterren orbitaren eszentrikotasuna $e=0.048$) da. 
 
-Eredu honetan, lur-ilargi sistema (\emph{EMB}) masa puntual bakarra kontsideratzen da. Lur-ilargi sistemaren masa, bi gorputzen masen arteko batura da eta kokapena, lur-ilargi sistemaren barizentroan finkatzen da.
+Eredu honetan, Lur-Ilargi sistema (\emph{EMB}) masa puntual bakarra kontsideratzen da. Lur-Ilargi sistemaren masa, bi gorputzen masen arteko batura da eta kokapena, Lur-Ilargi sistemaren barizentroan finkatzen da.
   
 Hasierako balioak \emph{DE-430} ($2.014$) \cite{Folkner2014} azken efemeride artikulutik hartu ditugu. Eguzki eta planeten hasierako kokapenak (AU) eta abiadurak (AU/egun), (\ref{tab:9bodyhas}) taulan laburtu ditugu. Era berean, planeta bakoitzari dagokion $Gm$ balioa (\ref{tab:9bodymas}) taulan laburtu dugu. 
 
 \begin{table}[h]
-\caption{Planeten $GM$ balioak.}
+\caption[Planeten $GM$ balioak]{Planeten $GM$ balioak.}
 \label{tab:9bodymas}       % Give a unique label
 \centering
 \begin{tabular}{l c }
@@ -351,7 +351,7 @@ Hasierako balioak \emph{DE-430} ($2.014$) \cite{Folkner2014} azken efemeride art
 \end{table}
 
 \begin{table}[h]
-\caption[9-planeten problemaren hasierako balioak]{Eguzkiaren eta 9 planeten hasierako balioak, kokapenak ($x,y,z$) (AU) eta abiadurak ($v_x,v_y,v_z$) (AU/egun). Julian data (TDB) $2440400.5$ ($1969$. ekainaren $28$) eta ICRFR2 (International Celestial Reference Frame) koordenatu sisteman emanak dira.}
+\caption[9-planeten hasierako balioak][9-planeten problemaren hasierako balioak]{Eguzkiaren eta 9 planeten hasierako balioak, kokapenak ($x,y,z$) (AU) eta abiadurak ($v_x,v_y,v_z$) (AU/egun). Julian data (TDB) $2440400.5$ ($1969$. ekainaren $28$) eta ICRFR2 (International Celestial Reference Frame) koordenatu sisteman emanak dira}
 \label{tab:9bodyhas}       % Give a unique label
 \centering
 \resizebox{\textwidth}{!}{%
@@ -387,13 +387,13 @@ Hasierako balioak \emph{DE-430} ($2.014$) \cite{Folkner2014} azken efemeride art
 
 \subsubsection*{Laskar-en eredua.}
 
-Eguzki-sistemaren mugimenduaren azterketa zehatza egiteko, planeten eta ilargiaren orbiten mugimenduaren ekuazioak nahiz lur eta ilargiaren errotazio mugimenduaren ekuazioak integratu behar dira. 
+Eguzki-sistemaren mugimenduaren azterketa zehatza egiteko, planeten eta Ilargiaren orbiten mugimenduaren ekuazioak nahiz lur eta Ilargiaren errotazio mugimenduaren ekuazioak integratu behar dira. 
 
-Laskar-ek, $2.011.$ urteko epe luzeko zenbakizko integraziorako \cite{Laskar2011} eguzki-sistemaren eredua deskribatuko dugu. Hasierako integrazioetan, eguzkia, 8 planetak, Pluton eta ilargia bakarrik kontsideratu zituen. Eguzkiaren erlatibitate efektua (Saha eta Tremain-ek \cite{Saha1994} finkatutako teknikaren arabera) eta eredu errealistaren indar ez grabitazional garrantzitsuenak aplikatu zituen. Azken integrazioetan, Zeres, Palas, Vesta, Iris eta Bamberga asteroideak gehitu zituen.  
+Laskar-ek, $2.011.$ urteko epe luzeko zenbakizko integraziorako \cite{Laskar2011} eguzki-sistemaren eredua deskribatuko dugu. Hasierako integrazioetan, eguzkia, 8 planetak, Pluton eta Ilargia bakarrik kontsideratu zituen. Eguzkiaren erlatibitate efektua (Saha eta Tremain-ek \cite{Saha1994} finkatutako teknikaren arabera) eta eredu errealistaren indar ez grabitazional garrantzitsuenak aplikatu zituen. Azken integrazioetan, Zeres, Palas, Vesta, Iris eta Bamberga asteroideak gehitu zituen.  
  
 
 \begin{table} [h!]
-\caption{}
+\caption[Eguzki-sistemaren planeta, Ilargia eta asteroide nagusien parametroak]{Eguzki-sistemaren planeta, Ilargia eta asteroide nagusien parametroak}
 \label{tab:laskp}       % Give a unique label
 \begin{tabular}{l r r r r } 
 \hline
@@ -419,7 +419,7 @@ Laskar-ek, $2.011.$ urteko epe luzeko zenbakizko integraziorako \cite{Laskar2011
 \end{tabular}
 \end{table}
 
-Ilargia gorputz independente gisa kontsideratu zuen. Ilargiaren lurrarekiko distantzia ($380.000$ km) , beste gorputzekiko distantziekin alderatzen badugu (eguzkiarekiko $150.000.000$ km eta Artizarrarekiko $45.000.000$ km) oso txikia da. Hori dela eta, ilargiaren kokapena, eguzki-sistemaren barizentroarekiko kontsideratu ordez, lurrarekiko kontsideratuz doitasun handiagoa lortuko da. Lurraren eguzkiarekiko kokapena ($q_e$) eta ilargiaren eguzkiarekiko kokapen ($q_m$), hurrenez-hurren, lur-ilargi sistemaren barizentroaren eguzkiarekiko kokapena ($q_B$) eta  ilargiaren lurrarekiko kokapena ($q_{em}$) aldagaiekin ordezkatzen dira,
+Ilargia gorputz independente gisa kontsideratu zuen. Ilargiaren Lurrarekiko distantzia ($380.000$ km) , beste gorputzekiko distantziekin alderatzen badugu (eguzkiarekiko $150.000.000$ km eta Artizarrarekiko $45.000.000$ km) oso txikia da. Hori dela eta, Ilargiaren kokapena, eguzki-sistemaren barizentroarekiko kontsideratu ordez, Lurrarekiko kontsideratuz doitasun handiagoa lortuko da. Lurraren eguzkiarekiko kokapena ($q_e$) eta Ilargiaren eguzkiarekiko kokapen ($q_m$), hurrenez-hurren, Lur-Ilargi sistemaren barizentroaren eguzkiarekiko kokapena ($q_B$) eta  Ilargiaren Lurrarekiko kokapena ($q_{em}$) aldagaiekin ordezkatzen dira,
 \begin{align*}
 & q_B =\frac{Gm_e \ q_e+Gm_m \ q_m}{Gm_e+Gm_m},\\
 & q_{em} =q_m-q_e.
@@ -442,7 +442,7 @@ Argitzea komeni da, ekuazio diferentzialaren eskuin aldeko espresioa ebaluatzeko
 \end{algorithm}
 
 \begin{table}[h]
-\caption{Ilargiaren Lurrarekiko hasierako balioak.}
+\caption[Ilargiaren Lurrarekiko hasierako balioak]{Ilargiaren Lurrarekiko hasierako balioak}
 \label{tab:1}       % Give a unique label
 \centering
 \resizebox{\textwidth}{!}{%

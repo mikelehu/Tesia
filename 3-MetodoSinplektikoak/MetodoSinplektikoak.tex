@@ -9,7 +9,7 @@ Jarraian, sistema Hamiltondarrak zer diren eta halakoak integratzeko erabiltzen 
 
 \section{Zenbakizko integrazio metodoak}
 
-\subsection{bOinarrizko kontzeptuak.}
+\subsection{Oinarrizko kontzeptuak.}
 
 Ekuazio diferentzial arruntak, egoera aldaketak dituzten problemen azterketarako eredu matematikoak dira \cite{Hairer2015}. Zientziaren eta ingeniaritzaren arlo askotan azaltzen zaizkigu: planeten mugimenduen ereduetan (astronomia), erreakzio kimikoen formulazioetan, molekulen dinamiken simulazioetan, zirkuitu elektronikoen diseinuan, populazio-hazkunde eta interakzioetan (biologian), ekonomi azterketetan \ldots  
 
@@ -310,7 +310,7 @@ q_{n+1} & =q_n+h \ \frac{\partial H}{\partial p} (p_{n+1},q_{n}).
 \includegraphics[width=.40\textwidth]{pcam-irudia}
 }
 \end{tabular}
-\caption{ \small Pendulu problemaren hiru zenbakizko metodoen zenbakizko soluzioak irudikatu ditugu. Hiruretan urrats luzera berdina $h=0.3$ baina bakoitza hasierako balio ezberdinarekin. Euler esplizitua $(p(0),q(0))=(0,1.7)$; Euler sinplektikoa $(p(0),q(0))=(0,1.5)$; Euler inplizitua $(p(0),q(0))=(0,1.3)$.}
+\caption[Pendulu arrunta]{ \small Pendulu problemaren hiru zenbakizko metodoen zenbakizko soluzioak irudikatu ditugu. Hiruretan urrats luzera berdina $h=0.3$ baina bakoitza hasierako balio ezberdinarekin. Euler esplizitua $(p(0),q(0))=(0,1.7)$; Euler sinplektikoa $(p(0),q(0))=(0,1.5)$; Euler inplizitua $(p(0),q(0))=(0,1.3)$.}
 \label{fig:pendulua}
 \end{figure}
 
@@ -468,7 +468,7 @@ Y_{n,i}=y_n+\ h\ \sum^{i-1}_{j=1}{a_{ij}\ f(t_n+c_jh,Y_{n,j})}\ \ \ \ \ i=1 ,\do
 
 \item \emph{IRK} metodoaren adibidea.
 
-Honakoa da, $s=1$ ataleko \emph{Implicit Midpoint method}-aren definizioa, 
+Honakoa da, $s=1$ ataleko \emph{puntu-erdiko metodo inplizituaren} (\emph{Implicit Midpoint method}) definizioa, 
 \begin{equation*}
 \begin{array}{c|c}
   \ 1/2 &  1/2\\
@@ -622,7 +622,7 @@ Kolokazio metodo simetrikoetan, $c_i$ balioak integrazio urratsaren erdigunearek
  \begin{figure}[h]
  \centering
  \includegraphics[width=.60\textwidth]{Simetria}
- \caption{ \small Kolokazio metodoen simetria.}
+ \caption[Kolokazio metodoen simetria]{ \small Kolokazio metodoen simetria}
  \label{fig:simetrikoa}
  \end{figure}
  
@@ -642,7 +642,7 @@ Zenbakizko soluzioak diskretizazio puntuetan ez ezik, urrats bakoitzaren integra
 %A-stable methods have a central role in the numerical solution of stiff problems and Gauss methods are likely candidates.
 
 \item{Birparametrizazioa.}
-Metodo sinplektiko inplizuetan, birparametrizazio teknika zuzenean aplika daiteke. Eguzki-sistemaren integrazioetarako tresna baliagarria dela frogatu da \cite{Fukushima2007}. 
+Metodo sinplektiko inplizituetan, birparametrizazio teknika zuzenean aplika daiteke. Eguzki-sistemaren integrazioetarako tresna baliagarria dela frogatu da \cite{Fukushima2007}. 
   
 \end{enumerate}
 
@@ -693,7 +693,7 @@ Y_{n,i}^{[0]}=g(Y_{n-1,i}) \ , \ i=1, \dots, s.
 Aurreko urratseko $Y_{n-1,i}$~atalak eta $(t_{n-1}+h,y_{n})$ zenbakizko soluzioa ezagututa, polinomio interpolatzailearen bidez, urrats berriaren atalen hasieraketa  $Y_{n,i}^{[0]}$ kalkula daiteke (\ref{fig:AtalHasieraketa} Irudia). 
 \begin{figure}[h!]
 \centerline{\includegraphics[width=14cm, height=4cm] {YiAtalenHasieraketa}}
-\caption{Interpolazioa.}
+\caption[Atalen hasieraketa: interpolazioa]{Atalen hasieraketa: interpolazioa.}
 \label{fig:AtalHasieraketa}
 \end{figure}
 
@@ -872,12 +872,12 @@ Zenbakizko integrazioaren urrats bakoitzean,
 \begin{equation*}
 y_{n+1}=y_{n}+ \delta_n,
 \end{equation*}
-batura kalkulatu behar dugu. Normalean $|\delta_n| \ll |y_n| $ izango da eta integrazio luzeetan, batura honek soluzioaren doitasun galera eragingo du. Hau ekiditeko \emph{batura konpensatua} izeneko  teknika \cite{Muller2009,Higham2002,Hairer2006} erabili ohi da. Teknika hau 4.atalean deskribatu dugu eta zehaztapenak \ref{alg:batkp} algoritmoan eman ditugu.
+batura kalkulatu behar dugu. Normalean $|\delta_n| \ll |y_n| $ izango da eta integrazio luzeetan, batura honek soluzioaren doitasun galera eragingo du. Hau ekiditeko \emph{batura konpentsatua} izeneko  teknika \cite{Muller2009,Higham2002,Hairer2006} erabili ohi da. Teknika hau 4.atalean deskribatu dugu eta zehaztapenak \ref{alg:batkp} algoritmoan eman ditugu.
  
 
 \section{Konposizio eta Splitting metodoak.}
 
-Konposizio eta Splitting ideietan oinarrituz, aplikazio eremu ezberdinetarako hainbat integratzaile sinplektiko \cite{SSerna2015b} garatu dira. Metodo hauek ez dira orokorrak, problema zehatzetan aplikagarriak baizik, eta metodo oso eraginkorrak dira.
+Konposizio eta splitting ideietan oinarrituz, aplikazio eremu ezberdinetarako hainbat integratzaile sinplektiko \cite{SSerna2015b} garatu dira. Metodo hauek ez dira orokorrak, problema zehatzetan aplikagarriak baizik, eta metodo oso eraginkorrak dira.
 
 \subsection{Konposizio metodoak.}
 
@@ -1218,7 +1218,7 @@ Atal honetan, metodo sinplektikoen ikuspegi orokorra eman dugu. Hurrengo \ref{ta
 
 \begin{table}[h!]
 \centering
-\caption{Integrazio metodo sinplektikoen laburpena}
+\caption[Integrazio metodo sinplektikoen laburpena]{Integrazio metodo sinplektikoen laburpena}
 \label{tab:int_sinp}       % Give a unique label
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{ l l l l l } 

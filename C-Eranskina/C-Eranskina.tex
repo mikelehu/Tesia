@@ -13,15 +13,15 @@ Inplementazioen edukia, direktorio hauetan banatu dugu:
 
 \item CoefficcientsData.
 
-Mathematican, IRK Gauss kolokazio metodoaren koefizienteak sortzeko aplikazio bat garatu dugu. Gure esperimentuetarako $s=6,s=8$ eta $s=16$ ataletako Gaussen metodoak aplikatu ditugu eta metodo bakoitzari dagokien doitasun bikoitzeko ($64$-bit) koefizienteak, azpidirektorio batean bildu ditugu.
+Mathematican, IRK Gauss kolokazio metodoaren koefizienteak sortzeko aplikazio bat garatu dugu. Gure esperimentuetarako $s=6,s=8$,$s=9$ eta $s=16$ ataletako Gaussen metodoak aplikatu ditugu eta metodo bakoitzari dagokien doitasun bikoitzeko ($64$-bit) koefizienteak, azpidirektorio batean bildu ditugu.
 
 \item PerturbationsData.
 
-Errorearen azterketa estatistikoak egiteko, hasierako balio ezagun baten $P=1000$ hasierako balio perturbatuak sortu ditugu; hasierako balio originalaren osagai bakoitza ausaz perturbatu dugu ($\mathcal{O}(10^{-6})$ tamainako errore erlatiboarekin). Problema bakoitzari dagokion, $P=1000$ hasierako balio perturbatuak, fitxategi bitar batean idatzi dugu eta horrela, fitxategi hauetatik hasierako balioak  irakurrita, esperimentu bera errepikatu daiteke.
+Errorearen azterketa estatistikoak egiteko, hasierako balio ezagun baten $P=1000$ hasierako balio perturbatuak sortu ditugu; hasierako balio originalaren osagai bakoitza ausaz perturbatu dugu ( $\mathcal{O}(10^{-6})$ tamainako errore erlatiboarekin). Problema bakoitzari dagokion, $P=1000$ hasierako balio perturbatuak, fitxategi bitar batean idatzi dugu eta horrela, fitxategi hauetatik hasierako balioak  irakurrita, esperimentu bera errepikatu daiteke.
 
 \item Packages.
 
-Esperimentuak, Mathematica ingurunetik exekutatu ditugu eta direktorio honetan, soluzioen azterketak egiteko hainbat funtzio garatu ditugu. Batetik, problema bakoitzari dagokion ekuazio diferentzialak eta Hamiltondarra inplementatu ditugu. Bestetik, esperimentuen grafikoak irudikatzeko funtzioak garatu ditugu. 
+Esperimentuak, Mathematica ingurunetik exekutatu ditugu eta direktorio honetan, soluzioen azterketak egiteko hainbat funtzio garatu ditugu. Batetik, problema bakoitzari dagokion ekuazio diferentzialak eta Hamiltondarra inplementatu ditugu. Bestetik, esperimentuen grafikoak irudikatzeko funtzio laguntzaileak garatu ditugu. 
 
 \item Examples.
 
@@ -52,12 +52,12 @@ Erabiltzaileak, bere problemaren ekuazio diferentzialak eta integrazioen emaitza
 
 \subsection*{Paralelizazioa.}
 
-IRK metodoen s-ataletako funtzioen konputazioak ($f(Y_i), \ i=1,\dots,s$), paraleloan exekutatu daitezke. Gure inplementazioan, OpenMP erabili dugu:  \emph{PARALLEL} konpilazio parametroarekin aktibatu daiteke eta orduan, prozesadore kopurua 'threadcount' aldagaian, zehaztu behar da. 
+IRK metodoen s-ataletako funtzioen konputazioak ($f(Y_i), \ i=1,\dots,s$) paraleloan exekutatu daitezke. Gure inplementazioan, OpenMP erabili dugu:  \emph{PARALLEL} konpilazio parametroarekin aktibatu daiteke eta orduan, prozesadore kopurua 'threadcount' aldagaian, zehaztu behar da. 
 
 
 \section{IRK puntu-finkoa.}
 
-Puntu-finkoaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/IRK-FixedPoint}{kodea} helbidean eskuragarri dago. Bi modutara exekutatu daiteke: puntu-finkoaren iterazio estandarra edo puntu-finkoaren iterazio partizionatua. 
+Puntu-finkoaren iterazioan oinarritutako IRK metodoaren inplementazioa,~\url{https://github.com/mikelehu/IRK-FixedPoint} helbidean eskuragarri dago. Bi modutara exekutatu daiteke: puntu-finkoaren iterazio estandarra edo puntu-finkoaren iterazio partizionatua. 
 
 Code/Readme.txt fitxategian, IRK puntu-finkoaren inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
 \begin{lstlisting}
@@ -71,7 +71,7 @@ Inplementazio honetan, ez dugu \emph{BLAS} liburutegia erabili.
 
 \section{IRK Newton.}
 
-Newton sinplifikatuaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/IRK-Newton}{kodea} helbidean eskuragarri dago. Bi inplementazio exekutatu daitezke: Newton sinplifikatuaren inplementazio eraginkorra eta artikuluan, proposatutako Newton iterazioan oinarritutako IRK inplementazio berria.
+Newton sinplifikatuaren iterazioan oinarritutako IRK metodoaren inplementazioa, \url{https://github.com/mikelehu/IRK-Newton} helbidean eskuragarri dago. Bi inplementazio exekutatu daitezke: Newton sinplifikatuaren inplementazio eraginkorra eta artikuluan, proposatutako Newton iterazioan oinarritutako IRK inplementazio berria.
 
 Code/Readme.txt fitxategian, IRK puntu-finkoaren inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
 \begin{lstlisting}
@@ -85,11 +85,21 @@ Inplementazio honetan, \emph{BLAS} eta \emph{LAPACK} liburutegiak erabili ditugu
 
 \section{IRK Eguzki-sistema.}
 
+Kepler-en fluxuaren aldagai aldaketan oinarritutako IRK metodoaren inplementazioa, \url{https://github.com/mikelehu/IRK-SolarSystem} helbidean eskuragarri dago.  
+
+Code/Readme.txt fitxategian, inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
+\begin{lstlisting}
+IRKFPSS (t0,t1,h,&method,&u,&system,&options,&thestat);
+\end{lstlisting}
+
+Exekuzioa Linux terminaletik exekutatu daiteke eta exekutatzeko adibidea bat  "terminal.c" fitxategian eman dugu. 
+Bestalde, inplementazioa Mathematicatik exekutatzeko prest dago eta "Examples" direktorioan hainbat adibide eman ditugu.  
+
 \section{Konposizio-Splitting metodoak.}
 
-Newton sinplifikatuaren iterazioan oinarritutako IRK metodoaren inplementazioa, \href{https://github.com/mikelehu/Composition}{kodea} helbidean eskuragarri dago. Bi inplementazio exekutatu daitezke: konposizio metodoak (CO1035) eta splitting metodoak (ABAH1064).
+Newton sinplifikatuaren iterazioan oinarritutako IRK metodoaren inplementazioa, \url{https://github.com/mikelehu/Composition} helbidean eskuragarri dago. Bi inplementazio exekutatu daitezke: konposizio metodoak (CO1035) eta splitting metodoak (ABAH1064).
 
-Code/Readme.txt fitxategian, konposizio/Splitting inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
+Code/Readme.txt fitxategian, konposizio/splitting inplementazioaren argibide guztiak eman ditugu. Integrazioaren funtzio nagusiaren deia honakoa da:   
 \begin{lstlisting}
 Solve_Comp (t0,t1,h,&method,basic,&system,&options,&u,&thestat);
 \end{lstlisting}

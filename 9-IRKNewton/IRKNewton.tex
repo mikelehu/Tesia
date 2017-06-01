@@ -236,7 +236,7 @@ Jarraian, Newton super-sinplifikatuaren inplementazioaren algoritmo orokorra lab
     \If{$(NormalizeDistance(Y_n^{[k]},Y_n^{[k-1]})>1$}
      {$\text{fail convergence}$\;}
    }
-   {$(\tilde y_{n+1},e_{n+1})\leftarrow \text{baturakonpensatua}(y_n,e_n,Y_n^{[k]})$\;}    
+   {$(\tilde y_{n+1},e_{n+1})\leftarrow \text{baturakonpentsatua}(y_n,e_n,Y_n^{[k]})$\;}    
  }
  \caption{IRK (Newton super-sinplifikatua).}
  \label{alg:nss}
@@ -880,7 +880,7 @@ Formulazio berriari dagokion Newton super-sinplifikatuaren inplementazioa, (\ref
     {$\text{fail convergence}$\;}
    }
    $\beta_{n}={e}_{n} + \sum\limits_{j=1}^{s}\Delta L_{n,j}^{[k]}$\;
-   $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpensatua}(\tilde y_{n},\beta_{n},L_{n}^{[k-1]})$\;
+   $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpentsatua}(\tilde y_{n},\beta_{n},L_{n}^{[k-1]})$\;
  }
  \caption{IRK (Newton super-sinplifikatua).}
  \label{alg:nssli}
@@ -917,7 +917,7 @@ Honako notazioa finkatuko dugu,
 \end{equation}
 
 
-\paragraph*{Batura konpensatua.}
+\paragraph*{Batura konpentsatua.}
 
 $\tilde{y}_{n+1}, e_{n+1} \in \mathbb{F}^d$, non $\tilde{y}_{n+1}+e_{n+1}\approx y(t_{n+1})$ era honetan kalkulatuko dugu:
 \begin{enumerate}
@@ -927,9 +927,9 @@ $\tilde{y}_{n+1}, e_{n+1} \in \mathbb{F}^d$, non $\tilde{y}_{n+1}+e_{n+1}\approx
 \delta_{n}={e}_{n} + \sum\limits_{j=1}^{s}\Delta L_{n,j}^{[k]}
 \end{equation*}
 
-\item Batura konpensatua.
+\item Batura konpentsatua.
 
-Azkenik, batura konpensatua aplikatuko dugu,
+Azkenik, batura konpentsatua aplikatuko dugu,
 \begin{equation}
 \label{eq:bkLi2}
 (\tilde y_{n+1}, e_{n+1}) = S_{s,d}(\tilde y_n, \delta_n, L_{n,1}^{[k-1]}, \dots,L_{n,s}^{[k-1]})
@@ -937,10 +937,10 @@ Azkenik, batura konpensatua aplikatuko dugu,
  
 \begin{algorithm}[H]
   \SetAlgoLined\DontPrintSemicolon
-  \SetKwFunction{algo}{algo}\SetKwFunction{BaturaKonpensatua}{BaturaKonpensatua}
+  \SetKwFunction{algo}{algo}\SetKwFunction{BaturaKonpentsatua}{BaturaKonpentsatua}
   \SetKwProg{myalg}{Algorithm}{}{}
   \SetKwProg{myproc}{Function}{}{}
-  \myproc{\BaturaKonpensatua {$y_n$,\ $\delta_n$,\ $L_n^{[k-1]}$}}{
+  \myproc{\BaturaKonpentsatua {$y_n$,\ $\delta_n$,\ $L_n^{[k-1]}$}}{
      \BlankLine
      $s_0=y_n$\;
      $ee=\delta_n$\;
@@ -954,7 +954,7 @@ Azkenik, batura konpensatua aplikatuko dugu,
      $y_{n+1}=s_0$\;
      $e_{n+1}=ee$\;    
     \KwRet ($y_{n+1}$,$e_{n+1}$) \;}
-  \caption{BaturaKonpensatua $S_{s,d}(\tilde y_n, \delta_n, L_{n,1}^{[k-1]}, \dots,L_{n,s}^{[k-1]})$ funtzioaren inplementazioa da}
+  \caption{BaturaKonpentsatua $S_{s,d}(\tilde y_n, \delta_n, L_{n,1}^{[k-1]}, \dots,L_{n,s}^{[k-1]})$ funtzioaren inplementazioa da}
 \end{algorithm} 
 
 \end{enumerate}
@@ -1068,7 +1068,7 @@ Formulazio berrian, IRK Newton sinplifikatuaren inplementazioaren urratsak hauek
 \end{enumerate}
 
 
-IRK Newton sinlifikatuaren inplementazioa, \ref{alg:IRK-Newton-Li}~algoritmoan laburtu dugu. 
+IRK Newton sinplifikatuaren inplementazioa, \ref{alg:IRK-Newton-Li}~algoritmoan laburtu dugu. 
 
 \begin{algorithm}[h!]
  \BlankLine
@@ -1112,7 +1112,7 @@ IRK Newton sinlifikatuaren inplementazioa, \ref{alg:IRK-Newton-Li}~algoritmoan l
     {$\text{fail convergence}$\;}
    }
    $\delta_{n}={e}_{n} + \sum\limits_{j=1}^{s}\Delta L_{n,j}^{[k]}$\;
-   $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpensatua}(\tilde y_{n},\delta_{n},L_{n}^{[k-1]})$\;
+   $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpentsatua}(\tilde y_{n},\delta_{n},L_{n}^{[k-1]})$\;
  }
  \caption{IRK (NSS-Eraginkorra).}
  \label{alg:IRK-Newton-Li}
@@ -1212,14 +1212,14 @@ Azkenik, $(\tilde{y}_{n+1}, e_{n+1})=\tilde \Phi(\tilde{y}_n, e_n, t_n, h)$  urr
 \tilde \Phi(\tilde{y}_n, e_n, t_n, h)=(\tilde y_n + e_n) + \sum_{i=1}^{s}(L_{n,i}^{[k-1]} + \Delta L_{n,i}^{[k,\ell]}).
 \end{equation*}
 
-Horretarako, Kahan-en batura konpensatua (\ref{alg:KahanBK}~algoritmoa) modu honetan aplikatuko dugu:
+Horretarako, Kahan-en batura konpentsatua (\ref{alg:KahanBK}~algoritmoa) modu honetan aplikatuko dugu:
 \begin{enumerate}
 \item $\Delta L^{[k]}$ gaien batura (magnitude txikiko bektoreen batura).
 \begin{equation*}
 \delta_n :=  e_n + \sum_{i=1}^{s} \Delta L_{n,i}^{[k,\ell]})
 \end{equation*}
 
-\item Batura konpensatua.
+\item Batura konpentsatua.
 \begin{equation*}
 (\tilde y_{n+1},e_{n+1}) = S_{s,d}(\tilde y, \delta_n, L_{n,1}^{[k-1]}, \ldots, L_{n,s}^{[k-1]}).
 \end{equation*}
@@ -1376,7 +1376,7 @@ Pendulu bikoitzaren $k$ parametroaren hiru balioetarako, energia errorearen azte
 \subfloat[$k=2^{12}$ energia errorearen desbideratze estandarra]
 {\includegraphics[width=.4\textwidth]{Fig7N}}
 \end{tabular}
-\caption{\small Energia errorearen batezbestekoaren (ezkerrean) eta desbideratze estandarraren  eboluzioa (eskubian), puntu-finkoaren inplementazioa (urdinez), eta  Newton inplementazioa (laranjaz). $k=0$ problema ez-zurruna (a,b), $k=2^{10}$ lehen problema zurruna (c,d) eta $k=2^{12}$ bigarren problema zurruna (e,f)}
+\caption[Biribiltze errorearen azterketa]{\small Energia errorearen batezbestekoaren (ezkerrean) eta desbideratze estandarraren  eboluzioa (eskuinean), puntu-finkoaren inplementazioa (urdinez), eta  Newton inplementazioa (laranjaz). $k=0$ problema ez-zurruna (a,b), $k=2^{10}$ lehen problema zurruna (c,d) eta $k=2^{12}$ bigarren problema zurruna (e,f)}
 \label{fig:plot3}
 \end{figure}
 
@@ -1387,8 +1387,8 @@ Pendulu bikoitzaren $k$ parametroaren hiru balioetarako, energia errorearen azte
 \ref{tab:fp1} taulan, $k$ parametroaren lau balioetarako, bi inplementazioen eraginkortasunaren adierazle nagusienak laburtu ditugu.
 
 \begin{table}[h!]
-\caption[Fixed-point percentage of steps and mean iterations.] 
-{}
+\caption[Puntu-finkoa versus Newton iterazioa] 
+{\small}
 \label{tab:fp1}       % Give a unique label
 \centering
 {%
@@ -1418,7 +1418,7 @@ Pendulu bikoitzaren $k$ parametroaren hiru balioetarako, energia errorearen azte
  \end{tabular}}
 \end{table}
 
-Eraginkortasuna neurtzeko, bi inplementazioen exekuzio sekuentzialen cpu-denborak  konparatu ditugu. Horrez gain, bi inplementazioen urratseko iterazioen batezbestekoak (It. per step) alderatu ditugu eta Newton inplementazioan, urratseko sistema linealen ebazpenen batezbestekoa (L.solves per step) eman dugu. Zenbakizko soluzioaren doitasuna neurtzeko, energiaren errore erlatiboaren maximoa eman dugu,
+Eraginkortasuna neurtzeko, bi inplementazioen exekuzio sekuentzialen CPU-denborak  konparatu ditugu. Horrez gain, bi inplementazioen urratseko iterazioen batezbestekoak (It. per step) alderatu ditugu eta Newton inplementazioan, urratseko sistema linealen ebazpenen batezbestekoa (L.solves per step) eman dugu. Zenbakizko soluzioaren doitasuna neurtzeko, energiaren errore erlatiboaren maximoa eman dugu,
 \begin{equation*}
 \max | \frac{E(t_n)-E(t_0)}{E(t_0)}|, \ \  t_n=t_0+nh, \ \ n=1,2,\dots
 \end{equation*} 
@@ -1436,4 +1436,4 @@ IRK metodoen Newton sinplifikatuaren iterazioen ekuazio-sistema, modu eraginkorr
 
 Newtonen iterazioan oinarritutako IRK metodoen inplementazioen inguruko lan hauek \cite{Butcher1976,Hairer2006} gomendatuko ditugu .
 
-Azkenik, aipatu nahi dugu, atal honen edukiak \href{http://link.springer.com/journal/11075}{Numerical Algorithms} aldizkarian publikatutako \cite{Antonana2017a} artikuluan aurki daitezkeela eta inplementazioaren \href{https://github.com/mikelehu/IRK-Newton}{kodea} eskuragarri jarri dugula.
+Azkenik, aipatu nahi dugu, atal honen edukiak \href{http://link.springer.com/journal/11075}{Numerical Algorithms} aldizkarian publikatutako \cite{Antonana2017a} artikuluan aurki daitezkeela eta inplementazioaren kodea, helbide honetan   \url{https://github.com/mikelehu/IRK-Newton} eskuragarri jarri dugula.

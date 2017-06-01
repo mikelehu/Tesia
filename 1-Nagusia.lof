@@ -1,0 +1,104 @@
+\select@language {basque}
+\select@language {basque}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1.}{\ignorespaces Pendulu arrunta}}{23}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Pendulua.}}}{23}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Integrazioa.}}}{23}{subfigure.1.2}
+\contentsline {figure}{\numberline {2.2.}{\ignorespaces Kolokazio metodoen simetria}}{28}{figure.caption.27}
+\contentsline {figure}{\numberline {2.3.}{\ignorespaces Atalen hasieraketa: interpolazioa}}{30}{figure.caption.31}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1.}{\ignorespaces Pendulu bikoitz arrunta}}{43}{figure.caption.56}
+\contentsline {figure}{\numberline {3.2.}{\ignorespaces Pendulu bikoitz zurruna}}{44}{figure.caption.61}
+\contentsline {figure}{\numberline {3.3.}{\ignorespaces Planeten tamainen proportzioak}}{48}{figure.caption.69}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1.}{\ignorespaces Koma-higikorreko zenbakien multzoa}}{56}{figure.caption.81}
+\contentsline {figure}{\numberline {4.2.}{\ignorespaces 32-biteko koma-higikorra}}{56}{figure.caption.82}
+\contentsline {figure}{\numberline {4.3.}{\ignorespaces Batuketaren biribiltze errorea}}{62}{figure.caption.95}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1.}{\ignorespaces IRK metodoaren geratze irizpidea}}{75}{figure.caption.108}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Hairer-en geratze irizpidea}}}{75}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Geratze irizpidea berria}}}{75}{subfigure.1.2}
+\contentsline {figure}{\numberline {5.2.}{\ignorespaces Energia errorearen jatorria}}{84}{figure.caption.121}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP ($h=2^{-7}$)}}}{84}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {OSS ($h=500/3$)}}}{84}{subfigure.2.2}
+\contentsline {figure}{\numberline {5.3.}{\ignorespaces Energia diferentzien banaketa}}{85}{figure.caption.125}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {NCDP}}}}{85}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {OSS}}}{85}{subfigure.3.2}
+\contentsline {figure}{\numberline {5.4.}{\ignorespaces Energia errorearen batezbesteko eta desbideratze estandarra}}{87}{figure.caption.127}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: energia errorea}}}{87}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: energia errorearen batezbestekoa}}}{87}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {OSS: energia errorea}}}{87}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {OSS: energia errorearen batezbestekoa}}}{87}{subfigure.4.4}
+\contentsline {figure}{\numberline {5.5.}{\ignorespaces Newton sinplifikatuaren iterazioa: energia errorea}}{87}{figure.caption.128}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: energia errorea.}}}{87}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: energia errorearen batazbestekoa.}}}{87}{subfigure.5.2}
+\contentsline {figure}{\numberline {5.6.}{\ignorespaces Kokapen erroreak}}{88}{figure.caption.129}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: kokapen errorearen batezbestekoa.}}}{88}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: kokapen errorearen desbideratzea.}}}{88}{subfigure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {CDP: kokapen errorearen batezbestekoa.}}}{88}{subfigure.6.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {CDP: kokapen errorearen desbideratzea.}}}{88}{subfigure.6.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {OSS: kokapen errorearen batezbestekoa.}}}{88}{subfigure.6.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {OSS: kokapen errorearen desbideratzea.}}}{88}{subfigure.6.6}
+\contentsline {figure}{\numberline {5.7.}{\ignorespaces Errorearen estimazioa}}{90}{figure.caption.131}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: jatorrizko hasierako balioak}}}{90}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: perturbatutako $P=1000$ integrazio}}}{90}{subfigure.7.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {CDP: jatorrizko hasierako balioak}}}{90}{subfigure.7.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {CDP: perturbatutako $P=1000$ integrazio}}}{90}{subfigure.7.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {OSS: jatorrizko hasierako balioak}}}{90}{subfigure.7.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {OSS: perturbatutako $P=1000$ integrazio}}}{90}{subfigure.7.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1.}{\ignorespaces Biribiltze errorearen azterketa}}{120}{figure.caption.163}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=0$ energia errorrearen batezbestekoa }}}{120}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=0$ energia errorearen desbideratze estandarra}}}{120}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$k=2^{10}$ energia errorrearen batezbestekoa}}}{120}{subfigure.1.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$k=2^{10}$ energia errorearen desbideratze estandarra}}}{120}{subfigure.1.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$k=2^{12}$ energia errorrearen batezbestekoa}}}{120}{subfigure.1.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$k=2^{12}$ energia errorearen desbideratze estandarra}}}{120}{subfigure.1.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1.}{\ignorespaces Aldagai aldaketa: metodo simetrikoa eta sinplektikoa}}{130}{figure.caption.170}
+\contentsline {figure}{\numberline {7.2.}{\ignorespaces Aldagai aldaketa: proiekzioa}}{131}{figure.caption.171}
+\contentsline {figure}{\numberline {7.3.}{\ignorespaces Aldagai aldaketa: urratsak}}{131}{figure.caption.172}
+\contentsline {figure}{\numberline {7.4.}{\ignorespaces Puntu-finkoaren eraginkortasun grafikoak}}{134}{figure.caption.175}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces { Gauss metodoak (FCN).}}}{134}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces { Gauss metodoak (CPU).}}}{134}{subfigure.4.2}
+\contentsline {figure}{\numberline {7.5.}{\ignorespaces Gauss metodoen eraginkortasun konparaketa (FCN)}}{135}{figure.caption.176}
+\contentsline {figure}{\numberline {7.6.}{\ignorespaces Gauss metodoen eraginkortasun konparaketa (CPU Time)}}{135}{figure.caption.177}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces { Exekuzioa sekuentziala.}}}{135}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces { Exekuzio paraleloa.}}}{135}{subfigure.6.2}
+\contentsline {figure}{\numberline {7.7.}{\ignorespaces Energia errorea}}{136}{figure.caption.180}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gauss metodoa ($s=8$).}}}{136}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ABAH1064 eta CO1035}}}{136}{subfigure.7.2}
+\contentsline {figure}{\numberline {7.8.}{\ignorespaces Kokapen eta abiadura erroreak}}{137}{figure.caption.182}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gauss metodoa (kokapen errorea)}}}{137}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Gauss metodoa (abiadura errorea)}}}{137}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {ABAH1064 (kokapen errorea)}}}{137}{subfigure.8.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ABAH1064 (abiadura errorea)}}}{137}{subfigure.8.4}
+\contentsline {figure}{\numberline {7.9.}{\ignorespaces Erdi-ardatz nagusiaren eta eszentrikotasunaren errorea}}{138}{figure.caption.184}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gauss maetodoa (erdi-ardatz nagusiaren errorea)}}}{138}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Gauss maetodoa (eszentrikotasunaren errorea)}}}{138}{subfigure.9.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {ABAH1064 (erdi-ardatz nagusiaren errorea)}}}{138}{subfigure.9.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ABAH1064 (eszentrikotasunaren errorea)}}}{138}{subfigure.9.4}
+\contentsline {figure}{\numberline {7.10.}{\ignorespaces Momentu angeluarra}}{139}{figure.caption.186}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Momentu angeluarra $h=9.0$.}}}{139}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Momentu angeluarra $h=10.63$}}}{139}{subfigure.10.2}
+\contentsline {figure}{\numberline {7.11.}{\ignorespaces Metodo sinplektikoen eraginkortasun grafikoa (FCN)}}{139}{figure.caption.188}
+\contentsline {figure}{\numberline {7.12.}{\ignorespaces Metodo sinplektikoen eraginkortasun grafikoa (CPU Time)}}{140}{figure.caption.189}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exekuzio sekuentziala.}}}{140}{subfigure.12.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Exekuzio paraleloa.}}}{140}{subfigure.12.2}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1.}{\ignorespaces Atalen hasieraketa (Kepler fluxuaren aldagai aldaketa)}}{160}{figure.caption.207}
+\contentsline {figure}{\numberline {8.2.}{\ignorespaces Asteroideak}}{162}{figure.caption.209}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1.}{\ignorespaces Intel Xeon konputagailuak}}{177}{figure.caption.220}
+\contentsline {figure}{\numberline {A.2.}{\ignorespaces Memoria hierarkia}}{178}{figure.caption.222}
+\contentsline {figure}{\numberline {A.3.}{\ignorespaces Memoria konpartitutako sistemak}}{180}{figure.caption.227}
+\contentsline {figure}{\numberline {A.4.}{\ignorespaces Memoria banatutako sistemak}}{180}{figure.caption.228}
+\contentsline {figure}{\numberline {A.5.}{\ignorespaces UMA sistemak}}{181}{figure.caption.230}
+\contentsline {figure}{\numberline {A.6.}{\ignorespaces NUMA sistemak}}{181}{figure.caption.231}
+\contentsline {figure}{\numberline {A.7.}{\ignorespaces OpenMP programazio modeloa}}{184}{figure.caption.234}
+\contentsline {figure}{\numberline {A.8.}{\ignorespaces Matrize bakanak}}{189}{figure.caption.241}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

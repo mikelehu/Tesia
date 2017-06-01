@@ -16,7 +16,7 @@ Inplementazio baten eraginkortasuna ez da exekuzio denboraren arabera bakarrik n
 \item Etorkizunean erraz aldatu daitekeen kodea.
 \end{enumerate}
 
-Atal honetan,  konputazio zientziaren funtsezko osagaiak azalduko ditugu. Lehenengo, konputazioaren eraginkortasuna aztertzeko eta exekuzioak neurtzeko tresnen zehaztapenak emango ditugu. Ondoren, konputagailu hardware berriak eta paralelizaio gaitasunak laburtu dugu. Jarraian software ikuspegitik, programazio lengoaiak eta aljebra linealerako (LAPACK) liburutegia landu dugu. Azkenik, konpiladoreari buruzko argibide batzuk eman ditugu.
+Kapitulu honetan,  konputazio zientziaren funtsezko osagaiak azalduko ditugu. Lehenengo, konputazioaren eraginkortasuna aztertzeko eta exekuzioak neurtzeko tresnen zehaztapenak emango ditugu. Ondoren, konputagailu hardware berriak eta paralelizazio gaitasunak laburtu dugu. Jarraian software ikuspegitik, programazio lengoaiak eta aljebra linealerako (LAPACK) liburutegia landu dugu. Azkenik, konpiladoreari buruzko argibide batzuk eman ditugu.
 
 \section{Eraginkortasuna}
 
@@ -46,7 +46,7 @@ eta etorkizunean, diferentzia hau handituz joango dela. Beraz, kodearen exekuzio
        
 \subsubsection*{Exekuzio denboren neurketa.}
 
-Unixeko \emph{time} agindua, konputazioen denborak ezagutzeko erabili daiteke \cite{Pacheco2011}:
+Unix-eko \emph{time} agindua, konputazioen denborak ezagutzeko erabili daiteke \cite{Pacheco2011}:
 
 \begin{lstlisting} 
 S time ./a.out
@@ -57,7 +57,7 @@ user 0m38.789s
 sys  0m0.004s
 \end{lstlisting}
 
-Agindu honekin, \emph{./a.out} C programa exekutatuko da eta ondoren, programa exekutatzeko behar izan duen denboraren informazioa pantailaratuko du:
+Agindu honek, \emph{./a.out} C programa exekutatuko da eta ondoren, programa exekutatzeko behar izan duen denboraren informazioa pantailaratuko du:
 \begin{itemize}
 \item  \emph{real}: hasi eta bukatu arteko denbora (\emph{wall-time} edo \emph{elapsed-time}).
 \item \emph{user}:  prozesadoreak gure programa exekutatzen erabili duen denbora (\emph{CPU-time}).
@@ -145,20 +145,28 @@ Orokorrean, gaur-egungo konputagailuak (super-konputagailu, eramangarri,...) par
 %\item Moore's Law Reinterpreter (2006). Number of cores per chip can double every two years.
 %\end{itemize}    
 
-Konputagailuen eredu aldaketa honen ondorioz, algoritmo azkarrak garatzeko kodearen paralelizazio gaitasunari heldu behar zaio. Programazio paralelo teknikak inplementatzeko, beharrezko da prozesadore berrien hardware arkitektura berriak ulertzea. Gaia nahiko konplexua izanik, ikuspegi orokor bat ematera mugatuko gara.
+Konputagailuen eredu aldaketa honen ondorioz, algoritmo azkarrak garatzeko kodearen paralelizazio gaitasunari heldu behar zaio. Programazio paralelo teknikak inplementatzeko, beharrezko da prozesadore berrien hardware arkitektura berriak ulertzea. Gaia nahiko konplexua izanik, ikuspegi orokor bat ematera mugatuko gara. \ref{fig:IntelXeon}~irudian ikusi daitekeenez, Intel Xeon konputagailu familiaren paralelizazio eta bektorizazio gaitasuna gero eta handiagoak dira.  
+
+
+\begin{figure}[h]
+{\includegraphics[width=14cm, height=6cm] {IntelXeonSeries}}
+\caption[Intel Xeon konputagailuak]{Intel Xeon konputagailu familiaren eboluzioa: gero eta prozesadore gehiago eta bektore erregistro zabalagoak.}
+\label{fig:IntelXeon}
+\end{figure} 
+
 
 \subsection*{Memori hierarkia.}
 
 Memorien arteko datuen komunikazioak, algoritmoaren eraginkortasuna baldintzatuko du eta zentzu honetan, konputagailuaren memoria hierarkiaren kudeaketa egokia egitea funtsezkoa da. Konputagailuaren memoria mota ezberdinen hierarkia (\ref{fig:memhier}irudia) eta funtzionamendua deskribatuko dugu. 
 \begin{figure}[h]
 \centerline{\includegraphics[width=10cm, height=4cm] {MemoryHierarchy}}
-\caption{Memoria hierarkia.}
+\caption[Memoria hierarkia]{Memoria hierarkia.}
 \label{fig:memhier}
 \end{figure} 
 
 CPU-k, koma-higikorreko eragiketak exekutatzen ditu: erregistroetatik datuak irakurri, eragiketak kalkulatu eta emaitza erregistroetan idazten ditu. Memoria nagusia eta erregistroen artean, $2$ edo $3$ mailako cache memoria dugu: lehen cache memoria ($L1$) txikiena eta azkarrena da, eta beste mailak ($L2$, $L3$,\dots), handiagoak eta motelagoak dira. Memoria nagusian, exekutatzen diren programak eta datuak gordetzen dira ($1-4$ GB artekoa). Azkenik, disko gogorrean konputagailuko datu (argazki, bideo,...) eta erabilgarri ditugun programa guztiak gordetzen dira.  
 
-CPU-k datu bat behar duenean, memoria hierarkian zehar bilatuko du: lehenik $L1$ cachean, ondoren $L2$ cachean,...eta hauetan ez badago, memoria nagusira joko du. Memoria nagusi eta cache memoria arteko irakurketa eta idazketa guzti hauetan,  informazio kontsistentzia mantentzeko hainbat arau aurrera ematen dira. 
+CPU-k datu bat behar duenean, memoria hierarkian zehar bilatuko du: lehenik $L1$ cachean, ondoren $L2$ cachean,...eta hauetan ez badago, memoria nagusira joko du. Memoria nagusi eta cache memoria arteko irakurketa eta idazketa guzti hauetan,  informazio kontsistentea mantentzeko hainbat arau aurrera ematen dira. 
 
 Cache memoria lerroka egituratuta dago eta lerro bakoitza $64$ edo $128$ bytez ($8$ edo $16$ doitasun bikoitzeko zenbaki) osatuta dago. Programa batek datu bat behar duenean, memoria nagusitik lerro tamainako datu taldea (memorian jarraian gordetako datuak) irakurriko du eta cachean idatziko du. Programatzaileak, algoritmo eraginkorrak inplementatzeko memorien arteko komunikazio hau minimizatzen saiatu behar du eta horretarako, inplementazioaren diseinua datuen memoria atzipen jarraian oinarritu behar du. Ezaugarri hau, \emph{spatial/data locality} izenaz ezaguna da eta helburua, cachera ekartzen diren datuak, memoria nagusian idatzi aurretik gutxienez behin erabiltzea da. 
 
@@ -223,13 +231,13 @@ Jokoen eta animazio industrian, grafiko oso azkarrak beharrak bultzatuta  sortut
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=12cm, height=6cm] {Arkitektura1}}
-\caption{Memoria konpartitutako sistemak.}
+\caption[Memoria konpartitutako sistemak]{Memoria konpartitutako sistemak}
 \label{fig:mks}
 \end{figure}  
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=12cm, height=4cm] {Arkitektura2}}
-\caption{Memoria banatutako sistemak.}
+\caption[Memoria banatutako sistemak]{Memoria banatutako sistemak}
 \label{fig:mbs}
 \end{figure}  
 
@@ -243,18 +251,18 @@ Memoria konpartitutako sistemen artean bi mota bereiziko ditugu:
 \item UMA sistemak (uniform memory access). 
 Txip prozesadore guztiak zuzenean memoria konektatuta daude eta guztiak atzipen denbora berdina dute (\ref{fig:UMA}.irudia).
 
- \begin{figure}[h]
+\begin{figure}[h]
  \centerline{\includegraphics[width=12cm, height=5cm] {ArkitekturaUMA}}
- \caption{Memoria konpartitutako sistemak (UMA).}
+ \caption[UMA sistemak]{Memoria konpartitutako sistemak (UMA).}
  \label{fig:UMA}
- \end{figure}  
+\end{figure}  
 
 \item NUMA sistemak (nonuniform memory access).
 Txip prozesadore bakoitza, hardware berezi baten bidez zuzenean memoria bloke bati konektatuta dago. Zuzenean konektatuta dagoen memori blokearen atzipen denbora, beste txipan zehar konektatutako memoriaren atzipena baina azkarragoa da ( \ref{fig:NUMA}.irudia).
 
- \begin{figure}[h]
+\begin{figure}[h]
  \centerline{\includegraphics[width=12cm, height=4cm] {ArkitekturaNUMA}}
- \caption{Memoria konpartitutako sistemak (NUMA).}
+ \caption[NUMA sistemak]{Memoria konpartitutako sistemak (NUMA).}
  \label{fig:NUMA}
  \end{figure}  
 \end{enumerate}  
@@ -263,7 +271,7 @@ Txip prozesadore bakoitza, hardware berezi baten bidez zuzenean memoria bloke ba
 
 Prozesadore berriei hardware bektore unitateak gehitu zaizkie, eta  (AVX) bektore instrukzioetan oinarritutako paralelizazioa eskaintzen dute \cite{Muller2009,Andrey2013}. CPU-ak bektore erregistroan gorde diren zenbaki multzo bati, eragiketa berdina aplikatzen die (\emph{Single Instruction Multiple Data}, SIMD). Bektore erregistro hauek  $512$-biteko tamainakoak ($512/64=8$ doitasun bikoitzeko zenbaki) izan daitezke eta oro har, oinarrizko eragiketa aritmetikoak (batuketa, kenketa, biderketa eta zatiketa) aplika daitezke. Zentzu honetan ulertu behar da hardware bidezko bektorizazioak,  doitasun bikoitzeko konputazioen eraginkortasuna $x8$ hobetzen duela  eta doitasun arrunteko konputazioetan, berriz, $x16$.     
 
-Adibide moduan, hurrengo pseudokodearen bidez, iterazio bakoitzean 8 osagaien bektore baten batura erakutsiko nahi dugu,
+Adibide moduan, hurrengo adibidearen bidez, iterazio bakoitzean 8 osagaien bektore baten batura erakutsiko nahi dugu,
 
 \begin{algorithm}[H]
  \BlankLine
@@ -277,7 +285,7 @@ Adibide moduan, hurrengo pseudokodearen bidez, iterazio bakoitzean 8 osagaien be
 \end{algorithm}
 
 
-\section{Programazio lengoaiak.}
+\section{Programazio lengoaiak (Paralelizazioa).}
 
 Fortran eta C, aplikazio zientifikoetan gehien erabiltzen diren programazio lengoaiak dira \cite{Higham2015}. Fortran (formula translation) 1950 hamarkadan garatutako goi-mailako lehen lengoaia izan zen eta oraindik ere, oso zabaldua da. Fortran estandarraren hainbat bertsio 
 sortu dira: Fortran 66, 77, 90, 95, 2003 eta 2008. Hauetako bertsio bakoitzean funtzionalitate berriak  eta C lengoaiarekin lan egiteko bateragarritasuna gehitu zaizkio.  C lengoaia, 1970 hamarkadan jaio zen eta hardwarearekiko hurbiltasun" ezaugarri nagusiak, konpiladoreari kode eraginkorra sortzeko aukera ematen dio. C lengoaia \emph{UNIX} sistema eragileari lotuta jaio zen eta hurrengo garapenetan bere izaera askea mantendu du. C lengoaiaren estandarrak 1989, 1999 eta 2011 dira.   
@@ -293,7 +301,7 @@ Erabiltzeko errazagoa eta memoria konpartitutako sistemetan bakarrik aplika dait
 
 \end{enumerate}
 
-Eraginkortasun altuko konputazioaren (\emph{high performance computing}) programazioa konplexua da: espezializazio handikoa  eta konputagailuen hardware jakin baterako egokitutakoa. Zaitasun hauek, proiektu zientifikoak aurrera ateratzeko eta mantentzeko arazo asko eragiten ditu. Azken urteotan, eragozpen hau gainditzeko, programazio lengoaia interesgarriak sortu dira (adibidez, Julia \cite{Bezanson2014} edo Chapel \cite{Balaji2015}) baina oraindik, hauen arrakasta ikustekoa da.
+Errendimendu altuko konputazioaren (\emph{high performance computing}) programazioa konplexua da: espezializazio handikoa  eta konputagailuen hardware jakin baterako egokitutakoa. Zaitasun hauek, proiektu zientifikoak aurrera ateratzeko eta mantentzeko arazo asko eragiten ditu. Azken urteotan, eragozpen hau gainditzeko, programazio lengoaia interesgarriak sortu dira (adibidez, Julia \cite{Bezanson2014} edo Chapel \cite{Balaji2015}) baina oraindik, hauen arrakasta ikustekoa da.
 
 Azkenik,  konputazio zientzian \emph{problemak ebazteko inguruneak} (Problem Solving Enviroments) deituriko softwareak aipatuko ditugu. Ingurune hauek, programazio leiho interaktibo batean, goi-mailako lengoai batean inplementazioen garapena eta emaitzen azterketa egiteko aukera eskaintzen dute. Matlab eta Mathematica \cite{WolframResearch} programazio ingurune nagusienak dira. Guk Mathematica bi modutara erabili dugu. Lehenik, prototipoak garatzeko tresna gisa: idei berriak garatu eta probatu, inplementazioa C lengoaian egin aurretik. Bigarrenik, gure C inplementazioen esperimentuak Mathematica ingurunetik exekutatu eta emaitzak grafikoki aztertu ditugu. Era honetan, irakurleari Mathematicako dokumentuetan esperimentuen zehaztasun guztiak eta esperimentu berdina errepikatzeko aukera ematen diogu.       
 
@@ -305,7 +313,7 @@ Hasieran programaren hari bakarra prozesadore batean exekutatuko da, kode-parale
  
 \begin{figure}[h]
 \centerline{\includegraphics[width=12cm, height=4cm] {ForkJoin}}
-\caption[OpenMP programazio modeloa.]{OpenMp programazio eredua.}
+\caption[OpenMP programazio modeloa]{OpenMp programazio eredua}
 \label{fig:forkjoin}
 \end{figure}  
  
@@ -353,7 +361,7 @@ eta prozesadore kopuru oso handia kontsideratuko bagenu,
 T_p &\rightarrow (1/S) T_s ,  \ \ P \rightarrow \infty.
 \end{align*} 
 
-Konputazio paraleloan, $T_p$ denborari paralelizazioak duen gainkarga gehitu behar zaio. Gainkarga hau, kontzeptu ezberdinez osatuta dago eta milisegunduko mailako eragiketak izan daitezke.  
+Konputazio paraleloan, $T_p$ denborari paralelizazioak duen gainkarga gehitu behar zaio. Gainkarga hau, kontzeptu ezberdinez osatuta dago eta milisegundoko mailako eragiketak izan daitezke.  
 \begin{itemize}
 \item Prozesuak edo hariak sortzeko denbora.
 \item Sinkronizazio denbora.
@@ -520,7 +528,7 @@ n_{nz} \ll mn.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=6cm, height=6cm] {SparseMatrizeak}}
-\caption{Matrize bakanak.}
+\caption[Matrize bakanak]{Matrize bakanak.}
 \label{fig:61}
 \end{figure}    
 
@@ -606,7 +614,5 @@ Algoritmo bat inplementatzen dugunean kontutan hartu beharrekoa:
 
 \end{enumerate}
 
-Atal honi dagokion gomendatutako bibliografia:  
-"An introduction to parallel programming", P. Pacheco \cite{Pacheco2011},"Introduction to High Performance Scientific Computing" ,V. Eijkhout \cite{EijkhoutHPC}, "Performance optimization of numerically intensive codes" , Goedecker \cite{Goedecker2001}, "Handbook of linear algebra" ,Leslie Hogben \cite{Hogben2013}.
-
+Kapitulu honi dagokion gomendatutako bibliografia: \cite{Pacheco2011,EijkhoutHPC,Goedecker2001,Hogben2013}.
 LAPACK eta BLAS liburutegiak erabiltzeko informazio interesgarria "Intel Math Kernel Library. Refrence Manual" \cite{Intel2015} dokumentuan aurki daiteke.

@@ -8,7 +8,7 @@ Keplerren ekuazioa, kokapen eta abiadura berriak kalkulatzeko oinarrizkoa da eta
 \begin{equation*}
 E-e \ \sin E = M,
 \end{equation*}
-non $M=n \ (t-T)$ (\emph{mean anomaly}), $n=k \ a^{-3/2}$ (\emph{mean motion}) eta $T$, $M=0$ deneko integrazio konstantea da. $E$ (\emph{eccentric anomaly}) eta $t$-ren arteko erlazio hau erabiliz kalkulatzen da mugimendua. Mugimendu eliptikoaren kasura mugatuko gara ($0\leq e < 1)$ eta Keplerren ekuazioa transendentala denez, zenbakizko metodo baten bidez ebatziko dugu.
+non $M=n \ (t-T)$ (\emph{mean anomaly}), $n=k \ a^{-3/2}$ (\emph{mean motion}) eta $T$, $M=0$ deneko integrazio konstantea da. $E$ (\emph{eccentric anomaly}) eta $t$-ren arteko erlazio hau erabiliz kalkulatzen da mugimendua. Mugimendu eliptikoaren kasura mugatuko gara ($0\leq e < 1)$ eta Keplerren ekuazioa transzendentala denez, zenbakizko metodo baten bidez ebatziko dugu.
 
 \subsection*{Garapena.}
 
@@ -21,36 +21,36 @@ non $n=2\pi/P$ eta $P$ periodoa diren.
 
 Bi ekuazioen arteko kendura eginez,
 \begin{equation*}
-E_1-E_0-e \ (\sin(E_1)-\sin(E_0))=n \triangle t \ \ \ \longrightarrow \ \triangle E - e \ (\sin(E_0+\triangle E)-\sin(E_0))=n \triangle t
+E_1-E_0-e \ (\sin(E_1)-\sin(E_0))=n \Delta t \ \ \ \longrightarrow \ \Delta E - e \ (\sin(E_0+\Delta E)-\sin(E_0))=n \Delta t
 \end{equation*}
-non $E_1=E_0+\triangle E$ den.  
+non $E_1=E_0+\Delta E$ den.  
 
 Honako notazioa erabiliz adieraziko dugu,
 \begin{equation*}
-\triangle E - ce \ \sin(\triangle E)- se \ (\cos(\triangle E)-1)=n \triangle t,
+\Delta E - ce \ \sin(\Delta E)- se \ (\cos(\Delta E)-1)=n \Delta t,
 \end{equation*}
 non $ce=e \ \cos(E_0)$ eta $se=e \ \sin(E_0)$ den.
 
 \paragraph*{Newton metodoa.}Ekuazio ebazteko, Newton metodoa aplikatuko dugu,
 
 \begin{enumerate}
-\item $f(\triangle E)=\triangle E - ce \sin(\triangle E)- se (\cos(\triangle E)-1)-n \triangle t=0$.
+\item $f(\Delta E)=\Delta E - ce \sin(\Delta E)- se (\cos(\Delta E)-1)-n \Delta t=0$.
 
-\item $f'(\triangle E)=1-ce \cos(\triangle E)+ se \sin(\triangle E)$.
+\item $f'(\Delta E)=1-ce \cos(\Delta E)+ se \sin(\Delta E)$.
 
-\item $\triangle E^{[k+1]}=\triangle E^{[k]}- \frac{f(\triangle E^{[k]})}{f'(\triangle E^{[k]})}$.
+\item $\Delta E^{[k+1]}=\Delta E^{[k]}- \frac{f(\Delta E^{[k]})}{f'(\Delta E^{[k]})}$.
 
 \end{enumerate}
 
-\paragraph*{Hasierako balioa.} $\triangle E^{[0]}$ hasierako balioa, finkatzea da dugun zailtasun handiena. Horretarako honako garapena egingo dugu,
+\paragraph*{Hasierako balioa.} $\Delta E^{[0]}$ hasierako balioa, finkatzea da dugun zailtasun handiena. Horretarako honako garapena egingo dugu,
 \begin{align*}
-\triangle E - ce& \ \sin(\triangle E- se \ (\cos(\triangle E)-1)=n \triangle t, \\
-x= \triangle E &- n \triangle t,
+\Delta E - ce& \ \sin(\Delta E- se \ (\cos(\Delta E)-1)=n \Delta t, \\
+x= \Delta E &- n \Delta t,
 \end{align*}
 
 eta beraz,
 \begin{equation*}
-x-ce \sin(n\triangle t+x)-se(cos(n \triangle t+x)-1)=0.
+x-ce \sin(n\Delta t+x)-se(cos(n \Delta t+x)-1)=0.
 \end{equation*}
 
 Honako baliokidetasun trigonometrikoak ordezkatuz,
@@ -60,8 +60,8 @@ Honako baliokidetasun trigonometrikoak ordezkatuz,
 \end{align*}
 berdintza hau lortzen dugu,
 \begin{multline*}
-x- (se \ \cos(n \triangle t)+ ce \ \sin(n \triangle t)) \cos(x) \\
-    + (se \ \sin(n \triangle t)-ce \ \cos(n \triangle t)) \sin(x)+se =0.
+x- (se \ \cos(n \Delta t)+ ce \ \sin(n \Delta t)) \cos(x) \\
+    + (se \ \sin(n \Delta t)-ce \ \cos(n \Delta t)) \sin(x)+se =0.
 \end{multline*}
 
 \paragraph*{}$x$ txikia dela suposatuz, honako hurbilpenak ordezkatuko dugu,
@@ -71,13 +71,13 @@ x \approx \sin(x), \ \cos(x) \approx 1- \frac{x^2}{2}
 
 eta honako berdintza lortuko dugu,
 \begin{multline*}
-(se \ \cos(n \triangle t)+ce \ \sin(n \triangle t)) \frac{x^2}{2} \\
-+ (1+se \ \sin(n \triangle t)-ce \cos(n \triangle t))x-(se )=0.
+(se \ \cos(n \Delta t)+ce \ \sin(n \Delta t)) \frac{x^2}{2} \\
++ (1+se \ \sin(n \Delta t)-ce \cos(n \Delta t))x-(se )=0.
 \end{multline*}
 
 \paragraph*{} Azkenik, goiko ekuazio hau askatuz ($Ax^2+Bx+C=0 \ \rightarrow x={-B\pm \sqrt{B^2-4AC}}/{2A}$) lortuko dugu,
 \begin{equation*}
-\triangle E^{[0]}=x+n\triangle t.
+\Delta E^{[0]}=x+n\Delta t.
 \end{equation*}
 
 \paragraph*{Koordenatu kartesiarren} kalkulua ekuazio hauen bidez egingo dugu,
@@ -91,33 +91,33 @@ eta honako berdintza lortuko dugu,
 
 \begin{align*}
 b_{11} &=(C-1) \frac{a}{\|q\|}, \\
-b_{21} &=\triangle t+(S-\triangle E) \frac{a^{\frac{3}{2}}}{\mu^{\frac{1}{2}}} \\
+b_{21} &=\Delta t+(S-\Delta E) \frac{a^{\frac{3}{2}}}{\mu^{\frac{1}{2}}} \\
 b_{12} &=\frac{s}{\|q\| \sqrt{a} (1-ce \ C +se \ S)}, \\
 b_{22} &=\frac{C-1}{1-ce \ C+ se \ S}. 
 \end{align*}
 
 Non osagai bakoitzaren definizioa,
 \begin{align*}
-C &=\cos(\triangle E), \ S=\sin(\triangle E), \\
+C &=\cos(\Delta E), \ S=\sin(\Delta E), \\
 ce &=e \ \cos(E_0) = \|q\| \|v\|^2-1, \\
 se &= e \ \sin(E_0)=\frac{(q \cdot v)}{\sqrt{\mu \ a}}, \\
 a &= \frac{\mu \|q\|}{2\mu-\|q\|\|v\|^2}, \\
 n &= \frac{\mu^{\frac{1}{2}}}{a^{\frac{3}{2}}}.
 \end{align*}
 
-\paragraph*{Ezabapen arazoa.} $\triangle E$ txikia denean, $\cos(\triangle E)-1$ espresioaren kalkuluaren ezabapen arazoak biribiltze errore handia eragin dezake. Hori konpontzeko baliokidetasun trigonometriko hau erabiliko dugu,
+\paragraph*{Ezabapen arazoa.} $\Delta E$ txikia denean, $\cos(\Delta E)-1$ espresioaren kalkuluaren ezabapen arazoak biribiltze errore handia eragin dezake. Hori konpontzeko baliokidetasun trigonometriko hau erabiliko dugu,
 \begin{equation*}
-\cos(\triangle E)-1=-\frac{\sin^2(\triangle E)}{1+\cos(\triangle E)}.
+\cos(\Delta E)-1=-\frac{\sin^2(\Delta E)}{1+\cos(\Delta E)}.
 \end{equation*}  
 
 Eta beraz, Keplerren ekuazioak hauek izango dira,
 \begin{equation*}
-f(\triangle E)=\triangle E - ce \sin(\triangle E)+ se \bigg(\frac{\sin^2(\triangle E)}{1+\cos(\triangle E)}\bigg)-n \triangle t=0
+f(\Delta E)=\Delta E - ce \sin(\Delta E)+ se \bigg(\frac{\sin^2(\Delta E)}{1+\cos(\Delta E)}\bigg)-n \Delta t=0
 \end{equation*}
 
 Eta $(q_1,v_1)$ balioak kalkulatzeko,
 \begin{equation*}
-b_{11}=(C-1) \frac{a}{\|q\|}, \longrightarrow b_{11}=-\frac{\sin^2(\triangle E)}{1+\cos(\triangle E)} \frac{a}{\|q\|}
+b_{11}=(C-1) \frac{a}{\|q\|}, \longrightarrow b_{11}=-\frac{\sin^2(\Delta E)}{1+\cos(\Delta E)} \frac{a}{\|q\|}
 \end{equation*}
 
 \section{Koordenatu sistemak.}
@@ -263,7 +263,7 @@ non
 Formulazio estandarrean honako ekuazio sistema askatzeko metodoa proposatzen da,
 \begin{equation}
 \label{eqA3:1}
-(I_s \otimes I_d- h \ A \otimes J) \triangle Y =r.
+(I_s \otimes I_d- h \ A \otimes J) \Delta Y =r.
 \end{equation}
 
 Lehenengo modu orokorrean eta ondoren, metodoa simetrikoa dela kontutan harturik garapenaren zehaztasunak emango ditugu.
@@ -278,10 +278,10 @@ Honako ekuazio sistemari,
 (-h e_s^T B \otimes J) \ \Delta Y+  \Delta z=0,
 \end{align}
 
-aldagai aldaketa hau,  aplikatuko doigu.
+aldagai aldaketa hau,  aplikatuko diogu.
 \begin{equation}
 \label{eqA3:3}
- \triangle Y = (Q \otimes I_d) \ W.
+ \Delta Y = (Q \otimes I_d) \ W.
 \end{equation}
 
 \begin{enumerate}
@@ -385,253 +385,3 @@ Honako berdintza hauek kontutan hartuz, $Q^{-1}=Q^TB, \ \ es^TBQ_2=0, \ \ Q_2^TB
   - h \ (e_s^T B \ Q_1 \otimes J) \ W^{'} + \Delta z &=0. 
 \end{align*}
 
-\section{Kepler fluxuaren aldagai aldaketa.}
-\label{erans:B4}
-
-
-\subsection*{Alde Kepleriar bakarra.}
-
-
-Satelite baten orbitaren ekuazio diferentzialak, era honetan idatz daitezke,
-\begin{align}
-\begin{split}
-&\frac{d}{dt}\left(\begin{array}{c}
-                q  \\
-                v  \\
-\end{array}\right)
-= k(t,q,v)         
-+ g(t,q,v), \\
-&k(t,q,v)=\left(\begin{array}{c}
-                 v \\
-                -\frac{\mu}{\|q\|^3} \ q\\
-\end{array}\right),
-\end{split}
-\end{align}
-non $q,v \in \mathbb{R}^3$ den.
-
-
-
-%non,
-%\begin{equation*}
-%k(t,q,v)=\left(\begin{array}{c}
-%                 v \\
-%                -\frac{\mu}{\|q\|^3} \ q\\
-%\end{array}\right).
-%\end{equation*}
-
-\paragraph*{Aldagai aldaketa.} Honako aldagai aldaketa aplikatuko dugu,
-\begin{equation}
-\label{eq:aldfl1}
-\left(\begin{array}{c}
-                q  \\
-                v  \\
-\end{array}\right)= \varphi_t(Q,V)
-\end{equation}
-
-\paragraph*{Aldagai berriekiko ekuazio diferentzialak.}
-Aldagai berriarekiko ekuazio diferentzialak definituko ditugu eta horretarako (\ref{eq:aldfl1}) ekuazioak, katearen erregela aplikatuz deribatuko ditugu,
-\begin{align*}
-&\frac{d}{dt}\left(\begin{array}{c}
-                q(t)  \\
-                v(t)  \\
-\end{array}\right)=
- \frac{d}{dt} \left(\varphi_t(Q(t),V(t)) \right) \ \Rightarrow \\
-&\frac{d}{dt}\left(\begin{array}{c}
-                q(t)  \\
-                v(t)  \\
-\end{array}\right)= 
-\dot{\varphi}_t (Q(t),V(t)) + \varphi'_t(Q(t),V(t)) 
-\frac{d}{dt}\left(\begin{array}{c}
-                Q(t)  \\
-                V(t)  \\
-\end{array}\right).
-\end{align*}
-
-Fluxuaren definizioa erabiliz, honako berdintza
-\begin{equation*}
-\dot{\varphi}_t (Q(t),V(t))=k(q(t),v(t)),
-\end{equation*}
-betetzen da eta beraz,
-\begin{equation*}
-g(t,q,v)=g(t, \varphi_t(Q,V))=\varphi'_t(Q(t),V(t)) 
-\frac{d}{dt}\left(\begin{array}{c}
-                Q(t)  \\
-                V(t)  \\
-\end{array}\right).
-\end{equation*}
-
-Azkenik, $Q(t),V(t)$ aldagairekiko deribatu partzialen espresioak lortuko ditugu,
-\begin{align}
-\begin{split}
-\frac{d}{dt}\left(\begin{array}{c}
-                Q(t)  \\
-                V(t)  \\
-\end{array}\right)= \varphi'_t(Q(t),V(t))^{-1} \ g(t, \varphi_t(Q,V)) \ \Rightarrow \\
-G(t,Q,V)=\varphi'_t(Q(t),V(t))^{-1} \ g(t, \varphi_t(Q,V)).
-\end{split}
-\end{align}
-
-\paragraph*{Perturbazio Hamiltondarra.}
-Lehenik, perturbazioa Hamiltondarra den kasua kontsideratuko dugu,
-\begin{equation*}
-g(t,q,v)=
-\left(\begin{array}{c}
-                \triangledown_p \ r(t,q,v)  \\
-                -\triangledown_q \ r(t,q,v)  \\
-\end{array}\right)
-=J^{-1} \triangledown r(t,q,v),
-\end{equation*}
-non, 
-\begin{equation*}
- J=\left(\begin{array}{cc}
-   \ 0 & \ -I \\
-     I & \ 0  \\
-\end{array}\right), \ \ J^{-1}=-J.
-\end{equation*}
-
-Bestalde fluxu Kepleriarrak, Hamiltondarra sinplektikoa izateagatik, honako propietatea betetzen du,
-\begin{equation}
-\label{eq:Ksymp}
-(\varphi'_t(Q,V))^{T} \ J \ \varphi'_t(Q,V)=J. 
-\end{equation}
-
-Eta goiko (\ref{eq:Ksymp}) garatuz, honakoa ere betetzen dela badakigu,
-\begin{equation*}
-J^{-1} (\varphi'_t(Q,V))^T=(\varphi'_t(Q,V))^{-1} \ J^{-1}.
-\end{equation*}
-
-Notazio hau finkatuz,
-\begin{equation*}
-R(t,Q,V)=r(t, \varphi_t(Q,V)),
-\end{equation*}
-eta $\triangledown \ R(t,Q,V)$ deribatuari katearen erregela aplikatuz, berdintza hau,  
-\begin{equation}
-J^{-1} (\varphi'_t(Q,V))^T \triangledown r=J^{-1} \triangledown \ R(t,Q,V).
-\end{equation}
-betetzen dela baieztatzen da.
-
-\paragraph*{Perturbazio Ez-Hamiltondarra.}
-
-Kepler-en fluxua sinplektikoa da eta propietate horretan oinarritzen gara fluxuaren alderantzikoaren kalkulua saihesteko.
-\begin{align*}
-         \left\{ 
-            \begin{array}{l}
-            \frac{d}{dt}\left(\begin{array}{c}
-                            Q(t)  \\
-                            V(t)  \\
-            \end{array}\right)=(\varphi'_t(Q,V))^{-1} g(t, \varphi_t(Q,V)) 
-             \\
-            J^{-1} (\varphi'_t(Q,V))^T J=(\varphi'_t(Q,v))^{-1}   \\                          
-            \end{array} 
-         \right. \ \ \Rightarrow
- \end{align*}
- 
- \begin{align}
- \label{eq: gEzH}
-\Rightarrow \ \ \frac{d}{dt}\left(\begin{array}{c}
-                Q(t)  \\
-                V(t)  \\
-\end{array}\right) =J^{-1}(\varphi'_t(Q,V))^T \ J \ g.
- \end{align}
- 
-\paragraph*{Algoritmoa.} 
-
-(\ref{eq: gEzH}) modu eraginkorrean konputatzeko, deribazio automatikoaren prozedura aplikatuz  kalkulatuko dugu. $(Q,V)$ aldagaien integrazioa  hiru urratsetan egingo dugu,
-\begin{enumerate}
-\item Kepler-en fluxua aplikatu, aldagai zaharretara itzultzeko (KeplerFlowGen). Funtzio honek, gero erabiliko ditugun tarteko aldagaiak ere itzuliko ditu. 
-\begin{align*}
-(q,v)= \varphi_t(Q,V). 
-\end{align*}
-\item Perturbazioak kalkulatu (GFcn).
-\begin{equation*}
-g=GFcn(t,q,v)
-\end{equation*}
-\item Fluxuaren deribatua eta honako espresioa konputatu (KeplerFlowGFcnaux).
-\begin{align*}
-J^{-1} ( \varphi'_t(Q,V))^T \ J \ g.
-\end{align*}
-\end{enumerate} 
-
-\subsection*{Alde Kepleriar bat baino gehiago.}
-
-Alde Kepleriar bat baino gehiago den kasurako azterketa egingo dugu. $k$, alde Kepleriarren kopurua esango diogu.
-\begin{equation*}
-\frac{d}{dt}\left(\begin{array}{c}
-                q  \\
-                v  \\
-\end{array}\right)=
-\left(\begin{array}{c}
-                q_1  \\
-                v_1  \\
-                q_2  \\
-                v_2  \\
-                \vdots \\
-                q_k    \\
-                v_k    \\
-                w      \\
-\end{array}\right)=
-\left(\begin{array}{c}
-                v_1  \\
-                -\mu_1 \ q_1/\|q_1\|^3  \\
-                v_2  \\
-                -\mu_2 \ q_2/\|q_2\|^3  \\
-                \vdots \\
-                v_k    \\
-                -\mu_k \ q_k/\|q_k\|^3  \\
-                0      \\
-\end{array}\right)+
-g(t,q_1,v_1,\dots, q_k,v_k,w),
-\end{equation*} 
-non 
-\begin{equation*}
-g(t,q_1,v_1,\dots, q_k,v_k,w)=
-\left(\begin{array}{c}
-                g_1(t,q_1,v_1,\dots, q_k,v_k,w)      \\
-                g_2 (t,q_1,v_1,\dots, q_k,v_k,w)     \\
-                \vdots   \\
-                g_k (t,q_1,v_1,\dots, q_k,v_k,w)      \\
-                g_{k+1}(t,q_1,v_1,\dots, q_k,v_k,w)    \\
-\end{array}\right).
-\end{equation*}
-
-Gorputz bakoitzari dagokion aldagai aldaketa lokala da,
-\begin{align}
-\label{eq:aldfl2}
-\begin{split}
-\left(\begin{array}{c}
-                q_j  \\
-                v_j  \\
-\end{array}\right)&= \varphi_t^{\mu_j}(Q_j,V_j), \ \ j=1,\dots,k, \\
-w&=W.
-\end{split}
-\end{align}
-
-Fluxuaren Jacobiarra diagonala da,
-\begin{equation*}
-\left(\begin{array}{c c c c}
-                \varphi_t^{\mu_1'}(Q_1,V_1) &  &                           &   \\
-                                            & \ddots  &                           &   \\
-                                            &         &\varphi_t^{\mu_k'}(Q_k,V_k) &   \\
-                                            &         &                           & I \\                      
-\end{array}\right).
-\end{equation*}
-
-(\ref{eq: gEzH}) aplikatzen badugu,
-\begin{equation*}
-\frac{d}{dt}
-\left(\begin{array}{c}
-                Q_1  \\
-                V_1  \\
-                \vdots \\
-                Q_k    \\
-                V_k    \\
-                w      \\
-\end{array}\right)=
-\left(\begin{array}{c}
-               \varphi_t^{\mu_1'}(Q_1,V_1)^{-1} \ g_1 \\ 
-               \varphi_t^{\mu_2'}(Q_2,V_2)^{-1} \ g_2 \\
-               \vdots \\
-               \varphi_t^{\mu_k'}(Q_k,V_k)^{-1} \ g_k \\
-               g_{k+1}
-\end{array}\right)
-\end{equation*}

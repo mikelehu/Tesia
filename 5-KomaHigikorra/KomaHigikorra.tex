@@ -21,7 +21,7 @@ $\mathbb{F}$ zenbaki multzoa, \ref{fig:FloatNumberLine}irudian laburtu dugu. Bai
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=14cm, height=3cm] {ZenbakiErrealak}}
-\caption{Koma-higikorreko zenbakien multzoa.}
+\caption[Koma-higikorreko zenbakien multzoa]{Koma-higikorreko zenbakien multzoa}
 \label{fig:FloatNumberLine}
 \end{figure} 
 
@@ -49,7 +49,7 @@ u=2^{-m}.
 IEEE-$754$ estandarrean, oinarri bitarreko koma-higikorreko hiru formatu definitzen dira: bata doitasun arrunta (\emph{single precision}), bestea doitasun bikoitza (\emph{double precision}) eta hirugarrena doitasun laukoitza (\emph{quadruple precision}) izenekoak (\ref{tab:koma-higikorreko-aritmetikak} Taula).
 
 \begin{table} [h!]
-\caption{IEEE-754 koma-higikorreko formatuak}
+\caption[IEEE-754 koma-higikorreko formatuak]{IEEE-754 koma-higikorreko formatuak}
 \label{tab:koma-higikorreko-aritmetikak}       % Give a unique label
 \centering
 \begin{tabular}{ l c c c l c} 
@@ -77,7 +77,7 @@ Problema batzuk, doitasun bikoitza baino doitasun handiagoa behar dute \cite{Jol
 
 Doitasun laukoitzeko gure esperimentuetarako, \emph{GCC libquadmath} liburutegia \cite{libquad} erabili dugu. Doitasun laukoitzean exekutatutako integrazioen zenbakizko soluzioak, soluzio zehatzak kontsideratu ditugu eta  doitasun bikoitzeko inplementazioaren errorea, soluzio zehatzarekiko diferentzia gisa kalkulatu dugu. 
 
-Laskar-ek epe luzeko eguzki-sistemaren simulazioaren ($-250$ eta $+250$ milioitako integrazio tartea) konputaziorako kalkuluak \cite{Laskar2011}, kontu handiz eta doitasun handian egin behar ditu. Dena den, era honetako problemak salbuespenak dira eta ez da ohikoa izaten doitasun handian lan egin beharra. Egia da ere, neurri fisiko oso gutxi ezagutzen direla  hain doitasun handian (adibidez $50$-bitekin, lurra eta ilargiaren arteko distantzia, milimetroko errorearekin adieraz daiteke).  
+Laskar-ek epe luzeko eguzki-sistemaren simulazioaren ($-250$ eta $+250$ milioitako integrazio tartea) konputaziorako kalkuluak \cite{Laskar2011}, kontu handiz eta doitasun handian egin behar ditu. Dena den, era honetako problemak salbuespenak dira eta ez da ohikoa izaten doitasun handian lan egin beharra. Egia da ere, neurri fisiko oso gutxi ezagutzen direla  hain doitasun handian (adibidez $50$-bitekin, Lurra eta Ilargiaren arteko distantzia, milimetroko errorearekin adieraz daiteke).  
 
 
 \section{Biribiltze errorea.}
@@ -210,7 +210,7 @@ Algoritmoen kalkuluetan, doitasun galera azkarra gerta daiteke. Horren adibidea 
 \section{Biribiltze errorea gutxitzeko teknikak.}
 \label{sec:4.4}
 
-Batuketa eta biderketa eragiketen biribiltze errorea kalkulatzeko algoritmoak ezagunak dira \cite{Dekker1971,Higham2002}. Algoritmo hauek, \emph{termino-gaitzeko adierazpenetan} oinarritzen dira eta baturaren kasuan, batura konpensatu izeneko algoritmoaren oinarria da. Ikusiko dugun bezala, algoritmo sinpleak dira eta konputazio kostu txikia dute.  
+Batuketa eta biderketa eragiketen biribiltze errorea kalkulatzeko algoritmoak ezagunak dira \cite{Dekker1971,Higham2002}. Algoritmo hauek, \emph{termino-gaitzeko adierazpenetan} oinarritzen dira eta baturaren kasuan, batura konpentsatu izeneko algoritmoaren oinarria da. Ikusiko dugun bezala, algoritmo sinpleak dira eta konputazio kostu txikia dute.  
 
 Teknika hauek, zenbakizko integrazioaren inplementazioaren kalkulu "kritikoetan" erabiliko ditugu, soluzioaren doitasuna handitzeko asmoarekin.
 
@@ -233,7 +233,7 @@ Teknika hauek, zenbakizko integrazioaren inplementazioaren kalkulu "kritikoetan"
 
 \begin{figure}[h!]
 \centerline{\includegraphics[width=14cm, height=8cm] {Fast2Sum}}
-\caption{Batuketaren biribiltze errorea.}
+\caption[Batuketaren biribiltze errorea]{Batuketaren biribiltze errorea}
 \label{fig:fast2sum}
 \end{figure} 
 
@@ -258,11 +258,11 @@ Ideia da, bi zenbakien baturan egindako biribiltze errorea lortu, eta errore hau
     $e_{i+1}=(x-z)+y$\;
    \BlankLine
   }
- \caption{Kahan-en batura konpensatua.}
+ \caption{Kahan-en batura konpentsatua.}
    \label{alg:KahanBK}
 \end{algorithm}
 
-Knuth-ek eta Kahan-ek \cite{Muller2009} frogatu zuten,  batura konpensatuko algoritmoaren bidez kalkulatutako $z_{n+1}$ baturak honakoa betetzen duela:
+Knuth-ek eta Kahan-ek \cite{Muller2009} frogatu zuten,  batura konpentsatuko algoritmoaren bidez kalkulatutako $z_{n+1}$ baturak honakoa betetzen duela:
 \begin{equation*}
 \left | z_{n+1} - (z_0+\sum_{i=0}^{n} x_i) \right | \leq (2u+ \mathcal{O}(nu^2)) \left(|z_0|+\sum_{i=1}^{n} |x_0|\right).
 \end{equation*}
@@ -280,9 +280,9 @@ Zenbakizko integrazioetan, $n=1,2,\dots$ balioentzat era honetako baturak kalkul
 \begin{equation*}
 y_{n+1}=y_n+\delta_n,
 \end{equation*}  
-non $|\delta_n|<|y_n|$ izan ohi den. Beraz, integrazioaren batura honen birbiltze errorea gutxitzeko, batura konpensatua erabiliko dugu.  
+non $|\delta_n|<|y_n|$ izan ohi den. Beraz, integrazioaren batura honen birbiltze errorea gutxitzeko, batura konpentsatua erabiliko dugu.  
 
-$y_{n+1} \in \mathbb{R}^{d},\quad y_{n+1}=\tilde y_{n}+\tilde \delta_n$ batura zehatza izanik eta $\tilde y_{n+1} \in \mathbb{F}^{d}, \quad \tilde y_{n+1}=\tilde y_{n} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, batura konpensatuaren bidez lortutako errorearen estimazioa $e_{n+1}$, \ref{alg:batkp}~algoritmoa jarraituz lor daiteke eta baturan egindako biribiltze errore zehatza da, 
+$y_{n+1} \in \mathbb{R}^{d},\quad y_{n+1}=\tilde y_{n}+\tilde \delta_n$ batura zehatza izanik eta $\tilde y_{n+1} \in \mathbb{F}^{d}, \quad \tilde y_{n+1}=\tilde y_{n} \oplus \tilde \delta_n$ koma-higikorreko hurbilpena izanik, batura konpentsatuaren bidez lortutako errorearen estimazioa $e_{n+1}$, \ref{alg:batkp}~algoritmoa jarraituz lor daiteke eta baturan egindako biribiltze errore zehatza da, 
 \begin{equation}
 y_{n+1}=\tilde {y}_{n+1}+e_{n+1}. 
 \end{equation}
@@ -299,7 +299,7 @@ y_{n+1}=\tilde {y}_{n+1}+e_{n+1}.
     $e_{n+1}=(\tilde{y}_n \ominus \tilde {y}_{n+1}) \oplus inc$\;
    \BlankLine
   }
- \caption{Batura konpensatua (zenbakizko integrazioa).}
+ \caption{Batura konpentsatua (zenbakizko integrazioa).}
  \label{alg:batkp}
 \end{algorithm}
 
@@ -344,5 +344,5 @@ x,y \in \mathbb{F}, \ \ \frac{y}{2}\leq x \leq 2y \ \ \ \Rightarrow \ \ \ x-y\in
 
 Atal honetan, koma-higikorreko aritmetikaren deskribapena egin ondoren, konputazioen doitasuna handitzeko tresnak azaldu ditugu. Tresna hauek, konputazio kostu txikia dute eta zenbakizko integrazioetan, biribiltze errorea txikitzeko aplikatuko ditugu.  
 
-Koma-higikorreko aritmetikan sakontzeko honako bibliografia azpimarratuko dugu: "Numerical computing with IEEE floating point arithmetic", Michael L.Overton \cite{Overton2001}, "Handbook of floating-point arithmetic", Jean-Michael Muller \cite{Muller2009}, "Accuracy and stability of numerical algorithms", Nicholas J Higham \cite{Higham2002} eta "A graduate introduction to numerical methods", Rober M Corless \cite{Corless2013}.
+Koma-higikorreko aritmetikan sakontzeko honako bibliografia azpimarratuko dugu: \cite{Overton2001,Muller2009,Higham2002,Corless2013}.
 

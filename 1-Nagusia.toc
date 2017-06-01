@@ -11,7 +11,7 @@
 \contentsline {chapter}{\numberline {2.}Zenbakizko integratzaile sinplektikoak.}{15}{chapter.2}
 \contentsline {section}{\numberline {2.1.}Sarrera.}{15}{section.2.1}
 \contentsline {section}{\numberline {2.2.}Zenbakizko integrazio metodoak}{15}{section.2.2}
-\contentsline {subsection}{bOinarrizko kontzeptuak.}{15}{section*.5}
+\contentsline {subsection}{Oinarrizko kontzeptuak.}{15}{section*.5}
 \contentsline {subsection}{Sistema-Hamiltondarrak.}{20}{section*.11}
 \contentsline {subsection}{Metodo sinplektikoak.}{22}{section*.16}
 \contentsline {section}{\numberline {2.3.}Runge-Kutta metodo sinplektikoak.}{24}{section.2.3}
@@ -84,31 +84,30 @@
 \contentsline {part}{IV.\hspace {1em}Eztabaida eta ondorioak.}{143}{part.4}
 \contentsline {chapter}{\numberline {8.}Eztabaida.}{145}{chapter.8}
 \contentsline {section}{\numberline {8.1.}Eguzki-sistemaren integrazio luzeak.}{145}{section.8.1}
-\contentsline {section}{\numberline {8.2.}Eredu deskonposaketa.}{148}{section.8.2}
+\contentsline {section}{\numberline {8.2.}Eredu deskonposaketa.}{149}{section.8.2}
 \contentsline {section}{\numberline {8.3.}IRK inplementazioaren oinarriak.}{153}{section.8.3}
 \contentsline {section}{\numberline {8.4.}Doitasun altuko konputazioak.}{157}{section.8.4}
 \contentsline {section}{\numberline {8.5.}Aldagai aldaketa.}{158}{section.8.5}
 \contentsline {section}{\numberline {8.6.}Paralelizazioa.}{159}{section.8.6}
-\contentsline {section}{\numberline {8.7.}Inplementazioaren aplikagarritasuna.}{161}{section.8.7}
+\contentsline {section}{\numberline {8.7.}Inplementazioaren erabilgarritasuna.}{161}{section.8.7}
 \contentsline {chapter}{\numberline {9.}Ondorioak.}{165}{chapter.9}
 \contentsline {part}{V.\hspace {1em}Eranskinak}{171}{part.5}
 \contentsline {chapter}{\numberline {A.}Konputazio zientzia.}{173}{appendix.A}
 \contentsline {section}{\numberline {A.1.}Sarrera.}{173}{section.A.1}
 \contentsline {section}{\numberline {A.2.}Eraginkortasuna}{174}{section.A.2}
 \contentsline {section}{\numberline {A.3.}Hardwarea.}{177}{section.A.3}
-\contentsline {section}{\numberline {A.4.}Programazio lengoaiak.}{182}{section.A.4}
+\contentsline {section}{\numberline {A.4.}Programazio lengoaiak (Paralelizazioa).}{182}{section.A.4}
 \contentsline {section}{\numberline {A.5.}Aljebra lineal dentsorako liburutegiak.}{185}{section.A.5}
-\contentsline {paragraph}{Adibidea.}{186}{section*.237}
+\contentsline {paragraph}{Adibidea.}{187}{section*.237}
 \contentsline {section}{\numberline {A.6.}Konpiladorea.}{189}{section.A.6}
-\contentsline {paragraph}{Konpiladoreak.}{189}{section*.242}
-\contentsline {paragraph}{Optimizazioak.}{189}{section*.243}
+\contentsline {paragraph}{Konpiladoreak.}{190}{section*.242}
+\contentsline {paragraph}{Optimizazioak.}{190}{section*.243}
 \contentsline {paragraph}{Konpilazio aginduak}{190}{section*.244}
-\contentsline {section}{\numberline {A.7.}Laburpena.}{190}{section.A.7}
-\contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{191}{appendix.B}
-\contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{191}{section.B.1}
-\contentsline {section}{\numberline {B.2.}Koordenatu sistemak.}{194}{section.B.2}
-\contentsline {section}{\numberline {B.3.}Newton eraginkorraren garapena.}{197}{section.B.3}
-\contentsline {section}{\numberline {B.4.}Kepler fluxuaren aldagai aldaketa.}{199}{section.B.4}
+\contentsline {section}{\numberline {A.7.}Laburpena.}{191}{section.A.7}
+\contentsline {chapter}{\numberline {B.}Ekuazioen garapenak.}{193}{appendix.B}
+\contentsline {section}{\numberline {B.1.}Kepler hasierako baliodun problema.}{193}{section.B.1}
+\contentsline {section}{\numberline {B.2.}Koordenatu sistemak.}{196}{section.B.2}
+\contentsline {section}{\numberline {B.3.}Newton eraginkorraren garapena.}{199}{section.B.3}
 \contentsline {chapter}{\numberline {C.}Inplementazioak.}{203}{appendix.C}
 \contentsline {section}{\numberline {C.1.}Egitura orokorra.}{203}{section.C.1}
 \contentsline {section}{\numberline {C.2.}IRK puntu-finkoa.}{205}{section.C.2}
@@ -116,4 +115,4 @@
 \contentsline {section}{\numberline {C.4.}IRK Eguzki-sistema.}{206}{section.C.4}
 \contentsline {section}{\numberline {C.5.}Konposizio-Splitting metodoak.}{206}{section.C.5}
 \contentsline {chapter}{\numberline {D.}Zerrendak}{207}{appendix.D}
-\contentsline {chapter}{Bibliografia}{209}{table.caption.272}
+\contentsline {chapter}{Bibliografia}{217}{appendix*.269}

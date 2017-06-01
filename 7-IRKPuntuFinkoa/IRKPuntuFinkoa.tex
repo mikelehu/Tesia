@@ -19,7 +19,7 @@ Lehenengo, Hairer-en IRK metodo sinplektikoaren inplementazioa  \cite{Hairer2008
 
 \subsubsection*{IRK inplementazio estandarra.}
 
-Gure abiapuntua, Hairer-ek \cite{Hairer2008} proposatutako IRK metodoaren inplementazioa (batura konpensatuaren teknikarekin \cite{Higham2002} garatutakoa) da. Hairer ohartu zen, puntu-finkoaren iterazioan oinarritutako IRK metodo sinplektikoaren  inplementazio estandarrean, biribiltze erroreak energian errore sistematiko bat eragiten zuela, beste metodo sinplektiko esplizituetan gertatzen ez zena. Bere azterketaren ondorioen arabera, errore sistematiko honen jatorriak bi dira:
+Gure abiapuntua, Hairer-ek \cite{Hairer2008} proposatutako IRK metodoaren inplementazioa (batura konpentsatuaren teknikarekin \cite{Higham2002} garatutakoa) da. Hairer ohartu zen, puntu-finkoaren iterazioan oinarritutako IRK metodo sinplektikoaren  inplementazio estandarrean, biribiltze erroreak energian errore sistematiko bat eragiten zuela, beste metodo sinplektiko esplizituetan gertatzen ez zena. Bere azterketaren ondorioen arabera, errore sistematiko honen jatorriak bi dira:
 
 \begin{enumerate}
  \item Aplikatutako IRK metodoa ez da sinpletikoa, hau da ez du (\ref{eq:simplektik2})~baldintza betetzen. Integrazioan $a_{ij}, b_i \in \mathbb{R}$ koefiziente zehatzak erabili beharrean, biribildutako $\tilde a_{ij},\tilde b_i \in \mathbb{F}$ erabiltzen direlako. 
@@ -57,7 +57,7 @@ Adibidez, koefizienteak era honetan zehaztu daitezke,
 
 \subsubsection*{Hairer-en inplementazioaren algoritmoa.}
 
-Hairer-ek bere inplementazioaren \href{http://www.unige.ch/~hairer/preprints.html}{Fortran kodea}  eskuragarri du. Bere funtsa \ref{alg:Hairer-IRK}~algoritmoan ikus daiteke, eta horrez gain, batura konpensatuaren teknikaren erabilera \ref{alg:Hairer-BK}~algoritmoan zehaztu dugu. 
+Hairer-ek bere inplementazioaren \href{http://www.unige.ch/~hairer/preprints.html}{Fortran kodea}  eskuragarri du. Bere funtsa \ref{alg:Hairer-IRK}~algoritmoan ikus daiteke, eta horrez gain, batura konpentsatuaren teknikaren erabilera \ref{alg:Hairer-BK}~algoritmoan zehaztu dugu. 
  
 \begin{algorithm}[h!]
  \BlankLine
@@ -78,7 +78,7 @@ Hairer-ek bere inplementazioaren \href{http://www.unige.ch/~hairer/preprints.htm
     $\Delta ^{[k]} = \max_{i=1,\dots,s}\|Y_{n,i}^{[k]}-Y_{n,i}^{[k-1]}\|_{\infty}$\;
    }
    \BlankLine
-   $(y_{n+1},e_{n+1})\leftarrow BaturaKonpensatua(y_n,e_n,F_n^{[k]})$\;      
+   $(y_{n+1},e_{n+1})\leftarrow BaturaKonpentsatua(y_n,e_n,F_n^{[k]})$\;      
    \BlankLine
  }
  \caption{Hairer-en IRK inplementazioa}
@@ -88,10 +88,10 @@ Hairer-ek bere inplementazioaren \href{http://www.unige.ch/~hairer/preprints.htm
 
 \begin{algorithm}[h!]
 %  \SetAlgoLined\DontPrintSemicolon
-  \SetKwFunction{algo}{algo}\SetKwFunction{BaturaKonpensatua}{BaturaKonpensatua}
+  \SetKwFunction{algo}{algo}\SetKwFunction{BaturaKonpentsatua}{BaturaKonpentsatua}
   \SetKwProg{myalg}{Algorithm}{}{}
   \SetKwProg{myproc}{Function}{}{}
-  \myproc{\BaturaKonpensatua {$y_n$, $e_n$, $F_n^{[k]}$}}{  
+  \myproc{\BaturaKonpentsatua {$y_n$, $e_n$, $F_n^{[k]}$}}{  
      \BlankLine
      $\hat \delta_{n}=h \ \big(\sum\limits_{i=1}^{s} \hat b_i F_{i}^{[k]} \big)$\;
      $\tilde{\delta}_{n}=h \big(\sum\limits_{i=1}^{s} \tilde b_i F_{i}^{[k]} \big)$\;
@@ -105,7 +105,7 @@ Hairer-ek bere inplementazioaren \href{http://www.unige.ch/~hairer/preprints.htm
      \BlankLine  
     \KwRet ($y_{n+1}$,$e_{n+1}$) \;
     \BlankLine }
-  \caption{Hairer-en IRK inplementazioaren, batura konpensatua}
+  \caption{Hairer-en IRK inplementazioaren, batura konpentsatua}
   \label{alg:Hairer-BK}
 \end{algorithm} 
 
@@ -121,7 +121,7 @@ Hairer-en \emph{Fortran} inplementazioarekin, zenbakizko integrazio berriak egin
 
 IRK metodoaren puntu-finkoaren iterazioan oinarritutako inplementazioa hobetzeko lau proposamen egin ditugu. Lehenik, Runge-Kutta metodoaren birformulazio bat proposatu dugu, metodoa definitzen duten koma-higikorreko koefizienteek izaera sinplektikoa zehazki bete dezaten. Bigarrenik, Hairer-ek proposatutako geratze irizpidearen arazoak gainditzeko, geratze irizpide sendoagoa eta normarekiko independentea garatu dugu. 
 
-Hirugarrenik, biribiltze errorea gutxitzeko helburuarekin, koma-higikorreko konputazioak bereziki zaindu ditugu. Kahan-en batura konpensatuaren \cite{Kahan1965,Higham2002,Muller2009} algoritmoaren aldaera bat aplikatu dugu. 
+Hirugarrenik, biribiltze errorea gutxitzeko helburuarekin, koma-higikorreko konputazioak bereziki zaindu ditugu. Kahan-en batura konpentsatuaren \cite{Kahan1965,Higham2002,Muller2009} algoritmoaren aldaera bat aplikatu dugu. 
 
 Azkenik, biribiltze errorearen estimazioa monitorizatzeko teknika proposatu dugu. Biribiltze errorearen estimazioa, integrazio nagusi eta doitasun txikiagoko bigarren integrazio baten soluzioen arteko diferentzia gisa kalkulatu dugu. Zenbakizko soluzio hauek, bi modutara kalkula daitezke: paraleloan, exekuzio independenteak kontsideratuta; edo bi soluzioen integrazio sekuentziala kalkulatuz, konputazio kostu gehigarri txikiarekin.  
 
@@ -198,7 +198,7 @@ Birformulazio honek formulazio estandarrarekiko duen abantaila da,  baldintza ze
 \end{equation*}
 
 \end{enumerate}
-Sterbenz-en teoremak (\ref{eq:4311}) ziurtatzen du, $1/2 < |\mu_{ij}| <2$ denez, $1-\tilde{\mu}_{ij}$ balioak koma-higikorreko adierazpen zehatza izango duela. Laburtuz, hauek ditugu birformulatutako sinplektizitate baldintza (\ref{eq:sinplekmij}) zehazki betetzen duten koma-higikorreko $\tilde{\mu}_{ij}\in \mathbb{F}$ koefizienteak,   
+Sterbenz-en teoremak (\ref{eq:4311}) ziurtatzen du, $1/2 < |\mu_{ij}| <2$ denez, $1-\tilde{\mu}_{ij}$ balioak koma-higikorreko adierazpen zehatza izango duela. Laburtuz, hauek ditugu birformulatutako sinplektikotasun baldintza (\ref{eq:sinplekmij}) zehazki betetzen duten koma-higikorreko $\tilde{\mu}_{ij}\in \mathbb{F}$ koefizienteak,   
 \begin{equation}
 \tilde{\mu}=\left(\begin{array}{cccc}
     1/2       & 1-fl(\mu_{21}) & \dots & 1-fl(\mu_{s1})      \\
@@ -284,7 +284,7 @@ ezin daiteke suposatu $\{\Delta_j^{[0]},\Delta_j^{[1]},\dots,\Delta_j^{[k]}\}$ s
 \subfloat[Geratze irizpidea berria]
 {\includegraphics[width=.4\textwidth]{Fig2}}
 \end{tabular}
-\caption{\small Energia errore erlatiboaren eboluzioa, $h=1000/3$ urrats luzerarekin  eguzki-sistemaren kanpo-planeten problemaren integraziorako \cite{Hairer2008}. (a) Hairer-en geratze irizpidea, (b) Geratze irizpide berria}
+\caption[IRK metodoaren geratze irizpidea]{\small Energia errore erlatiboaren eboluzioa, $h=1000/3$ urrats luzerarekin  eguzki-sistemaren kanpo-planeten problemaren integraziorako \cite{Hairer2008}. (a) Hairer-en geratze irizpidea, (b) Geratze irizpide berria}
 \label{fig:OSSh2}
 \end{figure}
 
@@ -327,10 +327,10 @@ Azpimarratu behar da, tolerantzia ez dugula erabiliko puntu-finkoaren iterazioa 
 
 \ref{sec:4.4} ataleko koma higikorreko aritmetikaren azalpenetan, batuketa nahiz biderketa eragiketen biribiltze errore zehatza, modu errazean kalkula daitekeela ikusi dugu. Eragiketa hauen biribiltze erroreak, ondorengo konputazioetan erabiliko ditugu, soluzioaren doitasuna hobetzeko.
 
-Batugai askoren baturen konputazioen doitasuna hobetzeko teknikari \emph{batura konpensatua} esaten zaio (\ref{alg:KahanBK}~algoritmoa) eta zenbakizko integrazioetan erabili ohi da. Atal honetan, batetik IRK metodoetan batura konpensatuaren aplikazio estandarra hobetzeko proposamena azalduko dugu. Beste aldetik, IRK metodoaren biribiltze errorearen beste jatorri nagusiak (biderketa eta batuketa bat) modu finagoan kalkulatzeko proposamena egingo dugu.    
+Batugai askoren baturen konputazioen doitasuna hobetzeko teknikari \emph{batura konpentsatua} esaten zaio (\ref{alg:KahanBK}~algoritmoa) eta zenbakizko integrazioetan erabili ohi da. Atal honetan, batetik IRK metodoetan batura konpentsatuaren aplikazio estandarra hobetzeko proposamena azalduko dugu. Beste aldetik, IRK metodoaren biribiltze errorearen beste jatorri nagusiak (biderketa eta batuketa bat) modu finagoan kalkulatzeko proposamena egingo dugu.    
 
 
-\subsubsection*{Batura konpensatua.}
+\subsubsection*{Batura konpentsatua.}
 
 Integrazioaren zenbakizko soluzioa, $y_n \approx y(t_n) \in \R^{d}, \ n=1,2,\dots$, bi bektoreen batura gisa, $ \ \tilde{y}_n+e_n \in \F^{d}$ lortuko dugu. Hasierako balioa $y_0 \in \R^{d}$, \ $\tilde{y}_0+e_0$ batura moduan adieraziko dugu, non $\tilde{y}_0=fl(y_0)$~ eta $e_0=fl(y_n-\tilde{y}_0)$ diren. 
 
@@ -340,7 +340,7 @@ IRK metodoaren ekuazioetan, inplizituki definitutako $Y_{n,i}$ atalen balioak as
 L_{n,i}^{[k]}=hb_if(Y_{n,i}^{[k-1]}), \ \ \ Y_{n,i}^{[k]}=\tilde{y}_n \oplus \big(e_{n} \oplus \sum\limits_{j=1}^{s} \mu_{ij} L_{n,j}^{[k]}\big).
 \end{equation}
 
-Aldaketa honekin, lortutako zenbakizko soluzioaren doitasuna, batura konpensatu estandarrarekin baino zerbait hobea izatea espero dugu. 
+Aldaketa honekin, lortutako zenbakizko soluzioaren doitasuna, batura konpentsatu estandarrarekin baino zerbait hobea izatea espero dugu. 
 
 \subsubsection*{Urratsaren konputazioa.}
 
@@ -359,9 +359,9 @@ $hb_i f(Y_{n,i})$ biderketaren biribiltze errorea kalkulatu eta $e_{n}$ gaiari g
 \end{align*}
 
 
-\item Batura konpensatua.
+\item Batura konpentsatua.
 
-Azkenik, batura konpensatua (\ref{eq:batsd}) aplikatuko dugu,
+Azkenik, batura konpentsatua (\ref{eq:batsd}) aplikatuko dugu,
 \begin{equation}
 \label{eq:bkLn}
 (\tilde y_{n+1}, e_{n+1}) = S_{s,d}(\tilde y_n, \delta_n, L_{n,1}^{[K]}, \dots,L_{n,s}^{[K]}).
@@ -369,10 +369,10 @@ Azkenik, batura konpensatua (\ref{eq:batsd}) aplikatuko dugu,
 
 \begin{algorithm}[H]
   \SetAlgoLined\DontPrintSemicolon
-  \SetKwFunction{algo}{algo}\SetKwFunction{BaturaKonpensatua}{BaturaKonpensatua}
+  \SetKwFunction{algo}{algo}\SetKwFunction{BaturaKonpentsatua}{BaturaKonpentsatua}
   \SetKwProg{myalg}{Algorithm}{}{}
   \SetKwProg{myproc}{Function}{}{}
-  \myproc{\BaturaKonpensatua {$\tilde y_n$,\ $\delta_n$,\ $L_{n,1}^{[K]}, \dots,L_{n,s}^{[K]}$}}{
+  \myproc{\BaturaKonpentsatua {$\tilde y_n$,\ $\delta_n$,\ $L_{n,1}^{[K]}, \dots,L_{n,s}^{[K]}$}}{
      \BlankLine
      $s_0=\tilde y_n$\;
      $ee=\delta_n$\;
@@ -386,7 +386,7 @@ Azkenik, batura konpensatua (\ref{eq:batsd}) aplikatuko dugu,
      $\tilde y_{n+1}=s_0$\;
      $e_{n+1}=ee$\;    
     \KwRet ($\tilde y_{n+1}$,$e_{n+1}$) \;}
-  \caption{BaturaKonpensatua,  $S_{s,d}(\tilde y_n, \delta_n, L_{n,1}^{[K]}, \dots,L_{n,s}^{[K]})$ funtzioaren inplementazioa da}
+  \caption{BaturaKonpentsatua,  $S_{s,d}(\tilde y_n, \delta_n, L_{n,1}^{[K]}, \dots,L_{n,s}^{[K]})$ funtzioaren inplementazioa da}
 \end{algorithm} 
 
 \end{enumerate}
@@ -436,7 +436,7 @@ Biribiltze errorearen estimazioa lortzeko, bi integrazioak sekuentzialki eta kon
     \BlankLine
     $\text{\dots lehen integrazioa \dots}$\;
 	\BlankLine
-    $(y_{n+1},e_{n+1})\leftarrow BaturaKonpensatua(y_n,\delta_n,L_n^{[K]})$\;      
+    $(y_{n+1},e_{n+1})\leftarrow BaturaKonpentsatua(y_n,\delta_n,L_n^{[K]})$\;      
     \BlankLine
     \BlankLine
     \eIf{$(initwithfirst)$}
@@ -445,7 +445,7 @@ Biribiltze errorearen estimazioa lortzeko, bi integrazioak sekuentzialki eta kon
     \BlankLine
     $\text{\dots bigarren integrazioa \dots}$\;
 	\BlankLine
-    $(\hat{y}_{n+1},\hat{e}_{n+1})\leftarrow BaturaKonpensatua(\hat{y}_n,\hat{\delta}_n,flr(\hat{L}_n^{[K]},r))$\;  
+    $(\hat{y}_{n+1},\hat{e}_{n+1})\leftarrow BaturaKonpentsatua(\hat{y}_n,\hat{\delta}_n,flr(\hat{L}_n^{[K]},r))$\;  
     \BlankLine
     \BlankLine
     $estimation_{n+1}=\|(y_{n+1}+e_{n+1})-(\hat{y}_{n+1}-\hat{e}_{n+1})\|_2$\;
@@ -488,7 +488,7 @@ Azkenik, puntu-finkoaren iterazioan oinarritutako IRK inplementazio berriari dag
    }
    $E_{n,i} = h\,   b_i\,f_{n,i}^{[k]}-L_{n,i}^{[k]}$\;
    $\delta_{n}=e_{n}+\sum_{i=1}^{s} E_{n,i}$\;
-   $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpensatua}(\tilde y_{n},\delta_{n},L_{n}^{[k]})$\;
+   $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpentsatua}(\tilde y_{n},\delta_{n},L_{n}^{[k]})$\;
    \BlankLine
  }
  \caption{IRK (puntu-finkoaren iterazio).}
@@ -598,7 +598,7 @@ Lau inplementazioetan oinarrituz, bi problemen zenbakizko soluzioei dagokien ene
 \subfloat[OSS ($h=500/3$)]
 {\includegraphics[width=.600\textwidth]{Fig5}}
 \end{tabular}
-\caption{\small 
+\caption[Energia errorearen jatorria]{\small 
 % Joseba zuzenketa 11-05-2017
 %Algoritmo inplementazio ezberdinetarako, energiaren errore erlatiboa eskala logaritmikoan irudikatu dugu: A-algoritmoa trunkatze errorearen estimazioa (gorriz), B-algoritmoa  iterazio errorearen estimazioa (berdez), C-algoritmoa doitasun bikoitzean $\tilde{f}$ funtzioaren ebaluazioaren eraginaren estimazioa (beltzez), doitasun bikoitzeko $\tilde{b}_i, \tilde{\mu}_{ij} \in \mathbb{F}$ koefizienteak aplikatzearen estimazioa (urdinez). Hasierako baliodun problema bakoitzarentzat, irudi bana egin dugu: pendulu bikoitzaren problema ez-kaotikoa (a) eta kanpo-planeten problema (b).
 A-inplementazioak trunkatze errorea estimatzen du (gorriz), B-inplementazioarekin iterazio errorearen estimazioa lortzen du (berdez), C-inplementazioak $\tilde{f}$ funtzioa doitasun bikoitzean ebaluatzeak eragiten duen errorea (beltzez) eta azkenik, D-inplementazioak erakusten du metodoaren koefizienteak $\tilde{b}_i, \tilde{\mu}_{ij}$ doitasun bikoitzean adierazteak eragindako errorea (urdinez). Goiko irudia, pendulu bikoitzaren problema ez-kaotikoari dagokio eta behekoa, kanpo-planeten problemari}    
@@ -626,7 +626,7 @@ Batetik, DP inplementazioaren biribiltze errorearen garapena, FPIEA  inplementaz
 Aipatutako hiru inplementazioetarako, \ref{tab:fperr}~taulan iterazioetan puntu-finkoa lortu den urratsen portzentaia eta urratsetan egin den iterazio kopuruaren batezbestekoa erakutsi dugu. Hairer-en inplementazioarekin baino gehiagotan lortu da puntu-finkoa, hori geratze irizpidearen ondorioa da.
 
 \begin{table}
-\caption[ Urratsen puntu-fikoaren iterazio portzentaia eta iterazio kopuruaren batezbestekoa.] 
+\caption[Puntu-fikoaren iterazio portzentaia eta iterazio kopuruaren batezbestekoa.] 
 {\small{ Puntu-finkoa lortu den urratsen portzentaia eta iterazio batezbestekoa, pendulu bikoitzaren problema ez-kaotikorako (NCDP), pendulu bikoitzaren problema kaotikorako (CDP), eta kanpo-planeten problemarako (OSS). Zutabetan, hiru inplementazio konparatu ditugu: FPIEA (ideala), DP (doitasun bikoitza) eta Hairer-en kodea.}}
 \label{tab:fperr}       % Give a unique label
 \centering
@@ -659,7 +659,7 @@ Aipatutako hiru inplementazioetarako, \ref{tab:fperr}~taulan iterazioetan puntu-
  ($\mu=5.3\times 10^{-19}$, \ $\sigma=1.5\times 10^{-17}$) &
  ($\mu=-1.9\times 10^{-19}$, \ $\sigma=3.5\times 10^{-18}$) 
  \end{tabular}
-\caption{ \small DP inplementazioarekin lortutako $K P$ energia diferentzien histogramak, eta $N(\mu, \sigma)$ banaketa normala, pendulu bikoitzaren problema ez-kaotikoarentzat (NCDP) eta kanpo-planeten problemarentzat (OSS). Ardatz horizontala $10^{15}$ balioarekin biderkatu dugu eta ardatz bertikalak, maiztasuna adierazten du}
+\caption[Energia diferentzien banaketa]{ \small DP inplementazioarekin lortutako $K P$ energia diferentzien histogramak, eta $N(\mu, \sigma)$ banaketa normala, pendulu bikoitzaren problema ez-kaotikoarentzat (NCDP) eta kanpo-planeten problemarentzat (OSS). Ardatz horizontala $10^{15}$ balioarekin biderkatu dugu eta ardatz bertikalak, maiztasuna adierazten du}
 \label{fig:hist}
 \end{figure}
 
@@ -700,7 +700,7 @@ non $K=(t_{end}-t_0)/(mh)$ den. DP inplementazioarekin lortutako $KP$ energia di
 \subfloat[OSS: energia errorearen batezbestekoa]
 {\includegraphics[width=.4\textwidth]{Fig11}}
 \end{tabular}
-\caption{\small Energia errorearen batezbestekoa ($\mu$) eta desbideratze estandarra ($\sigma$) (ezkerrean) eta energia errorearen batezbestekoaren zehaztapena (eskuinean), DP inplementazioarentzat (urdinez), FPIEA inplementazioarentzat (laranjaz), eta Hairer-en inplementazioarentzat (berdez). Pendulu bikoitzaren problema ez-kaotikoa (a,b) eta kanpo-planeten problema (c,d) }
+\caption[Energia errorearen batezbesteko eta desbideratze estandarra]{\small Energia errorearen batezbestekoa ($\mu$) eta desbideratze estandarra ($\sigma$) (ezkerrean) eta energia errorearen batezbestekoaren zehaztapena (eskuinean), DP inplementazioarentzat (urdinez), FPIEA inplementazioarentzat (laranjaz), eta Hairer-en inplementazioarentzat (berdez). Pendulu bikoitzaren problema ez-kaotikoa (a,b) eta kanpo-planeten problema (c,d) }
 \label{fig:Htt}
 \end{figure}
 
@@ -724,7 +724,7 @@ Energia drift-a, ez da IRK metodo sinplektikoen berezko arazoa. \ref{fig:plotNew
 \subfloat[NCDP: energia errorearen batazbestekoa.]
 {\includegraphics[width=.4\textwidth]{Fig13}}
 \end{tabular}
-\caption{\small Energia errorearen batezbestekoa ($\mu$) eta desbideratze estandarra ($\sigma$), Newton sinplifikatuaren iterazioan oinarritutako IRK inplementazioa aplikatuta}
+\caption[Newton sinplifikatuaren iterazioa: energia errorea]{\small Energia errorearen batezbestekoa ($\mu$) eta desbideratze estandarra ($\sigma$), Newton sinplifikatuaren iterazioan oinarritutako IRK inplementazioa aplikatuta}
 \label{fig:plotNewton}
 \end{figure}
 
@@ -752,7 +752,7 @@ Zenbakizko esperimentuen atala amaitzeko, \ref{fig:plot4}~irudian, FPIEA, DP eta
 \subfloat[OSS: kokapen errorearen desbideratzea.]
 {\includegraphics[width=.4\textwidth]{Fig19}}
 \end{tabular}
-\caption{\small Kokapen errorearen batezbestekoa (ezkerrean) eta desbideratze estandarra (eskuinean), DP inplementazioarentzat (urdinez), FPIEA inplementazioarentzat (laranjaz) eta Hairer-en inplementazioarentzat (berdez): NCDP (a,b), CDP (c,d) eta OSS (e,f)}
+\caption[Kokapen erroreak]{\small Kokapen errorearen batezbestekoa (ezkerrean) eta desbideratze estandarra (eskuinean), DP inplementazioarentzat (urdinez), FPIEA inplementazioarentzat (laranjaz) eta Hairer-en inplementazioarentzat (berdez): NCDP (a,b), CDP (c,d) eta OSS (e,f)}
 \label{fig:plot4}
 \end{figure}
 
@@ -787,7 +787,7 @@ Bestalde, hasierako balioen, $1000 $ perturbazioekin ere integratu ditugu $3$ pr
 \subfloat[OSS: perturbatutako $P=1000$ integrazio]
 {\includegraphics[width=.4\textwidth]{Fig25}}
 \end{tabular}
-\caption{\small Kokapen errorea (urdinez) eta kokapen errorearen estimazioa (laranjaz). Ezkerrean, perturbatu gabeko hasierako balioen integrazioak eta  eskuinean, hasierako balioen perturbatutako $P=1000$ integrazioen batezbestekoak}
+\caption[Errorearen estimazioa]{\small Kokapen errorea (urdinez) eta kokapen errorearen estimazioa (laranjaz). Ezkerrean, perturbatu gabeko hasierako balioen integrazioak eta  eskuinean, hasierako balioen perturbatutako $P=1000$ integrazioen batezbestekoak}
 \label{fig:plot5}
 \end{figure}
 
@@ -802,4 +802,4 @@ Inplementazioaren gakoetako bat, puntu-finkoaren iterazioaren geratze irizpide b
 
 Bestalde, puntu-finkoaren iterazioaren inplementazioaren zenbakizko esperimentu batzuetan,  energia errorearen drift lineal txiki bat, ekidin ezinezkoa, agertu zaigu. Energia errorearen drift-a gainditzea garrantzitsua denenerako, Newtonen iterazioan oinarritutako inplementazioa beharrezkoa izango da.
 
-Azkenik, aipatu nahi dugu, atal honen edukiak \href{http://link.springer.com/journal/11075}{Numerical Algorithms} aldizkarian publikatu direla \cite{Antonana2017} eta inplementazioaren \href{https://github.com/mikelehu/IRK-FixedPoint}{kodea} eskuragarri jarri dugula. 
+Azkenik, aipatu nahi dugu, atal honen edukiak \href{http://link.springer.com/journal/11075}{Numerical Algorithms} aldizkarian publikatu direla \cite{Antonana2017} eta inplementazioaren kodea, helbide honetan \url{https://github.com/mikelehu/IRK-FixedPoint} eskuragarri jarri dugula. 

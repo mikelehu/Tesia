@@ -328,7 +328,7 @@ U_{i+1}^{i+1+\frac{1}{2}}=\varphi_{\frac{-h}{2}}(u_{i+1})=\varphi_{\frac{-h}{2}}
 Metodoaren integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu, bere simetria ere bertan ikus daiteke,
 \begin{figure} [h!]
 {\includegraphics [width=16cm, height=4cm] {proiekzioa11}}
-\caption{\small Metodoaren integrazio eskema orokorra. Metodoa simetrikoa eta sinplektikoa da.}
+\caption[Aldagai aldaketa: metodo simetrikoa eta sinplektikoa]{\small Metodoaren integrazio eskema orokorra. Metodoa simetrikoa eta sinplektikoa da.}
 \label{fig:proiekzioa0}
 \end{figure} 
 
@@ -336,7 +336,7 @@ Integrazioaren urrats guztietan ez baditugu emaitzak itzuli behar, bi urratsen a
 
 \begin{figure} [h!]
 {\includegraphics [width=14cm, height=4cm] {proiekzioa12}}
-\caption{\small Proiekzioa: bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu}
+\caption[Aldagai aldaketa: proiekzioa]{\small Proiekzioa: bi urratsen arteko, $\varphi_{h/2}$ fluxuaren bi konputazioak, $\varphi_{h}$ fluxuaren konputazio bakarrarekin konputatuko dugu}
 \label{fig:proiekzioa2}
 \end{figure} 
 
@@ -345,7 +345,7 @@ Integrazioaren urrats guztietan ez baditugu emaitzak itzuli behar, bi urratsen a
 
 \begin{figure} [h!]
 {\includegraphics [width=14cm, height=5cm] {proiekzioa1}}
-\caption{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak dira. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion $U_0^{1/2}$ hasierako balioa finkatuko dugu. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da, \ref{fig:proiekzioa2}~irudian zehaztu dugun bezala. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietan zenbakizko soluzioa itzuliko dugu}
+\caption[Aldagai aldaketa: urratsak]{\small $u_i$ jatorrizko aldagaiak eta $U_i$ aldagai berriak dira. Lehenengo, $u_0$ jatorrizko aldagaien hasierako baliotik abiatuta, aldagai berriei dagokion $U_0^{1/2}$ hasierako balioa finkatuko dugu. Urrats bakoitza, integrazio eta proiekzioaren konposaketa da, \ref{fig:proiekzioa2}~irudian zehaztu dugun bezala. Erabiltzaileak definitutako urratsetarako, $u_n$ jatorrizko aldagaietan zenbakizko soluzioa itzuliko dugu}
 \label{fig:proiekzioa1}
 \end{figure} 
 
@@ -424,7 +424,7 @@ Integrazioen tartea, $t_{end}=10^6$ egunetakoa da eta zenbakizko integrazioetan,
 &s=16: \quad (16/6)h. \\
 \end{align*} 
 
-Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabaki dugu. $9$-planeten probleman, gorputz kopurua txikia denez,  Kepler fluxuaren gainkarga esanguratsua da eta  barne-planetei bakarrik aplikatzea, eraginkorragoa izan daiteke. Baina, gorputz gehiago kontsideratzen baditugu (esaterako ilargia eta asteroide nagusienak) edo eguzki-sistemaren eredu konplexuagoetan (esaterako erlatibitate efektua gehitzerakoan), perturbazio aldearen konputazioa nagusituko da eta Kepler fluxuaren kalkuluak pisua galduko luke. 
+Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabaki dugu. $9$-planeten probleman, gorputz kopurua txikia denez,  Kepler fluxuaren gainkarga esanguratsua da eta  barne-planetei bakarrik aplikatzea, eraginkorragoa izan daiteke. Baina, gorputz gehiago kontsideratzen baditugu (esaterako Ilargia eta asteroide nagusienak) edo eguzki-sistemaren eredu konplexuagoetan (esaterako erlatibitate efektua gehitzerakoan), perturbazio aldearen konputazioa nagusituko da eta Kepler fluxuaren kalkuluak pisua galduko luke. 
 
 
 \subsection*{Gauss metodoen eraginkortasuna.}
@@ -441,7 +441,7 @@ Zenbakizko esperimentuetarako, aldagai aldaketa planeta guziei aplikatzea erabak
 \subfloat[ Gauss metodoak (CPU).]
 {\includegraphics[width=.45\textwidth]{esperimentua802}}
 \end{tabular}
-\caption{\small 
+\caption[Puntu-finkoaren eraginkortasun grafikoak]{\small 
 Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. (a) irudian, ekuazio diferentzialen ebaluazio kopuruarekiko (FCN) eraginkortasuna neurtu dugu. (b) irudian, CPU denborarekiko eraginkortasuna neurtu dugu. Irudi bakoitzean, Gauss metodoaren $s=6$ ataletako bi bertsio konparatu ditugu: aldagai aldaketa gabe berdez eta aldagai aldaketa aplikatuta grisez. }
 \label{fig:esp81s}
 \end{figure}
@@ -451,7 +451,7 @@ Jarraian, $s=6,8,9,16$ ataletako metodoen eraginkortasuna aztertu dugu. \ref{fig
 
 \begin{figure} [h!]
 \centerline{\includegraphics [width=8cm, height=6cm] {esperimentua812}}
-\caption{\small Eraginkortasun grafikoa eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
+\caption[Gauss metodoen eraginkortasun konparaketa (FCN)]{\small Eraginkortasun grafikoa eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
 \label{fig:esp81a}
 \end{figure} 
 
@@ -470,7 +470,7 @@ Jarraian, $s=6,8,9,16$ ataletako metodoen eraginkortasuna aztertu dugu. \ref{fig
 %\subfloat[Exekuzio paraleloa (hariak=$4$): Wall Time.]
 %{\includegraphics[width=.5\textwidth]{esperimentua814}}
 \end{tabular}
-\caption{\small 
+\caption[Gauss metodoen eraginkortasun konparaketa (CPU Time)]{\small 
 Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paraleloan Wall-Time). (a)  konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan hari kopurua $2$ izanik. Irudi bakoitzean, Gauss metodoaren $s$ ataletako lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. }
 \label{fig:esp81s}
 \end{figure}
@@ -496,7 +496,7 @@ Atal honetan, $s=8$ ataleko Gauss metodoaren, \emph{CO1035} konposizio metodoare
 \subfloat[ABAH1064 eta CO1035]
 {\includegraphics[width=.45\textwidth]{esperimentua832}}
 \end{tabular}
-\caption{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako Gauss metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: proiekzioa $80$-biteko \emph{long double} doitasunarekin (laranjaz) eta proiekzioa $64$-biteko \emph{double} doitasunarekin (urdinez). Eskuineko irudian, splitting/konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
+\caption[Energia errorea]{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako Gauss metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: proiekzioa $80$-biteko \emph{long double} doitasunarekin (laranjaz) eta proiekzioa $64$-biteko \emph{double} doitasunarekin (urdinez). Eskuineko irudian, splitting/konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
 \label{fig:esp83}
 \end{figure}
 
@@ -522,7 +522,7 @@ Gauss metodoaren integrazioan, urrats luzera handiago erabili arren, barne-plane
 \subfloat[ABAH1064 (abiadura errorea)]
 {\includegraphics[width=.45\textwidth]{esperimentua844}}
 \end{tabular}
-\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzera aplikatutako integrazioarentzat. (c) eta (d) irudietan, \emph{ABAH1064} splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzera aplikatutako integraziorentzat. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
+\caption[Kokapen eta abiadura erroreak]{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzera aplikatutako integrazioarentzat. (c) eta (d) irudietan, \emph{ABAH1064} splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzera aplikatutako integraziorentzat. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
 \label{fig:esp84}
 \end{figure}
 
@@ -552,7 +552,7 @@ Planeten mugimendu orbitala, eliptikoa da. Orbitaren propietateak finkatzen ditu
 \subfloat[ABAH1064 (eszentrikotasunaren errorea)]
 {\includegraphics[width=.45\textwidth]{esperimentua874}}
 \end{tabular}
-\caption{\small \small Orbita eliptikoaren $a$ erdi-ardatz nagusiaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
+\caption[Erdi-ardatz nagusiaren eta eszentrikotasunaren errorea]{\small \small Orbita eliptikoaren $a$ erdi-ardatz nagusiaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako Gauss metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
 \label{fig:esp87}
 \end{figure}
 
@@ -574,7 +574,7 @@ Lau faktore hartu behar dira kontutan. Kepler-en fluxuak, momentu angeluarra zeh
 \subfloat[Momentu angeluarra $h=10.63$]
 {\includegraphics[width=.45\textwidth]{esperimentua852}}
 \end{tabular}
-\caption{\small Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. Gaussen $s=8$ ataletako metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin. }
+\caption[Momentu angeluarra]{\small Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. Gaussen $s=8$ ataletako metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin. }
 \label{fig:esp85}
 \end{figure}
 
@@ -588,7 +588,7 @@ Atal honetan, Gauss metodoa eta konposizio/splitting metodoen arteko eraginkorta
 
 \begin{figure} [h!]
 \centerline{\includegraphics [width=8cm, height=6cm] {esperimentua822}}
-\caption{\small Eraginkortasun grafikoa, eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN).  Hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz}
+\caption[Metodo sinplektikoen eraginkortasun grafikoa (FCN)]{\small Eraginkortasun grafikoa, eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN).  Hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz}
 \label{fig:esp82a}
 \end{figure} 
 
@@ -612,7 +612,7 @@ Dena den, eredu errealistagoak (gorputz kopurua handitzen delako edota erlatibit
 %\subfloat[Exekuzio paraleloa (hariak=$4$) Wall Time.]
 %{\includegraphics[width=.5\textwidth]{esperimentua824}}
 \end{tabular}
-\caption{\small 
+\caption[Metodo sinplektikoen eraginkortasun grafikoa (CPU Time)]{\small 
 Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paralelotan Wall-Time) erakutsi dugu. (a) konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan, hari kopurua $2$ izanik. Irudi bakoitzean,  hiru integrazio metodo konparatu ditugu: $s=6$ Gauss metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz
 }
 \label{fig:esp82}
@@ -646,9 +646,11 @@ Kapitulu honetan, eguzki-sistemaren integraziorako inplementazio berri bat aurke
 \item Biribiltze erroreen hedapenaren azterketa estatistikoa, puntu-finkoaren eta Newton sinplifikatuaren inplementazioetan egin genuen moduan.
 \item $80$-biteko doitasuneko (\emph{long double}) integrazioaren konputazioa: kasu honetan, proiekzioa $128$-biteko doitasunean egitea komeniko litzateke. 
 \item Kepler fluxuaren inplementazioaren hobekuntzak: oraingo inplementazioaren iterazio guztietan, ez dugu aurreko iterazioen informazio erabiltzen. Iterazio berri baten kalkuluan, aurreko iterazioren egoeretatik abiatuta, nahikoa izango litzateke fluxuaren iterazio bakarra egitea.  
-\item Eguzki sistemaren eredu konplexuago batekin (ilargia eta zenbait asteroide, erlatibitate efektua, eguzkiaren atxatamendua,\dots), Gauss metodoa eraginkorragoa bilakatzea espero da. Eguzki-sistemaren eredu konplexuago, aplikatzen den neurrian paralelizazioak abantaila handiagoa suposatuko du. Era berean, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan.
+\item Eguzki sistemaren eredu konplexuago batekin (Ilargia eta zenbait asteroide, erlatibitate efektua, eguzkiaren atxatamendua,\dots), Gauss metodoa eraginkorragoa bilakatzea espero da. Eguzki-sistemaren eredu konplexuago, aplikatzen den neurrian paralelizazioak abantaila handiagoa suposatuko du. Era berean, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan.
 \item Eraginkortasuna hobetzeko, Jacobiarraren hurbilpen sinple baten erabilera (puntu finkoaren eta Newton-en arteko algoritmo eraginkorra).  
 \end{enumerate}    
 
 Eguzki-sistema eredu konplexuetan, Kleperiarrak ez diren indarrak aplika daitezke. Aldagai hauen konbergentzia azkartzeko, Newton sinplifikatuaren iterazioan oinarritutako inplementazioa aplikatzea komeniko da.  
+
+Azkenik, aipatu nahi dugu, inplementazioaren kodea, helbide honetan \url{https://github.com/mikelehu/IRK-SolarSystem} eskuragarri jarri dugula. 
 
