@@ -1,7 +1,7 @@
-\chapter{IRK: Puntu-finkoaren iterazioa.}
+\chapter{IRK: Puntu-finkoaren iterazioa}
 \label{chap:IRK-PF}
 
-\section{Sarrera.}
+\section{Sarrera}
 
 
 Sistema Hamiltondar ez-zurrunen doitasun altuko zenbakizko integraziotarako, puntu-finkoaren iterazioan oinarritutako IRK metodoaren inplementazioa garatu dugu. Konputazioetarako koma-higikorreko aritmetika erabiltzen denez, biribiltze erroreak integrazioen doitasuna mugatzen du. Hortaz, epe luzeko doitasun altuko zenbakizko integrazioen inplementazioetan, biribiltze errorearen eragina txikia izatea eta honen estimazioa ezagutzea interesgarria izan daiteke. 
@@ -15,9 +15,9 @@ Gure inplementazioa, biribiltze errorearen garapenaren ikuspegitik, ia optimoa i
  
 Lehenengo, Hairer-en IRK metodo sinplektikoaren inplementazioa  \cite{Hairer2008} aztertuko dugu. Ondoren, IRK inplementazio hau hobetzeko gure proposamenak azalduko ditugu eta azkenik, zenbakizko integrazioen bidez, gure inplementazio berriaren abantailak erakutsiko ditugu.
 
-\section{Hairer-en inplementazioa.}
+\section{Hairer-en inplementazioa}
 
-\subsubsection*{IRK inplementazio estandarra.}
+\subsubsection*{IRK inplementazio estandarra}
 
 Gure abiapuntua, Hairer-ek \cite{Hairer2008} proposatutako IRK metodoaren inplementazioa (batura konpentsatuaren teknikarekin \cite{Higham2002} garatutakoa) da. Hairer ohartu zen, puntu-finkoaren iterazioan oinarritutako IRK metodo sinplektikoaren  inplementazio estandarrean, biribiltze erroreak energian errore sistematiko bat eragiten zuela, beste metodo sinplektiko esplizituetan gertatzen ez zena. Bere azterketaren ondorioen arabera, errore sistematiko honen jatorriak bi dira:
 
@@ -31,7 +31,7 @@ non \emph{tol} finkatutako tolerantzia den.
 
 \end{enumerate}    
 
-\subsubsection*{Konponbideak.}
+\subsubsection*{Konponbideak}
 
 Hairer-ek, energiaren errore sistematikoa desagertzeko, inplementazio estandarrean honako aldaketak proposatu zituen:
 \begin{enumerate}
@@ -55,7 +55,7 @@ Adibidez, koefizienteak era honetan zehaztu daitezke,
   	 	
 \end{enumerate}
 
-\subsubsection*{Hairer-en inplementazioaren algoritmoa.}
+\subsubsection*{Hairer-en inplementazioaren algoritmoa}
 
 Hairer-ek bere inplementazioaren \href{http://www.unige.ch/~hairer/preprints.html}{Fortran kodea}  eskuragarri du. Bere funtsa \ref{alg:Hairer-IRK}~algoritmoan ikus daiteke, eta horrez gain, batura konpentsatuaren teknikaren erabilera \ref{alg:Hairer-BK}~algoritmoan zehaztu dugu. 
  
@@ -110,14 +110,14 @@ Hairer-ek bere inplementazioaren \href{http://www.unige.ch/~hairer/preprints.htm
 \end{algorithm} 
 
 
-\subsubsection*{Hairer-en inplementazioaren arazoak.}
+\subsubsection*{Hairer-en inplementazioaren arazoak}
 
 Hairer-ek bere inplementazioarekin, \emph{Hénon-Helies} eta eguzki-sistemaren kanpo-planeten problemetarako energiaren errore sistematikorik ez zegoela baieztatu zuen. Energiaren errorea, $k\sqrt{t_n}$ espresioaren arabera handitzen dela erakutsi zuen eta inplementazioak, \emph{Brouwer legea} \cite{Grazier2005} betetzen duela ondorioztatu zuen. Integrazioen azterketa estatistikoa egin zuen biribiltze errorearen ausazkotasuna baieztatzeko. Problemaren hasierako balio zehatz bati dagokion perturbatutako $P=1.000$ integrazio exekutatu zituen eta integrazio horien energia errorearen batezbestekoa ($\mu$), zero eta desbideratze estandarra ( $\sigma$), $k\sqrt{t_n}$ espresioaren araberakoa zela erakutsi zuen. Era berean, integrazio amaiera uneko energi erroreen histogramak, $N(\mu,\sigma)$ distribuzio normala betetzen duela erakutsi zuen.
 
 Hairer-en \emph{Fortran} inplementazioarekin, zenbakizko integrazio berriak egin ditugu eta zenbait kasutan, geratze irizpidea goizegi geratzen dela konprobatu dugu. Eguzki-sistemaren kanpo-planeten hasierako baliodun problemaren integrazioa,  $h=500/3$ eguneko urrats luzerarekin zuzena da baina aldiz okerra $h=1000/3$ urratsarekin.  Gainera, bere inplementazioaren biribiltze errorearen propagazioa optimoa ez dela uste dugu. 
 
 
-\section{Gure inplementazioa.}
+\section{Gure inplementazioa}
 
 IRK metodoaren puntu-finkoaren iterazioan oinarritutako inplementazioa hobetzeko lau proposamen egin ditugu. Lehenik, Runge-Kutta metodoaren birformulazio bat proposatu dugu, metodoa definitzen duten koma-higikorreko koefizienteek izaera sinplektikoa zehazki bete dezaten. Bigarrenik, Hairer-ek proposatutako geratze irizpidearen arazoak gainditzeko, geratze irizpide sendoagoa eta normarekiko independentea garatu dugu. 
 
@@ -158,7 +158,7 @@ b_{i}a_{ij}+b_{j}a_{ji}-b_{i}b_{j}=0, \ \ 1 \leqslant i,j \leqslant s.
 
 IRK metodoa sinplektikoa bada, (\ref{eq:fphbp}) sistemaren integral koadratikoak zehazki mantenduko ditu eta sistema Hamiltondarra balitz, $H(y)$ funtzio Hamiltondarraren balioa integrazio tarte luzeetarako ondo kontserbatuko du.
 
-\subsection{Metodoaren birformulazioa.}
+\subsection{Metodoaren birformulazioa}
 
 Metodoa definitzen duten $a_{ij},b_i  \in \mathbb{R}$ koefizienteak, $\tilde a_{ij}:=fl(a_{ij}),\tilde b_i:=fl(b_i) \in \mathbb{F}$ biribildutako koefizienteen hurbilpenekin ordezkatzen ditugunean, hauek ez dute sinplektikoa izateko baldintza (\ref{eq:simplektik2}) beteko. Ondorioz, metodoak ez ditu integral koadratikoak kontserbatuko eta Hamiltondar funtzioaren eboluzioan, drift lineala ageriko da \cite{JMSanz-Serna1994}.    
   
@@ -210,7 +210,7 @@ Sterbenz-en teoremak (\ref{eq:4311}) ziurtatzen du, $1/2 < |\mu_{ij}| <2$ denez,
 
 Bestalde, $b_i$ koefizienteak eta $\nu_{ij}$ atalen hasieraketarako interpolazio koefizienteak finkatzeko zehaztapenak honakoak dira.
 \begin{enumerate}
-\item $hb_{i}$~koefizienteak.
+\item $hb_{i}$~koefizienteak
 
 Gure inplementazioak, $hb_i=h \times b_i$ koefizienteak aurre-kalkulatu egiten ditu. Koefiziente hauek simetrikoak direnez eta  $\sum\limits_{i=1}^{s} hb_i=h$ berdintza bete behar dela jakinda, modu honetan kalkulatuko ditugu,
 \begin{align*}
@@ -218,7 +218,7 @@ hb_i & = fl(h \times b_i), \ \ \ i=2,\dots,s-1, \\
 hb_1 & :=hb_s:= \left(h - \sum\limits_{i=2}^{s-1} hb_i \right)/2.
 \end{align*}
 
-\item $\nu_{ij}$ interpolazio koefizienteak.
+\item $\nu_{ij}$ interpolazio koefizienteak
 
 Formulazio estandarraren $\lambda_{ij}$ koefizienteetatik abiatuta (\ref{ss:2.2.3.2}atala), formulazio berriari dagozkion $\nu_{ij}$ interpolazio  koefizienteak era honetan definituko ditugu,
 \begin{align}
@@ -228,7 +228,7 @@ Y_{n,i}^{[0]} &= y_n+ h \sum\limits_{j=1}^{s} \nu_{ij} L_{n-1,j}, \ \ \nu_{ij}=\
 
 \end{enumerate}
 
-\subsection{Geratze irizpidea.}
+\subsection{Geratze irizpidea}
 
 
 Puntu-finkoaren iterazioaren metodoaren bidez, (\ref{eq:irk1}) ekuazio inplizituaren soluzioa lortzeko, iterazioaren abiapuntua $Y_{n,i}^{[0]}$  finkatu  eta $k=1,2,\dots$ iterazioetarako $Y_{n,i}^{[k]}$ hurbilpenak lortu behar dira geratze irizpidea bete arte.
@@ -304,7 +304,7 @@ y_{n+1}=y_n+\sum_{i=1}^{s}L_{n,i}^{[K]}.
 Hairer-ek eguzki-sistemaren kanpo-planeten problemaren integrazioa, $h=1000/3$ eguneko urrats luzerarekin errepikatu dugu eta  geratze irizpide berriarekin, energia errorearen eboluzioa zuzena dela ikus daiteke (\ref{fig:OSSh2}(b) Irudia). 
 
 
-\subsubsection*{Tolerantzi testa.}
+\subsubsection*{Tolerantzi testa}
 
 Urrats gehienetan, puntu-finkoaren iterazioak $\forall j, \ \Delta_{j}^{[K]}=0$ bete delako geratuko dira. Gainontzeko urrats gutxi horietan, zeinetan  $\exists j,  \ \Delta_{j}^{[K]} \neq 0$ izanik iterazioa geratu den, orduan  urratsa onargarria den ala ez erabaki behar dugu. Iterazioa, biribiltze errorearen eraginez edo $h$ urrats luzera  behar bezain txikia aukeratu ez delako, gera daiteke.
 
@@ -323,14 +323,14 @@ Azpimarratu behar da, tolerantzia ez dugula erabiliko puntu-finkoaren iterazioa 
 % Puntu-finkoaren iterazioa, konbergentzia lortu duelako edo konbergentzia arazoak izan dituelako gera daiteke. 
 %Doitasun zehatzean, biribiltze errorearen eragina handia izan daiteke eta beraz, ez dugu tolerantzia estua erabiliko. Diskriminatu nahi dugu, aritmetika zehatzean konbergitu duen ala ez. Biribiltze errorea ez balitz konbergitu duen erabaki nahi dugu.
 
-\subsection{Biribiltze errorea gutxitzeko teknikak.}
+\subsection{Biribiltze errorea gutxitzeko teknikak}
 
 \ref{sec:4.4} ataleko koma higikorreko aritmetikaren azalpenetan, batuketa nahiz biderketa eragiketen biribiltze errore zehatza, modu errazean kalkula daitekeela ikusi dugu. Eragiketa hauen biribiltze erroreak, ondorengo konputazioetan erabiliko ditugu, soluzioaren doitasuna hobetzeko.
 
 Batugai askoren baturen konputazioen doitasuna hobetzeko teknikari \emph{batura konpentsatua} esaten zaio (\ref{alg:KahanBK}~algoritmoa) eta zenbakizko integrazioetan erabili ohi da. Atal honetan, batetik IRK metodoetan batura konpentsatuaren aplikazio estandarra hobetzeko proposamena azalduko dugu. Beste aldetik, IRK metodoaren biribiltze errorearen beste jatorri nagusiak (biderketa eta batuketa bat) modu finagoan kalkulatzeko proposamena egingo dugu.    
 
 
-\subsubsection*{Batura konpentsatua.}
+\subsubsection*{Batura konpentsatua}
 
 Integrazioaren zenbakizko soluzioa, $y_n \approx y(t_n) \in \R^{d}, \ n=1,2,\dots$, bi bektoreen batura gisa, $ \ \tilde{y}_n+e_n \in \F^{d}$ lortuko dugu. Hasierako balioa $y_0 \in \R^{d}$, \ $\tilde{y}_0+e_0$ batura moduan adieraziko dugu, non $\tilde{y}_0=fl(y_0)$~ eta $e_0=fl(y_n-\tilde{y}_0)$ diren. 
 
@@ -342,12 +342,12 @@ L_{n,i}^{[k]}=hb_if(Y_{n,i}^{[k-1]}), \ \ \ Y_{n,i}^{[k]}=\tilde{y}_n \oplus \bi
 
 Aldaketa honekin, lortutako zenbakizko soluzioaren doitasuna, batura konpentsatu estandarrarekin baino zerbait hobea izatea espero dugu. 
 
-\subsubsection*{Urratsaren konputazioa.}
+\subsubsection*{Urratsaren konputazioa}
 
 $\tilde{y}_{n+1}, e_{n+1} \in \mathbb{F}^d$, non $\tilde{y}_{n+1}+e_{n+1}\approx y(t_{n+1})$ den, era honetan kalkulatuko dugu:
 
 \begin{enumerate}
-\item Biderketaren biribiltze errorea.
+\item Biderketaren biribiltze errorea
 
 %\begin{equation*}
 %y_{n+1}=y_n+ \sum_{i=1}^{s}hb_i \ f(Y_{n,i}) 
@@ -359,7 +359,7 @@ $hb_i f(Y_{n,i})$ biderketaren biribiltze errorea kalkulatu eta $e_{n}$ gaiari g
 \end{align*}
 
 
-\item Batura konpentsatua.
+\item Batura konpentsatua
 
 Azkenik, batura konpentsatua (\ref{eq:batsd}) aplikatuko dugu,
 \begin{equation}
@@ -392,7 +392,7 @@ Azkenik, batura konpentsatua (\ref{eq:batsd}) aplikatuko dugu,
 \end{enumerate}
 
 
-\subsection{Biribiltze errorearen estimazioa.}
+\subsection{Biribiltze errorearen estimazioa}
 \label{ss:634}
 
 Zenbakizko soluzioaren $\tilde{y}_n+e_n \approx y(t_n) \ n=1,2,\dots$, biribiltze errorearen estimazioa, doitasun txikiagoko  bigarren zenbakizko integrazio baten soluzioaren $\hat{y}_n+\hat{e}_n \approx y(t_n)$ diferentzia gisa kalkulatu dugu. 
@@ -457,7 +457,7 @@ Biribiltze errorearen estimazioa lortzeko, bi integrazioak sekuentzialki eta kon
 
 $G()$ interpolazio funtzioa da eta $initwithfirst$ aldagaiak egiazko balioa izango duen, integrazioen arteko diferentzia txikia den artean.
 
-\subsection{Algoritmoa.}
+\subsection{Algoritmoa}
 
 Azkenik, puntu-finkoaren iterazioan oinarritutako IRK inplementazio berriari dagokion algoritmoa laburtuko dugu (\ref{alg:IRK-Berria} algoritmoa).
 
@@ -491,17 +491,17 @@ Azkenik, puntu-finkoaren iterazioan oinarritutako IRK inplementazio berriari dag
    $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpentsatua}(\tilde y_{n},\delta_{n},L_{n}^{[k]})$\;
    \BlankLine
  }
- \caption{IRK (puntu-finkoaren iterazio).}
+ \caption{IRK (puntu-finkoaren iterazio)}
  \label{alg:IRK-Berria}
 \end{algorithm}
 
-\subsubsection*{Zenbakizko soluzioa.}  
+\subsubsection*{Zenbakizko soluzioa}  
 
 Integrazio tartea $[t_0,t_{end}]$ eta urrats tamaina $h$ bada, emandako urrats kopurua $N=(t_{end}-t_0)/h$ izango da. Bestalde, urrats bakoitzaren ondoren, erabiltzaileak definitutako funtzio bati deitzeko aukera ere eskaintzen du kodeak, baina ohikoa den bezala, $m$ urratsero, hau da, $t_i=t_0+i*(m \ h), \ i=1,\dots,N/m$ uneetan zenbakizko soluzioa fitxategi bitar batean idazten duen funtzioa ere erabil dezake.
 
 Erabiltzaileak, bi integrazio mota exekutatu ditzake:
 \begin{enumerate}
-\item Integrazio arrunta.
+\item Integrazio arrunta
 
 Zenbakizko integrazio bakarra konputatzen da eta zenbakizko soluzioa ($y_i,e_i$) fitxategi batean itzultzen dugu. Fitxategiaren lerro bakoitzaren egitura honakoa da:
 \begin{align*}
@@ -513,7 +513,7 @@ non
 (q_i+eq_i,p_i+ep_i)\approx(q(t_i),p(t_i)), \ \ \ i=1,\dots,N/m.
 \end{equation*}
 
-\item Integrazioa errore estimazioarekin.
+\item Integrazioa errore estimazioarekin
 
 Integrazioaren zenbakizko soluzioa ($y_i,e_i$) eta errorearen estimazioa ($est_i$)  fitxategi batean itzultzen ditugu. Lerro bakoitzaren egitura honakoa da,
 \begin{align*}
@@ -527,11 +527,11 @@ Integrazioaren zenbakizko soluzioa ($y_i,e_i$) eta errorearen estimazioa ($est_i
 \clearpage
 
 
-\section{Zenbakizko esperimentuak.}
+\section{Zenbakizko esperimentuak}
 
 Atal honetan, puntu-finkoaren iterazioan oinarritutako $6$~ataletako Gauss metodoaren inplementazioarekin egindako zenbakizko esperimentuak azalduko ditugu. Esperimentu hauen konputaziorako, $64$-biteko doitasuneko IEEE koma-higikorreko aritmetika erabili dugu.
 
-\subsection{Problemak.}
+\subsection{Problemak}
 
 Bi Hamiltondar sistema kontsideratuko ditugu: pendulu bikoitz arruntaren eta kanpo-planeten problemak \cite{Hairer2006} \cite{Dumitru}. Integrazio guztietan $h$ urrats luzera, trunkatze errorea biribiltze errorea baino txikiago izan dadin aukeratu dugu.
 
@@ -546,7 +546,7 @@ H(q,p)= T(p)+Uq),
 eta ezaguna da, puntu-finkoaren bertsio partizionatua (\ref{alg:rkfppart}), puntu-finkoaren iterazio estandarra baino eraginkorragoa dela  \cite{Sanz-Serna1992}. Dena den, zenbakizko esperimentuetarako, Hairer-en \cite{Hairer2008} lanean bezala, puntu-finkoaren bertsio estandarraren emaitzak erakutsi ditugu. Puntu-finkoaren bertsio partizionatua aplikatu dugunean, antzeko emaitzak lortu ditugu baina urrats bakoitzean iterazio kopuru gutxiago behar izan ditu.  
 
 
-\subsection{Energia errorearen jatorria.}
+\subsection{Energia errorearen jatorria}
 
 Doitasun bikoitzeko IRK metodo sinplektikoaren inplementazioaren zenbakizko soluzioaren $\ \tilde{y}_n+e_n \approx y(t_n) \ (n=1,2,\cdots)$ errorea, jatorri ezberdineko erroreen konbinazioa da:
 \begin{enumerate}
@@ -565,24 +565,24 @@ Errore jatorri hauek energian duten eragina estimatzeko, honako algoritmoak inpl
 \begin{enumerate}
 \renewcommand{\theenumi}{\Alph{enumi}}
 
-\item Inplementazio zehatza.
+\item Inplementazio zehatza
 
 Trunkatze errorea estimatzeko, konputazio guztiak (ekuazio diferentzialaren funtzioaren ebaluazioa barne) doitasun laukoitzeko ($128$-bit) koma higikorreko aritmetikan kalkulatzen dituen inplementazioa aplikatuko dugu. 
 
 %Zenbakizko integrazio hau, trunkatze errorea estimatzeko eta errore globala kalkulatzeko erreferentzi gisa (soluzio zehatza) kontsideratuko dugu. 
 
-\item Inplementazio superideala.
+\item Inplementazio superideala
 
 Zenbakizko integrazio hau, iterazio errorea estimatzeko erabiliko dugu. Konputazio guztia doitasun laukoitzean egindako inplementazioa da baina geratze irizpidea, doitasun bikoitzean neurtuko dugu,
 \begin{equation*}
 \Delta^{[k]}=|\text{double}(Y^{[k]})-\text{double}(Y^{[k-1]})|.
 \end{equation*}
 
-\item Inplementazio ideala.
+\item Inplementazio ideala
 
 Ekuazio diferentzialaren eskuin aldeko funtzioaren ebaluazioa izan ezik, beste eragiketa guztiak doitasun laukoitzean kalkulatzen dituen inplementazioa da. Ekuazio diferentziala doitasun bikoitzean kalkulatzeak eragiten duen errorea neurtzeko erabiliko dugu eta integrazio hau, hobetu ezin daitekeen zenbakizko integraziotzat hartuko dugu.  
 
-\item Inplementazio sasi-ideala.
+\item Inplementazio sasi-ideala
 
 Doitasun bikoitzeko koefizienteak ($\tilde{\mu}_{ij},\tilde{b}_i \in \mathbb{F}$) erabiltzeak, eragiten duen errorea neurtzeko integrazioa da. Konputazio guztia doitasun laukoitzean kalkulatzen da baina doitasun bikoitzeko koefizienteen balioak erabiliz (hauei doitasun bikoitzeko koefiziente koadrifikatuak esaten diegu). 
 
@@ -607,7 +607,7 @@ A-inplementazioak trunkatze errorea estimatzen du (gorriz), B-inplementazioareki
 
 
 
-\subsection{Errore azterketa estatistikoa.}
+\subsection{Errore azterketa estatistikoa}
 
 Biribiltze erroreak eragiten duen zenbakizko erroreen azterketa fidagarriagoa egiteko, analisi estatistikoa aplikatu dugu (Hairer-en \cite{Hairer2008} lanean bezala). Problema bakoitzarentzat, hasierako balioaren osagai bakoitza ausaz perturbatutako ($\mathcal{O}(10^{-6})$ tamainako errore erlatiboarekin) $P=1000$ integrazio exekutatu ditugu eta emaitza hauen guztien batezbestekoan oinarritu gara, biribiltze errorearen azterketa zehatzagoa egiteko.    
 
@@ -626,7 +626,7 @@ Batetik, DP inplementazioaren biribiltze errorearen garapena, FPIEA  inplementaz
 Aipatutako hiru inplementazioetarako, \ref{tab:fperr}~taulan iterazioetan puntu-finkoa lortu den urratsen portzentaia eta urratsetan egin den iterazio kopuruaren batezbestekoa erakutsi dugu. Hairer-en inplementazioarekin baino gehiagotan lortu da puntu-finkoa, hori geratze irizpidearen ondorioa da.
 
 \begin{table}
-\caption[Puntu-fikoaren iterazio portzentaia eta iterazio kopuruaren batezbestekoa.] 
+\caption[Puntu-fikoaren iterazio portzentaia eta iterazio kopuruaren batezbestekoa] 
 {\small{ Puntu-finkoa lortu den urratsen portzentaia eta iterazio batezbestekoa, pendulu bikoitzaren problema ez-kaotikorako (NCDP), pendulu bikoitzaren problema kaotikorako (CDP), eta kanpo-planeten problemarako (OSS). Zutabetan, hiru inplementazio konparatu ditugu: FPIEA (ideala), DP (doitasun bikoitza) eta Hairer-en kodea.}}
 \label{tab:fperr}       % Give a unique label
 \centering
@@ -645,7 +645,7 @@ Aipatutako hiru inplementazioetarako, \ref{tab:fperr}~taulan iterazioetan puntu-
  \end{table}
 
 
-\subsubsection*{Energia diferentzien banaketa.}
+\subsubsection*{Energia diferentzien banaketa}
 
 \begin{figure}[h!]
 \centering
@@ -792,7 +792,7 @@ Bestalde, hasierako balioen, $1000 $ perturbazioekin ere integratu ditugu $3$ pr
 \end{figure}
 
 
-\section{Laburpena.}
+\section{Laburpena}
 
 Runge-Kutta metodo inplizituak (adibidez, Gauss nodoetan oinarritutako Runge-Kutta kolokazio metodoak) Hamiltondar sistemen doitasun altuko integrazioetarako aproposak dira. Problema ez-zurrunetarako, puntu-finkoaren iterazioan oinarritutako inplementazioa, Newton metodoaren iterazioan oinarritutako inplementazioak baino eraginkorragoa da.
 

@@ -1,7 +1,7 @@
 \chapter{IRK metodo sinplektikoen bidezko eguzki-sistemaren  integrazioa}
 
 
-\section{Sarrera.}
+\section{Sarrera}
 
 Kapitulu honen jatorrizko helburua, aurreko  bi kapituluetan landutako IRK metodo sinplektikoen inplementazioak (\ref{chap:IRK-PF}~kapituluan puntu-finkoaren iterazioan oinarritutakoa eta \ref{chap:IRK-NEW}~kapituluan Newton sinplifikatuaren iterazioan oinarritutakoa) eguzki sistemaren zenbakizko integraziorako aplikatzea da.  Zenbait proba egin ondoren, ondorioztatu dugu Newton-en iterazio sinplifikatuan oinarritutako inplementazioa baino eraginkorragoa dela kasu  honetan puntu finko partizionatuan oinarritutako inplementazioa. Bestalde, eguzki-sistemaren simulaziorako ekuazio diferentzialen sistemak ekuazio Kepleriarren perturbazio gisa har daitezkeenez, honetaz baliatzen saiatzea erabaki dugu IRK metodo sinplektikoen bidezko zenbakizko integrazio eraginkorrak lortze aldera.
 
@@ -133,12 +133,10 @@ Urrats bakoitzerako aldagai aldaketa definitzeko erabiltzen dugun erreferentziaz
 
 
 
-
-
 RKIK metodoaren integrazio eskema orokorra \ref{fig:proiekzioa0}~irudian laburtu dugu.
 \begin{figure} [h!]
 {\includegraphics [width=16cm, height=4cm] {proiekzioa11}}
-\caption{\small RKIK metodoaren integrazio eskema orokorra}
+\caption[RKIK metodoaren integrazio eskema orokorra]{\small RKIK metodoaren integrazio eskema orokorra}
 \label{fig:proiekzioa0}
 \end{figure}
 %
@@ -301,9 +299,9 @@ Ekuazio diferentzialen balioztapen kopuruarekiko konparaketan, RKIK metodoa naba
 \subfloat[ Gauss-en $s=6$ nodoetan oinarritutako metodo inplizituak (CPU).]
 {\includegraphics[width=.45\textwidth]{esperimentua802}}
 \end{tabular}
-\caption{\small
-Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. (a) irudian, ekuazio diferentzialen ebaluazio kopuruarekiko (FCN) eraginkortasuna neurtu dugu. (b) irudian, CPU denborarekiko eraginkortasuna neurtu dugu. Irudi bakoitzean, Gauss-en nodoetan oinarritutako $s=6$ ataletako bi bertsio konparatu ditugu: IRK berdez eta RKIK grisez. }
-\label{fig:esp81s}
+\caption[Puntu-finkoaren eraginkortasun grafikoak]{\small
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. (a) irudian, ekuazio diferentzialen ebaluazio kopuruarekiko (FCN) eraginkortasuna neurtu dugu. (b) irudian, CPU denborarekiko eraginkortasuna neurtu dugu. Irudi bakoitzean, Gauss-en nodoetan oinarritutako $s=6$ ataletako bi bertsio konparatu ditugu: IRK berdez eta RKIK grisez}
+\label{fig:esp80}
 \end{figure}
 
 
@@ -312,7 +310,7 @@ Jarraian, $s=6,8,9,16$ ataletako RKIK metodoen eraginkortasuna konparatuko dugu.
 
 \begin{figure} [h!]
 \centerline{\includegraphics [width=8cm, height=6cm] {esperimentua812}}
-\caption{\small Eraginkortasun grafikoa eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Gaussen nodoetan oinarritutako $s$ ataletako RKIK metodo sinplektikoen lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
+\caption[RKIK metodoen eraginkortasun konparaketa (FCN)]{\small Eraginkortasun grafikoa eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Gaussen nodoetan oinarritutako $s$ ataletako RKIK metodo sinplektikoen lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
 \label{fig:esp81a}
 \end{figure}
 
@@ -331,8 +329,8 @@ Jarraian, $s=6,8,9,16$ ataletako RKIK metodoen eraginkortasuna konparatuko dugu.
 %\subfloat[Exekuzio paraleloa (hariak=$4$): Wall Time.]
 %{\includegraphics[width=.5\textwidth]{esperimentua814}}
 \end{tabular}
-\caption{\small
-Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paraleloan Wall-Time). (a)  konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan hari kopurua $2$ izanik. Irudi bakoitzean,  Gaussen nodoetan oinarritutako $s$ ataletako RKIK metodo sinplektikoen lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. }
+\caption[RKIK eraginkortasun konparaketa (CPU Time)]{\small
+Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paraleloan Wall-Time). (a)  konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan hari kopurua $2$ izanik. Irudi bakoitzean,  Gaussen nodoetan oinarritutako $s$ ataletako RKIK metodo sinplektikoen lau integrazio konparatu ditugu: $s=6$  urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez}
 \label{fig:esp81s}
 \end{figure}
 
@@ -351,7 +349,7 @@ Ekuazio diferentzialen sistema zehazten duen funtzioaren balioztapen kopuruaren 
 
 \begin{figure} [h!]
 \centerline{\includegraphics [width=8cm, height=6cm] {esperimentua822}}
-\caption{\small Eraginkortasun grafikoa, eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN).  Hiru integrazio metodo konparatu ditugu: $s=8$ ataleko RKIK metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz}
+\caption[Metodo sinplektikoen eraginkortasun grafikoa (FCN)]{\small Eraginkortasun grafikoa, eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN).  Hiru integrazio metodo konparatu ditugu: $s=8$ ataleko RKIK metodoa grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz}
 \label{fig:esp82a}
 \end{figure}
 
@@ -372,7 +370,7 @@ Bestalde, exekuzio denboraren araberako eraginkortasun konparazioa \ref{fig:esp8
 %\subfloat[Exekuzio paraleloa (hariak=$4$) Wall Time.]
 %{\includegraphics[width=.5\textwidth]{esperimentua824}}
 \end{tabular}
-\caption{\small
+\caption[Metodo sinplektikoen eraginkortasun grafikoa (CPU Time)]{\small
 Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean,  CPU denbora (exekuzio paralelotan Wall-Time) erakutsi dugu. (a) konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan, hari kopurua $2$ izanik. Irudi bakoitzean,  hiru integrazio metodo konparatu ditugu: $s=8$ RKIK grisez, $ABAH1064$  urdinez eta $CO1035$ gorriz
 }
 \label{fig:esp82}
@@ -401,7 +399,7 @@ Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz 
 Dena den, eredu errealistagoak (gorputz kopurua handitzen delako,  erlatibitate efektua kontutan hartzen delako \dots) integratzeko, RKIK metodoak eraginkorragoak bilakatzea espero liteke. Splitting metodoen konputazioak, modu trinkoan kalkulatu behar dira, hau da, atalen konputazioak sekuentzialki exekutatzen dira eta  ez du konputazio aldaerarik onartzen. IRK ekuazio inplizituak ebazteko, ordea, teknika ezberdinak konbina daitezke eta eraginkortasuna hobetzeko aukera asko eskaintzen dizkigu. Adibidez \cite{Beylkin2014}, iterazio gehienak problemaren eredu sinple batekin, doitasun baxuan kalkula daitezke  eta bukaerako iterazio pare bat eredu osoarekin, doitasun altuan. IRK metodoaren $s$-ataletako funtzioen balioztapenak  modu paraleloan exekutatu daitezke eta eguzki-sistemaren eredu konplexuagoa aplikatzen den neurrian, paralelizazioak abantaila handiagoa izatea espero da.
 
 
-\subsection*{Energia errorea eta errore globalak.}
+\subsection*{Energia errorea eta errore globalak}
 
 Hiru errore mota ezberdin aztertu ditugu: energia errorea; kokapen eta abiaduren erroreen estimazioak; orbita eliptikoaren erdi-ardatz nagusiaren (\emph{semi-major axis}) eta eszentrikotasunaren erroreen estimazioak. RKIK metodoa $h=10.63$ urrats luzerarekin integratu dugu eta  \emph{CO1035}, \emph{ABAH1064} metodoak $h=4.76$ urrats luzerarekin.
 
@@ -422,7 +420,7 @@ Lau integrazioen energiaren errore erlatiboaren eboluzioak \ref{fig:esp83}~irudi
 \subfloat[ABAH1064 eta CO1035]
 {\includegraphics[width=.45\textwidth]{esperimentua832}}
 \end{tabular}
-\caption{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako RKIK metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: kalkulu guztietarako $64$-biteko (\emph{double}) doitasunarekin (urdinez) eta bestetik, $64$-biteko eta $80$-biteko (\emph{long double})  inplementazio mistoa erabiltzen duena (laranjaz). Eskuineko irudian, splitting/konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
+\caption[Energia errorea]{\small Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako RKIK metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: kalkulu guztietarako $64$-biteko (\emph{double}) doitasunarekin (urdinez) eta bestetik, $64$-biteko eta $80$-biteko (\emph{long double})  inplementazio mistoa erabiltzen duena (laranjaz). Eskuineko irudian, splitting/konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)}
 \label{fig:esp83}
 \end{figure}
 
@@ -448,7 +446,7 @@ RKIK metodoaren integrazioan, urrats luzera handiagoa erabili arren, barne-plane
 \subfloat[ABAH1064 (abiadura errorea)]
 {\includegraphics[width=.45\textwidth]{esperimentua844}}
 \end{tabular}
-\caption{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataleko RKIK metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzera aplikatutako integrazioarentzat. (c) eta (d) irudietan, \emph{ABAH1064} splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerako integrazioarentzat. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
+\caption[Kokapen eta abiadura erroreak]{\small Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataleko RKIK metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzera aplikatutako integrazioarentzat. (c) eta (d) irudietan, \emph{ABAH1064} splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerako integrazioarentzat. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)}
 \label{fig:esp84}
 \end{figure}
 
@@ -479,11 +477,11 @@ Bi inbarianteen erroreen eboluzioak \ref{fig:esp87}~irudian ikus daitezke. Bai R
 \subfloat[ABAH1064 (eszentrikotasunaren errorea)]
 {\includegraphics[width=.45\textwidth]{esperimentua874}}
 \end{tabular}
-\caption{\small \small Orbita eliptikoaren $a$ erdi-ardatz nagusiaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako RKIK metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluton (morez)}
+\caption[Erdi-ardatz nagusiaren eta eszentrikotasunaren errorea]{\small \small Orbita eliptikoaren $a$ erdi-ardatz nagusiaren  eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako RKIK metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph{ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluton (morez)}
 \label{fig:esp87}
 \end{figure}
 
-\subsection*{Biribiltze errorea.}
+\subsection*{Biribiltze errorea}
 
 
 Hirugarren esperimentu honetan, biribiltze errorea ilustratzeko esperimentua egin dugu eta horretarako, momentu angeluarraren errore erlatiboaren eboluzioan oinarritu gara. % Momentu angeluarraren trunkatze errorea beti zero da eta metodo sinplektikoek inbariante koadratikoak zehazki mantentzen dituzte.
@@ -501,7 +499,7 @@ Lau faktore hartu behar dira kontutan. Kepler-en fluxuak momentu angeluarra zeha
 \subfloat[Momentu angeluarra $h=10.63$]
 {\includegraphics[width=.45\textwidth]{esperimentua852}}
 \end{tabular}
-\caption{\small Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. RKIK ($s=8$) metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin. }
+\caption[Momentu angeluarra]{\small Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. RKIK ($s=8$) metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin}
 \label{fig:esp85}
 \end{figure}
 

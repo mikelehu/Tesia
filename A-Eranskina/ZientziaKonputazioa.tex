@@ -1,9 +1,9 @@
-\chapter{Konputazio zientzia.}
+\chapter{Konputazio zientzia}
 
 %\epigraph{Optimizing a program can be a better solution than buying a faster computer!}
 %{\textit {Performance optimization of Numerically Intensive Codes(2001)}}
 
-\section{Sarrera.}
+\section{Sarrera}
 
 Azken hamarkadetan,  konputazio zientziaren hazkundea oso handia izan da eta bere erabilera ia zientzia arlo guztietara zabaldu da \cite{Goedecker2001}. Zientzialariek ahalmen handiko tresna berria (zenbakizko simulazioa) eskuragarri dute, neurri handi batean konputagailuen teknologiaren garapen handiari esker. Egungo oinarrizko konputagailuek, orain urte gutxitako superordenagailuen ahalmen berdina dute eta superordenagailuen konputazio gaitasuna ere, maila berdinean hazi da. Zenbakizko algoritmoek ere, garapen handia izan dute; algoritmo eraginkorragoak, idei berriak sortuz eta konputagailuen gaitasunei egokituz, garatu dira.
 
@@ -44,7 +44,7 @@ Konputazio gaitasuna (\emph{peak}), hardwareak fisikoki exekutatu dezakeen eragi
 \end{equation*}
 eta etorkizunean, diferentzia hau handituz joango dela. Beraz, kodearen exekuzioa azkartzeko derrigorrezkoa da konputagailuan memorien arteko datuen mugimendua minimizatzea.
        
-\subsubsection*{Exekuzio denboren neurketa.}
+\subsubsection*{Exekuzio denboren neurketa}
 
 Unix-eko \emph{time} agindua, konputazioen denborak ezagutzeko erabili daiteke \cite{Pacheco2011}:
 
@@ -135,7 +135,7 @@ elapsed-cpu-time=2.35s
 \emph{Elapsed-time} deiturikoa, kode paraleloen denborak neurtzeko irizpidea da. Programazio paraleloan, algoritmoen exekuzio denborak egokien neurtzen duen aldagaia da baina, une berean programa bakarra exekutatzea behartuta gaude.       
 
 
-\section{Hardwarea.}
+\section{Hardwarea}
 
 
 Orokorrean, gaur-egungo konputagailuak (super-konputagailu, eramangarri,...) paraleloak dira. $1986-2002$ urteen artean, txip barruko transistore dentsitatea handitzen zen heinean, prozesadore bakarreko konputagailuen eraginkortasuna hobetuz joan zen. Baina teknologi honen garapena muga fisikoetara iritsi zenean, bide honetatik konputagailuen abiadura hobetzea ezinezkoa bilakatu zen. Horrela, 2005.urtetik aurrera fabrikatzaileek konputagailuen gaitasuna hobetzeko, txipan prozesadore bat baino gehiago erabiltzea erabaki zuten.  
@@ -155,12 +155,12 @@ Konputagailuen eredu aldaketa honen ondorioz, algoritmo azkarrak garatzeko kodea
 \end{figure} 
 
 
-\subsection*{Memori hierarkia.}
+\subsection*{Memori hierarkia}
 
 Memorien arteko datuen komunikazioak, algoritmoaren eraginkortasuna baldintzatuko du eta zentzu honetan, konputagailuaren memoria hierarkiaren kudeaketa egokia egitea funtsezkoa da. Konputagailuaren memoria mota ezberdinen hierarkia (\ref{fig:memhier}irudia) eta funtzionamendua deskribatuko dugu. 
 \begin{figure}[h]
 \centerline{\includegraphics[width=10cm, height=4cm] {MemoryHierarchy}}
-\caption[Memoria hierarkia]{Memoria hierarkia.}
+\caption[Memoria hierarkia]{Memoria hierarkia}
 \label{fig:memhier}
 \end{figure} 
 
@@ -197,7 +197,7 @@ eta horregatik, lehen aukera bigarrena baino eraginkorragoa izango da. Lehen inp
     $sum+=a(i,j)$\;
    }
  }
- \caption{Memoria atzipena eraginkorra.}
+ \caption{Memoria atzipena eraginkorra}
  \label{algo:lerroka}
 \end{algorithm} 
 \begin{algorithm}[h]
@@ -215,12 +215,12 @@ eta horregatik, lehen aukera bigarrena baino eraginkorragoa izango da. Lehen inp
     $sum+=a(i,j)$\;
    }
  }
- \caption{Memoria atzipena ez-eraginkorra.}
+ \caption{Memoria atzipena ez-eraginkorra}
  \label{algo:zutabeka}
 \end{algorithm} 
 
 
-\subsection*{Arkitektura motak.}
+\subsection*{Arkitektura motak}
 
 Prozesadore anitzeko konputagailu hardware berriak, konplexuak eta heterogeneoak dira. Egoera honetan, programatzaileak zailtasun handiak ditu arkitektura berriek eskaintzen dituzten gaitasunak ondo kudeatzeko \cite{Luszczek2014}.   
 
@@ -241,7 +241,7 @@ Jokoen eta animazio industrian, grafiko oso azkarrak beharrak bultzatuta  sortut
 \label{fig:mbs}
 \end{figure}  
 
-\subsubsection*{Oinarrizko konputagailu paraleloa.}
+\subsubsection*{Oinarrizko konputagailu paraleloa}
 
 Gure lanerako, oinarrizko konputagailu paraleloak kontsideratuko ditugu: memoria konpartitutako eta prozesadore anitzeko unitate bat edo gehiagoz osatutako sistemak. Prozesadore anitzeko unitate bakoitzak txipean CPU bat baino gehiago ditu. Normalean CPU bakoitzak $L1$ bere cache memoria du. Aipatzeko da, era honetako sistemetan prozesadore kopurua mugatua dela (normalean $\leq 32$ ) \cite{Pacheco2011,EijkhoutHPC}.
 
@@ -253,7 +253,7 @@ Txip prozesadore guztiak zuzenean memoria konektatuta daude eta guztiak atzipen 
 
 \begin{figure}[h]
  \centerline{\includegraphics[width=12cm, height=5cm] {ArkitekturaUMA}}
- \caption[UMA sistemak]{Memoria konpartitutako sistemak (UMA).}
+ \caption[UMA sistemak]{Memoria konpartitutako sistemak (UMA)}
  \label{fig:UMA}
 \end{figure}  
 
@@ -262,12 +262,12 @@ Txip prozesadore bakoitza, hardware berezi baten bidez zuzenean memoria bloke ba
 
 \begin{figure}[h]
  \centerline{\includegraphics[width=12cm, height=4cm] {ArkitekturaNUMA}}
- \caption[NUMA sistemak]{Memoria konpartitutako sistemak (NUMA).}
+ \caption[NUMA sistemak]{Memoria konpartitutako sistemak (NUMA)}
  \label{fig:NUMA}
  \end{figure}  
 \end{enumerate}  
 
-\subsubsection*{Bektorizazioa (SIMD).}
+\subsubsection*{Bektorizazioa (SIMD)}
 
 Prozesadore berriei hardware bektore unitateak gehitu zaizkie, eta  (AVX) bektore instrukzioetan oinarritutako paralelizazioa eskaintzen dute \cite{Muller2009,Andrey2013}. CPU-ak bektore erregistroan gorde diren zenbaki multzo bati, eragiketa berdina aplikatzen die (\emph{Single Instruction Multiple Data}, SIMD). Bektore erregistro hauek  $512$-biteko tamainakoak ($512/64=8$ doitasun bikoitzeko zenbaki) izan daitezke eta oro har, oinarrizko eragiketa aritmetikoak (batuketa, kenketa, biderketa eta zatiketa) aplika daitezke. Zentzu honetan ulertu behar da hardware bidezko bektorizazioak,  doitasun bikoitzeko konputazioen eraginkortasuna $x8$ hobetzen duela  eta doitasun arrunteko konputazioetan, berriz, $x16$.     
 
@@ -281,11 +281,11 @@ Adibide moduan, hurrengo adibidearen bidez, iterazio bakoitzean 8 osagaien bekto
     $A[i:(i+8)]=A[i:(i+8)]+B[i:(i+8)]$\;
    \BlankLine
   }
- \caption{SIMD (bektorizazioa).}
+ \caption{SIMD (bektorizazioa)}
 \end{algorithm}
 
 
-\section{Programazio lengoaiak (Paralelizazioa).}
+\section{Programazio lengoaiak (Paralelizazioa)}
 
 Fortran eta C, aplikazio zientifikoetan gehien erabiltzen diren programazio lengoaiak dira \cite{Higham2015}. Fortran (formula translation) 1950 hamarkadan garatutako goi-mailako lehen lengoaia izan zen eta oraindik ere, oso zabaldua da. Fortran estandarraren hainbat bertsio 
 sortu dira: Fortran 66, 77, 90, 95, 2003 eta 2008. Hauetako bertsio bakoitzean funtzionalitate berriak  eta C lengoaiarekin lan egiteko bateragarritasuna gehitu zaizkio.  C lengoaia, 1970 hamarkadan jaio zen eta hardwarearekiko hurbiltasun" ezaugarri nagusiak, konpiladoreari kode eraginkorra sortzeko aukera ematen dio. C lengoaia \emph{UNIX} sistema eragileari lotuta jaio zen eta hurrengo garapenetan bere izaera askea mantendu du. C lengoaiaren estandarrak 1989, 1999 eta 2011 dira.   
@@ -369,7 +369,7 @@ Konputazio paraleloan, $T_p$ denborari paralelizazioak duen gainkarga gehitu beh
 \end{itemize}
 
    
-\section{Aljebra lineal dentsorako liburutegiak.}
+\section{Aljebra lineal dentsorako liburutegiak}
 
 
 Zenbakizko integrazioen aljebra lineala, konputazioaren alde konplexua da. Aljebra linealeko eragiketak inplementatzen dituzten kalitate handiko liburutegiak daude eta inplementazio berriak, liburutegi hauetan oinarritzea gomendagarria da \cite{Hogben2013}. Liburutegi hauek, ondo probatutako softwareak dira, konplexutasun handikoak, modu seguruan eta azkarrean exekutatzeko diseinatu dira.
@@ -387,35 +387,35 @@ Inplementazio hauen funtzioak \emph{Fortran} lengoaian garatuta daude eta ezauga
 \begin{enumerate}
 \item Datu-mota hauetarako aplika daitezke:
 \begin{enumerate}
-\item S: doitasun arrunta (\emph{float}, $32$-bit).
-\item D: doitasun bikoitza (\emph{double}, $64$-bit).
-\item C: zenbaki konplexua doitasun arruntean (complex).
-\item Z: zenbaki konplexua doitasun bikoitzean (complex double).
+\item S: doitasun arrunta (\emph{float}, $32$-bit)
+\item D: doitasun bikoitza (\emph{double}, $64$-bit)
+\item C: zenbaki konplexua doitasun arruntean (complex)
+\item Z: zenbaki konplexua doitasun bikoitzean (complex double)
 \end{enumerate}  
 
 \item Matrize dentsoetarako liburutegiak dira. Matrize egitura hauek zehaztu daitezke.
 \begin{enumerate}
-\item Matrize orokorrak.
+\item Matrize orokorrak
 
  GE=General; GB=General Band.
-\item Matrize simetrikoak.
+\item Matrize simetrikoak
 
  SY=SYmmetric ; SB=Symmetric Band; SP=Symmetric Packed.
-\item Hermitiar matrizeak.
+\item Hermitiar matrizeak
 
  HE=HErmitian ; HB=Hermitian Band; HP=Hermitian Packed.
-\item Matrize triangualarrak.
+\item Matrize triangeluarrak
 
  TR=TRiangular ; TB=TRiangular Band; TP=Triangular Packed.
 \end{enumerate}
 
 \end{enumerate}   
 
-\subsection*{BLAS.}
+\subsection*{BLAS}
 
 \href{http://www.netlib.org/blas}{BLAS} liburutegiak \cite{Intel2015}, bektore eta matrizeen arteko funtzio estandarrak biltzen ditu. Liburutegia, $142$ errutinaz osatuta dago eta hauek, hiru taldeetan sailkatzen dira: 
 \begin{enumerate}
-\item BLAS-1: $\mathcal{O}(n)$ bektore-bektore eragiketak.
+\item BLAS-1: $\mathcal{O}(n)$ bektore-bektore eragiketak
 
  Adibidea.
  $y=\alpha*x+y, \ \text{non} \ \alpha \in \mathbb{R}, \ \text{eta} \  x,y \in \mathbb{R}^n$. \\
@@ -423,7 +423,7 @@ Inplementazio hauen funtzioak \emph{Fortran} lengoaian garatuta daude eta ezauga
  
  Konputazio intentsitatea: $2n/3n=2/3$. 
 
-\item BLAS-2: $\mathcal{O}(n^2)$ matrize-bektore eragiketak.
+\item BLAS-2: $\mathcal{O}(n^2)$ matrize-bektore eragiketak
 
  Adibidea.
  $y=\alpha*A*x+\beta*y, \ \text{non} \ \alpha,\beta \in \mathbb{R},\ x,y \in \mathbb{R}^n \text{eta} \ A \in \mathbb{R}^{n \times n}$. \\ 
@@ -431,7 +431,7 @@ Inplementazio hauen funtzioak \emph{Fortran} lengoaian garatuta daude eta ezauga
  
  Konputazio intentsitatea: $\approx {2n^2}/{n^2}=2$. 
  
-\item BLAS-3: $\mathcal{O}(n^3)$ matrize-matrize eragiketak.
+\item BLAS-3: $\mathcal{O}(n^3)$ matrize-matrize eragiketak
 
  Adibidea.
  $C=\alpha*A*B+\beta*C, \ \text{non} \ \alpha,\beta \in \mathbb{R} \ \text{eta} \ A,B \in \mathbb{R}^{n \times n}$. \\ 
@@ -450,7 +450,7 @@ Inplementazio guztiek, interfaze berdina erabiltzen dute eta beraz, BLAS-en oina
 \paragraph{Adibidea.}\emph{BLAS} liburutegiaren eraginkortasuna, \emph{cblas\_dgemm()} matrizeen biderkadura funtzioaren  bidez aztertu dugu eta gure inplementazio arrunta baino $10\times$ azkarragoa dela baieztatu dugu (Taula \ref{tab:blas}). 
 
 \begin{table}[h]
-\caption[BLAS liburutegiaren eraginkortasuna.] 
+\caption[BLAS liburutegiaren eraginkortasuna] 
 {\small{BLAS liburutegiaren eraginkortasuna. C lengoaiako gure garapena (C-arrunta) eta BLAS liburutegiaren cblas\_dgemm() inplementazioak konparatu ditugu. $n$ tamainako ezberdineko matrizeak biderkatu ditugu, eta biderketa bakoitza $ntest$ alditan errepikatu dugu, kasu guztiek eragiketa aritmetiko kopuru berdina izan ditzaten}}
 \label{tab:blas}      
 \centering
@@ -477,7 +477,7 @@ Inplementazio guztiek, interfaze berdina erabiltzen dute eta beraz, BLAS-en oina
  \end{tabular}}
 \end{table}   
 
-\subsection*{LAPACK.}
+\subsection*{LAPACK}
 
 
 \href{http://www.netlib.org/lapack/}{LAPACK}, $1992.$ urtean garatu zen \cite{Anderson1999,Higham2002} eta aljebra linealaren problemak ebazteko funtzioen liburutegia da. Jatorrizko bertsioa \emph{Fortran 77} lengoaian inplementatuta dago eta liburutegiaren dokumentazioa nahiz kodea \emph{Netlib} software bilgunean eskuratu daiteke. Matrize dentsoetarako garatuta dago eta problema hauetarako errutinak biltzen ditu: 
@@ -518,7 +518,7 @@ Errutina honek $A*X=B$ ekuazio sistemaren $X$ soluzioa kalkulatzen du.
 \end{enumerate}
 
 
-\subsection*{Matrize bakanak.}
+\subsection*{Matrize bakanak}
 
 
 $A \in \mathbb{R}^{m \times n}$ matrizeari bakana esaten zaio, baldin abantaila atera daitekeen zero osagai kopuru adina baditu. Honek esan nahi du, matrizearen zero ez diren osagaien kopurua $n_{nz}$,
@@ -528,7 +528,7 @@ n_{nz} \ll mn.
 
 \begin{figure}[h]
 \centerline{\includegraphics[width=6cm, height=6cm] {SparseMatrizeak}}
-\caption[Matrize bakanak]{Matrize bakanak.}
+\caption[Matrize bakanak]{Matrize bakanak}
 \label{fig:61}
 \end{figure}    
 
@@ -548,7 +548,7 @@ Matrizearen bakantasuna, konputazioaren memoria eta exekuzio denbora gutxitzeko 
 
 %Oraindik, matrize bakanentzako  \emph{BLAS} liburutegia estandarra ez dagoela \url{http://www.netlib.org/blas/blast-forum} konprobatu dugu. Aldiz, Intelen \emph{Math Kernel Library} izeneko liburutegian matrize bakanentzako \emph{BLAS} eta \emph{LAPACK} funtzioak garatuta dituzte \url{https://software.intel.com/en-us/intel-mkl-support/documentation}.
 
-\section{Konpiladorea.}
+\section{Konpiladorea}
 
 
 Konpiladorearen zeregina konplexua da, goi mailan idatzitako programari dagokion makina kodea sortzea (konputagailuaren errekurtsoak modu eraginkorrean erabiltzen dituenak) \cite{EijkhoutHPC}. Konpiladoreak heuristikotan oinarritutako kode aldaketak eragiten ditu, eraginkortasuna hobetzeko asmoarekin. Horregatik, programatzaileak konpiladorearen optimizazio automatiko hauek kontutan hartu behar ditu eta ahal duen neurrian, bere kodean konpiladorearen optimizazioak erraztu.      
@@ -600,7 +600,7 @@ gcc -O2 -Wall -std=c99 -fno-common adibidea.c
 Normalean, aplikazioaren kodea fitxategi ezberdinetan egituratzen da eta konpilazio prozesua konplexua izan daiteke. \emph{Makefile} fitxategia, lengoaia berezi bat erabiliz, konpilazio prozesua automatizatzeko programa moduko bat dugu \cite{EijkhoutHPC}. 
 %\ref{sec:C1} eranskinean, \emph{Makefile} lengoaiaren oinarrizko adibideak eman ditugu.
 
-\section{Laburpena.}
+\section{Laburpena}
 
 Algoritmo bat inplementatzen dugunean kontutan hartu beharrekoa:
 

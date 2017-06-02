@@ -1,5 +1,5 @@
 \BOOKMARK [-1][-]{part.1}{I. Sarrera}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Sarrera}{part.1}% 2
+\BOOKMARK [0][-]{chapter.1}{Ikerketa}{part.1}% 2
 \BOOKMARK [1][-]{section.1.1}{Ikerketaren testuingurua}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.2}{Motibazioa}{chapter.1}% 4
 \BOOKMARK [1][-]{section.1.3}{Helburua eta esparrua}{chapter.1}% 5
@@ -25,23 +25,23 @@
 \BOOKMARK [1][-]{section.4.4}{Biribiltze errorea gutxitzeko teknikak}{chapter.4}% 25
 \BOOKMARK [1][-]{section.4.5}{Laburpena}{chapter.4}% 26
 \BOOKMARK [-1][-]{part.3}{III. Ekarpenak.}{}% 27
-\BOOKMARK [0][-]{chapter.5}{IRK: Puntu-finkoaren iterazioa.}{part.3}% 28
-\BOOKMARK [1][-]{section.5.1}{Sarrera.}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.2}{Hairer-en inplementazioa.}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.3}{Gure inplementazioa.}{chapter.5}% 31
-\BOOKMARK [1][-]{section.5.4}{Zenbakizko esperimentuak.}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.5}{Laburpena.}{chapter.5}% 33
-\BOOKMARK [0][-]{chapter.6}{IRK: Newtonen Iterazioa.}{part.3}% 34
-\BOOKMARK [1][-]{section.6.1}{Sarrera.}{chapter.6}% 35
-\BOOKMARK [1][-]{section.6.2}{IRK-Newton estandarra.}{chapter.6}% 36
-\BOOKMARK [1][-]{section.6.3}{IRK-Newton eraginkorra.}{chapter.6}% 37
-\BOOKMARK [1][-]{section.6.4}{IRK-Newton estandarra \(formulazio berria\).}{chapter.6}% 38
-\BOOKMARK [1][-]{section.6.5}{IRK-Newton eraginkorra \(formulazio berria\).}{chapter.6}% 39
-\BOOKMARK [1][-]{section.6.6}{IRK Newtonen iterazio mistoa.}{chapter.6}% 40
-\BOOKMARK [1][-]{section.6.7}{Zenbakizko esperimentuak.}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.8}{Laburpena.}{chapter.6}% 42
+\BOOKMARK [0][-]{chapter.5}{IRK: Puntu-finkoaren iterazioa}{part.3}% 28
+\BOOKMARK [1][-]{section.5.1}{Sarrera}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.2}{Hairer-en inplementazioa}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.3}{Gure inplementazioa}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.4}{Zenbakizko esperimentuak}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.5}{Laburpena}{chapter.5}% 33
+\BOOKMARK [0][-]{chapter.6}{IRK: Newtonen Iterazioa}{part.3}% 34
+\BOOKMARK [1][-]{section.6.1}{Sarrera}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.2}{IRK-Newton estandarra}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.3}{IRK-Newton eraginkorra}{chapter.6}% 37
+\BOOKMARK [1][-]{section.6.4}{IRK-Newton estandarra \(formulazio berria\)}{chapter.6}% 38
+\BOOKMARK [1][-]{section.6.5}{IRK-Newton eraginkorra \(formulazio berria\)}{chapter.6}% 39
+\BOOKMARK [1][-]{section.6.6}{IRK Newtonen iterazio mistoa}{chapter.6}% 40
+\BOOKMARK [1][-]{section.6.7}{Zenbakizko esperimentuak}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.8}{Laburpena}{chapter.6}% 42
 \BOOKMARK [0][-]{chapter.7}{IRK metodo sinplektikoen bidezko eguzki-sistemaren integrazioa}{part.3}% 43
-\BOOKMARK [1][-]{section.7.1}{Sarrera.}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.1}{Sarrera}{chapter.7}% 44
 \BOOKMARK [1][-]{section.7.2}{Sistema perturbatuetarako integrazio metodo simetriko mota orokor bat: Runge-Kutta inplizitu konposatua \(RKIK\)}{chapter.7}% 45
 \BOOKMARK [1][-]{section.7.3}{Sistema Kepleriarren perturbaziotarako aplikazioa}{chapter.7}% 46
 \BOOKMARK [1][-]{section.7.4}{Zenbakizko esperimentuak}{chapter.7}% 47
@@ -55,25 +55,25 @@
 \BOOKMARK [1][-]{section.8.5}{Aldagai aldaketa}{chapter.8}% 55
 \BOOKMARK [1][-]{section.8.6}{Paralelizazioa}{chapter.8}% 56
 \BOOKMARK [1][-]{section.8.7}{Inplementazioaren erabilgarritasuna}{chapter.8}% 57
-\BOOKMARK [0][-]{chapter.9}{Ondorioak.}{part.4}% 58
+\BOOKMARK [0][-]{chapter.9}{Ondorioak}{part.4}% 58
 \BOOKMARK [-1][-]{part.5}{V. Eranskinak}{}% 59
-\BOOKMARK [0][-]{appendix.A}{Konputazio zientzia.}{part.5}% 60
-\BOOKMARK [1][-]{section.A.1}{Sarrera.}{appendix.A}% 61
+\BOOKMARK [0][-]{appendix.A}{Konputazio zientzia}{part.5}% 60
+\BOOKMARK [1][-]{section.A.1}{Sarrera}{appendix.A}% 61
 \BOOKMARK [1][-]{section.A.2}{Eraginkortasuna}{appendix.A}% 62
-\BOOKMARK [1][-]{section.A.3}{Hardwarea.}{appendix.A}% 63
-\BOOKMARK [1][-]{section.A.4}{Programazio lengoaiak \(Paralelizazioa\).}{appendix.A}% 64
-\BOOKMARK [1][-]{section.A.5}{Aljebra lineal dentsorako liburutegiak.}{appendix.A}% 65
-\BOOKMARK [1][-]{section.A.6}{Konpiladorea.}{appendix.A}% 66
-\BOOKMARK [1][-]{section.A.7}{Laburpena.}{appendix.A}% 67
-\BOOKMARK [0][-]{appendix.B}{Ekuazioen garapenak.}{part.5}% 68
-\BOOKMARK [1][-]{section.B.1}{Kepler-en fluxua.}{appendix.B}% 69
-\BOOKMARK [1][-]{section.B.2}{Koordenatu sistemak.}{appendix.B}% 70
-\BOOKMARK [1][-]{section.B.3}{Newton eraginkorraren garapena.}{appendix.B}% 71
-\BOOKMARK [0][-]{appendix.C}{Inplementazioak.}{part.5}% 72
-\BOOKMARK [1][-]{section.C.1}{Egitura orokorra.}{appendix.C}% 73
-\BOOKMARK [1][-]{section.C.2}{IRK puntu-finkoa.}{appendix.C}% 74
-\BOOKMARK [1][-]{section.C.3}{IRK Newton.}{appendix.C}% 75
-\BOOKMARK [1][-]{section.C.4}{IRK Eguzki-sistema.}{appendix.C}% 76
-\BOOKMARK [1][-]{section.C.5}{Konposizio-Splitting metodoak.}{appendix.C}% 77
+\BOOKMARK [1][-]{section.A.3}{Hardwarea}{appendix.A}% 63
+\BOOKMARK [1][-]{section.A.4}{Programazio lengoaiak \(Paralelizazioa\)}{appendix.A}% 64
+\BOOKMARK [1][-]{section.A.5}{Aljebra lineal dentsorako liburutegiak}{appendix.A}% 65
+\BOOKMARK [1][-]{section.A.6}{Konpiladorea}{appendix.A}% 66
+\BOOKMARK [1][-]{section.A.7}{Laburpena}{appendix.A}% 67
+\BOOKMARK [0][-]{appendix.B}{Ekuazioen garapenak}{part.5}% 68
+\BOOKMARK [1][-]{section.B.1}{Kepler-en fluxua}{appendix.B}% 69
+\BOOKMARK [1][-]{section.B.2}{Koordenatu sistemak}{appendix.B}% 70
+\BOOKMARK [1][-]{section.B.3}{Newton eraginkorraren garapena}{appendix.B}% 71
+\BOOKMARK [0][-]{appendix.C}{Inplementazioak}{part.5}% 72
+\BOOKMARK [1][-]{section.C.1}{Egitura orokorra}{appendix.C}% 73
+\BOOKMARK [1][-]{section.C.2}{IRK puntu-finkoa}{appendix.C}% 74
+\BOOKMARK [1][-]{section.C.3}{IRK Newton}{appendix.C}% 75
+\BOOKMARK [1][-]{section.C.4}{IRK Eguzki-sistema}{appendix.C}% 76
+\BOOKMARK [1][-]{section.C.5}{Konposizio-Splitting metodoak}{appendix.C}% 77
 \BOOKMARK [0][-]{appendix.D}{Zerrendak}{part.5}% 78
-\BOOKMARK [0][-]{appendix*.265}{Bibliografia}{part.5}% 79
+\BOOKMARK [0][-]{appendix*.263}{Bibliografia}{part.5}% 79

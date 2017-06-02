@@ -2,31 +2,30 @@
 \select@language {basque}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1.}{\ignorespaces CO1035 konposizio metodoa}}{35}{table.caption.41}
-\contentsline {table}{\numberline {2.2.}{\ignorespaces $CSABA_4$ splitting metodoa}}{39}{table.caption.51}
-\contentsline {table}{\numberline {2.3.}{\ignorespaces $ABAH1064$ splitting metodoa}}{40}{table.caption.53}
-\contentsline {table}{\numberline {2.4.}{\ignorespaces Integrazio metodo sinplektikoen laburpena}}{40}{table.caption.54}
+\contentsline {table}{\numberline {2.1.}{\ignorespaces CO1035 konposizio metodoa}}{33}{table.caption.44}
+\contentsline {table}{\numberline {2.2.}{\ignorespaces $CSABA_4$ splitting metodoa}}{37}{table.caption.54}
+\contentsline {table}{\numberline {2.3.}{\ignorespaces $ABAH1064$ splitting metodoa}}{38}{table.caption.56}
+\contentsline {table}{\numberline {2.4.}{\ignorespaces Integrazio metodo sinplektikoen laburpena}}{38}{table.caption.57}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1.}{\ignorespaces Eguzki-sistemaren parametro nagusienak}}{48}{table.caption.70}
-\contentsline {table}{\numberline {3.2.}{\ignorespaces Kanpo-planeten masak}}{50}{table.caption.73}
-\contentsline {table}{\numberline {3.3.}{\ignorespaces Kanpoko planeten problemaren hasierako balioak}}{51}{table.caption.74}
-\contentsline {table}{\numberline {3.4.}{\ignorespaces Planeten $GM$ balioak}}{52}{table.caption.76}
-\contentsline {table}{\numberline {3.5.}{\ignorespaces 9-planeten hasierako balioak}}{53}{table.caption.77}
-\contentsline {table}{\numberline {3.6.}{\ignorespaces Eguzki-sistemaren planeta, Ilargia eta asteroide nagusien parametroak}}{54}{table.caption.79}
-\contentsline {table}{\numberline {3.7.}{\ignorespaces Ilargiaren Lurrarekiko hasierako balioak}}{54}{table.caption.80}
+\contentsline {table}{\numberline {3.1.}{\ignorespaces Eguzki-sistemaren parametro nagusienak}}{46}{table.caption.73}
+\contentsline {table}{\numberline {3.2.}{\ignorespaces Kanpo-planeten masak}}{48}{table.caption.76}
+\contentsline {table}{\numberline {3.3.}{\ignorespaces Kanpoko planeten problemaren hasierako balioak}}{49}{table.caption.77}
+\contentsline {table}{\numberline {3.4.}{\ignorespaces Planeten $GM$ balioak}}{50}{table.caption.79}
+\contentsline {table}{\numberline {3.5.}{\ignorespaces 9-planeten hasierako balioak}}{51}{table.caption.80}
+\contentsline {table}{\numberline {3.6.}{\ignorespaces Eguzki-sistemaren planeta, Ilargia eta asteroide nagusien parametroak}}{52}{table.caption.82}
+\contentsline {table}{\numberline {3.7.}{\ignorespaces Ilargiaren Lurrarekiko hasierako balioak}}{52}{table.caption.83}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1.}{\ignorespaces IEEE-754 koma-higikorreko formatuak}}{57}{table.caption.83}
+\contentsline {table}{\numberline {4.1.}{\ignorespaces IEEE-754 koma-higikorreko formatuak}}{55}{table.caption.86}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1.}{\ignorespaces Puntu-fikoaren iterazio portzentaia eta iterazio kopuruaren batezbestekoa.}}{85}{table.caption.123}
+\contentsline {table}{\numberline {5.1.}{\ignorespaces Puntu-fikoaren iterazio portzentaia eta iterazio kopuruaren batezbestekoa}}{83}{table.caption.126}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1.}{\ignorespaces LU deskonposaketak}}{106}{table.caption.149}
-\contentsline {table}{\numberline {6.2.}{\ignorespaces Puntu-finkoa versus Newton iterazioa}}{119}{table.caption.165}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1.}{\ignorespaces BLAS liburutegiaren eraginkortasuna.}}{186}{table.caption.233}
+\contentsline {table}{\numberline {6.1.}{\ignorespaces Inplementazio estandarraren eta gure inplementazioaren konparaketa}}{104}{table.caption.152}
+\contentsline {table}{\numberline {6.2.}{\ignorespaces Puntu-finkoa versus Newton iterazioa}}{117}{table.caption.168}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {D.1.}{\ignorespaces Hitz-zerrenda.\relax }}{206}{table.caption.261}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1.}{\ignorespaces BLAS liburutegiaren eraginkortasuna}}{184}{table.caption.236}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

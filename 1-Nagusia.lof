@@ -2,101 +2,101 @@
 \select@language {basque}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1.}{\ignorespaces Pendulu arrunta}}{23}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Pendulua.}}}{23}{subfigure.1.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Integrazioa.}}}{23}{subfigure.1.2}
-\contentsline {figure}{\numberline {2.2.}{\ignorespaces Kolokazio metodoen simetria}}{28}{figure.caption.27}
-\contentsline {figure}{\numberline {2.3.}{\ignorespaces Atalen hasieraketa: interpolazioa}}{30}{figure.caption.31}
+\contentsline {figure}{\numberline {2.1.}{\ignorespaces Pendulu arrunta}}{21}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Pendulua.}}}{21}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Integrazioa.}}}{21}{subfigure.1.2}
+\contentsline {figure}{\numberline {2.2.}{\ignorespaces Kolokazio metodoen simetria}}{26}{figure.caption.30}
+\contentsline {figure}{\numberline {2.3.}{\ignorespaces Atalen hasieraketa: interpolazioa}}{28}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1.}{\ignorespaces Pendulu bikoitz arrunta}}{43}{figure.caption.56}
-\contentsline {figure}{\numberline {3.2.}{\ignorespaces Pendulu bikoitz zurruna}}{44}{figure.caption.61}
-\contentsline {figure}{\numberline {3.3.}{\ignorespaces Planeten tamainen proportzioak}}{48}{figure.caption.69}
+\contentsline {figure}{\numberline {3.1.}{\ignorespaces Pendulu bikoitz arrunta}}{41}{figure.caption.59}
+\contentsline {figure}{\numberline {3.2.}{\ignorespaces Pendulu bikoitz zurruna}}{42}{figure.caption.64}
+\contentsline {figure}{\numberline {3.3.}{\ignorespaces Planeten tamainen proportzioak}}{46}{figure.caption.72}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1.}{\ignorespaces Koma-higikorreko zenbakien multzoa}}{56}{figure.caption.81}
-\contentsline {figure}{\numberline {4.2.}{\ignorespaces 32-biteko koma-higikorra}}{56}{figure.caption.82}
-\contentsline {figure}{\numberline {4.3.}{\ignorespaces Batuketaren biribiltze errorea}}{62}{figure.caption.95}
+\contentsline {figure}{\numberline {4.1.}{\ignorespaces Koma-higikorreko zenbakien multzoa}}{54}{figure.caption.84}
+\contentsline {figure}{\numberline {4.2.}{\ignorespaces 32-biteko koma-higikorra}}{54}{figure.caption.85}
+\contentsline {figure}{\numberline {4.3.}{\ignorespaces Batuketaren biribiltze errorea}}{60}{figure.caption.98}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1.}{\ignorespaces IRK metodoaren geratze irizpidea}}{75}{figure.caption.108}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Hairer-en geratze irizpidea}}}{75}{subfigure.1.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Geratze irizpidea berria}}}{75}{subfigure.1.2}
-\contentsline {figure}{\numberline {5.2.}{\ignorespaces Energia errorearen jatorria}}{84}{figure.caption.121}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP ($h=2^{-7}$)}}}{84}{subfigure.2.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {OSS ($h=500/3$)}}}{84}{subfigure.2.2}
-\contentsline {figure}{\numberline {5.3.}{\ignorespaces Energia diferentzien banaketa}}{85}{figure.caption.125}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {NCDP}}}}{85}{subfigure.3.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {OSS}}}{85}{subfigure.3.2}
-\contentsline {figure}{\numberline {5.4.}{\ignorespaces Energia errorearen batezbesteko eta desbideratze estandarra}}{87}{figure.caption.127}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: energia errorea}}}{87}{subfigure.4.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: energia errorearen batezbestekoa}}}{87}{subfigure.4.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {OSS: energia errorea}}}{87}{subfigure.4.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {OSS: energia errorearen batezbestekoa}}}{87}{subfigure.4.4}
-\contentsline {figure}{\numberline {5.5.}{\ignorespaces Newton sinplifikatuaren iterazioa: energia errorea}}{87}{figure.caption.128}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: energia errorea.}}}{87}{subfigure.5.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: energia errorearen batazbestekoa.}}}{87}{subfigure.5.2}
-\contentsline {figure}{\numberline {5.6.}{\ignorespaces Kokapen erroreak}}{88}{figure.caption.129}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: kokapen errorearen batezbestekoa.}}}{88}{subfigure.6.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: kokapen errorearen desbideratzea.}}}{88}{subfigure.6.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {CDP: kokapen errorearen batezbestekoa.}}}{88}{subfigure.6.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {CDP: kokapen errorearen desbideratzea.}}}{88}{subfigure.6.4}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {OSS: kokapen errorearen batezbestekoa.}}}{88}{subfigure.6.5}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {OSS: kokapen errorearen desbideratzea.}}}{88}{subfigure.6.6}
-\contentsline {figure}{\numberline {5.7.}{\ignorespaces Errorearen estimazioa}}{90}{figure.caption.131}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: jatorrizko hasierako balioak}}}{90}{subfigure.7.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: perturbatutako $P=1000$ integrazio}}}{90}{subfigure.7.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {CDP: jatorrizko hasierako balioak}}}{90}{subfigure.7.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {CDP: perturbatutako $P=1000$ integrazio}}}{90}{subfigure.7.4}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {OSS: jatorrizko hasierako balioak}}}{90}{subfigure.7.5}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {OSS: perturbatutako $P=1000$ integrazio}}}{90}{subfigure.7.6}
+\contentsline {figure}{\numberline {5.1.}{\ignorespaces IRK metodoaren geratze irizpidea}}{73}{figure.caption.111}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Hairer-en geratze irizpidea}}}{73}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Geratze irizpidea berria}}}{73}{subfigure.1.2}
+\contentsline {figure}{\numberline {5.2.}{\ignorespaces Energia errorearen jatorria}}{82}{figure.caption.124}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP ($h=2^{-7}$)}}}{82}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {OSS ($h=500/3$)}}}{82}{subfigure.2.2}
+\contentsline {figure}{\numberline {5.3.}{\ignorespaces Energia diferentzien banaketa}}{83}{figure.caption.128}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {NCDP}}}}{83}{subfigure.3.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {OSS}}}{83}{subfigure.3.2}
+\contentsline {figure}{\numberline {5.4.}{\ignorespaces Energia errorearen batezbesteko eta desbideratze estandarra}}{85}{figure.caption.130}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: energia errorea}}}{85}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: energia errorearen batezbestekoa}}}{85}{subfigure.4.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {OSS: energia errorea}}}{85}{subfigure.4.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {OSS: energia errorearen batezbestekoa}}}{85}{subfigure.4.4}
+\contentsline {figure}{\numberline {5.5.}{\ignorespaces Newton sinplifikatuaren iterazioa: energia errorea}}{85}{figure.caption.131}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: energia errorea.}}}{85}{subfigure.5.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: energia errorearen batazbestekoa.}}}{85}{subfigure.5.2}
+\contentsline {figure}{\numberline {5.6.}{\ignorespaces Kokapen erroreak}}{86}{figure.caption.132}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: kokapen errorearen batezbestekoa.}}}{86}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: kokapen errorearen desbideratzea.}}}{86}{subfigure.6.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {CDP: kokapen errorearen batezbestekoa.}}}{86}{subfigure.6.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {CDP: kokapen errorearen desbideratzea.}}}{86}{subfigure.6.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {OSS: kokapen errorearen batezbestekoa.}}}{86}{subfigure.6.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {OSS: kokapen errorearen desbideratzea.}}}{86}{subfigure.6.6}
+\contentsline {figure}{\numberline {5.7.}{\ignorespaces Errorearen estimazioa}}{88}{figure.caption.134}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {NCDP: jatorrizko hasierako balioak}}}{88}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NCDP: perturbatutako $P=1000$ integrazio}}}{88}{subfigure.7.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {CDP: jatorrizko hasierako balioak}}}{88}{subfigure.7.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {CDP: perturbatutako $P=1000$ integrazio}}}{88}{subfigure.7.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {OSS: jatorrizko hasierako balioak}}}{88}{subfigure.7.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {OSS: perturbatutako $P=1000$ integrazio}}}{88}{subfigure.7.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1.}{\ignorespaces Biribiltze errorearen azterketa}}{120}{figure.caption.163}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=0$ energia errorrearen batezbestekoa }}}{120}{subfigure.1.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=0$ energia errorearen desbideratze estandarra}}}{120}{subfigure.1.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$k=2^{10}$ energia errorrearen batezbestekoa}}}{120}{subfigure.1.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$k=2^{10}$ energia errorearen desbideratze estandarra}}}{120}{subfigure.1.4}
-\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$k=2^{12}$ energia errorrearen batezbestekoa}}}{120}{subfigure.1.5}
-\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$k=2^{12}$ energia errorearen desbideratze estandarra}}}{120}{subfigure.1.6}
+\contentsline {figure}{\numberline {6.1.}{\ignorespaces Biribiltze errorearen azterketa}}{118}{figure.caption.166}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$k=0$ energia errorrearen batezbestekoa }}}{118}{subfigure.1.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$k=0$ energia errorearen desbideratze estandarra}}}{118}{subfigure.1.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$k=2^{10}$ energia errorrearen batezbestekoa}}}{118}{subfigure.1.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {$k=2^{10}$ energia errorearen desbideratze estandarra}}}{118}{subfigure.1.4}
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {$k=2^{12}$ energia errorrearen batezbestekoa}}}{118}{subfigure.1.5}
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {$k=2^{12}$ energia errorearen desbideratze estandarra}}}{118}{subfigure.1.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip RKIK metodoaren integrazio eskema orokorra\relax }}{127}{figure.caption.166}
-\contentsline {figure}{\numberline {7.2.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu. (a) irudian, ekuazio diferentzialen ebaluazio kopuruarekiko (FCN) eraginkortasuna neurtu dugu. (b) irudian, CPU denborarekiko eraginkortasuna neurtu dugu. Irudi bakoitzean, Gauss-en nodoetan oinarritutako $s=6$ ataletako bi bertsio konparatu ditugu: IRK berdez eta RKIK grisez. \relax }}{131}{figure.caption.169}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gauss-en $s=6$ nodoetan oinarritutako metodo inplizituak (FCN).}}}{131}{subfigure.2.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces { Gauss-en $s=6$ nodoetan oinarritutako metodo inplizituak (CPU).}}}{131}{subfigure.2.2}
-\contentsline {figure}{\numberline {7.3.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Eraginkortasun grafikoa eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Gaussen nodoetan oinarritutako $s$ ataletako RKIK metodo sinplektikoen lau integrazio konparatu ditugu: $s=6$ urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez\relax }}{132}{figure.caption.170}
-\contentsline {figure}{\numberline {7.4.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, CPU denbora (exekuzio paraleloan Wall-Time). (a) konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan hari kopurua $2$ izanik. Irudi bakoitzean, Gaussen nodoetan oinarritutako $s$ ataletako RKIK metodo sinplektikoen lau integrazio konparatu ditugu: $s=6$ urdinez, $s=8$ gorriz, $s=9$ berdez, eta $s=16$ grisez. \relax }}{133}{figure.caption.171}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces { Exekuzioa sekuentziala.}}}{133}{subfigure.4.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces { Exekuzio paraleloa.}}}{133}{subfigure.4.2}
-\contentsline {figure}{\numberline {7.5.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Eraginkortasun grafikoa, eskala logaritmiko bikoitzean irudikatu dugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, ekuazio diferentzialen ebaluazio kopurua (FCN). Hiru integrazio metodo konparatu ditugu: $s=8$ ataleko RKIK metodoa grisez, $ABAH1064$ urdinez eta $CO1035$ gorriz\relax }}{134}{figure.caption.172}
-\contentsline {figure}{\numberline {7.6.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Eraginkortasun grafikoak eskala logaritmiko bikoitzean irudikatu ditugu. Ardatz bertikalean, energiaren errore erlatibo maximoa eman dugu eta ardatz horizontalean, CPU denbora (exekuzio paralelotan Wall-Time) erakutsi dugu. (a) konputazioa modu sekuentzialean egin dugu eta (b) modu paraleloan, hari kopurua $2$ izanik. Irudi bakoitzean, hiru integrazio metodo konparatu ditugu: $s=8$ RKIK grisez, $ABAH1064$ urdinez eta $CO1035$ gorriz \relax }}{134}{figure.caption.173}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exekuzio sekuentziala.}}}{134}{subfigure.6.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Exekuzio paraleloa.}}}{134}{subfigure.6.2}
-\contentsline {figure}{\numberline {7.7.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Energia errorearen eboluzioa lau integrazio metodoetarako erakutsi dugu. Ezkerreko irudian, $s=8$ ataletako RKIK metodoaren $h=10,667$ urrats luzerarekin egindako integrazioak erakutsi ditugu: kalkulu guztietarako $64$-biteko (\emph {double}) doitasunarekin (urdinez) eta bestetik, $64$-biteko eta $80$-biteko (\emph {long double}) inplementazio mistoa erabiltzen duena (laranjaz). Eskuineko irudian, splitting/konposizio metodoak erakutsi ditugu: ABAH1064 (laranjaz) eta CO1035(urdinez)\relax }}{136}{figure.caption.176}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gauss metodoa ($s=8$).}}}{136}{subfigure.7.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ABAH1064 eta CO1035}}}{136}{subfigure.7.2}
-\contentsline {figure}{\numberline {7.8.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Kokapen eta abiaduraren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataleko RKIK metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzera aplikatutako integrazioarentzat. (c) eta (d) irudietan, \emph {ABAH1064} splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerako integrazioarentzat. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluto (morez)\relax }}{137}{figure.caption.178}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RKIK metodoa (kokapen errorea)}}}{137}{subfigure.8.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RKIK metodoa (abiadura errorea)}}}{137}{subfigure.8.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {ABAH1064 (kokapen errorea)}}}{137}{subfigure.8.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ABAH1064 (abiadura errorea)}}}{137}{subfigure.8.4}
-\contentsline {figure}{\numberline {7.9.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Orbita eliptikoaren $a$ erdi-ardatz nagusiaren eta $e$ eszentrikotasunaren erroreen estimazioak erakutsi ditugu. (a) eta (b) irudietan, $s=8$ ataletako RKIK metodoaren errore estimazioak eman ditugu, $h=10,667$ urrats luzerarekin integratuz. (c) eta (d) irudietan, \emph {ABAH1064} Splitting metodoaren errore estimazioak eman ditugu, $h=4.76$ urrats luzerarekin integratuz. Kolore bakoitza planeta bakoitzari dagokion errorea da: Merkurio (urdin ilunez), Artizarra (marroi argiz), Lurra (berdez), Marte (gorriz), Jupiter (more argiz), Saturno (marroi ilunez), Urano (urdin argiz), Neptuno (laranja argiz), Pluton (morez)\relax }}{138}{figure.caption.180}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RKIK metodoa (erdi-ardatz nagusiaren errorea)}}}{138}{subfigure.9.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RKIK metodoa (eszentrikotasunaren errorea)}}}{138}{subfigure.9.2}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {ABAH1064 (erdi-ardatz nagusiaren errorea)}}}{138}{subfigure.9.3}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ABAH1064 (eszentrikotasunaren errorea)}}}{138}{subfigure.9.4}
-\contentsline {figure}{\numberline {7.10.}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 5\p@ plus2.5\p@ minus\p@ \topsep 10\p@ plus4\p@ minus6\p@ \itemsep 5\p@ plus2.5\p@ minus\p@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip Momentu angeluarraren errore erlatiboaren eboluzioa erakutsi dugu. RKIK ($s=8$) metodoa integratu dugu $h=9.0$ eta $h=10.63$ urrats luzerarekin. \relax }}{139}{figure.caption.182}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Momentu angeluarra $h=9.0$.}}}{139}{subfigure.10.1}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Momentu angeluarra $h=10.63$}}}{139}{subfigure.10.2}
+\contentsline {figure}{\numberline {7.1.}{\ignorespaces RKIK metodoaren integrazio eskema orokorra}}{125}{figure.caption.169}
+\contentsline {figure}{\numberline {7.2.}{\ignorespaces Puntu-finkoaren eraginkortasun grafikoak}}{129}{figure.caption.172}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gauss-en $s=6$ nodoetan oinarritutako metodo inplizituak (FCN).}}}{129}{subfigure.2.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces { Gauss-en $s=6$ nodoetan oinarritutako metodo inplizituak (CPU).}}}{129}{subfigure.2.2}
+\contentsline {figure}{\numberline {7.3.}{\ignorespaces RKIK metodoen eraginkortasun konparaketa (FCN)}}{130}{figure.caption.173}
+\contentsline {figure}{\numberline {7.4.}{\ignorespaces RKIK eraginkortasun konparaketa (CPU Time)}}{131}{figure.caption.174}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces { Exekuzioa sekuentziala.}}}{131}{subfigure.4.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces { Exekuzio paraleloa.}}}{131}{subfigure.4.2}
+\contentsline {figure}{\numberline {7.5.}{\ignorespaces Metodo sinplektikoen eraginkortasun grafikoa (FCN)}}{132}{figure.caption.175}
+\contentsline {figure}{\numberline {7.6.}{\ignorespaces Metodo sinplektikoen eraginkortasun grafikoa (CPU Time)}}{132}{figure.caption.176}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Exekuzio sekuentziala.}}}{132}{subfigure.6.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Exekuzio paraleloa.}}}{132}{subfigure.6.2}
+\contentsline {figure}{\numberline {7.7.}{\ignorespaces Energia errorea}}{134}{figure.caption.179}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Gauss metodoa ($s=8$).}}}{134}{subfigure.7.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {ABAH1064 eta CO1035}}}{134}{subfigure.7.2}
+\contentsline {figure}{\numberline {7.8.}{\ignorespaces Kokapen eta abiadura erroreak}}{135}{figure.caption.181}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RKIK metodoa (kokapen errorea)}}}{135}{subfigure.8.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RKIK metodoa (abiadura errorea)}}}{135}{subfigure.8.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {ABAH1064 (kokapen errorea)}}}{135}{subfigure.8.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ABAH1064 (abiadura errorea)}}}{135}{subfigure.8.4}
+\contentsline {figure}{\numberline {7.9.}{\ignorespaces Erdi-ardatz nagusiaren eta eszentrikotasunaren errorea}}{136}{figure.caption.183}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {RKIK metodoa (erdi-ardatz nagusiaren errorea)}}}{136}{subfigure.9.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {RKIK metodoa (eszentrikotasunaren errorea)}}}{136}{subfigure.9.2}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {ABAH1064 (erdi-ardatz nagusiaren errorea)}}}{136}{subfigure.9.3}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {ABAH1064 (eszentrikotasunaren errorea)}}}{136}{subfigure.9.4}
+\contentsline {figure}{\numberline {7.10.}{\ignorespaces Momentu angeluarra}}{137}{figure.caption.185}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Momentu angeluarra $h=9.0$.}}}{137}{subfigure.10.1}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Momentu angeluarra $h=10.63$}}}{137}{subfigure.10.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1.}{\ignorespaces Atalen hasieraketa (Kepler fluxuaren aldagai aldaketa)}}{158}{figure.caption.200}
-\contentsline {figure}{\numberline {8.2.}{\ignorespaces Asteroideak}}{160}{figure.caption.202}
+\contentsline {figure}{\numberline {8.1.}{\ignorespaces Atalen hasieraketa (Kepler fluxuaren aldagai aldaketa)}}{156}{figure.caption.203}
+\contentsline {figure}{\numberline {8.2.}{\ignorespaces Asteroideak}}{158}{figure.caption.205}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1.}{\ignorespaces Intel Xeon konputagailuak}}{175}{figure.caption.215}
-\contentsline {figure}{\numberline {A.2.}{\ignorespaces Memoria hierarkia}}{176}{figure.caption.217}
-\contentsline {figure}{\numberline {A.3.}{\ignorespaces Memoria konpartitutako sistemak}}{178}{figure.caption.222}
-\contentsline {figure}{\numberline {A.4.}{\ignorespaces Memoria banatutako sistemak}}{178}{figure.caption.223}
-\contentsline {figure}{\numberline {A.5.}{\ignorespaces UMA sistemak}}{179}{figure.caption.225}
-\contentsline {figure}{\numberline {A.6.}{\ignorespaces NUMA sistemak}}{179}{figure.caption.226}
-\contentsline {figure}{\numberline {A.7.}{\ignorespaces OpenMP programazio modeloa}}{182}{figure.caption.229}
-\contentsline {figure}{\numberline {A.8.}{\ignorespaces Matrize bakanak}}{187}{figure.caption.236}
+\contentsline {figure}{\numberline {A.1.}{\ignorespaces Intel Xeon konputagailuak}}{173}{figure.caption.218}
+\contentsline {figure}{\numberline {A.2.}{\ignorespaces Memoria hierarkia}}{174}{figure.caption.220}
+\contentsline {figure}{\numberline {A.3.}{\ignorespaces Memoria konpartitutako sistemak}}{176}{figure.caption.225}
+\contentsline {figure}{\numberline {A.4.}{\ignorespaces Memoria banatutako sistemak}}{176}{figure.caption.226}
+\contentsline {figure}{\numberline {A.5.}{\ignorespaces UMA sistemak}}{177}{figure.caption.228}
+\contentsline {figure}{\numberline {A.6.}{\ignorespaces NUMA sistemak}}{177}{figure.caption.229}
+\contentsline {figure}{\numberline {A.7.}{\ignorespaces OpenMP programazio modeloa}}{180}{figure.caption.232}
+\contentsline {figure}{\numberline {A.8.}{\ignorespaces Matrize bakanak}}{185}{figure.caption.239}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

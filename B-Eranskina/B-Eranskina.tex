@@ -1,8 +1,8 @@
-\chapter{Ekuazioen garapenak.}
+\chapter{Ekuazioen garapenak}
 \label{eranskin:B}
 
 
-\section{Kepler-en fluxua.}
+\section{Kepler-en fluxua}
 \label{erans:B1}   
    
 Kepler problema bi gorputzen problemaren kasu partikularra da eta  honako Hamiltondarra dagokio,
@@ -55,7 +55,7 @@ Gorputz baten orbita Kepleriarra hiru motakoa izan daiteke: $H(q_0,p_0)<0$ denea
 non $u=(q,v) \in \mathbb{R}^6$  den.
 
 
-\subsection{Kepler fluxuaren inplementazioa.}
+\subsection{Kepler fluxuaren inplementazioa}
 
 Keplerren ekuazioa, kokapen eta abiadura berriak kalkulatzeko oinarrizkoa da eta era honetan definitzen da,
 \begin{equation*}
@@ -63,7 +63,7 @@ E-e \ \sin E = M,
 \end{equation*}
 non $M=n \ (t-T)$ (\emph{mean anomaly}), $n=k \ a^{-3/2}$ (\emph{mean motion}) eta $T$, $M=0$ deneko integrazio konstantea da. $E$ (\emph{eccentric anomaly}) eta $t$-ren arteko erlazio hau erabiliz kalkulatzen da mugimendua. Mugimendu eliptikoaren kasura mugatuko gara ($0\leq e < 1)$ eta Keplerren ekuazioa transzendentala denez, zenbakizko metodo baten bidez ebatziko dugu.
 
-\subsubsection*{Garapena.}
+\subsubsection*{Garapena}
 
 Gure abiapuntua, honakoa da,
 \begin{align*}
@@ -173,7 +173,7 @@ Eta $(q_1,v_1)$ balioak kalkulatzeko,
 b_{11}=(C-1) \frac{a}{\|q\|}, \longrightarrow b_{11}=-\frac{\sin^2(\Delta E)}{1+\cos(\Delta E)} \frac{a}{\|q\|}
 \end{equation*}
 
-\section{Koordenatu sistemak.}
+\section{Koordenatu sistemak}
 \label{erans:B2}
 
 Lehenik koordenatu barizentrikoei $q_i, p_i \in \mathbb{R}^3, \ i=0,\dots,N$ dagokien Hamiltondarra gogoratuko dugu,
@@ -181,12 +181,12 @@ Lehenik koordenatu barizentrikoei $q_i, p_i \in \mathbb{R}^3, \ i=0,\dots,N$ dag
 H(q,p)=\frac{1}{2}\ \sum^N_{i=0}{\ \frac{{\|p_i\|}^2}{m_i}}-G\ \sum^N_{0\le i<j\le N}{\frac{m_im_j}{\|q_i-q_j\|}}.
 \end{equation}
 
-\subsection*{Koordenatu Heliozentrikoak.}
+\subsection*{Koordenatu Heliozentrikoak}
 
 Koordenatu barizentrikoetatik abiatuta eta aldagai aldaketa bat aplikatuz ekuazio koordenatu heliozentrikoen $Q_i,P_i \in \mathbb{R}^3, \ i=0,\dots,N$ 
 arabera berridatziko ditugu. 
 
-\subsubsection*{Aldagai aldaketa.}
+\subsubsection*{Aldagai aldaketa}
 Lehenik honako aldagai aldaketa aplikatuko dugu,
 \begin{align*}
 Q_0 &=q_0, \ \ Q_i=q_i-q_0, \\ 
@@ -217,7 +217,7 @@ Hamiltondarra abiaduraren arabera idazteko $V_i=P_i/\mu_i$ berdintza ordezkatuko
 \end{split}
 \end{align}
 
-\subsubsection*{Ekuazio diferentzialak.}
+\subsubsection*{Ekuazio diferentzialak}
 
 Hamiltondar bakoitza independenteki kontsideratuta dagokio ekuazio diferentzialak lortzen ditugu:
 \begin{enumerate}
@@ -265,7 +265,7 @@ Azkenik, $V_i=P_i/\mu_i$ aplikatuta integrazioan erabiliko ditugun ekuazioak lab
 
 \end{enumerate}
 
-\subsubsection*{Energia.}
+\subsubsection*{Energia}
 
 Koordenatu heliozentrikoetan integrazioak egiten ditugunean, sistemaren energia kalkulatzeko, soluzioa koordenatu sistema barizentrikoetara bihurtuko dugu. Hauek dira koordenatu heliozentrikoetatik abiatuta ($Q_i,V_i$) , koordenatu barizentrikoak ($q_i,v_i$) kalkulatzeko ekuazioak,
 
@@ -285,11 +285,11 @@ P_0 &=\sum\limits_{i=0}^{N} p_i=\sum\limits_{i=0}^{N} m_i v_i=0 \Rightarrow \ \ 
 \end{enumerate}
 
 
-\subsection*{Koordenatu Jacobiarrak.}
+\subsection*{Koordenatu Jacobiarrak}
 
 Koordenatu barizentrikoetatik abiatuta eta aldagai aldaketa bat aplikatuz, ekuazioak koordenatu Jacobiarren  $Q_i,P_i \in \mathbb{R}^3, \ i=0,\dots,N$ arabera berridatziko ditugu. 
 
-\subsubsection*{Aldagai aldaketa.}
+\subsubsection*{Aldagai aldaketa}
 Lehenik honako aldagai aldaketa aplikatuko dugu,
 \begin{align*}
 Q_0 &=(m_0 q_0+\cdots+m_n q_n)/\eta_N,\ \ \ Q_i  =q_i-\left(\sum_{j=0}^{i-1}m_j q_j \right)/\eta_{i-1} \\
@@ -310,7 +310,7 @@ non
 \end{split}
 \end{align*}
 
-\section{Newton eraginkorraren garapena.}
+\section{Newton eraginkorraren garapena}
 \label{erans:B3}
 
 Formulazio estandarrean honako ekuazio sistema askatzeko metodoa proposatzen da,

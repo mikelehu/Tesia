@@ -1,12 +1,12 @@
-\chapter{IRK: Newtonen Iterazioa.}
+\chapter{IRK: Newtonen Iterazioa}
 \label{chap:IRK-NEW}
 %\epigraph{The top 10 algorithms in Applied Mathematics: 1.Newton and quasi-Newton methods.}
 %{\textit {Nick Higham (2016)}}
 
-\section{Sarrera.}
+\section{Sarrera}
 
 
-Atal honetan, Newtonen iterazioan oinarritutako IRK metodoen inplementazio eraginkorra ikertuko dugu.
+Kapitulu honetan, Newtonen iterazioan oinarritutako IRK metodoen inplementazio eraginkorra ikertuko dugu.
 Problema zurruna denean, puntu-finkoaren iterazioa ez da eraginkorra eta Newtonen iterazioa aplikatu behar da. Gainera problema ez-zurruna izanik ere, Newtonen iterazioak interesgarriak izan daitezke; bereziki doitasun altuko (doitasun laukoitza) konputazioetan iterazio metodoaren konbergentzia ezaugarri onak direla-eta. 
 
 Ikusiko dugunez, $d$-dimentsioko ekuazio diferentzialen sistema, Newtonen iterazioan oinarritutako $s$-ataletako IRK metodoaren bidez integratzeko, era honetako ekuazio-sistema lineala askatu behar da
@@ -35,7 +35,7 @@ Newtonen iterazio metodoaren bidez, $u\in \mathbb{R}^{n}$ eta $F: \mathbb{R}^n \
    \BlankLine
    $u^{[k]}=u^{[k-1]}+\Delta u^{[k]}  \ \ \ \quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \ \     (64-bit)$\;
   }
- \caption{Newton sinplifikatua.}
+ \caption{Newton sinplifikatua}
  \label{alg:nssg}
 \end{algorithm}
 %
@@ -49,7 +49,7 @@ Newton metodoaren eragiketa konplexuenak doitasun txikiagoan kalkula daitezke \c
 
 Newtonen iterazioan oinarritutako IRK metodoen azterketa, era honetan egituratu dugu. Lehenengo, (\ref{sec:7.2}) atalean, Newtonen iterazio estandarraren azalpenak eman ditugu eta notazioa finkatu dugu. (\ref{sec:7.3}) atalean, Newtonen iterazioen ekuazio-sistema modu eraginkorrean askatzeko teknika deskribatu dugu. Hurrengo, (\ref{sec:7.4})-(\ref{sec:7.5}) ataletan, Runge-Kutta metodoen formulazio berriarekin aplikatzeko zehaztasunak eman ditugu. (\ref{sec:7.6}) atalean, Newtonen iterazioan oinarritutako IRK metodoaren inplementazio berria aurkeztu dugu. Azkenik, (\ref{sec:7.7}) atalean, inplementazio berriarekin egindako zenbakizko esperimentuen emaitzak eman ditugu. 
 
-\section{IRK-Newton estandarra.}
+\section{IRK-Newton estandarra}
 \label{sec:7.2}
 
 Demagun honako hasierako baliodun problema,
@@ -84,7 +84,7 @@ Edozein kasutan, Newtonen iterazio bakoitzean, Jacobiarraren $s$ balioztapen eta
 
 %Newton iterazio bakoitzean, $\partial f/ \partial y$ matrize jacobiarraren $s$ ebaluazio eta $sd \times sd$ tamaineko  matrizearen LU deskomposaketa kalkulatzea beharrezkoa da, eta beraz konputazionalki merkeagoak diren aldaerak erabili ohi dira.
 
-\subsection*{Newton iterazioa.}
+\subsection*{Newton iterazioa}
 
 Newtonen iterazioan, (\ref{eq:irkyi}) ekuazio inplizituko $Y_i \ (i=1,\dots,s)$ atalentzako  $Y_i^{[k]}$ $k=1,2,\dots$ hurbilpenak kalkulatzeko algoritmoa, modu honetan defini daiteke,
 \begin{align}
@@ -141,7 +141,7 @@ I_d \otimes I_s -h \ \bar{A} \otimes J,
 non $\bar{A} \in \mathbb{R}^{s \times s}$ (LU deskonposaketa modu eraginkorragoan askatzeko aukeratua) aurre-baldintzatuta ebaztea proposatzen dute. 
 
 
-\subsection*{Newton sinplifikatuaren iterazioa.}
+\subsection*{Newton sinplifikatuaren iterazioa}
 
 Newton sinplifikatuaren iterazioan, $J_i^{[k]}$ Jacobiarrak,  $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}) \ \ i=1,\cdots,s$ Jacobiarrez ordezkatzen dira eta orduan, askatu beharreko ekuazio-sistema honakoa da,
 \begin{equation}
@@ -187,7 +187,7 @@ r_s^{[k]}
 %\end{bmatrix} \in \mathbb{R}^{d \times d},\ is=1,\cdots,s.
 %\end{equation*}
 
-\subsection*{Newton super-sinplifikatuaren iterazioa.}
+\subsection*{Newton super-sinplifikatuaren iterazioa}
 
 Bigarren sinplifikazio bat aplika daiteke, $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}), \ \  i=1,\dots,s \ $ matrizeak,  $J_i^{[0]} \approx J$ hurbilpen bakarrarekin ordezkatuz. Era honetako ekuazio-sistema lortuko dugu, 
 \begin{equation}
@@ -206,7 +206,7 @@ Newtonen iterazioaren bertsio honi super-sinplifikatua deitu diogu. Iterazio bak
 
 Jarraian, Newton super-sinplifikatuaren inplementazioaren algoritmo orokorra laburtu dugu (\ref{alg:nss}~algoritmoa).
 
-\subsection*{Algoritmoa.}
+\subsection*{Algoritmoa}
 
 \begin{algorithm}[H]
  \BlankLine
@@ -238,16 +238,16 @@ Jarraian, Newton super-sinplifikatuaren inplementazioaren algoritmo orokorra lab
    }
    {$(\tilde y_{n+1},e_{n+1})\leftarrow \text{baturakonpentsatua}(y_n,e_n,Y_n^{[k]})$\;}    
  }
- \caption{IRK (Newton super-sinplifikatua).}
+ \caption{IRK (Newton super-sinplifikatua)}
  \label{alg:nss}
 \end{algorithm}
 
 
 
-\section{IRK-Newton eraginkorra.}
+\section{IRK-Newton eraginkorra}
 \label{sec:7.3}
 
-\subsection{Ekuazio-sistema.}
+\subsection{Ekuazio-sistema}
 
 Atal honetan, honako ekuazio-sistema lineala modu eraginkorrean askatzeko inplementazioa proposatuko dugu,
 \begin{equation}
@@ -260,14 +260,14 @@ $S$-ataletako IRK metodoa, Newton iterazioaren bidez $d$-dimentsioko ekuazio dif
 
 Gauss nodoetan oinarritutako Runge-Kutta kolokazio metodoak, sinplektikoak eta simetrikoak \cite{Sanz-Serna1992} dira. 
 \begin{enumerate}
-\item Sinplektikoa.
+\item Sinplektikoa
 
 Runge-Kutta metodoa sinplektikoa izateko baldintza,
 \begin{equation} 
 \label{eq:sympl}
 b_{i}a_{ij}+b_{j}a_{ji}-b_{i}b_{j}=0, \ \ 1 \leqslant i,j \leqslant s.
 \end{equation} 
-\item Simetrikoa.
+\item Simetrikoa
 
 Runge-Kutta metodoa simetrikoa izateko baldintza,
 \begin{align}
@@ -337,7 +337,7 @@ Aldi berean, koefiziente notazio berri hau finkatuta,
 \end{equation*}
 dagokion propietate sinplektikoa (\ref{eq:sympl}) eta simetrikoa (\ref{eq:simm}) berridatziko ditugu,
 \begin{enumerate}
-\item {Sinplektikoa.}
+\item {Sinplektikoa}
 
 Runge-Kutta metodoa sinplektikoa da,
 \begin{equation}
@@ -346,7 +346,7 @@ Runge-Kutta metodoa sinplektikoa da,
 \end{equation}
 non $\bar{A}=(\bar{a}_{ij})_{i,j=1}^s$ eta $B$, ($b_1,b_2,\dots,b_s$) balioen matrize diagonala diren.
 
-\item {Simetrikoa.}
+\item {Simetrikoa}
 
 Runge-Kutta metodoa simetrikoa izango da, koefizienteek baldintza hauek betetzen dituztenean,
 \begin{align}
@@ -366,7 +366,7 @@ $m=[(s+1)/2]$, eta $s-m =[s/2]$. Metodoaren $s$-atalen kopurua bikoiti ala bakoi
 \item $s$ bakoitia (Adibidea $s=7 \rightarrow m=4,\ s-m=3$).
 \end{itemize}
 
-\subsection{IRK metodo sinplektikoen garapena.}
+\subsection{IRK metodo sinplektikoen garapena}
 \label{ss:733}
 
 Lehenengo, IRK metodo sinplektikoak kontsideratuko ditugu. $(B \bar{A})$ antisimetrikoa bada, orduan $B^{1/2}\bar{A}B^{-1/2}$ antisimetrikoa da. Hori dela-eta, $\bar{A}$ diagonalizagarria da eta  balio propio irudikari puruak ditu. Beraz,  $Q, \ s \times s$ tamainako matrize ortogonala existitzen da,
@@ -412,13 +412,13 @@ non $\sigma_1,\ldots,\sigma_{[s/2]} \geq 0 , \ D$ matrizearen diagonaleko balioa
 \end{enumerate} 
 
 
-\subsection{IRK metodo simetriko sinplektikoen garapena.}
+\subsection{IRK metodo simetriko sinplektikoen garapena}
 \label{ss:734}
 
 Atal honetan, (\ref{eq:sympl}) propietate sinplektikoaz gain, (\ref{eq:simm}) simetria propietatea  ere betetzen duten IRK metodoak kontsideratuko ditugu. Lehenengo, garapenean erabiliko ditugun matrize laguntzaileak definituko ditugu.
 
 \begin{enumerate}
-\item P matrizea.
+\item P matrizea
 
 Kontsideratu $P=(P_1 \ P_2) \in \mathbb{R}^{s \times s}$ matrize ortogonala, non $P_1 \in \mathbb{R}^{s \times m}$ eta $P_2 \in \mathbb{R}^{s \times (s-m)}$ diren. Era honetan definituko dugu,  $x=(x_1,\dots,x_s)^T \in \mathbb{R}^s$, $P_1^Tx=(y_1,\dots,y_m)^T$, eta $P_2^Tx=(y_{m+1},\dots,y_s)^T$ non,
 \begin{align*}
@@ -427,7 +427,7 @@ Kontsideratu $P=(P_1 \ P_2) \in \mathbb{R}^{s \times s}$ matrize ortogonala, non
 &y_{m} = x_{m}, \ \ s \ \ \mbox{bakoitia bada}.
 \end{align*}  
 
-\item K matrizea.
+\item K matrizea
 
 Batetik, (\ref{eq:simm2}) simetria propietateak ,  $P_i^TB^{\frac{1}{2}}\bar{A}B^{-\frac{1}{2}}P_i=0, \ i=1,2$ dela eta bestetik, propietate sinplektikoak $B^{1/2}\bar{A}B^{-1/2}$ antisimetrikoa dela ziurtatzen dutenez, $\bar{A}$ matrizea honako matrizearen antzekoa dela ondorioztatu daiteke,
 \begin{align}
@@ -441,7 +441,7 @@ P^TB^{\frac{1}{2}}\bar{A}B^{-\frac{1}{2}}P=
 \end{align}
 non $K=P_1^TB^{\frac{1}{2}}\bar{A}B^{-\frac{1}{2}}P_2 \ \in \mathbb{R}^{m \times (s-m)}$ den.
 
-\item D matrizea.
+\item D matrizea
 
 $K=UDV^T$ balio singularren deskonposaketa izanik, non $U \in \mathbb{R}^{m \times m}$, eta $V \in \mathbb{R}^{(s-m) \times (s-m)}$ matrize ortonormalak diren eta $D \in \mathbb{R}^{m \times (s-m)}$, $K$ matrizearen balio singularren ($\sigma_1, \dots, \sigma_{s-m}$) matrize diagonala den,
 \begin{align}
@@ -468,7 +468,7 @@ D=
 \end{align}
 s bikoitia bada, $D$ matrizea ezkerrekoa eta s bakoitia bada, $D$ matrizea eskuinekoa ($\sigma_m=0$) da. 
 
-\item Q matrizea.
+\item Q matrizea
 
 (\ref{eq:syb}) simetrikoa izategatik, berdintza hauek baieztatu daitezke,
 \begin{align}
@@ -515,7 +515,7 @@ eta metodoa simetrikoa denez, (\ref{eq:simm2}) baldintzetako lehenagatik , $e_s^
 
 (\ref{serans:B32}) eranskinean , ekuazioak lortzeko urratsen zehaztapenak eman ditugu.
 
-\subsubsection*{Matrizearen egitura.}
+\subsubsection*{Matrizearen egitura}
 
  Aldagai aldaketarekin lortutako ekuazio-sistema, blokeka diagonala da eta hau aprobetxatuz, Newton iterazioaren inplementazio eraginkorra lortuko dugu. $S=6$ ataletako IRK metodoari dagokion ekuazio-sistemaren matrizearen egitura berezia hau da.    
 \begin{equation*}
@@ -649,16 +649,16 @@ non
 
 Sistemaren ezezagunak askatzeko ekuazioak eta ordena laburtuko dugu: lehenengo, $\Delta z \in \mathbb{R}^{d}$  (\ref{eq:linsys4c}) ekuaziotik askatuko dugu; bigarren,  $W^{'} \in \mathbb{R}^{md}$ (\ref{eq:linsys4a}) ekuaziotik askatuko dugu; hirugarren, $W^{''} \in \mathbb{R}^{(s-m)d}$ (\ref{eq:W''}) ekuaziotik askatuko dugu; eta azkenik, $\Delta Y$ (\ref{eq:DeltaYChVar}) ekuaziotik askatuko dugu.
 
-\subsection{IRK Newton: konplexutasun analisia.}
+\subsection{IRK Newton: konplexutasun analisia}
 
-$(I_s \otimes I_d - h \ A \otimes J) \Delta Y = r$ ekuazio sistema modu eraginkorrean askatzeko, inplementazio estandarraren eta gure inplementazioen konplexutasunak konparatuko ditugu.
+$(I_s \otimes I_d - h \ A \otimes J) \Delta Y = r$ ekuazio sistema modu eraginkorrean askatzeko, inplementazio estandarraren \cite{Butcher1976,Hairer1996} eta gure inplementazioen konplexutasunak konparatuko ditugu.
 
-\subsubsection*{Inplementazio estandarra.}
+\subsubsection*{Inplementazio estandarra}
 
-Butcher edota Hairer-en inplementazio estandarraren konputazioa bi modutan egin daiteke:
+Butcher \cite{Butcher1976} edota Hairer-en inplementazio \cite{Hairer1996} estandarraren konputazioa bi modutan egin daiteke:
 
 \begin{enumerate}
-\item Zenbaki konplexuak.
+\item Zenbaki konplexuen aritmetika erabiliz
 
 $A$ matrizearen diagonalizazioak balio propio konplexuak ditu, 
 \begin{equation*}
@@ -678,7 +678,7 @@ eta ekuazio-sistema, zenbaki konplexuen aritmetika erabiliz ebatzi daiteke.
 &(I-h \bar{\gamma}_j J) \ X = \bar{b}. 
 \end{align*}
 
-\item Zenbaki errealak.
+\item Zenbaki errealen aritmetika erabiliz
 
 Zenbaki konplexuekin ez bada lana egin nahi, zenbaki errealeko deskonposaketa baliokidea,
 \begin{align*}
@@ -701,7 +701,7 @@ Hairer-en inplementazioan,
 \item $s$ bakoitia bada $\rightarrow$ $(2d \times 2d)$ tamainako $(s+1)/2$  LU deskonposaketa.
 \end{itemize}
 
-\subsubsection*{Gure inplementazio berria.}
+\subsubsection*{Gure inplementazio berria}
 
 $\bar{A}$ matrizea, $\bar{A}=P^{-1}DP$ diagonalizatzen dugu eta $D$ matrizeak, irudikari puruak ditu,
 \begin{equation*}
@@ -726,15 +726,16 @@ Gure inplementazioan,
 
 Lehenengo eragiketa aljebraikoen konplexutasunak gogoratuko ditugu,
 \begin{align*}
-&\text{LU deskonposaketa}:  \ \ 2s^3d^3/3+\mathcal{O}(d^2), \\
-&\text{Back substitution}:  \ \ 2s^2d^2+\mathcal{O}(d), \\
-&\text{inv}: \ \ 2s^3d^3
+&\text{LU deskonposaketa}:  &2s^3d^3/3+\mathcal{O}(d^2), \\
+&\text{Back substitution}:  &2s^2d^2+\mathcal{O}(d), \\
+&\text{Alderantzizko matrizea}: &2s^3d^3.
 \end{align*}
 
-Bi inplementazioen konplexutasunen laburpena \ref{tab:Olu}~taulan ikus daiteke.
+\ref{tab:Olu}~taulan bi inplementazioen konplexutasunen laburpen teorikoa  erakutsi dugu eta gure inplementazioa estandarra baino  eraginkorragoa dela ondorioztatu daiteke.
+
 \begin{table}[h!]
-\caption[LU deskonposaketak] 
-{\small{}}
+\caption[Inplementazio estandarraren eta gure inplementazioaren konparaketa] 
+{\small{$(I_s \otimes I_d - h \ A \otimes J) \Delta Y = r$ ekuazio sistema modu eraginkorrean askatzeko, inplementazio estandarraren eta gure inplementazioaren konplexutasunen konparaketa. Konparaketa ekuazio-sistema bikoitia $s=2m$ eta bakoitia $s=2m+1$ denenerako erakutsi dugu}}
 \label{tab:Olu}       
 \centering
 {%
@@ -756,7 +757,7 @@ Bi inplementazioen konplexutasunen laburpena \ref{tab:Olu}~taulan ikus daiteke.
  \end{tabular}}
 \end{table}
 
-\section{IRK-Newton estandarra (formulazio berria).}
+\section{IRK-Newton estandarra (formulazio berria)}
 \label{sec:7.4}
 
 \ref{chap:IRK-PF}~atalean IRK puntu-finkoaren inplementazioan erabilitako  birformulazioa, IRK-Newton inplementazioan ere aplikatuko dugu. Horrela, IRK metodoa sinplektikoa izatea ziurtatzen dugu. IRK Newtonen iterazioaren inplementazioan ordea, $L_i$ ($i=1,\dots,s$) aldagai ezezagunak eta $Y_i$ ($i=1,\dots,s$) aldagai laguntzaileak kontsideratuko ditugu, biribiltze errorea gutxitzeko helburuarekin \cite{Olsson2000}.
@@ -780,7 +781,7 @@ eta
 \mu_{ij}=a_{ij}/b_j,  \quad 1 \leq i,j \leq s.
 \end{equation*}
 %
-\subsection*{Newton sinplifikatuaren iterazioa.}
+\subsection*{Newton sinplifikatuaren iterazioa}
 
 Newtonen iterazioa formulazio berriarekin honakoa izango da; $L_i^{[0]}$ hasieratu eta  $k=1,2,\dots$ iterazioetarako, $L_i^{[k]}$ hurbilpenak era honetan kalkulatuko ditugu,
 \begin{equation}
@@ -837,7 +838,7 @@ g_s^{[k]}
 %\end{bmatrix} \in \mathbb{R}^{d \times d}, \ is=1,\cdots,s.
 %\end{equation*}
 
-\subsection*{Newton super-sinplifikatuaren iterazioa.}
+\subsection*{Newton super-sinplifikatuaren iterazioa}
 
 Honako bigarren sinplifikazioarekin, $J_i^{[0]}=\partial f / \partial y \ (t+c_ih, Y_i^{[0]}), \ \  i=1,\dots,s$ matrizeak,  $J_i^{[0]} \approx J, \ i=0,\cdots,s$ hurbilpenaz ordezkatuz, ekuazio-sistema lineal hau lortuko dugu,
 \begin{equation}
@@ -846,7 +847,7 @@ Honako bigarren sinplifikazioarekin, $J_i^{[0]}=\partial f / \partial y \ (t+c_i
 \end{equation}
 non $I_d, I_s$ identitate matrizeak eta $B, \ (b_1,b_2,\dots,b_s)$ koefizienteen matrize diagonala diren.  
 
-\subsection*{Algoritmoa.}
+\subsection*{Algoritmoa}
 
 Formulazio berriari dagokion Newton super-sinplifikatuaren inplementazioa, (\ref{alg:nssli}) algoritmoan laburtu dugu.
 
@@ -882,7 +883,7 @@ Formulazio berriari dagokion Newton super-sinplifikatuaren inplementazioa, (\ref
    $\beta_{n}={e}_{n} + \sum\limits_{j=1}^{s}\Delta L_{n,j}^{[k]}$\;
    $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpentsatua}(\tilde y_{n},\beta_{n},L_{n}^{[k-1]})$\;
  }
- \caption{IRK (Newton super-sinplifikatua).}
+ \caption{IRK (Newton super-sinplifikatua)}
  \label{alg:nssli}
 \end{algorithm}
 
@@ -922,12 +923,12 @@ Honako notazioa finkatuko dugu,
 $\tilde{y}_{n+1}, e_{n+1} \in \mathbb{F}^d$, non $\tilde{y}_{n+1}+e_{n+1}\approx y(t_{n+1})$ era honetan kalkulatuko dugu:
 \begin{enumerate}
 
-\item $\Delta L^{[k]}$ gaiak gehitu.
+\item $\Delta L^{[k]}$ gaiak gehitu
 \begin{equation*}
 \delta_{n}={e}_{n} + \sum\limits_{j=1}^{s}\Delta L_{n,j}^{[k]}
 \end{equation*}
 
-\item Batura konpentsatua.
+\item Batura konpentsatua
 
 Azkenik, batura konpentsatua aplikatuko dugu,
 \begin{equation}
@@ -959,7 +960,7 @@ Azkenik, batura konpentsatua aplikatuko dugu,
 
 \end{enumerate}
 
-\section{IRK-Newton eraginkorra (formulazio berria).}
+\section{IRK-Newton eraginkorra (formulazio berria)}
 \label{sec:7.5}
 
 Formulazio berrian, modu eraginkorrean askatu behar dugun ekuazio-lineala honakoa da, 
@@ -971,7 +972,7 @@ $J \in \mathbb{R}^{d \times d}$  eta ~$g \in \mathbb{R}^{s \times d}$ matrizeak 
 
 (\ref{eq:linsysZG}) ekuazio-lineala  ebazteko, aurreko  \ref{ss:733}~atalean (\ref{eq:linsys}) moduko sistemak askatzeko deskribatutako teknika egokituko dugu. Jarraian, IRK metodo simetriko sinplektikoetarako (\ref{ss:734}~atala) garatutako teknika, formulazio berriko (\ref{eq:linsysZG}) sistema ebazteko nola aplikatu daitekeen deskribatuko dugu.
 
-\subsection*{Formulazio estandarretik formulazio berrirako urratsa.}
+\subsection*{Formulazio estandarretik formulazio berrirako urratsa}
 
 Formulazio berriaren inplementazio eraginkorra, (\ref{ss:734}~atala) formulazio estandarrean emandako ekuazioak  moldatuz zehaztuko dugu.
 Aurreko ataleko ekuazioetan, bi formulazioen aldagaien arteko erlazioak ordezkatuz,
@@ -1114,7 +1115,7 @@ IRK Newton sinplifikatuaren inplementazioa, \ref{alg:IRK-Newton-Li}~algoritmoan 
    $\delta_{n}={e}_{n} + \sum\limits_{j=1}^{s}\Delta L_{n,j}^{[k]}$\;
    $(\tilde y_{n+1}, e_{n+1})\leftarrow \text{baturakonpentsatua}(\tilde y_{n},\delta_{n},L_{n}^{[k-1]})$\;
  }
- \caption{IRK (NSS-Eraginkorra).}
+ \caption{IRK (NSS-Eraginkorra)}
  \label{alg:IRK-Newton-Li}
 \end{algorithm}
 
@@ -1122,10 +1123,10 @@ IRK Newton sinplifikatuaren inplementazioa, \ref{alg:IRK-Newton-Li}~algoritmoan 
 \clearpage
 
 
-\section{IRK Newtonen iterazio mistoa.}
+\section{IRK Newtonen iterazio mistoa}
 \label{sec:7.6}
 
-\subsection{Sasi-Newton iterazioa.}
+\subsection{Sasi-Newton iterazioa}
 
 %Josebaren zuzenketa 22-05-2017
 %Hurrengo  \ref{ss:ss762}~ataleko IRK metodoaren inplementazio berrirako, Newton iterazio metodoaren (\ref{eq:Newton_iteration2}) aldaera bat kontsideratuko dugu. Newtonen iterazio bakoitzaren ekuazio-sistema hau, 
@@ -1171,7 +1172,7 @@ zehazki askatu beharrean, modu iteratiboan askatuko dugu. Horretarako,  \ref{alg
    \BlankLine
    $\Delta L^{[k,l]}=\Delta L^{[k,l-1]}+ (I_s \otimes I_d - h \ BAB^{-1} \otimes J)^{-1} \ G^{[k,l]}$\;
   }
- \caption{Barne iterazioa.}
+ \caption{Barne iterazioa}
  \label{alg:InexactNw}
 \end{algorithm}
 
@@ -1325,7 +1326,7 @@ Inplementazioaren algoritmo osoa, \ref{alg:IRKstep}~algoritmoan laburtu dugu.
 
 \clearpage
 
-\section{Zenbakizko esperimentuak.}
+\section{Zenbakizko esperimentuak}
 \label{sec:7.7}
 
 \label{s:ne}
@@ -1347,7 +1348,7 @@ espresioen bidez finkatu  ditugu, horrela sistemaren energia $k \rightarrow \inf
 
 Integrazio guztiak, $h=2^{-7}$ urrats luzera erabiliz egin ditugu; problema ez zurrunarentzat ($k=0$) trunkatze errorea biribiltze errorea baino txikiago izan dadin aukeratu dugu. Trunkatze errorea, biribiltze errorea baino handiagoa izango da $k>0$ zurruntasun balio handietarako. $T_{end}=2^{12}$ segundoko integrazioak egin ditugu eta zenbakizko soluzioa, $m=2^{10}$ urratsero itzuli dugu. 
 
-\subsection{Biribiltze errorearen azterketa.}
+\subsection{Biribiltze errorearen azterketa}
 
 Lehenengo, Newtonen iterazioan oinarritutako IRK inplementazio berriaren biribiltze errorearen hedapena egokia dela aztertuko dugu. Aurreko artikuluan \cite{Antonana2017},  biribiltze errorearen hedapena gutxitzeko ahalegin berezia eginez,  puntu-finkoaren iterazioan oinarritutako IRK inplementazioa proposatu genuen. Bi inplementazioen, 6-ataleko Gauss kolokazio metodoaren  biribiltze erroreak konparatuko ditugu.
 
@@ -1430,7 +1431,7 @@ $k$ balio txikienetarako, puntu-finkoaren inplementazioa Newton inplementazioa b
 
 
 
-\section{Laburpena.}
+\section{Laburpena}
 
 IRK metodoen Newton sinplifikatuaren iterazioen ekuazio-sistema, modu eraginkorrean askatzeko inplementazioa proposatu dugu. Newtonen iterazioan oinarritutako IRK metodoaren inplementazio berria aurkeztu dugu eta inplementazio honen biribiltze errorearen hedapena egokia dela baieztatu dugu. Problema zurrunetarako, Newton sinplifikatuaren iterazioa, puntu-finkoaren iterazioa baino eraginkorragoa dela ikusi dugu.
 
